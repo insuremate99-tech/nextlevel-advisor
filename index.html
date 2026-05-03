@@ -152,10 +152,10 @@
 
     <!-- Links (desktop) -->
     <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
-      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">Solutions</a></li>
-      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">Calculator</a></li>
-      <li><a href="/insights" class="text-navy hover:text-teal transition-colors">Insights</a></li>
-      <li><a href="/career" class="text-navy hover:text-teal transition-colors">Career</a></li>
+      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">บริการ</a></li>
+      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">คำนวณเป้าหมาย</a></li>
+      <li><a href="/insights" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/career" class="text-navy hover:text-teal transition-colors">ร่วมทีมงาน</a></li>
     </ul>
 
     <!-- CTA -->
@@ -175,10 +175,10 @@
   <!-- Mobile menu -->
   <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-100 px-5 pb-5 pt-3">
     <ul class="space-y-1 font-noto text-sm font-medium">
-      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Solutions</a></li>
-      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Calculator</a></li>
-      <li><a href="/insights" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Insights</a></li>
-      <li><a href="/career" class="block py-3 text-navy hover:text-teal">Career</a></li>
+      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บริการ</a></li>
+      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">คำนวณเป้าหมาย</a></li>
+      <li><a href="/insights" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
+      <li><a href="/career" class="block py-3 text-navy hover:text-teal">ร่วมทีมงาน</a></li>
     </ul>
     <a href="/book-call" class="btn btn-teal w-full mt-4 py-3.5 text-sm">นัดปรึกษาฟรี</a>
   </div>
@@ -245,10 +245,17 @@
           </div>
         </div>
         <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <img src="AFPT.jpg" alt="AFPT" class="w-8 h-8 object-contain rounded"/>
+          <img src="ic-logo.png" alt="IC License" class="w-8 h-8 object-contain rounded"/>
           <div>
             <div class="font-pop font-bold text-navy text-xs">IC License</div>
-            <div class="font-noto text-slate-400 text-xs">Registered</div>
+            <div class="font-noto text-slate-400 text-xs">ใบอนุญาตตัวแทนประกันชีวิต</div>
+          </div>
+        </div>
+        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
+          <img src="AFPT.jpg" alt="AFPT" class="w-8 h-8 object-contain rounded"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-xs">AFPT</div>
+            <div class="font-noto text-slate-400 text-xs">Financial Planner</div>
           </div>
         </div>
       </div>
@@ -269,8 +276,8 @@
       </div>
       <!-- Floating badge -->
       <div class="glass border border-slate-100 rounded-2xl px-4 py-3 shadow-card-h absolute -top-3 -right-4 z-20 hidden sm:block">
-        <div class="font-noto text-slate-500 text-xs font-medium">⭐ Top Advisor</div>
-        <div class="font-pop font-bold text-teal text-sm">2024–2025</div>
+        <div class="font-noto text-slate-500 text-xs font-medium">⭐ MTL Top Agent</div>
+        <div class="font-pop font-bold text-teal text-sm">2025</div>
       </div>
     </div>
 
@@ -548,10 +555,17 @@
           </div>
         </div>
         <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
-          <img src="AFPT.jpg" alt="AFPT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+          <img src="ic-logo.png" alt="IC License" class="w-10 h-10 object-contain rounded-lg grayscale"/>
           <div>
             <div class="font-pop font-bold text-navy text-sm">IC License</div>
-            <div class="font-noto text-slate-400 text-xs">ใบอนุญาตนายหน้าประกันชีวิต</div>
+            <div class="font-noto text-slate-400 text-xs">ใบอนุญาตตัวแทนประกันชีวิต</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+          <img src="AFPT.jpg" alt="AFPT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">AFPT</div>
+            <div class="font-noto text-slate-400 text-xs">Associate Financial Planner Thailand</div>
           </div>
         </div>
       </div>
@@ -757,21 +771,4 @@
     const btn = this.querySelector('button[type=submit]');
     btn.textContent = '✓ ส่งเรียบร้อย! ทีมจะติดต่อกลับเร็วๆ นี้';
     btn.disabled = true;
-    btn.style.background = '#10b981';
-    // TODO: Replace with actual Formspree action on form tag
-  });
-</script>
-
-<!-- [CALENDLY WIDGET] Uncomment when ready:
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
--->
-
-<!-- [MAKE.COM WEBHOOK PLACEHOLDER]
-  Webhook URL for career form: https://hook.eu2.make.com/PLACEHOLDER
-  Webhook URL for Calendly confirmation: https://hook.eu2.make.com/PLACEHOLDER
--->
-
-</body>
-</html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+    btn.style.background = '#10b981'
