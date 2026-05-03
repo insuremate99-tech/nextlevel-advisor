@@ -30,6 +30,7 @@
     .search-input:focus{border-color:#0891B2}
     .sec-label{font-family:'Noto Sans Thai';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#0891B2}
     #no-results{display:none;text-align:center;padding:3rem;color:#94A3B8}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
@@ -68,12 +69,10 @@
 
   <!-- Search + Filter -->
   <div class="flex flex-col md:flex-row gap-4 mb-10">
-    <!-- Search -->
     <div class="relative flex-1">
       <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color:#94A3B8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       <input id="searchInput" type="text" class="search-input" placeholder="ค้นหาบทความ..."/>
     </div>
-    <!-- Filters -->
     <div class="flex gap-2 flex-wrap" id="filterBtns">
       <button class="filter-btn active" data-cat="all">ทั้งหมด</button>
       <button class="filter-btn" data-cat="ภาษี">ภาษี</button>
@@ -87,12 +86,10 @@
     </div>
   </div>
 
-  <!-- Article count -->
   <p class="font-noto text-sm mb-6" style="color:#94A3B8">
     แสดง <span id="articleCount">0</span> บทความ
   </p>
 
-  <!-- Article Grid -->
   <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
   <div id="no-results">
@@ -125,7 +122,6 @@ async function loadArticles() {
   try {
     const res = await fetch('articles.json');
     allArticles = await res.json();
-    // Sort by date descending
     allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
     renderArticles();
   } catch(e) {
@@ -156,27 +152,36 @@ function renderArticles() {
   }
   noResults.style.display = 'none';
 
-  grid.innerHTML = filtered.map((a, i) => `
+  grid.innerHTML = filtered.map((a, i) => {
+    const cardTop = a.coverImage
+      ? `<img src="${a.coverImage}" alt="${a.title}" style="width:100%;height:160px;object-fit:cover"/>`
+      : `<div style="height:160px;background:${a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)'}">
+           <div class="h-full flex flex-col justify-between p-5">
+             <div class="flex justify-between items-start">
+               <span class="tag" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
+               ${a.featured ? '<span class="tag" style="background:rgba(251,191,36,.25);color:#FCD34D;border:1px solid rgba(252,211,77,.3);font-size:.6rem">&#11088; แนะนำ</span>' : ''}
+             </div>
+           </div>
+         </div>`;
+    return `
     <a href="${a.slug}.html" class="art-card" style="animation:fadeUp .4s ease ${i * 0.06}s both">
-      <div class="h-36 flex flex-col justify-between p-5" style="background:${a.coverGradient}">
-        <div class="flex justify-between items-start">
-          <span class="tag" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
-          ${a.featured ? '<span class="tag" style="background:rgba(251,191,36,.25);color:#FCD34D;border:1px solid rgba(252,211,77,.3);font-size:.6rem">⭐ แนะนำ</span>' : ''}
-        </div>
-      </div>
+      ${cardTop}
       <div class="p-5">
+        <div class="flex gap-2 mb-2">
+          <span class="tag" style="background:#EFF6FF;color:#1B365D;font-size:.65rem">${a.category}</span>
+          ${a.featured ? '<span class="tag" style="background:#FEF3C7;color:#92400E;font-size:.65rem">&#11088; แนะนำ</span>' : ''}
+        </div>
         <h2 class="font-pridi font-semibold leading-snug mb-2" style="font-size:.98rem;color:#1B365D">${a.title}</h2>
         <p class="font-noto text-xs mb-3" style="color:#64748B;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.excerpt}</p>
         <div class="flex items-center justify-between">
           <span class="font-noto text-xs" style="color:#94A3B8">${a.dateDisplay} · ${a.readTime}</span>
-          <span class="font-noto text-xs font-semibold" style="color:#0891B2">อ่านต่อ →</span>
+          <span class="font-noto text-xs font-semibold" style="color:#0891B2">อ่านต่อ &#8594;</span>
         </div>
       </div>
-    </a>
-  `).join('');
+    </a>`;
+  }).join('');
 }
 
-// Filter buttons
 document.getElementById('filterBtns').addEventListener('click', e => {
   const btn = e.target.closest('[data-cat]');
   if (!btn) return;
@@ -186,6 +191,12 @@ document.getElementById('filterBtns').addEventListener('click', e => {
   renderArticles();
 });
 
-// Search
 document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value.toLowerCas
+  searchQuery = e.target.value.toLowerCase();
+  renderArticles();
+});
+
+loadArticles();
+</script>
+</body>
+</html>
