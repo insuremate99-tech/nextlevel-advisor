@@ -128,7 +128,7 @@
     <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
       <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">บริการ</a></li>
       <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">คำนวณเป้าหมาย</a></li>
-      <li><a href="/insights" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
       <li><a href="/career" class="text-navy hover:text-teal transition-colors">ร่วมทีมงาน</a></li>
     </ul>
     <div class="flex items-center gap-3">
@@ -151,7 +151,7 @@
     <ul class="space-y-1 font-noto text-sm font-medium">
       <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บริการ</a></li>
       <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">คำนวณเป้าหมาย</a></li>
-      <li><a href="/insights" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
+      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
       <li><a href="/career" class="block py-3 text-navy hover:text-teal">ร่วมทีมงาน</a></li>
     </ul>
     <a href="https://line.me/ti/p/~@nextlevel-advisor" target="_blank" class="btn btn-teal w-full mt-4 py-3.5 text-sm justify-center gap-2">
@@ -634,39 +634,65 @@ calcRetire();
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
 
-    <!-- Articles -->
-    <div class="reveal">
-      <p class="font-noto font-semibold text-navy text-sm mb-5 flex items-center gap-2"><span style="color:#0891B2">📖</span> บทความ</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <a href="/articles/tax-reduction.html" class="art-card group">
-          <div class="h-32 flex items-end p-4" style="background:linear-gradient(135deg,#1B365D,#0891B2)">
-            <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">ภาษี</span>
-          </div>
-          <div class="p-4">
-            <h4 class="font-pridi font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">ลดหย่อนภาษี 2567 ด้วยประกันชีวิต ทำอย่างไร?</h4>
-            <p class="font-noto text-slate-400 text-xs mt-2">12 เม.ย. 2568 · 5 นาที</p>
-          </div>
-        </a>
-        <a href="/articles/retirement-planning.html" class="art-card group">
-          <div class="h-32 flex items-end p-4" style="background:linear-gradient(135deg,#0D4B6E,#1B365D)">
-            <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">เกษียณ</span>
-          </div>
-          <div class="p-4">
-            <h4 class="font-pridi font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">เริ่มวางแผนเกษียณตอนอายุเท่าไหร่ดีที่สุด?</h4>
-            <p class="font-noto text-slate-400 text-xs mt-2">15 เม.ย. 2568 · 7 นาที</p>
-          </div>
-        </a>
-        <a href="/articles/legacy-planning.html" class="art-card group">
-          <div class="h-32 flex items-end p-4" style="background:linear-gradient(135deg,#0891B2,#065A7A)">
-            <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">มรดก</span>
-          </div>
-          <div class="p-4">
-            <h4 class="font-pridi font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">ประกันชีวิตกับการส่งต่อมรดก ต่างจากพินัยกรรมยังไง?</h4>
-            <p class="font-noto text-slate-400 text-xs mt-2">20 เม.ย. 2568 · 6 นาที</p>
-          </div>
-        </a>
+    <!-- Articles — rendered from articles.json -->
+    <div class="reveal" id="articles-section">
+
+      <!-- Featured -->
+      <div class="flex items-center justify-between mb-5">
+        <p class="font-noto font-semibold text-navy text-sm flex items-center gap-2">
+          <span style="color:#F59E0B">⭐</span> บทความแนะนำ
+        </p>
+        <a href="/articles/" class="font-noto text-xs font-semibold" style="color:#0891B2">ดูทั้งหมด →</a>
       </div>
+      <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10"></div>
+
+      <!-- Latest -->
+      <div class="flex items-center justify-between mb-5">
+        <p class="font-noto font-semibold text-navy text-sm flex items-center gap-2">
+          <span style="color:#0891B2">🕐</span> บทความล่าสุด
+        </p>
+      </div>
+      <div id="latest-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+
     </div>
+
+    <script>
+    (async () => {
+      try {
+        const res = await fetch('/articles/articles.json');
+        const articles = await res.json();
+        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const card = a => `
+          <a href="/articles/${a.slug}.html" class="art-card group">
+            <div class="h-32 flex items-end p-4" style="background:${a.coverGradient}">
+              <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
+            </div>
+            <div class="p-4">
+              <h4 class="font-pridi font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">${a.title}</h4>
+              <p class="font-noto text-slate-400 text-xs mt-2">${a.dateDisplay} · ${a.readTime}</p>
+            </div>
+          </a>`;
+
+        const featured = articles.filter(a => a.featured).slice(0, 3);
+        const latest = articles.filter(a => !featured.includes(a)).slice(0, 3);
+
+        // If not enough non-featured for latest, fill from featured
+        const latestFill = latest.length < 3
+          ? [...latest, ...featured.slice(latest.length, 3 - latest.length + featured.length)].slice(0, 3)
+          : latest;
+
+        document.getElementById('featured-grid').innerHTML = featured.map(card).join('');
+        document.getElementById('latest-grid').innerHTML = latestFill.map(card).join('');
+
+        // Hide latest section if no extra articles yet
+        if (latestFill.every(a => featured.includes(a))) {
+          document.querySelector('[id="latest-grid"]').closest('div').previousElementSibling.style.display = 'none';
+          document.getElementById('latest-grid').style.display = 'none';
+        }
+      } catch(e) { console.error('Articles load error', e); }
+    })();
+    </script>
 
   </div>
 </section>

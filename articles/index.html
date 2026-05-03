@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>บทความการเงิน | Next Level Advisor</title>
+  <meta name="description" content="ความรู้การเงิน ประกันชีวิต วางแผนเกษียณ ลดหย่อนภาษี และการส่งต่อมรดก จากที่ปรึกษาการเงินมืออาชีพ AFPT™ FChFP"/>
+  <meta name="keywords" content="บทความการเงิน, วางแผนเกษียณ, ลดหย่อนภาษี, ประกันชีวิต, ที่ปรึกษาการเงิน"/>
+  <meta property="og:title" content="บทความการเงิน | Next Level Advisor"/>
+  <meta property="og:description" content="ความรู้การเงิน ประกันชีวิต วางแผนเกษียณ ลดหย่อนภาษี จากที่ปรึกษาการเงินมืออาชีพ"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://nextlevel-advisor.com/articles/"/>
+  <meta property="og:site_name" content="Next Level Advisor"/>
+  <link rel="canonical" href="https://nextlevel-advisor.com/articles/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Pridi:wght@400;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{font-family:'Noto Sans Thai',sans-serif;color:#1E293B;background:#F8FAFC}
+    .font-pop{font-family:'Poppins',sans-serif}
+    .font-pridi{font-family:'Pridi',serif}
+    .font-noto{font-family:'Noto Sans Thai',sans-serif}
+    .art-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #E8EDF5;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block;cursor:pointer}
+    .art-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(27,54,93,.1)}
+    .tag{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.72rem;font-weight:600}
+    .filter-btn{font-family:'Noto Sans Thai',sans-serif;padding:6px 18px;border-radius:999px;border:1.5px solid #E2E8F0;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:#64748B}
+    .filter-btn.active{background:#1B365D;color:#fff;border-color:#1B365D}
+    .filter-btn:hover:not(.active){border-color:#0891B2;color:#0891B2}
+    .search-input{width:100%;padding:10px 16px 10px 40px;border:1.5px solid #E2E8F0;border-radius:12px;font-family:'Noto Sans Thai',sans-serif;font-size:.875rem;outline:none;transition:border-color .2s;background:#fff}
+    .search-input:focus{border-color:#0891B2}
+    .sec-label{font-family:'Noto Sans Thai';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#0891B2}
+    #no-results{display:none;text-align:center;padding:3rem;color:#94A3B8}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:50">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="../nav-icon.png" alt="Next Level Advisor" style="height:32px"/>
+      <span class="font-pop font-bold text-sm" style="color:#1B365D">Next Level Advisor</span>
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="/#services" class="font-noto text-sm" style="color:#475569">บริการ</a>
+      <a href="/#calculator" class="font-noto text-sm" style="color:#475569">คำนวณเป้าหมาย</a>
+      <a href="/articles/" class="font-noto text-sm font-semibold" style="color:#0891B2">บทความ</a>
+      <a href="/#career" class="font-noto text-sm" style="color:#475569">ร่วมทีมงาน</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="background:linear-gradient(135deg,#1B365D,#0D3560)" class="py-16">
+  <div class="max-w-3xl mx-auto px-5 text-center">
+    <span class="sec-label" style="color:#38BDF8">Knowledge Hub</span>
+    <h1 class="font-pop font-extrabold mt-3 mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff">
+      ความรู้การเงินแบบย่อยง่าย
+    </h1>
+    <p class="font-noto" style="color:rgba(255,255,255,.7);font-size:.95rem">
+      บทความจากที่ปรึกษาการเงินมืออาชีพ · AFPT™ · FChFP
+    </p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="max-w-6xl mx-auto px-5 py-12">
+
+  <!-- Search + Filter -->
+  <div class="flex flex-col md:flex-row gap-4 mb-10">
+    <!-- Search -->
+    <div class="relative flex-1">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color:#94A3B8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="searchInput" type="text" class="search-input" placeholder="ค้นหาบทความ..."/>
+    </div>
+    <!-- Filters -->
+    <div class="flex gap-2 flex-wrap" id="filterBtns">
+      <button class="filter-btn active" data-cat="all">ทั้งหมด</button>
+      <button class="filter-btn" data-cat="ภาษี">ภาษี</button>
+      <button class="filter-btn" data-cat="เกษียณ">เกษียณ</button>
+      <button class="filter-btn" data-cat="มรดก">มรดก</button>
+      <button class="filter-btn" data-cat="สุขภาพ">สุขภาพ</button>
+      <button class="filter-btn" data-cat="ลงทุน">ลงทุน</button>
+    </div>
+  </div>
+
+  <!-- Article count -->
+  <p class="font-noto text-sm mb-6" style="color:#94A3B8">
+    แสดง <span id="articleCount">0</span> บทความ
+  </p>
+
+  <!-- Article Grid -->
+  <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+  <div id="no-results">
+    <p class="font-noto text-lg mb-2">ไม่พบบทความที่ค้นหา</p>
+    <p class="font-noto text-sm">ลองค้นหาด้วยคำอื่น หรือเลือก category อื่น</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="py-16" style="background:#fff;border-top:1px solid #E8EDF5">
+  <div class="max-w-xl mx-auto px-5 text-center">
+    <p class="font-pridi font-semibold text-lg mb-2" style="color:#1B365D">มีคำถามเพิ่มเติม?</p>
+    <p class="font-noto text-sm mb-6" style="color:#94A3B8">ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด</p>
+    <a href="https://calendly.com/insuremate99/15"
+       class="inline-block font-noto font-semibold text-sm px-8 py-3 rounded-full text-white"
+       style="background:#0891B2">นัดปรึกษาฟรี →</a>
+  </div>
+</section>
+
+<footer class="py-8 text-center" style="background:#1B365D">
+  <p class="font-noto text-xs" style="color:rgba(255,255,255,.5)">© 2025 Next Level Advisor · ตัวแทนเมืองไทยประกันชีวิต</p>
+</footer>
+
+<script>
+let allArticles = [];
+let activeCategory = 'all';
+let searchQuery = '';
+
+async function loadArticles() {
+  try {
+    const res = await fetch('articles.json');
+    allArticles = await res.json();
+    // Sort by date descending
+    allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+    renderArticles();
+  } catch(e) {
+    console.error('Failed to load articles', e);
+  }
+}
+
+function renderArticles() {
+  const grid = document.getElementById('articleGrid');
+  const noResults = document.getElementById('no-results');
+  const countEl = document.getElementById('articleCount');
+
+  const filtered = allArticles.filter(a => {
+    const matchCat = activeCategory === 'all' || a.category === activeCategory;
+    const matchSearch = !searchQuery ||
+      a.title.toLowerCase().includes(searchQuery) ||
+      a.excerpt.toLowerCase().includes(searchQuery) ||
+      a.category.toLowerCase().includes(searchQuery);
+    return matchCat && matchSearch;
+  });
+
+  countEl.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    noResults.style.display = 'block';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  grid.innerHTML = filtered.map((a, i) => `
+    <a href="${a.slug}.html" class="art-card" style="animation:fadeUp .4s ease ${i * 0.06}s both">
+      <div class="h-36 flex flex-col justify-between p-5" style="background:${a.coverGradient}">
+        <div class="flex justify-between items-start">
+          <span class="tag" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
+          ${a.featured ? '<span class="tag" style="background:rgba(251,191,36,.25);color:#FCD34D;border:1px solid rgba(252,211,77,.3);font-size:.6rem">⭐ แนะนำ</span>' : ''}
+        </div>
+      </div>
+      <div class="p-5">
+        <h2 class="font-pridi font-semibold leading-snug mb-2" style="font-size:.98rem;color:#1B365D">${a.title}</h2>
+        <p class="font-noto text-xs mb-3" style="color:#64748B;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.excerpt}</p>
+        <div class="flex items-center justify-between">
+          <span class="font-noto text-xs" style="color:#94A3B8">${a.dateDisplay} · ${a.readTime}</span>
+          <span class="font-noto text-xs font-semibold" style="color:#0891B2">อ่านต่อ →</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+// Filter buttons
+document.getElementById('filterBtns').addEventListener('click', e => {
+  const btn = e.target.closest('[data-cat]');
+  if (!btn) return;
+  activeCategory = btn.dataset.cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderArticles();
+});
+
+// Search
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  renderArticles();
+});
+
+// Animate
+const style = document.createElement('style');
+style.textContent = '@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}';
+document.head.appendChild(style);
+
+loadArticles();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "tax-reduction",
+    "title": "ลดหย่อนภาษีด้วยประกันชีวิต 2568 ทำได้เท่าไหร่ และทำยังไง?",
+    "excerpt": "ใช้สิทธิ์ครบถ้วน ประกันชีวิต 100,000 + ประกันบำนาญ 200,000 บาท ประหยัดภาษีได้จริงถึง 75,000 บาทต่อปี",
+    "category": "ภาษี",
+    "categoryColor": "#854D0E",
+    "categoryBg": "#FEF9C3",
+    "date": "2025-05-01",
+    "dateDisplay": "1 พ.ค. 2568",
+    "readTime": "5 นาที",
+    "featured": true,
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+  },
+  {
+    "slug": "retirement-planning",
+    "title": "เริ่มวางแผนเกษียณตอนอายุเท่าไหร่ดีที่สุด?",
+    "excerpt": "เริ่มอายุ 25 ออมแค่เดือนละ 3,000 บาท แต่ถ้ารออายุ 40 ต้องออมถึง 14,000 บาทเพื่อผลลัพธ์เดิม",
+    "category": "เกษียณ",
+    "categoryColor": "#166534",
+    "categoryBg": "#DCFCE7",
+    "date": "2025-05-03",
+    "dateDisplay": "3 พ.ค. 2568",
+    "readTime": "7 นาที",
+    "featured": true,
+    "coverGradient": "linear-gradient(135deg,#0D4B6E,#1B365D)"
+  },
+  {
+    "slug": "legacy-planning",
+    "title": "ประกันชีวิตกับการส่งต่อมรดก ต่างจากพินัยกรรมยังไง?",
+    "excerpt": "เงินทุนประกันชีวิตจ่ายตรงให้ผู้รับภายใน 30 วัน ไม่ต้องรอศาล ไม่ติดภาษีมรดก ไม่ถูกโต้แย้ง",
+    "category": "มรดก",
+    "categoryColor": "#5B21B6",
+    "categoryBg": "#EDE9FE",
+    "date": "2025-05-05",
+    "dateDisplay": "5 พ.ค. 2568",
+    "readTime": "6 นาที",
+    "featured": true,
+    "coverGradient": "linear-gradient(135deg,#0891B2,#065A7A)"
+  }
+]
