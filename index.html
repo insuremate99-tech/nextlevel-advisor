@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Next Level Advisor — คุมความเสี่ยงเพื่อต่อยอดความมั่งคั่ง</title>
+  <meta name="description" content="ที่ปรึกษาการเงินและประกันชีวิตมืออาชีพ วางแผนสุขภาพ ภาษี เกษียณ และมรดก ด้วยทีม Next Level Advisor"/>
+  <meta name="keywords" content="ที่ปรึกษาการเงิน, ประกันชีวิต, วางแผนเกษียณ, วางแผนภาษี, วางแผนมรดก, MDRT, MTL"/>
+
+  <!-- [GA4 PLACEHOLDER] <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script> -->
+  <!-- [SEARCH CONSOLE] <meta name="google-site-verification" content="XXXXXXXX"/> -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   '#1B365D',
+            teal:   '#0891B2',
+            'teal-d':'#0672A0',
+            chalk:  '#F8FAFC',
+            slate1: '#F0F4F8',
+          },
+          fontFamily: {
+            pop:   ['Poppins','sans-serif'],
+            pridi: ['Pridi','serif'],
+            noto:  ['Noto Sans Thai','sans-serif'],
+          },
+          boxShadow: {
+            'glow-teal':'0 0 40px rgba(8,145,178,0.22)',
+            'card':     '0 2px 24px rgba(27,54,93,0.08)',
+            'card-h':   '0 8px 40px rgba(27,54,93,0.16)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *{-webkit-font-smoothing:antialiased;box-sizing:border-box}
+    body{font-family:'Noto Sans Thai',sans-serif;background:#fff;color:#2D3748;margin:0;overflow-x:hidden}
+
+    /* ── Scrollbar hide ── */
+    .hide-scroll{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .hide-scroll::-webkit-scrollbar{display:none}
+
+    /* ── Glassmorphism ── */
+    .glass{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+
+    /* ── Buttons ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;font-family:'Noto Sans Thai',sans-serif;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s ease;text-decoration:none}
+    .btn-teal{background:#0891B2;color:#fff;box-shadow:0 4px 18px rgba(8,145,178,0.3)}
+    .btn-teal:hover{background:#0672A0;box-shadow:0 6px 26px rgba(8,145,178,0.45);transform:translateY(-2px)}
+    .btn-outline{border:2px solid #1B365D;color:#1B365D;background:transparent}
+    .btn-outline:hover{background:#1B365D;color:#fff;transform:translateY(-2px)}
+
+    /* ── Hero image fade ── */
+    .hero-img-wrap{position:relative;overflow:hidden}
+    .hero-img-fade{
+      position:absolute;inset:0;
+      background:linear-gradient(to right,#fff 0%,rgba(255,255,255,0.85) 18%,rgba(255,255,255,0.3) 40%,transparent 65%);
+      z-index:1;pointer-events:none
+    }
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+
+    /* ── Pink glow ── */
+    .pink-glow{
+      position:absolute;inset:-15%;
+      background:radial-gradient(ellipse 75% 70% at 55% 45%,#FFDDE6 0%,rgba(255,221,230,0.45) 40%,transparent 72%);
+      z-index:0;pointer-events:none
+    }
+
+    /* ── Shimmer bar ── */
+    @keyframes shimmer{0%{background-position:-800px 0}100%{background-position:800px 0}}
+    .shimmer-bar{
+      height:3px;
+      background:linear-gradient(90deg,#1B365D 0%,#0891B2 35%,#64CDE8 55%,#0891B2 75%,#1B365D 100%);
+      background-size:1600px 100%;
+      animation:shimmer 5s linear infinite
+    }
+
+    /* ── Fade-up reveal ── */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+    .reveal.show{opacity:1;transform:none}
+
+    /* ── Card track ── */
+    .card-track{display:flex;gap:20px;width:max-content;padding-bottom:6px}
+
+    /* ── Solution card ── */
+    .sol-card{
+      width:280px;flex-shrink:0;border-radius:24px;padding:28px 24px;
+      background:#fff;border:1.5px solid #E8EFF7;
+      transition:transform .25s,box-shadow .25s
+    }
+    .sol-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(8,145,178,0.16)}
+
+    /* ── Badge ── */
+    .badge{
+      display:inline-flex;align-items:center;gap:5px;
+      border-radius:9px;padding:4px 10px;font-size:11px;font-weight:500;
+      border:1.5px solid rgba(8,145,178,.25);color:#0891B2;
+      background:rgba(8,145,178,.06)
+    }
+
+    /* ── Stats ticker ── */
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .ticker-inner{display:flex;animation:ticker 28s linear infinite;width:max-content}
+    .ticker-inner:hover{animation-play-state:paused}
+
+    /* ── Video thumbnail ── */
+    .vid-thumb{
+      width:160px;flex-shrink:0;border-radius:16px;overflow:hidden;
+      background:#F0F4F8;position:relative;aspect-ratio:9/16;
+      cursor:pointer;transition:transform .2s,box-shadow .2s
+    }
+    .vid-thumb:hover{transform:scale(1.04);box-shadow:0 12px 32px rgba(27,54,93,0.2)}
+    .vid-play{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:44px;height:44px;border-radius:50%;
+      background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);
+      display:flex;align-items:center;justify-content:center
+    }
+
+    /* ── Sticky mobile bar ── */
+    .mob-bar{
+      position:fixed;bottom:0;left:0;right:0;z-index:50;
+      display:none;padding:10px 16px;gap:10px;
+      border-top:1px solid #E8EFF7;
+    }
+    @media(max-width:767px){.mob-bar{display:flex}}
+    @media(max-width:639px){.hero-split{flex-direction:column!important}}
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300" style="background:rgba(255,255,255,0.0)">
+  <div class="shimmer-bar"></div>
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img src="nav-icon.png" alt="Next Level Advisor" style="height:52px;width:auto;object-fit:contain"/>
+    </a>
+
+    <!-- Links (desktop) -->
+    <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
+      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">Solutions</a></li>
+      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">Calculator</a></li>
+      <li><a href="/insights" class="text-navy hover:text-teal transition-colors">Insights</a></li>
+      <li><a href="/career" class="text-navy hover:text-teal transition-colors">Career</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <!-- [CALENDLY] href="/book-call" -->
+      <a href="/book-call" class="btn btn-teal px-5 py-2.5 text-sm hidden sm:inline-flex">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        นัดปรึกษาฟรี
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-xl text-navy" aria-label="menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-100 px-5 pb-5 pt-3">
+    <ul class="space-y-1 font-noto text-sm font-medium">
+      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Solutions</a></li>
+      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Calculator</a></li>
+      <li><a href="/insights" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Insights</a></li>
+      <li><a href="/career" class="block py-3 text-navy hover:text-teal">Career</a></li>
+    </ul>
+    <a href="/book-call" class="btn btn-teal w-full mt-4 py-3.5 text-sm">นัดปรึกษาฟรี</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden" style="background:#fff">
+
+  <!-- Background gradient -->
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 70% 60% at 70% 50%,rgba(8,145,178,0.06) 0%,transparent 65%)"></div>
+
+  <div class="max-w-6xl mx-auto px-5 w-full pt-24 pb-12 flex hero-split items-center gap-10 lg:gap-16">
+
+    <!-- ── LEFT: Copy ── -->
+    <div class="flex-1 reveal">
+      <!-- Label -->
+      <div class="inline-flex items-center gap-2 mb-6">
+        <span class="w-8 h-px bg-teal"></span>
+        <span class="font-noto text-teal text-xs tracking-widest uppercase font-medium">Life Insurance & Financial Advisory</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-pop font-extrabold text-navy leading-tight mb-5" style="font-size:clamp(2rem,4.5vw,3.2rem)">
+        Next Level Advisor<br/>
+        <span style="color:#0891B2">คุมความเสี่ยง</span><br/>
+        <span style="font-size:0.78em;font-weight:700;color:#2D3748">เพื่อต่อยอดความมั่งคั่ง</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="font-pridi text-slate-500 leading-relaxed mb-8 max-w-md" style="font-size:clamp(0.95rem,1.5vw,1.1rem)">
+        ล็อกความสำเร็จให้ธุรกิจและครอบครัวด้วยประกันชีวิต<br class="hidden sm:block"/>
+        พร้อมปั้นทีมที่ปรึกษาการเงินยุคใหม่
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-wrap gap-4 mb-10">
+        <!-- [CALENDLY] href="/book-call" -->
+        <a href="/book-call" class="btn btn-teal px-7 py-4 text-base">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          นัดหมายรับคำปรึกษา
+        </a>
+        <a href="/career" class="btn btn-outline px-7 py-4 text-base">
+          ร่วมทีมกับเรา →
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-3">
+        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
+          <img src="MDRT.jpeg" alt="MDRT" class="w-8 h-8 object-contain rounded"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-xs">MDRT</div>
+            <div class="font-noto text-slate-400 text-xs">Member</div>
+          </div>
+        </div>
+        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
+          <img src="FChFP-Logo.svg" alt="FChFP" class="w-8 h-8 object-contain"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-xs">FChFP</div>
+            <div class="font-noto text-slate-400 text-xs">Certified</div>
+          </div>
+        </div>
+        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
+          <img src="AFPT.jpg" alt="AFPT" class="w-8 h-8 object-contain rounded"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-xs">IC License</div>
+            <div class="font-noto text-slate-400 text-xs">Registered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RIGHT: Hero image ── -->
+    <div class="flex-shrink-0 w-full sm:w-auto relative" style="max-width:480px">
+      <!-- Pink glow behind image -->
+      <div class="pink-glow"></div>
+      <div class="hero-img-wrap rounded-3xl overflow-hidden relative z-10" style="height:580px;max-height:70vh">
+        <div class="hero-img-fade"></div>
+        <img src="hero-image.png" alt="Next Level Advisor" style="width:100%;height:100%;object-fit:cover;object-position:top center"/>
+      </div>
+      <!-- Floating stat card -->
+      <div class="glass border border-slate-100 rounded-2xl px-5 py-4 shadow-card-h absolute -bottom-4 -left-6 z-20 hidden sm:block">
+        <div class="font-pop font-extrabold text-navy text-xl">500M+</div>
+        <div class="font-noto text-slate-400 text-xs mt-0.5">ทุนประกันที่ดูแลอยู่</div>
+      </div>
+      <!-- Floating badge -->
+      <div class="glass border border-slate-100 rounded-2xl px-4 py-3 shadow-card-h absolute -top-3 -right-4 z-20 hidden sm:block">
+        <div class="font-noto text-slate-500 text-xs font-medium">⭐ Top Advisor</div>
+        <div class="font-pop font-bold text-teal text-sm">2024–2025</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     STATS TICKER
+═══════════════════════════════════════ -->
+<div class="bg-navy py-4 overflow-hidden">
+  <div class="ticker-inner">
+    <!-- Duplicated for seamless loop -->
+    <div class="flex items-center gap-12 px-8 font-noto text-white/60 text-sm whitespace-nowrap">
+      <span>✦ ดูแลลูกค้ากว่า <strong class="text-white">200+ ราย</strong></span>
+      <span>✦ ทุนประกัน <strong class="text-white">500M+ บาท</strong></span>
+      <span>✦ MDRT Member <strong class="text-white">2024–2025</strong></span>
+      <span>✦ IC License <strong class="text-white">รับรองโดย คปภ.</strong></span>
+      <span>✦ FChFP <strong class="text-white">Certified</strong></span>
+      <span>✦ พันธมิตร <strong class="text-white">เมืองไทยประกันชีวิต</strong></span>
+      <span>✦ ดูแลลูกค้ากว่า <strong class="text-white">200+ ราย</strong></span>
+      <span>✦ ทุนประกัน <strong class="text-white">500M+ บาท</strong></span>
+      <span>✦ MDRT Member <strong class="text-white">2024–2025</strong></span>
+      <span>✦ IC License <strong class="text-white">รับรองโดย คปภ.</strong></span>
+      <span>✦ FChFP <strong class="text-white">Certified</strong></span>
+      <span>✦ พันธมิตร <strong class="text-white">เมืองไทยประกันชีวิต</strong></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SIGNATURE SOLUTIONS
+═══════════════════════════════════════ -->
+<section id="solutions" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <div class="text-center mb-12 reveal">
+      <span class="font-noto text-teal text-xs tracking-widest uppercase font-medium">Our Services</span>
+      <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.6rem,3vw,2.4rem)">Signature Solutions</h2>
+      <p class="font-noto text-slate-400 text-sm mt-3">โซลูชันการเงินที่ออกแบบมาเฉพาะสำหรับคุณ</p>
+    </div>
+
+    <!-- Cards horizontal scroll -->
+    <div class="hide-scroll -mx-5 px-5 reveal">
+      <div class="card-track pb-4">
+
+        <!-- Card 1: Health -->
+        <div class="sol-card">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:rgba(8,145,178,0.08)">🏥</div>
+          <div class="badge mb-4">วางแผนสุขภาพ</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">Health Planning<br/>วางแผนสุขภาพ</h3>
+          <p class="font-noto text-slate-400 text-sm leading-relaxed mb-6">ออกแบบแผนประกันสุขภาพให้ครอบคลุมทุกความเสี่ยง เข้าถึงโรงพยาบาลชั้นนำ และลดภาระค่าใช้จ่ายยามเจ็บป่วย</p>
+          <ul class="font-noto text-slate-500 text-xs space-y-2 mb-7">
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ประกันสุขภาพเหมาจ่าย</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ประกันโรคร้ายแรง CI</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ประกันอุบัติเหตุ PA</li>
+          </ul>
+          <!-- [CALENDLY] href="/book-call" -->
+          <a href="/book-call" class="btn btn-teal w-full py-3 text-sm">ดูรายละเอียด</a>
+        </div>
+
+        <!-- Card 2: Tax/Retirement -->
+        <div class="sol-card">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:rgba(27,54,93,0.06)">📊</div>
+          <div class="badge mb-4" style="color:#1B365D;border-color:rgba(27,54,93,.25);background:rgba(27,54,93,.05)">วางแผนภาษี/เกษียณ</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">Tax & Retirement<br/>วางแผนภาษีและเกษียณ</h3>
+          <p class="font-noto text-slate-400 text-sm leading-relaxed mb-6">ใช้ประกันชีวิตเป็นเครื่องมือลดหย่อนภาษีสูงสุด พร้อมสร้างรายได้ passive ยามเกษียณอย่างมั่นคง</p>
+          <ul class="font-noto text-slate-500 text-xs space-y-2 mb-7">
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ลดหย่อนภาษีสูงสุด 100,000+</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ประกันบำนาญ Annuity</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>Unit-Linked Fund</li>
+          </ul>
+          <a href="/book-call" class="btn btn-teal w-full py-3 text-sm">ดูรายละเอียด</a>
+        </div>
+
+        <!-- Card 3: Legacy -->
+        <div class="sol-card">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:rgba(8,145,178,0.08)">🏛️</div>
+          <div class="badge mb-4">วางแผนมรดก</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">Legacy Planning<br/>วางแผนมรดก</h3>
+          <p class="font-noto text-slate-400 text-sm leading-relaxed mb-6">ส่งต่อความมั่งคั่งสู่รุ่นถัดไปอย่างมีประสิทธิภาพ ด้วยการวางแผนมรดกที่รัดกุมและถูกต้องตามกฎหมาย</p>
+          <ul class="font-noto text-slate-500 text-xs space-y-2 mb-7">
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ประกันชีวิตเพื่อส่งต่อมรดก</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>วางแผนภาษีมรดก</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">✓</span>ธุรกิจครอบครัว succession</li>
+          </ul>
+          <a href="/book-call" class="btn btn-teal w-full py-3 text-sm">ดูรายละเอียด</a>
+        </div>
+
+        <!-- Card 4: More -->
+        <div class="sol-card flex flex-col items-center justify-center text-center" style="background:#F8FAFC;border-style:dashed">
+          <div class="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center text-teal text-2xl mb-4 font-pop font-bold">+</div>
+          <h3 class="font-pridi font-semibold text-navy mb-2">อยากรู้ว่าคุณขาดอะไร?</h3>
+          <p class="font-noto text-slate-400 text-sm mb-6">รับการวิเคราะห์แผนการเงิน<br/>ส่วนตัวฟรี 15 นาที</p>
+          <a href="/book-call" class="btn btn-teal px-6 py-3 text-sm">นัดปรึกษาฟรี</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator (mobile) -->
+    <p class="font-noto text-slate-300 text-xs text-center mt-3 md:hidden">← เลื่อนดูทั้งหมด →</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     INTERACTIVE TOOL BANNER
+═══════════════════════════════════════ -->
+<section id="calculator-cta" class="py-5 px-5">
+  <div class="max-w-6xl mx-auto reveal">
+    <a href="/calculator" class="block rounded-3xl overflow-hidden relative group" style="background:linear-gradient(135deg,#1B365D 0%,#0F2240 50%,#0891B2 100%)">
+      <!-- Decoration -->
+      <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(circle at 80% 50%,rgba(8,145,178,0.3) 0%,transparent 55%)"></div>
+      <div class="relative px-8 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="font-noto text-teal text-xs tracking-widest uppercase mb-2">Free Tool</p>
+          <h2 class="font-pop font-extrabold text-white text-xl md:text-2xl leading-snug">
+            ลองคำนวณเป้าหมายเกษียณ<br/>ของคุณ — ฟรี
+          </h2>
+          <p class="font-noto text-white/55 text-sm mt-2">กรอกข้อมูล 3 ข้อ รู้ผลทันที ไม่ต้องสมัครสมาชิก</p>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <div class="text-center hidden md:block">
+            <div class="font-pop font-extrabold text-white text-3xl">3</div>
+            <div class="font-noto text-white/40 text-xs">ข้อคำถาม</div>
+          </div>
+          <div class="w-px h-10 bg-white/15 hidden md:block"></div>
+          <div class="text-center hidden md:block">
+            <div class="font-pop font-extrabold text-teal text-3xl">30s</div>
+            <div class="font-noto text-white/40 text-xs">ได้ผลลัพธ์</div>
+          </div>
+          <span class="btn btn-teal px-7 py-4 text-sm group-hover:shadow-glow-teal ml-4">
+            เริ่มคำนวณ →
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     INSIGHTS & SOCIAL HUB
+═══════════════════════════════════════ -->
+<section id="insights" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <div class="flex items-end justify-between mb-10 reveal">
+      <div>
+        <span class="font-noto text-teal text-xs tracking-widest uppercase font-medium">Content Hub</span>
+        <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.5rem,2.8vw,2.2rem)">Insights & Social</h2>
+      </div>
+      <a href="/insights" class="font-noto text-sm text-teal hover:underline hidden sm:block">ดูทั้งหมด →</a>
+    </div>
+
+    <!-- TikTok / Video clips row -->
+    <div class="mb-4 reveal">
+      <p class="font-noto text-slate-400 text-xs uppercase tracking-wider mb-4">Video Clips</p>
+      <div class="hide-scroll -mx-5 px-5">
+        <div class="card-track">
+          <!-- [TIKTOK EMBED PLACEHOLDER] - Replace src with actual TikTok thumbnail -->
+          <div class="vid-thumb" onclick="window.open('#','_blank')">
+            <div class="w-full h-full bg-gradient-to-b from-navy to-slate-800 flex flex-col items-center justify-center gap-2 p-4">
+              <div class="vid-play"><svg class="w-5 h-5 text-navy ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <p class="font-noto text-white/60 text-xs text-center mt-6">วางแผนภาษีปีนี้<br/>ให้ได้ผลสูงสุด</p>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
+              <span class="font-noto text-white text-xs bg-black/40 rounded px-1.5 py-0.5">TikTok</span>
+            </div>
+          </div>
+          <div class="vid-thumb" onclick="window.open('#','_blank')">
+            <div class="w-full h-full bg-gradient-to-b from-teal-900 to-slate-800 flex flex-col items-center justify-center gap-2 p-4">
+              <div class="vid-play"><svg class="w-5 h-5 text-navy ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <p class="font-noto text-white/60 text-xs text-center mt-6">MDRT คืออะไร?<br/>ทำไมต้องสนใจ</p>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2"><span class="font-noto text-white text-xs bg-black/40 rounded px-1.5 py-0.5">TikTok</span></div>
+          </div>
+          <div class="vid-thumb" onclick="window.open('#','_blank')">
+            <div class="w-full h-full bg-gradient-to-b from-slate-700 to-navy flex flex-col items-center justify-center gap-2 p-4">
+              <div class="vid-play"><svg class="w-5 h-5 text-navy ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <p class="font-noto text-white/60 text-xs text-center mt-6">มรดกกับประกันชีวิต<br/>ต่างกันอย่างไร</p>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2"><span class="font-noto text-white text-xs bg-black/40 rounded px-1.5 py-0.5">TikTok</span></div>
+          </div>
+          <div class="vid-thumb" onclick="window.open('#','_blank')">
+            <div class="w-full h-full bg-gradient-to-b from-blue-900 to-navy flex flex-col items-center justify-center gap-2 p-4">
+              <div class="vid-play"><svg class="w-5 h-5 text-navy ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <p class="font-noto text-white/60 text-xs text-center mt-6">เกษียณตอน 55<br/>ต้องมีเงินเท่าไหร่</p>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2"><span class="font-noto text-white text-xs bg-black/40 rounded px-1.5 py-0.5">Facebook</span></div>
+          </div>
+          <div class="vid-thumb" onclick="window.open('#','_blank')">
+            <div class="w-full h-full bg-gradient-to-b from-slate-600 to-slate-900 flex flex-col items-center justify-center gap-2 p-4">
+              <div class="vid-play"><svg class="w-5 h-5 text-navy ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <p class="font-noto text-white/60 text-xs text-center mt-6">5 เรื่องที่ควรรู้<br/>ก่อนซื้อประกัน</p>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2"><span class="font-noto text-white text-xs bg-black/40 rounded px-1.5 py-0.5">TikTok</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article cards -->
+    <div class="mt-10 reveal">
+      <p class="font-noto text-slate-400 text-xs uppercase tracking-wider mb-4">บทความล่าสุด</p>
+      <div class="hide-scroll -mx-5 px-5">
+        <div class="card-track">
+          <a href="/insights" class="flex-shrink-0 w-64 bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-card-h transition-shadow group">
+            <div class="h-32 bg-gradient-to-br from-teal/10 to-navy/10 flex items-center justify-center">
+              <span class="text-4xl">📋</span>
+            </div>
+            <div class="p-4">
+              <span class="badge text-xs mb-2">ภาษี</span>
+              <h4 class="font-pridi font-semibold text-navy text-sm leading-snug mt-2 group-hover:text-teal transition-colors">ลดหย่อนภาษี 2567 ด้วยประกันชีวิต ทำอย่างไร?</h4>
+              <p class="font-noto text-slate-400 text-xs mt-2">3 พ.ค. 2568 · 5 นาที</p>
+            </div>
+          </a>
+          <a href="/insights" class="flex-shrink-0 w-64 bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-card-h transition-shadow group">
+            <div class="h-32 bg-gradient-to-br from-navy/10 to-teal/10 flex items-center justify-center">
+              <span class="text-4xl">💡</span>
+            </div>
+            <div class="p-4">
+              <span class="badge text-xs mb-2">เกษียณ</span>
+              <h4 class="font-pridi font-semibold text-navy text-sm leading-snug mt-2 group-hover:text-teal transition-colors">เริ่มวางแผนเกษียณตอนอายุเท่าไหร่ดีที่สุด?</h4>
+              <p class="font-noto text-slate-400 text-xs mt-2">28 เม.ย. 2568 · 4 นาที</p>
+            </div>
+          </a>
+          <a href="/insights" class="flex-shrink-0 w-64 bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-card-h transition-shadow group">
+            <div class="h-32 bg-gradient-to-br from-slate-100 to-teal/10 flex items-center justify-center">
+              <span class="text-4xl">🏛️</span>
+            </div>
+            <div class="p-4">
+              <span class="badge text-xs mb-2">มรดก</span>
+              <h4 class="font-pridi font-semibold text-navy text-sm leading-snug mt-2 group-hover:text-teal transition-colors">ประกันชีวิตกับการส่งต่อมรดก ต่างจากพินัยกรรมยังไง?</h4>
+              <p class="font-noto text-slate-400 text-xs mt-2">20 เม.ย. 2568 · 6 นาที</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TEAM & TRUST
+═══════════════════════════════════════ -->
+<section id="about" class="py-20" style="background:#F8FAFC">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <div class="text-center mb-14 reveal">
+      <span class="font-noto text-teal text-xs tracking-widest uppercase font-medium">Team & Trust</span>
+      <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.6rem,3vw,2.4rem)">ทีมที่ไว้วางใจได้</h2>
+      <p class="font-noto text-slate-400 text-sm mt-3 max-w-md mx-auto">ใบอนุญาตรับรองจากหน่วยงานกำกับดูแล พร้อมประสบการณ์ดูแลลูกค้ากว่า 200 ราย</p>
+    </div>
+
+    <!-- Credential badges row -->
+    <div class="reveal mb-14">
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+          <img src="MDRT.jpeg" alt="MDRT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">MDRT Member</div>
+            <div class="font-noto text-slate-400 text-xs">Million Dollar Round Table</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+          <img src="FChFP-Logo.svg" alt="FChFP" class="w-10 h-10 object-contain grayscale"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">FChFP</div>
+            <div class="font-noto text-slate-400 text-xs">Fellow Chartered Financial Practitioner</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+          <img src="AFPT.jpg" alt="AFPT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">IC License</div>
+            <div class="font-noto text-slate-400 text-xs">ใบอนุญาตนายหน้าประกันชีวิต</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+          <div class="w-10 h-10 rounded-xl bg-navy/8 flex items-center justify-center">
+            <span class="font-pop font-black text-navy text-sm">CFP</span>
+          </div>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">CFP® (In Progress)</div>
+            <div class="font-noto text-slate-400 text-xs">Certified Financial Planner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner logo -->
+    <div class="text-center reveal">
+      <p class="font-noto text-slate-300 text-xs uppercase tracking-widest mb-5">Trusted Partner</p>
+      <div class="inline-flex items-center gap-4 bg-white border border-slate-100 rounded-2xl px-8 py-5 shadow-card">
+        <div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center">
+          <span class="font-pop font-black text-white text-xs">MTL</span>
+        </div>
+        <div class="text-left">
+          <div class="font-pridi font-semibold text-navy text-sm">เมืองไทยประกันชีวิต</div>
+          <div class="font-noto text-slate-400 text-xs">Muang Thai Life Assurance</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CAREER / RECRUITMENT
+═══════════════════════════════════════ -->
+<section id="career" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal rounded-3xl overflow-hidden" style="background:linear-gradient(135deg,#1B365D 0%,#0F2240 100%)">
+      <div class="flex flex-col lg:flex-row">
+
+        <!-- Left: copy -->
+        <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+          <span class="font-noto text-xs tracking-widest uppercase mb-4 font-medium" style="color:#5ab8d4">Join Our Team</span>
+          <h2 class="font-pop font-extrabold text-white leading-snug mb-5" style="font-size:clamp(1.5rem,2.8vw,2.2rem)">
+            ปั้นอนาคตทางการเงิน<br/>ไปด้วยกัน
+          </h2>
+          <p class="font-noto text-white/55 text-sm leading-relaxed mb-7 max-w-sm">
+            เราเปิดรับ Gen Y/Z ที่อยากเป็นที่ปรึกษาการเงินยุคใหม่ มีระบบสอนงาน ทีม Support และเส้นทางสู่ใบอนุญาต IC และ CFP®
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="font-noto text-white/65 text-xs border border-white/15 rounded-full px-4 py-2">ไม่จำเป็นต้องมีประสบการณ์</span>
+            <span class="font-noto text-white/65 text-xs border border-white/15 rounded-full px-4 py-2">Mentorship 1:1</span>
+            <span class="font-noto text-white/65 text-xs border border-white/15 rounded-full px-4 py-2">Work Anywhere</span>
+            <span class="font-noto text-white/65 text-xs border border-white/15 rounded-full px-4 py-2">รายได้ไม่มีเพดาน</span>
+          </div>
+          <a href="/career" class="btn btn-teal self-start px-7 py-3.5 text-sm">ดูรายละเอียดและสมัคร →</a>
+        </div>
+
+        <!-- Right: mini form preview -->
+        <div class="w-full lg:w-96 bg-white p-8">
+          <h3 class="font-pridi font-semibold text-navy text-lg mb-1">สมัครร่วมทีม</h3>
+          <p class="font-noto text-slate-400 text-xs mb-6">ฟรี ไม่มีข้อผูกมัด</p>
+          <!-- [FORMSPREE] action="https://formspree.io/f/PLACEHOLDER" method="POST" -->
+          <!-- [MAKE.COM] Webhook triggered on submit for LINE notification -->
+          <form class="space-y-3" id="careerForm">
+            <input type="text" name="name" placeholder="ชื่อ - นามสกุล" required
+              class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm outline-none focus:border-teal transition placeholder-slate-300"/>
+            <input type="tel" name="phone" placeholder="เบอร์โทรศัพท์" required
+              class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm outline-none focus:border-teal transition placeholder-slate-300"/>
+            <input type="email" name="email" placeholder="อีเมล"
+              class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm outline-none focus:border-teal transition placeholder-slate-300"/>
+            <select name="experience" class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm text-slate-400 outline-none focus:border-teal transition bg-white">
+              <option>ประสบการณ์ด้านการเงิน</option>
+              <option>ไม่มีประสบการณ์</option>
+              <option>1–3 ปี</option>
+              <option>3 ปีขึ้นไป</option>
+            </select>
+            <button type="submit" class="btn btn-teal w-full py-3.5 text-sm">ส่งใบสมัคร →</button>
+          </form>
+          <p class="font-noto text-slate-300 text-xs text-center mt-3">ข้อมูลของคุณจะไม่ถูกเผยแพร่</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════ -->
+<section id="cta" class="py-24" style="background:#F0F4F8">
+  <div class="max-w-xl mx-auto px-5 text-center reveal">
+    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-7" style="background:rgba(8,145,178,0.1)">📅</div>
+    <span class="font-noto text-teal text-xs tracking-widest uppercase font-medium">Free Consultation</span>
+    <h2 class="font-pop font-extrabold text-navy mt-3 mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.2">
+      เริ่มวางแผน<br/>ความมั่งคั่งของคุณ
+    </h2>
+    <p class="font-noto text-slate-500 text-sm leading-relaxed mb-10 max-w-sm mx-auto">
+      นัดคุยส่วนตัว 15 นาที ฟรี ไม่มีข้อผูกมัด<br/>ค้นพบว่าคุณขาดอะไรในแผนการเงิน
+    </p>
+    <!-- [CALENDLY] href="/book-call" -->
+    <a href="/book-call" class="btn btn-teal inline-flex px-10 py-5 text-base" style="box-shadow:0 8px 32px rgba(8,145,178,0.35)">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      นัดหมายปรึกษาส่วนตัว 15 นาที
+    </a>
+    <p class="font-noto text-slate-300 text-xs mt-5">ไม่มีค่าใช้จ่าย · ปลอดภัย · ไม่มีสแปม</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="bg-navy pt-14 pb-10">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <img src="logo-horizontal.png" alt="Next Level Advisor" class="h-12 w-auto mb-5 brightness-0 invert" style="height:50px"/>
+        <p class="font-noto text-white/45 text-sm leading-relaxed max-w-xs mb-6">
+          คุมความเสี่ยงเพื่อต่อยอดความมั่งคั่ง<br/>ที่ปรึกษาการเงินรับรองสำหรับทุกช่วงชีวิต
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-teal transition text-white text-xs font-pop">f</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-teal transition text-white text-xs font-pop">in</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-teal transition text-white text-xs">tt</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-green-500 transition text-white text-xs font-noto">L</a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-pridi font-semibold text-white text-sm mb-5">บริการ</h4>
+        <ul class="space-y-3 font-noto text-white/40 text-sm">
+          <li><a href="/solutions" class="hover:text-teal transition-colors">วางแผนสุขภาพ</a></li>
+          <li><a href="/solutions" class="hover:text-teal transition-colors">วางแผนภาษี/เกษียณ</a></li>
+          <li><a href="/solutions" class="hover:text-teal transition-colors">วางแผนมรดก</a></li>
+          <li><a href="/calculator" class="hover:text-teal transition-colors">เครื่องคำนวณ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-pridi font-semibold text-white text-sm mb-5">ติดต่อ</h4>
+        <ul class="space-y-3 font-noto text-white/40 text-sm">
+          <li>LINE OA: @nextleveladvisor</li>
+          <li>IG: @nextlevel_advisor</li>
+          <li>TikTok: @nextlevel.fin</li>
+          <li><a href="/book-call" class="text-teal hover:underline">นัดปรึกษา →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="font-noto text-white/25 text-xs">© 2025 Next Level Advisor · nextlevel-advisor.com · All rights reserved.</p>
+      <div class="flex gap-5 font-noto text-white/25 text-xs">
+        <a href="#" class="hover:text-white/50 transition">นโยบายความเป็นส่วนตัว</a>
+        <a href="#" class="hover:text-white/50 transition">ข้อกำหนดการใช้งาน</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     STICKY MOBILE BAR
+═══════════════════════════════════════ -->
+<div class="mob-bar glass border-t border-slate-100 shadow-2xl">
+  <a href="tel:+66XXXXXXXXXX" class="btn btn-outline flex-1 py-3.5 text-sm">📞 โทรเลย</a>
+  <!-- [CALENDLY] href="/book-call" -->
+  <a href="/book-call" class="btn btn-teal flex-1 py-3.5 text-sm">📅 นัดฟรี</a>
+</div>
+<!-- Mobile bottom padding -->
+<div class="h-20 md:hidden"></div>
+
+
+<!-- ═══════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════ -->
+<script>
+  // ── Nav scroll effect ──
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+      nav.style.background = 'rgba(255,255,255,0.95)';
+      nav.style.boxShadow = '0 1px 24px rgba(27,54,93,0.08)';
+    } else {
+      nav.style.background = 'rgba(255,255,255,0.0)';
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // ── Mobile menu toggle ──
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden');
+  });
+
+  // ── Reveal on scroll ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') });
+  }, {threshold: 0.1, rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Career form (Formspree + Make.com placeholder) ──
+  // [FORMSPREE] Replace with: form.action = "https://formspree.io/f/YOUR_ID"
+  // [MAKE.COM]  Add webhook call here after successful submit for LINE notification
+  document.getElementById('careerForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button[type=submit]');
+    btn.textContent = '✓ ส่งเรียบร้อย! ทีมจะติดต่อกลับเร็วๆ นี้';
+    btn.disabled = true;
+    btn.style.background = '#10b981';
+    // TODO: Replace with actual Formspree action on form tag
+  });
+</script>
+
+<!-- [CALENDLY WIDGET] Uncomment when ready:
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+-->
+
+<!-- [MAKE.COM WEBHOOK PLACEHOLDER]
+  Webhook URL for career form: https://hook.eu2.make.com/PLACEHOLDER
+  Webhook URL for Calendly confirmation: https://hook.eu2.make.com/PLACEHOLDER
+-->
+
+</body>
+</html>
