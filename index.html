@@ -187,7 +187,7 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           นัดหมายรับคำปรึกษา
         </a>
-        <a href="/career" class="btn btn-outline px-7 py-4 text-base">ร่วมทีมกับเรา →</a>
+        <a href="#career" class="btn btn-outline px-7 py-4 text-base">ร่วมทีมกับเรา →</a>
       </div>
       <!-- Trust badges -->
       <div class="flex flex-wrap gap-2.5">
@@ -829,7 +829,7 @@ calcRetire();
       <div id="careerSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
         <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
         <p class="font-pop font-bold" style="color:#fff;font-size:1.2rem;margin-bottom:.5rem">ได้รับข้อมูลเรียบร้อยแล้ว</p>
-        <p class="font-noto" style="color:#94A3B8;font-size:.9rem">เราจะติดต่อกลับผ่าน Line ภายใน 24 ชม.</p>
+        <p class="font-noto" style="color:#94A3B8;font-size:.9rem">เราจะติดต่อกลับผ่าน Line / โทรศัพท์ ภายใน 24 ชม.</p>
       </div>
 
       <form id="careerForm">
@@ -848,14 +848,7 @@ calcRetire();
           </div>
           <div>
             <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">อาชีพปัจจุบัน <span style="color:#F87171">*</span></label>
-            <select name="occupation" required class="form-input" style="background:rgba(30,50,90,0.85);border-color:rgba(255,255,255,0.15);color:#fff">
-              <option value="" disabled selected style="color:#94A3B8">เลือกอาชีพ</option>
-              <option value="พนักงานบริษัท" style="color:#1B365D">พนักงานบริษัท</option>
-              <option value="เจ้าของธุรกิจ" style="color:#1B365D">เจ้าของธุรกิจ</option>
-              <option value="ฟรีแลนซ์" style="color:#1B365D">ฟรีแลนซ์</option>
-              <option value="นักศึกษา" style="color:#1B365D">นักศึกษา</option>
-              <option value="อื่นๆ" style="color:#1B365D">อื่นๆ</option>
-            </select>
+            <input type="text" name="occupation" required placeholder="เช่น พนักงานบริษัท, เจ้าของธุรกิจ..." class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
           </div>
         </div>
         <!-- motivation textarea -->
@@ -864,7 +857,7 @@ calcRetire();
           <textarea name="motivation" rows="4" required placeholder="เล่าให้เราฟังสั้นๆ ครับ/ค่ะ..." class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff;resize:vertical;min-height:110px"></textarea>
         </div>
         <!-- submit -->
-        <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center" style="font-size:1rem">เริ่มต้นร่วมทีมกับเรา</button>
+        <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center" style="font-size:1rem">ส่งข้อมูล รอติดต่อกลับ</button>
         <p class="font-noto text-center mt-3" style="color:#64748B;font-size:.75rem">🔒 ข้อมูลของคุณปลอดภัยและเป็นส่วนตัว</p>
       </form>
     </div>
