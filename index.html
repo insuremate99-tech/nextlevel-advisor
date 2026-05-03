@@ -675,18 +675,14 @@ calcRetire();
           </a>`;
 
         const featured = articles.filter(a => a.featured).slice(0, 3);
-        const latest = articles.filter(a => !featured.includes(a)).slice(0, 3);
-
-        // If not enough non-featured for latest, fill from featured
-        const latestFill = latest.length < 3
-          ? [...latest, ...featured.slice(latest.length, 3 - latest.length + featured.length)].slice(0, 3)
-          : latest;
+        const featuredSlugs = new Set(featured.map(a => a.slug));
+        const latest = articles.filter(a => !featuredSlugs.has(a.slug)).slice(0, 3);
 
         document.getElementById('featured-grid').innerHTML = featured.map(card).join('');
-        document.getElementById('latest-grid').innerHTML = latestFill.map(card).join('');
+        document.getElementById('latest-grid').innerHTML = latest.map(card).join('');
 
         // Hide latest section if no extra articles yet
-        if (latestFill.every(a => featured.includes(a))) {
+        if (latest.length === 0) {
           document.querySelector('[id="latest-grid"]').closest('div').previousElementSibling.style.display = 'none';
           document.getElementById('latest-grid').style.display = 'none';
         }
@@ -1026,4 +1022,4 @@ calcRetire();
   LINE OA
 </a>
 </body>
-</html>
+</html>                                                                                                                                                                                                       
