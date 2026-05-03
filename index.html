@@ -107,10 +107,6 @@
       background:rgba(8,145,178,.06)
     }
 
-    /* ── Stats ticker ── */
-    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .ticker-inner{display:flex;animation:ticker 28s linear infinite;width:max-content}
-    .ticker-inner:hover{animation-play-state:paused}
 
     /* ── Video thumbnail ── */
     .vid-thumb{
@@ -286,24 +282,54 @@
 
 
 <!-- ═══════════════════════════════════════
-     STATS TICKER
+     TRUST BAR (static)
 ═══════════════════════════════════════ -->
-<div class="bg-navy py-4 overflow-hidden">
-  <div class="ticker-inner">
-    <!-- Duplicated for seamless loop -->
-    <div class="flex items-center gap-12 px-8 font-noto text-white/60 text-sm whitespace-nowrap">
-      <span>✦ ดูแลลูกค้ากว่า <strong class="text-white">200+ ราย</strong></span>
-      <span>✦ ทุนประกัน <strong class="text-white">500M+ บาท</strong></span>
-      <span>✦ MDRT Member <strong class="text-white">2024–2025</strong></span>
-      <span>✦ IC License <strong class="text-white">รับรองโดย คปภ.</strong></span>
-      <span>✦ FChFP <strong class="text-white">Certified</strong></span>
-      <span>✦ พันธมิตร <strong class="text-white">เมืองไทยประกันชีวิต</strong></span>
-      <span>✦ ดูแลลูกค้ากว่า <strong class="text-white">200+ ราย</strong></span>
-      <span>✦ ทุนประกัน <strong class="text-white">500M+ บาท</strong></span>
-      <span>✦ MDRT Member <strong class="text-white">2024–2025</strong></span>
-      <span>✦ IC License <strong class="text-white">รับรองโดย คปภ.</strong></span>
-      <span>✦ FChFP <strong class="text-white">Certified</strong></span>
-      <span>✦ พันธมิตร <strong class="text-white">เมืองไทยประกันชีวิต</strong></span>
+<div style="background:#F1F5F9;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;" class="py-6">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex flex-wrap items-center justify-center gap-0">
+
+      <!-- Stat 1 -->
+      <div class="flex items-center gap-3 px-8 py-2">
+        <span style="font-size:1.4rem;">🏆</span>
+        <div>
+          <div class="font-pop font-extrabold text-navy" style="font-size:1.25rem;line-height:1.1;">200+</div>
+          <div class="font-noto text-slate-500 text-xs mt-0.5">ลูกค้าที่ไว้วางใจ</div>
+        </div>
+      </div>
+
+      <div style="width:1px;height:40px;background:#CBD5E1;" class="hidden sm:block"></div>
+
+      <!-- Stat 2 -->
+      <div class="flex items-center gap-3 px-8 py-2">
+        <span style="font-size:1.4rem;">🛡️</span>
+        <div>
+          <div class="font-pop font-extrabold text-navy" style="font-size:1.25rem;line-height:1.1;">500M+</div>
+          <div class="font-noto text-slate-500 text-xs mt-0.5">บาท ทุนประกันที่ดูแล</div>
+        </div>
+      </div>
+
+      <div style="width:1px;height:40px;background:#CBD5E1;" class="hidden sm:block"></div>
+
+      <!-- Stat 3 -->
+      <div class="flex items-center gap-3 px-8 py-2">
+        <span style="font-size:1.4rem;">⭐</span>
+        <div>
+          <div class="font-pop font-extrabold text-navy" style="font-size:1.25rem;line-height:1.1;">MDRT</div>
+          <div class="font-noto text-slate-500 text-xs mt-0.5">MTL Top Agent 2025</div>
+        </div>
+      </div>
+
+      <div style="width:1px;height:40px;background:#CBD5E1;" class="hidden sm:block"></div>
+
+      <!-- Stat 4 -->
+      <div class="flex items-center gap-3 px-8 py-2">
+        <span style="font-size:1.4rem;">📋</span>
+        <div>
+          <div class="font-pop font-extrabold text-navy" style="font-size:1.25rem;line-height:1.1;">IC License</div>
+          <div class="font-noto text-slate-500 text-xs mt-0.5">รับรองโดย คปภ.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -766,9 +792,4 @@
   // ── Career form (Formspree + Make.com placeholder) ──
   // [FORMSPREE] Replace with: form.action = "https://formspree.io/f/YOUR_ID"
   // [MAKE.COM]  Add webhook call here after successful submit for LINE notification
-  document.getElementById('careerForm')?.addEventListener('submit', function(e){
-    e.preventDefault();
-    const btn = this.querySelector('button[type=submit]');
-    btn.textContent = '✓ ส่งเรียบร้อย! ทีมจะติดต่อกลับเร็วๆ นี้';
-    btn.disabled = true;
-    btn.style.background = '#10b981'
+  document.
