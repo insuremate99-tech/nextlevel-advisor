@@ -128,6 +128,59 @@
       <a href="legacy-planning.html" class="tag" style="background:#F1F5F9;color:#475569">ส่งต่อมรดก</a>
     </div>
   </div>
+
+  <!-- Share -->
+  <div class="mt-6 pt-6" style="border-top:1px solid #E8EDF5">
+    <p class="font-noto text-xs mb-3" style="color:#94A3B8">แชร์บทความนี้</p>
+    <div class="flex flex-wrap gap-2">
+      <button onclick="copyLink()" class="share-btn font-noto" style="background:#F1F5F9;color:#475569;border:1.5px solid #E2E8F0;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .2s">
+        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        คัดลอกลิงก์
+      </button>
+      <a id="fbShare" href="#" target="_blank" rel="noopener" class="share-btn font-noto" style="background:#1877F2;color:#fff;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;text-decoration:none;transition:opacity .2s">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Facebook
+      </a>
+      <a id="xShare" href="#" target="_blank" rel="noopener" class="share-btn font-noto" style="background:#000;color:#fff;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;text-decoration:none;transition:opacity .2s">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+      <a id="lineShare" href="#" target="_blank" rel="noopener" class="share-btn font-noto" style="background:#06C755;color:#fff;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;text-decoration:none;transition:opacity .2s">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.89c.50 0 .906.41.906.91s-.406.91-.906.91h-2.545v1.483h2.545c.5 0 .906.41.906.91s-.406.91-.906.91H15.91a.91.91 0 01-.906-.91V9.89c0-.5.406-.91.906-.91zm-8.645 4.215a.91.91 0 01-.64-.267L7.63 11.39v2.715c0 .5-.406.91-.906.91s-.906-.41-.906-.91V9.89c0-.5.406-.91.906-.91.25 0 .476.1.64.267l2.49 2.45V9.89c0-.5.406-.91.906-.91s.906.41.906.91v4.105c0 .5-.406.91-.906.91zm-5.12 0a.91.91 0 01-.906-.91V9.89c0-.5.406-.91.906-.91s.906.41.906.91v4.105c0 .5-.406.91-.906.91zm14.148-9.15C22 7.824 22 10.296 22 10.296c0 5.57-5.523 10.1-12.316 10.1-.958 0-1.895-.096-2.794-.278-.38-.076-.784.027-1.082.275l-1.85 1.53a.497.497 0 01-.808-.388V19.73a.5.5 0 00-.346-.476C1.22 17.98 2 14.36 2 10.296 2 4.724 7.523.2 14.316.2c1.667 0 3.25.28 4.685.795z"/></svg>
+        LINE
+      </a>
+      <button onclick="nativeShare()" id="nativeShareBtn" class="share-btn font-noto" style="display:none;background:#0891B2;color:#fff;border:none;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;cursor:pointer;align-items:center;gap:5px;transition:opacity .2s">
+        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+        แชร์อื่นๆ
+      </button>
+    </div>
+    <p id="copyConfirm" class="font-noto" style="display:none;color:#166534;font-size:.8rem;margin-top:.6rem">✓ คัดลอกลิงก์แล้ว!</p>
+  </div>
+  <script>
+  (function(){
+    var url = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    document.getElementById('fbShare').href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    document.getElementById('xShare').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    document.getElementById('lineShare').href = 'https://social-plugins.line.me/lineit/share?url=' + url;
+    if (navigator.share) {
+      var btn = document.getElementById('nativeShareBtn');
+      btn.style.display = 'inline-flex';
+    }
+  })();
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var el = document.getElementById('copyConfirm');
+      el.style.display = 'block';
+      setTimeout(function(){ el.style.display = 'none'; }, 2500);
+    });
+  }
+  function nativeShare() {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href });
+    }
+  }
+  </script>
 </article>
 
 <footer class="py-8 text-center" style="background:#1B365D">
