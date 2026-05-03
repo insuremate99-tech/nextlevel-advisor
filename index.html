@@ -103,6 +103,10 @@
     .form-input{width:100%;padding:11px 15px;border:1.5px solid #E8EDF5;border-radius:12px;font-family:'Noto Sans Thai';font-size:.875rem;color:#1B365D;background:#fff;transition:border-color .2s;outline:none}
     .form-input:focus{border-color:#0891B2}
     .form-input::placeholder{color:#94A3B8}
+    .dark-input::placeholder{color:rgba(148,163,184,0.7)}
+    .dark-input:focus{border-color:rgba(56,189,248,0.6)!important;box-shadow:0 0 0 3px rgba(56,189,248,0.12)}
+    #careerForm .form-input:focus{border-color:rgba(56,189,248,0.6)!important;box-shadow:0 0 0 3px rgba(56,189,248,0.12)}
+    #careerForm .form-input::placeholder{color:rgba(148,163,184,0.6)}
 
     /* ── Reveal (progressive enhancement) ── */
     .reveal{transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
@@ -809,41 +813,59 @@ calcRetire();
 
 
 <!-- ══════════════ JOIN TEAM ══════════════ -->
-<section id="career" class="py-20" style="background:#F1F5F9">
-  <div class="max-w-5xl mx-auto px-5">
+<section id="career" class="py-24" style="background:#0D1F3C">
+  <div class="max-w-3xl mx-auto px-5">
+    <!-- heading -->
     <div class="text-center mb-12 reveal">
-      <span class="sec-label">Join the Team</span>
-      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem)">Join the Next Level Team</h2>
-      <p class="font-noto text-slate-400 text-sm mt-3 max-w-md mx-auto">สร้างอาชีพที่มีอิสระ มั่นคง และมีความหมาย ภายใต้ระบบ mentoring ที่พิสูจน์แล้ว</p>
+      <span class="sec-label" style="color:#38BDF8">Join the Team</span>
+      <h2 class="font-pop font-extrabold mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem);color:#fff">Join the Next Level Team</h2>
+      <p class="font-noto mt-3 max-w-md mx-auto" style="color:#94A3B8;font-size:.93rem">สร้างอาชีพที่มีอิสระ มั่นคง และมีความหมาย ภายใต้ระบบ mentoring ที่พิสูจน์แล้ว</p>
     </div>
-    <div class="bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-card reveal">
+
+    <!-- glassmorphism card -->
+    <div class="reveal" style="background:rgba(255,255,255,0.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1.5px solid rgba(255,255,255,0.13);border-radius:24px;padding:2.5rem 2rem;">
+
+      <!-- success message (hidden by default) -->
+      <div id="careerSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
+        <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+        <p class="font-pop font-bold" style="color:#fff;font-size:1.2rem;margin-bottom:.5rem">ได้รับข้อมูลเรียบร้อยแล้ว</p>
+        <p class="font-noto" style="color:#94A3B8;font-size:.9rem">เราจะติดต่อกลับผ่าน Line ภายใน 24 ชม.</p>
+      </div>
+
       <form id="careerForm">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
           <div>
-            <label class="font-noto text-navy text-xs font-semibold block mb-2">ชื่อ-นามสกุล</label>
-            <input type="text" name="name" placeholder="ชื่อของคุณ" class="form-input"/>
+            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">ชื่อ-นามสกุล <span style="color:#F87171">*</span></label>
+            <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
           </div>
           <div>
-            <label class="font-noto text-navy text-xs font-semibold block mb-2">เบอร์โทรศัพท์</label>
-            <input type="tel" name="phone" placeholder="08X-XXX-XXXX" class="form-input"/>
+            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">เบอร์โทรศัพท์ <span style="color:#F87171">*</span></label>
+            <input type="tel" name="phone" placeholder="08X-XXX-XXXX" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
           </div>
           <div>
-            <label class="font-noto text-navy text-xs font-semibold block mb-2">Line ID</label>
-            <input type="text" name="line" placeholder="@your_line_id" class="form-input"/>
+            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">Line ID <span style="color:#F87171">*</span></label>
+            <input type="text" name="line_id" placeholder="@your_line_id" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
           </div>
           <div>
-            <label class="font-noto text-navy text-xs font-semibold block mb-2">ประสบการณ์</label>
-            <select name="experience" class="form-input">
-              <option value="" disabled selected>เลือกประสบการณ์</option>
-              <option>ไม่มีประสบการณ์ (พร้อมเรียนรู้)</option>
-              <option>1–3 ปี</option>
-              <option>3–5 ปี</option>
-              <option>5+ ปี</option>
+            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">อาชีพปัจจุบัน <span style="color:#F87171">*</span></label>
+            <select name="occupation" required class="form-input" style="background:rgba(30,50,90,0.85);border-color:rgba(255,255,255,0.15);color:#fff">
+              <option value="" disabled selected style="color:#94A3B8">เลือกอาชีพ</option>
+              <option value="พนักงานบริษัท" style="color:#1B365D">พนักงานบริษัท</option>
+              <option value="เจ้าของธุรกิจ" style="color:#1B365D">เจ้าของธุรกิจ</option>
+              <option value="ฟรีแลนซ์" style="color:#1B365D">ฟรีแลนซ์</option>
+              <option value="นักศึกษา" style="color:#1B365D">นักศึกษา</option>
+              <option value="อื่นๆ" style="color:#1B365D">อื่นๆ</option>
             </select>
           </div>
         </div>
-        <button type="submit" class="btn btn-teal w-full py-4 text-base justify-center">เริ่มต้นร่วมทีมกับเรา</button>
-        <p class="font-noto text-slate-400 text-xs text-center mt-3">ข้อมูลของคุณปลอดภัย ไม่มีการส่งต่อ</p>
+        <!-- motivation textarea -->
+        <div class="mb-6">
+          <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">ทำไมถึงสนใจร่วมทีมกับ Next Level Advisor? <span style="color:#F87171">*</span></label>
+          <textarea name="motivation" rows="4" required placeholder="เล่าให้เราฟังสั้นๆ ครับ/ค่ะ..." class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff;resize:vertical;min-height:110px"></textarea>
+        </div>
+        <!-- submit -->
+        <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center" style="font-size:1rem">เริ่มต้นร่วมทีมกับเรา</button>
+        <p class="font-noto text-center mt-3" style="color:#64748B;font-size:.75rem">🔒 ข้อมูลของคุณปลอดภัยและเป็นส่วนตัว</p>
       </form>
     </div>
   </div>
@@ -941,13 +963,30 @@ calcRetire();
   }, {threshold:0.07});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Career form
-  document.getElementById('careerForm')?.addEventListener('submit', function(e){
+  // Career form → Formspree AJAX
+  document.getElementById('careerForm')?.addEventListener('submit', async function(e){
     e.preventDefault();
-    const btn = this.querySelector('button[type=submit]');
-    btn.textContent = 'ส่งแล้ว ✓ เราจะติดต่อกลับเร็วๆ นี้';
+    const btn = document.getElementById('careerSubmitBtn');
+    const origText = btn.textContent;
+    btn.textContent = 'กำลังส่ง...';
     btn.disabled = true;
-    btn.style.background = '#0779A0';
+    try {
+      const res = await fetch('https://formspree.io/f/xlgzgkje', {
+        method: 'POST',
+        headers: {'Accept': 'application/json'},
+        body: new FormData(this)
+      });
+      if(res.ok){
+        this.style.display = 'none';
+        document.getElementById('careerSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'เกิดข้อผิดพลาด ลองใหม่อีกครั้ง';
+        btn.disabled = false;
+      }
+    } catch(err){
+      btn.textContent = origText;
+      btn.disabled = false;
+    }
   });
 </script>
 
