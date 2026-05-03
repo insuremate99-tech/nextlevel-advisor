@@ -337,34 +337,40 @@
     <div class="challenge-wrap reveal">
       <div class="px-8 py-12 md:px-14 md:py-14 relative z-10">
 
-        <!-- Top: Badge + Headline + Description + Stats -->
-        <div class="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 mb-10">
-          <div class="flex-1">
+        <!-- Top: Text left + Image right -->
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14 mb-10">
+
+          <!-- LEFT TEXT -->
+          <div class="flex-1 min-w-0">
             <span class="badge mb-5 inline-flex" style="background:rgba(8,145,178,.2);border-color:rgba(8,145,178,.4);color:#7DDAF0">Flagship Program</span>
             <h2 class="font-pop font-extrabold text-white mt-2 mb-4 leading-tight" style="font-size:clamp(1.9rem,3.2vw,2.7rem)">5 Years<br/>5 Million Challenge</h2>
-            <p class="font-noto leading-relaxed max-w-lg" style="font-size:.95rem;color:rgba(255,255,255,.65)">
-              5 ปี 5 ล้าน: โครงการปั้นที่ปรึกษาการเงินรุ่นใหม่<br/>สู่ความสำเร็จที่ยั่งยืน
+            <p class="font-noto leading-relaxed mb-4" style="font-size:.95rem;color:rgba(255,255,255,.75)">
+              5 ปี 5 ล้าน: โครงการปั้นที่ปรึกษาการเงินรุ่นใหม่ เปิดรับทุกประสบการณ์<br/>เพียงมีความตั้งใจและพร้อมเรียนรู้ระบบงานมืออาชีพ
             </p>
+            <p class="font-noto leading-relaxed mb-8" style="font-size:.88rem;color:rgba(255,255,255,.55)">
+              ไม่จำกัดพื้นฐานอาชีพ ขอเพียงมีความตั้งใจและพร้อมเรียนรู้<br/>เพื่อสร้างความสำเร็จในฐานะที่ปรึกษาการเงินมืออาชีพ
+            </p>
+            <!-- Target audience note -->
+            <div class="inline-flex flex-wrap gap-x-4 gap-y-2 font-noto text-xs mb-8" style="color:rgba(255,255,255,.5)">
+              <span><span style="color:#7DDAF0">•</span> ไม่จำกัดพื้นฐานอาชีพ</span>
+              <span><span style="color:#7DDAF0">•</span> ระบบ Training ตั้งแต่เริ่มต้น</span>
+              <span><span style="color:#7DDAF0">•</span> เติบโตได้ในแบบที่เป็นคุณ</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="/career" class="btn btn-teal px-7 py-3.5 text-sm">อ่านรายละเอียดโครงการ →</a>
+            </div>
           </div>
-          <!-- Stats -->
-          <div class="flex flex-wrap gap-3 flex-shrink-0">
-            <div class="calc-glass px-5 py-4 text-center min-w-[100px]">
-              <div class="font-pop font-extrabold text-white text-2xl">5M</div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)">Big Bonus</div>
-            </div>
-            <div class="calc-glass px-5 py-4 text-center min-w-[100px]">
-              <div class="font-pop font-extrabold text-white text-2xl">120K</div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)">Monthly On-top</div>
-            </div>
-            <div class="calc-glass px-5 py-4 text-center min-w-[100px]">
-              <div class="font-pop font-extrabold text-white text-2xl">MDRT</div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)">Roadmap</div>
+
+          <!-- RIGHT: Hero Image -->
+          <div class="flex-shrink-0 w-full lg:w-[340px] xl:w-[380px]">
+            <div class="rounded-2xl overflow-hidden" style="box-shadow:0 20px 60px rgba(0,0,0,.4)">
+              <img src="5year-hero.png" alt="5 Years 5 Million Challenge" class="w-full h-full object-cover" style="display:block;max-height:420px;object-position:top center"/>
             </div>
           </div>
         </div>
 
         <!-- Value Props Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)">
             <div class="font-pop font-bold text-white text-sm mb-2">💰 5M Big Bonus</div>
             <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">รางวัลพิเศษสูงสุด <strong style="color:#7DDAF0">5,000,000 บาท</strong> สำหรับที่ปรึกษาที่พิชิตเป้าหมายต่อเนื่อง</p>
@@ -374,23 +380,13 @@
             <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เงินส่งเสริมรายเดือนสูงสุด <strong style="color:#7DDAF0">120,000 บาท</strong> (ในปีแรก) จ่าย On-top เพิ่มจากคอมมิชชันปกติ</p>
           </div>
           <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)">
-            <div class="font-pop font-bold text-white text-sm mb-2">🚀 Fast Track Success</div>
-            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เส้นทางเติบโตสู่ตำแหน่งผู้บริหารทีม ภายใน <strong style="color:#7DDAF0">12 เดือน</strong></p>
-          </div>
-          <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)">
             <div class="font-pop font-bold text-white text-sm mb-2">🎓 Professional Academy</div>
             <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เรียนรู้หลักสูตรวางแผนการเงิน ภาษี และมรดก พร้อม Roadmap ชัดเจน</p>
           </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="/career" class="btn btn-teal px-7 py-3.5 text-sm">อ่านรายละเอียดโครงการ →</a>
-          <p class="font-noto text-xs" style="color:rgba(255,255,255,.35)">
-            <span style="color:#7DDAF0">•</span> เปิดรับสมัครจำนวนจำกัด
-            <span style="color:#7DDAF0;margin:0 6px">•</span> ฝึกอบรมโดยทีมผู้เชี่ยวชาญ MTL
-            <span style="color:#7DDAF0;margin:0 6px">•</span> เริ่มได้ทันที
-          </p>
+          <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)">
+            <div class="font-pop font-bold text-white text-sm mb-2">🚀 Fast Track Success</div>
+            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เส้นทางเติบโตสู่ตำแหน่งผู้บริหารทีม ภายใน <strong style="color:#7DDAF0">12 เดือน</strong></p>
+          </div>
         </div>
 
       </div>
