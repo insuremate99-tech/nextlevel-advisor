@@ -94,6 +94,53 @@
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
   },
   {
+    "slug": "group-insurance-feedback",
+    "title": "Feedback ของประกันกลุ่ม",
+    "excerpt": "มากกว่าตัวแทนประกันกลุ่ม คือที่ปรึกษาที่เข้าใจภาษา HR และมุมมองผู้บริหาร ช่วยองค์กรลดต้นทุนได้ถึง 10%",
+    "category": "Case ลูกค้า",
+    "date": "2026-04-20",
+    "dateDisplay": "20 เม.ย. 2568",
+    "readTime": "4 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per7.jpg",
+    "coverGradient": "linear-gradient(135deg,#0F4C75,#1B6CA8)"
+  },
+  {
+    "slug": "family-bcp",
+    "title": "แผนสำรอง สำหรับ CEO ของบ้าน",
+    "excerpt": "ธุรกิจมี BCP แต่ครอบครัวล่ะ? ในฐานะ CEO ของบ้าน คุณมีแผนสำรองสำหรับคนข้างหลังแล้วหรือยัง",
+    "category": "แนวคิด",
+    "date": "2026-04-18",
+    "dateDisplay": "18 เม.ย. 2568",
+    "readTime": "5 นาที",
+    "featured": false,
+    "coverGradient": "linear-gradient(135deg,#1B365D,#164E63)"
+  },
+  {
+    "slug": "reality-check-songkran",
+    "title": "Reality Check หลังสงกรานต์",
+    "excerpt": "หลังวันหยุดยาว ลองรีวิวแผนชีวิต 4 ข้อง่ายๆ ที่หลายคนมองข้าม ก่อนจะวิ่งสุดตัวเพื่อหาเงินใหม่",
+    "category": "แนวคิด",
+    "date": "2026-04-16",
+    "dateDisplay": "16 เม.ย. 2568",
+    "readTime": "4 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per8.jpg",
+    "coverGradient": "linear-gradient(135deg,#134E4A,#0F766E)"
+  },
+  {
+    "slug": "success-trap",
+    "title": "กับดักความสำเร็จ",
+    "excerpt": "ยิ่งสร้างอาณาจักรให้ใหญ่ขึ้น หลายคนกลับรู้สึกพักได้ยากขึ้นเท่านั้น เมื่อ Wealth บดบัง Peace of Mind",
+    "category": "แนวคิด",
+    "date": "2026-04-15",
+    "dateDisplay": "15 เม.ย. 2568",
+    "readTime": "5 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per9.jpg",
+    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
+  },
+  {
     "slug": "tax-reduction",
     "title": "ลดภาษีอย่างถูกกฎหมาย ด้วยประกันชีวิต",
     "excerpt": "ทำความเข้าใจสิทธิลดหย่อนภาษีจากประกันชีวิตและประกันสุขภาพ ที่คนส่วนใหญ่ยังใช้ไม่เต็มที่",
