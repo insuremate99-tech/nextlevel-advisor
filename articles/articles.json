@@ -153,6 +153,29 @@
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
   },
   {
+    "slug": "mtl-health-coverage",
+    "title": "ความคุ้มครองเพิ่มขึ้น ประกันสุขภาพเมืองไทยประกันชีวิต",
+    "excerpt": "ลูกค้า Elite Health Plus และ D Health Plus ได้รับสิทธิพิเศษวงเงินผู้ป่วยในเพิ่ม 1.2 เท่า และวันแอดมิทเพิ่มเป็น 365 วัน ในช่วง 8 เม.ย. – 31 ธ.ค. 2569",
+    "category": "อัพเดท",
+    "date": "2026-04-06",
+    "dateDisplay": "6 เม.ย. 2569",
+    "readTime": "4 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per11.jpg",
+    "coverGradient": "linear-gradient(135deg,#0369A1,#0891B2)"
+  },
+  {
+    "slug": "insurance-misconceptions",
+    "title": "เรื่องประกันที่ผมไม่เคยจะเก็ท จนกระทั่ง",
+    "excerpt": "6 เรื่องที่หลายคนเข้าใจผิดเกี่ยวกับประกัน ตั้งแต่เบี้ยเด็ก ไปถึงกฎ 2 ปี และประกันบำนาญเวนคืน รู้แค่บางส่วนอาจเสียประโยชน์โดยไม่รู้ตัว",
+    "category": "ประกัน",
+    "date": "2026-04-01",
+    "dateDisplay": "1 เม.ย. 2569",
+    "readTime": "7 นาที",
+    "featured": false,
+    "coverGradient": "linear-gradient(135deg,#1B365D,#1E3A8A)"
+  },
+  {
     "slug": "tax-reduction",
     "title": "ลดภาษีอย่างถูกกฎหมาย ด้วยประกันชีวิต",
     "excerpt": "ทำความเข้าใจสิทธิลดหย่อนภาษีจากประกันชีวิตและประกันสุขภาพ ที่คนส่วนใหญ่ยังใช้ไม่เต็มที่",
