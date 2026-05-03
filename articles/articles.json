@@ -141,6 +141,18 @@
     "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
   },
   {
+    "slug": "recharge-energy",
+    "title": "Recharge ของเราคือ?",
+    "excerpt": "พลังงานก็เหมือน Asset อย่างนึง ถ้าเอาแต่ถอนออกมาใช้โดยไม่รู้จักฝากกลับเข้าไป พอร์ตชีวิตเราก็ติดลบได้ ไม่ต่างจากตัวเลขในบัญชี",
+    "category": "แนวคิด",
+    "date": "2026-04-14",
+    "dateDisplay": "14 เม.ย. 2569",
+    "readTime": "3 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per10.jpg",
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+  },
+  {
     "slug": "tax-reduction",
     "title": "ลดภาษีอย่างถูกกฎหมาย ด้วยประกันชีวิต",
     "excerpt": "ทำความเข้าใจสิทธิลดหย่อนภาษีจากประกันชีวิตและประกันสุขภาพ ที่คนส่วนใหญ่ยังใช้ไม่เต็มที่",
