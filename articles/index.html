@@ -81,6 +81,9 @@
       <button class="filter-btn" data-cat="มรดก">มรดก</button>
       <button class="filter-btn" data-cat="สุขภาพ">สุขภาพ</button>
       <button class="filter-btn" data-cat="ลงทุน">ลงทุน</button>
+      <button class="filter-btn" data-cat="แนวคิด">แนวคิด</button>
+      <button class="filter-btn" data-cat="ประกัน">ประกัน</button>
+      <button class="filter-btn" data-cat="เศรษฐกิจ">เศรษฐกิจ</button>
     </div>
   </div>
 
@@ -185,16 +188,4 @@ document.getElementById('filterBtns').addEventListener('click', e => {
 
 // Search
 document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value.toLowerCase().trim();
-  renderArticles();
-});
-
-// Animate
-const style = document.createElement('style');
-style.textContent = '@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}';
-document.head.appendChild(style);
-
-loadArticles();
-</script>
-</body>
-</html>
+  searchQuery = e.target.value.toLowerCas
