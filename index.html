@@ -79,6 +79,13 @@
     .calc-glass{background:rgba(255,255,255,.09);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:18px}
     .calc-chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 10px;font-size:.78rem;font-family:'Noto Sans Thai';color:rgba(255,255,255,.6);cursor:pointer;transition:all .18s}
     .calc-chip.active{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.45);color:#fff;font-weight:600}
+    /* ── Calculator Sliders ── */
+    .calc-slider{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;background:rgba(255,255,255,.2);outline:none;cursor:pointer}
+    .calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer;transition:transform .15s}
+    .calc-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+    .calc-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25);border:none;cursor:pointer}
+    .calc-result-card{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:14px 18px}
+    .calc-result-card.highlight{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35)}
 
     /* ── Video card ── */
     .vid-card{background:#0D1F3C;border-radius:18px;overflow:hidden;aspect-ratio:9/16;flex-shrink:0;width:152px;position:relative;cursor:pointer;transition:transform .25s}
@@ -366,43 +373,161 @@
 <section id="calculator" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-5">
     <div class="calc-wrap reveal">
-      <div class="px-8 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center gap-10 relative z-10">
-        <div class="flex-1">
-          <span class="sec-label mb-4 inline-block" style="color:rgba(8,145,178,.85)">Free Tool</span>
-          <h2 class="font-pop font-extrabold text-white mt-2 mb-3" style="font-size:clamp(1.6rem,2.8vw,2.2rem)">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h2>
-          <p class="font-noto leading-relaxed mb-8" style="font-size:.95rem;color:rgba(255,255,255,.6)">3 คำถาม รู้ผลใน 30 วินาที ว่าคุณต้องเตรียมเงินเท่าไหร่</p>
-          <a href="/calculator" class="btn btn-teal px-7 py-3.5 text-base">เริ่มคำนวณ →</a>
+      <div class="px-8 py-12 md:px-12 md:py-14 flex flex-col lg:flex-row items-start gap-10 lg:gap-14 relative z-10">
+
+        <!-- LEFT: Headline + Live Results + CTA -->
+        <div class="flex-1 min-w-0">
+          <span class="font-pop font-semibold text-xs tracking-widest uppercase mb-4 inline-block px-3 py-1 rounded-full" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25)">Free Tool</span>
+          <h2 class="font-pop font-extrabold text-white mt-1 mb-3 leading-tight" style="font-size:clamp(1.7rem,3vw,2.4rem)">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h2>
+          <p class="font-noto leading-relaxed mb-8" style="font-size:.95rem;color:rgba(255,255,255,.65)">ใช้เวลาเพียง 1 นาที เพื่อวางแผนชีวิตที่คุณออกแบบเองได้</p>
+
+          <!-- Live Results -->
+          <div class="space-y-3 mb-8">
+            <div class="calc-result-card">
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">เป้าหมายเงินก้อนที่ต้องมี</div>
+              <div class="font-pop font-extrabold text-white text-xl" id="res-goal">—</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ส่วนที่ยังขาดอยู่</div>
+              <div class="font-pop font-extrabold text-white text-xl" id="res-gap">—</div>
+            </div>
+            <div class="calc-result-card highlight">
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.75)">💡 ต้องออมเพิ่มเดือนละ</div>
+              <div class="font-pop font-extrabold text-white text-2xl" id="res-monthly">—</div>
+              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)" id="res-note"></div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <a href="https://line.me/ti/p/~@nextlevel-advisor" target="_blank"
+             class="btn btn-teal inline-flex items-center gap-2.5 px-6 py-3.5 text-sm mb-4"
+             style="background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.4);color:#fff;backdrop-filter:blur(8px)"
+             onmouseover="this.style.background='rgba(255,255,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.2)'">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            รับสรุปแผนเกษียณทาง LINE
+          </a>
+          <p class="font-noto text-xs" style="color:rgba(255,255,255,.45)">
+            สนใจคำนวณค่าครองชีพในอนาคต หรือค่ารักษาโรคร้ายแรง?
+            <a href="/calculators" class="underline" style="color:rgba(255,255,255,.7)">คลิกที่นี่</a>
+          </p>
         </div>
-        <div class="flex-shrink-0 w-full md:w-auto" style="max-width:300px">
-          <div class="calc-glass px-6 py-6">
-            <div class="font-noto text-xs mb-5 font-medium" style="color:rgba(255,255,255,.6)">3 คำถาม · 30 วินาที · รู้ผลทันที</div>
-            <div class="mb-4">
-              <div class="font-noto text-white text-xs mb-2">อายุปัจจุบัน</div>
-              <div class="flex gap-2">
-                <div class="calc-chip">25–35</div>
-                <div class="calc-chip active">36–45</div>
-                <div class="calc-chip">46+</div>
+
+        <!-- RIGHT: Input Sliders -->
+        <div class="flex-shrink-0 w-full lg:w-[340px]">
+          <div class="calc-glass px-6 py-7 space-y-5">
+
+            <!-- อายุปัจจุบัน -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">อายุปัจจุบัน</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-age">35 ปี</span>
               </div>
+              <input type="range" class="calc-slider" id="sl-age" min="20" max="59" value="35"
+                     oninput="document.getElementById('lbl-age').textContent=this.value+' ปี';calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>20</span><span>59</span></div>
             </div>
-            <div class="mb-5">
-              <div class="font-noto text-white text-xs mb-2">รายได้ต่อเดือน</div>
-              <div class="flex gap-2">
-                <div class="calc-chip">&lt;50K</div>
-                <div class="calc-chip active">50–100K</div>
-                <div class="calc-chip">&gt;100K</div>
+
+            <!-- เกษียณตอนอายุ -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">เกษียณตอนอายุ</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-retire">60 ปี</span>
               </div>
+              <input type="range" class="calc-slider" id="sl-retire" min="50" max="70" value="60"
+                     oninput="document.getElementById('lbl-retire').textContent=this.value+' ปี';calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>50</span><span>70</span></div>
             </div>
-            <div class="rounded-xl px-4 py-3.5" style="background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.2)">
-              <div class="font-noto text-xs" style="color:rgba(255,255,255,.55)">คุณต้องเตรียม</div>
-              <div class="font-pop font-extrabold text-white text-xl mt-0.5">15.6M <span class="font-noto font-normal text-sm" style="color:rgba(255,255,255,.55)">บาท</span></div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.45)">เพื่อเกษียณอายุ 60 ปี</div>
+
+            <!-- อายุขัย -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">ประมาณการอายุขัย</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-life">85 ปี</span>
+              </div>
+              <input type="range" class="calc-slider" id="sl-life" min="70" max="100" value="85"
+                     oninput="document.getElementById('lbl-life').textContent=this.value+' ปี';calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>70</span><span>100</span></div>
+            </div>
+
+            <!-- รายได้หลังเกษียณ -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">อยากใช้หลังเกษียณ / เดือน</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-income">30,000 ฿</span>
+              </div>
+              <input type="range" class="calc-slider" id="sl-income" min="10000" max="200000" step="5000" value="30000"
+                     oninput="document.getElementById('lbl-income').textContent=Number(this.value).toLocaleString()+' ฿';calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>10K</span><span>200K</span></div>
+            </div>
+
+            <!-- เงินออมปัจจุบัน -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">เงินออมที่มีตอนนี้</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-savings">0 ฿</span>
+              </div>
+              <input type="range" class="calc-slider" id="sl-savings" min="0" max="5000000" step="50000" value="0"
+                     oninput="document.getElementById('lbl-savings').textContent=fmtB(+this.value);calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>0</span><span>5M</span></div>
+            </div>
+
+            <!-- Fixed params note -->
+            <div class="font-noto text-xs pt-2 pb-1 border-t" style="color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)">
+              ⚙️ สมมติฐาน: เงินเฟ้อ 3% • ผลตอบแทนหลังเกษียณ 0% (conservative)
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<script>
+function fmtB(n){
+  if(n>=1000000) return (n/1000000).toFixed(1).replace(/\.0$/,'')+'M ฿';
+  if(n>=1000) return (n/1000).toFixed(0)+'K ฿';
+  return n.toLocaleString()+' ฿';
+}
+function calcRetire(){
+  const age     = +document.getElementById('sl-age').value;
+  const retire  = +document.getElementById('sl-retire').value;
+  const life    = +document.getElementById('sl-life').value;
+  const income  = +document.getElementById('sl-income').value;
+  const savings = +document.getElementById('sl-savings').value;
+
+  // Clamp retire > age
+  if(retire <= age){
+    document.getElementById('res-goal').textContent = '—';
+    document.getElementById('res-gap').textContent  = '—';
+    document.getElementById('res-monthly').textContent = '—';
+    document.getElementById('res-note').textContent = 'อายุเกษียณต้องมากกว่าอายุปัจจุบัน';
+    return;
+  }
+
+  const yToRetire = retire - age;
+  const retireMonths = Math.max(0, (life - retire)) * 12;
+
+  // Inflation-adjusted monthly income at retirement
+  const inflatedMonthly = income * Math.pow(1.03, yToRetire);
+
+  // Total needed (0% return after retirement = simple multiply)
+  const totalNeeded = inflatedMonthly * retireMonths;
+
+  // Gap (savings grow at 0% — ultra conservative)
+  const gap = Math.max(0, totalNeeded - savings);
+
+  // Monthly savings needed (no compounding during accumulation — simple)
+  const monthsToRetire = yToRetire * 12;
+  const monthlySave = monthsToRetire > 0 ? gap / monthsToRetire : 0;
+
+  document.getElementById('res-goal').textContent = fmtB(Math.round(totalNeeded));
+  document.getElementById('res-gap').textContent  = gap <= 0 ? '✅ ครบแล้ว!' : fmtB(Math.round(gap));
+  document.getElementById('res-monthly').textContent = gap <= 0 ? '✅ ไม่ต้องออมเพิ่ม' : fmtB(Math.round(monthlySave));
+  document.getElementById('res-note').textContent = `สำหรับใช้ชีวิต ${life - retire} ปีหลังเกษียณ`;
+}
+calcRetire();
+</script>
 
 
 <!-- ══════════════ FINANCIAL INSIGHTS ══════════════ -->
