@@ -84,7 +84,11 @@
       animation:shimmer 5s linear infinite
     }
 
-    /* ── Fade-up reveal ── */
+    /* ── Hero copy — CSS-only entrance (no JS dependency) ── */
+    @keyframes heroIn{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+    .hero-copy{animation:heroIn .8s cubic-bezier(.22,1,.36,1) .1s both}
+
+    /* ── Fade-up reveal (below-fold sections) ── */
     .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
     .reveal.show{opacity:1;transform:none}
 
@@ -192,7 +196,7 @@
   <div class="max-w-6xl mx-auto px-5 w-full pt-24 pb-12 flex hero-split items-center gap-10 lg:gap-16">
 
     <!-- ── LEFT: Copy ── -->
-    <div class="flex-1 reveal">
+    <div class="flex-1 hero-copy">
       <!-- Label -->
       <div class="inline-flex items-center gap-2 mb-6">
         <span class="w-8 h-px bg-teal"></span>
@@ -785,11 +789,6 @@
 
   // ── Reveal on scroll ──
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') });
-  }, {threshold: 0.1, rootMargin:'0px 0px -50px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ── Career form (Formspree + Make.com placeholder) ──
-  // [FORMSPREE] Replace with: form.action = "https://formspree.io/f/YOUR_ID"
-  // [MAKE.COM]  Add webhook call here after successful submit for LINE notification
-  document.
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target); } });
+  }, {threshold: 0.08, rootMargin:'0px 0px 0px 0px'});
+  document.queryS
