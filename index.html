@@ -440,20 +440,41 @@
           </div>
 
           <!-- Live Results -->
-          <div class="space-y-3 mb-8">
-            <div class="calc-result-card">
-              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">เป้าหมายเงินก้อนที่ต้องมี</div>
-              <div class="font-pop font-extrabold text-white text-xl" id="res-goal">—</div>
+          <div class="mb-8">
+
+            <!-- ① Gap highlight -->
+            <div class="calc-result-card mb-3" style="background:rgba(0,0,0,.22);text-align:center">
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ช่องว่างที่ต้องเตรียม</div>
+              <div class="font-pop font-extrabold text-2xl" id="res-gap" style="color:#FF8C69">—</div>
             </div>
-            <div class="calc-result-card">
-              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ส่วนที่ยังขาดอยู่</div>
-              <div class="font-pop font-extrabold text-white text-xl" id="res-gap">—</div>
+
+            <!-- ② Progress bars -->
+            <div class="calc-result-card mb-3" style="background:rgba(0,0,0,.18)">
+              <!-- Bar: total needed -->
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เป้าหมายเงินก้อนที่ต้องมี</span>
+                <span class="font-pop font-semibold text-xs text-white" id="res-goal">—</span>
+              </div>
+              <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+                <div id="bar-need" style="height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .6s ease"></div>
+              </div>
+              <!-- Bar: current savings -->
+              <div class="flex justify-between items-center mt-3 mb-1">
+                <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เงินออมปัจจุบัน</span>
+                <span class="font-pop font-semibold text-xs" id="res-have" style="color:#4ADE80">—</span>
+              </div>
+              <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+                <div id="bar-have" style="height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#10B981,#0891B2);transition:width .6s ease"></div>
+              </div>
             </div>
-            <div class="calc-result-card highlight">
-              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.75)">💡 ต้องออมเพิ่มเดือนละ</div>
-              <div class="font-pop font-extrabold text-white text-2xl" id="res-monthly">—</div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)" id="res-note"></div>
+
+            <!-- ③ Monthly savings hero -->
+            <div class="calc-result-card" style="background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);text-align:center">
+              <div class="font-noto text-sm font-semibold mb-1" style="color:rgba(255,255,255,.8)">💡 ต้องเก็บเพิ่มเดือนละ</div>
+              <div class="font-pop font-extrabold text-3xl text-white" id="res-monthly">—</div>
+              <div class="font-noto text-xs mt-2" style="color:rgba(255,255,255,.5)" id="res-note"></div>
             </div>
+
           </div>
 
           <!-- CTA -->
@@ -562,8 +583,11 @@ function calcRetire(){
   if(retire <= age){
     document.getElementById('res-goal').textContent = '—';
     document.getElementById('res-gap').textContent  = '—';
+    document.getElementById('res-have').textContent = '—';
     document.getElementById('res-monthly').textContent = '—';
     document.getElementById('res-note').textContent = 'อายุเกษียณต้องมากกว่าอายุปัจจุบัน';
+    document.getElementById('bar-need').style.width = '100%';
+    document.getElementById('bar-have').style.width = '0%';
     return;
   }
 
@@ -583,10 +607,15 @@ function calcRetire(){
   const monthsToRetire = yToRetire * 12;
   const monthlySave = monthsToRetire > 0 ? gap / monthsToRetire : 0;
 
-  document.getElementById('res-goal').textContent = fmtB(Math.round(totalNeeded));
-  document.getElementById('res-gap').textContent  = gap <= 0 ? '✅ ครบแล้ว!' : fmtB(Math.round(gap));
+  document.getElementById('res-goal').textContent    = fmtB(Math.round(totalNeeded));
+  document.getElementById('res-gap').textContent     = gap <= 0 ? '✅ ครบแล้ว!' : fmtB(Math.round(gap));
+  document.getElementById('res-have').textContent    = fmtB(savings);
   document.getElementById('res-monthly').textContent = gap <= 0 ? '✅ ไม่ต้องออมเพิ่ม' : fmtB(Math.round(monthlySave));
-  document.getElementById('res-note').textContent = `สำหรับใช้ชีวิต ${life - retire} ปีหลังเกษียณ`;
+  document.getElementById('res-note').textContent    = `สำหรับใช้ชีวิต ${life - retire} ปีหลังเกษียณ`;
+  // Progress bars
+  document.getElementById('bar-need').style.width = '100%';
+  const havePct = totalNeeded > 0 ? Math.min(100, Math.round(savings / totalNeeded * 100)) : 0;
+  document.getElementById('bar-have').style.width = havePct + '%';
 }
 calcRetire();
 </script>
