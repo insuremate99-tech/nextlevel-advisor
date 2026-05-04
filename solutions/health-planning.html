@@ -4,7 +4,33 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>วางแผนสุขภาพ | NextLevel Advisor</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com">
+// ═══════════════════════════════════════════════════
+// STICKY NAV SCROLL SPY
+// ═══════════════════════════════════════════════════
+(function(){
+  const sections = ['sec-ci','sec-udr','sec-dhsim','sec-ehsim','sec-compare'];
+  const navLinks = {};
+  sections.forEach(id => {
+    const link = document.querySelector('#sec-nav a[href="#'+id+'"]');
+    if(link) navLinks[id] = link;
+  });
+  function onScroll(){
+    const scrollY = window.scrollY + 140;
+    let active = null;
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if(el && el.offsetTop <= scrollY) active = id;
+    });
+    Object.keys(navLinks).forEach(id => {
+      navLinks[id].classList.toggle('active', id === active);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+</script>
 <script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -42,6 +68,10 @@ html{scroll-behavior:smooth}
 .compare-table td:not(:first-child){text-align:center}
 .compare-table tr:last-child td{border-bottom:none}
 .compare-table tr:nth-child(even) td{background:#fafbff}
+
+.snav-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;font-weight:600;color:#475569;background:#f8fafc;border:1.5px solid #e2e8f0;text-decoration:none;white-space:nowrap;transition:all .2s}
+.snav-btn:hover,.snav-btn.active{background:#0891B2;color:#fff;border-color:#0891B2}
+
 .expert-note{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-left:4px solid #0891B2;border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem}
 </style>
 </head>
@@ -111,8 +141,23 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+
+<!-- ══════ SECTION NAV ══════ -->
+<div id="sec-nav" class="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+  <div class="max-w-5xl mx-auto px-4 py-2.5 overflow-x-auto">
+    <div class="flex items-center gap-2 min-w-max">
+      <span class="font-noto text-xs text-slate-400 mr-1 hidden sm:block">ไปที่:</span>
+      <a href="#sec-ci"     class="snav-btn">⚡ โรคร้ายแรง (CI)</a>
+      <a href="#sec-udr"    class="snav-btn">📈 UDR Innovation</a>
+      <a href="#sec-dhsim"  class="snav-btn">🔧 D Health คำนวณ</a>
+      <a href="#sec-ehsim"  class="snav-btn">👑 Elite Health คำนวณ</a>
+      <a href="#sec-compare" class="snav-btn">📊 เปรียบเทียบ</a>
+    </div>
+  </div>
+</div>
+
 <!-- ══════ SECTION 2: CORE PROTECTION ══════ -->
-<section class="py-16" style="background:#EFF9FC">
+<section id="sec-ci" class="py-16" style="background:#EFF9FC">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
       <span class="sec-label">Core Protection</span>
@@ -151,7 +196,11 @@ html{scroll-behavior:smooth}
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>รับเงินก้อนโดยไม่ต้องรอผลการรักษา</li>
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 30–65 ปี</li>
           </ul>
-          <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>
+          <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>          <div class="flex flex-wrap gap-2 mt-3">
+            <a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ (Standard)</a>
+            <a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-navy border border-navy/20 rounded-lg px-3 py-1.5 hover:bg-navy/5 transition-colors">📄 โบรชัวร์ (UDR)</a>
+          </div>
+
         </div>
         <div class="prod-card">
           <div class="badge badge-purple">💜 แคร์ พลัส Rider</div>
@@ -164,6 +213,7 @@ html{scroll-behavior:smooth}
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>พ่วงกับ D Health Lite ได้ทันที</li>
           </ul>
           <div class="badge badge-purple" style="margin-bottom:0">Specialist Coverage</div>
+          <div class="mt-3"><a href="../pdfs/health/care-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-purple-700 border border-purple-200 rounded-lg px-3 py-1.5 hover:bg-purple-50 transition-colors">📄 โบรชัวร์ Care Plus</a></div>
         </div>
       </div>
     </div>
@@ -201,6 +251,7 @@ html{scroll-behavior:smooth}
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 7–65 ปี คุ้มครองถึงอายุ 79 ปี</li>
           </ul>
           <span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span>
+          <div class="mt-3"><a href="../pdfs/health/multiple-ci.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ Multiple CI</a></div>
         </div>
       </div>
     </div>
@@ -208,7 +259,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <!-- ══════ SECTION 3: UDR INNOVATION ══════ -->
-<section class="py-16 bg-white">
+<section id="sec-udr" class="py-16 bg-white">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-12 reveal">
       <span class="sec-label">The Innovation</span>
@@ -343,14 +394,56 @@ html{scroll-behavior:smooth}
 </section>
 
 <!-- ══════ SECTION 4: PREMIUM SIMULATOR ══════ -->
-<section class="py-16" style="background:#EFF9FC">
+<section id="sec-dhsim" class="py-16" style="background:#EFF9FC">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
       <span class="sec-label">Premium Simulator</span>
       <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">คำนวณเบี้ยประกันสุขภาพของคุณ</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm">D Health Lite · เพิ่ม Care Plus ได้ · ผลลัพธ์ทันที</p>
+      <p class="font-noto text-slate-500 mt-3 text-sm">D Health Lite · มี Deductible / Copay · เหมาะกับผู้มีสวัสดิการ หรืองบจำกัด</p>
     </div>
 
+
+    <!-- D Health vs Elite Comparison Note -->
+    <div class="reveal mb-8 grid sm:grid-cols-2 gap-4">
+      <div class="rounded-2xl border-2 border-teal/40 bg-white p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-xl">🏥</span>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">D Health Lite</div>
+            <div class="font-noto text-xs text-slate-400">Entry-Mid · มี Deductible & Copay</div>
+          </div>
+        </div>
+        <ul class="space-y-1.5 mb-3">
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">✓</span>ความคุ้มครอง IPD สูงสุด 5 ล้านบาท/ปี</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">✓</span>มีตัวเลือก Deductible / Copay เพื่อลดเบี้ย</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">✓</span>เพิ่ม Care Plus (มะเร็ง-ไต) ได้</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-amber-500 flex-shrink-0 mt-0.5">→</span>รับผิดชอบค่าใช้จ่ายส่วนแรกบางส่วน</li>
+        </ul>
+        <div class="bg-teal/5 rounded-xl px-3 py-2">
+          <div class="font-noto text-xs text-teal font-semibold">เหมาะกับ:</div>
+          <div class="font-noto text-xs text-slate-600 mt-0.5">มีสวัสดิการงาน / ประกันกลุ่ม ต้องการปิดช่องโหว่ส่วนที่สวัสดิการคุ้มไม่ถึง หรืองบเบี้ยค่อนข้างจำกัด</div>
+        </div>
+      </div>
+      <div class="rounded-2xl border-2 border-amber-300/60 bg-amber-50/30 p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-xl">👑</span>
+          <div>
+            <div class="font-pop font-bold text-navy text-sm">Elite Health Plus</div>
+            <div class="font-noto text-xs text-slate-400">Premium · เหมาจ่ายทุกอย่าง</div>
+          </div>
+        </div>
+        <ul class="space-y-1.5 mb-3">
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">✓</span>IPD + OPD ครอบคลุมสูงสุด 100 ล้าน/ปี</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">✓</span>ไม่มี Deductible ไม่มี Copay — จ่ายจบทันที</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">✓</span>คุ้มครองทั่วโลก (เลือก Region ได้)</li>
+          <li class="flex items-start gap-1.5 font-noto text-xs text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">✓</span>OPD ไม่จำกัดจำนวนครั้ง</li>
+        </ul>
+        <div class="bg-amber-50 rounded-xl px-3 py-2">
+          <div class="font-noto text-xs text-amber-700 font-semibold">เหมาะกับ:</div>
+          <div class="font-noto text-xs text-slate-600 mt-0.5">ไม่มีสวัสดิการ / ต้องการคุ้มครองเต็มสูงสุดโดยไม่ต้องจ่ายเพิ่มเอง หรือต้องการรักษาในต่างประเทศ</div>
+        </div>
+      </div>
+    </div>
     <div class="reveal grid lg:grid-cols-5 gap-6">
       <!-- LEFT: INPUTS -->
       <div class="lg:col-span-3 sim-card">
@@ -399,6 +492,10 @@ html{scroll-behavior:smooth}
             <button onclick="setSim('cp','5M')" id="btn-cp-5M" class="sim-btn text-xs px-3">+ Care Plus 5 ล้าน</button>
           </div>
           <div class="font-noto text-xs text-slate-400 mt-2">* ไม่รวมสัญญาชีวิต / OPD / โรคร้ายแรงแบบอื่น (ซื้อเพิ่มได้)</div>
+        <div class="mt-3 flex gap-2">
+          <a href="../pdfs/health/d-health-lite.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ D Health Lite</a>
+          <a href="../pdfs/health/d-health-lite-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-slate-600 border border-slate-200 rounded-lg px-3 py-1.5 hover:bg-slate-50 transition-colors">📄 UDR Version</a>
+        </div>
         </div>
       </div>
 
@@ -439,8 +536,113 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+
+<!-- ══════ SECTION 4B: ELITE HEALTH PLUS SIMULATOR ══════ -->
+<section id="sec-ehsim" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Premium Simulator</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">คำนวณเบี้ย Elite Health Plus</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ระดับ Premium · IPD + OPD ครอบคลุมทั่วโลก · ไม่มี Deductible / Copay</p>
+    </div>
+
+    <!-- Elite vs D Health note -->
+    <div class="reveal mb-8 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-5">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">👑</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-1">Elite Health Plus — แผนประกันสุขภาพระดับพรีเมียม</div>
+          <p class="font-noto text-xs text-slate-600 leading-relaxed">
+            ออกแบบมาสำหรับผู้ที่ต้องการความคุ้มครองเต็มรูปแบบโดยไม่มีค่าใช้จ่ายแอบแฝง — <strong class="text-navy">ไม่มี Deductible ไม่มี Copay</strong> สามารถเลือกขอบเขตการรักษาได้ตั้งแต่ในประเทศไทยจนถึงทั่วโลก ครอบคลุมทั้ง IPD (ผู้ป่วยใน) และ OPD (ผู้ป่วยนอก) ไม่จำกัดจำนวนครั้ง
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <a href="../pdfs/health/elite-health-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-amber-700 border border-amber-300 rounded-lg px-3 py-1.5 hover:bg-amber-50 transition-colors">📄 โบรชัวร์ Elite Health Plus</a>
+            <a href="../pdfs/health/elite-health-plus-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR Version</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-5 gap-6">
+      <!-- LEFT: INPUTS -->
+      <div class="lg:col-span-3 sim-card">
+        <div class="font-pop font-bold text-navy text-sm mb-6">🔧 เลือกเงื่อนไขความคุ้มครอง</div>
+
+        <!-- Age -->
+        <div class="mb-5">
+          <span class="sim-label">อายุ (ปี) <span id="eh-age-display" class="text-teal font-bold">35</span></span>
+          <input type="range" min="11" max="80" value="35" oninput="document.getElementById('eh-age-display').textContent=this.value;document.getElementById('eh-age-num').value=this.value;calcElite()" class="w-full accent-teal mb-2" id="eh-age-slider"/>
+          <input type="number" min="11" max="80" value="35" oninput="document.getElementById('eh-age-display').textContent=this.value;document.getElementById('eh-age-slider').value=this.value;calcElite()" id="eh-age-num" class="sim-input w-24" placeholder="อายุ"/>
+        </div>
+
+        <!-- Plan Selection -->
+        <div class="mb-5">
+          <span class="sim-label">แผนความคุ้มครอง (วงเงินสูงสุด/ปี)</span>
+          <div class="grid grid-cols-2 gap-2" id="eh-plan-btns">
+            <button onclick="setElite('plan',1)" id="eh-btn-p1" class="sim-btn selected text-xs">แผน 1 · 20 ล้าน</button>
+            <button onclick="setElite('plan',2)" id="eh-btn-p2" class="sim-btn text-xs">แผน 2 · 40 ล้าน</button>
+            <button onclick="setElite('plan',3)" id="eh-btn-p3" class="sim-btn text-xs">แผน 3 · 75 ล้าน</button>
+            <button onclick="setElite('plan',4)" id="eh-btn-p4" class="sim-btn text-xs">แผน 4 · 100 ล้าน</button>
+          </div>
+        </div>
+
+        <!-- Region Selection -->
+        <div class="mb-5">
+          <span class="sim-label">กลุ่มความคุ้มครองพื้นที่ (Region)</span>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="setElite('region',1)" id="eh-btn-r1" class="sim-btn selected text-xs">🇹🇭 Region 1 · ไทย</button>
+            <button onclick="setElite('region',2)" id="eh-btn-r2" class="sim-btn text-xs">🌏 Region 2 · เอเชีย</button>
+            <button onclick="setElite('region',3)" id="eh-btn-r3" class="sim-btn text-xs">🌍 Region 3 · โลก (ยกเว้น USA)</button>
+            <button onclick="setElite('region',4)" id="eh-btn-r4" class="sim-btn text-xs">🌐 Region 4 · ทั่วโลก</button>
+          </div>
+          <div class="mt-2 px-3 py-2 bg-slate-50 rounded-xl">
+            <div class="font-noto text-xs text-slate-500" id="eh-region-desc">คุ้มครองการรักษาในประเทศไทยเท่านั้น</div>
+          </div>
+        </div>
+
+        <div class="font-noto text-xs text-slate-400">* เบี้ยสำหรับเพศชาย-หญิง อัตราเดียวกัน (Unisex) · กลุ่มอาชีพ 1&2 เท่านั้น</div>
+      </div>
+
+      <!-- RIGHT: RESULT -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="result-box flex-1">
+          <div class="font-pop font-bold text-white text-xs mb-4 opacity-70 tracking-wider uppercase">ผลลัพธ์การคำนวณ</div>
+          <div id="eh-result-meta" class="font-noto text-sm mb-4" style="color:rgba(255,255,255,.65)">—</div>
+
+          <div class="mb-4">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">เบี้ยประกัน Elite Health Plus</div>
+            <div id="eh-result-premium" class="font-pop font-bold text-white text-3xl">—</div>
+            <div id="eh-result-monthly" class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)">—</div>
+          </div>
+
+          <div class="border-t border-white/20 pt-3">
+            <div class="font-noto text-xs mb-2" style="color:rgba(255,255,255,.5)">ความคุ้มครองที่ได้รับ</div>
+            <div id="eh-coverage" class="space-y-1 font-noto text-xs" style="color:rgba(255,255,255,.75)">
+              <div>✓ IPD เหมาจ่ายไม่มี Deductible</div>
+              <div>✓ OPD ไม่จำกัดจำนวนครั้ง</div>
+              <div>✓ ค่าห้อง ค่าหมอ ค่ายา ค่าผ่าตัด</div>
+              <div>✓ ฟื้นฟูสมรรถภาพ + ทันตกรรมฉุกเฉิน</div>
+              <div>✓ คุ้มครองถึงอายุ 99 ปี</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+          <div class="font-pop font-bold text-amber-800 text-xs mb-2">📍 Region ที่เลือก</div>
+          <div id="eh-region-summary" class="font-noto text-xs text-amber-700">ไทยเท่านั้น</div>
+          <div class="mt-2 font-noto text-xs text-slate-500">แผน 4 · ทั่วโลก = ความคุ้มครองสูงสุด รองรับการรักษาใน USA</div>
+        </div>
+
+        <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="block bg-amber-500 text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          💬 ปรึกษาแผน Elite กับที่ปรึกษา →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════ SECTION 5: COMPARISON TABLE ══════ -->
-<section class="py-16 bg-white">
+<section id="sec-compare" class="py-16 bg-white">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
       <span class="sec-label">ภาพรวมทั้งหมด</span>
@@ -770,6 +972,156 @@ document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 // Init
 renderPlanOptions();
 calcPremium();
+
+// ═══════════════════════════════════════════════════
+// ELITE HEALTH PLUS RATE TABLE (Unisex, Occ 1&2)
+// Format: age → [P1_TH, P1_Asia, P1_WxUS, P1_W, P2_TH, P2_Asia, P2_WxUS, P2_W, P3_TH, P3_Asia, P3_WxUS, P3_W, P4_TH, P4_Asia, P4_WxUS, P4_W]
+// ═══════════════════════════════════════════════════
+const EH = {
+  11:[3914,4318,4778,6428,5241,5786,6387,10833,5010,5532,6106,11086,6244,6823,7454,14423],
+  12:[3814,4208,4653,6308,5160,5697,6278,10659,4877,5387,5967,10114,6190,6769,7400,14370],
+  13:[3714,4097,4527,6097,4991,5510,6063,10302,4744,5242,5828,10030,6135,6715,7346,14317],
+  14:[3613,3986,4403,5996,4904,5414,5949,10109,4611,5097,5690,9945,6080,6661,7293,14264],
+  15:[3550,3916,4324,5954,4896,5405,5930,10071,4478,4953,5551,9860,6026,6607,7240,14211],
+  16:[3462,3819,4214,5828,4791,5290,5795,9833,4346,4809,5413,9776,5971,6553,7186,14159],
+  17:[3350,3695,4077,5623,4642,5125,5611,9518,4213,4664,5274,9692,5917,6499,7133,14106],
+  18:[2969,3275,3625,5023,4086,4512,4987,8459,4081,4520,5136,9608,5863,6446,7080,14054],
+  19:[2900,3199,3540,4944,3995,4411,4872,8323,3948,4376,4998,9523,5809,6392,7027,14001],
+  20:[2968,3274,3638,5122,4128,4558,5091,8614,3983,4407,5035,9943,6158,6754,7525,15095],
+  21:[3036,3349,3718,5462,4225,4665,5195,9243,4018,4437,5073,10363,6508,7115,8024,16188],
+  22:[3106,3427,3795,5661,4325,4775,5279,9532,4224,4666,5289,11013,6905,7550,8474,17015],
+  23:[3177,3505,3870,5826,4427,4888,5354,9816,4452,4917,5511,11694,7306,7988,8929,17854],
+  24:[3248,3584,3958,6060,4531,5004,5482,10193,4637,5122,5740,12406,7695,8414,9395,18708],
+  25:[3379,3729,4119,6306,4686,5174,5726,10681,4828,5333,5976,13134,8092,8848,9867,19569],
+  26:[3515,3879,4285,6679,4846,5378,5921,11202,5024,5549,6217,13908,8496,9289,10343,20446],
+  27:[3522,3887,4293,6764,4886,5423,5997,11369,5100,5634,6370,14303,8762,9581,10650,20986],
+  28:[3531,3897,4321,6805,4903,5441,6075,11516,5176,5717,6430,14662,9019,9862,10955,21524],
+  29:[3538,3905,4348,6891,4919,5460,6181,11679,5199,5743,6586,15046,9273,10140,11249,22043],
+  30:[3560,3929,4392,6934,4938,5480,6203,11724,5208,5753,6596,15155,9460,10344,11467,22397],
+  31:[3665,4045,4465,7025,5074,5632,6285,11866,5265,5877,6637,15357,9642,10543,11675,22739],
+  32:[3771,4162,4595,7293,5190,5732,6400,12124,5318,6000,6706,15701,10070,11012,12189,23665],
+  33:[3873,4275,4720,7370,5331,5888,6575,12388,5421,6182,6836,16049,10398,11490,12707,24609],
+  34:[3975,4388,4844,7492,5475,6047,6688,12656,5523,6366,6895,16397,10639,11881,13130,25363],
+  35:[4070,4492,4960,7568,5618,6204,6862,12922,5604,6512,7088,16741,10876,12276,13556,26128],
+  36:[4161,4593,5072,7808,5761,6363,6970,13194,5757,6689,7282,17088,11231,12678,13996,26900],
+  37:[4294,4740,5234,8059,5920,6539,7163,13489,5914,6872,7480,17434,11591,13084,14433,27679],
+  38:[4486,4953,5471,8445,6213,6863,7522,14030,6175,7175,7812,17996,11737,13248,14612,28156],
+  39:[4710,5201,5745,8813,6508,7188,7882,14570,6435,7477,8143,18555,11886,13417,14791,28613],
+  40:[4820,5322,5880,8962,6653,7349,8060,14784,6693,7777,8470,19116,12029,13579,14961,29061],
+  41:[4972,5490,6066,9099,6800,7511,8241,15001,6953,8079,8800,19674,12167,13735,15127,29496],
+  42:[5172,5712,6311,9402,7074,7814,8576,15509,7210,8379,9128,20126,12403,14000,15418,30171],
+  43:[5423,5989,6617,9536,7352,8122,8915,16018,7472,8683,9459,20687,12643,14272,15705,30842],
+  44:[5619,6206,6857,9721,7628,8426,9253,16526,7731,8984,9790,21138,12879,14538,15996,31513],
+  45:[5740,6339,7005,9881,7732,8542,9382,16670,7989,9284,10117,21701,13115,14805,16281,32183],
+  46:[5925,6544,7232,10022,7999,8837,9708,17158,8204,9534,10390,22242,13351,15071,16568,32855],
+  47:[6162,6806,7521,10233,8270,9137,10040,17663,8384,9743,10618,22702,13587,15338,16859,33529],
+  48:[6405,7074,7818,10315,8546,9441,10376,18165,8564,9952,10847,23038,13826,15608,17146,34200],
+  49:[6642,7337,8108,10597,8814,9738,10703,18661,8815,10245,11166,23585,14063,15875,17433,34873],
+  50:[6665,7362,8136,10634,8883,9814,10790,18739,9066,10536,11485,24132,14298,16141,17723,35548],
+  51:[6765,7473,8261,10902,9149,10108,11115,19228,9321,10832,11808,24678,14535,16408,18010,36218],
+  52:[6852,7569,8368,11154,9404,10389,11425,19698,9572,11124,12127,25225,14774,16678,18297,36893],
+  53:[7380,8152,9015,11779,10007,11056,12167,20836,10131,11774,12842,26468,15040,16978,18632,37588],
+  54:[8061,8905,9850,12869,10804,11938,13146,22381,10856,12617,13766,28039,15309,17282,18958,38288],
+  55:[8288,9156,10127,13232,11042,12200,13438,22741,11297,13129,14327,28834,15582,17590,19286,38986],
+  56:[8467,9354,10344,13519,11259,12441,13701,23060,11490,13354,14572,29315,15851,17894,19616,39686],
+  57:[8862,9790,10827,14151,11803,13042,14361,24052,11919,13853,15117,30199,16388,18500,20270,41045],
+  58:[9257,10227,11311,14782,12422,13726,15111,26176,12659,14713,16049,33642,17699,19980,21861,44139],
+  59:[9808,10836,11981,15664,13143,14523,15985,27573,13462,15647,17061,35538,19251,21733,23748,47682],
+  60:[10237,11311,12504,16352,13706,15145,16667,28636,14364,16696,18201,37699,20734,23408,25556,51054],
+  61:[10910,12055,13323,17429,14609,16143,17759,30403,15348,17839,19440,40051,22335,25215,27494,54662],
+  62:[11090,12254,13540,17717,14859,16420,18059,30807,16383,19042,20747,42524,24026,27125,29554,58486],
+  63:[11792,13030,14395,18841,15818,17480,19219,32681,17470,20306,22118,45122,25826,29157,31743,62546],
+  64:[12528,13843,15289,20018,16825,18593,20436,34639,18614,21636,23558,47839,27732,31309,34054,66844],
+  65:[13424,14833,16381,21451,18030,19925,21897,37014,19966,23208,25265,51101,29754,33593,36512,71403],
+  66:[14377,15887,17542,22977,19307,21336,23444,39521,21406,24882,27083,54561,31896,36010,39114,76230],
+  67:[15383,16998,18767,24585,20650,22820,25071,42164,22930,26654,29006,58233,34166,38574,41876,81354],
+  68:[16451,18179,20068,26295,22065,24385,26786,44944,24552,28539,31053,62128,36571,41290,44799,86781],
+  69:[17582,19429,21444,28104,23551,26027,28587,47861,26274,30542,33224,66258,39125,44173,47897,92529],
+  70:[18072,19971,22040,28889,24281,26834,29466,49237,27535,32007,34813,69242,40929,46209,50090,96561],
+  71:[19112,21120,23307,30552,25721,28426,31210,52056,29105,33833,36798,73004,43289,48875,52963,101889],
+  72:[20208,22332,24644,32306,27201,30062,33006,54952,30759,35755,38887,76953,45767,51672,55981,107478],
+  73:[21355,23600,26043,34141,28750,31774,34883,57986,32491,37769,41075,81101,48367,54608,59142,113347],
+  74:[22561,24934,27514,36072,30375,33571,36854,61167,34313,39888,43377,85453,51103,57698,62468,119500],
+  75:[23828,26334,29058,38099,32080,35455,38921,64503,36225,42109,45791,90005,53968,60932,65953,125963],
+  76:[25165,27811,30687,40237,33872,37436,41095,68001,38239,44451,48335,94690,56981,64334,69614,132744],
+  77:[26560,29354,32389,42470,35706,39464,43322,71594,40345,46900,50997,99609,60139,67900,73462,139859],
+  78:[28031,30980,34183,44823,37623,41582,45649,75341,42562,49477,53798,104768,63454,71643,77495,147322],
+  79:[29573,32683,36062,47290,39610,43779,48065,79231,44888,52181,56735,110180,66938,75577,81732,155152],
+  80:[31195,34477,38041,49886,41675,46061,50575,83269,47332,55023,59823,115858,70590,79701,86173,163370],
+};
+
+// ═══════════════════════════════════════════════════
+// ELITE HEALTH PLUS SIMULATOR STATE & FUNCTIONS
+// ═══════════════════════════════════════════════════
+let ehSim = {plan:1, region:1};
+
+const EH_PLAN_LABELS = {1:'แผน 1 (20 ล้าน/ปี)', 2:'แผน 2 (40 ล้าน/ปี)', 3:'แผน 3 (75 ล้าน/ปี)', 4:'แผน 4 (100 ล้าน/ปี)'};
+const EH_REGION_LABELS = {
+  1:'คุ้มครองการรักษาในประเทศไทยเท่านั้น',
+  2:'คุ้มครองการรักษาในทวีปเอเชีย รวมถึงไทย',
+  3:'คุ้มครองทั่วโลก ยกเว้นสหรัฐอเมริกา',
+  4:'คุ้มครองทั่วโลก รวมถึงสหรัฐอเมริกา'
+};
+const EH_REGION_SHORT = {1:'ไทยเท่านั้น', 2:'ทวีปเอเชีย', 3:'ทั่วโลก (ยกเว้น USA)', 4:'ทั่วโลก (รวม USA)'};
+
+function setElite(key, val) {
+  ehSim[key] = val;
+  // Update plan buttons
+  [1,2,3,4].forEach(n => {
+    const el = document.getElementById('eh-btn-p'+n);
+    if(el) el.className = 'sim-btn text-xs' + (n === ehSim.plan ? ' selected' : '');
+  });
+  // Update region buttons
+  [1,2,3,4].forEach(n => {
+    const el = document.getElementById('eh-btn-r'+n);
+    if(el) el.className = 'sim-btn text-xs' + (n === ehSim.region ? ' selected' : '');
+  });
+  const descEl = document.getElementById('eh-region-desc');
+  if(descEl) descEl.textContent = EH_REGION_LABELS[ehSim.region];
+  calcElite();
+}
+
+function calcElite() {
+  const age = parseInt(document.getElementById('eh-age-num').value) || 35;
+  const clampedAge = Math.max(11, Math.min(80, age));
+  const row = EH[clampedAge];
+  if(!row) return;
+
+  // Index: plan 1-4, region 1-4 → offset = (plan-1)*4 + (region-1)
+  const idx = (ehSim.plan - 1) * 4 + (ehSim.region - 1);
+  const premium = row[idx];
+
+  document.getElementById('eh-result-meta').textContent =
+    'อายุ ' + clampedAge + ' ปี · ' + EH_PLAN_LABELS[ehSim.plan];
+  document.getElementById('eh-result-premium').textContent =
+    premium ? '฿' + premium.toLocaleString('th-TH') + ' /ปี' : '—';
+  document.getElementById('eh-result-monthly').textContent =
+    premium ? '≈ ฿' + Math.round(premium/12).toLocaleString('th-TH') + ' /เดือน' : '';
+  
+  const regionSummaryEl = document.getElementById('eh-region-summary');
+  if(regionSummaryEl) regionSummaryEl.textContent = EH_REGION_SHORT[ehSim.region];
+  
+  const descEl = document.getElementById('eh-region-desc');
+  if(descEl) descEl.textContent = EH_REGION_LABELS[ehSim.region];
+
+  // Coverage
+  const planCoverage = {1:'20 ล้านบาท/ปี', 2:'40 ล้านบาท/ปี', 3:'75 ล้านบาท/ปี', 4:'100 ล้านบาท/ปี'};
+  const covEl = document.getElementById('eh-coverage');
+  if(covEl) {
+    covEl.innerHTML = [
+      '✓ วงเงินสูงสุด ' + planCoverage[ehSim.plan],
+      '✓ IPD เหมาจ่าย · ไม่มี Deductible / Copay',
+      '✓ OPD ไม่จำกัดจำนวนครั้ง',
+      '✓ ค่าห้อง ค่าหมอ ค่ายา ค่าผ่าตัด ฟื้นฟู',
+      '✓ คุ้มครอง: ' + EH_REGION_SHORT[ehSim.region],
+      '✓ คุ้มครองถึงอายุ 99 ปี'
+    ].map(s => '<div>' + s + '</div>').join('');
+  }
+}
+
+// Init Elite simulator
+setElite('plan', 1);
+
 </script>
 </body>
 </html>
