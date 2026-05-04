@@ -54,7 +54,16 @@
     .cred-row:last-child{border-bottom:none}
     .cred-icon{width:38px;height:38px;border-radius:10px;background:#EFF9FC;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-    /* Team grid */
+    /* Team grid – photo cards */
+    .team-card-new{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:all .25s}
+    .team-card-new:hover{box-shadow:0 8px 28px rgba(27,54,93,.12);transform:translateY(-3px);border-color:#CBD5E1}
+    .team-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden}
+    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s}
+    .team-card-new:hover .team-photo{transform:scale(1.04)}
+    .team-overlay{position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(transparent,rgba(13,26,45,.75))}
+    .team-bg-label{font-family:'Poppins',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em}
+    .team-info{padding:.875rem 1rem}
+    /* ── OLD team-card (keep) ── */
     .team-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;border-radius:20px;background:#fff;border:1.5px solid #EEF2F7;transition:all .22s cubic-bezier(.22,1,.36,1)}
     .team-card:hover{box-shadow:0 8px 28px rgba(27,54,93,.09);transform:translateY(-3px);border-color:#CBD5E1}
     .team-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#E8F4F8 0%,#C8E6EE 100%);border:2px solid rgba(8,145,178,.15);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;color:#0891B2}
@@ -353,99 +362,163 @@
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-12 reveal">
       <span class="sec-label">Our Team</span>
-      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">จากหลากหลายความเชี่ยวชาญ<br class="hidden sm:block"/> สู่ที่ปรึกษาการเงินมืออาชีพ</h2>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">จากหลากหลายความเชี่ยวชาญ<br class="hidden sm:block"/> สู่ที่ปรึกษาที่เข้าใจคุณจริง</h2>
       <p class="font-noto text-slate-400 mt-3 text-sm">ทีมของเราเดินทางมาจากหลากหลายสาขาอาชีพ ทำให้เข้าใจความต้องการของลูกค้าได้จริง</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 reveal">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal">
 
-      <!-- Member 1 -->
-      <div class="team-card">
-        <div class="team-avatar">นพ</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">นพ. เอ</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#EFF9FC;color:#0891B2;border:1px solid rgba(8,145,178,.15)">อดีตแพทย์</span>
+      <!-- Medical Specialist -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/doctor-1.jpg" alt="Medical Specialist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Physician</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Medical Specialist</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Physician</div>
         </div>
       </div>
 
-      <!-- Member 2 -->
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#F0F4F8 0%,#D8E6F0 100%)">บี</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณบี</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#F0F4F8;color:#1B365D;border:1px solid rgba(27,54,93,.12)">HR Manager</span>
+      <!-- Clinical Consultant -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/doctor-2.jpg" alt="Clinical Consultant" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Surgeon</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Clinical Consultant</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Surgeon</div>
         </div>
       </div>
 
-      <!-- Member 3 -->
-      <div class="team-card">
-        <div class="team-avatar">ซี</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณซี</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#EFF9FC;color:#0891B2;border:1px solid rgba(8,145,178,.15)">วิศวกร</span>
+      <!-- Digital Economy Expert -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/freelancer.jpg" alt="Digital Economy Expert" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Independent Professional</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Digital Economy Expert</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Independent Professional</div>
         </div>
       </div>
 
-      <!-- Member 4 -->
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#F0F4F8 0%,#D8E6F0 100%)">ดี</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณดี</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#F0F4F8;color:#1B365D;border:1px solid rgba(27,54,93,.12)">เจ้าของธุรกิจ</span>
+      <!-- Service Excellence Lead -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hospitality.jpg" alt="Service Excellence Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Hotel Management</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Service Excellence Lead</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Hotel Management</div>
         </div>
       </div>
 
-      <!-- Member 5 -->
-      <div class="team-card">
-        <div class="team-avatar">อี</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณอี</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#EFF9FC;color:#0891B2;border:1px solid rgba(8,145,178,.15)">นักการตลาด</span>
+      <!-- Infrastructure Strategist -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/engineer.jpg" alt="Infrastructure Strategist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Engineer</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Infrastructure Strategist</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Engineer</div>
         </div>
       </div>
 
-      <!-- Member 6 -->
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#F0F4F8 0%,#D8E6F0 100%)">เอฟ</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณเอฟ</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#F0F4F8;color:#1B365D;border:1px solid rgba(27,54,93,.12)">สถาปนิก</span>
+      <!-- Human Capital Advisor -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hr-advisor.jpg" alt="Human Capital Advisor" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">HR Specialist</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Human Capital Advisor</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">HR Specialist</div>
         </div>
       </div>
 
-      <!-- Member 7 -->
-      <div class="team-card">
-        <div class="team-avatar">จี</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณจี</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#EFF9FC;color:#0891B2;border:1px solid rgba(8,145,178,.15)">Cabin Crew</span>
+      <!-- Operations & Systems Lead -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/food-industry.jpg" alt="Operations & Systems Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">F&B Executive</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Operations & Systems Lead</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">F&B Executive</div>
         </div>
       </div>
 
-      <!-- Member 8 -->
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#F0F4F8 0%,#D8E6F0 100%)">เอช</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณเอช</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#F0F4F8;color:#1B365D;border:1px solid rgba(27,54,93,.12)">นักบัญชี</span>
+      <!-- Strategic Foundation Lead -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/energy.jpg" alt="Strategic Foundation Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Energy Sector</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Strategic Foundation Lead</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Energy Sector</div>
         </div>
       </div>
 
-      <!-- Member 9 -->
-      <div class="team-card">
-        <div class="team-avatar">ไอ</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณไอ</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#EFF9FC;color:#0891B2;border:1px solid rgba(8,145,178,.15)">IT Developer</span>
+      <!-- Organizational Strategist -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hr-manager.jpg" alt="Organizational Strategist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">HR Director</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Organizational Strategist</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">HR Director</div>
         </div>
       </div>
 
-      <!-- Member 10 -->
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#F0F4F8 0%,#D8E6F0 100%)">เจ</div>
-        <div class="text-center">
-          <div class="font-pop font-bold text-navy text-sm">คุณเจ</div>
-          <span class="inline-block mt-1.5 font-noto text-xs px-2.5 py-0.5 rounded-full" style="background:#F0F4F8;color:#1B365D;border:1px solid rgba(27,54,93,.12)">ผู้ตรวจสอบบัญชี</span>
+      <!-- Financial Innovation Lead -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/cfo.jpg" alt="Financial Innovation Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">CFO</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Financial Innovation Lead</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">CFO</div>
+        </div>
+      </div>
+
+      <!-- Execution Excellence Lead -->
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/project-manager.jpg" alt="Execution Excellence Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Project Manager</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="font-pop font-bold text-navy text-sm leading-tight">Execution Excellence Lead</div>
+          <div class="font-noto text-xs text-slate-400 mt-0.5">Project Manager</div>
         </div>
       </div>
 
