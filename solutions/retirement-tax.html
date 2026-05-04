@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>เกษียณแบบการันตี พร้อมบริหารภาษี | Next Level Advisor</title>
+  <meta name="description" content="วางแผนเกษียณด้วยประกันบำนาญ รับรายได้การันตีตลอดชีพ พร้อมลดหย่อนภาษีสูงสุด 300,000 บาทต่อปี โดยที่ปรึกษาการเงิน AFPT™ FChFP"/>
+  <link rel="canonical" href="https://nextlevel-advisor.com/solutions/retirement-tax.html"/>
+  <meta property="og:title" content="เกษียณแบบการันตี พร้อมบริหารภาษี | Next Level Advisor"/>
+  <meta property="og:description" content="รายได้แน่นอนตลอดชีพ + ลดหย่อนภาษีสูงสุด 300,000 บาท/ปี ด้วยประกันบำนาญเมืองไทยประกันชีวิต"/>
+  <meta property="og:url" content="https://nextlevel-advisor.com/solutions/retirement-tax.html"/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" href="/nav-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Pridi:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2',deep:'#0D1F3C'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']},boxShadow:{card:'0 2px 20px rgba(27,54,93,0.07)','card-h':'0 8px 32px rgba(27,54,93,0.13)'}}}};
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"วางแผนเกษียณและภาษีด้วยประกันบำนาญ","provider":{"@type":"Person","name":"ป้อง","jobTitle":"ที่ปรึกษาการเงิน AFPT™ FChFP","affiliation":"เมืองไทยประกันชีวิต"},"description":"บริการวางแผนเกษียณด้วยประกันบำนาญ รับรายได้การันตีตลอดชีพ พร้อมลดหย่อนภาษีสูงสุด 300,000 บาทต่อปี","url":"https://nextlevel-advisor.com/solutions/retirement-tax.html","areaServed":"TH"}
+  </script>
+  <style>
+    *{-webkit-font-smoothing:antialiased}
+    body{font-family:'Noto Sans Thai',sans-serif;color:#1B365D;background:#F8FAFC;overflow-x:hidden}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Noto Sans Thai';font-weight:600;border-radius:14px;transition:all .22s cubic-bezier(.22,1,.36,1);cursor:pointer;text-decoration:none}
+    .btn-teal{background:#0891B2;color:#fff;border:2px solid #0891B2}
+    .btn-teal:hover{background:#0779A0;border-color:#0779A0;transform:translateY(-1px);box-shadow:0 6px 20px rgba(8,145,178,.28)}
+    .btn-outline{background:transparent;color:#1B365D;border:2px solid #CBD5E1}
+    .btn-outline:hover{background:#1B365D;color:#fff;border-color:#1B365D;transform:translateY(-1px)}
+    .btn-navy{background:#1B365D;color:#fff;border:2px solid #1B365D}
+    .btn-navy:hover{background:#0F2240;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,54,93,.25)}
+    .glass{background:rgba(255,255,255,0.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
+    nav.scrolled{background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(27,54,93,0.07)}
+    /* Tabs */
+    .tab-btn{padding:12px 24px;border-radius:12px;font-weight:600;font-size:14px;transition:all .2s;border:2px solid transparent;white-space:nowrap}
+    .tab-btn.active{background:#1B365D;color:#fff;box-shadow:0 4px 12px rgba(27,54,93,.2)}
+    .tab-btn.recommended{border-color:#0891B2}
+    .tab-btn.recommended.active{background:#0891B2;border-color:#0891B2}
+    .tab-pane{display:none}
+    .tab-pane.active{display:block}
+    /* Product cards */
+    .product-card{background:#fff;border:1.5px solid #E8EDF5;border-radius:16px;overflow:hidden;transition:all .2s;cursor:pointer}
+    .product-card:hover{box-shadow:0 8px 28px rgba(27,54,93,.1);transform:translateY(-2px)}
+    .product-card.open .card-body{display:block}
+    .product-card.open .chevron{transform:rotate(180deg)}
+    .card-body{display:none;border-top:1px solid #E8EDF5}
+    .chevron{transition:transform .25s}
+    /* FAQ */
+    .faq-item .faq-answer{display:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-item.open .faq-answer{display:block;max-height:500px}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-icon{transition:transform .25s}
+    /* Recommended badge */
+    .rec-badge{background:linear-gradient(135deg,#0891B2,#065E7A);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px}
+    /* Stat bar */
+    .stat-item::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:#E8EDF5}
+    .stat-item:last-child::after{display:none}
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav" class="py-4">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <img src="/nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
+      <div class="hidden sm:block leading-tight">
+        <div class="font-pop font-bold text-navy text-sm">Next Level Advisor</div>
+      </div>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
+      <li><a href="/solutions" class="text-teal font-semibold">โซลูชัน</a></li>
+      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">วางแผนเกษียณ</a></li>
+      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีม</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="tel:0809696351" class="hidden md:inline-flex items-center gap-1.5 font-pop font-semibold text-sm text-navy hover:text-teal transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        080-9696351
+      </a>
+      <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-teal px-5 py-2.5 text-sm">
+        นัดปรึกษาฟรี
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section style="background:linear-gradient(135deg,#0D1F3C 0%,#1B365D 55%,#0D4F6A 100%);padding-top:100px" class="pt-24 pb-16 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 70% 50%,#0891B2 0%,transparent 60%)"></div>
+  <div class="max-w-6xl mx-auto px-5 relative">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs mb-6" style="color:rgba(255,255,255,.45)">
+      <a href="/" style="color:inherit" class="hover:text-white transition-colors">หน้าแรก</a>
+      <span>/</span>
+      <a href="/solutions" style="color:inherit" class="hover:text-white transition-colors">โซลูชัน</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.7)">เกษียณ &amp; ภาษี</span>
+    </nav>
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold" style="background:rgba(8,145,178,.2);color:#38BDF8;border:1px solid rgba(8,145,178,.3)">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Guaranteed Income · กลุ่มรายได้แน่นอน
+      </div>
+      <h1 class="font-pridi font-bold text-white mb-4" style="font-size:clamp(28px,4vw,48px);line-height:1.2">
+        เกษียณแบบการันตี<br/><span style="color:#38BDF8">พร้อมบริหารภาษี</span>
+      </h1>
+      <p class="font-noto text-lg mb-8" style="color:rgba(255,255,255,.75);line-height:1.8">
+        สร้างรายได้แน่นอนตลอดชีพ ไม่ว่าเศรษฐกิจจะเป็นอย่างไร<br/>
+        พร้อมลดหย่อนภาษีได้สูงสุด <strong class="text-white">300,000 บาท/ปี</strong>
+      </p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15)">✅ รายได้การันตีตลอดชีพ</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15)">💰 ลดภาษีสูงสุด 300,000 บาท</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15)">🛡️ มีทุนคุ้มครองและการันตีทายาท</span>
+      </div>
+      <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-teal px-7 py-3.5 text-base">
+        คำนวณแผนที่เหมาะกับคุณ →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="bg-white border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      <div class="stat-item relative text-center py-6 px-4">
+        <div class="font-pop font-black text-2xl text-teal">12–24%</div>
+        <div class="font-noto text-xs text-slate-500 mt-1">บำนาญต่อปี<br/>(ของทุนประกัน)</div>
+      </div>
+      <div class="stat-item relative text-center py-6 px-4 border-l border-slate-100">
+        <div class="font-pop font-black text-2xl text-teal">300,000</div>
+        <div class="font-noto text-xs text-slate-500 mt-1">ลดหย่อนภาษีสูงสุด<br/>(บาท/ปี)</div>
+      </div>
+      <div class="stat-item relative text-center py-6 px-4 border-l border-slate-100">
+        <div class="font-pop font-black text-2xl text-teal">90,000</div>
+        <div class="font-noto text-xs text-slate-500 mt-1">ประหยัดภาษีจริงสูงสุด<br/>(บาท/ปี · ฐานภาษี 30%)</div>
+      </div>
+      <div class="stat-item relative text-center py-6 px-4 border-l border-slate-100">
+        <div class="font-pop font-black text-2xl text-teal">ถึงอายุ 99</div>
+        <div class="font-noto text-xs text-slate-500 mt-1">รับบำนาญยาวที่สุด<br/>(บางแบบประกัน)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON TABLE ── -->
+<section class="py-14 bg-white">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center mb-8">
+      <span class="inline-block bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">เลือกให้ตรงกับตัวคุณ</span>
+      <h2 class="font-pridi font-bold text-navy text-2xl">เลือกรูปแบบการออมที่ใช่</h2>
+      <p class="font-noto text-slate-500 text-sm mt-2">เปรียบเทียบ 3 กลุ่มตามพฤติกรรมการออมของคุณ</p>
+    </div>
+    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-card">
+      <table class="w-full font-noto text-sm">
+        <thead>
+          <tr style="background:#1B365D;color:#fff">
+            <th class="text-left px-5 py-4 font-semibold">รูปแบบ</th>
+            <th class="text-center px-4 py-4 font-semibold">ระยะเวลาจ่าย</th>
+            <th class="text-center px-4 py-4 font-semibold hidden sm:table-cell">เหมาะกับ</th>
+            <th class="text-center px-4 py-4 font-semibold">ความคุ้มค่า</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+            <td class="px-5 py-4">
+              <div class="font-semibold text-navy">Single Premium</div>
+              <div class="text-slate-400 text-xs">จ่ายครั้งเดียว</div>
+            </td>
+            <td class="text-center px-4 py-4 font-medium text-slate-700">1 ครั้ง</td>
+            <td class="text-center px-4 py-4 text-slate-500 hidden sm:table-cell text-xs">มีเงินก้อน / Windfall</td>
+            <td class="text-center px-4 py-4">
+              <div class="flex justify-center gap-0.5">
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+            <td class="px-5 py-4">
+              <div class="font-semibold text-navy">Short-term Payment</div>
+              <div class="text-slate-400 text-xs">จ่ายสั้น ต่ำกว่า 10 ปี</div>
+            </td>
+            <td class="text-center px-4 py-4 font-medium text-slate-700">5 ปี</td>
+            <td class="text-center px-4 py-4 text-slate-500 hidden sm:table-cell text-xs">เจ้าของธุรกิจ / กำไรส่วนเกิน</td>
+            <td class="text-center px-4 py-4">
+              <div class="flex justify-center gap-0.5">
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+              </div>
+            </td>
+          </tr>
+          <tr style="background:#F0F9FF" class="hover:bg-sky-50 transition-colors">
+            <td class="px-5 py-4">
+              <div class="font-semibold text-navy flex items-center gap-2">
+                Regular Premium
+                <span class="rec-badge">แนะนำที่สุด</span>
+              </div>
+              <div class="text-slate-400 text-xs">จ่ายสม่ำเสมอ</div>
+            </td>
+            <td class="text-center px-4 py-4 font-medium text-teal">จนถึงก่อนเกษียณ</td>
+            <td class="text-center px-4 py-4 text-slate-500 hidden sm:table-cell text-xs">พนักงานประจำ / รายได้คงที่</td>
+            <td class="text-center px-4 py-4">
+              <div class="flex justify-center gap-0.5">
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+                <div class="w-3 h-3 rounded-full bg-teal"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-center text-xs text-slate-400 mt-3">● ● = คุ้มค่าระดับปานกลาง &nbsp;|&nbsp; ● ● ● ● = ผลตอบแทนดีที่สุด</p>
+  </div>
+</section>
+
+<!-- ── TABS: 3 PAYMENT GROUPS ── -->
+<section class="py-14" style="background:#F8FAFC">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-8">
+      <h2 class="font-pridi font-bold text-navy text-2xl md:text-3xl">เลือกแบบประกันตามรูปแบบการออม</h2>
+      <p class="font-noto text-slate-500 text-sm mt-2">กดที่แต่ละกลุ่มเพื่อดูแบบประกันและตัวอย่างผลประโยชน์</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="tabBtns">
+      <button class="tab-btn active" onclick="switchTab('single',this)">
+        💼 Single Premium<br/><span class="text-xs font-normal opacity-70">จ่ายครั้งเดียว</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('short',this)">
+        ⚡ Short-term<br/><span class="text-xs font-normal opacity-70">จ่าย 5 ปี</span>
+      </button>
+      <button class="tab-btn recommended" onclick="switchTab('regular',this)">
+        <span class="rec-badge text-xs mr-1">แนะนำ</span> Regular<br/><span class="text-xs font-normal opacity-70">จ่ายสม่ำเสมอ</span>
+      </button>
+    </div>
+
+    <!-- ═══ TAB 1: SINGLE PREMIUM ═══ -->
+    <div class="tab-pane active" id="pane-single">
+      <!-- Who / Feature / Value -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">🎯</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">สำหรับใคร</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">ผู้ที่มีเงินก้อน (Windfall) จากโบนัส มรดก หรือขายทรัพย์สิน และต้องการล็อกผลตอบแทนบำนาญทันที</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">✨</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">จุดเด่น</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">จ่ายเบี้ยเพียงครั้งเดียวจบ ไม่มีภาระผูกพันในอนาคต แต่ได้รับบำนาญการันตีต่อเนื่องยาวนาน</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">💡</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">คุณค่าที่ได้รับ</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">ล็อกความมั่งคั่งและอัตราผลตอบแทนตั้งแต่วันแรก เพื่อความสบายใจที่แน่นอนตลอดชีพ</p>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <h3 class="font-pridi font-bold text-navy text-lg mb-5">แบบประกันในกลุ่มนี้</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เมืองไทย 8501</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · รับบำนาญทันที</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 85</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-green-50 text-green-700">ไม่ตรวจสุขภาพ</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">55–70 ปี</strong></div>
+              <div><span class="text-slate-400">ระยะเวลาชำระ</span><br/><strong class="text-teal">ครั้งเดียว</strong></div>
+              <div><span class="text-slate-400">เริ่มรับบำนาญ</span><br/><strong class="text-navy">ตั้งแต่ปีกรมธรรม์ที่ 1</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* เหมาะสำหรับผู้ที่ใกล้เกษียณอายุ 55–70 ปี ต้องการเริ่มรับบำนาญทันทีหลังจ่าย</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เมืองไทย 8501 ดี55 / ดี60</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · วางแผนล่วงหน้า</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 85</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-green-50 text-green-700">ไม่ตรวจสุขภาพ</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">ดี55: อายุรับประกัน</span><br/><strong class="text-navy">30–53 ปี</strong></div>
+              <div><span class="text-slate-400">ดี60: อายุรับประกัน</span><br/><strong class="text-navy">30–58 ปี</strong></div>
+              <div><span class="text-slate-400">เริ่มรับบำนาญ</span><br/><strong class="text-navy">อายุ 55 / 60 ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* เหมาะสำหรับวัยทำงานที่มีเงินก้อน ต้องการกำหนดเวลาเริ่มรับบำนาญที่ชัดเจน</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เฟล็กซี่ รีไทร์ 90/1 ดี55/60/65</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · บำนาญเพิ่มตามอายุ</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12–24%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 90</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">ผลตอบแทนสูงสุด 582%</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">ดี55: อายุรับประกัน</span><br/><strong class="text-navy">20–50 ปี</strong></div>
+              <div><span class="text-slate-400">ดี65: อายุรับประกัน</span><br/><strong class="text-navy">20–60 ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 55–70</span><br/><strong class="text-teal">12%/ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 86–90</span><br/><strong class="text-teal">24%/ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+              <div><span class="text-slate-400">ผลตอบแทนรวมสูงสุด</span><br/><strong class="text-amber-600">582%</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* บำนาญเพิ่มขึ้นทุก 5 ปี เหมาะสำหรับผู้ที่ต้องการค่าใช้จ่ายสูงขึ้นเมื่ออายุมากขึ้น</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เมืองไทย 9901 ดี65</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · คุ้มครองถึง 99 ปี</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">ถึงอายุ 99</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">30 วัน – 60 ปี</strong></div>
+              <div><span class="text-slate-400">เริ่มรับบำนาญ</span><br/><strong class="text-navy">อายุ 65 ปี</strong></div>
+              <div><span class="text-slate-400">คุ้มครองถึงอายุ</span><br/><strong class="text-purple-600">99 ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* จุดเด่น: รับบำนาญยาวที่สุดถึงอายุ 99 ปี เหมาะผู้ที่ต้องการวางแผนอายุยืน</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study: Single -->
+      <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-card mb-8">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background:linear-gradient(135deg,#0891B2,#1B365D)">👩</div>
+          <div>
+            <div class="font-pop font-bold text-navy">ตัวอย่าง: คุณนิ อายุ 55 ปี · มีเงินก้อน 3,000,000 บาท</div>
+            <div class="text-xs text-slate-400">ต้องการเริ่มรับรายได้หลังเกษียณทันที · เลือก เมืองไทย 8501 ทุน 3,000,000 บาท</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="rounded-xl p-4 text-center" style="background:#F0F9FF;border:1px solid #BAE6FD">
+            <div class="text-xs text-slate-500 mb-1">จ่ายเบี้ย</div>
+            <div class="font-pop font-black text-2xl text-navy">3,000,000</div>
+            <div class="text-xs text-slate-400">บาท · ครั้งเดียว</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#F0FDF4;border:1px solid #86EFAC">
+            <div class="text-xs text-slate-500 mb-1">รับบำนาญทุกปี</div>
+            <div class="font-pop font-black text-2xl text-green-600">360,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี (30,000/เดือน)</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FEF3C7;border:1px solid #FCD34D">
+            <div class="text-xs text-slate-500 mb-1">ประหยัดภาษี (ฐาน 20%)</div>
+            <div class="font-pop font-black text-2xl text-amber-600">50,000</div>
+            <div class="text-xs text-slate-400">บาท ในปีที่จ่าย</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-teal px-8 py-3.5">
+          คำนวณแผนการออมที่เหมาะกับคุณ →
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ TAB 2: SHORT-TERM ═══ -->
+    <div class="tab-pane" id="pane-short">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">🏢</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">สำหรับใคร</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">เจ้าของธุรกิจที่มีกำไรส่วนเกินในบางช่วง หรือผู้ที่ต้องการเร่งสร้างพอร์ตบำนาญให้จบภายในเวลาอันสั้น</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">⚡</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">จุดเด่น</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">เลือกจ่ายเพียง 5 ปี จบภาระเร็ว แต่ได้รับสิทธิประโยชน์บำนาญเต็มจำนวนเหมือนกัน</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">🚀</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">คุณค่าที่ได้รับ</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">เพิ่มความคล่องตัวทางการเงินในอนาคต โดยไม่มีภาระค่าเบี้ยระยะยาวกวนใจ</p>
+        </div>
+      </div>
+
+      <h3 class="font-pridi font-bold text-navy text-lg mb-5">แบบประกันในกลุ่มนี้</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+
+        <div class="product-card" onclick="toggleCard(this)" style="border-color:#0891B2">
+          <div class="p-1 text-center text-xs font-bold text-white" style="background:#0891B2">⭐ ผลตอบแทนสูงสุดในกลุ่ม</div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">รีเทิร์น รีไทร์ (8505)</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · จ่าย 5 ปี รับ 20%</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-teal text-white font-semibold">20%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">รับรอง 15 ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 85</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">20–55 ปี</strong></div>
+              <div><span class="text-slate-400">ระยะเวลาชำระ</span><br/><strong class="text-teal">5 ปี เท่านั้น</strong></div>
+              <div><span class="text-slate-400">บำนาญต่อปี</span><br/><strong class="text-teal">20% คงที่</strong></div>
+              <div><span class="text-slate-400">การรับรองบำนาญ</span><br/><strong class="text-blue-600">15 ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+              <div><span class="text-slate-400">รับรองทายาท</span><br/><strong class="text-green-600">ได้ถ้าจากไปก่อน</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* จ่าย 5 ปี รับบำนาญ 20% ต่อปีตลอดชีพ + รับรอง 15 ปี ถ้าจากไปก่อน ทายาทรับต่อ</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เฟล็กซี่ รีไทร์ 90/5 ดี55/60/65</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · จ่าย 5 ปี บำนาญเพิ่มตามอายุ</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12–24%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 90</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">สูงสุด 582%</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">ดี55: อายุรับประกัน</span><br/><strong class="text-navy">20–50 ปี</strong></div>
+              <div><span class="text-slate-400">ดี65: อายุรับประกัน</span><br/><strong class="text-navy">20–55 ปี</strong></div>
+              <div><span class="text-slate-400">ระยะเวลาชำระ</span><br/><strong class="text-teal">5 ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 86–90</span><br/><strong class="text-teal">24%/ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">50,000 บาท</strong></div>
+              <div><span class="text-slate-400">ใช้บัตรเครดิต</span><br/><strong class="text-green-600">ได้</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* จ่ายสั้น 5 ปี แต่บำนาญเพิ่มทุก 5 ปีจนถึง 24% เมื่ออายุ 86–90</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study: Short-term -->
+      <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-card mb-8">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background:linear-gradient(135deg,#0891B2,#1B365D)">👩</div>
+          <div>
+            <div class="font-pop font-bold text-navy">ตัวอย่าง: คุณนิ อายุ 35 ปี · เจ้าของธุรกิจ</div>
+            <div class="text-xs text-slate-400">มีกำไรส่วนเกิน · ต้องการเร่งสร้างบำนาญ · เลือก รีเทิร์น รีไทร์ ทุน 1,500,000 บาท</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div class="rounded-xl p-4 text-center" style="background:#F0F9FF;border:1px solid #BAE6FD">
+            <div class="text-xs text-slate-500 mb-1">จ่ายเบี้ยปีละ</div>
+            <div class="font-pop font-black text-xl text-navy">~300,000</div>
+            <div class="text-xs text-slate-400">บาท × 5 ปี</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#F0FDF4;border:1px solid #86EFAC">
+            <div class="text-xs text-slate-500 mb-1">รับบำนาญทุกปี</div>
+            <div class="font-pop font-black text-xl text-green-600">300,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี (20% · ตลอดชีพ)</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FEF3C7;border:1px solid #FCD34D">
+            <div class="text-xs text-slate-500 mb-1">ประหยัดภาษีต่อปี</div>
+            <div class="font-pop font-black text-xl text-amber-600">75,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี × 5 ปี (ฐาน 25%)</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FDF4FF;border:1px solid #E879F9">
+            <div class="text-xs text-slate-500 mb-1">รับรองบำนาญ</div>
+            <div class="font-pop font-black text-xl text-purple-600">15 ปี</div>
+            <div class="text-xs text-slate-400">ทายาทรับต่อหากจากไปก่อน</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-teal px-8 py-3.5">
+          คำนวณแผนการออมที่เหมาะกับคุณ →
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ TAB 3: REGULAR PREMIUM (RECOMMENDED) ═══ -->
+    <div class="tab-pane" id="pane-regular">
+      <!-- Recommended banner -->
+      <div class="rounded-2xl p-4 mb-8 flex items-center gap-3" style="background:linear-gradient(135deg,#0891B2,#065E7A);color:#fff">
+        <div class="text-3xl">⭐</div>
+        <div>
+          <div class="font-pop font-bold text-base">Highest Returns — ผลตอบแทนดีที่สุด</div>
+          <div class="text-sm opacity-80">กลุ่มนี้ให้ความคุ้มค่าสูงสุด พร้อมรับสิทธิลดหย่อนภาษีเต็มสิทธิต่อเนื่องทุกปี</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">👨‍💼</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">สำหรับใคร</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">พนักงานประจำหรือผู้ที่มีรายได้คงที่ ต้องการสร้างวินัยการออมและบริหารภาษีให้มีประสิทธิภาพทุกปี</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+          <div class="text-2xl mb-3">📈</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">จุดเด่น</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">ทยอยจ่ายเบี้ยคงที่ต่อเนื่องจนถึงก่อนเกษียณ ไม่เป็นภาระเงินก้อนใหญ่ สร้างวินัยการออมอัตโนมัติ</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-teal shadow-card" style="border-color:#0891B2">
+          <div class="text-2xl mb-3">💎</div>
+          <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">คุณค่าที่ได้รับ</div>
+          <p class="font-noto text-sm text-slate-700 leading-relaxed">ผลตอบแทนรวมสูงสุดในทุกกลุ่ม + ลดหย่อนภาษีเต็มสิทธิ 300,000 บาทต่อเนื่องทุกปี</p>
+        </div>
+      </div>
+
+      <h3 class="font-pridi font-bold text-navy text-lg mb-5">แบบประกันในกลุ่มนี้</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+
+        <div class="product-card" onclick="toggleCard(this)" style="border-color:#0891B2">
+          <div class="p-1 text-center text-xs font-bold text-white" style="background:#0891B2">บำนาญสูงสุด 24% + รับรอง 20 ปี</div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เมืองไทย 8555 จี20</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · Guaranteed 20 ปี</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-teal text-white font-semibold">24%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">รับรอง 20 ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 85</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">20–50 ปี</strong></div>
+              <div><span class="text-slate-400">ชำระเบี้ยถึง</span><br/><strong class="text-navy">อายุ 55 ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญต่อปี</span><br/><strong class="text-teal">24% คงที่ตลอดชีพ</strong></div>
+              <div><span class="text-slate-400">รับรองบำนาญ</span><br/><strong class="text-blue-600">20 ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">100,000 บาท</strong></div>
+              <div><span class="text-slate-400">ใช้บัตรเครดิต</span><br/><strong class="text-green-600">ได้</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* บำนาญสูงสุดในกลุ่ม 24% ต่อปี + รับรอง 20 ปี เหมาะผู้มีครอบครัวและต้องการทิ้งมรดกไว้</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เมืองไทย 8560 จี15</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · Guaranteed 15 ปี</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">รับรอง 15 ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ถึงอายุ 85</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">20–55 ปี</strong></div>
+              <div><span class="text-slate-400">ชำระเบี้ยถึง</span><br/><strong class="text-navy">อายุ 60 ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญต่อปี</span><br/><strong class="text-teal">12% คงที่</strong></div>
+              <div><span class="text-slate-400">รับรองบำนาญ</span><br/><strong class="text-blue-600">15 ปี</strong></div>
+              <div><span class="text-slate-400">ทุนขั้นต่ำ</span><br/><strong class="text-navy">100,000 บาท</strong></div>
+              <div><span class="text-slate-400">ใช้บัตรเครดิต</span><br/><strong class="text-green-600">ได้</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เฟล็กซี่ รีไทร์ 9060 ⭐</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · ยอดนิยม</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12–24%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">ถึงอายุ 90</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">รวม 522%</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">อายุรับประกัน</span><br/><strong class="text-navy">20–55 ปี</strong></div>
+              <div><span class="text-slate-400">ชำระเบี้ยถึง</span><br/><strong class="text-navy">อายุ 60 ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 60–70</span><br/><strong class="text-teal">12%/ปี</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 86–90</span><br/><strong class="text-teal">24%/ปี</strong></div>
+              <div><span class="text-slate-400">ผลตอบแทนรวม</span><br/><strong class="text-amber-600">522%</strong></div>
+              <div><span class="text-slate-400">ไม่ตรวจสุขภาพ</span><br/><strong class="text-green-600">ถ้าไม่ซื้อเพิ่มเติม</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="toggleCard(this)">
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="font-pop font-bold text-navy text-base">เฟล็กซี่ รีไทร์ 9055 / 9065</div>
+              <div class="text-xs text-slate-400 mt-0.5">บำนาญแบบลดหย่อนได้ · เลือกอายุเกษียณ</div>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sky-50 text-teal font-semibold">12–24%/ปี</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">ถึงอายุ 90</span>
+              </div>
+            </div>
+            <svg class="chevron w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="card-body px-5 py-4 bg-slate-50 text-sm font-noto">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-600">
+              <div><span class="text-slate-400">9055: ชำระถึงอายุ</span><br/><strong class="text-navy">55 ปี (รับจาก 55)</strong></div>
+              <div><span class="text-slate-400">9065: ชำระถึงอายุ</span><br/><strong class="text-navy">65 ปี (รับจาก 65)</strong></div>
+              <div><span class="text-slate-400">บำนาญ อายุ 86–90</span><br/><strong class="text-teal">24%/ปี</strong></div>
+              <div><span class="text-slate-400">ผลตอบแทนรวม</span><br/><strong class="text-amber-600">9055: 582% / 9065: 462%</strong></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">* 9055 เหมาะผู้ต้องการเกษียณเร็ว 9065 เหมาะผู้ต้องการลดหย่อนภาษีนานกว่า</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study: Regular -->
+      <div class="bg-white rounded-2xl p-7 border-2 border-teal shadow-card mb-8">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background:linear-gradient(135deg,#0891B2,#1B365D)">👩</div>
+          <div>
+            <div class="font-pop font-bold text-navy">ตัวอย่าง: คุณนิ อายุ 35 ปี · เงินเดือน 100,000 บาท/เดือน</div>
+            <div class="text-xs text-slate-400">ฐานภาษี 25% · ต้องการเกษียณอายุ 60 ปี · เลือก เฟล็กซี่ รีไทร์ 9060 ทุน 2,000,000 บาท</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
+          <div class="rounded-xl p-4 text-center" style="background:#F0F9FF;border:1px solid #BAE6FD">
+            <div class="text-xs text-slate-500 mb-1">จ่ายเบี้ยต่อปี</div>
+            <div class="font-pop font-black text-xl text-navy">~170,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี ถึงอายุ 60</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FEF3C7;border:1px solid #FCD34D">
+            <div class="text-xs text-slate-500 mb-1">ประหยัดภาษี/ปี</div>
+            <div class="font-pop font-black text-xl text-amber-600">75,000</div>
+            <div class="text-xs text-slate-400">บาท · ฐานภาษี 25%</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#F0FDF4;border:1px solid #86EFAC">
+            <div class="text-xs text-slate-500 mb-1">บำนาญเริ่มต้น (60)</div>
+            <div class="font-pop font-black text-xl text-green-600">240,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี (20,000/เดือน)</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FDF4FF;border:1px solid #E879F9">
+            <div class="text-xs text-slate-500 mb-1">บำนาญสูงสุด (86–90)</div>
+            <div class="font-pop font-black text-xl text-purple-600">480,000</div>
+            <div class="text-xs text-slate-400">บาท/ปี (40,000/เดือน)</div>
+          </div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background:linear-gradient(135deg,#0891B2,#065E7A);color:#fff">
+          <div class="text-sm opacity-75 mb-1">ผลประโยชน์รวมถึงอายุ 90 ปี</div>
+          <div class="font-pop font-black text-3xl">10,440,000 บาท</div>
+          <div class="text-xs opacity-60 mt-1">= 522% ของทุนประกัน 2,000,000 บาท</div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-teal px-8 py-3.5">
+          คำนวณแผนการออมที่เหมาะกับคุณ →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TAX BENEFIT ── -->
+<section class="py-16" style="background:linear-gradient(135deg,#0D1F3C 0%,#1B365D 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12">
+      <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style="background:rgba(8,145,178,.2);color:#38BDF8;border:1px solid rgba(8,145,178,.3)">ประโยชน์ทางภาษี</span>
+      <h2 class="font-pridi font-bold text-white text-2xl md:text-3xl">ฐานภาษี 30% ต่างกันแค่ไหน<br/>เมื่อมีและไม่มีประกันบำนาญ?</h2>
+      <p class="font-noto text-sm mt-3" style="color:rgba(255,255,255,.55)">เงินเดือน 250,000 บาท/เดือน · รายได้ต่อปี 3,000,000 บาท</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <!-- Without insurance -->
+      <div class="rounded-2xl p-6" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center text-base">❌</div>
+          <div class="font-pop font-bold text-white">ไม่มีประกันบำนาญ</div>
+        </div>
+        <div class="space-y-2 text-sm font-noto mb-5" style="color:rgba(255,255,255,.7)">
+          <div class="flex justify-between"><span>รายได้ต่อปี</span><span class="text-white font-semibold">3,000,000</span></div>
+          <div class="flex justify-between"><span>หักค่าใช้จ่าย</span><span class="text-white font-semibold">- 100,000</span></div>
+          <div class="flex justify-between"><span>หักลดหย่อนส่วนตัว</span><span class="text-white font-semibold">- 60,000</span></div>
+          <div class="flex justify-between border-t pt-2" style="border-color:rgba(255,255,255,.1)"><span>เงินได้สุทธิ</span><span class="text-white font-bold">2,840,000</span></div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3)">
+          <div class="text-xs mb-1" style="color:rgba(255,255,255,.5)">ภาษีที่ต้องจ่าย</div>
+          <div class="font-pop font-black text-3xl text-red-400">617,000 บาท</div>
+        </div>
+      </div>
+
+      <!-- With insurance -->
+      <div class="rounded-2xl p-6" style="background:rgba(8,145,178,.15);border:1px solid rgba(8,145,178,.4)">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-full bg-teal bg-opacity-30 flex items-center justify-center text-base">✅</div>
+          <div class="font-pop font-bold text-white">มีประกันบำนาญ + ชีวิต = 300,000 บาท</div>
+        </div>
+        <div class="space-y-2 text-sm font-noto mb-5" style="color:rgba(255,255,255,.7)">
+          <div class="flex justify-between"><span>รายได้ต่อปี</span><span class="text-white font-semibold">3,000,000</span></div>
+          <div class="flex justify-between"><span>หักค่าใช้จ่าย</span><span class="text-white font-semibold">- 100,000</span></div>
+          <div class="flex justify-between"><span>หักลดหย่อนส่วนตัว</span><span class="text-white font-semibold">- 60,000</span></div>
+          <div class="flex justify-between" style="color:#38BDF8"><span>หักประกันบำนาญ + ชีวิต</span><span class="font-bold">- 300,000</span></div>
+          <div class="flex justify-between border-t pt-2" style="border-color:rgba(255,255,255,.1)"><span>เงินได้สุทธิ</span><span class="text-white font-bold">2,540,000</span></div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background:rgba(8,145,178,.25);border:1px solid rgba(8,145,178,.5)">
+          <div class="text-xs mb-1" style="color:rgba(255,255,255,.5)">ภาษีที่ต้องจ่าย</div>
+          <div class="font-pop font-black text-3xl text-teal">527,000 บาท</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Savings highlight -->
+    <div class="rounded-2xl p-6 text-center" style="background:linear-gradient(135deg,rgba(8,145,178,.25),rgba(8,145,178,.1));border:1px solid rgba(8,145,178,.4)">
+      <div class="text-sm mb-2" style="color:rgba(255,255,255,.6)">ประหยัดภาษีได้ถึง</div>
+      <div class="font-pop font-black text-white" style="font-size:clamp(32px,5vw,52px)">90,000 บาท/ปี</div>
+      <div class="text-sm mt-2" style="color:rgba(255,255,255,.5)">ฐานภาษี 30% × ลดหย่อน 300,000 บาท &nbsp;|&nbsp; 5 ปีรวมประหยัดได้ถึง <strong class="text-white">450,000 บาท</strong></div>
+    </div>
+
+    <!-- Tax table -->
+    <div class="mt-8">
+      <h3 class="font-pop font-semibold text-white text-sm mb-4">ตารางอัตราภาษีเงินได้บุคคลธรรมดา</h3>
+      <div class="overflow-x-auto rounded-2xl" style="border:1px solid rgba(255,255,255,.1)">
+        <table class="w-full font-noto text-sm">
+          <thead><tr style="background:rgba(255,255,255,.08)">
+            <th class="text-left px-4 py-3 font-semibold" style="color:rgba(255,255,255,.6)">เงินได้สุทธิ (บาท)</th>
+            <th class="text-center px-4 py-3 font-semibold" style="color:rgba(255,255,255,.6)">อัตราภาษี</th>
+            <th class="text-center px-4 py-3 font-semibold" style="color:rgba(255,255,255,.6)">ประหยัดจากลดหย่อน 300K</th>
+          </tr></thead>
+          <tbody style="color:rgba(255,255,255,.7)">
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">1 – 150,000</td><td class="text-center px-4 py-3">ยกเว้น</td><td class="text-center px-4 py-3">–</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">150,001 – 300,000</td><td class="text-center px-4 py-3 text-teal font-bold">5%</td><td class="text-center px-4 py-3">15,000 บาท</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">300,001 – 500,000</td><td class="text-center px-4 py-3 text-teal font-bold">10%</td><td class="text-center px-4 py-3">30,000 บาท</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">500,001 – 750,000</td><td class="text-center px-4 py-3 text-teal font-bold">15%</td><td class="text-center px-4 py-3">45,000 บาท</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">750,001 – 1,000,000</td><td class="text-center px-4 py-3 text-teal font-bold">20%</td><td class="text-center px-4 py-3">60,000 บาท</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">1,000,001 – 2,000,000</td><td class="text-center px-4 py-3 text-teal font-bold">25%</td><td class="text-center px-4 py-3">75,000 บาท</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td class="px-4 py-3">2,000,001 – 5,000,000</td><td class="text-center px-4 py-3 font-bold" style="color:#38BDF8">30%</td><td class="text-center px-4 py-3 font-bold" style="color:#38BDF8">90,000 บาท ← คุณนิ</td></tr>
+            <tr><td class="px-4 py-3">5,000,001 ขึ้นไป</td><td class="text-center px-4 py-3 text-teal font-bold">35%</td><td class="text-center px-4 py-3">90,000 บาท (cap ที่ 300K)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs mt-3" style="color:rgba(255,255,255,.3)">* ประกันบำนาญ + RMF + PVD + กบข. รวมกันต้องไม่เกิน 500,000 บาท</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3 WHY REASONS ── -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10">
+      <h2 class="font-pridi font-bold text-navy text-2xl md:text-3xl">3 เหตุผลที่คนวางแผนเกษียณเลือกประกันบำนาญ</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="rounded-2xl p-7 border border-slate-100 shadow-card">
+        <div class="text-3xl mb-4">💵</div>
+        <h3 class="font-pridi font-bold text-navy text-lg mb-3">รายได้แน่นอน ไม่ผันผวน</h3>
+        <p class="font-noto text-sm text-slate-600 leading-relaxed">รับเงินบำนาญทุกปีตามที่ระบุในกรมธรรม์ ไม่ว่าดอกเบี้ยจะขึ้นหรือลง ไม่ว่าตลาดหุ้นจะเป็นอย่างไร บำนาญคือเงินที่คุณต้องได้รับ</p>
+      </div>
+      <div class="rounded-2xl p-7 border border-slate-100 shadow-card">
+        <div class="text-3xl mb-4">🧾</div>
+        <h3 class="font-pridi font-bold text-navy text-lg mb-3">เปลี่ยนภาษีเป็นเงินออม</h3>
+        <p class="font-noto text-sm text-slate-600 leading-relaxed">เบี้ยประกันบำนาญลดหย่อนภาษีได้สูงสุด 15% ของรายได้ แต่ไม่เกิน 200,000 บาท และถ้าไม่มีประกันชีวิตอื่น ลดหย่อนได้สูงสุดถึง 300,000 บาท</p>
+      </div>
+      <div class="rounded-2xl p-7 border border-slate-100 shadow-card">
+        <div class="text-3xl mb-4">🛡️</div>
+        <h3 class="font-pridi font-bold text-navy text-lg mb-3">บำนาญมีการันตี ทายาทได้รับต่อ</h3>
+        <p class="font-noto text-sm text-slate-600 leading-relaxed">หากเสียชีวิตก่อนรับบำนาญครบตามกำหนด ผู้รับประโยชน์ยังคงได้รับมูลค่าปัจจุบันของบำนาญส่วนที่เหลือ เงินไม่สูญหาย</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IS THIS FOR + FAQ ── -->
+<section class="py-16" style="background:#F8FAFC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Who -->
+      <div>
+        <span class="inline-block bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">เหมาะกับใคร</span>
+        <h2 class="font-pridi font-bold text-navy text-xl mb-6">คุณอยู่กลุ่มไหน?</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-card flex gap-4">
+            <div class="text-2xl flex-shrink-0">💼</div>
+            <div>
+              <div class="font-pridi font-bold text-navy text-sm">มนุษย์เงินเดือน ฐานภาษีสูง</div>
+              <div class="font-noto text-xs text-slate-500 mt-1 leading-relaxed">เงินเดือน 50,000+ บาท อยากเปลี่ยนภาษีที่จ่ายทิ้งให้เป็นเงินออมเกษียณ</div>
+              <div class="text-xs font-semibold text-teal mt-2">→ Regular Premium (เฟล็กซี่ รีไทร์ / 8555 G20)</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-card flex gap-4">
+            <div class="text-2xl flex-shrink-0">🏢</div>
+            <div>
+              <div class="font-pridi font-bold text-navy text-sm">เจ้าของธุรกิจ / Freelance</div>
+              <div class="font-noto text-xs text-slate-500 mt-1 leading-relaxed">รายได้ไม่สม่ำเสมอ ต้องการสร้างรายได้แน่นอนหลังเกษียณและประหยัดภาษีในปีที่มีรายได้สูง</div>
+              <div class="text-xs font-semibold text-teal mt-2">→ Short-term (รีเทิร์น รีไทร์) หรือ Single Premium</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-card flex gap-4">
+            <div class="text-2xl flex-shrink-0">👨‍👩‍👧</div>
+            <div>
+              <div class="font-pridi font-bold text-navy text-sm">คนมีภาระครอบครัว</div>
+              <div class="font-noto text-xs text-slate-500 mt-1 leading-relaxed">ต้องการบำนาญส่วนตัวพร้อมหลักประกันให้ครอบครัว ถ้าจากไปก่อนเงินยังตกทายาท</div>
+              <div class="text-xs font-semibold text-teal mt-2">→ 8555 G20 (รับรอง 20 ปี) หรือ รีเทิร์น รีไทร์</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-card flex gap-4">
+            <div class="text-2xl flex-shrink-0">💰</div>
+            <div>
+              <div class="font-pridi font-bold text-navy text-sm">ใกล้เกษียณ มีเงินก้อน</div>
+              <div class="font-noto text-xs text-slate-500 mt-1 leading-relaxed">อายุ 55+ มีเงินออมก้อนหนึ่ง อยากแปลงเป็นรายได้รายเดือนทันทีโดยไม่ต้องรอนาน</div>
+              <div class="text-xs font-semibold text-teal mt-2">→ Single Premium (เมืองไทย 8501)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div>
+        <span class="inline-block bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">FAQ</span>
+        <h2 class="font-pridi font-bold text-navy text-xl mb-6">คำถามที่พบบ่อย</h2>
+        <div class="space-y-1" id="faqList">
+          <div class="faq-item bg-white rounded-xl border border-slate-100 shadow-card overflow-hidden">
+            <button class="w-full text-left px-5 py-4 flex items-center justify-between" onclick="toggleFaq(this.parentElement)">
+              <span class="font-noto font-semibold text-navy text-sm">ลดหย่อนภาษีได้เท่าไร?</span>
+              <span class="faq-icon text-teal text-xl font-light flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer px-5 pb-4 font-noto text-sm text-slate-600 leading-relaxed">สูงสุด 15% ของรายได้ แต่ไม่เกิน 200,000 บาท และหากไม่ใช้สิทธิ์ประกันชีวิตทั่วไป สามารถลดหย่อนประกันบำนาญได้สูงสุด 300,000 บาท</div>
+          </div>
+          <div class="faq-item bg-white rounded-xl border border-slate-100 shadow-card overflow-hidden">
+            <button class="w-full text-left px-5 py-4 flex items-center justify-between" onclick="toggleFaq(this.parentElement)">
+              <span class="font-noto font-semibold text-navy text-sm">ต้องตรวจสุขภาพไหม?</span>
+              <span class="faq-icon text-teal text-xl font-light flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer px-5 pb-4 font-noto text-sm text-slate-600 leading-relaxed">ขึ้นอยู่กับแบบประกันและจำนวนเงินเอาประกัน หลายแบบเช่น เฟล็กซี่ รีไทร์ 90/5 ไม่ต้องตรวจสุขภาพหากไม่ซื้อสัญญาเพิ่มเติม ที่ปรึกษาจะแจ้งรายละเอียดให้ครบก่อนสมัคร</div>
+          </div>
+          <div class="faq-item bg-white rounded-xl border border-slate-100 shadow-card overflow-hidden">
+            <button class="w-full text-left px-5 py-4 flex items-center justify-between" onclick="toggleFaq(this.parentElement)">
+              <span class="font-noto font-semibold text-navy text-sm">รับบำนาญแบบรายเดือนหรือรายปีได้ไหม?</span>
+              <span class="faq-icon text-teal text-xl font-light flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer px-5 pb-4 font-noto text-sm text-slate-600 leading-relaxed">ได้ทั้งสองแบบ ส่วนใหญ่สามารถเลือกรับรายเดือนหรือรายปีตามความสะดวก</div>
+          </div>
+          <div class="faq-item bg-white rounded-xl border border-slate-100 shadow-card overflow-hidden">
+            <button class="w-full text-left px-5 py-4 flex items-center justify-between" onclick="toggleFaq(this.parentElement)">
+              <span class="font-noto font-semibold text-navy text-sm">ถ้าเสียชีวิตก่อนครบ เงินหายไปไหม?</span>
+              <span class="faq-icon text-teal text-xl font-light flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer px-5 pb-4 font-noto text-sm text-slate-600 leading-relaxed">ไม่หาย สำหรับแบบที่มีการรับรองบำนาญ (เช่น 8555 G20 รับรอง 20 ปี) ผู้รับประโยชน์จะได้รับมูลค่าปัจจุบันของบำนาญที่ยังไม่ได้จ่ายครบ</div>
+          </div>
+          <div class="faq-item bg-white rounded-xl border border-slate-100 shadow-card overflow-hidden">
+            <button class="w-full text-left px-5 py-4 flex items-center justify-between" onclick="toggleFaq(this.parentElement)">
+              <span class="font-noto font-semibold text-navy text-sm">เริ่มทำได้ตั้งแต่อายุเท่าไร?</span>
+              <span class="faq-icon text-teal text-xl font-light flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer px-5 pb-4 font-noto text-sm text-slate-600 leading-relaxed">บางแบบเริ่มได้ตั้งแต่อายุ 20 ปี ยิ่งเริ่มเร็ว เบี้ยยิ่งถูก และประหยัดภาษีได้มากกว่าในระยะยาว</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED ARTICLES ── -->
+<section class="py-14 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="font-pridi font-bold text-navy text-xl mb-7">บทความที่เกี่ยวข้อง</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <a href="/articles/retirement-planning.html" class="group block bg-white rounded-2xl border border-slate-100 shadow-card hover:shadow-card-h transition-all p-5">
+        <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">เกษียณ</div>
+        <div class="font-pridi font-bold text-navy text-base leading-snug mb-2 group-hover:text-teal transition-colors">วางแผนเกษียณตั้งแต่อายุ 30</div>
+        <div class="text-xs text-slate-400">เริ่มต้นวางแผนเร็ว ได้เปรียบมากกว่า</div>
+      </a>
+      <a href="/articles/tax-reduction.html" class="group block bg-white rounded-2xl border border-slate-100 shadow-card hover:shadow-card-h transition-all p-5">
+        <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">ภาษี</div>
+        <div class="font-pridi font-bold text-navy text-base leading-snug mb-2 group-hover:text-teal transition-colors">ลดภาษีอย่างถูกกฎหมาย</div>
+        <div class="text-xs text-slate-400">ใช้สิทธิ์ลดหย่อนให้เต็มทุกบาท</div>
+      </a>
+      <a href="/articles/certainty-ratio.html" class="group block bg-white rounded-2xl border border-slate-100 shadow-card hover:shadow-card-h transition-all p-5">
+        <div class="text-xs font-bold text-teal uppercase tracking-wider mb-2">พอร์ตเกษียณ</div>
+        <div class="font-pridi font-bold text-navy text-base leading-snug mb-2 group-hover:text-teal transition-colors">สัดส่วนความแน่นอน ในพอร์ตของคุณ</div>
+        <div class="text-xs text-slate-400">จัดพอร์ตให้มีรายได้แน่นอนควบคู่กับการเติบโต</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="py-20" style="background:linear-gradient(135deg,#0891B2 0%,#065E7A 100%)">
+  <div class="max-w-2xl mx-auto px-5 text-center">
+    <div class="text-4xl mb-5">📅</div>
+    <h2 class="font-pridi font-bold text-white text-2xl md:text-3xl mb-4">พร้อมวางแผนเกษียณที่การันตีแล้วหรือยัง?</h2>
+    <p class="font-noto text-sm mb-8" style="color:rgba(255,255,255,.75)">ปรึกษาฟรี 15 นาที ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด<br/>รับคำแนะนำที่ตรงกับสถานการณ์ของคุณโดยเฉพาะ</p>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-navy px-10 py-4 text-base inline-flex items-center gap-2 rounded-full" style="background:#fff;color:#0891B2;border:none;font-weight:700">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      นัดปรึกษาฟรี 15 นาที
+    </a>
+    <p class="text-xs mt-4" style="color:rgba(255,255,255,.4)">⏰ ตอบกลับภายใน 1 ชั่วโมงในวันทำการ</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#1B365D" class="py-14">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10" style="border-bottom:1px solid rgba(255,255,255,.1)">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain opacity-80"/>
+          <div class="font-pop font-bold text-white text-sm">Next Level Advisor</div>
+        </div>
+        <p class="font-noto text-sm font-medium" style="color:rgba(255,255,255,.6)">คุมความเสี่ยงเพื่อต่อยอดความมั่งคั่ง</p>
+        <p class="font-noto text-xs mt-2 leading-relaxed" style="color:rgba(255,255,255,.38)">ดีไซน์ความมั่งคั่งและแผนเกษียณแบบครบวงจร<br/>โดยที่ปรึกษาการเงินมืออาชีพ</p>
+      </div>
+      <div>
+        <h4 class="font-pop font-semibold text-white text-sm mb-5">บริการ</h4>
+        <ul class="space-y-3 font-noto text-sm" style="color:rgba(255,255,255,.45)">
+          <li><a href="/solutions/retirement-tax.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.7)">เกษียณ &amp; ภาษี</a></li>
+          <li><a href="/solutions/health-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนสุขภาพ</a></li>
+          <li><a href="/solutions/legacy-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนมรดก</a></li>
+          <li><a href="/calculator" class="hover:text-white transition-colors" style="color:inherit">เครื่องคำนวณเกษียณ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-pop font-semibold text-white text-sm mb-5">ติดต่อ</h4>
+        <ul class="space-y-3 font-noto text-sm" style="color:rgba(255,255,255,.45)">
+          <li><a href="tel:0809696351" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">📞 080-9696351</a></li>
+          <li><a href="https://line.me/ti/p/~@nextlevel-advisor" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">💬 LINE OA: @nextlevel-advisor</a></li>
+          <li><a href="https://calendly.com/insuremate99/15" target="_blank" class="hover:text-white transition-colors" style="color:inherit">📅 นัดปรึกษาออนไลน์</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-noto text-xs" style="color:rgba(255,255,255,.25)">© 2568 Next Level Advisor. All rights reserved.</p>
+      <p class="font-noto text-xs text-center" style="color:rgba(255,255,255,.25)">ใบอนุญาตตัวแทนประกันชีวิต • รับรองโดย คปภ. • คำเตือน: ผู้ซื้อควรทำความเข้าใจในรายละเอียดความคุ้มครองและเงื่อนไขก่อนตัดสินใจทำประกันภัยทุกครั้ง</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  window.addEventListener('scroll',()=>{
+    document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
+  })
+
+  // Tabs
+  function switchTab(id,btn){
+    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'))
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'))
+    document.getElementById('pane-'+id).classList.add('active')
+    btn.classList.add('active')
+  }
+
+  // Product card accordion
+  function toggleCard(card){
+    const isOpen=card.classList.contains('open')
+    document.querySelectorAll('.product-card.open').forEach(c=>{
+      c.classList.remove('open')
+    })
+    if(!isOpen) card.classList.add('open')
+  }
+
+  // FAQ accordion
+  function toggleFaq(item){
+    const isOpen=item.classList.contains('open')
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'))
+    if(!isOpen) item.classList.add('open')
+  }
+</script>
+</body>
+</html>
