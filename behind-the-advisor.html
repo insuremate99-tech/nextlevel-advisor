@@ -55,14 +55,14 @@
     .cred-icon{width:38px;height:38px;border-radius:10px;background:#EFF9FC;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
     /* Team grid – photo cards */
-    .team-card-new{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:all .25s}
-    .team-card-new:hover{box-shadow:0 8px 28px rgba(27,54,93,.12);transform:translateY(-3px);border-color:#CBD5E1}
+    .team-card-new{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:box-shadow .25s;cursor:pointer}
+    .team-card-new:hover{box-shadow:0 10px 32px rgba(27,54,93,.15);border-color:#CBD5E1}
     .team-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden}
-    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s}
-    .team-card-new:hover .team-photo{transform:scale(1.04)}
-    .team-overlay{position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(transparent,rgba(13,26,45,.75))}
-    .team-bg-label{font-family:'Poppins',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em}
-    .team-info{padding:.875rem 1rem}
+    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease,filter .3s ease}
+    .team-card-new:hover .team-photo,.team-card-new.revealed .team-photo{transform:scale(1.05);filter:brightness(.55)}
+    .team-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;background:rgba(13,26,45,.12)}
+    .team-card-new:hover .team-overlay,.team-card-new.revealed .team-overlay{opacity:1}
+    .team-bg-label{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#fff;text-align:center;letter-spacing:.04em;text-shadow:0 2px 12px rgba(0,0,0,.4);padding:0 .5rem}
     /* ── OLD team-card (keep) ── */
     .team-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;border-radius:20px;background:#fff;border:1.5px solid #EEF2F7;transition:all .22s cubic-bezier(.22,1,.36,1)}
     .team-card:hover{box-shadow:0 8px 28px rgba(27,54,93,.09);transform:translateY(-3px);border-color:#CBD5E1}
@@ -362,13 +362,11 @@
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-12 reveal">
       <span class="sec-label">Our Team</span>
-      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">จากหลากหลายความเชี่ยวชาญ<br class="hidden sm:block"/> สู่ที่ปรึกษาที่เข้าใจคุณจริง</h2>
-      <p class="font-noto text-slate-400 mt-3 text-sm">ทีมของเราเดินทางมาจากหลากหลายสาขาอาชีพ ทำให้เข้าใจความต้องการของลูกค้าได้จริง</p>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">หลากหลายที่มา&nbsp; หนึ่งเป้าหมายคือคุณ</h2>
+      <p class="font-noto text-slate-400 mt-3 text-sm">เลื่อนเมาส์ หรือแตะที่รูปเพื่อดูที่มา</p>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal">
-
-      <!-- Medical Specialist -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/doctor-1.jpg" alt="Medical Specialist" class="team-photo" loading="lazy"/>
@@ -376,55 +374,7 @@
             <span class="team-bg-label">หมอ</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">หมอ</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">หมอ</div>
-        </div>
       </div>
-
-      <!-- Clinical Consultant -->
-      <div class="team-card-new reveal">
-        <div class="team-photo-wrap">
-          <img src="/images/team/doctor-2.jpg" alt="Clinical Consultant" class="team-photo" loading="lazy"/>
-          <div class="team-overlay">
-            <span class="team-bg-label">หมอ</span>
-          </div>
-        </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">หมอ</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">หมอ</div>
-        </div>
-      </div>
-
-      <!-- Digital Economy Expert -->
-      <div class="team-card-new reveal">
-        <div class="team-photo-wrap">
-          <img src="/images/team/freelancer.jpg" alt="Digital Economy Expert" class="team-photo" loading="lazy"/>
-          <div class="team-overlay">
-            <span class="team-bg-label">อิสระ</span>
-          </div>
-        </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">อิสระ</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">อิสระ</div>
-        </div>
-      </div>
-
-      <!-- Service Excellence Lead -->
-      <div class="team-card-new reveal">
-        <div class="team-photo-wrap">
-          <img src="/images/team/hospitality.jpg" alt="Service Excellence Lead" class="team-photo" loading="lazy"/>
-          <div class="team-overlay">
-            <span class="team-bg-label">บริการ</span>
-          </div>
-        </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">บริการ</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">บริการ</div>
-        </div>
-      </div>
-
-      <!-- Infrastructure Strategist -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/engineer.jpg" alt="Infrastructure Strategist" class="team-photo" loading="lazy"/>
@@ -432,13 +382,15 @@
             <span class="team-bg-label">วิศวะ</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">วิศวะ</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">วิศวะ</div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/freelancer.jpg" alt="Digital Economy Expert" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">อิสระ</span>
+          </div>
         </div>
       </div>
-
-      <!-- Human Capital Advisor -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/hr-advisor.jpg" alt="Human Capital Advisor" class="team-photo" loading="lazy"/>
@@ -446,13 +398,7 @@
             <span class="team-bg-label">วางแผนคน</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">วางแผนคน</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">วางแผนคน</div>
-        </div>
       </div>
-
-      <!-- Operations & Systems Lead -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/food-industry.jpg" alt="Operations & Systems Lead" class="team-photo" loading="lazy"/>
@@ -460,27 +406,23 @@
             <span class="team-bg-label">ระบบอาหาร</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">ระบบอาหาร</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">ระบบอาหาร</div>
-        </div>
       </div>
-
-      <!-- Strategic Foundation Lead -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
-          <img src="/images/team/energy.jpg" alt="Strategic Foundation Lead" class="team-photo" loading="lazy"/>
+          <img src="/images/team/doctor-2.jpg" alt="Clinical Consultant" class="team-photo" loading="lazy"/>
           <div class="team-overlay">
-            <span class="team-bg-label">พลังงาน</span>
+            <span class="team-bg-label">หมอ</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">พลังงาน</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">พลังงาน</div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hospitality.jpg" alt="Service Excellence Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">บริการ</span>
+          </div>
         </div>
       </div>
-
-      <!-- Organizational Strategist -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/hr-manager.jpg" alt="Organizational Strategist" class="team-photo" loading="lazy"/>
@@ -488,13 +430,15 @@
             <span class="team-bg-label">วางแผนคน</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">วางแผนคน</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">วางแผนคน</div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/energy.jpg" alt="Strategic Foundation Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">พลังงาน</span>
+          </div>
         </div>
       </div>
-
-      <!-- Financial Innovation Lead -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/cfo.jpg" alt="Financial Innovation Lead" class="team-photo" loading="lazy"/>
@@ -502,13 +446,7 @@
             <span class="team-bg-label">การเงิน</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">การเงิน</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">การเงิน</div>
-        </div>
       </div>
-
-      <!-- Execution Excellence Lead -->
       <div class="team-card-new reveal">
         <div class="team-photo-wrap">
           <img src="/images/team/project-manager.jpg" alt="Execution Excellence Lead" class="team-photo" loading="lazy"/>
@@ -516,13 +454,7 @@
             <span class="team-bg-label">Project</span>
           </div>
         </div>
-        <div class="team-info">
-       <div class="font-pop font-bold text-navy text-sm leading-tight">Project</div>
-       <div class="font-noto text-xs text-slate-400 mt-0.5">Project</div>
-        </div>
       </div>
-
-    </div>
   </div>
 </section>
 
@@ -585,5 +517,16 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+  // ── Team cards: tap-to-reveal on mobile ──
+  (function(){
+    document.querySelectorAll('.team-card-new').forEach(function(card){
+      card.addEventListener('click',function(){
+        var already=this.classList.contains('revealed');
+        document.querySelectorAll('.team-card-new.revealed').forEach(function(c){c.classList.remove('revealed');});
+        if(!already) this.classList.add('revealed');
+      });
+    });
+  })();
 </body>
 </html>
