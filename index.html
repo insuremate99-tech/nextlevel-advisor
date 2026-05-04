@@ -532,13 +532,13 @@
 
             <!-- รายได้หลังเกษียณ -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">อยากใช้หลังเกษียณ / เดือน</label>
-                <span class="font-pop font-bold text-white text-sm" id="lbl-income">30,000 ฿</span>
-              </div>
-              <input type="range" class="calc-slider" id="sl-income" min="10000" max="200000" step="5000" value="30000"
-                     oninput="document.getElementById('lbl-income').textContent=Number(this.value).toLocaleString()+' ฿';calcRetire()">
-              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>10K</span><span>200K</span></div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">อยากใช้หลังเกษียณ / เดือน (บาท)</label>
+              <input type="number" id="sl-income" value="30000" min="0" step="1000" placeholder="เช่น 30000"
+                     oninput="calcRetire()"
+                     style="width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none"
+                     onfocus="this.style.borderColor='rgba(255,255,255,.55)'"
+                     onblur="this.style.borderColor='rgba(255,255,255,.25)'"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">กรอกจำนวนเงินที่ต้องการใช้ต่อเดือน</div>
             </div>
 
             <!-- เงินออมปัจจุบัน -->
