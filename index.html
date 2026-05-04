@@ -54,7 +54,7 @@
     .marquee-track:hover{animation-play-state:paused}
 
     /* ── Solution Cards ── */
-    .sol-card{background:#fff;border:1.5px solid #EEF2F7;border-radius:24px;padding:28px 28px 24px;width:300px;flex-shrink:0;transition:all .28s cubic-bezier(.22,1,.36,1)}
+    .sol-card{background:#fff;border:1.5px solid #EEF2F7;border-radius:24px;padding:28px 28px 24px;transition:all .28s cubic-bezier(.22,1,.36,1)}
     .sol-card:hover{box-shadow:0 16px 44px rgba(27,54,93,.1);transform:translateY(-5px);border-color:#CBD5E1}
 
     /* ── Badge ── */
@@ -67,11 +67,12 @@
     .card-track{display:flex;gap:18px;width:max-content;padding-bottom:4px}
 
     /* ── Section label ── */
-    .sec-label{font-family:'Noto Sans Thai';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#0891B2}
+    .sec-label{font-family:'Noto Sans Thai';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:linear-gradient(135deg,#0891B2 0%,#065E7A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block}
 
     /* ── Challenge ── */
-    .challenge-wrap{background:linear-gradient(135deg,#1B365D 0%,#0D2347 100%);border-radius:28px;overflow:hidden;position:relative}
-    .challenge-wrap::before{content:'';position:absolute;top:-20%;right:-5%;width:55%;height:110%;background:radial-gradient(ellipse,rgba(8,145,178,.18) 0%,transparent 70%);pointer-events:none}
+    .challenge-wrap{background:linear-gradient(135deg,#1B365D 0%,#0d2a52 55%,#1a3a6b 100%);border-radius:28px;overflow:hidden;position:relative}
+    .challenge-wrap::before{content:'';position:absolute;top:-20%;right:-5%;width:55%;height:110%;background:radial-gradient(ellipse,rgba(8,145,178,.2) 0%,transparent 65%);pointer-events:none}
+    .challenge-wrap::after{content:'';position:absolute;bottom:-15%;left:-5%;width:45%;height:80%;background:radial-gradient(ellipse,rgba(212,175,55,.12) 0%,transparent 65%);pointer-events:none}
 
     /* ── Calculator banner ── */
     .calc-wrap{background:linear-gradient(135deg,#0891B2 0%,#0A7FA0 40%,#065E7A 100%);border-radius:28px;overflow:hidden;position:relative}
@@ -122,7 +123,7 @@
     <a href="/" class="flex items-center gap-2.5">
       <img src="nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
       <div class="hidden sm:block leading-tight">
-        <div class="font-pop font-bold text-navy text-sm">Next Level Advisor</div>
+        <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#1B365D">Advisor</span></div>
       </div>
     </a>
     <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
@@ -174,9 +175,9 @@
         <span class="font-pop font-light text-slate-400 text-sm tracking-wide">Legacy Design <span class="text-slate-300 mx-1">•</span> Retirement Security</span>
       </div>
       <h1 class="font-pop font-extrabold text-navy leading-tight mb-5" style="font-size:clamp(1.9rem,4vw,3rem)">
-        Next Level Advisor<br/>
-        <span style="color:#0891B2">คุมความเสี่ยง</span><br/>
-        <span style="font-size:.8em;font-weight:700;color:#374151">เพื่อต่อยอดความมั่งคั่ง</span>
+        <span style="color:#0891B2">Next Level</span> Advisor<br/>
+        <span style="color:#C9950C;font-weight:800">คุมความเสี่ยง</span><br/>
+        เพื่อต่อยอดความมั่งคั่ง
       </h1>
       <p class="font-noto text-slate-500 leading-relaxed mb-9 max-w-md" style="font-size:clamp(.95rem,1.5vw,1.05rem)">
         ดีไซน์ความมั่งคั่งและแผนเกษียณแบบครบวงจร<br class="hidden sm:block"/>
@@ -272,8 +273,8 @@
       <span class="sec-label">Signature Solutions</span>
       <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem)">ออกแบบความมั่นคงเฉพาะคุณ</h2>
     </div>
-    <div class="hide-scroll -mx-5 px-5 reveal">
-      <div class="card-track pb-4">
+    <div class="reveal">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
         <!-- Card 1: Retirement & Tax -->
         <div class="sol-card">
@@ -842,53 +843,100 @@ calcRetire();
 
 
 <!-- ══════════════ JOIN TEAM ══════════════ -->
-<section id="career" class="py-24" style="background:#0D1F3C">
-  <div class="max-w-3xl mx-auto px-5">
+<section id="career" class="py-24" style="background:#F0F4F8">
+  <div class="max-w-6xl mx-auto px-5">
+
     <!-- heading -->
-    <div class="text-center mb-12 reveal">
-      <span class="sec-label" style="color:#38BDF8">🚀 Join the Next Level Team</span>
-      <h2 class="font-pop font-extrabold mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem);color:#fff">ก้าวสู่การเป็นที่ปรึกษาการเงินมืออาชีพ</h2>
-      <p class="font-noto mt-3 max-w-lg mx-auto" style="color:#94A3B8;font-size:.93rem;line-height:1.75">ออกแบบอิสระในแบบคุณ พร้อมระบบ Mentoring ที่จะปั้นคุณให้เติบโตได้จริง</p>
+    <div class="mb-12 reveal">
+      <span class="sec-label">🚀 Join the Next Level Team</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.5rem)">ก้าวสู่การเป็น<br/>ที่ปรึกษาการเงินมืออาชีพ</h2>
     </div>
 
-    <!-- glassmorphism card -->
-    <div class="reveal" style="background:rgba(255,255,255,0.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1.5px solid rgba(255,255,255,0.13);border-radius:24px;padding:2.5rem 2rem;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start reveal">
 
-      <!-- success message (hidden by default) -->
-      <div id="careerSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
-        <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
-        <p class="font-pop font-bold" style="color:#fff;font-size:1.2rem;margin-bottom:.5rem">ได้รับข้อมูลเรียบร้อยแล้ว</p>
-        <p class="font-noto" style="color:#94A3B8;font-size:.9rem">เราจะติดต่อกลับผ่าน Line / โทรศัพท์ ภายใน 24 ชม.</p>
+      <!-- LEFT: Benefits -->
+      <div>
+        <p class="font-noto text-slate-500 leading-relaxed mb-10" style="font-size:.97rem">เราเชื่อว่าทุกคนมีศักยภาพ สิ่งที่เราให้คือระบบ เครื่องมือ และคนที่จะเดินไปด้วยกัน</p>
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">รายได้ไม่มีเพดาน</div>
+              <div class="font-noto text-slate-500 text-sm">Commission + On-top Allowance + Renewal income ระยะยาว</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">1-on-1 Mentoring ส่วนตัว</div>
+              <div class="font-noto text-slate-500 text-sm">Coach ที่เข้าใจธุรกิจและช่วยแก้ปัญหาจริง</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">Digital Tools &amp; CRM</div>
+              <div class="font-noto text-slate-500 text-sm">เครื่องมือดิจิทัลครบ พร้อม support การตลาดออนไลน์</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">Flexible — ทำได้ทุกที่</div>
+              <div class="font-noto text-slate-500 text-sm">พาร์ทไทม์หรือฟูลไทม์ ทุกสาขาอาชีพ ไม่จำกัดพื้นฐาน</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <form id="careerForm">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-          <div>
-            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">ชื่อ-นามสกุล <span style="color:#F87171">*</span></label>
-            <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
-          </div>
-          <div>
-            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">เบอร์โทรศัพท์ <span style="color:#F87171">*</span></label>
-            <input type="tel" name="phone" placeholder="08X-XXX-XXXX" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
-          </div>
-          <div>
-            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">Line ID <span style="color:#F87171">*</span></label>
-            <input type="text" name="line_id" placeholder="@your_line_id" required class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
-          </div>
-          <div>
-            <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">อาชีพปัจจุบันของคุณ <span style="color:#F87171">*</span></label>
-            <input type="text" name="occupation" required placeholder="เช่น พนักงานบริษัท, เจ้าของธุรกิจ..." class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff"/>
-          </div>
+      <!-- RIGHT: Form Card -->
+      <div style="background:#fff;border-radius:20px;padding:2.5rem;border:1px solid rgba(27,54,93,0.08);box-shadow:0 4px 24px rgba(27,54,93,0.07)">
+
+        <!-- success message -->
+        <div id="careerSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+          <p class="font-pop font-bold text-navy" style="font-size:1.2rem;margin-bottom:.5rem">ได้รับข้อมูลเรียบร้อยแล้ว</p>
+          <p class="font-noto text-slate-400" style="font-size:.9rem">เราจะติดต่อกลับผ่าน Line / โทรศัพท์ ภายใน 24 ชม.</p>
         </div>
-        <!-- motivation textarea -->
-        <div class="mb-6">
-          <label class="font-noto text-xs font-semibold block mb-2" style="color:#CBD5E1">อะไรที่ทำให้คุณอยากร่วมทีมกับเรา? (เล่าให้ฟังคร่าวๆ) <span style="color:#F87171">*</span></label>
-          <textarea name="motivation" rows="4" required placeholder="ความตั้งใจ หรือเป้าหมายของคุณ..." class="form-input" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff;resize:vertical;min-height:110px"></textarea>
-        </div>
-        <!-- submit -->
-        <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center" style="font-size:1rem">ส่งข้อมูลถึงเรา</button>
-        <p class="font-noto text-center mt-3" style="color:#64748B;font-size:.75rem">🔒 ข้อมูลของคุณปลอดภัยและเป็นส่วนตัว</p>
-      </form>
+
+        <div class="font-pop font-bold text-navy text-lg mb-1">ส่งข้อมูลถึงเรา</div>
+        <div class="font-noto text-slate-400 text-sm mb-7">กรอกแบบฟอร์มนี้ เราจะติดต่อกลับภายใน 24 ชั่วโมง</div>
+
+        <form id="careerForm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">ชื่อ - นามสกุล <span style="color:#F87171">*</span></label>
+              <input type="text" name="name" placeholder="ชื่อของคุณ" required class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">เบอร์โทรศัพท์ <span style="color:#F87171">*</span></label>
+              <input type="tel" name="phone" placeholder="0xx-xxx-xxxx" required class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">Line ID</label>
+              <input type="text" name="line_id" placeholder="@yourlineid" class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">อาชีพปัจจุบัน <span style="color:#F87171">*</span></label>
+              <input type="text" name="occupation" required placeholder="เช่น พนักงานบริษัท, ฟรีแลนซ์..." class="form-input"/>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label class="font-noto text-xs font-semibold text-navy block mb-2">เหตุผลที่สนใจ / สิ่งที่คาดหวัง</label>
+            <textarea name="motivation" rows="4" placeholder="เล่าให้ฟังสั้นๆ ว่าอยากทำอะไรกับโอกาสนี้..." class="form-input" style="resize:vertical;min-height:110px"></textarea>
+          </div>
+          <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center">ส่งข้อมูลถึงเรา →</button>
+          <p class="font-noto text-center mt-3 text-slate-400" style="font-size:.75rem">ข้อมูลของคุณจะถูกเก็บรักษาอย่างปลอดภัย ไม่มีการแชร์ให้บุคคลที่สาม</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -917,7 +965,7 @@ calcRetire();
         <div class="flex items-center gap-3 mb-4">
           <img src="nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain opacity-80"/>
           <div>
-            <div class="font-pop font-bold text-white text-sm">Next Level Advisor</div>
+            <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#fff">Advisor</span></div>
           </div>
         </div>
         <p class="font-noto text-sm leading-relaxed" style="color:rgba(255,255,255,.45)">คุมความเสี่ยงเพื่อต่อยอดความมั่งคั่ง</p>
