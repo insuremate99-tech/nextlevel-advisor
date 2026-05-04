@@ -6,31 +6,770 @@
 <title>วางแผนสุขภาพ | NextLevel Advisor</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+html{scroll-behavior:smooth}
+.sec-label{font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0891B2}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+.shadow-card{box-shadow:0 2px 16px rgba(27,54,93,.07)}
+.tab-btn{border-bottom:2px solid transparent;transition:all .2s;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer}
+.tab-btn.active-tab{border-bottom-color:#0891B2;color:#0891B2;font-weight:700}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.prod-card{background:#fff;border:1.5px solid #e8eff8;border-radius:1.25rem;padding:1.5rem;transition:all .25s}
+.prod-card:hover{box-shadow:0 8px 32px rgba(27,54,93,.1);transform:translateY(-2px)}
+.prod-card.featured{border-color:#0891B2;background:linear-gradient(135deg,#f0f9ff 0%,#fff 100%)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.75rem}
+.badge-teal{background:#e0f2fe;color:#0369a1}
+.badge-red{background:#fff1f2;color:#be123c}
+.badge-green{background:#f0fdf4;color:#15803d}
+.badge-purple{background:#faf5ff;color:#7e22ce}
+.badge-gold{background:#fffbeb;color:#b45309}
+.who-chip{display:inline-flex;align-items:center;gap:6px;background:#f1f5f9;border-radius:999px;padding:5px 14px;font-size:.75rem;color:#475569;font-family:'Noto Sans Thai',sans-serif}
+.udr-pill{background:linear-gradient(90deg,#0891B2,#1B365D);color:#fff;font-family:'Poppins',sans-serif;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.04em}
+.sim-card{background:#fff;border-radius:1.5rem;box-shadow:0 4px 32px rgba(27,54,93,.1);padding:2rem}
+.sim-label{font-family:'Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:600;color:#475569;margin-bottom:.4rem;display:block}
+.sim-select,.sim-input{width:100%;border:1.5px solid #e2e8f0;border-radius:.75rem;padding:.65rem 1rem;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem;color:#1e293b;outline:none;transition:border-color .2s;background:#fff}
+.sim-select:focus,.sim-input:focus{border-color:#0891B2}
+.sim-btn{border:2px solid #e2e8f0;border-radius:.875rem;padding:.55rem 1.1rem;font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:#475569}
+.sim-btn.selected{border-color:#0891B2;background:#0891B2;color:#fff}
+.result-box{background:linear-gradient(135deg,#1B365D 0%,#0C3548 100%);border-radius:1.25rem;padding:1.5rem;color:#fff}
+.compare-table{width:100%;border-collapse:collapse}
+.compare-table th{background:#1B365D;color:#fff;padding:.7rem 1rem;text-align:left;font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:600}
+.compare-table th:not(:first-child){text-align:center}
+.compare-table td{padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:'Noto Sans Thai',sans-serif;font-size:.8rem;vertical-align:middle}
+.compare-table td:not(:first-child){text-align:center}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:nth-child(even) td{background:#fafbff}
+.expert-note{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-left:4px solid #0891B2;border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem}
+</style>
 </head>
 <body class="bg-white">
+
+<!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
-    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold font-noto">นัดปรึกษาฟรี</a>
+    <div class="flex items-center gap-4">
+      <a href="/#solutions" class="font-noto text-slate-500 text-sm hidden sm:block hover:text-navy transition-colors">โซลูชัน</a>
+      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold font-noto">ปรึกษาฟรี →</a>
+    </div>
   </div>
 </nav>
-<section class="pt-28 pb-20 min-h-screen flex items-center" style="background:linear-gradient(135deg,#1B365D,#0D2445)">
-  <div class="max-w-3xl mx-auto px-5 text-center">
-    <nav class="flex items-center justify-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.5)">
-      <a href="/" style="color:rgba(255,255,255,.5)" class="hover:text-white">หน้าหลัก</a><span>/</span>
-      <a href="/#solutions" style="color:rgba(255,255,255,.5)" class="hover:text-white">โซลูชัน</a><span>/</span>
-      <span style="color:rgba(255,255,255,.8)">วางแผนสุขภาพ</span>
+
+<!-- HERO -->
+<section class="pt-28 pb-16" style="background:linear-gradient(150deg,#0D1F3C 0%,#1B365D 55%,#0C3548 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <nav class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
+      <a href="/" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">หน้าหลัก</a>
+      <span>/</span><a href="/solutions" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">โซลูชัน</a>
+      <span>/</span><span style="color:rgba(255,255,255,.7)">วางแผนสุขภาพ</span>
     </nav>
-    <div class="text-5xl mb-6">🏥</div>
-    <h1 class="font-pridi font-semibold text-white text-3xl md:text-4xl mb-4">วางแผนสุขภาพ</h1>
-    <p class="font-pridi text-xl mb-2" style="color:#67E8F9">โอนความเสี่ยงสุขภาพ ปกป้องแผนเกษียณ</p>
-    <p class="font-noto mb-10 text-sm" style="color:rgba(255,255,255,.65)">หน้านี้กำลังอยู่ระหว่างการพัฒนา ติดต่อเราโดยตรงเพื่อรับคำปรึกษาด้านแผนสุขภาพ</p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-teal text-white px-8 py-4 rounded-xl font-noto font-semibold text-base" style="background:#0891B2">วิเคราะห์แผนสุขภาพฟรี →</a>
-      <a href="/" class="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-noto font-semibold text-base" style="border:2px solid rgba(255,255,255,.3)">← กลับหน้าหลัก</a>
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-xs font-semibold font-pop" style="background:rgba(8,145,178,.25);color:#7dd3fc;letter-spacing:.06em">💚 HEALTH PLANNING</div>
+      <h1 class="font-pridi font-semibold text-white mb-4" style="font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2">
+        สุขภาพที่ดีคือสินทรัพย์<br/>ที่ต้องบริหาร
+      </h1>
+      <p class="font-noto text-base mb-8" style="color:rgba(255,255,255,.65);line-height:1.85;max-width:520px">
+        เพราะค่ารักษาพยาบาลเฟ้อขึ้นทุกปี การวางแผนที่ <span style="color:#67E8F9;font-weight:600">"แม่นยำ"</span> จึงสำคัญกว่าแค่การมีประกัน
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">โรคร้ายแรง เจอจ่ายจบ &amp; หลายจบ</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">Long-Term Health UDR</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">คำนวณเบี้ยได้ทันที</span></div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- INTRO STATS -->
+<section class="py-14 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="reveal grid sm:grid-cols-3 gap-5">
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">📈</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">7–10%</div>
+        <div class="font-noto text-slate-500 text-sm">อัตราเงินเฟ้อค่ารักษาพยาบาลต่อปี</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">🏥</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">1.2 ล้าน+</div>
+        <div class="font-noto text-slate-500 text-sm">ค่าเฉลี่ยรักษามะเร็งระยะต้นในไทย</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">⚡</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">1 ใน 3</div>
+        <div class="font-noto text-slate-500 text-sm">คนไทยมีโอกาสเจอโรคร้ายแรงในชีวิต</div>
+      </div>
+    </div>
+    <div class="reveal mt-10 max-w-2xl">
+      <p class="font-noto text-slate-600 leading-relaxed">
+        การมีประกันสุขภาพคือจุดเริ่มต้น แต่ไม่ใช่คำตอบเดียว เพราะความต้องการของแต่ละคนต่างกัน — บางคนต้องการ<strong class="text-navy">เงินสำรองฉุกเฉิน</strong>เมื่อป่วย บางคนต้องการ<strong class="text-navy">ความคุ้มครองระยะยาว</strong>ที่ไม่เพิ่มราคาตามอายุ และบางคนต้องการทั้งสองอย่างพร้อมกัน
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: CORE PROTECTION ══════ -->
+<section class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">Core Protection</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">แผนรับมือโรคร้ายแรง (Critical Illness)</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-lg mx-auto">เลือกตามความกังวลของคุณ — ไม่มีคำตอบเดียวที่ใช่สำหรับทุกคน</p>
+    </div>
+    <div class="flex border-b border-slate-200 mb-8 gap-0 reveal overflow-x-auto">
+      <button onclick="switchCITab('standard')" id="tab-standard" class="tab-btn active-tab font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">⚡ เจอ จ่าย จบ (Standard)</button>
+      <button onclick="switchCITab('multi')" id="tab-multi" class="tab-btn font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">♻️ เจอ จ่าย หลายจบ (Multi-Pay)</button>
+    </div>
+
+    <!-- TAB 1: เจอจ่ายจบ -->
+    <div id="panel-standard" class="tab-panel active">
+      <div class="grid md:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: เงินสำรองฉุกเฉิน</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">รับเงินก้อนทันทีเมื่อตรวจพบโรคร้ายแรง เพื่อใช้ในช่วงที่ต้องหยุดพักงาน ดูแลครอบครัว หรือครอบคลุมค่าใช้จ่ายที่ประกันสุขภาพไม่คุ้ม</p>
+        </div>
+        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
+          <div class="flex flex-col gap-2">
+            <div class="who-chip">✓ มีสวัสดิการค่ารักษาอยู่แล้ว แต่ขาดเงินหมุนเวียน</div>
+            <div class="who-chip">✓ ต้องการความคุ้มครองพื้นฐานในราคาเข้าถึงได้</div>
+            <div class="who-chip">✓ เป็นพ่อแม่ที่มีภาระครอบครัว</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="prod-card featured">
+          <div class="badge badge-red">⭐ ซีไอ เพอร์เฟค แคร์</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">CI Perfect Care</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">คุ้มครองโรคร้ายครบทุกระยะ ตั้งแต่เริ่มต้น</div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครอง 36 โรคร้ายแรง ทุกระยะ รวมระยะเริ่มต้น</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>จ่าย 100% ต่อโรค รวมสูงสุด 120% ของทุนประกัน</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>รับเงินก้อนโดยไม่ต้องรอผลการรักษา</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 30–65 ปี</li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>
+        </div>
+        <div class="prod-card">
+          <div class="badge badge-purple">💜 แคร์ พลัส Rider</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">Care Plus</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">เฉพาะทาง — มะเร็ง &amp; โรคไต ทุกระยะ</div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองมะเร็ง &amp; ไตวายเรื้อรัง ทุก 5 ระยะ</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ IPD: สนับสนุนค่าผ่าตัด เคมีบำบัด Targeted Therapy</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ OPD: ครอบคลุมการรักษา Stem Cell</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>พ่วงกับ D Health Lite ได้ทันที</li>
+          </ul>
+          <div class="badge badge-purple" style="margin-bottom:0">Specialist Coverage</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: หลายจบ -->
+    <div id="panel-multi" class="tab-panel">
+      <div class="grid md:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: คุ้มครองหลายรอบ</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">คุ้มครอง 4 กลุ่มโรคแบบอิสระจากกัน แม้เคลมกลุ่มหนึ่งไปแล้ว กลุ่มอื่นยังคุ้มครองต่อ รับมือโรคแทรกซ้อนหรือการกลับมาเป็นซ้ำ</p>
+        </div>
+        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
+          <div class="flex flex-col gap-2">
+            <div class="who-chip">✓ กังวลเรื่องป่วยซ้ำ หรือหลายโรคพร้อมกัน</div>
+            <div class="who-chip">✓ ต้องการความอุ่นใจสูงสุดในระยะยาว</div>
+            <div class="who-chip">✓ มีประวัติครอบครัวป่วยด้วยโรคร้ายแรง</div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-2xl">
+        <div class="prod-card featured">
+          <div class="badge badge-red">♻️ มัลติเพิล ซีไอ</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">Multiple CI</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">35 โรคร้ายแรง 4 กลุ่ม สูงสุด 400% ของทุน</div>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 1</div><div class="font-noto text-xs text-slate-500">โรคหัวใจ &amp; หลอดเลือด</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 2</div><div class="font-noto text-xs text-slate-500">มะเร็ง (Invasive)</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 3</div><div class="font-noto text-xs text-slate-500">อวัยวะสำคัญ (ไต ปอด ตับ)</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 4</div><div class="font-noto text-xs text-slate-500">ระบบประสาท &amp; อื่นๆ</div></div>
+          </div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองสูงสุด 400% ของทุนประกัน</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>ตรวจพบระยะรุนแรง รับก่อนสูงสุด 4× ทันที</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 7–65 ปี คุ้มครองถึงอายุ 79 ปี</li>
+          </ul>
+          <span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: UDR INNOVATION ══════ -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="sec-label">The Innovation</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">ออกแบบพอร์ตสุขภาพระยะยาว ด้วย UDR</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">จัดสรรงบประมาณครั้งเดียว คุ้มครองสุขภาพตลอดชีวิต พร้อมมูลค่าที่เติบโตได้</p>
+    </div>
+
+    <!-- UDR Concept -->
+    <div class="reveal grid md:grid-cols-2 gap-10 items-center mb-14">
+      <div>
+        <div class="badge badge-teal mb-4">UDR คืออะไร?</div>
+        <h3 class="font-pridi font-semibold text-navy text-xl mb-4">Unit Deducted Rider</h3>
+        <p class="font-noto text-slate-600 leading-loose mb-6">
+          แทนที่จะจ่ายเบี้ยสุขภาพที่เพิ่มขึ้นทุกปีตามอายุ — UDR ช่วยให้คุณ <strong class="text-navy">จัดสรรงบประมาณครั้งเดียว</strong> แล้วให้กองทุนที่เติบโตหักค่าธรรมเนียมความคุ้มครองแทน เหมือนมีผู้จัดการการเงินดูแลค่าประกันสุขภาพให้อัตโนมัติ
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-xl">
+            <span class="text-green-600 text-lg flex-shrink-0">✅</span>
+            <div><div class="font-pop font-bold text-sm text-green-800 mb-0.5">Fixed Premium</div><div class="font-noto text-xs text-green-700">ล็อกค่าเบี้ยรวมคงที่ตลอดสัญญา ไม่เพิ่มตามอายุ</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl">
+            <span class="text-blue-600 text-lg flex-shrink-0">📈</span>
+            <div><div class="font-pop font-bold text-sm text-blue-800 mb-0.5">Potential Return</div><div class="font-noto text-xs text-blue-700">เบี้ยที่จ่ายมีโอกาสเติบโตผ่านกองทุนรวม — หากสุขภาพดี เงินก้อนนั้นกลายเป็นทรัพย์เกษียณ</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-xl">
+            <span class="text-purple-600 text-lg flex-shrink-0">🔄</span>
+            <div><div class="font-pop font-bold text-sm text-purple-800 mb-0.5">Premium Holiday</div><div class="font-noto text-xs text-purple-700">พักชำระเบี้ยได้ในอนาคต ความคุ้มครองสุขภาพยังทำงานต่อตราบที่กองทุนมีมูลค่า</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
+            <span class="text-amber-600 text-lg flex-shrink-0">⚠️</span>
+            <div><div class="font-pop font-bold text-sm text-amber-800 mb-0.5">ความจริงที่ต้องรู้</div><div class="font-noto text-xs text-amber-700">มีความเสี่ยงจากการลงทุน หากกองทุนผันผวนอาจต้องชำระเบี้ยเพิ่มเพื่อรักษาความคุ้มครอง</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Structure Flow -->
+        <div class="bg-slate-50 rounded-2xl p-6 mb-4">
+          <div class="font-pop font-bold text-navy text-sm mb-4 text-center">โครงสร้างการทำงาน UDR</div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-full bg-navy rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-white text-sm">กรมธรรม์หลัก</div>
+              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.7)">เมืองไทยยูแอล พลัส (UL / ILP)</div>
+            </div>
+            <div class="text-slate-400 font-bold text-xl">↓</div>
+            <div class="w-full bg-blue-50 border-2 border-blue-200 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-blue-800 text-sm">มูลค่ากองทุนสะสม</div>
+              <div class="font-noto text-xs text-blue-600 mt-1">เติบโตจากการลงทุน → หักค่าความคุ้มครองอัตโนมัติ</div>
+            </div>
+            <div class="text-slate-400 font-bold text-xl">↓</div>
+            <div class="grid grid-cols-2 gap-2 w-full">
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">Elite Health Plus</div><div class="font-noto text-xs text-slate-400">IPD/OPD Premium</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">D Health Lite</div><div class="font-noto text-xs text-slate-400">IPD Standard</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">CI Perfect Care</div><div class="font-noto text-xs text-slate-400">โรคร้ายแรง</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">OPD เหมาจ่าย</div><div class="font-noto text-xs text-slate-400">ผู้ป่วยนอก</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-teal/5 border border-teal/20 rounded-xl p-4">
+          <div class="font-pop font-bold text-teal text-xs mb-2">เหมาะกับใคร?</div>
+          <div class="space-y-1.5">
+            <div class="who-chip text-xs">🎯 วัยทำงาน 25–45 ปี ที่ต้องการ "ปิดยอด" ค่าสุขภาพก่อนเกษียณ</div>
+            <div class="who-chip text-xs">📊 นักวางแผนที่เชื่อมั่นในพลังดอกเบี้ยทบต้น</div>
+            <div class="who-chip text-xs">💼 ผู้ประกอบการไม่มีสวัสดิการ ต้องออกแบบเอง</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHART: Graph A vs B -->
+    <div class="reveal bg-slate-50 rounded-2xl p-8 mb-12">
+      <div class="text-center mb-6">
+        <div class="font-pop font-bold text-navy text-base mb-1">เบี้ยประกันสุขภาพ: แบบทั่วไป vs UDR Strategy</div>
+        <div class="font-noto text-slate-500 text-sm">เปรียบเทียบภาระเบี้ยตลอดช่วงชีวิต (สมมติ อายุ 30–70 ปี)</div>
+      </div>
+      <div style="max-width:640px;margin:0 auto;height:280px">
+        <canvas id="udrChart"></canvas>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 mt-5">
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#ef4444;border-radius:2px"></div>เบี้ยประกันทั่วไป (เพิ่มตามอายุ)
+        </div>
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#0891B2;border-radius:2px"></div>UDR: เบี้ยรวมคงที่
+        </div>
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#22c55e;border-radius:2px;border-top:2px dashed #22c55e"></div>มูลค่ากองทุน UDR
+        </div>
+      </div>
+    </div>
+
+    <!-- UDR Products -->
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div class="prod-card featured text-center">
+        <div class="text-2xl mb-2">👑</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">Elite Health Plus</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">IPD + OPD Premium<br/>คุ้มครองทั่วโลก 20–100 ล้าน</div>
+        <span class="udr-pill">UDR</span>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">🏥</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">D Health Lite</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">IPD Standard<br/>เหมาจ่ายสูงสุด 5 ล้าน</div>
+        <span class="udr-pill">UDR</span>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">⚡</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">CI Perfect Care</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">โรคร้ายแรง 36 โรค<br/>ทุกระยะ สูงสุด 120%</div>
+        <span class="udr-pill">UDR</span>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">🩺</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">OPD เหมาจ่าย</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">ผู้ป่วยนอก ไม่มีลิมิต/ครั้ง<br/>คุ้มครองถึงอายุ 99 ปี</div>
+        <span class="udr-pill">UDR</span>
+      </div>
+    </div>
+
+    <!-- Expert Note -->
+    <div class="reveal expert-note">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">🎯</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-2">Expert Note — จาก NextLevel Advisor</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">
+            ตัวเลือก UDR ขึ้นอยู่กับพอร์ตการลงทุนและการรับความเสี่ยงรายบุคคล — ทีมของเราพร้อมช่วยเลือก <strong class="text-navy">กองทุนที่เหมาะสม (Active Management)</strong> เพื่อให้ UDR ทำงานได้เต็มประสิทธิภาพ และมูลค่ากองทุนเติบโตได้จริงในระยะยาว
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: PREMIUM SIMULATOR ══════ -->
+<section class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">Premium Simulator</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">คำนวณเบี้ยประกันสุขภาพของคุณ</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">D Health Lite · เพิ่ม Care Plus ได้ · ผลลัพธ์ทันที</p>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-5 gap-6">
+      <!-- LEFT: INPUTS -->
+      <div class="lg:col-span-3 sim-card">
+        <div class="font-pop font-bold text-navy text-sm mb-6">🔧 เลือกเงื่อนไขความคุ้มครอง</div>
+
+        <!-- Gender -->
+        <div class="mb-5">
+          <span class="sim-label">เพศ</span>
+          <div class="flex gap-3">
+            <button onclick="setSim('gender','M')" id="btn-M" class="sim-btn selected flex-1">👨 ชาย</button>
+            <button onclick="setSim('gender','F')" id="btn-F" class="sim-btn flex-1">👩 หญิง</button>
+          </div>
+        </div>
+
+        <!-- Age -->
+        <div class="mb-5">
+          <span class="sim-label">อายุ (ปี) <span id="age-display" class="text-teal font-bold">35</span></span>
+          <input type="range" min="16" max="80" value="35" oninput="document.getElementById('age-display').textContent=this.value;document.getElementById('age-num').value=this.value;calcPremium()" class="w-full accent-teal mb-2" id="age-slider"/>
+          <input type="number" min="16" max="80" value="35" oninput="document.getElementById('age-display').textContent=this.value;document.getElementById('age-slider').value=this.value;calcPremium()" id="age-num" class="sim-input w-24" placeholder="อายุ"/>
+        </div>
+
+        <!-- Coverage -->
+        <div class="mb-5">
+          <span class="sim-label">วงเงินคุ้มครองสุขภาพ (D Health Lite)</span>
+          <div class="flex gap-3">
+            <button onclick="setSim('cov','1M')" id="btn-1M" class="sim-btn selected flex-1">🏥 1 ล้านบาท</button>
+            <button onclick="setSim('cov','5M')" id="btn-5M" class="sim-btn flex-1">🏆 5 ล้านบาท</button>
+          </div>
+        </div>
+
+        <!-- Plan Type -->
+        <div class="mb-5">
+          <span class="sim-label">รูปแบบแผน</span>
+          <div id="plan-options" class="grid grid-cols-2 gap-2"></div>
+          <div class="mt-2 p-3 bg-slate-50 rounded-xl" id="plan-explain">
+            <div class="font-noto text-xs text-slate-500 leading-relaxed" id="plan-desc">เลือกแผนด้านบน</div>
+          </div>
+        </div>
+
+        <!-- Care Plus Add-on -->
+        <div class="mb-2">
+          <span class="sim-label">➕ เพิ่ม Care Plus (มะเร็ง &amp; ไต) หรือไม่?</span>
+          <div class="flex gap-2 flex-wrap">
+            <button onclick="setSim('cp','none')" id="btn-cp-none" class="sim-btn selected text-xs px-3">ไม่เพิ่ม</button>
+            <button onclick="setSim('cp','1M')" id="btn-cp-1M" class="sim-btn text-xs px-3">+ Care Plus 1 ล้าน</button>
+            <button onclick="setSim('cp','5M')" id="btn-cp-5M" class="sim-btn text-xs px-3">+ Care Plus 5 ล้าน</button>
+          </div>
+          <div class="font-noto text-xs text-slate-400 mt-2">* ไม่รวมสัญญาชีวิต / OPD / โรคร้ายแรงแบบอื่น (ซื้อเพิ่มได้)</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: RESULT -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="result-box flex-1">
+          <div class="font-pop font-bold text-white text-xs mb-4 opacity-70 tracking-wider uppercase">ผลลัพธ์การคำนวณ</div>
+          <div id="result-age-gender" class="font-noto text-sm mb-3" style="color:rgba(255,255,255,.65)">—</div>
+
+          <div class="mb-3">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">D Health Lite</div>
+            <div id="result-dh" class="font-pop font-bold text-white text-2xl">—</div>
+          </div>
+          <div id="result-cp-wrap" class="mb-3 hidden">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">Care Plus เพิ่มเติม</div>
+            <div id="result-cp" class="font-pop font-bold text-2xl" style="color:#67E8F9">—</div>
+          </div>
+          <div class="border-t border-white/20 pt-3 mt-3">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">รวมเบี้ยทั้งหมด / ปี</div>
+            <div id="result-total" class="font-pop font-extrabold text-3xl" style="color:#34D399">—</div>
+            <div id="result-monthly" class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.5)">—</div>
+          </div>
+        </div>
+
+        <!-- Coverage Summary -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-card">
+          <div class="font-pop font-bold text-navy text-xs mb-3">📋 ความคุ้มครองที่ได้รับ</div>
+          <div id="coverage-list" class="space-y-2 font-noto text-xs text-slate-600">
+            <div class="flex items-center gap-2"><span class="text-teal">✓</span>เลือกแผนด้านซ้ายเพื่อดูรายละเอียด</div>
+          </div>
+        </div>
+
+        <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          💬 ปรึกษาเพิ่มเติมกับที่ปรึกษา →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: COMPARISON TABLE ══════ -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">ภาพรวมทั้งหมด</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">เปรียบเทียบแบบประกันสุขภาพ</h2>
+    </div>
+    <div class="reveal overflow-x-auto rounded-2xl border border-slate-100 shadow-card">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="min-width:140px">แบบประกัน</th>
+            <th>ประเภท</th>
+            <th>วงเงิน</th>
+            <th>OPD</th>
+            <th>โรคร้ายแรง</th>
+            <th>UDR ได้</th>
+            <th>เหมาะกับ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold text-navy">Elite Health Plus</td>
+            <td>IPD + OPD Premium</td>
+            <td>20–100 ล้าน/ปี</td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td><span class="text-slate-300">—</span></td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td class="text-slate-500">Premium / Global</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-navy">D Health Lite</td>
+            <td>IPD Standard</td>
+            <td>1–5 ล้าน/ครั้ง</td>
+            <td><span class="text-amber-500">บางแผน</span></td>
+            <td><span class="text-slate-300">—</span></td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td class="text-slate-500">Entry / ประหยัด</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-navy">OPD เหมาจ่าย</td>
+            <td>OPD Only</td>
+            <td>15K–100K/ปี</td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td><span class="text-slate-300">—</span></td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td class="text-slate-500">เสริม OPD</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-navy">Care Plus</td>
+            <td>CI เฉพาะทาง</td>
+            <td>1–5 ล้าน</td>
+            <td><span class="text-green-600 font-bold">✓ (มะเร็ง+ไต)</span></td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td><span class="text-slate-300">—</span></td>
+            <td class="text-slate-500">มะเร็ง / ไต</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-navy">CI Perfect Care</td>
+            <td>CI ครบทุกระยะ</td>
+            <td>ตามทุนประกัน</td>
+            <td><span class="text-slate-300">—</span></td>
+            <td><span class="text-green-600 font-bold">✓ 36 โรค</span></td>
+            <td><span class="text-green-600 font-bold">✓</span></td>
+            <td class="text-slate-500">เงินก้อนฉุกเฉิน</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-navy">Multiple CI</td>
+            <td>CI หลายรอบ</td>
+            <td>สูงสุด 400%</td>
+            <td><span class="text-slate-300">—</span></td>
+            <td><span class="text-green-600 font-bold">✓ 35 โรค 4 กลุ่ม</span></td>
+            <td><span class="text-slate-300">—</span></td>
+            <td class="text-slate-500">ป่วยซ้ำ / ระยะยาว</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section class="py-16" style="background:linear-gradient(135deg,#1B365D,#0C3548)">
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <div class="text-4xl mb-5">💚</div>
+    <h2 class="font-pridi font-semibold text-white text-2xl mb-4">ไม่แน่ใจว่าแบบไหนเหมาะกับคุณ?</h2>
+    <p class="font-noto mb-8 leading-relaxed" style="color:rgba(255,255,255,.65)">
+      ทีมที่ปรึกษาของเรายินดีวิเคราะห์แผนสุขภาพให้ฟรี<br/>
+      พร้อมออกแบบพอร์ตคุ้มครองที่ตรงกับไลฟ์สไตล์และงบประมาณของคุณ
+    </p>
+    <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-teal text-white px-8 py-4 rounded-xl font-noto font-semibold text-base hover:opacity-90 transition-opacity">
+      💬 ปรึกษาฟรีผ่าน LINE →
+    </a>
+  </div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════
+// PREMIUM DATA TABLES
+// ═══════════════════════════════════════════════════
+
+// D Health Lite 1M — [M, F] per plan per age band
+// Plans: full | ded20k | ded50k | copay20 | copay10
+const DH1M = {
+  '11-15':{full:[14040,15097],ded20k:[9055,10380],ded50k:[4679,5159],copay20:[10530,11323],copay10:[12636,13587]},
+  '16-20':{full:[12900,13597],ded20k:[8608,9839], ded50k:[5066,5221],copay20:[9675,10198], copay10:[11610,12238]},
+  '21-25':{full:[13851,14836],ded20k:[9416,10592],ded50k:[5846,6027],copay20:[10389,11127],copay10:[12466,13353]},
+  '26-30':{full:[14502,15834],ded20k:[10011,11911],ded50k:[6741,6964],copay20:[10877,11876],copay10:[13052,14251]},
+  '31-35':{full:[16290,17308],ded20k:[10804,12558],ded50k:[7064,7280],copay20:[12218,12981],copay10:[14661,15578]},
+  '36-40':{full:[17645,18747],ded20k:[11199,13016],ded50k:[8037,8282],copay20:[13234,14061],copay10:[15881,16873]},
+  '41-45':{full:[20352,21894],ded20k:[11551,13425],ded50k:[8662,8924],copay20:[15264,16421],copay10:[18317,19705]},
+  '46-50':{full:[22468,24128],ded20k:[12558,15153],ded50k:[9759,11398],copay20:[16851,18096],copay10:[20222,21716]},
+  '51-55':{full:[26999,29210],ded20k:[16038,18813],ded50k:[13734,14153],copay20:[20250,21908],copay10:[24300,26289]},
+  '56-60':{full:[37380,39735],ded20k:[24772,29884],ded50k:[22142,23468],copay20:[28035,29802],copay10:[33642,35762]},
+  '61-65':{full:[51409,54433],ded20k:[33321,39581],ded50k:[30916,33377],copay20:[38557,40825],copay10:[46269,48990]},
+  '66-70':{full:[69626,73721],ded20k:[47167,53803],ded50k:[42786,44732],copay20:[52220,55291],copay10:[62664,66349]},
+  '71-75':{full:[98925,104717],ded20k:[65810,71964],ded50k:[60063,62169],copay20:[74194,78538],copay10:[89033,94246]},
+  '76-80':{full:[115278,120943],ded20k:[75826,83302],ded50k:[69524,74703],copay20:[86459,90708],copay10:[103751,108849]}
+};
+
+// D Health Lite 5M — [M, F] per plan per age band
+// Plans: full | ded30k | ded50k | ded100k | copay20 | copay10
+const DH5M = {
+  '11-15':{full:[15295,16584],ded30k:[7678,8720], ded50k:[5561,5731], ded100k:[1326,1373],copay20:[11471,12438],copay10:[13766,14926]},
+  '16-20':{full:[13820,14567],ded30k:[7616,8650], ded50k:[6157,6345], ded100k:[1928,1995],copay20:[10365,10926],copay10:[12438,13111]},
+  '21-25':{full:[14366,15385],ded30k:[8157,9023], ded50k:[6699,6905], ded100k:[2157,2193],copay20:[10775,11539],copay10:[12930,13847]},
+  '26-30':{full:[15041,16563],ded30k:[8990,10027],ded50k:[7653,7889], ded100k:[2364,2404],copay20:[11281,12423],copay10:[13537,14907]},
+  '31-35':{full:[16714,17760],ded30k:[9392,10307],ded50k:[7935,8177], ded100k:[2714,2811],copay20:[12536,13320],copay10:[15043,15984]},
+  '36-40':{full:[18106,19236],ded30k:[10361,11277],ded50k:[9029,9305],ded100k:[3083,3193],copay20:[13580,14427],copay10:[16296,17313]},
+  '41-45':{full:[21068,22666],ded30k:[11155,12458],ded50k:[9496,9785],ded100k:[3315,3433],copay20:[15801,17000],copay10:[18962,20400]},
+  '46-50':{full:[23053,24757],ded30k:[12354,14326],ded50k:[10725,11841],ded100k:[3959,4100],copay20:[17290,18568],copay10:[20748,22282]},
+  '51-55':{full:[28542,30880],ded30k:[16276,17636],ded50k:[15549,16025],ded100k:[6296,6520],copay20:[21407,23160],copay10:[25688,27792]},
+  '56-60':{full:[39515,41986],ded30k:[26054,27600],ded50k:[25068,26574],ded100k:[13352,13827],copay20:[29637,31490],copay10:[35564,37788]},
+  '61-65':{full:[55327,58581],ded30k:[35783,38912],ded50k:[34843,37617],ded100k:[19515,20210],copay20:[41496,43936],copay10:[49795,52723]},
+  '66-70':{full:[75384,79819],ded30k:[48988,51969],ded50k:[46880,49013],ded100k:[28620,29639],copay20:[56538,59865],copay10:[67846,71838]},
+  '71-75':{full:[102059,108063],ded30k:[69262,72659],ded50k:[65990,68304],ded100k:[43322,44865],copay20:[76545,81048],copay10:[91854,97257]},
+  '76-80':{full:[128087,134381],ded30k:[81729,88034],ded50k:[76477,82174],ded100k:[51120,52940],copay20:[96066,100786],copay10:[115279,120943]}
+};
+
+// Care Plus rates [M_1M, F_1M, M_5M, F_5M] by age band
+const CP = {
+  '11-15':[1527,1460,1658,1608],'16-20':[1590,1530,1728,1710],
+  '21-25':[1670,2048,1839,2355],'26-30':[1931,2461,2163,2827],
+  '31-35':[2416,3173,2735,3699],'36-40':[3090,4008,3586,4779],
+  '41-45':[4335,5416,5072,6449],'46-50':[5999,6751,7097,8110],
+  '51-55':[8573,8233,10268,9939],'56-60':[11017,9644,12549,11235],
+  '61-65':[14931,11966,18122,14544],'66-70':[19661,14156,23936,17240],
+  '71-75':[26807,18462,32807,22488],'76-80':[33556,22386,41432,27262]
+};
+
+const PLANS_1M = [
+  {key:'full',   label:'เต็มรูปแบบ (ไม่มี Ded/Copay)', desc:'คุ้มครองตั้งแต่บาทแรก ไม่มีค่าใช้จ่ายร่วม เหมาะกับผู้ที่ต้องการความสบายใจสูงสุด'},
+  {key:'ded20k', label:'Deductible 20,000 บาท',         desc:'รับผิดชอบค่ารักษาส่วนแรก 20,000 บาท บริษัทจ่ายส่วนที่เกิน — เบี้ยลดลงมากกว่า 30%'},
+  {key:'ded50k', label:'Deductible 50,000 บาท',         desc:'รับผิดชอบส่วนแรก 50,000 บาท เหมาะกับผู้มีเงินสำรองและต้องการเบี้ยต่ำที่สุด'},
+  {key:'copay20',label:'Copay 20% (บริษัทจ่าย 80%)',   desc:'ร่วมจ่ายค่ารักษา 20% ทุกครั้ง บริษัทจ่าย 80% — เบี้ยลดลงพร้อมยังมีส่วนร่วมรับผิดชอบ'},
+  {key:'copay10',label:'Copay 10% (บริษัทจ่าย 90%)',   desc:'ร่วมจ่าย 10% ทุกครั้ง — ความคุ้มครองสูง เบี้ยปานกลาง'}
+];
+const PLANS_5M = [
+  {key:'full',   label:'เต็มรูปแบบ (ไม่มี Ded/Copay)', desc:'คุ้มครองตั้งแต่บาทแรก เหมาะกับผู้ต้องการความคุ้มครองระดับพรีเมียม'},
+  {key:'ded30k', label:'Deductible 30,000 บาท',         desc:'รับผิดชอบส่วนแรก 30,000 บาท บริษัทจ่ายส่วนที่เกิน — ประหยัดเบี้ยได้มาก'},
+  {key:'ded50k', label:'Deductible 50,000 บาท',         desc:'รับผิดชอบส่วนแรก 50,000 บาท เบี้ยต่ำลงอีกขั้น เหมาะกับผู้มีเงินสำรอง'},
+  {key:'ded100k',label:'Deductible 100,000 บาท',        desc:'รับผิดชอบส่วนแรก 100,000 บาท เบี้ยต่ำที่สุด ออกแบบมาเพื่อ catastrophic coverage'},
+  {key:'copay20',label:'Copay 20% (บริษัทจ่าย 80%)',   desc:'ร่วมจ่าย 20% ทุกครั้ง เบี้ยลดลงพร้อมรับความคุ้มครอง 5 ล้าน'},
+  {key:'copay10',label:'Copay 10% (บริษัทจ่าย 90%)',   desc:'ร่วมจ่าย 10% ทุกครั้ง — เบี้ยปานกลาง ความคุ้มครองสูง'}
+];
+
+// ═══════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════
+let sim = {gender:'M', cov:'1M', plan:'full', cp:'none'};
+
+function getAgeBand(age){
+  const bands=['11-15','16-20','21-25','26-30','31-35','36-40','41-45','46-50','51-55','56-60','61-65','66-70','71-75','76-80'];
+  for(let b of bands){
+    const [lo,hi]=b.split('-').map(Number);
+    if(age>=lo&&age<=hi) return b;
+  }
+  return null;
+}
+
+function setSim(key, val){
+  sim[key] = val;
+  // update button states
+  // button state updated in setSim2
+  ['none','1M','5M'].forEach(v=>{const el=document.getElementById('btn-cp-'+v);if(el)el.className='sim-btn text-xs px-3'+(v===sim.cp?' selected':'')});
+  if(key==='cov'){ sim.plan='full'; renderPlanOptions(); }
+  calcPremium();
+}
+
+function selectPlan(key){
+  sim.plan = key;
+  document.querySelectorAll('.plan-opt').forEach(b=>{
+    b.className='plan-opt sim-btn text-xs'+(b.dataset.key===key?' selected':'');
+  });
+  const plans = sim.cov==='1M'?PLANS_1M:PLANS_5M;
+  const p = plans.find(x=>x.key===key);
+  document.getElementById('plan-desc').textContent = p?p.desc:'';
+  calcPremium();
+}
+
+function renderPlanOptions(){
+  const plans = sim.cov==='1M'?PLANS_1M:PLANS_5M;
+  const el = document.getElementById('plan-options');
+  el.innerHTML = plans.map(p=>`<button class="plan-opt sim-btn text-xs${p.key===sim.plan?' selected':''}" data-key="${p.key}" onclick="selectPlan('${p.key}')">${p.label}</button>`).join('');
+  const cur = plans.find(x=>x.key===sim.plan)||plans[0];
+  document.getElementById('plan-desc').textContent = cur.desc;
+}
+
+function fmt(n){ return n?n.toLocaleString('th-TH'):'—'; }
+
+function calcPremium(){
+  const age = parseInt(document.getElementById('age-num').value)||35;
+  const band = getAgeBand(age);
+  const gi = sim.gender==='M'?0:1;
+
+  // D Health Lite
+  const tbl = sim.cov==='1M'?DH1M:DH5M;
+  let dhPremium = null;
+  if(band && tbl[band] && tbl[band][sim.plan]){
+    dhPremium = tbl[band][sim.plan][gi];
+  }
+
+  // Care Plus
+  let cpPremium = null;
+  if(sim.cp!=='none' && band && CP[band]){
+    const cpIdx = (sim.cp==='1M')?(gi===0?0:1):(gi===0?2:3);
+    cpPremium = CP[band][cpIdx];
+  }
+
+  const total = (dhPremium||0)+(cpPremium||0);
+  const genderTh = sim.gender==='M'?'ชาย':'หญิง';
+  const covLabel = sim.cov==='1M'?'1 ล้านบาท':'5 ล้านบาท';
+
+  document.getElementById('result-age-gender').textContent = `เพศ${genderTh} อายุ ${age} ปี · D Health Lite ${covLabel}`;
+  document.getElementById('result-dh').textContent = dhPremium?'฿'+fmt(dhPremium)+' /ปี':'ไม่พบข้อมูลในช่วงอายุนี้';
+  
+  const cpWrap = document.getElementById('result-cp-wrap');
+  if(cpPremium){
+    cpWrap.classList.remove('hidden');
+    document.getElementById('result-cp').textContent = '฿'+fmt(cpPremium)+' /ปี';
+  } else {
+    cpWrap.classList.add('hidden');
+  }
+
+  document.getElementById('result-total').textContent = total?'฿'+fmt(total)+' /ปี':'—';
+  document.getElementById('result-monthly').textContent = total?`≈ ฿${fmt(Math.round(total/12))} /เดือน`:'';
+
+  // Coverage summary
+  const covList = document.getElementById('coverage-list');
+  const planLabel = (sim.cov==='1M'?PLANS_1M:PLANS_5M).find(x=>x.key===sim.plan);
+  let items = [
+    `✓ D Health Lite ${covLabel} · ${planLabel?planLabel.label:''}`,
+    `✓ IPD: ห้องพัก ค่าหมอ ค่ายา ค่าผ่าตัด ครอบคลุม`,
+    `✓ ค่าห้องสูงสุด 4,000 บาท/วัน`,
+    `✓ คุ้มครองโรคมะเร็ง ไต และโรคร้ายแรงทุกชนิด`,
+    `✓ คุ้มครองถึงอายุ 99 ปี`
+  ];
+  if(sim.plan.includes('ded')){
+    const dedAmt = sim.plan==='ded20k'?'20,000':sim.plan==='ded30k'?'30,000':sim.plan==='ded50k'?'50,000':'100,000';
+    items.push(`⚡ รับผิดชอบส่วนแรก ${dedAmt} บาท/ครั้ง`);
+  }
+  if(sim.plan.includes('copay')){
+    items.push(`⚡ ร่วมจ่าย ${sim.plan==='copay10'?'10':'20'}% ของค่ารักษาทุกครั้ง`);
+  }
+  if(cpPremium){
+    items.push(`✓ Care Plus ${sim.cp}: มะเร็ง &amp; ไตวาย ทุก 5 ระยะ`);
+    items.push(`✓ IPD+OPD: เคมีบำบัด Targeted Therapy Stem Cell`);
+  }
+  covList.innerHTML = items.map(i=>`<div class="flex items-start gap-1.5"><span class="${i.startsWith('✓')?'text-teal':'text-amber-500'} flex-shrink-0">${i.charAt(0)}</span>${i.slice(1)}</div>`).join('');
+}
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+function setSim2(key,val){
+  sim[key]=val;
+  ['M','F'].forEach(v=>{const el=document.getElementById('btn-'+v);if(el)el.className='sim-btn flex-1'+(v===sim.gender?' selected':'')});
+  ['1M','5M'].forEach(v=>{const el=document.getElementById('btn-'+v);if(el)el.className='sim-btn flex-1'+(v===sim.cov?' selected':'')});
+  ['none','1M','5M'].forEach(v=>{const el=document.getElementById('btn-cp-'+v);if(el)el.className='sim-btn text-xs px-3'+(v===sim.cp?' selected':'')});
+  if(key==='cov'){sim.plan='full';renderPlanOptions();}
+  calcPremium();
+}
+window.setSim=setSim2;
+
+// ═══════════════════════════════════════════════════
+// CHART: UDR vs Standard
+// ═══════════════════════════════════════════════════
+const ages=[30,35,40,45,50,55,60,65,70];
+const stdPremium=[15000,17000,20000,24000,29000,39000,53000,71000,98000];
+const udrFlat=[22000,22000,22000,22000,22000,22000,22000,22000,22000];
+const fundValue=[24000,28000,34000,42000,55000,72000,95000,128000,170000];
+
+new Chart(document.getElementById('udrChart'),{
+  type:'line',
+  data:{
+    labels:ages.map(a=>a+' ปี'),
+    datasets:[
+      {label:'เบี้ยประกันทั่วไป',data:stdPremium,borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,.08)',borderWidth:2.5,pointRadius:4,tension:.35,fill:true},
+      {label:'UDR: เบี้ยรวมคงที่',data:udrFlat,borderColor:'#0891B2',backgroundColor:'rgba(8,145,178,.06)',borderWidth:2.5,pointRadius:4,tension:0,borderDash:[],fill:false},
+      {label:'มูลค่ากองทุน UDR',data:fundValue,borderColor:'#22c55e',backgroundColor:'rgba(34,197,94,.06)',borderWidth:2,pointRadius:3,tension:.4,borderDash:[6,4],fill:false}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'฿'+ctx.parsed.y.toLocaleString('th-TH')}}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:10,family:'Poppins'}}},
+      y:{grid:{color:'#f1f5f9'},ticks:{callback:v=>'฿'+v.toLocaleString('th-TH'),font:{size:9}},beginAtZero:true}
+    }
+  }
+});
+
+// ═══════════════════════════════════════════════════
+// TAB SWITCH (CI section)
+// ═══════════════════════════════════════════════════
+function switchCITab(tab){
+  ['standard','multi'].forEach(t=>{
+    document.getElementById('panel-'+t).className='tab-panel'+(t===tab?' active':'');
+    document.getElementById('tab-'+t).className='tab-btn font-noto px-6 py-3 text-sm'+(t===tab?' active-tab text-teal':' text-slate-500');
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════════════
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Init
+renderPlanOptions();
+calcPremium();
+</script>
 </body>
 </html>
