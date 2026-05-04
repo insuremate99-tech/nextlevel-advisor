@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>โซลูชัน | NextLevel Advisor</title>
+<meta name="description" content="เลือกแผนที่ตรงกับเป้าหมายของคุณ — Guaranteed Income, Wealth Growth, Tax Optimization"/>
+<meta property="og:title" content="โซลูชัน | NextLevel Advisor"/>
+<meta property="og:url" content="https://nextlevel-advisor.com/solutions"/>
+<link rel="canonical" href="https://nextlevel-advisor.com/solutions"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Noto Sans Thai',sans-serif;background:#F8FAFC}
+.sol-card{background:#fff;border-radius:1.25rem;border:2px solid #e2e8f0;padding:2rem;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.sol-card:hover{border-color:#0891B2;box-shadow:0 8px 32px rgba(8,145,178,.15);transform:translateY(-3px)}
+.sol-card.coming{opacity:.7;cursor:default}
+.sol-card.coming:hover{border-color:#e2e8f0;box-shadow:none;transform:none}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Noto Sans Thai',sans-serif;font-weight:600;border-radius:.75rem;transition:all .2s;text-decoration:none}
+.btn-teal{background:#0891B2;color:#fff;box-shadow:0 4px 14px rgba(8,145,178,.3)}
+.btn-teal:hover{background:#0771A0}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/>
+    </a>
+    <ul class="hidden md:flex items-center gap-8">
+      <li><a href="/solutions" class="font-noto text-sm font-semibold text-teal">โซลูชัน</a></li>
+      <li><a href="/articles/" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/#career" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
+    </ul>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="btn btn-teal px-5 py-2.5 text-sm hidden md:inline-flex">นัดปรึกษาฟรี</a>
+    <button id="menuBtn" class="md:hidden p-2 text-navy">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 px-5 py-4">
+    <ul class="space-y-1">
+      <li><a href="/solutions" class="block py-3 text-teal font-semibold border-b border-slate-100">โซลูชัน</a></li>
+      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
+      <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
+    </ul>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="btn btn-teal w-full py-3 mt-4 justify-center">นัดปรึกษาฟรี</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-10" style="background:linear-gradient(135deg,#1B365D 0%,#0D2445 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <nav class="flex items-center gap-2 text-xs mb-5" style="color:rgba(255,255,255,.5)">
+      <a href="/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.5)">หน้าหลัก</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.85)">โซลูชัน</span>
+    </nav>
+    <div class="inline-block bg-teal/20 text-teal text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 font-pop">Signature Solutions</div>
+    <h1 class="font-pridi font-semibold text-white text-3xl md:text-4xl leading-snug mb-3">เลือกกลุ่มที่ตรงกับเป้าหมายของคุณ</h1>
+    <p class="font-noto mb-0 text-sm md:text-base" style="color:rgba(255,255,255,.7)">แต่ละกลุ่มใช้เครื่องมือต่างกัน — เลือกให้ตรงกับสไตล์การออมของคุณ</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="py-14">
+  <div class="max-w-5xl mx-auto px-5">
+
+    <!-- Retirement & Tax: 3 sub-groups -->
+    <div class="mb-14">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="bg-teal/10 text-teal text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full font-pop">เกษียณ & ภาษี</span>
+      </div>
+      <h2 class="font-pridi font-semibold text-navy text-2xl mb-1">วางแผนเกษียณและบริหารภาษี</h2>
+      <p class="font-noto text-slate-500 text-sm mb-8">3 กลุ่ม ตามเป้าหมายและสไตล์การออมที่แตกต่างกัน</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Card A: Guaranteed Income -->
+        <a href="/solutions/retirement-tax.html" class="sol-card">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0891B2,#065E7A)">💵</div>
+          <div class="font-pop font-bold text-xs text-teal uppercase tracking-widest mb-1">Guaranteed Income</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">กลุ่มเน้นรายได้แน่นอน</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4 flex-1">ต้องการกระแสเงินสดหลังเกษียณที่ชัดเจน ไม่ผันผวนตามเศรษฐกิจ และต้องการใช้สิทธิลดหย่อนภาษีสูงสุด</p>
+          <div class="font-noto text-xs text-slate-400 mb-5">เครื่องมือ: <span class="font-semibold text-navy">ประกันบำนาญ (Annuity)</span></div>
+          <div class="flex items-center gap-1.5 text-teal text-sm font-semibold mt-auto">
+            ดูแผนทั้งหมด
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card B: Wealth Growth -->
+        <div class="sol-card coming relative">
+          <div class="absolute top-4 right-4 bg-slate-100 text-slate-500 text-xs font-bold px-2.5 py-1 rounded-full font-pop">เร็วๆ นี้</div>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1B365D,#0D2445)">📈</div>
+          <div class="font-pop font-bold text-xs text-slate-400 uppercase tracking-widest mb-1">Wealth Growth</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">กลุ่มเน้นโอกาสเติบโต</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4 flex-1">ต้องการความยืดหยุ่น ปรับเปลี่ยนทุนประกันได้ และโอกาสรับผลตอบแทนที่สูงกว่าจากกองทุนรวมชั้นนำ</p>
+          <div class="font-noto text-xs text-slate-400 mb-5">เครื่องมือ: <span class="font-semibold text-navy">ประกันควบการลงทุน (Unit Link)</span></div>
+          <div class="flex items-center gap-1.5 text-slate-400 text-sm font-semibold mt-auto">
+            กำลังพัฒนา
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Card C: Tax Optimization -->
+        <div class="sol-card coming relative">
+          <div class="absolute top-4 right-4 bg-slate-100 text-slate-500 text-xs font-bold px-2.5 py-1 rounded-full font-pop">เร็วๆ นี้</div>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0891B2,#1B365D)">🧾</div>
+          <div class="font-pop font-bold text-xs text-slate-400 uppercase tracking-widest mb-1">Tax Optimization</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">กลุ่มเน้นบริหารภาษี</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4 flex-1">มีฐานภาษีสูง ต้องการเปลี่ยน "ภาษีจ่ายทิ้ง" ให้กลับมาเป็น "เงินออม" ผ่านประกันสะสมทรัพย์และบำนาญ</p>
+          <div class="font-noto text-xs text-slate-400 mb-5">เครื่องมือ: <span class="font-semibold text-navy">ประกันสะสมทรัพย์ / บำนาญลดหย่อน</span></div>
+          <div class="flex items-center gap-1.5 text-slate-400 text-sm font-semibold mt-auto">
+            กำลังพัฒนา
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-200 mb-14"></div>
+
+    <!-- Health & Legacy: coming soon cards -->
+    <div class="mb-14">
+      <h2 class="font-pridi font-semibold text-navy text-2xl mb-8">โซลูชันอื่นๆ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl">
+
+        <a href="/solutions/health-planning.html" class="sol-card">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1B365D,#0D2445)">🏥</div>
+          <div class="font-pop font-bold text-xs text-slate-400 uppercase tracking-widest mb-1">Health Planning</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">วางแผนสุขภาพ</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4 flex-1">โอนความเสี่ยงสุขภาพ ปกป้องแผนเกษียณจากค่ารักษาพยาบาลที่ไม่คาดฝัน</p>
+          <div class="flex items-center gap-1.5 text-teal text-sm font-semibold mt-auto">
+            ดูรายละเอียด
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/solutions/legacy-planning.html" class="sol-card">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0891B2,#1B365D)">🏛️</div>
+          <div class="font-pop font-bold text-xs text-slate-400 uppercase tracking-widest mb-1">Legacy Planning</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3">วางแผนมรดก</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4 flex-1">ส่งต่อมรดกเป็นระบบ ไร้ข้อพิพาท จัดการทรัพย์สินถึงมือผู้รับอย่างปลอดภัย</p>
+          <div class="flex items-center gap-1.5 text-teal text-sm font-semibold mt-auto">
+            ดูรายละเอียด
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CTA bar -->
+    <div class="rounded-2xl p-8 flex flex-wrap items-center justify-between gap-6" style="background:linear-gradient(135deg,#0891B2,#1B365D)">
+      <div>
+        <h3 class="font-pridi font-semibold text-white text-xl mb-1">ไม่แน่ใจว่าแบบไหนใช่?</h3>
+        <p class="font-noto text-sm" style="color:rgba(255,255,255,.75)">ให้ที่ปรึกษาช่วยวิเคราะห์ฟรี ไม่มีข้อผูกมัด 15 นาที</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="btn btn-teal px-6 py-3 text-sm" style="background:#fff;color:#1B365D">
+          นัดปรึกษาฟรี →
+        </a>
+        <a href="https://line.me/ti/p/~@nextlevel-advisor" target="_blank" rel="noopener" class="btn px-6 py-3 text-sm" style="background:#06C755;color:#fff;border-radius:.75rem">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.76c0 3.1 1.82 5.83 4.56 7.44-.18.68-.66 2.47-.76 2.86-.12.49.18.48.38.35.16-.1 2.06-1.4 2.9-1.97.62.09 1.27.14 1.92.14 5.52 0 10-3.92 10-8.76C22 5.92 17.52 2 12 2z"/></svg>
+          ทักไลน์
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0D1A2D;color:rgba(255,255,255,.7)">
+  <div class="max-w-6xl mx-auto px-5 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2.5 mb-4">
+          <img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/>
+        </a>
+        <p class="font-noto text-sm leading-relaxed" style="color:rgba(255,255,255,.6)">ที่ปรึกษาการเงินอิสระ เชี่ยวชาญด้านการวางแผนเกษียณ บริหารภาษี และส่งต่อมรดก</p>
+      </div>
+      <div>
+        <div class="font-noto font-semibold text-white text-sm mb-4">โซลูชัน</div>
+        <ul class="space-y-2 font-noto text-sm">
+          <li><a href="/solutions/retirement-tax.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">วางแผนภาษี/เกษียณ</a></li>
+          <li><a href="/solutions/health-planning.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">วางแผนสุขภาพ</a></li>
+          <li><a href="/solutions/legacy-planning.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">วางแผนมรดก</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t mt-10 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs font-noto" style="border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.4)">
+      <span>© 2025 NextLevel Advisor. All rights reserved.</span>
+      <span>ใบอนุญาตตัวแทนประกันชีวิต • กำกับโดย คปภ.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('hidden')
+})
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)
+})
+</script>
+</body>
+</html>
