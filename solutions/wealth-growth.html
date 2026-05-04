@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wealth Growth | NextLevel Advisor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+html{scroll-behavior:smooth}
+.sec-label{font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0891B2}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+.shadow-card{box-shadow:0 2px 16px rgba(27,54,93,.07)}
+.prod-card{background:#fff;border:1.5px solid #e8eff8;border-radius:1.25rem;padding:1.5rem;transition:all .25s}
+.prod-card:hover{box-shadow:0 8px 32px rgba(27,54,93,.1);transform:translateY(-2px)}
+.prod-card.featured{border-color:#0891B2;background:linear-gradient(135deg,#f0f9ff 0%,#fff 100%)}
+.prod-card.gold{border-color:#d97706;background:linear-gradient(135deg,#fffbeb 0%,#fff 100%)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.75rem}
+.badge-teal{background:#e0f2fe;color:#0369a1}
+.badge-gold{background:#fffbeb;color:#b45309}
+.badge-green{background:#f0fdf4;color:#15803d}
+.badge-purple{background:#faf5ff;color:#7e22ce}
+.who-chip{display:inline-flex;align-items:center;gap:6px;background:#f1f5f9;border-radius:999px;padding:5px 14px;font-size:.75rem;color:#475569;font-family:'Noto Sans Thai',sans-serif}
+.snav-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;font-weight:600;color:#475569;background:#f8fafc;border:1.5px solid #e2e8f0;text-decoration:none;white-space:nowrap;transition:all .2s}
+.snav-btn:hover,.snav-btn.active{background:#0891B2;color:#fff;border-color:#0891B2}
+.sim-card{background:#fff;border-radius:1.5rem;box-shadow:0 4px 32px rgba(27,54,93,.1);padding:2rem}
+.sim-label{font-family:'Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:600;color:#475569;margin-bottom:.4rem;display:block}
+.sim-btn{border:2px solid #e2e8f0;border-radius:.875rem;padding:.55rem 1.1rem;font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:#475569}
+.sim-btn.selected{border-color:#0891B2;background:#0891B2;color:#fff}
+.sim-btn.gold-sel{border-color:#d97706;background:#d97706;color:#fff}
+.result-box{background:linear-gradient(135deg,#1B365D 0%,#0C3548 100%);border-radius:1.25rem;padding:1.5rem;color:#fff}
+.risk-card{border-radius:1.25rem;padding:1.5rem;border:2px solid transparent;cursor:pointer;transition:all .25s;text-align:center}
+.risk-card.selected-risk{border-color:#0891B2;background:#f0f9ff}
+.compare-col{border-radius:1.25rem;padding:1.5rem;height:100%}
+.expert-note{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-left:4px solid #0891B2;border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem}
+.tool-chip{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border:1.5px solid #e8eff8;border-radius:1rem;padding:.875rem 1.25rem;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;color:#1B365D;text-align:center;transition:all .2s}
+.tool-chip:hover{border-color:#0891B2;box-shadow:0 4px 16px rgba(8,145,178,.1)}
+</style>
+</head>
+<body class="bg-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
+    <div class="flex items-center gap-4">
+      <a href="/#solutions" class="font-noto text-slate-500 text-sm hidden sm:block hover:text-navy transition-colors">โซลูชัน</a>
+      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold font-noto">ปรึกษาฟรี →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-16" style="background:linear-gradient(150deg,#0D1F3C 0%,#1B365D 55%,#0C3548 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <nav class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
+      <a href="/" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">หน้าหลัก</a>
+      <span>/</span><a href="/solutions" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">โซลูชัน</a>
+      <span>/</span><span style="color:rgba(255,255,255,.7)">Wealth Growth</span>
+    </nav>
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-xs font-semibold font-pop" style="background:rgba(217,119,6,.25);color:#fcd34d;letter-spacing:.06em">💰 WEALTH BY DESIGN</div>
+      <h1 class="font-pridi font-semibold text-white mb-4" style="font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2">
+        ให้เงินทำงาน<br/>ในจังหวะที่คุณต้องการพัก
+      </h1>
+      <p class="font-noto text-base mb-8" style="color:rgba(255,255,255,.65);line-height:1.85;max-width:540px">
+        วางแผนเกษียณและจัดการภาษี ด้วยเครื่องมือทางการเงินที่ <span style="color:#fcd34d;font-weight:600">"ยืดหยุ่น"</span> และปรับเปลี่ยนได้ตามเป้าหมายชีวิต
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">Unit-Linked: Growth &amp; Flexibility</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">UL Plus: Guaranteed Return</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">IC-Licensed Active Portfolio Review</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<div id="sec-nav" class="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+  <div class="max-w-5xl mx-auto px-4 py-2.5 overflow-x-auto">
+    <div class="flex items-center gap-2 min-w-max">
+      <span class="font-noto text-xs text-slate-400 mr-1 hidden sm:block">ไปที่:</span>
+      <a href="#sec-ul"      class="snav-btn">📈 Unit-Linked</a>
+      <a href="#sec-ulplus"  class="snav-btn">🛡️ UL Plus</a>
+      <a href="#sec-mf"      class="snav-btn">💧 กองทุนรวม</a>
+      <a href="#sec-compare" class="snav-btn">⚖️ เปรียบเทียบ</a>
+      <a href="#sec-sim1"    class="snav-btn">🔧 Wealth Horizon</a>
+      <a href="#sec-sim2"    class="snav-btn">🔧 Guaranteed vs Growth</a>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="py-14 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="reveal grid sm:grid-cols-3 gap-5 mb-10">
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">🎯</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">Control</div>
+        <div class="font-noto text-slate-500 text-sm">ออกแบบสัดส่วนความคุ้มครองและการลงทุนได้เอง</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">📈</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">Opportunity</div>
+        <div class="font-noto text-slate-500 text-sm">เข้าถึงกองทุนชั้นนำในและต่างประเทศในกรมธรรม์เดียว</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">🔄</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">Flexibility</div>
+        <div class="font-noto text-slate-500 text-sm">ปรับลด เพิ่ม หยุดพัก หรือถอนบางส่วนได้ตามชีวิตเปลี่ยน</div>
+      </div>
+    </div>
+    <div class="reveal max-w-2xl">
+      <p class="font-noto text-slate-600 leading-relaxed">
+        ความมั่งคั่งที่แท้จริงไม่ได้เกิดจากการ "เก็บเงิน" เพียงอย่างเดียว แต่เกิดจากการ <strong class="text-navy">ออกแบบให้เงินทำงาน</strong> ในจังหวะที่เหมาะสม — ด้วยเครื่องมือที่ผสมผสานความคุ้มครองชีวิต โอกาสการลงทุน และสิทธิประโยชน์ทางภาษีไว้ในที่เดียว
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 1: UNIT-LINKED ══════ -->
+<section id="sec-ul" class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="sec-label">Hybrid Financial Tool</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Unit-Linked — อิสระของการจัดการความมั่งคั่ง</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">รวมจุดเด่นของประกันชีวิต (คุ้มครองสูง) และการลงทุน (กองทุนรวม) ไว้ในกรมธรรม์เดียว</p>
+    </div>
+
+    <!-- Concept Cards -->
+    <div class="reveal grid md:grid-cols-3 gap-5 mb-12">
+      <div class="bg-white rounded-2xl p-6 border border-teal/20">
+        <div class="text-2xl mb-3">🔧</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">Customizable</div>
+        <p class="font-noto text-slate-500 text-xs leading-relaxed">ปรับเพิ่ม-ลดความคุ้มครองและเงินลงทุนได้ตามช่วงวัย — วัยสร้างครอบครัวเน้นคุ้มครอง วัยใกล้เกษียณเน้นสะสม</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-teal/20">
+        <div class="text-2xl mb-3">🌐</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">Access to Top Funds</div>
+        <p class="font-noto text-slate-500 text-xs leading-relaxed">เลือกลงทุนในกองทุนคุณภาพทั้งในและต่างประเทศ — หุ้น ตราสารหนี้ กองทุนผสม คัดสรรโดยทีมผู้เชี่ยวชาญ</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-teal/20">
+        <div class="text-2xl mb-3">💸</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">Tax Efficiency</div>
+        <p class="font-noto text-slate-500 text-xs leading-relaxed">ใช้สิทธิลดหย่อนภาษีสูงสุด 100,000 บาท พร้อมโอกาสรับผลตอบแทนที่สูงกว่าประกันทั่วไป</p>
+      </div>
+    </div>
+
+    <!-- Who is it for -->
+    <div class="reveal mb-12 bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
+      <div class="font-pop font-bold text-navy text-sm mb-4">เหมาะกับใคร?</div>
+      <div class="flex flex-wrap gap-2">
+        <div class="who-chip">💼 ผู้ประกอบการ / Freelancer ไม่มีสวัสดิการ ต้องออกแบบเอง</div>
+        <div class="who-chip">📊 คนที่ต้องการให้เงินทำงานหนักขึ้น ชอบความคล่องตัว</div>
+        <div class="who-chip">🎯 วัยทำงาน 25–45 ปีที่ต้องการวางแผนระยะยาว</div>
+        <div class="who-chip">🔄 ต้องการปรับแผนการเงินได้ตามชีวิตเปลี่ยน</div>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="reveal grid md:grid-cols-3 gap-5">
+      <div class="prod-card featured">
+        <div class="badge badge-teal">⭐ ยอดนิยม</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">mDesign</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">ออกแบบความคุ้มครองได้ดั่งใจ</div>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>กำหนดจำนวนเบี้ยและความคุ้มครองได้เอง</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เพิ่มโอกาสผลตอบแทนจากกองทุนรวม</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>แนบ UDR สุขภาพ/โรคร้ายแรงได้</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ยืดหยุ่นสูงสุด เหมาะครอบครัวขยาย</li>
+        </ul>
+        <span class="badge badge-teal" style="margin-bottom:0">Full Customization</span>
+      </div>
+      <div class="prod-card">
+        <div class="badge badge-green">🌱 จ่าย 6 ปี คุ้มครอง 15 ปี</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">mGrow 615</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">สร้างพอร์ตชีวิตให้เติบโต</div>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>จ่ายเบี้ยต่อเนื่อง 6 ปี คุ้มครอง 15 ปี</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>โบนัสพิเศษ 2% เมื่อครบ 6 ปี</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>คุ้มครองชีวิต 3 เท้าเบี้ยแม้กองทุนติดลบ</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ขยายความคุ้มครองถึงอายุ 99 ปีได้</li>
+        </ul>
+        <span class="badge badge-green" style="margin-bottom:0">6-Pay Bonus</span>
+      </div>
+      <div class="prod-card">
+        <div class="badge badge-purple">💜 จ่ายครั้งเดียว</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">mOnePlus</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">Single Premium — จบในกรมธรรม์เดียว</div>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>จ่ายครั้งเดียว คุ้มครองถึงอายุ 99 ปี</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลงทุนกองทุนรวมได้ทันที</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ถอนบางส่วนได้เมื่อต้องการ</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะผู้มีเงินก้อนพร้อมลงทุน</li>
+        </ul>
+        <span class="badge badge-purple" style="margin-bottom:0">Single Premium</span>
+      </div>
+    </div>
+
+    <!-- IC Advisor Role -->
+    <div class="reveal mt-10 expert-note">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">🎓</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-2">บทบาท IC Advisor — จุดต่างที่สำคัญ</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">
+            ป้องไม่ได้แค่ "ขายประกัน" — ในฐานะ <strong class="text-navy">Investment Consultant (IC License)</strong> ทีมงานช่วย <strong class="text-navy">รีวิวพอร์ตการลงทุน</strong> และ <strong class="text-navy">ปรับสัดส่วนกองทุน</strong> ให้สอดคล้องกับสภาวะตลาดและเป้าหมายชีวิตของคุณอย่างสม่ำเสมอ — ไม่ใช่แค่เซ็นสัญญาแล้วจบ
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: UL PLUS ══════ -->
+<section id="sec-ulplus" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="sec-label">Growth with Safety Net</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">UL Plus — ความมั่นคงที่มาพร้อมการการันตี</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">Universal Life ที่ให้ผลตอบแทนขั้นต่ำมีการการันตี — เหมาะกับผู้ต้องการ Growth แต่ไม่ชอบความเสี่ยง</p>
+    </div>
+
+    <div class="reveal grid md:grid-cols-2 gap-10 items-center mb-12">
+      <div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-green-50 rounded-2xl">
+            <span class="text-2xl flex-shrink-0">✅</span>
+            <div>
+              <div class="font-pop font-bold text-green-800 text-sm mb-1">Guaranteed Return</div>
+              <p class="font-noto text-xs text-green-700 leading-relaxed">การันตีผลตอบแทนขั้นต่ำ <strong>4% ต่อปี ในปีแรก</strong> และ 1% ต่อปีตั้งแต่ปีที่ 2 เป็นต้นไป สำหรับมูลค่าการลงทุน — เงินต้นปลอดภัย</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-2xl">
+            <span class="text-2xl flex-shrink-0">📊</span>
+            <div>
+              <div class="font-pop font-bold text-blue-800 text-sm mb-1">Predictable Growth</div>
+              <p class="font-noto text-xs text-blue-700 leading-relaxed">วางแผนเกษียณได้แม่นยำ เพราะเห็นตัวเลขขั้นต่ำที่แน่นอน — บริหารพอร์ตในสินทรัพย์เสี่ยงต่ำ สัดส่วนหุ้นไม่เกิน 20%</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-amber-50 rounded-2xl">
+            <span class="text-2xl flex-shrink-0">🔄</span>
+            <div>
+              <div class="font-pop font-bold text-amber-800 text-sm mb-1">Premium Holiday</div>
+              <p class="font-noto text-xs text-amber-700 leading-relaxed">พักชำระเบี้ยได้ในอนาคต ความคุ้มครองยังทำงานต่อตราบที่กองทุนมีมูลค่า — ยืดหยุ่นตามสถานการณ์ชีวิต</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-2xl">
+            <span class="text-2xl flex-shrink-0">💸</span>
+            <div>
+              <div class="font-pop font-bold text-purple-800 text-sm mb-1">Tax Deductible</div>
+              <p class="font-noto text-xs text-purple-700 leading-relaxed">ใช้สิทธิลดหย่อนภาษีได้สูงสุด 100,000 บาท — ภาษีเป็นผลพลอยได้ เป้าหมายหลักคือเงินเกษียณที่เติบโต</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="prod-card gold mb-5">
+          <div class="badge badge-gold">🛡️ เมืองไทย ยูแอล พลัส</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">MTL UL Plus</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">Universal Life · การันตีขั้นต่ำ · บริหารโดยมืออาชีพ</div>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-amber-50 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-amber-700 text-lg">4%</div>
+              <div class="font-noto text-xs text-amber-600">การันตีปีแรก</div>
+            </div>
+            <div class="bg-amber-50 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-amber-700 text-lg">1%</div>
+              <div class="font-noto text-xs text-amber-600">การันตีปีถัดไป</div>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-navy text-base">ไม่จำกัด</div>
+              <div class="font-noto text-xs text-slate-500">ความคุ้มครองสูงสุด</div>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-navy text-base">30 วัน–75 ปี</div>
+              <div class="font-noto text-xs text-slate-500">อายุรับประกัน</div>
+            </div>
+          </div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">→</span>กำหนดสัดส่วนความคุ้มครอง-การลงทุนได้</li>
+            <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">→</span>เพิ่มเบี้ยออมเพิ่มเติมได้ตามต้องการ</li>
+            <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-amber-600 flex-shrink-0 mt-0.5">→</span>ถอนเงินบางส่วนได้เมื่อจำเป็น</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-gold" style="margin-bottom:0">Guaranteed Min Return</span>
+            <span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span>
+          </div>
+        </div>
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+          <div class="font-pop font-bold text-amber-800 text-xs mb-2">เหมาะกับใคร?</div>
+          <div class="space-y-1.5">
+            <div class="who-chip text-xs">🛡️ ต้องการผลตอบแทนชนะเงินเฟ้อ แต่ยังอยากอุ่นใจ</div>
+            <div class="who-chip text-xs">👴 วัย 40+ ที่ต้องการวางแผนเกษียณแบบ "แน่นอน"</div>
+            <div class="who-chip text-xs">📐 นักวางแผนที่ต้องการตัวเลขแม่นยำ ไม่ชอบผันผวน</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: MUTUAL FUNDS ══════ -->
+<section id="sec-mf" class="py-14" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="reveal grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="sec-label">Liquid Assets</span>
+        <h2 class="font-pridi font-semibold text-navy mt-2 mb-4" style="font-size:clamp(1.2rem,2.2vw,1.6rem)">กองทุนรวม — เครื่องมือเสริมสภาพคล่อง</h2>
+        <p class="font-noto text-slate-600 leading-loose mb-6 text-sm">
+          แม้ Unit-Linked และ UL Plus จะตอบโจทย์ระยะยาว แต่พอร์ตที่แข็งแกร่งต้องมี <strong class="text-navy">สินทรัพย์สภาพคล่อง</strong> เสริมด้วย — กองทุนรวมคือคำตอบที่ยืดหยุ่น ถอนได้เมื่อต้องการ และกระจายความเสี่ยงได้หลากหลาย
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 bg-white rounded-xl border border-slate-100">
+            <span class="text-lg flex-shrink-0">💧</span>
+            <div><div class="font-pop font-bold text-sm text-navy mb-0.5">High Liquidity</div><div class="font-noto text-xs text-slate-500">ลงทุนง่าย เริ่มได้ทันที ถอนออกได้เมื่อจำเป็น</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-white rounded-xl border border-slate-100">
+            <span class="text-lg flex-shrink-0">🌏</span>
+            <div><div class="font-pop font-bold text-sm text-navy mb-0.5">Global Diversification</div><div class="font-noto text-xs text-slate-500">เข้าถึงกองทุนหุ้นไทย หุ้นต่างประเทศ ตราสารหนี้ ทองคำ</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-white rounded-xl border border-slate-100">
+            <span class="text-lg flex-shrink-0">🎓</span>
+            <div><div class="font-pop font-bold text-sm text-navy mb-0.5">Expert Curation</div><div class="font-noto text-xs text-slate-500">ทีมงานช่วยคัดเลือกและติดตามกองทุนให้ตรงเป้าหมาย</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
+        <div class="font-pop font-bold text-navy text-sm mb-5 text-center">Portfolio Strategy Mix</div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>Unit-Linked (Growth Core)</span><span class="font-bold text-navy">50–60%</span></div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-teal rounded-full" style="width:55%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>UL Plus (Stability Layer)</span><span class="font-bold text-navy">25–35%</span></div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:30%;background:#d97706"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>กองทุนรวม (Liquidity Buffer)</span><span class="font-bold text-navy">10–20%</span></div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-green-500 rounded-full" style="width:15%"></div></div>
+          </div>
+        </div>
+        <div class="mt-5 bg-slate-50 rounded-xl p-4">
+          <div class="font-noto text-xs text-slate-500 leading-relaxed">* สัดส่วนนี้เป็นเพียงตัวอย่าง ทีมงานจะช่วยออกแบบพอร์ตที่เหมาะกับอายุ รายได้ และเป้าหมายของคุณโดยเฉพาะ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: COMPARISON ══════ -->
+<section id="sec-compare" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">The Strategy Mix</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Unit-Linked vs UL Plus — คุณเป็นสายไหน?</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">เลือกเครื่องมือที่ตอบโจทย์สไตล์การเงินของคุณ</p>
+    </div>
+    <div class="reveal grid md:grid-cols-2 gap-6 mb-10">
+      <!-- Unit-Linked -->
+      <div class="rounded-2xl border-2 border-teal/40 bg-white p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center text-2xl">📈</div>
+          <div>
+            <div class="font-pop font-bold text-navy text-base">Unit-Linked (ILP)</div>
+            <div class="font-noto text-xs text-teal font-semibold">สาย Growth — นักลงทุน</div>
+          </div>
+        </div>
+        <div class="space-y-3 mb-5">
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">✓</span>ผลตอบแทนไม่จำกัดเพดาน ขึ้นกับกองทุนที่เลือก</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">✓</span>ปรับสัดส่วนการลงทุนได้ตลอด (Switch Funds)</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">✓</span>เพิ่มเบี้ยออมพิเศษ (Top-Up) ได้เมื่อมีเงินก้อน</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-amber-500 mt-0.5 flex-shrink-0">⚡</span>มีความผันผวนตามตลาด ต้องติดตามสม่ำเสมอ</div>
+        </div>
+        <div class="bg-teal/5 rounded-xl p-3">
+          <div class="font-noto text-xs text-teal font-semibold mb-1">เหมาะกับ:</div>
+          <div class="font-noto text-xs text-slate-600">รับความเสี่ยงได้ปานกลาง-สูง · ชอบมีส่วนร่วมในการบริหาร · มีระยะเวลาลงทุน 10 ปีขึ้นไป</div>
+        </div>
+      </div>
+      <!-- UL Plus -->
+      <div class="rounded-2xl border-2 border-amber-300/60 bg-amber-50/30 p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-2xl">🛡️</div>
+          <div>
+            <div class="font-pop font-bold text-navy text-base">UL Plus (Universal Life)</div>
+            <div class="font-noto text-xs text-amber-700 font-semibold">สาย Stability — นักวางแผน</div>
+          </div>
+        </div>
+        <div class="space-y-3 mb-5">
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-amber-600 mt-0.5 flex-shrink-0">✓</span>การันตีผลตอบแทนขั้นต่ำ ไม่เสี่ยงขาดทุน</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-amber-600 mt-0.5 flex-shrink-0">✓</span>บริหารโดยผู้จัดการกองทุนมืออาชีพ</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-amber-600 mt-0.5 flex-shrink-0">✓</span>ตัวเลขเกษียณแม่นยำ วางแผนได้ล่วงหน้า</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-slate-400 mt-0.5 flex-shrink-0">→</span>เพดานผลตอบแทนต่ำกว่า ILP ในระยะยาว</div>
+        </div>
+        <div class="bg-amber-50 rounded-xl p-3">
+          <div class="font-noto text-xs text-amber-700 font-semibold mb-1">เหมาะกับ:</div>
+          <div class="font-noto text-xs text-slate-600">รับความเสี่ยงต่ำ · ต้องการตัวเลขแน่นอน · วัย 40+ ที่ใกล้เกษียณและต้องการ "ล็อก" ผลตอบแทน</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="reveal overflow-x-auto rounded-2xl border border-slate-100 shadow-card">
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr>
+            <th style="background:#1B365D;color:#fff;padding:.7rem 1rem;text-align:left;font-family:Poppins,sans-serif;font-size:.75rem;font-weight:600;min-width:140px">เกณฑ์เปรียบเทียบ</th>
+            <th style="background:#1B365D;color:#fff;padding:.7rem 1rem;text-align:center;font-family:Poppins,sans-serif;font-size:.75rem;font-weight:600">Unit-Linked</th>
+            <th style="background:#1B365D;color:#fff;padding:.7rem 1rem;text-align:center;font-family:Poppins,sans-serif;font-size:.75rem;font-weight:600">UL Plus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">ผลตอบแทน</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center">ตามกองทุน (ไม่จำกัด)</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center">การันตีขั้นต่ำ 1–4%</td></tr>
+          <tr style="background:#fafbff"><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">ความเสี่ยง</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center">ปานกลาง–สูง</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center">ต่ำ (มีการันตี)</td></tr>
+          <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">ความยืดหยุ่น</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">สูงมาก</span></td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center">ปานกลาง</td></tr>
+          <tr style="background:#fafbff"><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">ลดหย่อนภาษี</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓ 100,000</span></td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓ 100,000</span></td></tr>
+          <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">Premium Holiday</td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓</span></td><td style="padding:.65rem 1rem;border-bottom:1px solid #f1f5f9;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓</span></td></tr>
+          <tr style="background:#fafbff"><td style="padding:.65rem 1rem;font-family:Noto Sans Thai,sans-serif;font-size:.8rem">แนบ UDR สุขภาพ</td><td style="padding:.65rem 1rem;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓</span></td><td style="padding:.65rem 1rem;font-family:Noto Sans Thai,sans-serif;font-size:.8rem;text-align:center"><span style="color:#22c55e;font-weight:bold">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: WEALTH HORIZON SIMULATOR ══════ -->
+<section id="sec-sim1" class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Simulator 1</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Wealth Horizon — พลังของเวลาและการปรับแต่ง</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ขยับ Risk เพียงนิดเดียว หรือยืดเวลาออมออกไป 5 ปี — ผลลัพธ์เปลี่ยนไปมหาศาล</p>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-5 gap-6">
+      <!-- INPUTS -->
+      <div class="lg:col-span-2 sim-card">
+        <div class="font-pop font-bold text-navy text-sm mb-6">⚙️ ปรับตัวแปรของคุณ</div>
+
+        <div class="mb-5">
+          <span class="sim-label">เงินออมต่อเดือน (บาท) <span id="wh-monthly-display" class="text-teal font-bold">5,000</span></span>
+          <input type="range" min="1000" max="50000" step="1000" value="5000"
+            oninput="document.getElementById('wh-monthly-display').textContent=Number(this.value).toLocaleString('th-TH');document.getElementById('wh-monthly-num').value=this.value;calcWealth()"
+            class="w-full accent-teal mb-2" id="wh-monthly-slider"/>
+          <input type="number" min="1000" max="50000" step="1000" value="5000"
+            oninput="document.getElementById('wh-monthly-display').textContent=Number(this.value).toLocaleString('th-TH');document.getElementById('wh-monthly-slider').value=this.value;calcWealth()"
+            id="wh-monthly-num" class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+        </div>
+
+        <div class="mb-5">
+          <span class="sim-label">ระยะเวลาลงทุน <span id="wh-years-display" class="text-teal font-bold">20</span> ปี</span>
+          <input type="range" min="5" max="40" step="1" value="20"
+            oninput="document.getElementById('wh-years-display').textContent=this.value;calcWealth()"
+            class="w-full accent-teal" id="wh-years-slider"/>
+          <div class="flex justify-between font-noto text-xs text-slate-400 mt-1"><span>5 ปี</span><span>40 ปี</span></div>
+        </div>
+
+        <div class="mb-5">
+          <span class="sim-label">ระดับความเสี่ยง / ผลตอบแทนคาดหวัง</span>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setRisk('conservative')" id="wh-btn-cons" class="sim-btn text-xs py-2 selected">
+              <div>🛡️</div><div class="mt-1">Conservative</div><div class="text-teal font-bold">~4%</div>
+            </button>
+            <button onclick="setRisk('growth')" id="wh-btn-growth" class="sim-btn text-xs py-2">
+              <div>📈</div><div class="mt-1">Growth</div><div class="text-teal font-bold">~7%</div>
+            </button>
+            <button onclick="setRisk('aggressive')" id="wh-btn-agg" class="sim-btn text-xs py-2">
+              <div>🚀</div><div class="mt-1">Aggressive</div><div class="text-teal font-bold">~10%</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 font-noto text-xs text-amber-700">
+          ⚠️ เป็นการประมาณการเพื่อการวางแผนเบื้องต้นเท่านั้น ผลตอบแทนจริงขึ้นกับภาวะตลาดและกองทุนที่เลือก
+        </div>
+      </div>
+
+      <!-- CHART + RESULT -->
+      <div class="lg:col-span-3 flex flex-col gap-4">
+        <div class="result-box">
+          <div class="font-pop font-bold text-white text-xs mb-3 opacity-70 tracking-wider uppercase">ผลลัพธ์ที่คาดหวัง</div>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">เงินออมสะสม (ไม่รวมดอกผล)</div>
+              <div id="wh-principal" class="font-pop font-bold text-white text-xl">—</div>
+            </div>
+            <div>
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">ผลตอบแทนสะสม</div>
+              <div id="wh-gain" class="font-pop font-bold text-2xl" style="color:#34D399">—</div>
+            </div>
+          </div>
+          <div class="border-t border-white/20 pt-3">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">มูลค่ารวมเมื่อครบกำหนด</div>
+            <div id="wh-total" class="font-pop font-extrabold text-white text-3xl">—</div>
+            <div id="wh-meta" class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.45)">—</div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="height:220px">
+          <canvas id="wealthChart"></canvas>
+        </div>
+        <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          💬 ให้ที่ปรึกษาช่วยออกแบบพอร์ตจริง →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 6: GUARANTEED vs GROWTH SIMULATOR ══════ -->
+<section id="sec-sim2" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Simulator 2</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Guaranteed vs Growth — เห็นความต่างในหน้าเดียว</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ใส่ตัวเลขเงินออม — เห็นผลลัพธ์ UL Plus และ Unit-Linked เคียงกันทันที</p>
+    </div>
+
+    <!-- Input Row -->
+    <div class="reveal sim-card mb-6">
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div>
+          <span class="sim-label">เบี้ยประกัน / ออมต่อปี (บาท)</span>
+          <input type="number" min="12000" max="500000" step="12000" value="60000"
+            id="gg-annual" oninput="calcGG()"
+            class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+        </div>
+        <div>
+          <span class="sim-label">ระยะเวลา (ปี)</span>
+          <div class="flex gap-2">
+            <button onclick="setGGYear(10)" id="gg-btn-10" class="sim-btn flex-1 selected text-xs">10 ปี</button>
+            <button onclick="setGGYear(15)" id="gg-btn-15" class="sim-btn flex-1 text-xs">15 ปี</button>
+            <button onclick="setGGYear(20)" id="gg-btn-20" class="sim-btn flex-1 text-xs">20 ปี</button>
+          </div>
+        </div>
+        <div>
+          <span class="sim-label">สมมติผลตอบแทน ILP</span>
+          <div class="flex gap-2">
+            <button onclick="setGGRate(5)" id="gg-rate-5" class="sim-btn flex-1 text-xs">5%</button>
+            <button onclick="setGGRate(7)" id="gg-rate-7" class="sim-btn flex-1 selected text-xs">7%</button>
+            <button onclick="setGGRate(9)" id="gg-rate-9" class="sim-btn flex-1 text-xs">9%</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Split Screen Result -->
+    <div class="reveal grid md:grid-cols-2 gap-5 mb-6">
+      <!-- UL Plus -->
+      <div style="background:linear-gradient(135deg,#fffbeb,#fff8dc);border:2px solid #d97706;border-radius:1.25rem;padding:1.5rem">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">🛡️</span>
+          <div>
+            <div class="font-pop font-bold text-amber-800 text-sm">UL Plus — การันตี</div>
+            <div class="font-noto text-xs text-amber-600">ผลตอบแทนขั้นต่ำ ~2% ต่อปี (conservative est.)</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="font-noto text-xs text-amber-700 mb-1">มูลค่าขั้นต่ำที่การันตี</div>
+          <div id="gg-ul-value" class="font-pop font-bold text-amber-800 text-3xl">—</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mb-3">
+          <div class="bg-white/60 rounded-xl p-2 text-center">
+            <div class="font-noto text-xs text-amber-700 mb-0.5">เงินลงทุนสะสม</div>
+            <div id="gg-ul-principal" class="font-pop font-bold text-amber-800 text-sm">—</div>
+          </div>
+          <div class="bg-white/60 rounded-xl p-2 text-center">
+            <div class="font-noto text-xs text-amber-700 mb-0.5">ดอกผลขั้นต่ำ</div>
+            <div id="gg-ul-gain" class="font-pop font-bold text-amber-800 text-sm">—</div>
+          </div>
+        </div>
+        <div class="bg-amber-100 rounded-xl p-3">
+          <div class="font-noto text-xs text-amber-800 leading-relaxed">📌 มั่นใจได้ว่าได้รับขั้นต่ำนี้แน่นอน ไม่ผันผวนตามตลาด</div>
+        </div>
+      </div>
+
+      <!-- Unit-Linked -->
+      <div style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #0891B2;border-radius:1.25rem;padding:1.5rem">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">📈</span>
+          <div>
+            <div class="font-pop font-bold text-teal text-sm">Unit-Linked — Potential</div>
+            <div id="gg-rate-label" class="font-noto text-xs text-teal">สมมติ 7% ต่อปี (ไม่การันตี)</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="font-noto text-xs text-teal mb-1">มูลค่าโอกาส (ถ้าตลาดดี)</div>
+          <div id="gg-ilp-value" class="font-pop font-bold text-teal text-3xl">—</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mb-3">
+          <div class="bg-white/60 rounded-xl p-2 text-center">
+            <div class="font-noto text-xs text-teal mb-0.5">เงินลงทุนสะสม</div>
+            <div id="gg-ilp-principal" class="font-pop font-bold text-teal text-sm">—</div>
+          </div>
+          <div class="bg-white/60 rounded-xl p-2 text-center">
+            <div class="font-noto text-xs text-teal mb-0.5">กำไรจากการลงทุน</div>
+            <div id="gg-ilp-gain" class="font-pop font-bold text-teal text-sm">—</div>
+          </div>
+        </div>
+        <div class="bg-teal/10 rounded-xl p-3">
+          <div class="font-noto text-xs text-teal leading-relaxed">📌 โอกาสได้มากกว่า แต่ผันผวนตามตลาด ต้องบริหารพอร์ต</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal bg-white rounded-2xl border border-slate-100 p-4 mb-6" style="height:220px">
+      <canvas id="ggChart"></canvas>
+    </div>
+
+    <div class="reveal font-noto text-xs text-slate-400 text-center">
+      ⚠️ ตัวเลขข้างต้นเป็นการประมาณการเพื่อการวางแผนเบื้องต้นเท่านั้น ผลตอบแทนจริงอาจแตกต่างจากที่แสดง
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TOOLBOX + CTA ══════ -->
+<section class="py-14" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Investment Tool Box</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.2rem,2.2vw,1.6rem)">เครื่องมือในพอร์ตของเรา</h2>
+    </div>
+    <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+      <div class="tool-chip">
+        <span class="text-xl">📐</span>
+        <span>mDesign</span>
+        <span class="font-noto text-xs text-slate-400 font-normal">Unit-Linked</span>
+      </div>
+      <div class="tool-chip">
+        <span class="text-xl">🌱</span>
+        <span>mGrow 615</span>
+        <span class="font-noto text-xs text-slate-400 font-normal">Unit-Linked</span>
+      </div>
+      <div class="tool-chip">
+        <span class="text-xl">💎</span>
+        <span>mOnePlus</span>
+        <span class="font-noto text-xs text-slate-400 font-normal">Single Premium ILP</span>
+      </div>
+      <div class="tool-chip">
+        <span class="text-xl">🛡️</span>
+        <span>MTL UL Plus</span>
+        <span class="font-noto text-xs text-slate-400 font-normal">Universal Life</span>
+      </div>
+    </div>
+    <div class="reveal expert-note">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">🎯</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-2">ภาษีคือผลพลอยได้ — เป้าหมายหลักคือความมั่งคั่ง</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">
+            ทุกเครื่องมือในหมวดนี้ช่วยลดหย่อนภาษีได้สูงสุด 100,000 บาท แต่นั่นไม่ใช่เหตุผลหลัก — เหตุผลหลักคือเพื่อให้เงินของคุณเติบโตอย่างมีระบบ พร้อมความคุ้มครองชีวิตที่เหมาะสม ภาษีที่ประหยัดได้คือ "โบนัส" ที่ทำให้ผลตอบแทนรวมดีขึ้นอีกขั้น
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16" style="background:linear-gradient(135deg,#1B365D,#0C3548)">
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <div class="text-4xl mb-5">💰</div>
+    <h2 class="font-pridi font-semibold text-white text-2xl mb-4">พร้อมออกแบบความมั่งคั่งของคุณ?</h2>
+    <p class="font-noto mb-8 leading-relaxed" style="color:rgba(255,255,255,.65)">
+      ทีม IC-Licensed Advisor พร้อมวิเคราะห์พอร์ตและแนะนำกองทุนที่เหมาะกับเป้าหมายชีวิตของคุณ<br/>
+      ไม่มีค่าใช้จ่าย ปรึกษาได้ทันที
+    </p>
+    <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-teal text-white px-8 py-4 rounded-xl font-noto font-semibold text-base hover:opacity-90 transition-opacity">
+      💬 ปรึกษาฟรีผ่าน LINE →
+    </a>
+  </div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════
+// WEALTH HORIZON SIMULATOR
+// ═══════════════════════════════════════════════════
+let whRisk = 'conservative';
+const RATES = {conservative:0.04, growth:0.07, aggressive:0.10};
+let wealthChart = null;
+
+function setRisk(r){
+  whRisk = r;
+  ['conservative','growth','aggressive'].forEach(k=>{
+    const el = document.getElementById('wh-btn-'+k.substring(0,4)+(k==='conservative'?'s':k==='aggressive'?'g':''));
+    // fix IDs
+  });
+  document.getElementById('wh-btn-cons').className='sim-btn text-xs py-2'+(r==='conservative'?' selected':'');
+  document.getElementById('wh-btn-growth').className='sim-btn text-xs py-2'+(r==='growth'?' selected':'');
+  document.getElementById('wh-btn-agg').className='sim-btn text-xs py-2'+(r==='aggressive'?' selected':'');
+  calcWealth();
+}
+
+function calcWealth(){
+  const monthly = parseFloat(document.getElementById('wh-monthly-num').value)||5000;
+  const years = parseInt(document.getElementById('wh-years-slider').value)||20;
+  const rate = RATES[whRisk];
+  const monthlyRate = rate/12;
+  const months = years*12;
+  // FV of annuity
+  const fv = monthly * ((Math.pow(1+monthlyRate, months)-1)/monthlyRate);
+  const principal = monthly*months;
+  const gain = fv-principal;
+
+  const fmt = n=>Math.round(n).toLocaleString('th-TH');
+  document.getElementById('wh-principal').textContent = '฿'+fmt(principal);
+  document.getElementById('wh-gain').textContent = '฿'+fmt(gain);
+  document.getElementById('wh-total').textContent = '฿'+fmt(fv);
+  document.getElementById('wh-meta').textContent = `ออม ${fmt(monthly)} บาท/เดือน × ${years} ปี · ${(rate*100).toFixed(0)}% ต่อปี`;
+
+  // Chart
+  const labels=[], principalData=[], totalData=[];
+  for(let y=1;y<=years;y++){
+    labels.push(y+' ปี');
+    const p=monthly*y*12;
+    const t=monthly*((Math.pow(1+monthlyRate,y*12)-1)/monthlyRate);
+    principalData.push(Math.round(p));
+    totalData.push(Math.round(t));
+  }
+  const ctx=document.getElementById('wealthChart').getContext('2d');
+  if(wealthChart) wealthChart.destroy();
+  wealthChart=new Chart(ctx,{
+    type:'line',
+    data:{labels,datasets:[
+      {label:'เงินออมสะสม',data:principalData,borderColor:'#94a3b8',backgroundColor:'rgba(148,163,184,.1)',borderWidth:2,pointRadius:0,fill:true},
+      {label:'มูลค่ารวม',data:totalData,borderColor:'#0891B2',backgroundColor:'rgba(8,145,178,.15)',borderWidth:2.5,pointRadius:0,fill:true}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'฿'+ctx.parsed.y.toLocaleString('th-TH')}}},
+      scales:{
+        x:{grid:{display:false},ticks:{font:{size:9,family:'Poppins'},maxTicksLimit:8}},
+        y:{grid:{color:'#f1f5f9'},ticks:{callback:v=>v>=1000000?(v/1000000).toFixed(1)+'M':'฿'+v.toLocaleString('th-TH'),font:{size:9}},beginAtZero:true}
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// GUARANTEED vs GROWTH SIMULATOR
+// ═══════════════════════════════════════════════════
+let ggYears=10, ggRate=0.07;
+let ggChart=null;
+
+function setGGYear(y){
+  ggYears=y;
+  [10,15,20].forEach(n=>{
+    document.getElementById('gg-btn-'+n).className='sim-btn flex-1 text-xs'+(n===y?' selected':'');
+  });
+  calcGG();
+}
+
+function setGGRate(r){
+  ggRate=r/100;
+  [5,7,9].forEach(n=>{
+    document.getElementById('gg-rate-'+n).className='sim-btn flex-1 text-xs'+(n===r?' selected':'');
+  });
+  document.getElementById('gg-rate-label').textContent='สมมติ '+r+'% ต่อปี (ไม่การันตี)';
+  calcGG();
+}
+
+function calcGG(){
+  const annual=parseFloat(document.getElementById('gg-annual').value)||60000;
+  const principal=annual*ggYears;
+  // UL Plus: guaranteed ~2% annual compound
+  const ulVal=annual*((Math.pow(1.02,ggYears)-1)/0.02);
+  const ulGain=ulVal-principal;
+  // ILP: selected rate
+  const ilpVal=annual*((Math.pow(1+ggRate,ggYears)-1)/ggRate);
+  const ilpGain=ilpVal-principal;
+
+  const fmt=n=>Math.round(n).toLocaleString('th-TH');
+  document.getElementById('gg-ul-value').textContent='฿'+fmt(ulVal);
+  document.getElementById('gg-ul-principal').textContent='฿'+fmt(principal);
+  document.getElementById('gg-ul-gain').textContent='฿'+fmt(ulGain);
+  document.getElementById('gg-ilp-value').textContent='฿'+fmt(ilpVal);
+  document.getElementById('gg-ilp-principal').textContent='฿'+fmt(principal);
+  document.getElementById('gg-ilp-gain').textContent='฿'+fmt(ilpGain);
+
+  // Chart
+  const labels=[],ulData=[],ilpData=[];
+  for(let y=1;y<=ggYears;y++){
+    labels.push(y+' ปี');
+    ulData.push(Math.round(annual*((Math.pow(1.02,y)-1)/0.02)));
+    ilpData.push(Math.round(annual*((Math.pow(1+ggRate,y)-1)/ggRate)));
+  }
+  const ctx=document.getElementById('ggChart').getContext('2d');
+  if(ggChart) ggChart.destroy();
+  ggChart=new Chart(ctx,{
+    type:'line',
+    data:{labels,datasets:[
+      {label:'UL Plus (การันตี 2%)',data:ulData,borderColor:'#d97706',backgroundColor:'rgba(217,119,6,.08)',borderWidth:2.5,pointRadius:0,fill:true,borderDash:[6,3]},
+      {label:'Unit-Linked ('+Math.round(ggRate*100)+'%)',data:ilpData,borderColor:'#0891B2',backgroundColor:'rgba(8,145,178,.1)',borderWidth:2.5,pointRadius:0,fill:true}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font:{size:10,family:'Poppins'},boxWidth:20}},tooltip:{callbacks:{label:ctx=>'฿'+ctx.parsed.y.toLocaleString('th-TH')}}},
+      scales:{
+        x:{grid:{display:false},ticks:{font:{size:9,family:'Poppins'}}},
+        y:{grid:{color:'#f1f5f9'},ticks:{callback:v=>v>=1000000?(v/1000000).toFixed(1)+'M':'฿'+v.toLocaleString('th-TH'),font:{size:9}},beginAtZero:true}
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// STICKY NAV SCROLL SPY
+// ═══════════════════════════════════════════════════
+(function(){
+  const sections=['sec-ul','sec-ulplus','sec-mf','sec-compare','sec-sim1','sec-sim2'];
+  const navLinks={};
+  sections.forEach(id=>{
+    const link=document.querySelector('#sec-nav a[href="#'+id+'"]');
+    if(link) navLinks[id]=link;
+  });
+  function onScroll(){
+    const scrollY=window.scrollY+140;
+    let active=null;
+    sections.forEach(id=>{const el=document.getElementById(id);if(el&&el.offsetTop<=scrollY)active=id;});
+    Object.keys(navLinks).forEach(id=>{navLinks[id].classList.toggle('active',id===active);});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+
+// ═══════════════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════════════
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// INIT
+calcWealth();
+calcGG();
+</script>
+</body>
+</html>
