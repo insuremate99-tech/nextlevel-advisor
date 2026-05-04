@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>บริหารภาษี | NextLevel Advisor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+html{scroll-behavior:smooth}
+.sec-label{font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0891B2}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+.shadow-card{box-shadow:0 2px 16px rgba(27,54,93,.07)}
+.prod-card{background:#fff;border:1.5px solid #e8eff8;border-radius:1.25rem;padding:1.5rem;transition:all .25s}
+.prod-card:hover{box-shadow:0 8px 32px rgba(27,54,93,.1);transform:translateY(-2px)}
+.prod-card.featured{border-color:#0891B2;background:linear-gradient(135deg,#f0f9ff 0%,#fff 100%)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.75rem}
+.badge-teal{background:#e0f2fe;color:#0369a1}
+.badge-gold{background:#fffbeb;color:#b45309}
+.badge-green{background:#f0fdf4;color:#15803d}
+.badge-red{background:#fff1f2;color:#be123c}
+.snav-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;font-weight:600;color:#475569;background:#f8fafc;border:1.5px solid #e2e8f0;text-decoration:none;white-space:nowrap;transition:all .2s}
+.snav-btn:hover,.snav-btn.active{background:#0891B2;color:#fff;border-color:#0891B2}
+.sim-card{background:#fff;border-radius:1.5rem;box-shadow:0 4px 32px rgba(27,54,93,.1);padding:2rem}
+.sim-label{font-family:'Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:600;color:#475569;margin-bottom:.4rem;display:block}
+.sim-btn{border:2px solid #e2e8f0;border-radius:.875rem;padding:.55rem 1.1rem;font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:#475569}
+.sim-btn.selected{border-color:#0891B2;background:#0891B2;color:#fff}
+.result-box{background:linear-gradient(135deg,#1B365D 0%,#0C3548 100%);border-radius:1.25rem;padding:1.5rem;color:#fff}
+.expert-note{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-left:4px solid #0891B2;border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem}
+.tax-card{border-radius:1.5rem;padding:1.5rem;cursor:pointer;transition:all .25s;border:2px solid transparent;text-decoration:none;display:block}
+.tax-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(27,54,93,.12)}
+.gap-bar{height:20px;border-radius:999px;transition:width .6s ease}
+</style>
+</head>
+<body class="bg-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
+    <div class="flex items-center gap-4">
+      <a href="/#solutions" class="font-noto text-slate-500 text-sm hidden sm:block hover:text-navy transition-colors">โซลูชัน</a>
+      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold font-noto">ปรึกษาฟรี →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-16" style="background:linear-gradient(150deg,#0D1F3C 0%,#1B365D 55%,#064E3B 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <nav class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
+      <a href="/" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">หน้าหลัก</a>
+      <span>/</span><a href="/solutions" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">โซลูชัน</a>
+      <span>/</span><span style="color:rgba(255,255,255,.7)">บริหารภาษี</span>
+    </nav>
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-xs font-semibold font-pop" style="background:rgba(5,150,105,.25);color:#6ee7b7;letter-spacing:.06em">🧾 TAX OPTIMIZATION</div>
+      <h1 class="font-pridi font-semibold text-white mb-4" style="font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2">
+        เปลี่ยนภาษี<br/>ให้เป็นเงินออม
+      </h1>
+      <p class="font-noto text-base mb-8" style="color:rgba(255,255,255,.65);line-height:1.85;max-width:520px">
+        วางแผนจัดการภาษีอย่างเป็นระบบ เพื่อความมั่งคั่งที่เพิ่มขึ้นในทุกปีภาษี ด้วย <span style="color:#6ee7b7;font-weight:600">"เครื่องมือที่ถูกต้องตามกฎหมาย"</span>
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">ลดหย่อนประกันชีวิต 100,000 บาท</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">ลดหย่อนประกันบำนาญ 200,000 บาท</span></div>
+        <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">คำนวณเงินคืนภาษีทันที</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<div id="sec-nav" class="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+  <div class="max-w-5xl mx-auto px-4 py-2.5 overflow-x-auto">
+    <div class="flex items-center gap-2 min-w-max">
+      <span class="font-noto text-xs text-slate-400 mr-1 hidden sm:block">ไปที่:</span>
+      <a href="#sec-taxmap"   class="snav-btn">🗺️ แผนที่ภาษี</a>
+      <a href="#sec-endow"    class="snav-btn">💰 ประกันออมทรัพย์</a>
+      <a href="#sec-pension"  class="snav-btn">🎯 ประกันบำนาญ</a>
+      <a href="#sec-sim1"     class="snav-btn">🧮 คำนวณเงินคืนภาษี</a>
+      <a href="#sec-sim2"     class="snav-btn">📊 Gap Filler</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SECTION 1: INTERACTIVE TAX MAP ══════ -->
+<section id="sec-taxmap" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">The Tax Map</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">สิทธิลดหย่อนหมวดประกัน — ภาพรวมทั้งหมด</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">กดที่แต่ละหมวดเพื่อดูรายละเอียดและผลิตภัณฑ์ที่เหมาะสม</p>
+    </div>
+
+    <!-- Total Bar -->
+    <div class="reveal mb-10 bg-slate-50 rounded-2xl p-6">
+      <div class="flex items-center justify-between mb-3">
+        <div class="font-pop font-bold text-navy text-sm">สิทธิลดหย่อนรวมสูงสุด (หมวดประกัน)</div>
+        <div class="font-pop font-bold text-teal text-xl">340,000 บาท/ปี</div>
+      </div>
+      <div class="flex h-6 rounded-full overflow-hidden gap-0.5">
+        <div style="width:29.4%;background:#1B365D" class="flex items-center justify-center">
+          <span class="font-pop font-bold text-white text-xs">100K</span>
+        </div>
+        <div style="width:7.4%;background:#0891B2" class="flex items-center justify-center">
+          <span class="font-pop font-bold text-white text-xs">25K</span>
+        </div>
+        <div style="width:4.4%;background:#06b6d4" class="flex items-center justify-center">
+          <span class="font-pop font-bold text-white" style="font-size:.6rem">15K</span>
+        </div>
+        <div style="width:58.8%;background:#059669" class="flex items-center justify-center">
+          <span class="font-pop font-bold text-white text-xs">200K</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 mt-3">
+        <div class="flex items-center gap-1.5 font-noto text-xs text-slate-600"><span class="w-3 h-3 rounded-sm inline-block" style="background:#1B365D"></span>ประกันชีวิต 100K</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs text-slate-600"><span class="w-3 h-3 rounded-sm inline-block" style="background:#0891B2"></span>ประกันสุขภาพ 25K</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs text-slate-600"><span class="w-3 h-3 rounded-sm inline-block" style="background:#06b6d4"></span>ประกันสุขภาพพ่อแม่ 15K</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs text-slate-600"><span class="w-3 h-3 rounded-sm inline-block" style="background:#059669"></span>ประกันบำนาญ 200K</div>
+      </div>
+    </div>
+
+    <!-- Interactive Cards -->
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- ประกันชีวิต -->
+      <a href="/solutions/legacy-planning.html" class="tax-card" style="background:linear-gradient(135deg,#EFF9FC,#fff);border-color:#1B365D">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">🛡️</span>
+          <span class="font-pop font-bold text-navy text-xs bg-navy/10 px-2 py-0.5 rounded-full">100,000 ฿</span>
+        </div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">ประกันชีวิต</div>
+        <div class="font-noto text-xs text-slate-500 leading-relaxed mb-3">รากฐานความมั่นคงของครอบครัว ลดหย่อนได้สูงสุด 100,000 บาท</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs font-semibold text-navy">Legacy Planning <span>→</span></div>
+      </a>
+      <!-- ประกันสุขภาพ -->
+      <a href="/solutions/health-planning.html" class="tax-card" style="background:linear-gradient(135deg,#f0fdf4,#fff);border-color:#059669">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">💚</span>
+          <span class="font-pop font-bold text-green-700 text-xs bg-green-50 px-2 py-0.5 rounded-full">25,000 ฿</span>
+        </div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">ประกันสุขภาพ</div>
+        <div class="font-noto text-xs text-slate-500 leading-relaxed mb-3">คุ้มครองความเสี่ยงทางการเงินจากค่ารักษา ลดหย่อนได้สูงสุด 25,000 บาท</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs font-semibold text-green-700">Health Planning <span>→</span></div>
+      </a>
+      <!-- ประกันสุขภาพพ่อแม่ -->
+      <div class="tax-card" style="background:linear-gradient(135deg,#fff7ed,#fff);border-color:#d97706;cursor:default">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">👨‍👩‍👧</span>
+          <span class="font-pop font-bold text-amber-700 text-xs bg-amber-50 px-2 py-0.5 rounded-full">15,000 ฿</span>
+        </div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">ประกันสุขภาพพ่อแม่</div>
+        <div class="font-noto text-xs text-slate-500 leading-relaxed mb-3">ส่งต่อความห่วงใย พร้อมสิทธิประโยชน์ทางภาษีสูงสุด 15,000 บาท/ปี</div>
+        <div class="bg-amber-50 rounded-xl px-3 py-2">
+          <div class="font-noto text-xs text-amber-700 leading-relaxed">✓ บิดา-มารดา อายุ 60+ · รวมสูงสุด 15,000 บาท</div>
+        </div>
+      </div>
+      <!-- ประกันบำนาญ -->
+      <a href="/solutions/retirement-tax.html" class="tax-card" style="background:linear-gradient(135deg,#f0fdf4,#fff);border-color:#059669">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">🎯</span>
+          <span class="font-pop font-bold text-green-700 text-xs bg-green-50 px-2 py-0.5 rounded-full">200,000 ฿</span>
+        </div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">ประกันบำนาญ</div>
+        <div class="font-noto text-xs text-slate-500 leading-relaxed mb-3">เพื่อเกษียณคุณภาพที่คุณออกแบบเอง สูงสุด 200,000 บาท (ไม่เกิน 15% ของรายได้)</div>
+        <div class="flex items-center gap-1.5 font-noto text-xs font-semibold text-green-700">Retirement Planning <span>→</span></div>
+      </a>
+    </div>
+
+    <!-- Tax Bracket Tip -->
+    <div class="reveal mt-8 expert-note">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">💡</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-2">ฐานภาษีของคุณอยู่ที่เท่าไหร่? — เคล็ดลับจากทีม</div>
+          <div class="grid sm:grid-cols-5 gap-2 mb-3">
+            <div class="bg-white rounded-xl p-2 text-center border border-slate-100">
+              <div class="font-pop font-bold text-slate-400 text-xs">0–150K</div><div class="font-noto text-xs text-slate-400">ยกเว้น</div>
+            </div>
+            <div class="bg-white rounded-xl p-2 text-center border border-slate-100">
+              <div class="font-pop font-bold text-slate-600 text-xs">150K–300K</div><div class="font-noto text-xs text-slate-500">5%</div>
+            </div>
+            <div class="bg-white rounded-xl p-2 text-center border border-teal/30">
+              <div class="font-pop font-bold text-teal text-xs">300K–500K</div><div class="font-noto text-xs text-teal">10%</div>
+            </div>
+            <div class="bg-white rounded-xl p-2 text-center border border-teal/40">
+              <div class="font-pop font-bold text-teal text-xs">500K–750K</div><div class="font-noto text-xs text-teal">15%</div>
+            </div>
+            <div class="bg-navy rounded-xl p-2 text-center">
+              <div class="font-pop font-bold text-white text-xs">750K+</div><div class="font-noto text-xs text-white opacity-70">20–35%</div>
+            </div>
+          </div>
+          <p class="font-noto text-slate-600 text-xs leading-relaxed">ยิ่งฐานภาษีสูง ยิ่งได้ประโยชน์มากขึ้น — คนที่อยู่ในฐาน 20% ขึ้นไปสามารถประหยัดภาษีได้ถึง <strong class="text-navy">60,000–68,000 บาทต่อปี</strong> จากการใช้สิทธิลดหย่อนประกันให้เต็ม</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: ประกันออมทรัพย์ ══════ -->
+<section id="sec-endow" class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">Endowment Insurance</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">ประกันออมทรัพย์ — ออมสั้น คุ้มครองจริง คืนเงินไว</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">การันตีเงินคืนตามสัญญาแน่นอน ไม่ผันผวนตามตลาด พร้อมลดหย่อนภาษีทันที</p>
+    </div>
+
+    <!-- Concept -->
+    <div class="reveal grid md:grid-cols-3 gap-5 mb-10">
+      <div class="bg-white rounded-2xl p-5 border border-green-100">
+        <div class="text-2xl mb-2">🔒</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">การันตีแน่นอน</div>
+        <p class="font-noto text-xs text-slate-500 leading-relaxed">ผลตอบแทนและเงินคืนตามสัญญา ไม่ขึ้นกับภาวะตลาด เห็นตัวเลขล่วงหน้าตั้งแต่วันเซ็นสัญญา</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-green-100">
+        <div class="text-2xl mb-2">📅</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">สร้างวินัยออม</div>
+        <p class="font-noto text-xs text-slate-500 leading-relaxed">บังคับออมอย่างเป็นระบบ มีเป้าหมายชัดเจน เช่น ออม 10 ปีเพื่อใช้เงินก้อนเมื่อลูกเข้ามหาวิทยาลัย</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-green-100">
+        <div class="text-2xl mb-2">💸</div>
+        <div class="font-pop font-bold text-navy text-sm mb-2">ลดหย่อนภาษีทันที</div>
+        <p class="font-noto text-xs text-slate-500 leading-relaxed">เบี้ยประกันออมทรัพย์ใช้สิทธิลดหย่อนภาษีได้สูงสุด 100,000 บาทต่อปี ได้ประโยชน์ทั้ง 2 ทาง</p>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="reveal grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Smart Wealth 10/1 -->
+      <div class="prod-card featured">
+        <div class="badge badge-teal">⚡ จ่ายครั้งเดียว</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">Smart Wealth 10/1</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">จ่ายเบี้ยครั้งเดียว คุ้มครอง 10 ปี</div>
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <div class="bg-slate-50 rounded-xl p-2.5 text-center">
+            <div class="font-pop font-bold text-teal text-base">1.80%</div>
+            <div class="font-noto text-xs text-slate-500">เงินคืนทุกปี</div>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-2.5 text-center">
+            <div class="font-pop font-bold text-navy text-base">118%</div>
+            <div class="font-noto text-xs text-slate-500">รวมตลอดสัญญา</div>
+          </div>
+        </div>
+        <ul class="space-y-1.5 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>สมัครง่าย ไม่ต้องตอบคำถามสุขภาพ</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>อายุรับประกัน 30 วัน–70 ปี</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท</li>
+        </ul>
+        <span class="badge badge-teal" style="margin-bottom:0">Single Premium · ไม่ต้องตรวจสุขภาพ</span>
+      </div>
+
+      <!-- Happy Return 99/9 -->
+      <div class="prod-card">
+        <div class="badge badge-green">🌿 เงินคืนยาว 99 ปี</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">Happy Return 99/9</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">รับเงินคืนทุกปี ตั้งแต่ปีแรกถึงอายุ 98 ปี</div>
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <div class="bg-slate-50 rounded-xl p-2.5 text-center">
+            <div class="font-pop font-bold text-green-700 text-base">9%/ปี</div>
+            <div class="font-noto text-xs text-slate-500">เงินคืนทุกปี</div>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-2.5 text-center">
+            <div class="font-pop font-bold text-navy text-base">999%</div>
+            <div class="font-noto text-xs text-slate-500">รับเมื่อครบสัญญา</div>
+          </div>
+        </div>
+        <ul class="space-y-1.5 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ความคุ้มครองชีวิตสูงสุด 900%</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เสียชีวิตจากอุบัติเหตุรับเพิ่ม 2 เท่า</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะออมระยะยาว สร้างกระแสเงินสด</li>
+        </ul>
+        <span class="badge badge-green" style="margin-bottom:0">Long-Term · Cashflow</span>
+      </div>
+
+      <!-- Saving 10/4 -->
+      <div class="prod-card">
+        <div class="badge" style="background:#faf5ff;color:#7e22ce">💜 จ่าย 4 ปี คุ้มครอง 10 ปี</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">Saving Delight 10/4</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">จ่ายเบี้ยแค่ 4 ปี คุ้มครองครบ 10 ปี</div>
+        <ul class="space-y-1.5 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>การันตีเงินคืนทุกปีตลอดสัญญา</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ความคุ้มครองชีวิต 200% ของทุน</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>จ่ายสั้น ภาระน้อย ผลตอบแทนชัด</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท</li>
+        </ul>
+        <span class="badge" style="background:#faf5ff;color:#7e22ce;margin-bottom:0">4-Pay · Short Commitment</span>
+      </div>
+
+      <!-- Smart Link Global 15/6 -->
+      <div class="prod-card">
+        <div class="badge badge-gold">🌐 Index-Linked</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">Smart Link Global 15/6</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">จ่าย 6 ปี คุ้มครอง 15 ปี · ผลตอบแทนตาม Index</div>
+        <ul class="space-y-1.5 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>โอกาสรับผลตอบแทนจาก GS Global Index</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>การันตีผลประโยชน์ขั้นต่ำระหว่างสัญญา</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รางวัล Insurance Asia Awards 2022</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะผู้ต้องการ Upside กว่าออมทรัพย์ทั่วไป</li>
+        </ul>
+        <span class="badge badge-gold" style="margin-bottom:0">Index-Linked · Global Exposure</span>
+      </div>
+
+      <!-- Saving 20/14 -->
+      <div class="prod-card">
+        <div class="badge badge-teal">📅 จ่าย 14 ปี คุ้มครอง 20 ปี</div>
+        <div class="font-pop font-bold text-navy text-base mb-1">Saving 20/14</div>
+        <div class="font-noto text-slate-400 text-xs mb-4">ออมระยะกลาง เหมาะวางแผน 20 ปี</div>
+        <ul class="space-y-1.5 mb-4">
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เงินคืนสม่ำเสมอตลอดสัญญา</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท</li>
+          <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะวางแผนเงินก้อนสำหรับอนาคตระยะกลาง</li>
+        </ul>
+        <span class="badge badge-teal" style="margin-bottom:0">Medium-Term · Steady Return</span>
+      </div>
+
+      <!-- Who is it for summary -->
+      <div class="prod-card" style="background:linear-gradient(135deg,#f0fdf4,#fff);border-color:#059669">
+        <div class="text-2xl mb-3">🎯</div>
+        <div class="font-pop font-bold text-navy text-sm mb-3">ประกันออมทรัพย์เหมาะกับใคร?</div>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 font-noto text-xs text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ต้องการความแน่นอน ไม่ชอบความเสี่ยง</div>
+          <div class="flex items-start gap-2 font-noto text-xs text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>มีเป้าหมายเงินก้อนในระยะเวลาที่ชัดเจน</div>
+          <div class="flex items-start gap-2 font-noto text-xs text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ต้องการลดหย่อนภาษีและออมพร้อมกัน</div>
+          <div class="flex items-start gap-2 font-noto text-xs text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ต้องการบังคับตัวเองให้ออมอย่างมีวินัย</div>
+          <div class="flex items-start gap-2 font-noto text-xs text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ต้องการมรดกหรือความคุ้มครองไปพร้อมกัน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: ประกันบำนาญ BRIEF ══════ -->
+<section id="sec-pension" class="py-14 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="reveal grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="sec-label">Retirement Insurance</span>
+        <h2 class="font-pridi font-semibold text-navy mt-2 mb-4" style="font-size:clamp(1.2rem,2.2vw,1.6rem)">ประกันบำนาญ — ลดหย่อนสูงสุดถึง 200,000 บาท</h2>
+        <p class="font-noto text-slate-600 leading-loose mb-4 text-sm">
+          ประกันบำนาญสามารถใช้สิทธิลดหย่อนภาษีได้สูงสุด <strong class="text-navy">200,000 บาทต่อปี</strong> (และไม่เกิน 15% ของรายได้) — แยกจากสิทธิประกันชีวิตทั่วไป 100,000 บาท ทำให้รวมกันสูงสุดได้ถึง 300,000 บาท
+        </p>
+        <div class="space-y-2 mb-6">
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>รับเงินบำนาญรายเดือนตลอดชีวิต หรือตามระยะเวลาที่กำหนด</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ออกแบบจำนวนเงินบำนาญให้ตรงกับค่าใช้จ่ายเกษียณ</div>
+          <div class="flex items-start gap-2 font-noto text-sm text-slate-600"><span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>ใช้สิทธิลดหย่อนแยกจากประกันชีวิตทั่วไป</div>
+        </div>
+        <a href="/solutions/retirement-tax.html" class="inline-flex items-center gap-2 bg-navy text-white px-6 py-3 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          🎯 ออกแบบแผนเกษียณ →
+        </a>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6">
+        <div class="font-pop font-bold text-navy text-sm mb-5 text-center">สิทธิลดหย่อนรวม (กรณีใช้เต็มทุกสิทธิ์)</div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>ประกันชีวิต / ออมทรัพย์</span><span class="font-bold text-navy">100,000 บาท</span></div>
+            <div class="h-2.5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:29%;background:#1B365D"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>ประกันสุขภาพ</span><span class="font-bold text-navy">25,000 บาท</span></div>
+            <div class="h-2.5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:7%;background:#0891B2"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>ประกันสุขภาพพ่อแม่</span><span class="font-bold text-navy">15,000 บาท</span></div>
+            <div class="h-2.5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:4%;background:#06b6d4"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1"><span>ประกันบำนาญ</span><span class="font-bold text-navy">200,000 บาท</span></div>
+            <div class="h-2.5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:59%;background:#059669"></div></div>
+          </div>
+          <div class="border-t-2 border-slate-200 pt-3 flex justify-between">
+            <span class="font-noto font-semibold text-navy text-sm">รวมสูงสุด</span>
+            <span class="font-pop font-bold text-navy text-lg">340,000 บาท</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: TAX REFUND CALCULATOR ══════ -->
+<section id="sec-sim1" class="py-16" style="background:#EFF9FC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Simulator 1</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Tax Refund Calculator — คุณจะได้เงินคืนเท่าไหร่?</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ใส่ตัวเลข — เห็นยอดเงินคืนภาษีทันที พร้อม IRR ที่แท้จริง</p>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-5 gap-6">
+      <!-- INPUTS -->
+      <div class="lg:col-span-3 sim-card">
+        <div class="font-pop font-bold text-navy text-sm mb-6">💰 กรอกข้อมูลของคุณ</div>
+
+        <!-- Income -->
+        <div class="mb-5">
+          <span class="sim-label">รายได้สุทธิต่อปี (หลังหักค่าใช้จ่ายและลดหย่อนพื้นฐาน)</span>
+          <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
+            <button onclick="setIncome(200000)"  id="inc-200" class="sim-btn text-xs px-2">200K</button>
+            <button onclick="setIncome(400000)"  id="inc-400" class="sim-btn text-xs px-2 selected">400K</button>
+            <button onclick="setIncome(600000)"  id="inc-600" class="sim-btn text-xs px-2">600K</button>
+            <button onclick="setIncome(800000)"  id="inc-800" class="sim-btn text-xs px-2">800K</button>
+            <button onclick="setIncome(1000000)" id="inc-1M"  class="sim-btn text-xs px-2">1M+</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-noto text-xs text-slate-500">หรือกรอกเอง:</span>
+            <input type="number" id="income-custom" value="400000" min="0" step="10000"
+              oninput="setIncomeCustom(this.value)"
+              class="flex-1 border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+          </div>
+          <div class="mt-2 bg-slate-50 rounded-xl px-3 py-2">
+            <span class="font-noto text-xs text-slate-500">ฐานภาษีของคุณ: </span>
+            <span id="tax-bracket-label" class="font-pop font-bold text-teal text-xs">10% (300K–500K)</span>
+          </div>
+        </div>
+
+        <!-- Endowment Premium -->
+        <div class="mb-5">
+          <span class="sim-label">เบี้ยประกันออมทรัพย์ที่ต้องการ (บาท/ปี)</span>
+          <input type="range" min="0" max="100000" step="5000" value="50000"
+            oninput="document.getElementById('endow-num').value=this.value;calcTax()"
+            id="endow-slider" class="w-full accent-teal mb-2"/>
+          <div class="flex items-center gap-2">
+            <input type="number" id="endow-num" value="50000" min="0" max="100000" step="5000"
+              oninput="document.getElementById('endow-slider').value=Math.min(this.value,100000);calcTax()"
+              class="w-32 border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+            <span class="font-noto text-xs text-slate-500">บาท/ปี (สูงสุด 100,000)</span>
+          </div>
+        </div>
+
+        <!-- Pension Premium -->
+        <div class="mb-5">
+          <span class="sim-label">เบี้ยประกันบำนาญ (บาท/ปี)</span>
+          <input type="range" min="0" max="200000" step="10000" value="0"
+            oninput="document.getElementById('pension-num').value=this.value;calcTax()"
+            id="pension-slider" class="w-full accent-teal mb-2"/>
+          <div class="flex items-center gap-2">
+            <input type="number" id="pension-num" value="0" min="0" max="200000" step="10000"
+              oninput="document.getElementById('pension-slider').value=Math.min(this.value,200000);calcTax()"
+              class="w-32 border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+            <span class="font-noto text-xs text-slate-500">บาท/ปี (สูงสุด 200,000)</span>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 font-noto text-xs text-amber-700">
+          ⚠️ การคำนวณนี้เป็นการประมาณการเบื้องต้น กรุณาปรึกษาที่ปรึกษาเพื่อการวางแผนที่แม่นยำ
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="result-box">
+          <div class="font-pop font-bold text-white text-xs mb-4 opacity-70 tracking-wider uppercase">ผลประหยัดภาษี</div>
+
+          <div class="mb-4">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">เงินลดหย่อนรวม</div>
+            <div id="tax-deduct-total" class="font-pop font-bold text-white text-2xl">—</div>
+          </div>
+
+          <div class="border-t border-white/20 pt-4 mb-4">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">เงินคืนภาษีโดยประมาณ / ปี</div>
+            <div id="tax-refund" class="font-pop font-extrabold text-3xl" style="color:#34D399">—</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white/10 rounded-xl p-3">
+              <div class="font-noto text-xs mb-0.5" style="color:rgba(255,255,255,.5)">ผลตอบแทน IRR เพิ่ม</div>
+              <div id="tax-irr" class="font-pop font-bold text-white text-lg" style="color:#67E8F9">—</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-3">
+              <div class="font-noto text-xs mb-0.5" style="color:rgba(255,255,255,.5)">ออมทั้งหมด / ปี</div>
+              <div id="tax-total-save" class="font-pop font-bold text-white text-lg">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-card">
+          <div class="font-pop font-bold text-navy text-xs mb-3">📊 สรุปการวางแผน</div>
+          <div id="tax-summary" class="space-y-2 font-noto text-xs text-slate-600">
+            <div class="flex items-center gap-2"><span class="text-teal">✓</span>เลือกตัวเลขด้านซ้ายเพื่อดูผลลัพธ์</div>
+          </div>
+        </div>
+
+        <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          💬 ให้ที่ปรึกษาวางแผนภาษีให้ →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: GAP FILLER ══════ -->
+<section id="sec-sim2" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-8 reveal">
+      <span class="sec-label">Simulator 2</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Gap Filler — คุณเหลือสิทธิ์อีกเท่าไหร่?</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ติ๊กสิ่งที่มีอยู่แล้ว — เห็นช่องว่างที่ยังเหลือ และภาษีที่ยังประหยัดได้อีก</p>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-2 gap-8">
+      <!-- INPUTS -->
+      <div class="sim-card">
+        <div class="font-pop font-bold text-navy text-sm mb-5">✅ เลือกสิ่งที่คุณมีอยู่แล้ว</div>
+
+        <div class="mb-5">
+          <span class="sim-label">ฐานภาษีปัจจุบัน</span>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setGapRate(10)"  id="gap-rate-10" class="sim-btn text-xs">10%</button>
+            <button onclick="setGapRate(15)"  id="gap-rate-15" class="sim-btn text-xs selected">15%</button>
+            <button onclick="setGapRate(20)"  id="gap-rate-20" class="sim-btn text-xs">20%</button>
+          </div>
+        </div>
+
+        <div class="font-pop font-bold text-navy text-xs mb-3">สิทธิลดหย่อนที่มีอยู่แล้ว:</div>
+
+        <!-- ประกันชีวิต bucket -->
+        <div class="mb-4 p-4 bg-slate-50 rounded-2xl">
+          <div class="font-noto text-sm font-semibold text-navy mb-3">🛡️ สิทธิ 100,000 บาท (ประกันชีวิต)</div>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-life" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              ประกันชีวิตทั่วไป / ออมทรัพย์ (เต็ม 100K)
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-life-half" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              ประกันชีวิตบางส่วน (~50K)
+            </label>
+          </div>
+        </div>
+
+        <!-- สุขภาพ -->
+        <div class="mb-4 p-4 bg-slate-50 rounded-2xl">
+          <div class="font-noto text-sm font-semibold text-navy mb-3">💚 สิทธิ 25,000 บาท (ประกันสุขภาพ)</div>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-health" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              มีประกันสุขภาพตนเอง (เต็ม 25K)
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-parent" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              มีประกันสุขภาพพ่อแม่ (15K)
+            </label>
+          </div>
+        </div>
+
+        <!-- บำนาญ -->
+        <div class="p-4 bg-slate-50 rounded-2xl">
+          <div class="font-noto text-sm font-semibold text-navy mb-3">🎯 สิทธิ 200,000 บาท (ประกันบำนาญ)</div>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-pension" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              มีประกันบำนาญอยู่แล้ว (เต็ม 200K)
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
+              <input type="checkbox" id="chk-pension-half" onchange="calcGap()" class="accent-teal w-4 h-4"/>
+              มีประกันบำนาญบางส่วน (~100K)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="flex flex-col gap-4">
+        <!-- Progress bars -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
+          <div class="font-pop font-bold text-navy text-sm mb-5">สิทธิที่ใช้แล้ว vs ที่เหลือ</div>
+
+          <div class="mb-4">
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
+              <span>🛡️ ประกันชีวิต (100,000 บาท)</span>
+              <span id="gap-life-used" class="font-bold text-navy">0 / 100,000</span>
+            </div>
+            <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
+              <div id="gap-life-bar" class="h-full gap-bar" style="width:0%;background:#1B365D"></div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
+              <span>💚 ประกันสุขภาพ (40,000 บาท)</span>
+              <span id="gap-health-used" class="font-bold text-navy">0 / 40,000</span>
+            </div>
+            <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
+              <div id="gap-health-bar" class="h-full gap-bar" style="width:0%;background:#059669"></div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
+              <span>🎯 ประกันบำนาญ (200,000 บาท)</span>
+              <span id="gap-pension-used" class="font-bold text-navy">0 / 200,000</span>
+            </div>
+            <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
+              <div id="gap-pension-bar" class="h-full gap-bar" style="width:0%;background:#0891B2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gap Result -->
+        <div class="result-box">
+          <div class="font-pop font-bold text-white text-xs mb-3 opacity-70 tracking-wider uppercase">ช่องว่างที่เหลือ (Gap)</div>
+          <div class="mb-4">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">สิทธิที่ยังไม่ได้ใช้</div>
+            <div id="gap-remaining" class="font-pop font-extrabold text-white text-3xl">340,000 บาท</div>
+          </div>
+          <div class="border-t border-white/20 pt-3">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">ถ้าเติม Gap นี้ให้เต็ม จะประหยัดภาษีเพิ่ม</div>
+            <div id="gap-tax-save" class="font-pop font-bold text-2xl" style="color:#34D399">—</div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+          <div id="gap-recommend" class="font-noto text-xs text-amber-800 leading-relaxed">เลือกสิ่งที่มีอยู่แล้วด้านซ้าย เพื่อดูคำแนะนำ</div>
+        </div>
+
+        <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+          💬 ส่งผลลัพธ์นี้ให้ที่ปรึกษาวิเคราะห์ต่อ →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA SECTION ===== -->
+<section class="py-20 px-4" style="background:linear-gradient(135deg,#1B365D 0%,#0891B2 100%)">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="text-5xl mb-6">🎯</div>
+    <h2 class="font-pop font-extrabold text-white text-3xl md:text-4xl mb-4">
+      อย่าปล่อยให้สิทธิลดหย่อนหายไปเปล่าๆ
+    </h2>
+    <p class="font-noto text-white/80 text-lg mb-8 leading-relaxed">
+      ทุกปีที่ไม่ได้วางแผน คือเงินหลายหมื่นที่จ่ายภาษีเกิน<br>
+      ให้ที่ปรึกษาช่วยออกแบบพอร์ตลดหย่อนที่เหมาะกับรายได้และไลฟ์สไตล์คุณ
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener"
+         class="inline-block bg-white text-navy font-noto font-bold py-4 px-8 rounded-2xl text-base hover:shadow-lg transition-all hover:-translate-y-0.5">
+        💬 ปรึกษาฟรี ไม่มีค่าใช้จ่าย
+      </a>
+      <a href="/solutions/retirement-planning.html"
+         class="inline-block border-2 border-white text-white font-noto font-semibold py-4 px-8 rounded-2xl text-base hover:bg-white hover:text-navy transition-all">
+        🏖 ดูแผนเกษียณประกันบำนาญ →
+      </a>
+    </div>
+    <p class="font-noto text-white/50 text-xs mt-8">
+      * ข้อมูลภาษีอ้างอิงตามกฎหมายปัจจุบัน — ควรปรึกษาผู้เชี่ยวชาญก่อนตัดสินใจ
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-navy py-8 px-4 text-center">
+  <p class="font-noto text-white/40 text-xs">
+    © 2025 NextLevel Advisor · ข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการเงิน
+  </p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// ─────────────────────────────────────────────
+//  TAX BRACKETS (Thai personal income tax 2024)
+// ─────────────────────────────────────────────
+const TAX_BRACKETS = [
+  {min:0,       max:150000,   rate:0},
+  {min:150000,  max:300000,   rate:0.05},
+  {min:300000,  max:500000,   rate:0.10},
+  {min:500000,  max:750000,   rate:0.15},
+  {min:750000,  max:1000000,  rate:0.20},
+  {min:1000000, max:2000000,  rate:0.25},
+  {min:2000000, max:5000000,  rate:0.30},
+  {min:5000000, max:Infinity, rate:0.35}
+];
+
+function calcTaxOnIncome(income) {
+  let tax = 0;
+  for (const b of TAX_BRACKETS) {
+    if (income <= b.min) break;
+    const taxable = Math.min(income, b.max) - b.min;
+    tax += taxable * b.rate;
+  }
+  return tax;
+}
+
+function marginalRate(income) {
+  for (let i = TAX_BRACKETS.length - 1; i >= 0; i--) {
+    if (income > TAX_BRACKETS[i].min) return TAX_BRACKETS[i].rate;
+  }
+  return 0;
+}
+
+// ─────────────────────────────────────────────
+//  TAX REFUND CALCULATOR
+// ─────────────────────────────────────────────
+let currentIncome = 400000;
+
+function setIncome(val) {
+  currentIncome = val;
+  document.getElementById('income-custom').value = '';
+  document.querySelectorAll('.inc-btn').forEach(b => {
+    b.classList.toggle('selected', parseInt(b.dataset.val) === val);
+  });
+  calcTax();
+}
+
+function setIncomeCustom() {
+  const v = parseFloat(document.getElementById('income-custom').value);
+  if (!isNaN(v) && v > 0) {
+    currentIncome = v;
+    document.querySelectorAll('.inc-btn').forEach(b => b.classList.remove('selected'));
+    calcTax();
+  }
+}
+
+function syncEndow() {
+  const sl = document.getElementById('endow-slider');
+  document.getElementById('endow-num').value = sl.value;
+  calcTax();
+}
+function syncEndowNum() {
+  const num = document.getElementById('endow-num');
+  const clamped = Math.min(100000, Math.max(0, parseFloat(num.value)||0));
+  num.value = clamped;
+  document.getElementById('endow-slider').value = clamped;
+  calcTax();
+}
+function syncPension() {
+  const sl = document.getElementById('pension-slider');
+  document.getElementById('pension-num').value = sl.value;
+  calcTax();
+}
+function syncPensionNum() {
+  const num = document.getElementById('pension-num');
+  const clamped = Math.min(200000, Math.max(0, parseFloat(num.value)||0));
+  num.value = clamped;
+  document.getElementById('pension-slider').value = clamped;
+  calcTax();
+}
+
+function calcTax() {
+  const endow   = Math.min(parseFloat(document.getElementById('endow-num').value)||0, 100000);
+  const pension = Math.min(parseFloat(document.getElementById('pension-num').value)||0, 200000);
+  const totalDeduct = endow + pension;
+
+  // Standard deduction: 50% of income, max 100,000 (employment income deduction)
+  // Personal allowance: 60,000
+  // We approximate taxable income = gross income − standard deduct − personal allowance
+  const stdDeduct = Math.min(currentIncome * 0.5, 100000);
+  const personalAllow = 60000;
+  const taxableBase = Math.max(0, currentIncome - stdDeduct - personalAllow);
+
+  const taxBefore = calcTaxOnIncome(taxableBase);
+  const taxAfter  = calcTaxOnIncome(Math.max(0, taxableBase - totalDeduct));
+  const taxSaved  = taxBefore - taxAfter;
+  const mRate     = marginalRate(taxableBase);
+  const monthly   = taxSaved / 12;
+
+  // IRR boost: simple estimate — if you invest the tax saved back over 10 years at 4%
+  const irrBoost  = totalDeduct > 0 ? ((taxSaved / totalDeduct) * 100).toFixed(1) : '0.0';
+
+  document.getElementById('tax-deduct-total').textContent = '฿' + totalDeduct.toLocaleString();
+  document.getElementById('tax-refund').textContent       = '฿' + Math.round(taxSaved).toLocaleString();
+  document.getElementById('tax-monthly').textContent      = '฿' + Math.round(monthly).toLocaleString() + ' / เดือน';
+  document.getElementById('tax-irr').textContent          = '+' + irrBoost + '%';
+  document.getElementById('tax-rate-badge').textContent   = 'ฐานภาษี ' + Math.round(mRate*100) + '%';
+
+  // Color the refund: green if > 0
+  const refundEl = document.getElementById('tax-refund');
+  refundEl.style.color = taxSaved > 0 ? '#34D399' : 'rgba(255,255,255,0.5)';
+}
+
+// Init sliders ↔ number inputs
+document.getElementById('endow-slider').addEventListener('input', syncEndow);
+document.getElementById('pension-slider').addEventListener('input', syncPension);
+
+// ─────────────────────────────────────────────
+//  GAP FILLER
+// ─────────────────────────────────────────────
+let gapRate = 0.15;
+
+function setGapRate(r) {
+  gapRate = r / 100;
+  document.querySelectorAll('.grate-btn').forEach(b => {
+    b.classList.toggle('selected', parseInt(b.dataset.rate) === r);
+  });
+  calcGap();
+}
+
+function calcGap() {
+  // Life insurance bucket: max 100,000
+  const lifeFull  = document.getElementById('chk-life').checked;
+  const lifeHalf  = document.getElementById('chk-life-half').checked;
+  const lifeUsed  = lifeFull ? 100000 : lifeHalf ? 50000 : 0;
+
+  // Health bucket: regular 25,000 + parent 15,000 = 40,000 total
+  const healthUsed  = (document.getElementById('chk-health').checked   ? 25000 : 0)
+                    + (document.getElementById('chk-parent').checked   ? 15000 : 0);
+
+  // Pension bucket: max 200,000
+  const pensionFull = document.getElementById('chk-pension').checked;
+  const pensionHalf = document.getElementById('chk-pension-half').checked;
+  const pensionUsed = pensionFull ? 200000 : pensionHalf ? 100000 : 0;
+
+  const lifeGap    = 100000 - lifeUsed;
+  const healthGap  = 40000  - healthUsed;
+  const pensionGap = 200000 - pensionUsed;
+  const totalGap   = lifeGap + healthGap + pensionGap;
+  const taxSave    = Math.round(totalGap * gapRate);
+
+  // Progress bars (filled = used)
+  document.getElementById('gap-life-bar').style.width    = (lifeUsed/100000*100)   + '%';
+  document.getElementById('gap-health-bar').style.width  = (healthUsed/40000*100)  + '%';
+  document.getElementById('gap-pension-bar').style.width = (pensionUsed/200000*100) + '%';
+
+  // Labels
+  document.getElementById('gap-life-used').textContent    = lifeUsed.toLocaleString()    + ' / 100,000';
+  document.getElementById('gap-health-used').textContent  = healthUsed.toLocaleString()  + ' / 40,000';
+  document.getElementById('gap-pension-used').textContent = pensionUsed.toLocaleString() + ' / 200,000';
+
+  // Results
+  document.getElementById('gap-remaining').textContent = totalGap.toLocaleString() + ' บาท';
+  document.getElementById('gap-tax-save').textContent  = taxSave > 0
+    ? '฿' + taxSave.toLocaleString() + ' / ปี'
+    : '—';
+
+  // Recommendation
+  let tips = [];
+  if (lifeGap > 0)    tips.push('ประกันชีวิต/ออมทรัพย์ เหลือ ' + lifeGap.toLocaleString() + ' บาท');
+  if (healthGap > 0)  tips.push('ประกันสุขภาพ/พ่อแม่ เหลือ ' + healthGap.toLocaleString() + ' บาท');
+  if (pensionGap > 0) tips.push('ประกันบำนาญ/กองทุน เหลือ ' + pensionGap.toLocaleString() + ' บาท');
+
+  const rec = document.getElementById('gap-recommend');
+  if (tips.length === 0) {
+    rec.textContent = '🎉 คุณใช้สิทธิลดหย่อนครบทุกหมวดแล้ว! ยอดเยี่ยมมาก';
+    rec.style.color = '#065F46';
+  } else {
+    rec.innerHTML = '📌 แนะนำเติมสิทธิ: ' + tips.join(' · ');
+  }
+}
+
+// Mutex: life full/half are mutually exclusive
+document.getElementById('chk-life').addEventListener('change', function() {
+  if (this.checked) document.getElementById('chk-life-half').checked = false;
+  calcGap();
+});
+document.getElementById('chk-life-half').addEventListener('change', function() {
+  if (this.checked) document.getElementById('chk-life').checked = false;
+  calcGap();
+});
+document.getElementById('chk-pension').addEventListener('change', function() {
+  if (this.checked) document.getElementById('chk-pension-half').checked = false;
+  calcGap();
+});
+document.getElementById('chk-pension-half').addEventListener('change', function() {
+  if (this.checked) document.getElementById('chk-pension').checked = false;
+  calcGap();
+});
+['chk-health','chk-parent'].forEach(id => {
+  document.getElementById(id).addEventListener('change', calcGap);
+});
+
+// ─────────────────────────────────────────────
+//  STICKY NAV SCROLL-SPY
+// ─────────────────────────────────────────────
+(function(){
+  const sections = ['sec-map','sec-endow','sec-pension','sec-taxsim','sec-gap'];
+  const btns     = sections.map(id => document.querySelector('.snav-btn[href="#'+id+'"]'));
+
+  function onScroll() {
+    let current = sections[0];
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (window.scrollY >= el.offsetTop - 120) current = id;
+    }
+    btns.forEach((b, i) => {
+      if (!b) return;
+      b.classList.toggle('active', sections[i] === current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// ─────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────
+setIncome(400000);
+calcGap();
+</script>
+</body>
+</html>
