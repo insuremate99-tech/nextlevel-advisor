@@ -32,6 +32,43 @@
     #no-results{display:none;text-align:center;padding:3rem;color:#94A3B8}
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   </style>
+  <!-- JSON-LD: BreadcrumbList + WebPage for articles index -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "หน้าหลัก",
+            "item": "https://nextlevel-advisor.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "บทความ",
+            "item": "https://nextlevel-advisor.com/articles/"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://nextlevel-advisor.com/articles/",
+        "url": "https://nextlevel-advisor.com/articles/",
+        "name": "บทความ — Next Level Advisor",
+        "description": "รวมบทความความรู้ด้านประกันชีวิต วางแผนเกษียณ ภาษี และมรดก โดยที่ปรึกษาการเงิน AFPT FChFP",
+        "inLanguage": "th",
+        "isPartOf": {
+          "@id": "https://nextlevel-advisor.com/#website"
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
