@@ -176,6 +176,17 @@
     "coverGradient": "linear-gradient(135deg,#1B365D,#1E3A8A)"
   },
   {
+    "slug": "oil-price-domino",
+    "title": "รวยไม่ไหวแล้วโว้ยย",
+    "excerpt": "น้ำมันขึ้น Domino Effect ซัดตามมาเป็นทอดๆ ต้นทุนพุ่ง ธุรกิจหด ความมั่นคงหาย และ 3 อย่างที่ควรเช็กก่อน",
+    "category": "เศรษฐกิจ",
+    "date": "2026-04-04",
+    "dateDisplay": "4 เม.ย. 2569",
+    "readTime": "5 นาที",
+    "featured": false,
+    "coverGradient": "linear-gradient(135deg,#78350F,#B45309)"
+  },
+  {
     "slug": "tax-reduction",
     "title": "ลดภาษีอย่างถูกกฎหมาย ด้วยประกันชีวิต",
     "excerpt": "ทำความเข้าใจสิทธิลดหย่อนภาษีจากประกันชีวิตและประกันสุขภาพ ที่คนส่วนใหญ่ยังใช้ไม่เต็มที่",
