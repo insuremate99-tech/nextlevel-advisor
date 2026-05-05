@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>วางแผนมรดก ทำประกันมรดก ส่งต่อเงินสดให้ทายาท | Next Level Advisor</title>
+<title>วางแผนมรดก | NextLevel Advisor — ส่งต่อมรดกเงินสดอย่างเป็นระบบ</title>
 <meta name="description" content="วางแผนมรดกผ่านประกันชีวิต — สร้างมรดกเงินสดถึงมือทายาททันที ไม่ผ่านศาล ไม่เสียภาษีมรดก คำนวณทุนประกันที่เหมาะสมด้วย HLV และ Needs-Based Calculator"/>
 <meta name="keywords" content="วางแผนมรดก, ภาษีมรดก, ทุนประกัน, มรดกเงินสด, Premier Legacy, Smart Protection"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -58,104 +58,20 @@
   .need-chip{display:inline-flex;align-items:center;gap:6px;background:#F1F5F9;border-radius:10px;padding:6px 12px;cursor:pointer;transition:all .15s;font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;color:#475569;border:1px solid transparent}
   .need-chip.active{background:#EFF6FF;border-color:#93C5FD;color:var(--navy)}
 </style>
-  <!-- SEO full -->
-  <link rel="canonical" href="https://nextlevel-advisor.com/solutions/legacy-planning.html"/>
-  <meta name="description" content="วางแผนมรดกผ่านประกันชีวิต สร้างมรดกเงินสดถึงมือทายาทโดยตรง ไม่ผ่านศาล ไม่เสียภาษีมรดก คำนวณ HLV ได้ทันที"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://nextlevel-advisor.com/solutions/legacy-planning.html"/>
-  <meta property="og:title" content="วางแผนมรดก ทำประกันมรดก ส่งต่อเงินสดถึงทายาท | Next Level Advisor"/>
-  <meta property="og:description" content="วางแผนมรดกผ่านประกันชีวิต มรดกเงินสดถึงมือทายาทโดยตรง ไม่ผ่านศาล ไม่เสียภาษีมรดก"/>
-  <meta property="og:image" content="https://nextlevel-advisor.com/Perspecitive/per9.jpg"/>
-  <meta property="og:locale" content="th_TH"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"หน้าหลัก","item":"https://nextlevel-advisor.com/"},
-          {"@type":"ListItem","position":2,"name":"โซลูชัน","item":"https://nextlevel-advisor.com/solutions/"},
-          {"@type":"ListItem","position":3,"name":"วางแผนมรดก","item":"https://nextlevel-advisor.com/solutions/legacy-planning.html"}
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://nextlevel-advisor.com/solutions/legacy-planning.html#service",
-        "name": "วางแผนมรดกผ่านประกันชีวิต",
-        "description": "สร้างมรดกเงินสดที่ส่งถึงทายาทโดยตรง ไม่ผ่านกระบวนการศาล ไม่เสียภาษีมรดก พร้อมวางแผนให้ตรงกับมูลค่าชีวิตจริง (HLV)",
-        "provider": {"@id":"https://nextlevel-advisor.com/#person"},
-        "areaServed": {"@type":"Country","name":"Thailand"},
-        "serviceType": "Legacy & Estate Planning",
-        "availableChannel": {"@type":"ServiceChannel","serviceUrl":"https://calendly.com/insuremate99/15"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "ทำประกันมรดกคืออะไร แตกต่างจากการทำพินัยกรรมอย่างไร?",
-            "acceptedAnswer": {"@type":"Answer","text":"ประกันมรดกคือการใช้ประกันชีวิตเป็นเครื่องมือส่งต่อความมั่งคั่ง โดยเงินผลประโยชน์จะจ่ายตรงถึงผู้รับผลประโยชน์ที่ระบุในกรมธรรม์ทันที ไม่ต้องรอกระบวนการศาล และไม่เสียภาษีมรดก ต่างจากพินัยกรรมที่ต้องผ่านกระบวนการทางกฎหมายและอาจถูกโต้แย้ง"}
-          },
-          {
-            "@type": "Question",
-            "name": "วางแผนมรดกผ่านประกันเหมาะกับใคร?",
-            "acceptedAnswer": {"@type":"Answer","text":"เหมาะกับทุกคนที่มีคนพึ่งพา ตั้งแต่หัวหน้าครอบครัว เจ้าของธุรกิจที่ต้องการ Key Man Insurance ไปจนถึงผู้ที่ต้องการส่งต่อทรัพย์สินให้บุตรหลานโดยไม่ก่อความขัดแย้ง ยิ่งมีทรัพย์สินมากยิ่งสำคัญ"}
-          },
-          {
-            "@type": "Question",
-            "name": "ต้องมีเงินเท่าไหร่ถึงจะเริ่มวางแผนมรดก?",
-            "acceptedAnswer": {"@type":"Answer","text":"ไม่มีขั้นต่ำ การวางแผนมรดกเริ่มต้นจากการคำนวณ Human Life Value (HLV) ซึ่งคือมูลค่าทางเศรษฐกิจของคุณต่อครอบครัว แม้เพิ่งเริ่มทำงานก็สามารถเริ่มต้นได้ด้วยเบี้ยประกันที่เหมาะกับรายได้ปัจจุบัน"}
-          }
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body class="bg-white">
 
 <!-- NAV -->
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
-    <ul class="hidden md:flex items-center gap-6 font-noto text-sm font-medium">
-      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">โซลูชัน</a></li>
-      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
-      <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
-      <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
-    </ul>
-    <div class="flex items-center gap-2">
-      <a href="tel:0809696351" class="hidden lg:inline-flex items-center gap-1.5 font-pop font-semibold text-sm text-navy hover:text-teal transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        080-9696351
-      </a>
-      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 font-noto font-semibold text-sm px-4 py-2.5 rounded-xl transition-colors" style="background:#06C755;color:#fff">
-        <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINE
-      </a>
-      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="font-noto font-semibold text-sm px-4 py-2.5 rounded-xl text-white transition-colors hidden md:inline-flex" style="background:#0891B2">นัดปรึกษาฟรี</a>
-      <button id="menuBtn" class="md:hidden p-2 text-navy">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+    <div class="hidden md:flex items-center gap-6 text-sm font-noto text-slate-500">
+      <a href="/solutions/health-planning.html" class="hover:text-navy transition-colors">สุขภาพ</a>
+      <a href="/solutions/wealth-growth.html" class="hover:text-navy transition-colors">ความมั่งคั่ง</a>
+      <a href="/solutions/tax-optimization.html" class="hover:text-navy transition-colors">ภาษี</a>
+      <a href="/solutions/retirement-tax.html" class="hover:text-navy transition-colors">เกษียณ</a>
     </div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 px-5 py-4">
-    <ul class="space-y-1">
-      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">โซลูชัน</a></li>
-      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
-      <li><a href="/behind-the-advisor" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Behind the Advisor</a></li>
-      <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
-    </ul>
-    <div class="flex gap-2 mt-4">
-      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 font-noto font-semibold text-sm py-3 rounded-xl text-white" style="background:#06C755">
-        <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        ทักไลน์
-      </a>
-      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center font-noto font-semibold text-sm py-3 rounded-xl text-white" style="background:#0891B2">นัดปรึกษาฟรี</a>
-    </div>
+    <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold font-noto hover:opacity-90 transition-opacity">นัดปรึกษาฟรี</a>
   </div>
 </nav>
 
@@ -401,183 +317,152 @@
       </p>
     </div>
 
-    <!-- GROUP LABEL: Standard -->
-    <div class="flex items-center gap-3 mb-5">
-      <div class="h-px flex-1 bg-slate-200"></div>
-      <span class="font-noto text-xs font-semibold text-slate-400 uppercase tracking-widest px-3">กลุ่มมาตรฐาน — ทุกระดับรายได้</span>
-      <div class="h-px flex-1 bg-slate-200"></div>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5 mb-8">
+    <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Smart Protection 99/7 -->
+      <!-- Card 1: Standard -->
       <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#1B365D,#2D4F7F)">🛡️</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#EFF6FF;color:#1D4ED8">จ่าย 7 ปี</span>
-        <h3 class="font-pridi font-semibold text-navy text-base leading-snug mb-2">Smart Protection 99/7</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">จ่ายเบี้ยสั้น 7 ปี คุ้มครองตลอดชีพถึง 99 ปี สร้างมรดกเงินสดด้วยต้นทุนต่ำสุด</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-4">
-          <div>• สมัคร 30 วัน – 85 ปี</div>
-          <div>• ลดหย่อนภาษีได้ 100,000 บาท/ปี</div>
-          <div>• ทุนประกันถึงมือทายาททันที</div>
+        <div class="flex items-start justify-between mb-5">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3" style="background:linear-gradient(135deg,#1B365D,#2D4F7F)">🛡️</div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#EFF6FF;color:#1D4ED8">ทุนประกันมาตรฐาน</span>
+            <h3 class="font-pridi font-semibold text-navy text-xl">สมาร์ท โพรเทคชั่น 99/7</h3>
+            <p class="font-noto text-slate-500 text-xs mt-1">Smart Protection 99/7 · จ่าย 7 ปี คุ้มครองตลอดชีพ</p>
+          </div>
         </div>
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="font-noto text-xs text-slate-400">มนุษย์เงินเดือน · ครอบครัว</span>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>สร้างหลักประกันก้อนใหญ่ด้วยเงินก้อนเล็ก</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>จ่ายเบี้ยเพียง 7 ปี คุ้มครองยาวถึงอายุ 99 ปี</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>เบี้ยลดหย่อนภาษีได้สูงสุด 100,000 บาท/ปี</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>สมัครได้ตั้งแต่ 30 วัน – 85 ปี</span>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+          <div>
+            <div class="font-noto text-xs text-slate-400">เหมาะกับ</div>
+            <div class="font-noto text-sm font-semibold text-navy">มนุษย์เงินเดือน · คนมีครอบครัว</div>
+          </div>
           <a href="/pdfs/legacy/smart-protection-99-7.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
         </div>
       </div>
 
-      <!-- Smart Protection 99/20 -->
-      <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#0891B2,#065E7A)">🛡️</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#ECFEFF;color:#0E7490">จ่าย 20 ปี</span>
-        <h3 class="font-pridi font-semibold text-navy text-base leading-snug mb-2">Smart Protection 99/20</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">จ่ายเบี้ย 20 ปี เบี้ยต่อปีน้อยกว่า 99/7 เหมาะคนต้องการกระจายภาระเบี้ยออกระยะยาว</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-4">
-          <div>• เบี้ยต่อปีต่ำกว่าแบบ 7 ปี</div>
-          <div>• คุ้มครองตลอดชีพไม่ต้องต่ออายุ</div>
-          <div>• ลดหย่อนภาษีได้ทุกปีที่จ่ายเบี้ย</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="font-noto text-xs text-slate-400">วางแผนระยะยาว · ลดภาษีทุกปี</span>
-          <a href="/pdfs/legacy/smart-protection-99-20.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
-        </div>
-      </div>
-
-      <!-- Flexi Protection 99/20 -->
-      <div class="prod-card" style="border-color:#7C3AED;box-shadow:0 4px 20px rgba(124,58,237,.08)">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">✨</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#F5F3FF;color:#6D28D9">ใหม่! ไฮบริด</span>
-        <h3 class="font-pridi font-semibold text-navy text-base leading-snug mb-2">Flexi Protection 99/20</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">จ่าย 20 ปี คุ้มครอง 99 ปี <strong class="text-purple-700">แปลงวงเงินชีวิตเป็นวงเงินสุขภาพได้เมื่ออายุ 65 ปี</strong> — ชีวิต+สุขภาพในกรมธรรม์เดียว</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-4">
-          <div>• เบี้ยคงที่ตลอด ไม่ปรับเพิ่มตามอายุ</div>
-          <div>• OPD+IPD หลังเกษียณโดยไม่ซื้อเพิ่ม</div>
-          <div>• เปิดขาย พ.ค. 2568</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="font-noto text-xs text-slate-400">วางแผนเกษียณ · ชีวิต+สุขภาพ</span>
-          <a href="/pdfs/legacy/flexi-protection-99-20.pdf" target="_blank" class="brochure-btn" style="color:#7C3AED;border-color:#7C3AED">📄 โบรชัวร์</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- GROUP LABEL: Legacy High Value -->
-    <div class="flex items-center gap-3 mb-5">
-      <div class="h-px flex-1 bg-slate-200"></div>
-      <span class="font-noto text-xs font-semibold text-slate-400 uppercase tracking-widest px-3">Legacy High Value — ทุน 10 ล้านขึ้น</span>
-      <div class="h-px flex-1 bg-slate-200"></div>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-
-      <!-- Premier Legacy 99/1 (Single Pay) -->
+      <!-- Card 2: Legacy 10M+ (Featured) -->
       <div class="prod-card featured">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#0891B2,#0E7490)">👑</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#ECFEFF;color:#0E7490">จ่ายครั้งเดียว</span>
-        <h3 class="font-pridi font-semibold text-navy text-sm leading-snug mb-2">Premier Legacy 99/1</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-3">Single premium ก้อนเดียวจบ ทุนประกันสูง ถ่ายโอนความมั่งคั่งก้อนใหญ่ในทันที</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-3">
-          <div>• ทุนขั้นต่ำ 10 ล้านบาท</div>
-          <div>• ไม่ต้องกังวลเรื่องเบี้ยรายปี</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
-          <span class="font-noto text-xs text-slate-400">HNW · Lump Sum</span>
-          <div class="flex gap-2 flex-wrap">
-            <a href="/pdfs/legacy/premier-legacy-99-1.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
-            <a href="/pdfs/legacy/premier-legacy-99-1-10mil.pdf" target="_blank" class="brochure-btn">📄 10M Package</a>
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3" style="background:linear-gradient(135deg,#0891B2,#065E7A)">👑</div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#ECFEFF;color:#0E7490">Legacy 10M+</span>
+            <h3 class="font-pridi font-semibold text-navy text-xl">พรีเมียร์ เลกาซี่ 99/1</h3>
+            <p class="font-noto text-slate-500 text-xs mt-1">Premier Legacy · ทุนประกันขั้นต่ำ 10 ล้านบาท</p>
           </div>
+          <span class="px-2.5 py-1 rounded-lg text-xs font-noto font-bold" style="background:#0891B2;color:#fff">แนะนำ</span>
+        </div>
+        <div class="bg-teal/5 rounded-xl p-4 mb-5 border border-teal/20">
+          <div class="font-noto text-xs text-teal font-semibold mb-2">💡 Use Case จริง: เจ้าของธุรกิจ 2 ลูก</div>
+          <div class="font-noto text-xs text-slate-600 leading-relaxed">
+            พ่อมีธุรกิจ 20 ล้าน → ลูกคนแรกรับกิจการ · ลูกคนสองรับเงินสินไหม 20 ล้านสร้างธุรกิจของตัวเอง
+            ไม่มีความขัดแย้ง ยังมีเงินสำรองเกษียณเพิ่มอีก
+          </div>
+        </div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>ทุนประกันสูง 10–100+ ล้านบาท บริหารภาษีมรดกได้อย่างชาญฉลาด</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>ผ่านการพิจารณาพิเศษ (Preferred Rate) สำหรับผู้ที่มีสุขภาพดี</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-teal mt-0.5 flex-shrink-0">•</span>
+            <span>แบ่งมรดกให้ทายาทต่างคนได้อย่างเป็นธรรมและชัดเจน</span>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+          <div>
+            <div class="font-noto text-xs text-slate-400">เหมาะกับ</div>
+            <div class="font-noto text-sm font-semibold text-navy">ผู้บริหาร · เจ้าของธุรกิจ · HNW</div>
+          </div>
+          <a href="/pdfs/legacy/premier-legacy.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
         </div>
       </div>
 
-      <!-- Premier Legacy 99/5 -->
+      <!-- Card 3: Unit-Linked Legacy -->
       <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#1B365D,#0891B2)">👑</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#EFF6FF;color:#1D4ED8">จ่าย 5 ปี</span>
-        <h3 class="font-pridi font-semibold text-navy text-sm leading-snug mb-2">Premier Legacy 99/5</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-3">จ่ายเบี้ย 5 ปีในช่วงที่รายได้ดีที่สุด ทุนประกันสูงคุ้มครองตลอดชีพ</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-3">
-          <div>• ทุนขั้นต่ำ 10 ล้านบาท</div>
-          <div>• เหมาะผู้บริหารในช่วงรายได้สูงสุด</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100">
-          <span class="font-noto text-xs text-slate-400">ผู้บริหาร · รายได้สูงช่วงสั้น</span>
-          <div class="mt-2">
-            <a href="https://lin.ee/NC0RcZM" target="_blank" class="brochure-btn">💬 ขอรายละเอียด</a>
+        <div class="flex items-start justify-between mb-5">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">📈</div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#F5F3FF;color:#6D28D9">Unit-Linked Legacy</span>
+            <h3 class="font-pridi font-semibold text-navy text-xl">มรดกที่เติบโตได้</h3>
+            <p class="font-noto text-slate-500 text-xs mt-1">mDesign · mGrow615 · มรดก + การลงทุน</p>
           </div>
         </div>
-      </div>
-
-      <!-- Premier Legacy 99/10 -->
-      <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#1B365D,#0891B2)">👑</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#EFF6FF;color:#1D4ED8">จ่าย 10 ปี</span>
-        <h3 class="font-pridi font-semibold text-navy text-sm leading-snug mb-2">Premier Legacy 99/10</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-3">กระจายเบี้ยออก 10 ปี ทุนสูง ยืดหยุ่นกว่า Single Pay ยังคุ้มครองตลอดชีพ</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-3">
-          <div>• ทุนขั้นต่ำ 10 ล้านบาท</div>
-          <div>• เหมาะเจ้าของธุรกิจที่มี cash flow สม่ำเสมอ</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100">
-          <span class="font-noto text-xs text-slate-400">เจ้าของธุรกิจ · CF สม่ำเสมอ</span>
-          <div class="mt-2">
-            <a href="/pdfs/legacy/premier-legacy.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-purple-500 mt-0.5 flex-shrink-0">•</span>
+            <span>ทุนประกันชีวิต + มูลค่ากองทุนที่เติบโตตามตลาด</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-purple-500 mt-0.5 flex-shrink-0">•</span>
+            <span>ปรับพอร์ตลงทุนได้ตลอดอายุกรมธรรม์ ไม่ต้องซื้อใหม่</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-purple-500 mt-0.5 flex-shrink-0">•</span>
+            <span>มรดกที่ทั้งคุ้มครองและสร้างความมั่งคั่งไปพร้อมกัน</span>
           </div>
         </div>
-      </div>
-
-      <!-- Premier 99/99 -->
-      <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#374151,#111827)">💎</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#F9FAFB;color:#374151;border:1px solid #E5E7EB">จ่าย 99 ปี</span>
-        <h3 class="font-pridi font-semibold text-navy text-sm leading-snug mb-2">คุ้มครองตลอดชีพ 99/99 Premier</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-3">เบี้ยต่ำที่สุดในกลุ่ม Legacy ทุนสูง คุ้มครองตลอดชีพ เหมาะวางแผนมรดกระยะยาวที่สุด</p>
-        <div class="text-xs font-noto text-slate-500 space-y-1 mb-3">
-          <div>• ทุนขั้นต่ำ 10 ล้านบาท</div>
-          <div>• เบี้ยต่ำที่สุดในกลุ่ม HNW</div>
-        </div>
-        <div class="pt-3 border-t border-slate-100">
-          <span class="font-noto text-xs text-slate-400">Legacy ระยะยาว · เบี้ยน้อย</span>
-          <div class="mt-2">
-            <a href="/pdfs/legacy/premier-legacy-99-99.pdf" target="_blank" class="brochure-btn">📄 โบรชัวร์</a>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+          <div>
+            <div class="font-noto text-xs text-slate-400">เหมาะกับ</div>
+            <div class="font-noto text-sm font-semibold text-navy">นักลงทุน · คนอายุ 30-50 ปี</div>
           </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- GROUP LABEL: Other -->
-    <div class="flex items-center gap-3 mb-5">
-      <div class="h-px flex-1 bg-slate-200"></div>
-      <span class="font-noto text-xs font-semibold text-slate-400 uppercase tracking-widest px-3">โซลูชันเฉพาะสถานการณ์</span>
-      <div class="h-px flex-1 bg-slate-200"></div>
-    </div>
-    <div class="grid md:grid-cols-2 gap-5">
-
-      <!-- Unit-Linked Legacy -->
-      <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">📈</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#F5F3FF;color:#6D28D9">Unit-Linked Legacy</span>
-        <h3 class="font-pridi font-semibold text-navy text-base leading-snug mb-2">มรดกที่เติบโตได้ (mDesign · mGrow615)</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">ทุนประกันชีวิต + มูลค่ากองทุนที่เติบโตตามตลาด — มรดกที่ทั้งคุ้มครองและสร้างความมั่งคั่ง</p>
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="font-noto text-xs text-slate-400">นักลงทุน · อายุ 30–50 ปี</span>
           <a href="/solutions/wealth-growth.html" class="brochure-btn" style="color:#7C3AED;border-color:#7C3AED">🔗 ดูหน้า Wealth →</a>
         </div>
       </div>
 
-      <!-- Term Insurance -->
+      <!-- Card 4: Term Insurance -->
       <div class="prod-card">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4" style="background:linear-gradient(135deg,#DC2626,#B91C1C)">⏱️</div>
-        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#FEF2F2;color:#991B1B">Term Insurance</span>
-        <h3 class="font-pridi font-semibold text-navy text-base leading-snug mb-2">คุ้มครองชั่วระยะเวลา</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">ความคุ้มครองสูงสุด เบี้ยต่ำสุด สำหรับช่วงที่มีภาระหนี้ธุรกิจ ค่าเทอมลูก หรือต้องการทุนสำรองชั่วคราว</p>
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="font-noto text-xs text-slate-400">หนี้ระยะสั้น · ภาระชั่วคราว</span>
+        <div class="flex items-start justify-between mb-5">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3" style="background:linear-gradient(135deg,#DC2626,#B91C1C)">⏱️</div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-2" style="background:#FEF2F2;color:#991B1B">Term Insurance</span>
+            <h3 class="font-pridi font-semibold text-navy text-xl">คุ้มครองชั่วระยะเวลา</h3>
+            <p class="font-noto text-slate-500 text-xs mt-1">ความคุ้มครองสูงสุด เบี้ยต่ำสุด ในช่วงภาระหนัก</p>
+          </div>
+        </div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-red-400 mt-0.5 flex-shrink-0">•</span>
+            <span>คุ้มครองสูงสุดในระยะเวลาที่มีภาระหนี้ธุรกิจ หรือค่าเทอมลูก</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-red-400 mt-0.5 flex-shrink-0">•</span>
+            <span>เบี้ยประกันต่ำกว่า Whole Life อย่างมีนัยสำคัญ</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm font-noto text-slate-600">
+            <span class="text-red-400 mt-0.5 flex-shrink-0">•</span>
+            <span>เลือกระยะเวลาคุ้มครอง 1–20 ปี ให้ตรงกับภาระที่มี</span>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+          <div>
+            <div class="font-noto text-xs text-slate-400">เหมาะกับ</div>
+            <div class="font-noto text-sm font-semibold text-navy">เพิ่งกู้บ้าน/ธุรกิจ · มีหนี้ระยะสั้น</div>
+          </div>
           <a href="/pdfs/legacy/term-insurance.pdf" target="_blank" class="brochure-btn" style="color:#DC2626;border-color:#DC2626">📄 โบรชัวร์</a>
         </div>
       </div>
 
-    </div>
     </div>
   </div>
 </section>
@@ -816,9 +701,9 @@
         <!-- Debts & Emergency -->
         <div class="sim-box">
           <div class="font-noto font-semibold text-navy text-sm mb-4 flex items-center gap-2">
-            💳 หนี้สิน & ระยะเวลาคุ้มครอง
+            💳 หนี้สิน & เงินสำรอง
           </div>
-          <div class="space-y-5">
+          <div class="space-y-4">
             <div>
               <div class="flex justify-between items-center mb-1">
                 <label class="sim-label">หนี้สินคงค้างทั้งหมด (บาท)</label>
@@ -830,13 +715,27 @@
               </div>
             </div>
             <div>
-              <label class="sim-label block mb-3">
-                ⏳ คนข้างหลังปรับตัวได้ภายในกี่ปี?
-                <span class="text-xs text-slate-400 ml-1">(ใช้คำนวณรายได้ทดแทน)</span>
-              </label>
-              <div class="flex gap-3">
-                <button id="nb-yr-5"  onclick="setCoverYears(5)"  class="need-chip flex-1 justify-center text-center active">5 ปี<br/><span class="font-noto text-xs font-normal text-slate-500">คนทำงานอยู่แล้ว</span></button>
-                <button id="nb-yr-10" onclick="setCoverYears(10)" class="need-chip flex-1 justify-center text-center">10 ปี<br/><span class="font-noto text-xs font-normal text-slate-500">เพิ่งเริ่มทำงาน</span></button>
+              <div class="flex justify-between items-center mb-1">
+                <label class="sim-label">เงินสำรองฉุกเฉิน (กี่เดือน)</label>
+                <div class="font-pop font-bold text-navy text-sm" id="nb-emerg-display">12 เดือน</div>
+              </div>
+              <input id="nb-emerg-months" type="range" min="3" max="24" step="1" value="12"
+                oninput="document.getElementById('nb-emerg-display').textContent=this.value+' เดือน';calcNeeds()"
+                class="sim-slider w-full"/>
+              <div class="flex justify-between font-noto text-xs text-slate-400 mt-1">
+                <span>3 เดือน</span><span>24 เดือน</span>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="sim-label">ปีที่ต้องการความคุ้มครอง</label>
+                <div class="font-pop font-bold text-navy text-sm" id="nb-cover-display">20 ปี</div>
+              </div>
+              <input id="nb-cover-years" type="range" min="5" max="40" step="1" value="20"
+                oninput="document.getElementById('nb-cover-display').textContent=this.value+' ปี';calcNeeds()"
+                class="sim-slider w-full"/>
+              <div class="flex justify-between font-noto text-xs text-slate-400 mt-1">
+                <span>5 ปี</span><span>40 ปี</span>
               </div>
             </div>
           </div>
@@ -1005,29 +904,21 @@ function setLifestyle(val) {
   calcNeeds();
 }
 
-let nbCoverYears = 5;
-
-function setCoverYears(y) {
-  nbCoverYears = y;
-  document.getElementById('nb-yr-5').classList.toggle('active', y === 5);
-  document.getElementById('nb-yr-10').classList.toggle('active', y === 10);
-  calcNeeds();
-}
-
 function calcNeeds() {
   const mortgage = parseFloat(document.getElementById('nb-mortgage').value) || 0;
   const car      = parseFloat(document.getElementById('nb-car').value) || 0;
   const school   = parseFloat(document.getElementById('nb-school').value) || 0;
   const lifestyle= parseFloat(document.getElementById('nb-lifestyle').value) || nbLifestyle;
   const debt     = parseFloat(document.getElementById('nb-debt').value) || 0;
-  const coverYrs = nbCoverYears;
+  const emergMo  = parseInt(document.getElementById('nb-emerg-months').value) || 12;
+  const coverYrs = parseInt(document.getElementById('nb-cover-years').value) || 20;
 
   const monthlyFixed     = mortgage + car + school;
   const monthlyLifestyle = lifestyle;
   const monthlyTotal     = monthlyFixed + monthlyLifestyle;
 
   const incomeReplacement = monthlyTotal * 12 * coverYrs;
-  const debtCover         = debt;
+  const debtCover         = debt + (monthlyTotal * emergMo);
   const grandTotal        = incomeReplacement + debtCover;
 
   // Percentages for bars
@@ -1084,11 +975,6 @@ function calcNeeds() {
 // ─────────────────────────────────────────────
 calcHLV();
 calcNeeds();
-  // Nav scroll shadow + mobile menu
-  if(document.getElementById('menuBtn')){
-    document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
-    window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20));
-  }
 </script>
 </body>
 </html>
