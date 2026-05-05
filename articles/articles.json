@@ -230,5 +230,17 @@
     "featured": false,
     "coverImage": "../Perspecitive/per13.jpg",
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+  },
+  {
+    "slug": "price-is-a-story",
+    "title": "Price is not just a number — it's a story about value",
+    "excerpt": "สลับบทบาทจากสายการเงินมาบรรยายด้าน Pricing Strategy ให้นักศึกษาแลกเปลี่ยนจากยุโรปที่ Stenden Thailand (PIM)",
+    "category": "อัพเดท",
+    "date": "2026-03-16",
+    "dateDisplay": "16 มี.ค. 2569",
+    "readTime": "3 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per15.jpg",
+    "coverGradient": "linear-gradient(135deg,#1B365D,#1E40AF)"
   }
 ]
