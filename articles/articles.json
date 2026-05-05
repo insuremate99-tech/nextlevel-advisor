@@ -232,6 +232,17 @@
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
   },
   {
+    "slug": "job-security-myth",
+    "title": "งานประจำ ที่เริ่มจะไม่ประจำ",
+    "excerpt": "คนทำงาน Middle ถึง Senior ที่เคยเนื้อหอม ตอนนี้หางานยาก ความมั่นคงจากงานประจำอย่างเดียวเริ่มไม่พออีกต่อไปแล้ว",
+    "category": "แนวคิด",
+    "date": "2026-03-17",
+    "dateDisplay": "17 มี.ค. 2569",
+    "readTime": "6 นาที",
+    "featured": false,
+    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
+  },
+  {
     "slug": "price-is-a-story",
     "title": "Price is not just a number — it's a story about value",
     "excerpt": "สลับบทบาทจากสายการเงินมาบรรยายด้าน Pricing Strategy ให้นักศึกษาแลกเปลี่ยนจากยุโรปที่ Stenden Thailand (PIM)",
