@@ -877,6 +877,18 @@ document.getElementById('chk-pension-half').addEventListener('change', function(
 });
 
 // ─────────────────────────────────────────────
+//  REVEAL ANIMATION
+// ─────────────────────────────────────────────
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.06});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  // Fallback: show all after 300ms in case observer doesn't fire
+  setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }, 400);
+})();
+
+// ─────────────────────────────────────────────
 //  STICKY NAV SCROLL-SPY
 // ─────────────────────────────────────────────
 (function(){

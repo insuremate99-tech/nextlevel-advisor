@@ -227,7 +227,7 @@
     </a>
     <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
       <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">โซลูชัน</a></li>
-      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">วางแผนเกษียณ</a></li>
+      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
       <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ / Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
       <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
@@ -251,7 +251,7 @@
   <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-100 px-5 pb-5 pt-3">
     <ul class="space-y-1 font-noto text-sm font-medium">
       <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">โซลูชัน</a></li>
-      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">วางแผนเกษียณ</a></li>
+      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">เครื่องมือการเงิน</a></li>
       <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ / Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Behind the Advisor</a></li>
       <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
@@ -1430,8 +1430,8 @@ function closeRetirementModal(){
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeRetirementModal()})
 </script>
-
-  // ── Team cards: tap-to-reveal on mobile ──
+<script>
+// ── Team cards: tap-to-reveal on mobile ──
   (function(){
     document.querySelectorAll('.team-card-new').forEach(function(card){
       card.addEventListener('click',function(){
@@ -1441,5 +1441,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeRetirem
       });
     });
   })();
+</script>
 </body>
 </html>                                                                                                                                                                                                       

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>เครื่องมือวางแผนการเงิน | NextLevel Advisor</title>
+<meta name="description" content="รวม 4 เครื่องมือวางแผนการเงินครบจบในที่เดียว คำนวณเป้าหมายเกษียณ HLV ภาษี และมรดก"/>
+<meta property="og:title" content="เครื่องมือวางแผนการเงิน | NextLevel Advisor"/>
+<meta property="og:url" content="https://nextlevel-advisor.com/calculator"/>
+<link rel="canonical" href="https://nextlevel-advisor.com/calculator"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Pridi:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Noto Sans Thai',sans-serif;background:#F8FAFC}
+/* ── NAV ── */
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Noto Sans Thai',sans-serif;font-weight:600;border-radius:.75rem;transition:all .2s;text-decoration:none}
+.btn-teal{background:#0891B2;color:#fff;box-shadow:0 4px 14px rgba(8,145,178,.3)}
+.btn-teal:hover{background:#0771A0}
+/* ── CALC SHARED ── */
+.calc-wrap{background:linear-gradient(135deg,#0891B2 0%,#0A7FA0 40%,#065E7A 100%);border-radius:28px;overflow:hidden;position:relative}
+.calc-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 82% 50%,rgba(255,255,255,.12),transparent 70%);pointer-events:none}
+.calc-glass{background:rgba(255,255,255,.09);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:18px}
+.calc-slider{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;background:rgba(255,255,255,.2);outline:none;cursor:pointer}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer;transition:transform .15s}
+.calc-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+.calc-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25);border:none;cursor:pointer}
+.calc-result-card{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:14px 18px}
+.clc-input{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none}
+.clc-input:focus{border-color:rgba(255,255,255,.55)}
+/* ── TOOL SECTIONS ── */
+.tool-card{background:#fff;border-radius:1.5rem;border:1.5px solid #e2e8f0;overflow:hidden}
+.tool-pill{background:#0891B2;color:#fff;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+/* ── WEALTH DARK ── */
+.wealth-wrap{background:linear-gradient(135deg,#1B365D 0%,#0D2445 60%,#0C1F3A 100%);border-radius:28px;position:relative;overflow:hidden}
+.wealth-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 85% 30%,rgba(8,145,178,.2),transparent 65%);pointer-events:none}
+.wealth-glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 24px}
+/* ── TAX ── */
+.tax-wrap{background:linear-gradient(135deg,#065E7A,#1B365D);border-radius:28px;position:relative;overflow:hidden}
+.sim-btn{background:#f1f5f9;border:1.5px solid #e2e8f0;border-radius:.625rem;padding:6px 12px;font-family:'Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:600;color:#475569;cursor:pointer;transition:all .18s;white-space:nowrap}
+.sim-btn.selected,.sim-btn:hover{background:#0891B2;color:#fff;border-color:#0891B2}
+.sim-btn-w{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);border-radius:.625rem;padding:6px 12px;font-family:'Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .18s}
+.sim-btn-w.selected,.sim-btn-w:hover{background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.45)}
+.gap-bar{height:18px;border-radius:999px;transition:width .6s ease}
+/* ── LEGACY ── */
+.legacy-wrap{background:linear-gradient(135deg,#0C1F3A,#1B365D 60%,#0891B2);border-radius:28px;position:relative;overflow:hidden}
+.need-chip{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:.75rem;padding:10px 14px;font-family:'Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);cursor:pointer;transition:all .2s;text-align:center}
+.need-chip.active{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.5);color:#fff}
+.need-chip span{font-size:.65rem;font-weight:400;color:rgba(255,255,255,.5);margin-top:2px}
+.need-chip.active span{color:rgba(255,255,255,.7)}
+/* ── STICKY SNAV ── */
+.snav{position:sticky;top:64px;z-index:30;background:rgba(248,250,252,.95);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0}
+.snav-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:999px;font-family:'Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:600;color:#475569;background:#f8fafc;border:1.5px solid #e2e8f0;text-decoration:none;white-space:nowrap;transition:all .2s}
+.snav-btn.active,.snav-btn:hover{background:#0891B2;color:#fff;border-color:#0891B2}
+/* ── MISC ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
+    <ul class="hidden md:flex items-center gap-7 font-noto text-sm font-medium">
+      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">โซลูชัน</a></li>
+      <li><a href="/calculator" class="text-teal font-semibold">เครื่องมือวางแผนการเงิน</a></li>
+      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
+    </ul>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="btn btn-teal px-5 py-2.5 text-sm hidden md:inline-flex">นัดปรึกษาฟรี</a>
+    <button id="menuBtn" class="md:hidden p-2 text-navy">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 px-5 py-4">
+    <ul class="space-y-1">
+      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">โซลูชัน</a></li>
+      <li><a href="/calculator" class="block py-3 text-teal font-semibold border-b border-slate-100">เครื่องมือวางแผนการเงิน</a></li>
+      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
+      <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
+    </ul>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="btn btn-teal w-full py-3 mt-4 justify-center">นัดปรึกษาฟรี</a>
+  </div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section class="pt-28 pb-10" style="background:linear-gradient(135deg,#1B365D 0%,#0D2445 100%)">
+  <div class="max-w-5xl mx-auto px-5">
+    <nav class="flex items-center gap-2 text-xs mb-5" style="color:rgba(255,255,255,.5)">
+      <a href="/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.5)">หน้าหลัก</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.85)">เครื่องมือวางแผนการเงิน</span>
+    </nav>
+    <div class="inline-block bg-teal/20 text-teal text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 font-pop">Financial Tools</div>
+    <h1 class="font-pridi font-semibold text-white text-3xl md:text-4xl leading-snug mb-3">เครื่องมือวางแผนการเงิน</h1>
+    <p class="font-noto text-sm md:text-base mb-0" style="color:rgba(255,255,255,.65)">รู้จักตัวเลขของตัวเองก่อน — แล้วแผนที่ใช่จะตามมาเอง</p>
+  </div>
+</section>
+
+<!-- ══════ STICKY SECTION NAV ══════ -->
+<div class="snav">
+  <div class="max-w-5xl mx-auto px-5 py-3 flex gap-2 overflow-x-auto scrollbar-hide">
+    <a href="#sec-retire"  class="snav-btn active">🏖️ เป้าหมายเกษียณ</a>
+    <a href="#sec-wealth"  class="snav-btn">💼 มูลค่าชีวิต (HLV)</a>
+    <a href="#sec-tax"     class="snav-btn">🧾 วางแผนภาษี</a>
+    <a href="#sec-legacy"  class="snav-btn">🏛️ ทุนมรดก</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TOOL 1 — RETIREMENT GOAL CALCULATOR
+══════════════════════════════════════════════ -->
+<section id="sec-retire" class="py-16" style="background:#F0F9FF">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="tool-pill">01 — เป้าหมายหลัก</span>
+    </div>
+    <h2 class="font-pridi font-semibold text-navy text-2xl md:text-3xl mb-1">เช็กเป้าหมายเกษียณของคุณ</h2>
+    <p class="font-noto text-slate-500 text-sm mb-8">ใช้เวลาเพียง 1 นาที เพื่อวางแผนชีวิตที่คุณออกแบบเองได้</p>
+
+    <div class="calc-wrap reveal">
+      <div class="px-8 py-12 md:px-12 md:py-14 flex flex-wrap lg:flex-nowrap items-start gap-6 lg:gap-14 relative z-10">
+
+        <!-- Mobile headline -->
+        <div class="w-full lg:hidden">
+          <h3 class="font-pop font-extrabold text-white text-2xl leading-tight mb-2">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h3>
+          <p class="font-noto text-sm mb-0" style="color:rgba(255,255,255,.65)">ใช้เวลาเพียง 1 นาที</p>
+        </div>
+
+        <!-- LEFT: Results -->
+        <div class="flex-1 min-w-0 order-2 lg:order-1">
+          <div class="hidden lg:block mb-8">
+            <h3 class="font-pop font-extrabold text-white text-2xl leading-tight mb-2">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h3>
+            <p class="font-noto text-sm" style="color:rgba(255,255,255,.65)">ใช้เวลาเพียง 1 นาที เพื่อวางแผนชีวิตที่คุณออกแบบเองได้</p>
+          </div>
+
+          <!-- ① Gap -->
+          <div class="calc-result-card mb-3" style="text-align:center">
+            <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ช่องว่างที่ต้องเตรียม</div>
+            <div class="font-pop font-extrabold text-2xl" id="r1-gap" style="color:#FF8C69">—</div>
+          </div>
+          <!-- ② Bars -->
+          <div class="calc-result-card mb-3" style="background:rgba(0,0,0,.18)">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เป้าหมายเงินก้อนที่ต้องมี</span>
+              <span class="font-pop font-semibold text-xs text-white" id="r1-goal">—</span>
+            </div>
+            <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+              <div id="r1-bar-need" style="height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .6s"></div>
+            </div>
+            <div class="flex justify-between items-center mt-3 mb-1">
+              <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เงินออมปัจจุบัน</span>
+              <span class="font-pop font-semibold text-xs" id="r1-have" style="color:#4ADE80">—</span>
+            </div>
+            <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+              <div id="r1-bar-have" style="height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#10B981,#0891B2);transition:width .6s"></div>
+            </div>
+          </div>
+          <!-- ③ Monthly -->
+          <div class="calc-result-card mb-6" style="background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);text-align:center">
+            <div class="font-noto text-sm font-semibold mb-1" style="color:rgba(255,255,255,.8)">💡 ต้องเก็บเพิ่มเดือนละ</div>
+            <div class="font-pop font-extrabold text-3xl text-white" id="r1-monthly">—</div>
+            <div class="font-noto text-xs mt-2" style="color:rgba(255,255,255,.5)" id="r1-note"></div>
+          </div>
+
+          <!-- CTA -->
+          <a href="https://lin.ee/NC0RcZM" target="_blank"
+             class="inline-flex items-center justify-center gap-3 w-full rounded-2xl font-noto font-bold text-base"
+             style="background:#fff;color:#065E7A;padding:16px 24px;box-shadow:0 8px 28px rgba(0,0,0,.25);text-decoration:none;transition:transform .2s,box-shadow .2s"
+             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 36px rgba(0,0,0,.32)'"
+             onmouseout="this.style.transform='';this.style.boxShadow='0 8px 28px rgba(0,0,0,.25)'">
+            <svg class="w-6 h-6" fill="#06C755" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            รับสรุปแผนเกษียณทาง LINE
+          </a>
+        </div>
+
+        <!-- RIGHT: Sliders -->
+        <div class="flex-shrink-0 w-full lg:w-[340px] order-1 lg:order-2">
+          <div class="calc-glass px-6 py-7 space-y-5">
+
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">อายุปัจจุบัน (ปี)</label>
+              <input type="number" id="r1-age" value="35" min="15" max="65" class="clc-input" oninput="calcRetire1()"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">อายุ 15–65 ปี</div>
+            </div>
+
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">เกษียณตอนอายุ (ปี)</label>
+              <input type="number" id="r1-retire" value="60" min="30" max="80" class="clc-input" oninput="calcRetire1()"/>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">ประมาณการอายุขัย</label>
+                <span class="font-pop font-bold text-white text-sm" id="r1-lbl-life">85 ปี</span>
+              </div>
+              <input type="range" class="calc-slider" id="r1-life" min="60" max="99" value="85"
+                     oninput="document.getElementById('r1-lbl-life').textContent=this.value+' ปี';calcRetire1()"/>
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>60</span><span>99</span></div>
+            </div>
+
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">อยากใช้หลังเกษียณ / เดือน (฿)</label>
+              <input type="number" id="r1-income" value="30000" min="0" step="1000" class="clc-input" oninput="calcRetire1()"/>
+            </div>
+
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">เงินออมที่มีตอนนี้ (฿)</label>
+              <input type="number" id="r1-savings" value="0" min="0" class="clc-input" oninput="calcRetire1()"/>
+            </div>
+
+            <div class="font-noto text-xs pt-2 border-t" style="color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)">
+              ⚙️ สมมติฐาน: เงินเฟ้อ 3% · ผลตอบแทนหลังเกษียณ 0% (conservative)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TOOL 2 — HLV CALCULATOR (WEALTH)
+══════════════════════════════════════════════ -->
+<section id="sec-wealth" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="tool-pill" style="background:#7C3AED">02 — ความมั่งคั่ง</span>
+    </div>
+    <h2 class="font-pridi font-semibold text-navy text-2xl md:text-3xl mb-1">สร้างกองทุนเกษียณให้เติบโต</h2>
+    <p class="font-noto text-slate-500 text-sm mb-8">รู้มูลค่าความสามารถของคุณ แล้วเลือกเครื่องมือที่ใช่</p>
+
+    <div class="wealth-wrap reveal">
+      <div class="px-8 py-12 md:px-12 md:py-14 relative z-10">
+
+        <!-- HLV CALC -->
+        <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-12 items-start mb-10">
+
+          <!-- Inputs -->
+          <div class="w-full lg:w-[320px] flex-shrink-0">
+            <div class="font-pop font-bold text-xs uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.5)">กรอกข้อมูลของคุณ</div>
+
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">รายได้ต่อปี (฿)</label>
+                  <span class="font-pop font-bold text-white text-sm" id="hlv-income-lbl">600,000</span>
+                </div>
+                <input type="range" class="calc-slider" id="hlv-income" min="120000" max="5000000" step="60000" value="600000"
+                       oninput="document.getElementById('hlv-income-lbl').textContent=fmtTH(+this.value);calcHLV()"/>
+                <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>120K</span><span>5M</span></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">อายุปัจจุบัน (ปี)</label>
+                  <span class="font-pop font-bold text-white text-sm" id="hlv-age-lbl">35 ปี</span>
+                </div>
+                <input type="range" class="calc-slider" id="hlv-age" min="22" max="59" value="35"
+                       oninput="document.getElementById('hlv-age-lbl').textContent=this.value+' ปี';calcHLV()"/>
+                <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>22</span><span>59</span></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">เกษียณตอนอายุ (ปี)</label>
+                  <span class="font-pop font-bold text-white text-sm" id="hlv-retire-lbl">60 ปี</span>
+                </div>
+                <input type="range" class="calc-slider" id="hlv-retire" min="40" max="70" value="60"
+                       oninput="document.getElementById('hlv-retire-lbl').textContent=this.value+' ปี';calcHLV()"/>
+                <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>40</span><span>70</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HLV Result -->
+          <div class="flex-1 min-w-0">
+            <div class="font-pop font-bold text-xs uppercase tracking-widest mb-5" style="color:rgba(255,255,255,.5)">มูลค่าความสามารถของคุณ</div>
+
+            <div class="wealth-glass mb-4 text-center">
+              <div class="font-noto text-sm mb-1" style="color:rgba(255,255,255,.6)">Human Life Value (HLV)</div>
+              <div class="font-pop font-extrabold text-4xl text-white" id="hlv-result">—</div>
+              <div class="font-noto text-xs mt-2" style="color:rgba(255,255,255,.4)">มูลค่าปัจจุบันของรายได้ทั้งหมดที่เหลือ (Discount Rate 4%)</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <div class="wealth-glass text-center">
+                <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ปีที่เหลือทำงาน</div>
+                <div class="font-pop font-bold text-xl text-white" id="hlv-years">—</div>
+              </div>
+              <div class="wealth-glass text-center">
+                <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">รายได้รวมตลอดชีพ</div>
+                <div class="font-pop font-bold text-xl text-white" id="hlv-total">—</div>
+              </div>
+            </div>
+
+            <!-- Tool Comparison -->
+            <div class="font-pop font-bold text-xs uppercase tracking-widest mb-3" style="color:rgba(255,255,255,.5)">เครื่องมือสะสมที่เหมาะกับ HLV ของคุณ</div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="wealth-glass">
+                <div class="font-pop font-bold text-sm mb-1" style="color:#A78BFA">📈 Unit-Linked (mDesign/mGrow)</div>
+                <div class="font-noto text-xs leading-relaxed mb-3" style="color:rgba(255,255,255,.6)">เติบโตตามกองทุน ความยืดหยุ่นสูง ปรับพอร์ตได้ตลอด เหมาะ HLV สูงและรับความเสี่ยงได้</div>
+                <div id="ul-target" class="font-noto text-xs font-semibold" style="color:#C4B5FD">เป้าทุนแนะนำ: —</div>
+                <a href="/solutions/wealth-growth.html" class="mt-3 inline-flex items-center gap-1 text-xs font-noto font-semibold" style="color:#A78BFA">ดูรายละเอียด →</a>
+              </div>
+              <div class="wealth-glass">
+                <div class="font-pop font-bold text-sm mb-1" style="color:#67E8F9">🛡️ UL Plus (mOnePlus)</div>
+                <div class="font-noto text-xs leading-relaxed mb-3" style="color:rgba(255,255,255,.6)">การันตีผลตอบแทน ความเสี่ยงต่ำ เหมาะสร้างรายได้เกษียณที่มั่นคง โดยไม่ต้องติดตามตลาด</div>
+                <div id="ul-plus-target" class="font-noto text-xs font-semibold" style="color:#BAE6FD">เป้าทุนแนะนำ: —</div>
+                <a href="/solutions/wealth-growth.html" class="mt-3 inline-flex items-center gap-1 text-xs font-noto font-semibold" style="color:#67E8F9">ดูรายละเอียด →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TOOL 3 — TAX OPTIMIZATION
+══════════════════════════════════════════════ -->
+<section id="sec-tax" class="py-16" style="background:#F8FAFC">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="tool-pill" style="background:#D97706">03 — บริหารภาษี</span>
+    </div>
+    <h2 class="font-pridi font-semibold text-navy text-2xl md:text-3xl mb-1">เปลี่ยนภาษีให้กลายเป็นเงินออมเกษียณ</h2>
+    <p class="font-noto text-slate-500 text-sm mb-8">ตรวจสอบสิทธิลดหย่อนที่ยังเหลือ — แล้วดึงเงินคืนกลับมาเติมพอร์ต</p>
+
+    <div class="reveal grid lg:grid-cols-2 gap-6">
+
+      <!-- Tax Map -->
+      <div class="tool-card">
+        <div class="px-6 pt-6 pb-2 border-b border-slate-100">
+          <div class="font-pop font-bold text-sm text-navy mb-0.5">🗺️ แผนที่สิทธิลดหย่อน</div>
+          <p class="font-noto text-xs text-slate-500">สิทธิสูงสุดที่กฎหมายให้ไว้</p>
+        </div>
+        <div class="p-6 space-y-4">
+          <!-- Life bar -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-navy">ประกันชีวิต / ออมทรัพย์</span>
+              <span class="font-pop text-xs font-bold text-teal">100,000 ฿</span>
+            </div>
+            <div class="h-3 rounded-full overflow-hidden" style="background:#E0F2FE">
+              <div class="h-full rounded-full" style="width:35%;background:#0891B2"></div>
+            </div>
+            <div class="font-noto text-xs text-slate-400 mt-0.5">คนส่วนใหญ่ใช้ไป ~35,000 ฿</div>
+          </div>
+          <!-- Health bar -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-navy">ประกันสุขภาพ</span>
+              <span class="font-pop text-xs font-bold text-teal">25,000 ฿</span>
+            </div>
+            <div class="h-3 rounded-full overflow-hidden" style="background:#E0F2FE">
+              <div class="h-full rounded-full" style="width:0%;background:#0891B2"></div>
+            </div>
+            <div class="font-noto text-xs text-slate-400 mt-0.5">แยกจากประกันชีวิต</div>
+          </div>
+          <!-- Parent health bar -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-navy">ประกันสุขภาพพ่อแม่</span>
+              <span class="font-pop text-xs font-bold text-teal">15,000 ฿</span>
+            </div>
+            <div class="h-3 rounded-full overflow-hidden" style="background:#E0F2FE">
+              <div class="h-full rounded-full" style="width:0%;background:#0891B2"></div>
+            </div>
+            <div class="font-noto text-xs text-slate-400 mt-0.5">พ่อหรือแม่ที่มีรายได้ไม่เกิน 30,000 ฿/ปี</div>
+          </div>
+          <!-- Pension bar -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-navy">ประกันบำนาญ</span>
+              <span class="font-pop text-xs font-bold" style="color:#059669">200,000 ฿</span>
+            </div>
+            <div class="h-3 rounded-full overflow-hidden" style="background:#DCFCE7">
+              <div class="h-full rounded-full" style="width:0%;background:#059669"></div>
+            </div>
+            <div class="font-noto text-xs text-slate-400 mt-0.5">แยกหมวด ใช้สิทธิเพิ่มได้ไม่ขึ้นกับชีวิต</div>
+          </div>
+          <div class="pt-3 border-t border-slate-100">
+            <div class="flex justify-between">
+              <span class="font-noto text-sm font-semibold text-navy">สิทธิรวมทั้งหมด</span>
+              <span class="font-pop font-bold text-lg" style="color:#0891B2">340,000 ฿/ปี</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tax Refund Sim -->
+      <div class="tool-card">
+        <div class="px-6 pt-6 pb-2 border-b border-slate-100">
+          <div class="font-pop font-bold text-sm text-navy mb-0.5">🧮 คำนวณเงินคืนภาษี</div>
+          <p class="font-noto text-xs text-slate-500">ปรับตัวเลขแล้วดูผลทันที</p>
+        </div>
+        <div class="p-6 space-y-4">
+          <!-- Income buttons -->
+          <div>
+            <div class="font-noto text-xs font-semibold text-slate-600 mb-2">รายได้ต่อปี (บาท)</div>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <button onclick="setTaxIncome(200000)"  id="ti-200" class="sim-btn text-xs">200K</button>
+              <button onclick="setTaxIncome(400000)"  id="ti-400" class="sim-btn text-xs selected">400K</button>
+              <button onclick="setTaxIncome(600000)"  id="ti-600" class="sim-btn text-xs">600K</button>
+              <button onclick="setTaxIncome(800000)"  id="ti-800" class="sim-btn text-xs">800K</button>
+              <button onclick="setTaxIncome(1000000)" id="ti-1M"  class="sim-btn text-xs">1M+</button>
+            </div>
+            <input type="number" id="ti-custom" value="400000" min="0" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm font-pop font-semibold text-navy" style="outline:none" oninput="setTaxIncomeCustom(this.value)"/>
+          </div>
+          <!-- Endow slider -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-slate-600">ประกันชีวิต/ออมทรัพย์</span>
+              <span class="font-pop text-xs font-bold text-teal" id="tax-endow-lbl">50,000 ฿</span>
+            </div>
+            <input type="range" id="tax-endow" min="0" max="100000" step="5000" value="50000"
+                   class="w-full accent-teal mb-1"
+                   oninput="document.getElementById('tax-endow-lbl').textContent=fmtTH(+this.value)+' ฿';calcTax2()"/>
+          </div>
+          <!-- Pension slider -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-noto text-xs font-semibold text-slate-600">ประกันบำนาญ</span>
+              <span class="font-pop text-xs font-bold text-teal" id="tax-pension-lbl">0 ฿</span>
+            </div>
+            <input type="range" id="tax-pension" min="0" max="200000" step="10000" value="0"
+                   class="w-full accent-teal mb-1"
+                   oninput="document.getElementById('tax-pension-lbl').textContent=fmtTH(+this.value)+' ฿';calcTax2()"/>
+          </div>
+          <!-- Results -->
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="text-center p-3 rounded-xl" style="background:#F0F9FF">
+              <div class="font-noto text-xs text-slate-500 mb-1">ประหยัดภาษี / ปี</div>
+              <div class="font-pop font-extrabold text-xl text-teal" id="tax2-save">—</div>
+            </div>
+            <div class="text-center p-3 rounded-xl" style="background:#F0FDF4">
+              <div class="font-noto text-xs text-slate-500 mb-1">เทียบเท่า / เดือน</div>
+              <div class="font-pop font-extrabold text-xl" style="color:#059669" id="tax2-monthly">—</div>
+            </div>
+          </div>
+          <div class="font-noto text-xs text-slate-500 pt-1" id="tax2-bracket">ฐานภาษีคุณ —%</div>
+          <a href="/solutions/tax-optimization.html" class="inline-flex items-center gap-1 text-xs font-noto font-semibold text-teal hover:underline">เจาะลึกการวางแผนภาษี →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TOOL 4 — LEGACY / NEEDS-BASED
+══════════════════════════════════════════════ -->
+<section id="sec-legacy" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="tool-pill" style="background:#1B365D">04 — ส่งต่อมรดก</span>
+    </div>
+    <h2 class="font-pridi font-semibold text-navy text-2xl md:text-3xl mb-1">ส่งต่อมรดกอย่างเป็นระบบ</h2>
+    <p class="font-noto text-slate-500 text-sm mb-8">คำนวณทุนประกันที่ครอบครัวต้องการ — ส่งต่อได้ทันที ไม่ติดล็อก</p>
+
+    <!-- Problem vs Solution -->
+    <div class="reveal grid md:grid-cols-2 gap-5 mb-10">
+      <div class="rounded-2xl p-6" style="background:#FEF2F2;border:1.5px solid #FECACA">
+        <div class="font-pop font-bold text-sm mb-3" style="color:#DC2626">❌ ทรัพย์สินติดล็อก</div>
+        <ul class="space-y-2 font-noto text-sm" style="color:#7F1D1D">
+          <li>• อสังหาฯ ขายไม่ทันเมื่อจำเป็น</li>
+          <li>• บัญชีธนาคารถูกอายัดระหว่างพิสูจน์มรดก</li>
+          <li>• ทายาทต้องใช้ชีวิตอยู่โดยไม่มีรายได้</li>
+          <li>• ข้อพิพาทในครอบครัว ทำลายความสัมพันธ์</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl p-6" style="background:#F0FDF4;border:1.5px solid #BBF7D0">
+        <div class="font-pop font-bold text-sm mb-3" style="color:#059669">✅ Cash Legacy ผ่านประกันชีวิต</div>
+        <ul class="space-y-2 font-noto text-sm" style="color:#14532D">
+          <li>• เงินสดถึงมือผู้รับภายใน 7–14 วัน</li>
+          <li>• ปลอดภาษีมรดก เจ้าหนี้ฟ้องไม่ได้</li>
+          <li>• ระบุชื่อผู้รับชัดเจน ไม่ต้องพิสูจน์มรดก</li>
+          <li>• ทุนคุ้มครองสูงกว่าเบี้ยที่จ่ายทันที</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Needs-Based Calculator -->
+    <div class="legacy-wrap reveal">
+      <div class="px-8 py-12 md:px-12 md:py-14 relative z-10">
+        <div class="font-pop font-bold text-xs uppercase tracking-widest mb-2" style="color:rgba(255,255,255,.5)">Needs-Based Analysis</div>
+        <h3 class="font-pridi font-semibold text-white text-xl mb-6">คำนวณทุนประกันที่ครอบครัวต้องการ</h3>
+
+        <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-12 items-start">
+
+          <!-- Inputs -->
+          <div class="w-full lg:w-[340px] flex-shrink-0 space-y-5">
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">ค่าใช้จ่ายคงที่ / เดือน (฿)</label>
+                <span class="font-pop font-bold text-white text-sm" id="nb-fixed-lbl">25,000</span>
+              </div>
+              <input type="range" class="calc-slider" id="nb-fixed" min="5000" max="200000" step="5000" value="25000"
+                     oninput="document.getElementById('nb-fixed-lbl').textContent=fmtTH(+this.value);calcNeeds2()"/>
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>5K</span><span>200K</span></div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">ค่าใช้จ่าย Lifestyle / เดือน (฿)</label>
+                <span class="font-pop font-bold text-white text-sm" id="nb-life-lbl">10,000</span>
+              </div>
+              <input type="range" class="calc-slider" id="nb-life" min="0" max="100000" step="5000" value="10000"
+                     oninput="document.getElementById('nb-life-lbl').textContent=fmtTH(+this.value);calcNeeds2()"/>
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>0</span><span>100K</span></div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">หนี้สินรวม (฿)</label>
+                <span class="font-pop font-bold text-white text-sm" id="nb-debt-lbl">1,000,000</span>
+              </div>
+              <input type="range" class="calc-slider" id="nb-debt" min="0" max="20000000" step="500000" value="1000000"
+                     oninput="document.getElementById('nb-debt-lbl').textContent=fmtTH(+this.value);calcNeeds2()"/>
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>0</span><span>20M</span></div>
+            </div>
+
+            <!-- Cover Years chips -->
+            <div>
+              <label class="font-noto text-xs font-medium block mb-3" style="color:rgba(255,255,255,.75)">ระยะเวลาที่ต้องการคุ้มครอง</label>
+              <div class="flex gap-3">
+                <button id="nb-yr-5"  onclick="setCoverYears2(5)"  class="need-chip flex-1 active">5 ปี<span>คนทำงานอยู่แล้ว</span></button>
+                <button id="nb-yr-10" onclick="setCoverYears2(10)" class="need-chip flex-1">10 ปี<span>เพิ่งเริ่มทำงาน</span></button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Result -->
+          <div class="flex-1 min-w-0">
+            <div class="wealth-glass text-center mb-5" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)">
+              <div class="font-noto text-sm mb-2" style="color:rgba(255,255,255,.65)">ทุนประกันที่ครอบครัวต้องการ</div>
+              <div class="font-pop font-extrabold text-4xl text-white" id="nb-result">—</div>
+              <div class="font-noto text-xs mt-2" style="color:rgba(255,255,255,.45)" id="nb-breakdown">—</div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 mb-6">
+              <div class="wealth-glass text-center">
+                <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">ค่าใช้จ่ายรวม</div>
+                <div class="font-pop font-bold text-sm text-white" id="nb-living">—</div>
+              </div>
+              <div class="wealth-glass text-center">
+                <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">หนี้สิน</div>
+                <div class="font-pop font-bold text-sm text-white" id="nb-debt-out">—</div>
+              </div>
+              <div class="wealth-glass text-center">
+                <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">คุ้มครอง</div>
+                <div class="font-pop font-bold text-sm text-white" id="nb-yrs-out">— ปี</div>
+              </div>
+            </div>
+
+            <a href="https://lin.ee/NC0RcZM" target="_blank"
+               class="inline-flex items-center justify-center gap-3 w-full rounded-2xl font-noto font-bold text-base mb-3"
+               style="background:#fff;color:#0C1F3A;padding:14px 24px;text-decoration:none;transition:opacity .2s"
+               onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+              <svg class="w-5 h-5" fill="#06C755" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              ออกแบบทุนมรดกกับที่ปรึกษา
+            </a>
+            <a href="/solutions/legacy-planning.html" class="inline-flex items-center justify-center gap-1 w-full font-noto text-xs" style="color:rgba(255,255,255,.5)">
+              ดูแผนประกันชีวิตทั้งหมด →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section class="py-16" style="background:linear-gradient(135deg,#0891B2,#1B365D)">
+  <div class="max-w-2xl mx-auto px-5 text-center">
+    <h2 class="font-pridi font-semibold text-white text-2xl md:text-3xl mb-3">รู้ตัวเลขแล้ว — ขั้นต่อไปคือลงมือทำ</h2>
+    <p class="font-noto mb-8" style="color:rgba(255,255,255,.7)">ให้ที่ปรึกษาช่วยออกแบบแผนที่ตรงกับตัวเลขของคุณโดยเฉพาะ</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+         class="btn px-7 py-3.5 text-sm font-semibold" style="background:#fff;color:#1B365D;border-radius:.875rem">
+        📅 นัดปรึกษาฟรี 15 นาที
+      </a>
+      <a href="https://lin.ee/NC0RcZM" target="_blank" rel="noopener"
+         class="btn px-7 py-3.5 text-sm font-semibold" style="background:#06C755;color:#fff;border-radius:.875rem">
+        <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        ทักไลน์เลย
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer style="background:#0D1A2D;color:rgba(255,255,255,.7)">
+  <div class="max-w-5xl mx-auto px-5 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2.5 mb-4"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
+        <p class="font-noto text-sm leading-relaxed" style="color:rgba(255,255,255,.55)">ที่ปรึกษาการเงิน AFPT™ FChFP วางแผนเกษียณ ภาษี สุขภาพ และมรดก</p>
+      </div>
+      <div>
+        <div class="font-noto font-semibold text-white text-sm mb-4">เครื่องมือ</div>
+        <ul class="space-y-2 font-noto text-sm">
+          <li><a href="#sec-retire" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">เช็กเป้าหมายเกษียณ</a></li>
+          <li><a href="#sec-wealth" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">HLV Calculator</a></li>
+          <li><a href="#sec-tax" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">คำนวณภาษี</a></li>
+          <li><a href="#sec-legacy" class="hover:text-white transition-colors" style="color:rgba(255,255,255,.6)">ทุนมรดก</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t mt-10 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs font-noto" style="border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.4)">
+      <span>© 2025 NextLevel Advisor. All rights reserved.</span>
+      <span>ใบอนุญาตตัวแทนประกันชีวิต • กำกับโดย คปภ.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── HELPERS ───
+function fmtB(n){
+  if(n>=1000000)return(n/1000000).toFixed(1).replace(/\.0$/,'')+'M ฿';
+  if(n>=1000)return(n/1000).toFixed(0)+'K ฿';
+  return n.toLocaleString()+' ฿';
+}
+function fmtTH(n){
+  if(n>=1000000)return(n/1000000).toFixed(1).replace(/\.0$/,'')+'M';
+  if(n>=1000)return(n/1000).toFixed(0)+','+String(n%1000).padStart(3,'0');
+  return n.toLocaleString();
+}
+
+// ─── TOOL 1: RETIREMENT ───
+function calcRetire1(){
+  const age=+document.getElementById('r1-age').value;
+  const retire=+document.getElementById('r1-retire').value;
+  const life=+document.getElementById('r1-life').value;
+  const income=+document.getElementById('r1-income').value;
+  const savings=+document.getElementById('r1-savings').value;
+  if(retire<=age){
+    ['r1-goal','r1-gap','r1-have','r1-monthly'].forEach(id=>document.getElementById(id).textContent='—');
+    document.getElementById('r1-note').textContent='อายุเกษียณต้องมากกว่าอายุปัจจุบัน';
+    return;
+  }
+  const yToRetire=retire-age;
+  const retireMonths=Math.max(0,(life-retire))*12;
+  const inflatedMonthly=income*Math.pow(1.03,yToRetire);
+  const totalNeeded=inflatedMonthly*retireMonths;
+  const gap=Math.max(0,totalNeeded-savings);
+  const monthlyNeeded=yToRetire*12>0?gap/(yToRetire*12):0;
+  document.getElementById('r1-goal').textContent=fmtB(Math.round(totalNeeded));
+  document.getElementById('r1-gap').textContent=gap<=0?'✅ ครบแล้ว!':fmtB(Math.round(gap));
+  document.getElementById('r1-have').textContent=fmtB(savings);
+  document.getElementById('r1-monthly').textContent=gap<=0?'✅ ไม่ต้องออมเพิ่ม':fmtB(Math.round(monthlyNeeded));
+  document.getElementById('r1-note').textContent='สำหรับใช้ชีวิต '+(life-retire)+' ปีหลังเกษียณ';
+  document.getElementById('r1-bar-need').style.width='100%';
+  const havePct=totalNeeded>0?Math.min(100,Math.round(savings/totalNeeded*100)):0;
+  document.getElementById('r1-bar-have').style.width=havePct+'%';
+}
+calcRetire1();
+
+// ─── TOOL 2: HLV ───
+function pv(rate,n,pmt){
+  // PV of annuity
+  return pmt*(1-Math.pow(1+rate,-n))/rate;
+}
+function calcHLV(){
+  const income=+document.getElementById('hlv-income').value;
+  const age=+document.getElementById('hlv-age').value;
+  const retire=+document.getElementById('hlv-retire').value;
+  const yearsLeft=Math.max(0,retire-age);
+  const totalIncome=income*yearsLeft;
+  const hlv=yearsLeft>0?Math.round(pv(0.04,yearsLeft,income)):0;
+  document.getElementById('hlv-result').textContent=fmtB(hlv);
+  document.getElementById('hlv-years').textContent=yearsLeft+' ปี';
+  document.getElementById('hlv-total').textContent=fmtB(totalIncome);
+  // Recommended sum assured: 60% of HLV for UL, 40% for UL Plus (conservative)
+  const ulTarget=Math.round(hlv*0.6/100000)*100000;
+  const ulPlusTarget=Math.round(hlv*0.4/100000)*100000;
+  document.getElementById('ul-target').textContent='เป้าทุนแนะนำ: '+fmtB(ulTarget);
+  document.getElementById('ul-plus-target').textContent='เป้าทุนแนะนำ: '+fmtB(ulPlusTarget);
+}
+calcHLV();
+
+// ─── TOOL 3: TAX ───
+function calcTaxOnIncome(taxable){
+  const bands=[{limit:150000,rate:0},{limit:150000,rate:.05},{limit:200000,rate:.10},{limit:250000,rate:.15},{limit:250000,rate:.20},{limit:500000,rate:.25},{limit:750000,rate:.30},{limit:Infinity,rate:.35}];
+  let tax=0,rem=taxable;
+  for(const b of bands){if(rem<=0)break;const chunk=Math.min(rem,b.limit);tax+=chunk*b.rate;rem-=chunk;}
+  return tax;
+}
+function marginalRate(taxable){
+  const thresholds=[0,150000,300000,500000,750000,1000000,2000000,5000000];
+  const rates=[0,.05,.10,.15,.20,.25,.30,.35];
+  for(let i=rates.length-1;i>=0;i--){if(taxable>thresholds[i])return rates[i];}
+  return 0;
+}
+let taxIncome=400000;
+function setTaxIncome(val){
+  taxIncome=val;
+  document.getElementById('ti-custom').value=val;
+  ['ti-200','ti-400','ti-600','ti-800','ti-1M'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('selected');});
+  const map={200000:'ti-200',400000:'ti-400',600000:'ti-600',800000:'ti-800',1000000:'ti-1M'};
+  if(map[val]){const el=document.getElementById(map[val]);if(el)el.classList.add('selected');}
+  calcTax2();
+}
+function setTaxIncomeCustom(v){
+  const val=parseFloat(v);
+  if(!isNaN(val)&&val>0){taxIncome=val;['ti-200','ti-400','ti-600','ti-800','ti-1M'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('selected');});calcTax2();}
+}
+function calcTax2(){
+  const endow=+document.getElementById('tax-endow').value;
+  const pension=+document.getElementById('tax-pension').value;
+  const totalDeduct=endow+pension;
+  const stdDeduct=Math.min(taxIncome*0.5,100000);
+  const personal=60000;
+  const taxableBase=Math.max(0,taxIncome-stdDeduct-personal);
+  const taxBefore=calcTaxOnIncome(taxableBase);
+  const taxAfter=calcTaxOnIncome(Math.max(0,taxableBase-totalDeduct));
+  const saved=taxBefore-taxAfter;
+  const mRate=marginalRate(taxableBase);
+  document.getElementById('tax2-save').textContent=saved>0?'฿'+Math.round(saved).toLocaleString():'฿0';
+  document.getElementById('tax2-monthly').textContent=saved>0?'฿'+Math.round(saved/12).toLocaleString():'฿0';
+  document.getElementById('tax2-bracket').textContent='ฐานภาษีคุณ '+Math.round(mRate*100)+'% · ลดหย่อนรวม ฿'+totalDeduct.toLocaleString();
+}
+calcTax2();
+
+// ─── TOOL 4: NEEDS-BASED ───
+let nbCoverYears=5;
+function setCoverYears2(y){
+  nbCoverYears=y;
+  document.getElementById('nb-yr-5').classList.toggle('active',y===5);
+  document.getElementById('nb-yr-10').classList.toggle('active',y===10);
+  calcNeeds2();
+}
+function calcNeeds2(){
+  const fixed=+document.getElementById('nb-fixed').value;
+  const lifestyle=+document.getElementById('nb-life').value;
+  const debt=+document.getElementById('nb-debt').value;
+  const living=(fixed+lifestyle)*12*nbCoverYears;
+  const total=living+debt;
+  document.getElementById('nb-result').textContent=fmtB(total);
+  document.getElementById('nb-breakdown').textContent='ค่าใช้จ่าย '+fmtB(living)+' + หนี้ '+fmtB(debt);
+  document.getElementById('nb-living').textContent=fmtB(living);
+  document.getElementById('nb-debt-out').textContent=fmtB(debt);
+  document.getElementById('nb-yrs-out').textContent=nbCoverYears+' ปี';
+}
+calcNeeds2();
+
+// ─── NAV SCROLL-SPY ───
+const sections=['sec-retire','sec-wealth','sec-tax','sec-legacy'];
+const btns=sections.map(id=>document.querySelector('.snav-btn[href="#'+id+'"]'));
+function onScroll(){
+  let current=sections[0];
+  for(const id of sections){
+    const el=document.getElementById(id);
+    if(!el)continue;
+    if(window.scrollY>=el.offsetTop-140)current=id;
+  }
+  btns.forEach((b,i)=>{if(!b)return;b.classList.toggle('active',sections[i]===current);});
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+
+// ─── REVEAL ───
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ─── MOBILE MENU ───
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20));
+</script>
+</body>
+</html>

@@ -162,8 +162,8 @@
 <section class="py-20" style="background:#F8FAFC">
   <div class="max-w-3xl mx-auto px-5">
     <div class="reveal">
-      <span class="sec-label">The Journey</span>
-      <h2 class="font-pop font-extrabold text-navy mt-3 mb-10" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">เส้นทางที่มาของป้อง</h2>
+      <span class="sec-label">The Journey · เส้นทางที่มา</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3 mb-10" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">สวัสดีครับ ผมป้อง</h2>
     </div>
     <div class="space-y-7 reveal">
       <p class="font-pop font-semibold mb-2" style="font-size:1.05rem;color:#0891B2">สวัสดีครับ ผมป้อง</p>
@@ -517,8 +517,8 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
-  // ── Team cards: tap-to-reveal on mobile ──
+<script>
+// ── Team cards: tap-to-reveal on mobile ──
   (function(){
     document.querySelectorAll('.team-card-new').forEach(function(card){
       card.addEventListener('click',function(){
@@ -528,5 +528,6 @@
       });
     });
   })();
+</script>
 </body>
 </html>
