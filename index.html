@@ -128,6 +128,20 @@
     .reveal{transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
     .js-reveal .reveal{opacity:0;transform:translateY(26px)}
     .js-reveal .reveal.show{opacity:1;transform:none}
+
+  /* Credential tooltip */
+  .cred-card { position:relative; cursor:pointer; }
+  .cred-tip {
+    display:none; position:absolute; bottom:calc(100% + 8px); left:50%;
+    transform:translateX(-50%); width:220px; background:#1B365D; color:#fff;
+    font-family:'Noto Sans Thai',sans-serif; font-size:.78rem; line-height:1.5;
+    padding:10px 14px; border-radius:12px; z-index:100; text-align:center;
+    box-shadow:0 4px 20px rgba(0,0,0,.18);
+    pointer-events:none;
+  }
+  .cred-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:#1B365D; }
+  .cred-card:hover .cred-tip,
+  .cred-card.tip-open .cred-tip { display:block; }
   </style>
   <!-- SEO: Canonical & Open Graph -->
   <link rel="canonical" href="https://nextlevel-advisor.com/"/>
@@ -218,6 +232,7 @@
       <img src="nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
       <div class="hidden sm:block leading-tight">
         <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#1B365D">Advisor</span></div>
+        <div class="font-noto text-xs" style="color:#64748b;letter-spacing:.01em">วางแผนการเงิน · ประกันชีวิต · เกษียณ</div>
       </div>
     </a>
     <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
@@ -259,6 +274,17 @@
 </nav>
 
 
+<div id="sectionNav" class="hidden md:block sticky top-[68px] z-40 bg-white border-b border-slate-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="flex items-center gap-0 overflow-x-auto scrollbar-hide">
+      <a href="#solutions-section" class="section-nav-link font-noto text-sm font-medium px-5 py-3.5 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap">โซลูชัน</a>
+      <a href="#tools-section" class="section-nav-link font-noto text-sm font-medium px-5 py-3.5 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap">เครื่องมือ</a>
+      <a href="#team-section" class="section-nav-link font-noto text-sm font-medium px-5 py-3.5 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap">ทีม</a>
+      <a href="#contact-section" class="section-nav-link font-noto text-sm font-medium px-5 py-3.5 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap">ติดต่อ</a>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════════ HERO ══════════════ -->
 <section class="relative min-h-screen flex items-center overflow-hidden bg-white">
   <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 65% 55% at 72% 50%,rgba(8,145,178,.05) 0%,transparent 65%)"></div>
@@ -279,8 +305,9 @@
         ที่ปรึกษาการเงิน MDRT 2026 &nbsp;·&nbsp; FChFP &nbsp;·&nbsp; ใบอนุญาต ก.ล.ต.
       </p>
       <p class="font-noto text-slate-500 leading-relaxed mb-8 max-w-md" style="font-size:clamp(.95rem,1.5vw,1.05rem)">
-        ดีไซน์ความมั่งคั่งและแผนเกษียณแบบครบวงจร<br class="hidden sm:block"/>
-        โดยที่ปรึกษาการเงินมืออาชีพ
+        เปลี่ยนเป้าหมายให้เป็นแผนที่จับต้องได้<br class="hidden sm:block"/>
+        ผ่านการวิเคราะห์ความเสี่ยงและโซลูชันประกันชีวิต<br class="hidden sm:block"/>
+        โดยที่ปรึกษาการเงินมืออาชีพ MDRT 2026
       </p>
       <div class="flex flex-wrap gap-4 mb-10">
         <a href="https://line.me/ti/p/~@nextlevel-advisor" target="_blank" class="btn btn-teal px-7 py-4 text-base">
@@ -288,31 +315,7 @@
           นัดปรึกษาฟรี ทาง LINE
         </a>
       </div>
-      <!-- Trust badges -->
-      <div class="flex flex-wrap gap-2.5">
-        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <img src="MDRT.jpeg" alt="MDRT" class="w-8 h-8 object-contain rounded"/>
-          <div><div class="font-pop font-bold text-navy text-xs">MDRT</div><div class="font-noto text-slate-400 text-xs">Member</div></div>
-        </div>
-        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <img src="FChFP-Logo.svg" alt="FChFP" class="w-8 h-8 object-contain"/>
-          <div><div class="font-pop font-bold text-navy text-xs">FChFP</div><div class="font-noto text-slate-400 text-xs">Certified</div></div>
-        </div>
-        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <img src="AFPT.jpg" alt="AFPT" class="w-8 h-8 object-contain rounded"/>
-          <div><div class="font-pop font-bold text-navy text-xs">AFPT™</div><div class="font-noto text-slate-400 text-xs">Financial Planner</div></div>
-        </div>
-        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <img src="ic-logo.png" alt="IC License" class="w-8 h-8 object-contain rounded"/>
-          <div><div class="font-pop font-bold text-navy text-xs">IC License</div><div class="font-noto text-slate-400 text-xs">SEC</div></div>
-        </div>
-        <div class="glass border border-slate-100 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-card">
-          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(27,54,93,.08)">
-            <svg class="w-4 h-4" style="color:#1B365D" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-          </div>
-          <div><div class="font-pop font-bold text-navy text-xs">ใบอนุญาตฯ</div><div class="font-noto text-slate-400 text-xs">ตัวแทนประกันชีวิต คปภ.</div></div>
-        </div>
-      </div>
+
     </div>
 
     <!-- RIGHT -->
@@ -331,6 +334,46 @@
   </div>
 </section>
 
+
+
+<!-- ══════════════ SEARCH BAR ══════════════ -->
+<div style="background:#F0F9FF;border-top:1px solid #E0F2FE;border-bottom:1px solid #E0F2FE" class="py-4">
+  <div class="max-w-2xl mx-auto px-5">
+    <div class="relative">
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="siteSearch" type="text" placeholder="ค้นหา เช่น ลดหย่อนภาษี, คุ้มครองชีวิต, วางแผนเกษียณ..."
+        class="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 font-noto text-sm text-navy bg-white shadow-sm focus:outline-none focus:ring-2 focus:border-transparent"
+        style="focus-ring-color:#0891B2"
+        autocomplete="off"/>
+    </div>
+    <div id="searchResults" class="hidden mt-2 bg-white rounded-2xl border border-slate-100 shadow-lg overflow-hidden z-50"></div>
+  </div>
+</div>
+<script>
+(function(){
+  const index=[
+    {label:"วางแผนภาษีและลดหย่อน",url:"/solutions/retirement-tax.html",icon:"💰"},
+    {label:"วางแผนสุขภาพและประกันชีวิต",url:"/solutions/health-planning.html",icon:"❤️"},
+    {label:"วางแผนมรดกและส่งต่อความมั่งคั่ง",url:"/solutions/legacy-planning.html",icon:"🏛️"},
+    {label:"วางแผนความมั่งคั่งและการออม",url:"/solutions/wealth-growth.html",icon:"📈"},
+    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮"},
+    {label:"About - Behind the Advisor",url:"/behind-the-advisor",icon:"👤"},
+    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬"},
+  ];
+  const inp=document.getElementById('siteSearch');
+  const res=document.getElementById('searchResults');
+  if(!inp) return;
+  inp.addEventListener('input',function(){
+    const q=inp.value.trim().toLowerCase();
+    if(!q){res.classList.add('hidden');res.innerHTML='';return;}
+    const matches=index.filter(x=>x.label.toLowerCase().includes(q)||x.url.toLowerCase().includes(q));
+    if(!matches.length){res.classList.add('hidden');return;}
+    res.innerHTML=matches.map(x=>`<a href="${x.url}" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 border-b border-slate-50 font-noto text-sm text-navy transition-colors"><span class="text-lg">${x.icon}</span>${x.label}</a>`).join('');
+    res.classList.remove('hidden');
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('#siteSearch')&&!e.target.closest('#searchResults')){res.classList.add('hidden');}});
+})();
+</script>
 
 <!-- ══════════════ TRUST MARQUEE ══════════════ -->
 <div style="background:#F8FAFC;border-top:1px solid #EEF2F7;border-bottom:1px solid #EEF2F7;overflow:hidden" class="py-3.5">
@@ -365,7 +408,7 @@
 
 
 <!-- ══════════════ SIGNATURE SOLUTIONS ══════════════ -->
-<section id="solutions" class="py-20 bg-white">
+<section id="solutions-section" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-5">
     <div class="mb-12 reveal">
       <span class="sec-label">Signature Solutions</span>
@@ -542,7 +585,7 @@
 
 
 <!-- ══════════════ CALCULATOR BANNER ══════════════ -->
-<section id="calculator" class="py-20 bg-white">
+<section id="tools-section" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-5">
     <div class="calc-wrap reveal">
       <div class="px-8 py-12 md:px-12 md:py-14 flex flex-wrap lg:flex-nowrap lg:flex-row items-start gap-6 lg:gap-14 relative z-10">
@@ -875,21 +918,25 @@ calcRetire();
     </div>
     <!-- Licenses -->
     <div class="flex flex-wrap justify-center gap-4 mb-14 reveal">
-      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
         <img src="MDRT.jpeg" alt="MDRT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
         <div><div class="font-pop font-bold text-navy text-sm">MDRT Member</div><div class="font-noto text-slate-400 text-xs">Million Dollar Round Table</div></div>
+        <div class="cred-tip">สมาชิก Million Dollar Round Table — มาตรฐานระดับสากลด้านคุณภาพการให้บริการการเงิน</div>
       </div>
-      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
         <img src="FChFP-Logo.svg" alt="FChFP" class="w-10 h-10 object-contain grayscale"/>
         <div><div class="font-pop font-bold text-navy text-sm">FChFP</div><div class="font-noto text-slate-400 text-xs">Fellow Chartered Financial Practitioner</div></div>
+        <div class="cred-tip">วุฒิบัตรนักวางแผนการเงินระดับสูงจากสมาคมนักวางแผนการเงินแห่งเอเชีย</div>
       </div>
-      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
         <img src="AFPT.jpg" alt="AFPT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
         <div><div class="font-pop font-bold text-navy text-sm">AFPT™</div><div class="font-noto text-slate-400 text-xs">Associate Financial Planner Thailand</div></div>
+        <div class="cred-tip">ที่ปรึกษานักวางแผนการเงิน รับรองโดยสมาคมนักวางแผนการเงินไทย (TFPA)</div>
       </div>
-      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
         <img src="ic-logo.png" alt="IC License" class="w-10 h-10 object-contain rounded-lg grayscale"/>
         <div><div class="font-pop font-bold text-navy text-sm">IC License</div><div class="font-noto text-slate-400 text-xs">ที่ปรึกษาการลงทุน SEC</div></div>
+        <div class="cred-tip">ใบอนุญาตที่ปรึกษาการลงทุน ออกโดย ก.ล.ต. — กำกับดูแลมาตรฐานการให้คำแนะนำด้านการลงทุน</div>
       </div>
       <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(27,54,93,.08)">
@@ -1114,11 +1161,11 @@ calcRetire();
 
 
 <!-- ══════════════ OUR TEAM ══════════════ -->
-<section class="py-20" style="background:#EFF9FC">
+<section id="team-section" class="py-20" style="background:#EFF9FC">
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-12 reveal">
       <span class="sec-label">Our Team</span>
-      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">หลากหลายที่มา&nbsp; หนึ่งเป้าหมายคือคุณ</h2>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">รวมประสบการณ์ จากหลากหลายที่มา</h2>
       <p class="font-noto text-slate-400 mt-3 text-sm">เลื่อนเมาส์ หรือแตะที่รูปเพื่อดูที่มา</p>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5">
@@ -1215,14 +1262,14 @@ calcRetire();
 </section>
 
 <!-- ══════════════ FINAL CTA ══════════════ -->
-<section class="py-24 bg-white">
+<section id="contact-section" class="py-24 bg-white">
   <div class="max-w-3xl mx-auto px-5 text-center reveal">
     <span class="sec-label mb-4 inline-block">Free Consultation</span>
-    <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.8rem,3.5vw,2.6rem)">เริ่มต้นออกแบบ<br/>ความมั่งคั่งของคุณ</h2>
+    <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.8rem,3.5vw,2.6rem)">ออกแบบความมั่งคั่ง<br/>ในแบบที่คุณต้องการ</h2>
     <p class="font-noto text-slate-400 mt-4 mb-9" style="font-size:1rem">ปรึกษาเบื้องต้น 15 นาที (ฟรี ไม่มีข้อผูกมัด)</p>
     <a href="https://calendly.com/insuremate99/15" class="btn btn-teal px-10 py-4 text-base mx-auto">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      นัดคุยส่วนตัว 15 นาที
+      นัดหมายรับคำปรึกษา
     </a>
     <p class="font-noto text-slate-300 text-xs mt-4">ผ่าน LINE, Zoom หรือพบตามความสะดวก</p>
   </div>
@@ -1267,17 +1314,14 @@ calcRetire();
             <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
             LINE OA: @nextlevel-advisor
           </a></li>
-          <li><a href="https://instagram.com/nextlevel_advisor" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
-            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            IG: @nextlevel_advisor
-          </a></li>
-          <li><a href="https://tiktok.com/@nextlevel.fin" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
+
+          <li><a href="https://www.tiktok.com/@pong.nextlevel?_r=1&amp;_t=ZS-966Dna2VNkj" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
             <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.52V6.75a4.85 4.85 0 01-1.02-.06z"/></svg>
-            TikTok: @nextlevel.fin
+            TikTok: Pong.Nextlevel
           </a></li>
           <li><a href="https://www.facebook.com/Financialadvisordiary" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
             <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-            FB: Financialadvisordiary
+            กว่าจะเป็นที่ปรึกษาทางการเงิน
           </a></li>
         </ul>
       </div>
