@@ -159,7 +159,7 @@ let searchQuery = '';
 
 async function loadArticles() {
   try {
-    const res = await fetch('articles.json');
+    const res = await fetch('/articles/articles.json');
     allArticles = await res.json();
     allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
     renderArticles();
