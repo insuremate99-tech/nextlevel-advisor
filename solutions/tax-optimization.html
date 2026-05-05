@@ -700,18 +700,20 @@ let currentIncome = 400000;
 
 function setIncome(val) {
   currentIncome = val;
-  document.getElementById('income-custom').value = '';
-  document.querySelectorAll('.inc-btn').forEach(b => {
-    b.classList.toggle('selected', parseInt(b.dataset.val) === val);
-  });
+  document.getElementById('income-custom').value = val;
+  const map = {200000:'inc-200',400000:'inc-400',600000:'inc-600',800000:'inc-800',1000000:'inc-1M'};
+  Object.values(map).forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('selected'); });
+  if (map[val]) { const el=document.getElementById(map[val]); if(el) el.classList.add('selected'); }
   calcTax();
 }
 
-function setIncomeCustom() {
-  const v = parseFloat(document.getElementById('income-custom').value);
+function setIncomeCustom(rawVal) {
+  const v = parseFloat(rawVal || document.getElementById('income-custom').value);
   if (!isNaN(v) && v > 0) {
     currentIncome = v;
-    document.querySelectorAll('.inc-btn').forEach(b => b.classList.remove('selected'));
+    ['inc-200','inc-400','inc-600','inc-800','inc-1M'].forEach(id => {
+      const el=document.getElementById(id); if(el) el.classList.remove('selected');
+    });
     calcTax();
   }
 }
@@ -764,13 +766,23 @@ function calcTax() {
 
   document.getElementById('tax-deduct-total').textContent = '฿' + totalDeduct.toLocaleString();
   document.getElementById('tax-refund').textContent       = '฿' + Math.round(taxSaved).toLocaleString();
-  document.getElementById('tax-monthly').textContent      = '฿' + Math.round(monthly).toLocaleString() + ' / เดือน';
+  const tsEl = document.getElementById('tax-total-save'); if(tsEl) tsEl.textContent = '฿' + Math.round(monthly).toLocaleString() + ' / เดือน';
   document.getElementById('tax-irr').textContent          = '+' + irrBoost + '%';
-  document.getElementById('tax-rate-badge').textContent   = 'ฐานภาษี ' + Math.round(mRate*100) + '%';
+  const rbEl = document.getElementById('tax-bracket-label'); if(rbEl) rbEl.textContent = 'ฐานภาษีคุณ ' + Math.round(mRate*100) + '%';
+  document.getElementById('tax-bracket-label2') && (document.getElementById('tax-bracket-label2')
+  // bracket label updated above
+  const summaryEl = document.getElementById('tax-summary');
+  if(summaryEl && totalDeduct > 0) {
+    summaryEl.innerHTML = `
+      <div class="flex items-center gap-2"><span class="text-teal">✓</span>ลดหย่อนรวม ฿${totalDeduct.toLocaleString()}</div>
+      <div class="flex items-center gap-2"><span class="text-teal">✓</span>ฐานภาษี ${Math.round(mRate*100)}% → ประหยัด ฿${Math.round(taxSaved).toLocaleString()}/ปี</div>
+      <div class="flex items-center gap-2"><span class="text-teal">✓</span>เทียบเท่าเงินเดือนพิเศษ ฿${Math.round(monthly).toLocaleString()}/เดือน</div>
+    `;
+  }textContent   = 'ฐานภาษี ' + Math.round(mRate*100) + '%';
 
   // Color the refund: green if > 0
   const refundEl = document.getElementById('tax-refund');
-  refundEl.style.color = taxSaved > 0 ? '#34D399' : 'rgba(255,255,255,0.5)';
+  if(refundEl) refundEl.style.color = taxSaved > 0 ? '#34D399' : 'rgba(255,255,255,0.5)';
 }
 
 // Init sliders ↔ number inputs
@@ -867,7 +879,7 @@ document.getElementById('chk-pension-half').addEventListener('change', function(
 //  STICKY NAV SCROLL-SPY
 // ─────────────────────────────────────────────
 (function(){
-  const sections = ['sec-map','sec-endow','sec-pension','sec-taxsim','sec-gap'];
+  const sections = ['sec-taxmap','sec-endow','sec-pension','sec-sim1','sec-sim2'];
   const btns     = sections.map(id => document.querySelector('.snav-btn[href="#'+id+'"]'));
 
   function onScroll() {
