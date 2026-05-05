@@ -218,5 +218,17 @@
     "readTime": "5 นาที",
     "featured": false,
     "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
+  },
+  {
+    "slug": "zim-line-seminar",
+    "title": "Financial Planning Made Simple",
+    "excerpt": "บรรยาย Financial Planning Made Simple ให้กับบริษัท Zim Line สายเดินเรือใหญ่ เรื่องเงินเป็นเรื่องง่ายและใกล้ตัวสำหรับคนทำงานทุกคน",
+    "category": "อัพเดท",
+    "date": "2026-03-18",
+    "dateDisplay": "18 มี.ค. 2569",
+    "readTime": "3 นาที",
+    "featured": false,
+    "coverImage": "../Perspecitive/per13.jpg",
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
   }
 ]
