@@ -174,6 +174,9 @@ html{scroll-behavior:smooth}
           <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ยืดหยุ่นสูงสุด เหมาะครอบครัวขยาย</li>
         </ul>
         <span class="badge badge-teal" style="margin-bottom:0">Full Customization</span>
+        <div class="mt-4 pt-4 border-t border-slate-100">
+          <a href="/pdfs/wealth/mdesign.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ mDesign</a>
+        </div>
       </div>
       <div class="prod-card">
         <div class="badge badge-green">🌱 จ่าย 6 ปี คุ้มครอง 15 ปี</div>
@@ -186,6 +189,9 @@ html{scroll-behavior:smooth}
           <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ขยายความคุ้มครองถึงอายุ 99 ปีได้</li>
         </ul>
         <span class="badge badge-green" style="margin-bottom:0">6-Pay Bonus</span>
+        <div class="mt-4 pt-4 border-t border-slate-100">
+          <a href="/pdfs/wealth/mgrow615.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ mGrow 615</a>
+        </div>
       </div>
       <div class="prod-card">
         <div class="badge badge-purple">💜 จ่ายครั้งเดียว</div>
@@ -198,6 +204,9 @@ html{scroll-behavior:smooth}
           <li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะผู้มีเงินก้อนพร้อมลงทุน</li>
         </ul>
         <span class="badge badge-purple" style="margin-bottom:0">Single Premium</span>
+        <div class="mt-4 pt-4 border-t border-slate-100">
+          <a href="/pdfs/wealth/moneplus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-purple-600 border border-purple-200 rounded-lg px-3 py-1.5 hover:bg-purple-50 transition-colors">📄 โบรชัวร์ mOnePlus</a>
+        </div>
       </div>
     </div>
 
@@ -297,6 +306,9 @@ html{scroll-behavior:smooth}
             <div class="who-chip text-xs">🛡️ ต้องการผลตอบแทนชนะเงินเฟ้อ แต่ยังอยากอุ่นใจ</div>
             <div class="who-chip text-xs">👴 วัย 40+ ที่ต้องการวางแผนเกษียณแบบ "แน่นอน"</div>
             <div class="who-chip text-xs">📐 นักวางแผนที่ต้องการตัวเลขแม่นยำ ไม่ชอบผันผวน</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-amber-200">
+            <a href="/pdfs/wealth/ul-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-amber-700 border border-amber-300 rounded-lg px-3 py-1.5 hover:bg-amber-50 transition-colors">📄 โบรชัวร์ UL Plus</a>
           </div>
         </div>
       </div>
@@ -537,11 +549,11 @@ html{scroll-behavior:smooth}
           </div>
         </div>
         <div>
-          <span class="sim-label">สมมติผลตอบแทน ILP</span>
+          <span class="sim-label">คาดการณ์ผลตอบแทนการลงทุน <span style="color:#94A3B8;font-weight:400">(เลือกสถานการณ์)</span></span>
           <div class="flex gap-2">
-            <button onclick="setGGRate(5)" id="gg-rate-5" class="sim-btn flex-1 text-xs">5%</button>
-            <button onclick="setGGRate(7)" id="gg-rate-7" class="sim-btn flex-1 selected text-xs">7%</button>
-            <button onclick="setGGRate(9)" id="gg-rate-9" class="sim-btn flex-1 text-xs">9%</button>
+            <button onclick="setGGRate(1)" id="gg-rate-1" class="sim-btn flex-1 text-xs">1%<br/><span style="font-size:.65rem;color:#94A3B8">อนุรักษ์</span></button>
+            <button onclick="setGGRate(3)" id="gg-rate-3" class="sim-btn flex-1 selected text-xs">3%<br/><span style="font-size:.65rem;color:#94A3B8">กลาง</span></button>
+            <button onclick="setGGRate(5)" id="gg-rate-5" class="sim-btn flex-1 text-xs">5%<br/><span style="font-size:.65rem;color:#94A3B8">เติบโต</span></button>
           </div>
         </div>
       </div>
@@ -809,7 +821,7 @@ function calcWealth(){
 // ═══════════════════════════════════════════════════
 // GUARANTEED vs GROWTH SIMULATOR
 // ═══════════════════════════════════════════════════
-let ggYears=10, ggRate=0.07;
+let ggYears=10, ggRate=0.03;
 let ggChart=null;
 
 function setGGYear(y){
@@ -822,7 +834,7 @@ function setGGYear(y){
 
 function setGGRate(r){
   ggRate=r/100;
-  [5,7,9].forEach(n=>{
+  [1,3,5].forEach(n=>{
     document.getElementById('gg-rate-'+n).className='sim-btn flex-1 text-xs'+(n===r?' selected':'');
   });
   document.getElementById('gg-rate-label').textContent='สมมติ '+r+'% ต่อปี (ไม่การันตี)';
