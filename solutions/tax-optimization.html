@@ -769,8 +769,9 @@ function calcTax() {
   const tsEl = document.getElementById('tax-total-save'); if(tsEl) tsEl.textContent = '฿' + Math.round(monthly).toLocaleString() + ' / เดือน';
   document.getElementById('tax-irr').textContent          = '+' + irrBoost + '%';
   const rbEl = document.getElementById('tax-bracket-label'); if(rbEl) rbEl.textContent = 'ฐานภาษีคุณ ' + Math.round(mRate*100) + '%';
-  document.getElementById('tax-bracket-label2') && (document.getElementById('tax-bracket-label2')
-  // bracket label updated above
+  const rb2El = document.getElementById('tax-bracket-label2');
+  if(rb2El) rb2El.textContent = 'ฐานภาษี ' + Math.round(mRate*100) + '%';
+
   const summaryEl = document.getElementById('tax-summary');
   if(summaryEl && totalDeduct > 0) {
     summaryEl.innerHTML = `
@@ -778,7 +779,7 @@ function calcTax() {
       <div class="flex items-center gap-2"><span class="text-teal">✓</span>ฐานภาษี ${Math.round(mRate*100)}% → ประหยัด ฿${Math.round(taxSaved).toLocaleString()}/ปี</div>
       <div class="flex items-center gap-2"><span class="text-teal">✓</span>เทียบเท่าเงินเดือนพิเศษ ฿${Math.round(monthly).toLocaleString()}/เดือน</div>
     `;
-  }textContent   = 'ฐานภาษี ' + Math.round(mRate*100) + '%';
+  }
 
   // Color the refund: green if > 0
   const refundEl = document.getElementById('tax-refund');
