@@ -928,13 +928,13 @@ calcRetire();
     <script>
     (async () => {
       try {
-        const res = await fetch('/articles/articles.json');
+        const res = await fetch('/articles/articles.json?v=' + Date.now());
         const articles = await res.json();
         articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         const card = a => `
           <a href="/articles/${a.slug}.html" class="art-card group">
-            <div class="h-32 flex items-end p-4" style="background:${a.coverGradient}">
+            <div class="h-32 flex items-end p-4" style="background:${a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)'}">
               <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
             </div>
             <div class="p-4">
