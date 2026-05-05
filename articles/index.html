@@ -255,11 +255,12 @@ function renderArticles() {
   const countEl = document.getElementById('articleCount');
 
   const filtered = allArticles.filter(a => {
-    const matchCat = activeCategory === 'all' || a.category === activeCategory;
+    const allCats = [a.category, ...(a.tags || [])];
+    const matchCat = activeCategory === 'all' || allCats.includes(activeCategory);
     const matchSearch = !searchQuery ||
       a.title.toLowerCase().includes(searchQuery) ||
       a.excerpt.toLowerCase().includes(searchQuery) ||
-      a.category.toLowerCase().includes(searchQuery);
+      allCats.join(' ').toLowerCase().includes(searchQuery);
     return matchCat && matchSearch;
   });
 
@@ -287,8 +288,9 @@ function renderArticles() {
     <a href="/articles/${a.slug}" class="art-card" style="animation:fadeUp .4s ease ${i * 0.06}s both">
       ${cardTop}
       <div class="p-5">
-        <div class="flex gap-2 mb-2">
+        <div class="flex gap-1 flex-wrap mb-2">
           <span class="tag" style="background:#EFF6FF;color:#1B365D;font-size:.65rem">${a.category}</span>
+          ${(a.tags||[]).map(t=>`<span class="tag" style="background:#F1F5F9;color:#64748B;font-size:.6rem">${t}</span>`).join('')}
           ${a.featured ? '<span class="tag" style="background:#FEF3C7;color:#92400E;font-size:.65rem">&#11088; แนะนำ</span>' : ''}
         </div>
         <h2 class="font-pridi font-semibold leading-snug mb-2" style="font-size:.98rem;color:#1B365D">${a.title}</h2>

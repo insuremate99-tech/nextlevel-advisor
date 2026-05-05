@@ -21,7 +21,10 @@
     "readTime": "5 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per17.jpg",
-    "coverGradient": "linear-gradient(135deg,#059669,#047857)"
+    "coverGradient": "linear-gradient(135deg,#059669,#047857)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "waiting-period",
@@ -32,7 +35,10 @@
     "dateDisplay": "3 มี.ค. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "first-insurance-mistakes",
@@ -43,7 +49,10 @@
     "dateDisplay": "28 ก.พ. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "agent-roadmap",
@@ -55,7 +64,11 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per18.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "อัพเดท",
+      "แนวคิด"
+    ]
   },
   {
     "slug": "income-vs-inflation",
@@ -66,7 +79,11 @@
     "dateDisplay": "24 ก.พ. 2569",
     "readTime": "4 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)"
+    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)",
+    "tags": [
+      "ลงทุน",
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "mdrt-first-year",
@@ -78,7 +95,10 @@
     "readTime": "3 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per19.jpg",
-    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)"
+    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)",
+    "tags": [
+      "แนวคิด"
+    ]
   },
   {
     "slug": "thirty-thousand-inflation",
@@ -90,7 +110,11 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per20.jpg",
-    "coverGradient": "linear-gradient(135deg,#0369A1,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#0369A1,#0891B2)",
+    "tags": [
+      "ลงทุน",
+      "เศรษฐกิจ"
+    ]
   },
   {
     "slug": "health-vs-critical-illness",
@@ -101,7 +125,10 @@
     "dateDisplay": "17 ก.พ. 2569",
     "readTime": "3 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "young-insurance-myth",
@@ -112,7 +139,10 @@
     "dateDisplay": "16 ก.พ. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "life-insurance-return",
@@ -123,7 +153,11 @@
     "dateDisplay": "13 ก.พ. 2569",
     "readTime": "4 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "ลงทุน",
+      "มรดก"
+    ]
   },
   {
     "slug": "valentine-insurance",
@@ -135,7 +169,10 @@
     "readTime": "3 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per21.jpg",
-    "coverGradient": "linear-gradient(135deg,#BE185D,#9D174D)"
+    "coverGradient": "linear-gradient(135deg,#BE185D,#9D174D)",
+    "tags": [
+      "แนวคิด"
+    ]
   },
   {
     "slug": "economy-politics-rant",
@@ -146,7 +183,10 @@
     "dateDisplay": "9 ก.พ. 2569",
     "readTime": "4 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)"
+    "coverGradient": "linear-gradient(135deg,#B45309,#92400E)",
+    "tags": [
+      "แนวคิด"
+    ]
   },
   {
     "slug": "health-premium-solutions",
@@ -158,7 +198,11 @@
     "readTime": "6 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per24.jpg",
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ",
+      "เกษียณ"
+    ]
   },
   {
     "slug": "fixed-premium-plan",
@@ -170,7 +214,11 @@
     "readTime": "6 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per25.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "สุขภาพ",
+      "เกษียณ"
+    ]
   },
   {
     "slug": "health-insurance-true-cost",
@@ -182,7 +230,11 @@
     "readTime": "6 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per26.jpg",
-    "coverGradient": "linear-gradient(135deg,#DC2626,#7F1D1D)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#7F1D1D)",
+    "tags": [
+      "สุขภาพ",
+      "เกษียณ"
+    ]
   },
   {
     "slug": "hospital-room-gap",
@@ -193,7 +245,10 @@
     "dateDisplay": "3 ก.พ. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "social-vs-private-insurance",
@@ -205,7 +260,11 @@
     "readTime": "8 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per27.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "สุขภาพ",
+      "เกษียณ"
+    ]
   },
   {
     "slug": "opd-coverage",
@@ -216,7 +275,10 @@
     "dateDisplay": "26 ม.ค. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "choose-advisor",
@@ -227,7 +289,11 @@
     "dateDisplay": "15 ม.ค. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "แนวคิด",
+      "ลงทุน"
+    ]
   },
   {
     "slug": "health-insurance-end",
@@ -238,7 +304,11 @@
     "dateDisplay": "13 ม.ค. 2569",
     "readTime": "6 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)"
+    "coverGradient": "linear-gradient(135deg,#DC2626,#991B1B)",
+    "tags": [
+      "สุขภาพ",
+      "อัพเดท"
+    ]
   },
   {
     "slug": "five-insurance-movements",
@@ -249,7 +319,11 @@
     "dateDisplay": "10 ม.ค. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "อัพเดท",
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "forest-app-focus",
@@ -273,7 +347,10 @@
     "readTime": "5 นาที",
     "featured": true,
     "coverImage": "../Perspecitive/per5.jpg",
-    "coverGradient": "linear-gradient(135deg,#0369A1,#065A7A)"
+    "coverGradient": "linear-gradient(135deg,#0369A1,#065A7A)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "no-discount-insurance",
@@ -284,7 +361,10 @@
     "dateDisplay": "28 เม.ย. 2568",
     "readTime": "4 นาที",
     "featured": true,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#2563EB)"
+    "coverGradient": "linear-gradient(135deg,#1E3A5F,#2563EB)",
+    "tags": [
+      "ประกัน"
+    ]
   },
   {
     "slug": "market-crisis",
@@ -296,19 +376,26 @@
     "readTime": "6 นาที",
     "featured": true,
     "coverImage": "../Perspecitive/per4.jpg",
-    "coverGradient": "linear-gradient(135deg,#7F1D1D,#B91C1C)"
+    "coverGradient": "linear-gradient(135deg,#7F1D1D,#B91C1C)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "cfp-paper2",
     "title": "CFP Paper 2 ผ่านจนได้",
     "excerpt": "ประสบการณ์สอบ CFP Paper 2 การวางแผนการลงทุน เตรียมตัวอย่างไร และบทเรียนที่ได้จากการสอบครั้งนี้",
-    "category": "ประกัน",
+    "category": "อัพเดท",
     "date": "2026-04-29",
     "dateDisplay": "29 เม.ย. 2568",
     "readTime": "5 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per3.jpg",
-    "coverGradient": "linear-gradient(135deg,#065F46,#059669)"
+    "coverGradient": "linear-gradient(135deg,#065F46,#059669)",
+    "tags": [
+      "ลงทุน",
+      "แนวคิด"
+    ]
   },
   {
     "slug": "occupation-class",
@@ -320,7 +407,10 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per2.jpg",
-    "coverGradient": "linear-gradient(135deg,#4C1D95,#7C3AED)"
+    "coverGradient": "linear-gradient(135deg,#4C1D95,#7C3AED)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "may-cashflow",
@@ -332,7 +422,10 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per1.jpg",
-    "coverGradient": "linear-gradient(135deg,#92400E,#D97706)"
+    "coverGradient": "linear-gradient(135deg,#92400E,#D97706)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "cost-of-waiting",
@@ -343,7 +436,11 @@
     "dateDisplay": "2 พ.ค. 2568",
     "readTime": "4 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0891B2)",
+    "tags": [
+      "ประกัน",
+      "เกษียณ"
+    ]
   },
   {
     "slug": "certainty-ratio",
@@ -355,7 +452,11 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per6.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "ลงทุน",
+      "ประกัน"
+    ]
   },
   {
     "slug": "group-insurance-feedback",
@@ -367,7 +468,11 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per7.jpg",
-    "coverGradient": "linear-gradient(135deg,#0F4C75,#1B6CA8)"
+    "coverGradient": "linear-gradient(135deg,#0F4C75,#1B6CA8)",
+    "tags": [
+      "ประกัน",
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "family-bcp",
@@ -378,7 +483,10 @@
     "dateDisplay": "18 เม.ย. 2568",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#164E63)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#164E63)",
+    "tags": [
+      "ประกัน"
+    ]
   },
   {
     "slug": "reality-check-songkran",
@@ -390,7 +498,10 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per8.jpg",
-    "coverGradient": "linear-gradient(135deg,#134E4A,#0F766E)"
+    "coverGradient": "linear-gradient(135deg,#134E4A,#0F766E)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "success-trap",
@@ -426,7 +537,11 @@
     "readTime": "4 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per11.jpg",
-    "coverGradient": "linear-gradient(135deg,#0369A1,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#0369A1,#0891B2)",
+    "tags": [
+      "ประกัน",
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "insurance-misconceptions",
@@ -437,7 +552,10 @@
     "dateDisplay": "1 เม.ย. 2569",
     "readTime": "7 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#1E3A8A)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#1E3A8A)",
+    "tags": [
+      "สุขภาพ"
+    ]
   },
   {
     "slug": "oil-price-domino",
@@ -448,7 +566,10 @@
     "dateDisplay": "4 เม.ย. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#78350F,#B45309)"
+    "coverGradient": "linear-gradient(135deg,#78350F,#B45309)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "tax-reduction",
@@ -459,7 +580,11 @@
     "dateDisplay": "1 พ.ค. 2568",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#14532D,#16A34A)"
+    "coverGradient": "linear-gradient(135deg,#14532D,#16A34A)",
+    "tags": [
+      "ประกัน",
+      "ลงทุน"
+    ]
   },
   {
     "slug": "retirement-planning",
@@ -470,7 +595,10 @@
     "dateDisplay": "3 พ.ค. 2568",
     "readTime": "6 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#1B365D)"
+    "coverGradient": "linear-gradient(135deg,#1E3A5F,#1B365D)",
+    "tags": [
+      "ลงทุน"
+    ]
   },
   {
     "slug": "legacy-planning",
@@ -481,7 +609,12 @@
     "dateDisplay": "5 พ.ค. 2568",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
+    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)",
+    "tags": [
+      "ลงทุน",
+      "เกษียณ",
+      "ประกัน"
+    ]
   },
   {
     "slug": "zim-line-seminar",
@@ -493,7 +626,11 @@
     "readTime": "3 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per13.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
+    "tags": [
+      "แนวคิด",
+      "ลงทุน"
+    ]
   },
   {
     "slug": "job-security-myth",
@@ -504,7 +641,11 @@
     "dateDisplay": "17 มี.ค. 2569",
     "readTime": "6 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)"
+    "coverGradient": "linear-gradient(135deg,#1F2937,#374151)",
+    "tags": [
+      "เศรษฐกิจ",
+      "ลงทุน"
+    ]
   },
   {
     "slug": "price-is-a-story",
@@ -516,7 +657,10 @@
     "readTime": "3 นาที",
     "featured": false,
     "coverImage": "../Perspecitive/per15.jpg",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#1E40AF)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#1E40AF)",
+    "tags": [
+      "แนวคิด"
+    ]
   },
   {
     "slug": "wealth-planner-class",
@@ -527,6 +671,10 @@
     "dateDisplay": "13 มี.ค. 2569",
     "readTime": "5 นาที",
     "featured": false,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0D3560)"
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0D3560)",
+    "tags": [
+      "Case ลูกค้า",
+      "ลงทุน"
+    ]
   }
 ]
