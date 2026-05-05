@@ -242,5 +242,16 @@
     "featured": false,
     "coverImage": "../Perspecitive/per15.jpg",
     "coverGradient": "linear-gradient(135deg,#1B365D,#1E40AF)"
+  },
+  {
+    "slug": "wealth-planner-class",
+    "title": "ห้องเรียน Wealth Planner",
+    "excerpt": "ห้องเรียนที่มี 4 คน และบทเรียนสำคัญที่ว่า ประกันเป็นเพียงเครื่องมือหนึ่งในแผนการเงิน ไม่ใช่ทั้งแผน",
+    "category": "อัพเดท",
+    "date": "2026-03-13",
+    "dateDisplay": "13 มี.ค. 2569",
+    "readTime": "5 นาที",
+    "featured": false,
+    "coverGradient": "linear-gradient(135deg,#1B365D,#0D3560)"
   }
 ]
