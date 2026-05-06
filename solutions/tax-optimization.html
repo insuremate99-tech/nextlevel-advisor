@@ -113,7 +113,7 @@ html{scroll-behavior:smooth}
     <ul class="hidden md:flex items-center gap-6 font-noto text-sm font-medium">
       <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">โซลูชัน</a></li>
       <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ</a></li>
+      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
       <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
     </ul>
@@ -139,7 +139,7 @@ html{scroll-behavior:smooth}
     <ul class="space-y-1">
       <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">โซลูชัน</a></li>
       <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ</a></li>
+      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Behind the Advisor</a></li>
       <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
     </ul>
@@ -1115,41 +1115,95 @@ calcGap();
 </div>
 <script>
 (function(){
+  /* ── Static page index with keyword aliases ── */
   const pages=[
-    {label:"วางแผนเกษียณ & รายได้การันตีตลอดชีพ",url:"/solutions/retirement-tax.html",icon:"🏖️",type:"โซลูชัน",keys:["เกษียณ","บำนาญ","annuity","รายได้การันตี","อยากเกษียณ","เกษียณอายุ","หลังเกษียณ","วางแผนเกษียณ","ประกันบำนาญ"]},
-    {label:"ลดภาษี & ออมทรัพย์",url:"/solutions/tax-optimization.html",icon:"💰",type:"โซลูชัน",keys:["ภาษี","ลดภาษี","ลดหย่อน","tax","ประกันสะสมทรัพย์","บำนาญลดหย่อน","ssf","rmf"]},
-    {label:"วางแผนสุขภาพ & ประกันสุขภาพ",url:"/solutions/health-planning.html",icon:"🏥",type:"โซลูชัน",keys:["สุขภาพ","ประกันสุขภาพ","โรงพยาบาล","ค่ารักษา","มะเร็ง","โรคร้าย","เหมาจ่าย","ประกันชีวิต"]},
-    {label:"ส่งต่อมรดก & Legacy Planning",url:"/solutions/legacy-planning.html",icon:"🏛️",type:"โซลูชัน",keys:["มรดก","legacy","ส่งต่อ","ทายาท","ธุรกิจครอบครัว","whole life","เจ้าของกิจการ"]},
-    {label:"ลงทุนด้วยประกัน & Wealth Growth",url:"/solutions/wealth-growth.html",icon:"🎯",type:"โซลูชัน",keys:["ลงทุน","unit linked","wealth","ออมระยะยาว","ผลตอบแทน","ul","ประกันควบลงทุน"]},
-    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮",type:"เครื่องมือ",keys:["คำนวณ","calculator","เกษียณ","วางแผน","ต้องออมเท่าไหร่","คำนวณเกษียณ"]},
-    {label:"รู้จักทีมงาน Behind the Advisor",url:"/behind-the-advisor",icon:"👤",type:"เกี่ยวกับเรา",keys:["ทีม","advisor","ที่ปรึกษา","mdrt","afpt","fchfp","ป้อง","ปกป้อง","pokpong","nextlevel"]},
-    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬",type:"ติดต่อ",keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","สอบถาม"]},
+    {label:"วางแผนเกษียณ & รายได้การันตีตลอดชีพ",url:"/solutions/retirement-tax.html",icon:"🏖️",type:"โซลูชัน",
+     keys:["เกษียณ","บำนาญ","annuity","รายได้การันตี","อยากเกษียณ","เกษียณอายุ","หลังเกษียณ","ออมเพื่อเกษียณ","วางแผนเกษียณ","passive income","รายได้หลังเกษียณ","ประกันบำนาญ"]},
+    {label:"ลดภาษี & ออมทรัพย์",url:"/solutions/tax-optimization.html",icon:"💰",type:"โซลูชัน",
+     keys:["ภาษี","ลดภาษี","ลดหย่อน","ลดหย่อนภาษี","tax","ออมภาษี","ประกันสะสมทรัพย์","บำนาญลดหย่อน","ฐานภาษี","เงินคืนภาษี","ssf","rmf","ประกันชีวิตลดหย่อน"]},
+    {label:"วางแผนสุขภาพ & ประกันสุขภาพ",url:"/solutions/health-planning.html",icon:"🏥",type:"โซลูชัน",
+     keys:["สุขภาพ","ประกันสุขภาพ","health","โรงพยาบาล","ค่ารักษา","เจ็บป่วย","มะเร็ง","โรคร้าย","เหมาจ่าย","ประกันชีวิต","คุ้มครองสุขภาพ","ci","elite health","d health","careplus","ci perfect care","perfect care","ประกันมะเร็ง","critical illness","dread disease","ประกันโรคร้าย","ipd","opd"]},
+    {label:"ส่งต่อมรดก & Legacy Planning",url:"/solutions/legacy-planning.html",icon:"🏛️",type:"โซลูชัน",
+     keys:["มรดก","legacy","ส่งต่อ","ทายาท","ธุรกิจครอบครัว","whole life","ประกันชีวิตตลอดชีพ","estate","ความมั่งคั่ง","ปลอดภาษีมรดก","เจ้าของกิจการ","สืบทอด"]},
+    {label:"ลงทุนด้วยประกัน & Wealth Growth",url:"/solutions/wealth-growth.html",icon:"🎯",type:"โซลูชัน",
+     keys:["ลงทุน","unit linked","wealth","ออมระยะยาว","ผลตอบแทน","กองทุน","ul","invest","เติบโต","ความมั่งคั่ง","ul plus","ประกันควบลงทุน","ลงทุนประกัน"]},
+    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮",type:"เครื่องมือ",
+     keys:["คำนวณ","calculator","เกษียณ","วางแผน","ออม","เงินเกษียณ","ต้องออมเท่าไหร่","เป้าหมายเกษียณ","retirement calculator","คำนวณเกษียณ"]},
+    {label:"รู้จักทีมงาน Behind the Advisor",url:"/behind-the-advisor",icon:"👤",type:"เกี่ยวกับเรา",
+     keys:["ทีม","advisor","ที่ปรึกษา","เกี่ยวกับ","mdrt","afpt","fchfp","ประสบการณ์","นักวางแผน","ป้อง","nextlevel"]},
+    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬",type:"ติดต่อ",
+     keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","คุย","สอบถาม","ถาม","ขอคำแนะนำ","ช่วยวางแผน"]},
   ];
+
+  /* ── Build full index including articles ── */
   let fullIndex=[...pages];
-  fetch('/articles/articles.json').then(r=>r.json()).then(arts=>{
-    arts.forEach(a=>fullIndex.push({label:a.title,url:'/articles/'+a.slug,icon:'📄',type:'บทความ',keys:[a.excerpt||'',a.category||'',...(a.tags||[])]}));
+  fetch('/articles/articles.json').then(r=>r.json()).then(articles=>{
+    articles.forEach(a=>{
+      fullIndex.push({
+        label:a.title,
+        url:'/articles/'+a.slug,
+        icon:'📄',
+        type:'Perspectives',
+        keys:[a.excerpt||'', a.category||'', ...(a.tags||[])],
+      });
+    });
   }).catch(()=>{});
-  function match(item,q){return q.split(/\s+/).every(w=>[item.label,...item.keys].join(' ').toLowerCase().includes(w));}
+
+  /* ── Match function ── */
+  function match(item, q){
+    const haystack=[item.label, ...item.keys].join(' ').toLowerCase();
+    return q.split(/\s+/).every(word=>haystack.includes(word));
+  }
+
+  /* ── renderResults shared function ── */
   function renderResults(matches){
-    if(!matches.length) return '<div style="padding:20px 16px;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem;color:#94a3b8;text-align:center">ไม่พบผลลัพธ์ที่ตรงกัน</div>';
+    if(!matches.length) return `<div style="padding:20px 16px;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem;color:#94a3b8;text-align:center">ไม่พบผลลัพธ์ที่ตรงกัน</div>`;
     const groups={};
     matches.forEach(x=>{if(!groups[x.type])groups[x.type]=[];groups[x.type].push(x);});
     return Object.entries(groups).map(([type,items])=>
-      '<div style="padding:10px 16px 4px;font-family:Poppins,sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8">'+type+'</div>'+
-      items.map(x=>'<a href="'+x.url+'" style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;text-decoration:none;color:#1B365D;font-family:'Noto Sans Thai',sans-serif;font-size:.92rem"><span style="font-size:1.3rem;flex-shrink:0">'+x.icon+'</span><span>'+x.label+'</span></a>').join('')
+      `<div style="padding:10px 16px 4px;font-family:'Poppins',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8">${type}</div>`+
+      items.map(x=>`<a href="${x.url}" style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;text-decoration:none;color:#1B365D;font-family:'Noto Sans Thai',sans-serif;font-size:.92rem">`+
+        `<span style="font-size:1.3rem;flex-shrink:0">${x.icon}</span><span>${x.label}</span></a>`
+      ).join('')
     ).join('');
   }
+  /* ── MOBILE overlay ── */
   const overlay=document.getElementById('mobileSearchOverlay');
   const mob=document.getElementById('mobileSearchInput');
   const mobRes=document.getElementById('mobileSearchResults');
   const mobSug=document.getElementById('mobileSearchSuggestions');
-  window.openMobileSearch=function(){if(!overlay)return;overlay.style.display='flex';document.body.style.overflow='hidden';setTimeout(()=>{if(mob)mob.focus();},80);};
-  window.closeMobileSearch=function(){if(!overlay)return;overlay.style.display='none';document.body.style.overflow='';if(mob){mob.value='';mobRes.innerHTML='';if(mobSug)mobSug.style.display='';}};
-  window.mobileQuickSearch=function(btn){mob.value=btn.textContent;if(mobSug)mobSug.style.display='none';mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,btn.textContent.toLowerCase())).slice(0,10));};
+
+  window.openMobileSearch=function(){
+    if(!overlay) return;
+    overlay.style.display='flex';
+    document.body.style.overflow='hidden';
+    setTimeout(()=>{if(mob)mob.focus();},80);
+  };
+  window.closeMobileSearch=function(){
+    overlay.style.display='none';
+    document.body.style.overflow='';
+    if(mob){mob.value='';mobRes.innerHTML='';mobSug.style.display='';}
+  };
+  window.mobileQuickSearch=function(btn){
+    mob.value=btn.textContent;
+    mobSug.style.display='none';
+    const q=btn.textContent.toLowerCase();
+    mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));
+  };
   if(mob){
-    mob.addEventListener('input',function(){const q=mob.value.trim().toLowerCase();if(!q){mobRes.innerHTML='';if(mobSug)mobSug.style.display='';return;}if(mobSug)mobSug.style.display='none';mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));});
-    mob.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();const f=mobRes.querySelector('a');if(f)window.location.href=f.getAttribute('href');}});
+    mob.addEventListener('input',function(){
+      const q=mob.value.trim().toLowerCase();
+      if(!q){mobRes.innerHTML='';mobSug.style.display='';return;}
+      mobSug.style.display='none';
+      mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));
+    });
+    mob.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();const first=mobRes.querySelector('a');if(first)window.location.href=first.getAttribute('href');}
+    });
   }
+
+
+
 })();
 </script>
 </body>
