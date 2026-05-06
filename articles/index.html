@@ -280,10 +280,15 @@ function renderPagination(tp,total){
   const s=(currentPage-1)*PAGE_SIZE+1, e=Math.min(currentPage*PAGE_SIZE,total);
   sum.textContent=`แสดงบทความที่ ${s}–${e} จากทั้งหมด ${total} บทความ`;
   if(tp<=1){wrap.innerHTML='';return;}
-  // Build page list with ellipsis
-  let pages=new Set([1,tp,currentPage,currentPage-1,currentPage+1].filter(p=>p>=1&&p<=tp));
-  let sorted=[...pages].sort((a,b)=>a-b), result=[], prev=0;
-  for(let p of sorted){if(p-prev>1) result.push('…'); result.push(p); prev=p;}
+  // Show all page numbers (up to 15), ellipsis only beyond that
+  let result=[];
+  if(tp<=15){
+    for(let i=1;i<=tp;i++) result.push(i);
+  } else {
+    let pages=new Set([1,tp,currentPage,currentPage-1,currentPage+1,2,tp-1].filter(p=>p>=1&&p<=tp));
+    let sorted=[...pages].sort((a,b)=>a-b), prev=0;
+    for(let p of sorted){if(p-prev>1) result.push('…'); result.push(p); prev=p;}
+  }
   let html=`<button class="pg-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹ ก่อนหน้า</button>`;
   result.forEach(p=>{ html+=p==='…'?`<span class="pg-dots">…</span>`:`<button class="pg-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</button>`; });
   html+=`<button class="pg-btn" onclick="goPage(${currentPage+1})" ${currentPage===tp?'disabled':''}>ถัดไป ›</button>`;
