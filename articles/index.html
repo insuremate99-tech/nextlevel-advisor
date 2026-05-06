@@ -212,6 +212,13 @@
 
   <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
+  <!-- Load More -->
+  <div id="loadMoreWrap" style="display:none;justify-content:center;margin-top:2.5rem">
+    <button id="loadMoreBtn" onclick="loadMore()" class="font-noto font-semibold px-8 py-3 rounded-full transition-all" style="background:#1B365D;color:#fff;border:none;cursor:pointer;font-size:.9rem;letter-spacing:.02em" onmouseover="this.style.background='#0891B2'" onmouseout="this.style.background='#1B365D'">
+      ดูเพิ่มอีก 12 บทความ
+    </button>
+  </div>
+
   <div id="no-results">
     <p class="font-noto text-lg mb-2">ไม่พบบทความที่ค้นหา</p>
     <p class="font-noto text-sm">ลองค้นหาด้วยคำอื่น หรือเลือก category อื่น</p>
@@ -237,6 +244,8 @@
 let allArticles = [];
 let activeCategory = 'all';
 let searchQuery = '';
+let visibleCount = 12;
+const PAGE_SIZE = 12;
 
 async function loadArticles() {
   try {
@@ -249,10 +258,14 @@ async function loadArticles() {
   }
 }
 
-function renderArticles() {
+function renderArticles(resetVisible = true) {
   const grid = document.getElementById('articleGrid');
   const noResults = document.getElementById('no-results');
   const countEl = document.getElementById('articleCount');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+
+  if (resetVisible) visibleCount = PAGE_SIZE;
 
   const filtered = allArticles.filter(a => {
     const allCats = [a.category, ...(a.tags || [])];
@@ -269,11 +282,15 @@ function renderArticles() {
   if (filtered.length === 0) {
     grid.innerHTML = '';
     noResults.style.display = 'block';
+    loadMoreWrap.style.display = 'none';
     return;
   }
   noResults.style.display = 'none';
 
+  // Render ALL articles in DOM (SEO: Google indexes all)
+  // but hide ones beyond visibleCount
   grid.innerHTML = filtered.map((a, i) => {
+    const hidden = i >= visibleCount ? ' style="display:none"' : '';
     const cardTop = a.coverImage
       ? `<img src="${a.coverImage}" alt="${a.title}" style="width:100%;height:160px;object-fit:cover"/>`
       : `<div style="height:160px;background:${a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)'}">
@@ -285,7 +302,7 @@ function renderArticles() {
            </div>
          </div>`;
     return `
-    <a href="/articles/${a.slug}" class="art-card" style="animation:fadeUp .4s ease ${i * 0.06}s both">
+    <a href="/articles/${a.slug}" class="art-card" style="animation:fadeUp .4s ease ${Math.min(i,11) * 0.06}s both"${hidden}>
       ${cardTop}
       <div class="p-5">
         <div class="flex gap-1 flex-wrap mb-2">
@@ -302,6 +319,40 @@ function renderArticles() {
       </div>
     </a>`;
   }).join('');
+
+  // Load More button
+  const remaining = filtered.length - visibleCount;
+  if (remaining > 0) {
+    loadMoreBtn.textContent = `ดูเพิ่มอีก ${Math.min(remaining, PAGE_SIZE)} บทความ`;
+    loadMoreWrap.style.display = 'flex';
+  } else {
+    loadMoreWrap.style.display = 'none';
+  }
+}
+
+function loadMore() {
+  visibleCount += PAGE_SIZE;
+  // Show next batch without full re-render
+  const cards = document.querySelectorAll('#articleGrid > a');
+  let shown = 0;
+  cards.forEach((card, i) => {
+    if (i < visibleCount) {
+      if (card.style.display === 'none') {
+        card.style.display = '';
+        card.style.animation = `fadeUp .3s ease ${(shown % PAGE_SIZE) * 0.05}s both`;
+        shown++;
+      }
+    }
+  });
+
+  const remaining = cards.length - visibleCount;
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+  if (remaining > 0) {
+    loadMoreBtn.textContent = `ดูเพิ่มอีก ${Math.min(remaining, PAGE_SIZE)} บทความ`;
+  } else {
+    loadMoreWrap.style.display = 'none';
+  }
 }
 
 document.getElementById('filterBtns').addEventListener('click', e => {
@@ -310,12 +361,12 @@ document.getElementById('filterBtns').addEventListener('click', e => {
   activeCategory = btn.dataset.cat;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  renderArticles();
+  renderArticles(true);
 });
 
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value.toLowerCase();
-  renderArticles();
+  renderArticles(true);
 });
 
 loadArticles();
