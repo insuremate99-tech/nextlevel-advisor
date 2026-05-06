@@ -147,6 +147,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
         LINE
       </a>
       <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener" class="font-noto font-semibold text-sm px-4 py-2.5 rounded-xl text-white hidden md:inline-flex" style="background:#0891B2">นัดปรึกษาฟรี</a>
+            <button onclick="openMobileSearch()" class="p-2 rounded-xl text-navy hover:text-teal transition-colors" aria-label="ค้นหา" title="ค้นหา">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
       <button id="menuBtn" class="md:hidden p-2 text-navy">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -1076,6 +1079,68 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 // ─── MOBILE MENU ───
 document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
 window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20));
+</script>
+
+<!-- SEARCH OVERLAY -->
+<div id="mobileSearchOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:#fff;flex-direction:column">
+  <div style="background:#1B365D;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0">
+    <button onclick="closeMobileSearch()" style="background:none;border:none;color:#fff;padding:4px;cursor:pointer;display:flex;align-items:center"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+    <div style="flex:1;position:relative">
+      <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#94a3b8;pointer-events:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="mobileSearchInput" type="text" placeholder="ค้นหา เช่น อยากเกษียณ, ประกันสุขภาพ..." style="width:100%;padding:10px 12px 10px 40px;border-radius:12px;border:none;font-family:'Noto Sans Thai',sans-serif;font-size:.95rem;color:#1B365D;outline:none;background:#f1f5f9" autocomplete="off"/>
+    </div>
+  </div>
+  <div id="mobileSearchSuggestions" style="padding:16px;border-bottom:1px solid #f1f5f9;flex-shrink:0">
+    <p style="font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;color:#94a3b8;margin-bottom:10px">ค้นหายอดนิยม</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">อยากเกษียณ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ลดภาษี</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ประกันสุขภาพ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">มรดก</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">คำนวณเกษียณ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ลงทุน</button>
+    </div>
+  </div>
+  <div id="mobileSearchResults" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:80px"></div>
+</div>
+<script>
+(function(){
+  const pages=[
+    {label:"วางแผนเกษียณ & รายได้การันตีตลอดชีพ",url:"/solutions/retirement-tax.html",icon:"🏖️",type:"โซลูชัน",keys:["เกษียณ","บำนาญ","annuity","รายได้การันตี","อยากเกษียณ","เกษียณอายุ","หลังเกษียณ","วางแผนเกษียณ","ประกันบำนาญ"]},
+    {label:"ลดภาษี & ออมทรัพย์",url:"/solutions/tax-optimization.html",icon:"💰",type:"โซลูชัน",keys:["ภาษี","ลดภาษี","ลดหย่อน","tax","ประกันสะสมทรัพย์","บำนาญลดหย่อน","ssf","rmf"]},
+    {label:"วางแผนสุขภาพ & ประกันสุขภาพ",url:"/solutions/health-planning.html",icon:"🏥",type:"โซลูชัน",keys:["สุขภาพ","ประกันสุขภาพ","โรงพยาบาล","ค่ารักษา","มะเร็ง","โรคร้าย","เหมาจ่าย","ประกันชีวิต"]},
+    {label:"ส่งต่อมรดก & Legacy Planning",url:"/solutions/legacy-planning.html",icon:"🏛️",type:"โซลูชัน",keys:["มรดก","legacy","ส่งต่อ","ทายาท","ธุรกิจครอบครัว","whole life","เจ้าของกิจการ"]},
+    {label:"ลงทุนด้วยประกัน & Wealth Growth",url:"/solutions/wealth-growth.html",icon:"🎯",type:"โซลูชัน",keys:["ลงทุน","unit linked","wealth","ออมระยะยาว","ผลตอบแทน","ul","ประกันควบลงทุน"]},
+    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮",type:"เครื่องมือ",keys:["คำนวณ","calculator","เกษียณ","วางแผน","ต้องออมเท่าไหร่","คำนวณเกษียณ"]},
+    {label:"รู้จักทีมงาน Behind the Advisor",url:"/behind-the-advisor",icon:"👤",type:"เกี่ยวกับเรา",keys:["ทีม","advisor","ที่ปรึกษา","mdrt","afpt","fchfp","ป้อง","ปกป้อง","pokpong","nextlevel"]},
+    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬",type:"ติดต่อ",keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","สอบถาม"]},
+  ];
+  let fullIndex=[...pages];
+  fetch('/articles/articles.json').then(r=>r.json()).then(arts=>{
+    arts.forEach(a=>fullIndex.push({label:a.title,url:'/articles/'+a.slug,icon:'📄',type:'บทความ',keys:[a.excerpt||'',a.category||'',...(a.tags||[])]}));
+  }).catch(()=>{});
+  function match(item,q){return q.split(/\s+/).every(w=>[item.label,...item.keys].join(' ').toLowerCase().includes(w));}
+  function renderResults(matches){
+    if(!matches.length) return '<div style="padding:20px 16px;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem;color:#94a3b8;text-align:center">ไม่พบผลลัพธ์ที่ตรงกัน</div>';
+    const groups={};
+    matches.forEach(x=>{if(!groups[x.type])groups[x.type]=[];groups[x.type].push(x);});
+    return Object.entries(groups).map(([type,items])=>
+      '<div style="padding:10px 16px 4px;font-family:Poppins,sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8">'+type+'</div>'+
+      items.map(x=>'<a href="'+x.url+'" style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;text-decoration:none;color:#1B365D;font-family:'Noto Sans Thai',sans-serif;font-size:.92rem"><span style="font-size:1.3rem;flex-shrink:0">'+x.icon+'</span><span>'+x.label+'</span></a>').join('')
+    ).join('');
+  }
+  const overlay=document.getElementById('mobileSearchOverlay');
+  const mob=document.getElementById('mobileSearchInput');
+  const mobRes=document.getElementById('mobileSearchResults');
+  const mobSug=document.getElementById('mobileSearchSuggestions');
+  window.openMobileSearch=function(){if(!overlay)return;overlay.style.display='flex';document.body.style.overflow='hidden';setTimeout(()=>{if(mob)mob.focus();},80);};
+  window.closeMobileSearch=function(){if(!overlay)return;overlay.style.display='none';document.body.style.overflow='';if(mob){mob.value='';mobRes.innerHTML='';if(mobSug)mobSug.style.display='';}};
+  window.mobileQuickSearch=function(btn){mob.value=btn.textContent;if(mobSug)mobSug.style.display='none';mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,btn.textContent.toLowerCase())).slice(0,10));};
+  if(mob){
+    mob.addEventListener('input',function(){const q=mob.value.trim().toLowerCase();if(!q){mobRes.innerHTML='';if(mobSug)mobSug.style.display='';return;}if(mobSug)mobSug.style.display='none';mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));});
+    mob.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();const f=mobRes.querySelector('a');if(f)window.location.href=f.getAttribute('href');}});
+  }
+})();
 </script>
 </body>
 </html>
