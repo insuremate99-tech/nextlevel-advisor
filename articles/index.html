@@ -356,5 +356,30 @@ loadArticles();
 
 })();
 </script>
+<div id="mobileSearchOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:#fff;flex-direction:column">
+  <div style="background:#1B365D;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0">
+    <button onclick="closeMobileSearch()" style="background:none;border:none;color:#fff;padding:4px;cursor:pointer;display:flex;align-items:center">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <div style="flex:1;position:relative">
+      <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#94a3b8;pointer-events:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="mobileSearchInput" type="text" placeholder="ค้นหา เช่น อยากเกษียณ, ประกันสุขภาพ..."
+        style="width:100%;padding:10px 12px 10px 40px;border-radius:12px;border:none;font-family:'Noto Sans Thai',sans-serif;font-size:.95rem;color:#1B365D;outline:none;background:#f1f5f9"
+        autocomplete="off" autocorrect="off" spellcheck="false"/>
+    </div>
+  </div>
+  <div id="mobileSearchSuggestions" style="padding:16px;border-bottom:1px solid #f1f5f9;flex-shrink:0">
+    <p style="font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;color:#94a3b8;margin-bottom:10px">ค้นหายอดนิยม</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">อยากเกษียณ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ลดภาษี</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ประกันสุขภาพ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">มรดก</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">คำนวณเกษียณ</button>
+      <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ลงทุน</button>
+    </div>
+  </div>
+  <div id="mobileSearchResults" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:80px"></div>
+</div>
 </body>
 </html>
