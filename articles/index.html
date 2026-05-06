@@ -365,29 +365,41 @@ loadArticles();
     ).join('');
   }
   /* ── MOBILE overlay ── */
-  const overlay=document.getElementById('mobileSearchOverlay');
-  const mob=document.getElementById('mobileSearchInput');
-  const mobRes=document.getElementById('mobileSearchResults');
-  const mobSug=document.getElementById('mobileSearchSuggestions');
+  function getOverlayEls(){
+    return {
+      overlay:document.getElementById('mobileSearchOverlay'),
+      mob:document.getElementById('mobileSearchInput'),
+      mobRes:document.getElementById('mobileSearchResults'),
+      mobSug:document.getElementById('mobileSearchSuggestions')
+    };
+  }
 
   window.openMobileSearch=function(){
+    const {overlay,mob}=getOverlayEls();
     if(!overlay) return;
     overlay.style.display='flex';
     document.body.style.overflow='hidden';
     setTimeout(()=>{if(mob)mob.focus();},80);
   };
   window.closeMobileSearch=function(){
+    const {overlay,mob,mobRes,mobSug}=getOverlayEls();
+    if(!overlay) return;
     overlay.style.display='none';
     document.body.style.overflow='';
     if(mob){mob.value='';mobRes.innerHTML='';mobSug.style.display='';}
   };
   window.mobileQuickSearch=function(btn){
+    const {mob,mobRes,mobSug}=getOverlayEls();
+    if(!mob) return;
     mob.value=btn.textContent;
     mobSug.style.display='none';
     const q=btn.textContent.toLowerCase();
     mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));
   };
-  if(mob){
+  // Attach input/keydown after DOM is ready (overlay HTML is below the script)
+  document.addEventListener('DOMContentLoaded',function(){
+    const {mob,mobRes,mobSug}=getOverlayEls();
+    if(!mob) return;
     mob.addEventListener('input',function(){
       const q=mob.value.trim().toLowerCase();
       if(!q){mobRes.innerHTML='';mobSug.style.display='';return;}
@@ -397,7 +409,7 @@ loadArticles();
     mob.addEventListener('keydown',function(e){
       if(e.key==='Enter'){e.preventDefault();const first=mobRes.querySelector('a');if(first)window.location.href=first.getAttribute('href');}
     });
-  }
+  });
 
 
 
