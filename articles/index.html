@@ -299,9 +299,15 @@ function renderArticles(resetVisible = true) {
   // but hide ones beyond visibleCount
   grid.innerHTML = filtered.map((a, i) => {
     const hidden = i >= visibleCount ? ' style="display:none"' : '';
+    const grad = a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)';
     const cardTop = a.coverImage
-      ? `<img src="${a.coverImage}" alt="${a.title}" style="width:100%;height:160px;object-fit:cover"/>`
-      : `<div style="height:160px;background:${a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)'}">
+      ? `<div style="height:160px;overflow:hidden;background:${grad}">
+           <img src="${a.coverImage}" alt="${a.title}"
+                style="width:100%;height:160px;object-fit:cover;display:block"
+                loading="lazy"
+                onerror="this.parentElement.style.background='${grad}';this.remove()"/>
+         </div>`
+      : `<div style="height:160px;background:${grad}">
            <div class="h-full flex flex-col justify-between p-5">
              <div class="flex justify-between items-start">
                <span class="tag" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
