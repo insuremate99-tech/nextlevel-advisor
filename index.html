@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PHYNQSRYV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -403,12 +403,11 @@
   <div class="max-w-2xl mx-auto px-5">
     <div class="relative">
       <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      <!-- Desktop input -->
       <input id="siteSearch" type="text" placeholder="ค้นหา เช่น ลดหย่อนภาษี, คุ้มครองชีวิต, วางแผนเกษียณ..."
         class="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 font-noto text-sm text-navy bg-white shadow-sm focus:outline-none focus:ring-2 focus:border-transparent"
+        style="focus-ring-color:#0891B2"
         autocomplete="off"/>
     </div>
-    <!-- Desktop dropdown -->
     <div id="searchResults" class="hidden mt-2 bg-white rounded-2xl border border-slate-100 shadow-lg overflow-hidden z-50"></div>
   </div>
 </div>
@@ -461,60 +460,61 @@
      keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","คุย","สอบถาม","ถาม","ขอคำแนะนำ","ช่วยวางแผน"]},
   ];
 
+  /* ── Build full index including articles ── */
   let fullIndex=[...pages];
   fetch('/articles/articles.json').then(r=>r.json()).then(articles=>{
     articles.forEach(a=>{
-      fullIndex.push({label:a.title,url:'/articles/'+a.slug,icon:'📄',type:'บทความ',
-        keys:[a.excerpt||'',a.category||'',...(a.tags||[])]});
+      fullIndex.push({
+        label:a.title,
+        url:'/articles/'+a.slug,
+        icon:'📄',
+        type:'บทความ',
+        keys:[a.excerpt||'', a.category||'', ...(a.tags||[])],
+      });
     });
   }).catch(()=>{});
 
-  function match(item,q){
-    const hay=[item.label,...item.keys].join(' ').toLowerCase();
-    return q.split(/\s+/).every(w=>hay.includes(w));
+  /* ── Match function ── */
+  function match(item, q){
+    const haystack=[item.label, ...item.keys].join(' ').toLowerCase();
+    return q.split(/\s+/).every(word=>haystack.includes(word));
   }
 
-  function renderResults(matches){
-    if(!matches.length) return `<div style="padding:16px 20px;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem;color:#94a3b8">ไม่พบผลลัพธ์ที่ตรงกัน</div>`;
-    const groups={};
-    matches.forEach(x=>{if(!groups[x.type])groups[x.type]=[];groups[x.type].push(x);});
-    return Object.entries(groups).map(([type,items])=>
-      `<div style="padding:10px 16px 4px;font-family:'Poppins',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8">${type}</div>`+
-      items.map(x=>`<a href="${x.url}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f8fafc;text-decoration:none;color:#1B365D;font-family:'Noto Sans Thai',sans-serif;font-size:.9rem" ontouchstart="this.style.background='#f0f9ff'" ontouchend="this.style.background=''">`+
-        `<span style="font-size:1.3rem;flex-shrink:0">${x.icon}</span>`+
-        `<span>${x.label}</span></a>`
-      ).join('')
-    ).join('');
-  }
-
-  /* ── DESKTOP dropdown ── */
   const inp=document.getElementById('siteSearch');
   const res=document.getElementById('searchResults');
-  if(inp){
-    inp.addEventListener('input',function(){
-      const q=inp.value.trim().toLowerCase();
-      if(!q){res.classList.add('hidden');res.innerHTML='';return;}
-      const matches=fullIndex.filter(x=>match(x,q)).slice(0,8);
-      res.innerHTML=renderResults(matches);
-      res.classList.remove('hidden');
-      /* highlight first result */
-      const first=res.querySelector('a');
-      if(first) first.style.background='#F0F9FF';
-    });
-    /* Enter → go to first result */
-    inp.addEventListener('keydown',function(e){
-      if(e.key==='Enter'){
-        e.preventDefault();
-        const first=res.querySelector('a');
-        if(first) window.location.href=first.getAttribute('href');
-      }
-      if(e.key==='Escape'){res.classList.add('hidden');}
-    });
-    document.addEventListener('click',function(e){
-      if(!e.target.closest('#siteSearch')&&!e.target.closest('#searchResults')) res.classList.add('hidden');
-    });
-  }
+  if(!inp) return;
 
+  inp.addEventListener('input',function(){
+    const q=inp.value.trim().toLowerCase();
+    if(!q){res.classList.add('hidden');res.innerHTML='';return;}
+    const matches=fullIndex.filter(x=>match(x,q)).slice(0,8);
+    if(!matches.length){
+      res.innerHTML=`<div class="px-4 py-3 font-noto text-sm text-slate-400">ไม่พบผลลัพธ์ที่ตรงกัน</div>`;
+      res.classList.remove('hidden');
+      return;
+    }
+    /* Group by type */
+    const groups={};
+    matches.forEach(x=>{
+      if(!groups[x.type]) groups[x.type]=[];
+      groups[x.type].push(x);
+    });
+    let html='';
+    Object.entries(groups).forEach(([type,items])=>{
+      html+=`<div class="px-4 pt-2.5 pb-0.5 font-pop font-bold text-xs uppercase tracking-widest text-slate-400">${type}</div>`;
+      items.forEach(x=>{
+        html+=`<a href="${x.url}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 border-b border-slate-50 last:border-0 font-noto text-sm text-navy transition-colors"><span class="text-lg leading-none">${x.icon}</span>${x.label}</a>`;
+      });
+    });
+    res.innerHTML=html;
+    res.classList.remove('hidden');
+  });
+
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('#siteSearch')&&!e.target.closest('#searchResults')){
+      res.classList.add('hidden');
+    }
+  });
   /* ── MOBILE overlay ── */
   const overlay=document.getElementById('mobileSearchOverlay');
   const mob=document.getElementById('mobileSearchInput');
@@ -536,9 +536,7 @@
     mobSug.style.display='none';
     const q=btn.textContent.toLowerCase();
     mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));
-    mob.focus();
   };
-
   if(mob){
     mob.addEventListener('input',function(){
       const q=mob.value.trim().toLowerCase();
@@ -546,17 +544,1020 @@
       mobSug.style.display='none';
       mobRes.innerHTML=renderResults(fullIndex.filter(x=>match(x,q)).slice(0,10));
     });
-    /* Enter on mobile → go to first result */
     mob.addEventListener('keydown',function(e){
-      if(e.key==='Enter'){
-        e.preventDefault();
-        const first=mobRes.querySelector('a');
-        if(first) window.location.href=first.getAttribute('href');
-      }
+      if(e.key==='Enter'){e.preventDefault();const first=mobRes.querySelector('a');if(first)window.location.href=first.getAttribute('href');}
+    });
+  }
+  /* tap search bar on mobile → open overlay */
+  if(inp){
+    inp.addEventListener('click',function(){
+      if(window.innerWidth<768) openMobileSearch();
     });
   }
 
+
 })();
+</script>
+
+<!-- ══════════════ TRUST MARQUEE ══════════════ -->
+<div style="background:#F8FAFC;border-top:1px solid #EEF2F7;border-bottom:1px solid #EEF2F7;overflow:hidden" class="py-3.5">
+  <div class="marquee-track">
+    <div class="flex items-center gap-10 px-8 whitespace-nowrap" style="font-family:'Noto Sans Thai';font-size:.85rem;color:#1B365D">
+      <span class="font-pop font-semibold">MDRT Member 2026</span>
+
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span class="font-pop font-semibold">AFPT™ &amp; FChFP Certified</span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ดูแลลูกค้ากว่า <strong>100+ ราย</strong></span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ประกันกลุ่ม <strong>1,000+ คน</strong></span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ตัวแทนเมืองไทยประกันชีวิต</span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <!-- duplicate -->
+      <span class="font-pop font-semibold">MDRT Member 2026</span>
+
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span class="font-pop font-semibold">AFPT™ &amp; FChFP Certified</span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ดูแลลูกค้ากว่า <strong>100+ ราย</strong></span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ประกันกลุ่ม <strong>1,000+ คน</strong></span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+      <span>ตัวแทนเมืองไทยประกันชีวิต</span>
+      <span style="color:#0891B2;font-weight:700">•</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ SIGNATURE SOLUTIONS ══════════════ -->
+<section id="solutions-section" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="mb-12 reveal">
+      <span class="sec-label">Signature Solutions</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem)">ออกแบบความมั่นคงเฉพาะคุณ</h2>
+    </div>
+    <div class="reveal">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Card 1: Guarantee Income -->
+        <div class="sol-card" onclick="location.href='/solutions/retirement-tax.html'" style="cursor:pointer">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:linear-gradient(135deg,#0891B2,#065E7A)">🏖️</div>
+          <span class="badge mb-3">เกษียณแบบการันตี</span>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3 mt-2">สร้างรายได้<br/>แน่นอนตลอดชีพ</h3>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>รายได้การันตีหลังเกษียณ ไม่ขึ้นกับตลาด</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>เลือกรับรายเดือน รายปี หรือก้อนใหญ่</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>คำนวณเบี้ยจากเป้าหมายเกษียณของคุณ</li>
+          </ul>
+          <a href="/solutions/retirement-tax.html" class="btn btn-navy w-full py-3 text-sm justify-center">เริ่มออกแบบแผน →</a>
+        </div>
+
+        <!-- Card 2: Wealth Growth -->
+        <div class="sol-card" onclick="location.href='/solutions/wealth-growth.html'" style="cursor:pointer">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">📈</div>
+          <span class="badge mb-3">ความมั่งคั่ง</span>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3 mt-2">ให้เงินทำงาน<br/>ในจังหวะที่คุณพัก</h3>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#7C3AED;flex-shrink:0;margin-top:1px">•</span>Unit-Linked: เติบโตตามตลาดพร้อมคุ้มครอง</li>
+            <li class="flex items-start gap-2.5"><span style="color:#7C3AED;flex-shrink:0;margin-top:1px">•</span>UL Plus: ผลตอบแทนการันตี ความเสี่ยงต่ำ</li>
+            <li class="flex items-start gap-2.5"><span style="color:#7C3AED;flex-shrink:0;margin-top:1px">•</span>ปรับพอร์ตได้ตลอด ดูแลโดย IC Licensed</li>
+          </ul>
+          <a href="/solutions/wealth-growth.html" class="btn btn-navy w-full py-3 text-sm justify-center" style="background:#7C3AED">เริ่มออกแบบแผน →</a>
+        </div>
+
+        <!-- Card 3: Tax Optimization -->
+        <div class="sol-card" onclick="location.href='/solutions/tax-optimization.html'" style="cursor:pointer">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:linear-gradient(135deg,#F59E0B,#D97706)">💰</div>
+          <span class="badge mb-3">บริหารภาษี</span>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3 mt-2">เปลี่ยนภาษี<br/>ให้เป็นเงินออม</h3>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#F59E0B;flex-shrink:0;margin-top:1px">•</span>ลดหย่อนภาษีได้สูงสุด 300,000 บาท/ปี</li>
+            <li class="flex items-start gap-2.5"><span style="color:#F59E0B;flex-shrink:0;margin-top:1px">•</span>ประกันออมทรัพย์ผลตอบแทนชัดเจน การันตี</li>
+            <li class="flex items-start gap-2.5"><span style="color:#F59E0B;flex-shrink:0;margin-top:1px">•</span>คำนวณเงินคืนภาษีทันที พร้อม IRR จริง</li>
+          </ul>
+          <a href="/solutions/tax-optimization.html" class="btn btn-navy w-full py-3 text-sm justify-center" style="background:#D97706">เริ่มออกแบบแผน →</a>
+        </div>
+
+        <!-- Card 4: Health Planning -->
+        <div class="sol-card" onclick="location.href='/solutions/health-planning.html'" style="cursor:pointer">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:linear-gradient(135deg,#1B365D,#0D2445)">🏥</div>
+          <span class="badge mb-3">วางแผนสุขภาพ</span>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3 mt-2">โอนความเสี่ยงสุขภาพ<br/>ปกป้องแผนเกษียณ</h3>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>คุมค่ารักษาไม่ให้บานปลาย</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>เหมาจ่ายครอบคลุมเทคโนโลยีล่าสุด</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>รับเงินก้อนเมื่อตรวจเจอ จ่ายหลายจบ ครอบคลุมทุกกลุ่มโรค</li>
+          </ul>
+          <a href="/solutions/health-planning.html" class="btn btn-navy w-full py-3 text-sm justify-center">เริ่มออกแบบแผน</a>
+        </div>
+
+        <!-- Card 5: Legacy Planning -->
+        <div class="sol-card" onclick="location.href='/solutions/legacy-planning.html'" style="cursor:pointer">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl" style="background:linear-gradient(135deg,#0891B2,#1B365D)">🏛️</div>
+          <span class="badge mb-3">วางแผนมรดก</span>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-3 mt-2">ส่งต่อมรดกเป็นระบบ<br/>ไร้ข้อพิพาท</h3>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>สร้างกองมรดกเงินสดทันใจตามทุนที่เลือกเอง</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>จัดการทรัพย์สินถึงมือผู้รับแบบปลอดภาษี</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>ดีไซน์ความต่อเนื่องให้ธุรกิจและลดปัญหาขัดแย้ง</li>
+          </ul>
+          <a href="/solutions/legacy-planning.html" class="btn btn-navy w-full py-3 text-sm justify-center">เริ่มออกแบบแผน</a>
+        </div>
+
+        <!-- Card 6: Free Check -->
+        <div class="sol-card flex flex-col" style="background:#F0F9FA;border-style:dashed;border-color:#0891B2;border-width:1.5px">
+          <!-- + icon -->
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-pop font-bold mb-5" style="background:rgba(8,145,178,.15);color:#0891B2">+</div>
+          <h3 class="font-pridi font-semibold text-navy text-lg leading-snug mb-2 mt-2">เช็กสุขภาพการเงิน<br/>15 นาที</h3>
+          <p class="font-noto text-slate-500 text-sm leading-relaxed mb-4">วิเคราะห์ช่องว่างแผนเกษียณและภาษีเบื้องต้น ส่วนตัวฟรี ไม่มีข้อผูกมัด</p>
+          <ul class="font-noto text-slate-500 text-sm space-y-2.5 mb-7">
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>สรุป Gap แผนเกษียณปัจจุบัน</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>เช็กความพอดีของความคุ้มครองสุขภาพ</li>
+            <li class="flex items-start gap-2.5"><span style="color:#0891B2;flex-shrink:0;margin-top:1px">•</span>Checklist บริหารภาษีให้ได้ประโยชน์สูงสุด</li>
+          </ul>
+          <a href="https://calendly.com/insuremate99/15" class="btn btn-teal w-full py-3 text-sm justify-center mt-auto">นัดหมายปรึกษาล่วงหน้า</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ 5-YEAR CHALLENGE ══════════════ -->
+<section class="py-20" style="background:#F1F5F9">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="challenge-wrap reveal">
+      <div class="px-8 py-12 md:px-14 md:py-14 relative z-10">
+
+        <!-- TOP ROW: Text left + Image right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-10">
+
+          <!-- LEFT: Title + Desc + Bullets + CTA -->
+          <div>
+            <div id="program-section" class="font-pop font-semibold text-xs tracking-widest uppercase mb-5" style="color:rgba(212,175,55,0.85);letter-spacing:.18em">Recruitment Program</div>
+
+            <h2 class="font-pop font-extrabold leading-tight mb-6" style="font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05">
+              <span style="color:#fff">5 Years</span><br/>
+              <span style="color:#D4AF37">5 Million</span><br/>
+              <span style="color:#fff">Challenge</span>
+            </h2>
+
+            <p class="font-noto leading-relaxed mb-3" style="font-size:.97rem;color:rgba(255,255,255,.75)">
+              5 ปี 5 ล้าน: โครงการปั้นที่ปรึกษาการเงินรุ่นใหม่ เปิดรับทุกประสบการณ์<br/>
+              เพียง<span style="color:#D4AF37;font-weight:600">มีความตั้งใจและพร้อมเรียนรู้</span>ระบบงานมืออาชีพ
+            </p>
+            <!-- Bullet highlights -->
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35)">
+                  <svg class="w-3 h-3" style="color:#D4AF37" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <div class="font-pop font-semibold text-white text-sm mb-0.5">ระบบ Training &amp; Coaching ส่วนตัว</div>
+                  <div class="font-noto text-xs" style="color:rgba(255,255,255,.48)">Workshop รายเดือน + 1-on-1 mentoring + Digital tools</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35)">
+                  <svg class="w-3 h-3" style="color:#D4AF37" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <div class="font-pop font-semibold text-white text-sm mb-0.5">ไม่จำกัดพื้นฐาน — Flexible ทำงานได้ทุกที่</div>
+                  <div class="font-noto text-xs" style="color:rgba(255,255,255,.48)">เหมาะทั้งพาร์ทไทม์และฟูลไทม์ ทุกสาขาอาชีพ</div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#career" class="btn btn-teal px-8 py-3.5 text-sm">อ่านรายละเอียดโครงการ →</a>
+          </div>
+
+          <!-- RIGHT: Hero Image -->
+          <div class="flex-shrink-0">
+            <div class="rounded-2xl overflow-hidden" style="box-shadow:0 20px 60px rgba(0,0,0,.4)">
+              <img src="5year-hero.png" alt="5 Years 5 Million Challenge" class="w-full h-full object-cover" style="display:block;max-height:460px;object-fit:cover;object-position:top center"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM ROW: 4 Value Prop Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4" style="border-top:1px solid rgba(255,255,255,.08)">
+          <div class="rounded-2xl px-5 py-5" style="background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.2)">
+            <div class="font-pop font-bold text-sm mb-2" style="color:#D4AF37">💰 5M Big Bonus</div>
+            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">รางวัลพิเศษสูงสุด <strong style="color:#D4AF37">5,000,000 บาท</strong> สำหรับที่ปรึกษาที่พิชิตเป้าหมายต่อเนื่อง</p>
+          </div>
+          <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
+            <div class="font-pop font-bold text-white text-sm mb-2">📈 Monthly On-top</div>
+            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เงินส่งเสริมรายเดือนสูงสุด <strong style="color:#7DDAF0">120,000 บาท</strong> (ในปีแรก) จ่าย On-top เพิ่มจากคอมมิชชันปกติ</p>
+          </div>
+          <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
+            <div class="font-pop font-bold text-white text-sm mb-2">🎓 Professional Academy</div>
+            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เรียนรู้หลักสูตรวางแผนการเงิน ภาษี และมรดก พร้อม Roadmap ชัดเจน</p>
+          </div>
+          <div class="rounded-2xl px-5 py-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
+            <div class="font-pop font-bold text-white text-sm mb-2">🚀 Fast Track Success</div>
+            <p class="font-noto text-xs leading-relaxed" style="color:rgba(255,255,255,.55)">เส้นทางเติบโตสู่ตำแหน่งผู้บริหารทีม ภายใน <strong style="color:#7DDAF0">12 เดือน</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ CALCULATOR BANNER ══════════════ -->
+<section id="tools-section" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="calc-wrap reveal">
+      <div class="px-8 py-12 md:px-12 md:py-14 flex flex-wrap lg:flex-nowrap lg:flex-row items-start gap-6 lg:gap-14 relative z-10">
+
+        <!-- MOBILE: Headline only (hidden on desktop) -->
+        <div class="w-full lg:hidden">
+          <span class="font-pop font-semibold text-xs tracking-widest uppercase mb-4 inline-block px-3 py-1 rounded-full" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25)">Free Tool</span>
+          <h2 class="font-pop font-extrabold text-white mt-1 mb-3 leading-tight" style="font-size:clamp(1.7rem,3vw,2.4rem)">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h2>
+          <p class="font-noto leading-relaxed mb-6" style="font-size:.95rem;color:rgba(255,255,255,.65)">ใช้เวลาเพียง 1 นาที เพื่อวางแผนชีวิตที่คุณออกแบบเองได้</p>
+        </div>
+
+        <!-- LEFT: Results + CTA (+ headline on desktop) -->
+        <div class="flex-1 min-w-0 order-2 lg:order-1">
+          <!-- Desktop headline (hidden on mobile) -->
+          <div class="hidden lg:block">
+            <span class="font-pop font-semibold text-xs tracking-widest uppercase mb-4 inline-block px-3 py-1 rounded-full" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25)">Free Tool</span>
+            <h2 class="font-pop font-extrabold text-white mt-1 mb-3 leading-tight" style="font-size:clamp(1.7rem,3vw,2.4rem)">เช็กเป้าหมายเกษียณ<br/>ของคุณ</h2>
+            <p class="font-noto leading-relaxed mb-8" style="font-size:.95rem;color:rgba(255,255,255,.65)">ใช้เวลาเพียง 1 นาที เพื่อวางแผนชีวิตที่คุณออกแบบเองได้</p>
+          </div>
+
+          <!-- Live Results -->
+          <div class="mb-8">
+
+            <!-- ① Gap highlight -->
+            <div class="calc-result-card mb-3" style="background:rgba(0,0,0,.22);text-align:center">
+              <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.55)">ช่องว่างที่ต้องเตรียม</div>
+              <div class="font-pop font-extrabold text-2xl" id="res-gap" style="color:#FF8C69">—</div>
+            </div>
+
+            <!-- ② Progress bars -->
+            <div class="calc-result-card mb-3" style="background:rgba(0,0,0,.18)">
+              <!-- Bar: total needed -->
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เป้าหมายเงินก้อนที่ต้องมี</span>
+                <span class="font-pop font-semibold text-xs text-white" id="res-goal">—</span>
+              </div>
+              <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+                <div id="bar-need" style="height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .6s ease"></div>
+              </div>
+              <!-- Bar: current savings -->
+              <div class="flex justify-between items-center mt-3 mb-1">
+                <span class="font-noto text-xs" style="color:rgba(255,255,255,.6)">เงินออมปัจจุบัน</span>
+                <span class="font-pop font-semibold text-xs" id="res-have" style="color:#4ADE80">—</span>
+              </div>
+              <div style="background:rgba(255,255,255,.15);border-radius:99px;height:9px;overflow:hidden">
+                <div id="bar-have" style="height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#10B981,#0891B2);transition:width .6s ease"></div>
+              </div>
+            </div>
+
+            <!-- ③ Monthly savings hero -->
+            <div class="calc-result-card" style="background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);text-align:center">
+              <div class="font-noto text-sm font-semibold mb-1" style="color:rgba(255,255,255,.8)">💡 ต้องเก็บเพิ่มเดือนละ</div>
+              <div class="font-pop font-extrabold text-3xl text-white" id="res-monthly">—</div>
+              <div class="font-noto text-xs mt-2" style="color:rgba(255,255,255,.5)" id="res-note"></div>
+            </div>
+
+          </div>
+
+          <!-- CTA -->
+          <a href="https://lin.ee/NC0RcZM" target="_blank"
+             class="inline-flex items-center justify-center gap-3 w-full rounded-2xl font-noto font-bold text-base mb-4"
+             style="background:#fff;color:#065E7A;padding:16px 24px;box-shadow:0 8px 28px rgba(0,0,0,.25);border:none;text-decoration:none;transition:transform .2s,box-shadow .2s"
+             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 36px rgba(0,0,0,.32)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.25)'">
+            <svg class="w-6 h-6 flex-shrink-0" fill="#06C755" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            <span>รับสรุปแผนเกษียณทาง LINE</span>
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="#065E7A" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <p class="font-noto text-xs" style="color:rgba(255,255,255,.45)">
+            สนใจคำนวณค่าครองชีพในอนาคต หรือค่ารักษาโรคร้ายแรง?
+            <a href="/calculators" class="underline" style="color:rgba(255,255,255,.7)">คลิกที่นี่</a>
+          </p>
+        </div>
+
+        <!-- RIGHT: Input Sliders -->
+        <div class="flex-shrink-0 w-full lg:w-[340px] order-1 lg:order-2">
+          <div class="calc-glass px-6 py-7 space-y-5">
+
+            <!-- อายุปัจจุบัน -->
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">อายุปัจจุบัน (ปี)</label>
+              <input type="number" id="sl-age" value="35" min="15" max="65" placeholder="เช่น 35"
+                     oninput="calcRetire()"
+                     style="width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none"
+                     onfocus="this.style.borderColor='rgba(255,255,255,.55)'"
+                     onblur="this.style.borderColor='rgba(255,255,255,.25)'"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">อายุ 15–65 ปี</div>
+            </div>
+
+            <!-- เกษียณตอนอายุ -->
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">เกษียณตอนอายุ (ปี)</label>
+              <input type="number" id="sl-retire" value="60" min="30" max="80" placeholder="เช่น 60"
+                     oninput="calcRetire()"
+                     style="width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none"
+                     onfocus="this.style.borderColor='rgba(255,255,255,.55)'"
+                     onblur="this.style.borderColor='rgba(255,255,255,.25)'"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">อายุ 30–80 ปี</div>
+            </div>
+
+            <!-- อายุขัย -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">ประมาณการอายุขัย</label>
+                <span class="font-pop font-bold text-white text-sm" id="lbl-life">85 ปี</span>
+              </div>
+              <input type="range" class="calc-slider" id="sl-life" min="40" max="99" value="85"
+                     oninput="document.getElementById('lbl-life').textContent=this.value+' ปี';calcRetire()">
+              <div class="flex justify-between font-noto text-xs mt-1" style="color:rgba(255,255,255,.3)"><span>40</span><span>99</span></div>
+            </div>
+
+            <!-- รายได้หลังเกษียณ -->
+            <div>
+              <label class="font-noto text-xs font-medium block mb-2" style="color:rgba(255,255,255,.75)">อยากใช้หลังเกษียณ / เดือน (บาท)</label>
+              <input type="number" id="sl-income" value="30000" min="0" step="1000" placeholder="เช่น 30000"
+                     oninput="calcRetire()"
+                     style="width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none"
+                     onfocus="this.style.borderColor='rgba(255,255,255,.55)'"
+                     onblur="this.style.borderColor='rgba(255,255,255,.25)'"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">กรอกจำนวนเงินที่ต้องการใช้ต่อเดือน</div>
+            </div>
+
+            <!-- เงินออมปัจจุบัน -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="font-noto text-xs font-medium" style="color:rgba(255,255,255,.75)">เงินออมที่มีตอนนี้ (บาท)</label>
+              </div>
+              <input type="number" id="sl-savings" value="0" min="0" placeholder="เช่น 500000"
+                     oninput="calcRetire()"
+                     style="width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;outline:none"
+                     onfocus="this.style.borderColor='rgba(255,255,255,.55)'"
+                     onblur="this.style.borderColor='rgba(255,255,255,.25)'"/>
+              <div class="font-noto text-xs mt-1.5" style="color:rgba(255,255,255,.3)">กรอกจำนวนเงินออมที่มีอยู่แล้ว</div>
+            </div>
+
+            <!-- Fixed params note -->
+            <div class="font-noto text-xs pt-2 pb-1 border-t" style="color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)">
+              ⚙️ สมมติฐาน: เงินเฟ้อ 3% • ผลตอบแทนหลังเกษียณ 0% (conservative)
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function fmtB(n){
+  if(n>=1000000) return (n/1000000).toFixed(1).replace(/\.0$/,'')+'M ฿';
+  if(n>=1000) return (n/1000).toFixed(0)+'K ฿';
+  return n.toLocaleString()+' ฿';
+}
+function calcRetire(){
+  const age     = +document.getElementById('sl-age').value;
+  const retire  = +document.getElementById('sl-retire').value;
+  const life    = +document.getElementById('sl-life').value;
+  const income  = +document.getElementById('sl-income').value;
+  const savings = +document.getElementById('sl-savings').value;
+
+  // Clamp retire > age
+  if(retire <= age){
+    document.getElementById('res-goal').textContent = '—';
+    document.getElementById('res-gap').textContent  = '—';
+    document.getElementById('res-have').textContent = '—';
+    document.getElementById('res-monthly').textContent = '—';
+    document.getElementById('res-note').textContent = 'อายุเกษียณต้องมากกว่าอายุปัจจุบัน';
+    document.getElementById('bar-need').style.width = '100%';
+    document.getElementById('bar-have').style.width = '0%';
+    return;
+  }
+
+  const yToRetire = retire - age;
+  const retireMonths = Math.max(0, (life - retire)) * 12;
+
+  // Inflation-adjusted monthly income at retirement
+  const inflatedMonthly = income * Math.pow(1.03, yToRetire);
+
+  // Total needed (0% return after retirement = simple multiply)
+  const totalNeeded = inflatedMonthly * retireMonths;
+
+  // Gap (savings grow at 0% — ultra conservative)
+  const gap = Math.max(0, totalNeeded - savings);
+
+  // Monthly savings needed (no compounding during accumulation — simple)
+  const monthsToRetire = yToRetire * 12;
+  const monthlySave = monthsToRetire > 0 ? gap / monthsToRetire : 0;
+
+  document.getElementById('res-goal').textContent    = fmtB(Math.round(totalNeeded));
+  document.getElementById('res-gap').textContent     = gap <= 0 ? '✅ ครบแล้ว!' : fmtB(Math.round(gap));
+  document.getElementById('res-have').textContent    = fmtB(savings);
+  document.getElementById('res-monthly').textContent = gap <= 0 ? '✅ ไม่ต้องออมเพิ่ม' : fmtB(Math.round(monthlySave));
+  document.getElementById('res-note').textContent    = `สำหรับใช้ชีวิต ${life - retire} ปีหลังเกษียณ`;
+  // Progress bars
+  document.getElementById('bar-need').style.width = '100%';
+  const havePct = totalNeeded > 0 ? Math.min(100, Math.round(savings / totalNeeded * 100)) : 0;
+  document.getElementById('bar-have').style.width = havePct + '%';
+}
+calcRetire();
+</script>
+
+
+<!-- ══════════════ FINANCIAL INSIGHTS ══════════════ -->
+<section id="insights" class="py-20" style="background:#F8FAFC">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="mb-12 reveal">
+      <span class="sec-label">Financial Insights</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem)">ความรู้การเงินแบบย่อยง่าย</h2>
+      <p class="font-noto text-slate-400 text-sm mt-3 max-w-lg">อัปเดตความรู้ผ่านคลิปสั้น สรุปมาให้คุณแล้ว</p>
+    </div>
+
+    <!-- Short Clips -->
+    <div class="mb-10 reveal">
+      <!-- TikTok Clips header -->
+      <div class="flex items-center justify-between mb-5">
+        <p class="font-noto font-semibold text-navy text-sm flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1B365D"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+          Short Clips
+        </p>
+        <a href="https://tiktok.com/@pong.nextlevel" target="_blank"
+           class="font-noto text-xs font-semibold" style="color:#0891B2">ดูทั้งหมด →</a>
+      </div>
+
+      <!-- TikTok embed horizontal scroll -->
+      <div class="hide-scroll -mx-5 px-5" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <div class="flex gap-5" style="padding-bottom:8px;width:max-content">
+
+          <!-- Clip 3 -->
+          <div style="width:325px;flex-shrink:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(27,54,93,.1)">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@pong.insurance.partner/video/7626338056492240149"
+              data-video-id="7626338056492240149"
+              style="max-width:325px;min-width:325px;margin:0;border:none">
+              <section></section>
+            </blockquote>
+          </div>
+
+          <!-- Clip 1 — real embed -->
+          <div style="width:325px;flex-shrink:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(27,54,93,.1)">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@pong.insurance.partner/video/7634736052321717512"
+              data-video-id="7634736052321717512"
+              style="max-width:325px;min-width:325px;margin:0;border:none">
+              <section></section>
+            </blockquote>
+          </div>
+
+          <!-- Clip 2 -->
+          <div style="width:325px;flex-shrink:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(27,54,93,.1)">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@pong.insurance.partner/video/7628825781124304149"
+              data-video-id="7628825781124304149"
+              style="max-width:325px;min-width:325px;margin:0;border:none">
+              <section></section>
+            </blockquote>
+          </div>
+
+        </div>
+      </div>
+      <!-- TikTok embed script (load once) -->
+      <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+
+    <!-- Articles — rendered from articles.json -->
+    <div class="reveal" id="articles-section">
+
+      <!-- Featured -->
+      <div class="flex items-center justify-between mb-5">
+        <p class="font-noto font-semibold text-navy text-sm flex items-center gap-2">
+          <span style="color:#F59E0B">⭐</span> บทความแนะนำ
+        </p>
+        <a href="/articles/" class="font-noto text-xs font-semibold" style="color:#0891B2">ดูทั้งหมด →</a>
+      </div>
+      <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10"></div>
+
+      <!-- Latest -->
+      <div class="flex items-center justify-between mb-5">
+        <p class="font-noto font-semibold text-navy text-sm flex items-center gap-2">
+          <span style="color:#0891B2">🕐</span> บทความล่าสุด
+        </p>
+      </div>
+      <div id="latest-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+
+    </div>
+
+    <script>
+    (async () => {
+      try {
+        const res = await fetch('/articles/articles.json?v=' + Date.now());
+        const articles = await res.json();
+        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const card = a => `
+          <a href="/articles/${a.slug}" class="art-card group">
+            <div class="h-32 flex items-end p-4" style="background:${a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)'}">
+              <span class="badge" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
+            </div>
+            <div class="p-4">
+              <h4 class="font-pridi font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">${a.title}</h4>
+              <p class="font-noto text-slate-400 text-xs mt-2">${a.dateDisplay} · ${a.readTime}</p>
+            </div>
+          </a>`;
+
+        const featured = articles.filter(a => a.featured).slice(0, 3);
+        const featuredSlugs = new Set(featured.map(a => a.slug));
+        const latest = articles.filter(a => !featuredSlugs.has(a.slug)).slice(0, 3);
+
+        document.getElementById('featured-grid').innerHTML = featured.map(card).join('');
+        document.getElementById('latest-grid').innerHTML = latest.map(card).join('');
+
+        // Hide latest section if no extra articles yet
+        if (latest.length === 0) {
+          document.querySelector('[id="latest-grid"]').closest('div').previousElementSibling.style.display = 'none';
+          document.getElementById('latest-grid').style.display = 'none';
+        }
+      } catch(e) { console.error('Articles load error', e); }
+    })();
+    </script>
+
+  </div>
+</section>
+
+
+<!-- ══════════════ PROFESSIONAL STANDARDS ══════════════ -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-14 reveal">
+      <span class="sec-label">Professional Standards</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.3rem)">ใบอนุญาตและมาตรฐาน<br/>ที่คุณไว้วางใจได้</h2>
+    </div>
+    <!-- Licenses -->
+    <div class="flex flex-wrap justify-center gap-4 mb-14 reveal">
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
+        <img src="MDRT.jpeg" alt="MDRT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+        <div><div class="font-pop font-bold text-navy text-sm">MDRT Member</div><div class="font-noto text-slate-400 text-xs">Million Dollar Round Table</div></div>
+        <div class="cred-tip">สมาชิก Million Dollar Round Table — มาตรฐานระดับสากลด้านคุณภาพการให้บริการการเงิน</div>
+      </div>
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
+        <img src="FChFP-Logo.svg" alt="FChFP" class="w-10 h-10 object-contain grayscale"/>
+        <div><div class="font-pop font-bold text-navy text-sm">FChFP</div><div class="font-noto text-slate-400 text-xs">Fellow Chartered Financial Practitioner</div></div>
+        <div class="cred-tip">วุฒิบัตรนักวางแผนการเงินระดับสูงจากสมาคมนักวางแผนการเงินแห่งเอเชีย</div>
+      </div>
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
+        <img src="AFPT.jpg" alt="AFPT" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+        <div><div class="font-pop font-bold text-navy text-sm">AFPT™</div><div class="font-noto text-slate-400 text-xs">Associate Financial Planner Thailand</div></div>
+        <div class="cred-tip">ที่ปรึกษานักวางแผนการเงิน รับรองโดยสมาคมนักวางแผนการเงินไทย (TFPA)</div>
+      </div>
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card cred-card" onclick="this.classList.toggle('tip-open')">
+        <img src="ic-logo.png" alt="IC License" class="w-10 h-10 object-contain rounded-lg grayscale"/>
+        <div><div class="font-pop font-bold text-navy text-sm">IC License</div><div class="font-noto text-slate-400 text-xs">ที่ปรึกษาการลงทุน SEC</div></div>
+        <div class="cred-tip">ใบอนุญาตที่ปรึกษาการลงทุน ออกโดย ก.ล.ต. — กำกับดูแลมาตรฐานการให้คำแนะนำด้านการลงทุน</div>
+      </div>
+      <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-6 py-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(27,54,93,.08)">
+          <svg class="w-5 h-5" style="color:#1B365D" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <div><div class="font-pop font-bold text-navy text-sm">ใบอนุญาตตัวแทนประกันชีวิต</div><div class="font-noto text-slate-400 text-xs">รับรองโดย คปภ.</div></div>
+      </div>
+    </div>
+    <!-- Partners -->
+    <div class="reveal">
+      <!-- Row 1: Main Partners -->
+      <p class="font-noto text-slate-300 text-xs uppercase tracking-widest mb-6 text-center">Strategic Partners</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <div class="partner-card">
+          <img src="Partner/mtl-logo.jpg" alt="เมืองไทยประกันชีวิต" class="h-9 w-auto object-contain flex-shrink-0" style="max-width:64px"/>
+          <div><div class="font-pridi font-semibold text-navy text-sm">เมืองไทยประกันชีวิต</div><div class="font-noto text-slate-400 text-xs">Insurance Partner</div></div>
+        </div>
+        <div class="partner-card">
+          <img src="Partner/finnomena-logo.png" alt="Finnomena" class="h-9 w-auto object-contain flex-shrink-0" style="max-width:72px"/>
+          <div><div class="font-pridi font-semibold text-navy text-sm">Finnomena</div><div class="font-noto text-slate-400 text-xs">Investment Platform</div></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Asset Management -->
+      <p class="font-noto text-slate-300 text-xs uppercase tracking-widest mb-5 text-center">Asset Management • Fund Partners</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#00843D">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">KA</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">KAsset</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#1B3A8F">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">BBL</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">BBLAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F0A500">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">KS</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">KSAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#00AEEF">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">KT</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">KTAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#4B2178">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">SCB</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">SCBAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F47920">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">TMB</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">TMBAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#006A4D">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">ABD</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">Aberdeen</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#003087">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">UOB</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">UOBAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#00A758">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">MNL</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">Manulife</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#0022A5">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">PRI</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">Principal</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#E84B23">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">ONE</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">ONEAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#005BAA">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">TIS</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">TISCOAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#E31E24">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">MFC</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">MFC</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#0891B2">
+                <span class="font-pop font-black text-white" style="font-size:.58rem;letter-spacing:-.3px">AP</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center;line-height:1.2">AssetPlus</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:#EEF2F7;border:1.5px dashed #CBD5E1">
+                <span class="font-pop font-bold text-slate-400" style="font-size:.7rem">+7</span>
+              </div>
+              <span class="font-noto text-slate-400" style="font-size:.62rem;text-align:center">และอื่นๆ</span>
+            </div>
+      </div>
+      <p class="font-noto text-slate-400 text-xs text-center">รวม <strong class="text-navy">21 บลจ.</strong> ที่สามารถซื้อกองทุนรวมได้</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ JOIN TEAM ══════════════ -->
+<section id="career" class="py-24" style="background:#F0F4F8">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <!-- heading -->
+    <div class="mb-12 reveal">
+      <span class="sec-label">🚀 Join the Next Level Team</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.65rem,3vw,2.5rem)">ก้าวสู่การเป็น<br/>ที่ปรึกษาการเงินมืออาชีพ</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start reveal">
+
+      <!-- LEFT: Benefits -->
+      <div>
+        <p class="font-noto text-slate-500 leading-relaxed mb-10" style="font-size:.97rem">เราเชื่อว่าทุกคนมีศักยภาพ สิ่งที่เราให้คือระบบ เครื่องมือ และคนที่จะเดินไปด้วยกัน</p>
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">รายได้ไม่มีเพดาน</div>
+              <div class="font-noto text-slate-500 text-sm">Commission + On-top Allowance + Renewal income ระยะยาว</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">1-on-1 Mentoring ส่วนตัว</div>
+              <div class="font-noto text-slate-500 text-sm">Coach ที่เข้าใจธุรกิจและช่วยแก้ปัญหาจริง</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">Digital Tools &amp; CRM</div>
+              <div class="font-noto text-slate-500 text-sm">เครื่องมือดิจิทัลครบ พร้อม support การตลาดออนไลน์</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,.1)">
+              <svg class="w-5 h-5" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="font-pop font-semibold text-navy text-sm mb-1">Flexible — ทำได้ทุกที่</div>
+              <div class="font-noto text-slate-500 text-sm">พาร์ทไทม์หรือฟูลไทม์ ทุกสาขาอาชีพ ไม่จำกัดพื้นฐาน</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form Card -->
+      <div style="background:#fff;border-radius:20px;padding:2.5rem;border:1px solid rgba(27,54,93,0.08);box-shadow:0 4px 24px rgba(27,54,93,0.07)">
+
+        <!-- success message -->
+        <div id="careerSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+          <p class="font-pop font-bold text-navy" style="font-size:1.2rem;margin-bottom:.5rem">ได้รับข้อมูลเรียบร้อยแล้ว</p>
+          <p class="font-noto text-slate-400" style="font-size:.9rem">เราจะติดต่อกลับผ่าน Line / โทรศัพท์ ภายใน 24 ชม.</p>
+        </div>
+
+        <div class="font-pop font-bold text-navy text-lg mb-1">ส่งข้อมูลถึงเรา</div>
+        <div class="font-noto text-slate-400 text-sm mb-7">กรอกแบบฟอร์มนี้ เราจะติดต่อกลับภายใน 24 ชั่วโมง</div>
+
+        <form id="careerForm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">ชื่อ - นามสกุล <span style="color:#F87171">*</span></label>
+              <input type="text" name="name" placeholder="ชื่อของคุณ" required class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">เบอร์โทรศัพท์ <span style="color:#F87171">*</span></label>
+              <input type="tel" name="phone" placeholder="0xx-xxx-xxxx" required class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">Line ID</label>
+              <input type="text" name="line_id" placeholder="@yourlineid" class="form-input"/>
+            </div>
+            <div>
+              <label class="font-noto text-xs font-semibold text-navy block mb-2">อาชีพปัจจุบัน <span style="color:#F87171">*</span></label>
+              <input type="text" name="occupation" required placeholder="เช่น พนักงานบริษัท, ฟรีแลนซ์..." class="form-input"/>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label class="font-noto text-xs font-semibold text-navy block mb-2">เหตุผลที่สนใจ / สิ่งที่คาดหวัง</label>
+            <textarea name="motivation" rows="4" placeholder="เล่าให้ฟังสั้นๆ ว่าอยากทำอะไรกับโอกาสนี้..." class="form-input" style="resize:vertical;min-height:110px"></textarea>
+          </div>
+          <button type="submit" id="careerSubmitBtn" class="btn btn-teal w-full py-4 text-base justify-center">ส่งข้อมูลถึงเรา →</button>
+          <p class="font-noto text-center mt-3 text-slate-400" style="font-size:.75rem">ข้อมูลของคุณจะถูกเก็บรักษาอย่างปลอดภัย ไม่มีการแชร์ให้บุคคลที่สาม</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ OUR TEAM ══════════════ -->
+<section id="team-section" class="py-20" style="background:#EFF9FC">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="sec-label">Our Team</span>
+      <h2 class="font-pop font-extrabold text-navy mt-3" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">มากประสบการณ์ จากหลายที่มา</h2>
+      <p class="font-noto text-slate-400 mt-3 text-sm">เลื่อนเมาส์ หรือแตะที่รูปเพื่อดูที่มา</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5">
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/doctor-1.jpg" alt="Medical Specialist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">หมอ</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/engineer.jpg" alt="Infrastructure Strategist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">วิศวะ</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/freelancer.jpg" alt="Digital Economy Expert" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Freelance</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hr-advisor.jpg" alt="Human Capital Advisor" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">สายข้ามชาติ</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/food-industry.jpg" alt="Operations & Systems Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">ระบบอาหาร</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/doctor-2.jpg" alt="Clinical Consultant" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">หมอ</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hospitality.jpg" alt="Service Excellence Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">บริการ</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/hr-manager.jpg" alt="Organizational Strategist" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">สายค้าปลีก</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/energy.jpg" alt="Strategic Foundation Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">พลังงาน</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/cfo.jpg" alt="Financial Innovation Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">การเงิน</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-new reveal">
+        <div class="team-photo-wrap">
+          <img src="/images/team/project-manager.jpg" alt="Execution Excellence Lead" class="team-photo" loading="lazy"/>
+          <div class="team-overlay">
+            <span class="team-bg-label">Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FINAL CTA ══════════════ -->
+<section id="contact-section" class="py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <span class="sec-label mb-4 inline-block">Free Consultation</span>
+    <h2 class="font-pop font-extrabold text-navy mt-2" style="font-size:clamp(1.8rem,3.5vw,2.6rem)">ออกแบบความมั่งคั่ง<br/>ในแบบที่คุณต้องการ</h2>
+    <p class="font-noto text-slate-400 mt-4 mb-9" style="font-size:1rem">ปรึกษาเบื้องต้น 15 นาที (ฟรี ไม่มีข้อผูกมัด)</p>
+    <a href="https://calendly.com/insuremate99/15" class="btn btn-teal px-10 py-4 text-base mx-auto">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      นัดหมายรับคำปรึกษา
+    </a>
+    <p class="font-noto text-slate-300 text-xs mt-4">ผ่าน LINE, Zoom หรือพบตามความสะดวก</p>
+  </div>
+</section>
+
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer style="background:#1B365D" class="py-14">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10" style="border-bottom:1px solid rgba(255,255,255,.1)">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain opacity-80"/>
+          <div>
+            <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#fff">Advisor</span></div>
+          </div>
+        </div>
+        <p class="font-noto text-xs mt-2 leading-relaxed" style="color:rgba(255,255,255,.38)">ดีไซน์ความมั่งคั่งและแผนเกษียณแบบครบวงจร<br/>โดยที่ปรึกษาการเงินมืออาชีพ</p>
+        <p class="font-noto text-xs mt-3" style="color:rgba(255,255,255,.22)">nextlevel-advisor.com</p>
+      </div>
+      <div>
+        <h4 class="font-pop font-semibold text-white text-sm mb-5">บริการ</h4>
+        <ul class="space-y-3 font-noto text-sm" style="color:rgba(255,255,255,.45)">
+          <li><a href="/solutions/retirement-tax.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนภาษี/เกษียณ</a></li>
+          <li><a href="/solutions/health-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนสุขภาพ</a></li>
+          <li><a href="/solutions/legacy-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนมรดก</a></li>
+          <li><a href="/solutions/wealth-growth.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนความมั่งคั่ง</a></li>
+          <li><a href="/solutions/tax-optimization.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนภาษี (ออมทรัพย์)</a></li>
+          <li><a href="/calculator" class="hover:text-white transition-colors" style="color:inherit">เครื่องคำนวณเกษียณ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-pop font-semibold text-white text-sm mb-5">ติดต่อ</h4>
+        <ul class="space-y-3 font-noto text-sm" style="color:rgba(255,255,255,.45)">
+          <li><a href="tel:0809696351" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            080-9696351
+          </a></li>
+          <li><a href="https://lin.ee/NC0RcZM" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE OA: @nextlevel-advisor
+          </a></li>
+
+          <li><a href="https://www.tiktok.com/@pong.nextlevel?_r=1&amp;_t=ZS-966Dna2VNkj" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.52V6.75a4.85 4.85 0 01-1.02-.06z"/></svg>
+            TikTok: Pong.Nextlevel
+          </a></li>
+          <li><a href="https://www.facebook.com/Financialadvisordiary" target="_blank" class="hover:text-white transition-colors flex items-center gap-2" style="color:inherit">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            กว่าจะเป็นที่ปรึกษาทางการเงิน
+          </a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-noto text-xs" style="color:rgba(255,255,255,.25)">© 2568 Next Level Advisor. All rights reserved.</p>
+      <p class="font-noto text-xs" style="color:rgba(255,255,255,.25)">ใบอนุญาตตัวแทนประกันชีวิต • รับรองโดย คปภ.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), {passive:true});
+
+  // Mobile menu
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Reveal — progressive enhancement
+  document.documentElement.classList.add('js-reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); }});
+  }, {threshold:0.07});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Career form → Formspree AJAX
+  document.getElementById('careerForm')?.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = document.getElementById('careerSubmitBtn');
+    const origText = btn.textContent;
+    btn.textContent = 'กำลังส่ง...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xlgzgkje', {
+        method: 'POST',
+        headers: {'Accept': 'application/json'},
+        body: new FormData(this)
+      });
+      if(res.ok){
+        this.style.display = 'none';
+        document.getElementById('careerSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'เกิดข้อผิดพลาด ลองใหม่อีกครั้ง';
+        btn.disabled = false;
+      }
+    } catch(err){
+      btn.textContent = origText;
+      btn.disabled = false;
+    }
+  });
 </script>
 
 
@@ -691,4 +1692,4 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeRetirem
 <div class="md:hidden" style="height:96px"></div>
 
 </body>
-</html>
+</html>                                                                                                                                                                                                       
