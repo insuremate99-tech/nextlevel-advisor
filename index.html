@@ -405,27 +405,81 @@
 </div>
 <script>
 (function(){
-  const index=[
-    {label:"วางแผนภาษีและลดหย่อน",url:"/solutions/retirement-tax.html",icon:"💰"},
-    {label:"วางแผนสุขภาพและประกันชีวิต",url:"/solutions/health-planning.html",icon:"❤️"},
-    {label:"วางแผนมรดกและส่งต่อความมั่งคั่ง",url:"/solutions/legacy-planning.html",icon:"🏛️"},
-    {label:"วางแผนความมั่งคั่งและการออม",url:"/solutions/wealth-growth.html",icon:"📈"},
-    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮"},
-    {label:"About - Behind the Advisor",url:"/behind-the-advisor",icon:"👤"},
-    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬"},
+  /* ── Static page index with keyword aliases ── */
+  const pages=[
+    {label:"วางแผนเกษียณ & รายได้การันตีตลอดชีพ",url:"/solutions/retirement-tax.html",icon:"🏖️",type:"โซลูชัน",
+     keys:["เกษียณ","บำนาญ","annuity","รายได้การันตี","อยากเกษียณ","เกษียณอายุ","หลังเกษียณ","ออมเพื่อเกษียณ","วางแผนเกษียณ","passive income","รายได้หลังเกษียณ","ประกันบำนาญ"]},
+    {label:"ลดภาษี & ออมทรัพย์",url:"/solutions/tax-optimization.html",icon:"💰",type:"โซลูชัน",
+     keys:["ภาษี","ลดภาษี","ลดหย่อน","ลดหย่อนภาษี","tax","ออมภาษี","ประกันสะสมทรัพย์","บำนาญลดหย่อน","ฐานภาษี","เงินคืนภาษี","ssf","rmf","ประกันชีวิตลดหย่อน"]},
+    {label:"วางแผนสุขภาพ & ประกันสุขภาพ",url:"/solutions/health-planning.html",icon:"🏥",type:"โซลูชัน",
+     keys:["สุขภาพ","ประกันสุขภาพ","health","โรงพยาบาล","ค่ารักษา","เจ็บป่วย","มะเร็ง","โรคร้าย","เหมาจ่าย","ประกันชีวิต","คุ้มครองสุขภาพ","ci","dread disease","ประกันโรคร้าย"]},
+    {label:"ส่งต่อมรดก & Legacy Planning",url:"/solutions/legacy-planning.html",icon:"🏛️",type:"โซลูชัน",
+     keys:["มรดก","legacy","ส่งต่อ","ทายาท","ธุรกิจครอบครัว","whole life","ประกันชีวิตตลอดชีพ","estate","ความมั่งคั่ง","ปลอดภาษีมรดก","เจ้าของกิจการ","สืบทอด"]},
+    {label:"ลงทุนด้วยประกัน & Wealth Growth",url:"/solutions/wealth-growth.html",icon:"🎯",type:"โซลูชัน",
+     keys:["ลงทุน","unit linked","wealth","ออมระยะยาว","ผลตอบแทน","กองทุน","ul","invest","เติบโต","ความมั่งคั่ง","ul plus","ประกันควบลงทุน","ลงทุนประกัน"]},
+    {label:"เครื่องคำนวณเกษียณ",url:"/calculator",icon:"🧮",type:"เครื่องมือ",
+     keys:["คำนวณ","calculator","เกษียณ","วางแผน","ออม","เงินเกษียณ","ต้องออมเท่าไหร่","เป้าหมายเกษียณ","retirement calculator","คำนวณเกษียณ"]},
+    {label:"รู้จักทีมงาน Behind the Advisor",url:"/behind-the-advisor",icon:"👤",type:"เกี่ยวกับเรา",
+     keys:["ทีม","advisor","ที่ปรึกษา","เกี่ยวกับ","mdrt","afpt","fchfp","ประสบการณ์","นักวางแผน","ป้อง","nextlevel"]},
+    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬",type:"ติดต่อ",
+     keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","คุย","สอบถาม","ถาม","ขอคำแนะนำ","ช่วยวางแผน"]},
   ];
+
+  /* ── Build full index including articles ── */
+  let fullIndex=[...pages];
+  fetch('/articles/articles.json').then(r=>r.json()).then(articles=>{
+    articles.forEach(a=>{
+      fullIndex.push({
+        label:a.title,
+        url:'/articles/'+a.slug,
+        icon:'📄',
+        type:'บทความ',
+        keys:[a.excerpt||'', a.category||'', ...(a.tags||[])],
+      });
+    });
+  }).catch(()=>{});
+
+  /* ── Match function ── */
+  function match(item, q){
+    const haystack=[item.label, ...item.keys].join(' ').toLowerCase();
+    return q.split(/\s+/).every(word=>haystack.includes(word));
+  }
+
   const inp=document.getElementById('siteSearch');
   const res=document.getElementById('searchResults');
   if(!inp) return;
+
   inp.addEventListener('input',function(){
     const q=inp.value.trim().toLowerCase();
     if(!q){res.classList.add('hidden');res.innerHTML='';return;}
-    const matches=index.filter(x=>x.label.toLowerCase().includes(q)||x.url.toLowerCase().includes(q));
-    if(!matches.length){res.classList.add('hidden');return;}
-    res.innerHTML=matches.map(x=>`<a href="${x.url}" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 border-b border-slate-50 font-noto text-sm text-navy transition-colors"><span class="text-lg">${x.icon}</span>${x.label}</a>`).join('');
+    const matches=fullIndex.filter(x=>match(x,q)).slice(0,8);
+    if(!matches.length){
+      res.innerHTML=`<div class="px-4 py-3 font-noto text-sm text-slate-400">ไม่พบผลลัพธ์ที่ตรงกัน</div>`;
+      res.classList.remove('hidden');
+      return;
+    }
+    /* Group by type */
+    const groups={};
+    matches.forEach(x=>{
+      if(!groups[x.type]) groups[x.type]=[];
+      groups[x.type].push(x);
+    });
+    let html='';
+    Object.entries(groups).forEach(([type,items])=>{
+      html+=`<div class="px-4 pt-2.5 pb-0.5 font-pop font-bold text-xs uppercase tracking-widest text-slate-400">${type}</div>`;
+      items.forEach(x=>{
+        html+=`<a href="${x.url}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 border-b border-slate-50 last:border-0 font-noto text-sm text-navy transition-colors"><span class="text-lg leading-none">${x.icon}</span>${x.label}</a>`;
+      });
+    });
+    res.innerHTML=html;
     res.classList.remove('hidden');
   });
-  document.addEventListener('click',function(e){if(!e.target.closest('#siteSearch')&&!e.target.closest('#searchResults')){res.classList.add('hidden');}});
+
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('#siteSearch')&&!e.target.closest('#searchResults')){
+      res.classList.add('hidden');
+    }
+  });
 })();
 </script>
 
