@@ -407,7 +407,6 @@
 
 <!-- ══════════════ MOBILE SEARCH OVERLAY ══════════════ -->
 <div id="mobileSearchOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:#fff;flex-direction:column">
-  <!-- Header -->
   <div style="background:#1B365D;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0">
     <button onclick="closeMobileSearch()" style="background:none;border:none;color:#fff;padding:4px;cursor:pointer;display:flex;align-items:center">
       <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -419,7 +418,6 @@
         autocomplete="off" autocorrect="off" spellcheck="false"/>
     </div>
   </div>
-  <!-- Quick pills -->
   <div id="mobileSearchSuggestions" style="padding:16px;border-bottom:1px solid #f1f5f9;flex-shrink:0">
     <p style="font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;color:#94a3b8;margin-bottom:10px">ค้นหายอดนิยม</p>
     <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -431,7 +429,6 @@
       <button onclick="mobileQuickSearch(this)" style="font-family:'Noto Sans Thai',sans-serif;font-size:.82rem;padding:6px 14px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff;color:#1B365D;cursor:pointer">ลงทุน</button>
     </div>
   </div>
-  <!-- Results -->
   <div id="mobileSearchResults" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:80px"></div>
 </div>
 <script>
@@ -486,11 +483,7 @@
   const inp=document.getElementById('siteSearch');
   const res=document.getElementById('searchResults');
   if(inp){
-    inp.addEventListener('focus',function(){
-      if(window.innerWidth<768){openMobileSearch();inp.blur();return;}
-    });
     inp.addEventListener('input',function(){
-      if(window.innerWidth<768) return;
       const q=inp.value.trim().toLowerCase();
       if(!q){res.classList.add('hidden');res.innerHTML='';return;}
       const matches=fullIndex.filter(x=>match(x,q)).slice(0,8);
@@ -555,12 +548,6 @@
     });
   }
 
-  /* tap search bar on mobile → open overlay */
-  if(inp){
-    inp.addEventListener('click',function(){
-      if(window.innerWidth<768){openMobileSearch();}
-    });
-  }
 })();
 </script>
 
@@ -696,4 +683,4 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeRetirem
 <div class="md:hidden" style="height:96px"></div>
 
 </body>
-</html>                                                                                                                                                                                                       
+</html>
