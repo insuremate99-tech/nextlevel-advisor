@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Pridi:wght@400;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#1B365D',teal:'#0891B2'},fontFamily:{pop:['Poppins','sans-serif'],pridi:['Pridi','serif'],noto:['Noto Sans Thai','sans-serif']}}}}</script>
   <style>
     body{font-family:'Noto Sans Thai',sans-serif;color:#1E293B;background:#F8FAFC}
     .font-pop{font-family:'Poppins',sans-serif}.font-pridi{font-family:'Pridi',serif}.font-noto{font-family:'Noto Sans Thai',sans-serif}
@@ -37,7 +38,7 @@
 <body>
 
 <!-- NAV -->
-<nav id="nav" class="py-4" style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:100">
+<nav id="nav" class="py-4" style="background:#ffffff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:100;display:block;width:100%">
   <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5">
       <img src="../nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
