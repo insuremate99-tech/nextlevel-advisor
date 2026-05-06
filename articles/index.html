@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PHYNQSRYV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1PHYNQSRYV');
-  </script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1PHYNQSRYV');</script>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>บทความการเงิน | Next Level Advisor</title>
   <meta name="description" content="ความรู้การเงิน ประกันชีวิต วางแผนเกษียณ ลดหย่อนภาษี และการส่งต่อมรดก จากที่ปรึกษาการเงินมืออาชีพ AFPT™ FChFP"/>
-  <meta name="keywords" content="บทความการเงิน, วางแผนเกษียณ, ลดหย่อนภาษี, ประกันชีวิต, ที่ปรึกษาการเงิน"/>
   <meta property="og:title" content="บทความการเงิน | Next Level Advisor"/>
-  <meta property="og:description" content="ความรู้การเงิน ประกันชีวิต วางแผนเกษียณ ลดหย่อนภาษี จากที่ปรึกษาการเงินมืออาชีพ"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://nextlevel-advisor.com/articles/"/>
-  <meta property="og:site_name" content="Next Level Advisor"/>
   <link rel="canonical" href="https://nextlevel-advisor.com/articles/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Pridi:wght@400;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body{font-family:'Noto Sans Thai',sans-serif;color:#1E293B;background:#F8FAFC}
-    .font-pop{font-family:'Poppins',sans-serif}
-    .font-pridi{font-family:'Pridi',serif}
-    .font-noto{font-family:'Noto Sans Thai',sans-serif}
-    .art-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #E8EDF5;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block;cursor:pointer}
+    .font-pop{font-family:'Poppins',sans-serif}.font-pridi{font-family:'Pridi',serif}.font-noto{font-family:'Noto Sans Thai',sans-serif}
+    .art-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #E8EDF5;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block}
     .art-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(27,54,93,.1)}
     .tag{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.72rem;font-weight:600}
     .filter-btn{font-family:'Noto Sans Thai',sans-serif;padding:6px 18px;border-radius:999px;border:1.5px solid #E2E8F0;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:#64748B}
@@ -36,166 +24,57 @@
     .filter-btn:hover:not(.active){border-color:#0891B2;color:#0891B2}
     .search-input{width:100%;padding:10px 16px 10px 40px;border:1.5px solid #E2E8F0;border-radius:12px;font-family:'Noto Sans Thai',sans-serif;font-size:.875rem;outline:none;transition:border-color .2s;background:#fff}
     .search-input:focus{border-color:#0891B2}
-    .sec-label{font-family:'Noto Sans Thai';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#0891B2}
-    #no-results{display:none;text-align:center;padding:3rem;color:#94A3B8}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .pg-btn{font-family:'Noto Sans Thai',sans-serif;min-width:38px;height:38px;padding:0 10px;border-radius:8px;border:1.5px solid #E2E8F0;background:#fff;color:#475569;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;justify-content:center}
+    .pg-btn:hover:not(.active):not([disabled]){border-color:#0891B2;color:#0891B2}
+    .pg-btn.active{background:#1B365D;color:#fff;border-color:#1B365D}
+    .pg-btn[disabled]{opacity:.35;cursor:default}
+    .pg-dots{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;color:#CBD5E1;font-size:.85rem}
+    .scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   </style>
-  <!-- JSON-LD: BreadcrumbList + WebPage for articles index -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "หน้าหลัก",
-            "item": "https://nextlevel-advisor.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "บทความ",
-            "item": "https://nextlevel-advisor.com/articles/"
-          }
-        ]
-      },
-      {
-        "@type": "CollectionPage",
-        "@id": "https://nextlevel-advisor.com/articles/",
-        "url": "https://nextlevel-advisor.com/articles/",
-        "name": "บทความ — Next Level Advisor",
-        "description": "รวมบทความความรู้ด้านประกันชีวิต วางแผนเกษียณ ภาษี และมรดก โดยที่ปรึกษาการเงิน AFPT FChFP",
-        "inLanguage": "th",
-        "isPartOf": {
-          "@id": "https://nextlevel-advisor.com/#website"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <style id="section-nav-css">
-    #sectionNav .section-nav-link { color:#64748B; }
-    #sectionNav .section-nav-link:hover { color:#0891B2; border-bottom-color:#0891B2; }
-    #sectionNav .section-nav-link.active { color:#0891B2; border-bottom-color:#0891B2; font-weight:700; }
-    .scrollbar-hide::-webkit-scrollbar { display:none; }
-    .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
-  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าหลัก","item":"https://nextlevel-advisor.com/"},{"@type":"ListItem","position":2,"name":"บทความ","item":"https://nextlevel-advisor.com/articles/"}]},{"@type":"CollectionPage","url":"https://nextlevel-advisor.com/articles/","name":"บทความ — Next Level Advisor","inLanguage":"th"}]}</script>
 </head>
 <body>
 
 <!-- NAV -->
-<!-- ══════════════ NAV ══════════════ -->
-<nav id="nav" class="py-4" style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:100">
-  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+<nav style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:100">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5">
-      <img src="../nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
+      <img src="../nav-icon.png" alt="Next Level Advisor" style="height:36px;width:36px;object-fit:contain"/>
       <div class="hidden sm:block leading-tight">
         <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#1B365D">Advisor</span></div>
-        <div class="font-noto text-xs" style="color:#64748b;letter-spacing:.01em">วางแผนการเงิน · ประกันชีวิต · เกษียณ</div>
+        <div class="font-noto text-xs" style="color:#64748b">วางแผนการเงิน · ประกันชีวิต · เกษียณ</div>
       </div>
     </a>
-    <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
-      <li><a href="/solutions" class="text-navy hover:text-teal transition-colors">โซลูชัน</a></li>
-      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">บทความ / Perspectives</a></li>
-      <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
-      <li><a href="/#career" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
+    <ul class="hidden md:flex items-center gap-7 font-noto text-sm font-medium">
+      <li><a href="/solutions" style="color:#475569">โซลูชัน</a></li>
+      <li><a href="/calculator" style="color:#475569">เครื่องมือการเงิน</a></li>
+      <li><a href="/articles/" style="color:#0891B2;font-weight:700">บทความ</a></li>
+      <li><a href="/behind-the-advisor" style="color:#475569">Behind the Advisor</a></li>
+      <li><a href="/#career" style="color:#475569">ร่วมทีมกับเรา</a></li>
     </ul>
-    <div class="flex items-center gap-3">
-      <a href="tel:0809696351" class="hidden md:inline-flex items-center gap-1.5 font-pop font-semibold text-sm text-navy hover:text-teal transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        080-9696351
-      </a>
-      <a href="https://lin.ee/NC0RcZM" target="_blank" class="btn btn-teal px-5 py-2.5 text-sm hidden sm:inline-flex gap-2 items-center">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        แอดไลน์
-      </a>
-      <button id="menuBtn" class="md:hidden p-2 rounded-xl text-navy">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 px-5 pb-5 pt-3" style="background:#fff">
-    <ul class="space-y-1 font-noto text-sm font-medium">
-      <li><a href="/solutions" class="block py-3 text-navy hover:text-teal border-b border-slate-100">โซลูชัน</a></li>
-      <li><a href="/calculator" class="block py-3 text-navy hover:text-teal border-b border-slate-100">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="block py-3 text-navy hover:text-teal border-b border-slate-100">บทความ / Perspectives</a></li>
-      <li><a href="/behind-the-advisor" class="block py-3 text-navy hover:text-teal border-b border-slate-100">Behind the Advisor</a></li>
-      <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
-    </ul>
-    <a href="https://lin.ee/NC0RcZM" target="_blank" class="btn btn-teal w-full mt-4 py-3.5 text-sm justify-center gap-2" style="display:flex;align-items:center">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      ติดต่อทาง LINE: @nextlevel-advisor
+    <a href="https://lin.ee/NC0RcZM" target="_blank" class="hidden sm:inline-flex items-center gap-2 font-noto font-semibold text-sm px-5 py-2.5 rounded-full text-white" style="background:#0891B2">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      แอดไลน์
     </a>
   </div>
 </nav>
-<script>
-(function(){
-  var btn=document.getElementById('menuBtn');
-  var menu=document.getElementById('mobileMenu');
-  if(btn&&menu) btn.addEventListener('click',function(){menu.classList.toggle('hidden');});
-})();
-</script>
-
-<div id="sectionNav" class="sticky z-40 bg-white border-b border-slate-100 shadow-sm" style="top:64px">
-  <div class="overflow-x-auto scrollbar-hide">
-    <div class="flex items-stretch min-w-max px-2">
-      <a href="/" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        หน้าแรก
-      </a>
-      <a href="/solutions" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        โซลูชัน
-      </a>
-      <a href="/calculator" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
-        เครื่องมือการเงิน
-      </a>
-      <a href="/#program-section" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-        โปรแกรม 5 ปี 5 ล้าน
-      </a>
-      <a href="/articles/" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.876V15.5M15 10v9m0-9H9m6 9H9m0 0V6a2 2 0 012-2h4a2 2 0 012 2v3M9 19H5a2 2 0 01-2-2v-5.5"/></svg>
-        Content
-      </a>
-      <a href="/#career" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        ร่วมงาน
-      </a>
-      <a href="/#contact-section" class="section-nav-link font-noto text-sm font-medium px-4 py-3 text-slate-500 hover:text-teal border-b-2 border-transparent hover:border-teal transition-colors whitespace-nowrap flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        ติดต่อ
-      </a>
-    </div>
-  </div>
-</div>
-
 
 <!-- HERO -->
 <section style="background:linear-gradient(135deg,#1B365D,#0D3560)" class="py-16">
   <div class="max-w-3xl mx-auto px-5 text-center">
-    <span class="sec-label" style="color:#38BDF8">Knowledge Hub</span>
-    <h1 class="font-pop font-extrabold mt-3 mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff">
-      ความรู้การเงินแบบย่อยง่าย
-    </h1>
-    <p class="font-noto" style="color:rgba(255,255,255,.7);font-size:.95rem">
-      บทความจากที่ปรึกษาการเงินมืออาชีพ · AFPT™ · FChFP
-    </p>
+    <span class="font-noto text-xs font-semibold" style="color:#38BDF8;letter-spacing:.12em">KNOWLEDGE HUB</span>
+    <h1 class="font-pop font-extrabold mt-3 mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff">ความรู้การเงินแบบย่อยง่าย</h1>
+    <p class="font-noto" style="color:rgba(255,255,255,.7);font-size:.95rem">บทความจากที่ปรึกษาการเงินมืออาชีพ · AFPT™ · FChFP</p>
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="max-w-6xl mx-auto px-5 py-12">
 
   <!-- Search + Filter -->
-  <div class="flex flex-col md:flex-row gap-4 mb-10">
-    <div class="relative flex-1">
+  <div class="flex flex-col md:flex-row gap-4 mb-8">
+    <div class="relative flex-1 max-w-sm">
       <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color:#94A3B8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       <input id="searchInput" type="text" class="search-input" placeholder="ค้นหาบทความ..."/>
     </div>
@@ -214,23 +93,29 @@
     </div>
   </div>
 
-  <p class="font-noto text-sm mb-6" style="color:#94A3B8">
-    แสดง <span id="articleCount">0</span> บทความ
-  </p>
-
-  <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-  <!-- Load More -->
-  <div id="loadMoreWrap" style="display:none;justify-content:center;margin-top:2.5rem">
-    <button id="loadMoreBtn" onclick="loadMore()" class="font-noto font-semibold px-8 py-3 rounded-full transition-all" style="background:#1B365D;color:#fff;border:none;cursor:pointer;font-size:.9rem;letter-spacing:.02em" onmouseover="this.style.background='#0891B2'" onmouseout="this.style.background='#1B365D'">
-      ดูเพิ่มอีก 12 บทความ
-    </button>
+  <!-- Stats -->
+  <div class="flex items-center justify-between mb-6">
+    <p class="font-noto text-sm" style="color:#64748B">
+      <span id="articleCount">0</span> บทความ &nbsp;·&nbsp;
+      <span id="pageInfoText" style="color:#94A3B8"></span>
+    </p>
+    <p class="font-noto text-xs" style="color:#94A3B8">เรียงตามล่าสุด</p>
   </div>
 
-  <div id="no-results">
+  <!-- Grid -->
+  <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"></div>
+
+  <div id="no-results" style="display:none;text-align:center;padding:3rem;color:#94A3B8">
     <p class="font-noto text-lg mb-2">ไม่พบบทความที่ค้นหา</p>
     <p class="font-noto text-sm">ลองค้นหาด้วยคำอื่น หรือเลือก category อื่น</p>
   </div>
+
+  <!-- Pagination -->
+  <div id="paginationWrap" style="display:none;flex-direction:column;align-items:center;gap:12px;margin-top:8px">
+    <div id="paginationBtns" class="flex flex-wrap justify-center gap-2"></div>
+    <p id="paginationSummary" class="font-noto text-xs" style="color:#94A3B8"></p>
+  </div>
+
 </div>
 
 <!-- CTA -->
@@ -238,9 +123,7 @@
   <div class="max-w-xl mx-auto px-5 text-center">
     <p class="font-pridi font-semibold text-lg mb-2" style="color:#1B365D">มีคำถามเพิ่มเติม?</p>
     <p class="font-noto text-sm mb-6" style="color:#94A3B8">ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด</p>
-    <a href="https://calendly.com/insuremate99/15"
-       class="inline-block font-noto font-semibold text-sm px-8 py-3 rounded-full text-white"
-       style="background:#0891B2">นัดปรึกษาฟรี →</a>
+    <a href="https://calendly.com/insuremate99/15" class="inline-block font-noto font-semibold text-sm px-8 py-3 rounded-full text-white" style="background:#0891B2">นัดปรึกษาฟรี →</a>
   </div>
 </section>
 
@@ -249,138 +132,105 @@
 </footer>
 
 <script>
-let allArticles = [];
-let activeCategory = 'all';
-let searchQuery = '';
-let visibleCount = 12;
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 24;
+let allArticles=[], filtered=[], currentPage=1, activeCategory='all', searchQuery='';
 
-async function loadArticles() {
-  try {
-    const res = await fetch('/articles/articles.json?v=' + Date.now());
-    allArticles = await res.json();
-    allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-    renderArticles();
-  } catch(e) {
-    console.error('Failed to load articles', e);
-  }
+async function loadArticles(){
+  try{
+    const res=await fetch('/articles/articles.json?v='+Date.now());
+    allArticles=await res.json();
+    allArticles.sort((a,b)=>new Date(b.date)-new Date(a.date));
+    applyFilter();
+  }catch(e){console.error(e);}
 }
 
-function renderArticles(resetVisible = true) {
-  const grid = document.getElementById('articleGrid');
-  const noResults = document.getElementById('no-results');
-  const countEl = document.getElementById('articleCount');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  const loadMoreWrap = document.getElementById('loadMoreWrap');
-
-  if (resetVisible) visibleCount = PAGE_SIZE;
-
-  const filtered = allArticles.filter(a => {
-    const allCats = [a.category, ...(a.tags || [])];
-    const matchCat = activeCategory === 'all' || allCats.includes(activeCategory);
-    const matchSearch = !searchQuery ||
-      a.title.toLowerCase().includes(searchQuery) ||
-      a.excerpt.toLowerCase().includes(searchQuery) ||
-      allCats.join(' ').toLowerCase().includes(searchQuery);
-    return matchCat && matchSearch;
+function applyFilter(resetPage=true){
+  if(resetPage) currentPage=1;
+  filtered=allArticles.filter(a=>{
+    const cats=[a.category,...(a.tags||[])];
+    const mc=activeCategory==='all'||cats.includes(activeCategory);
+    const ms=!searchQuery||a.title.toLowerCase().includes(searchQuery)||(a.excerpt||'').toLowerCase().includes(searchQuery)||cats.join(' ').toLowerCase().includes(searchQuery);
+    return mc&&ms;
   });
+  renderPage();
+}
 
-  countEl.textContent = filtered.length;
-
-  if (filtered.length === 0) {
-    grid.innerHTML = '';
-    noResults.style.display = 'block';
-    loadMoreWrap.style.display = 'none';
-    return;
-  }
-  noResults.style.display = 'none';
-
-  // Render ALL articles in DOM (SEO: Google indexes all)
-  // but hide ones beyond visibleCount
-  grid.innerHTML = filtered.map((a, i) => {
-    const hidden = i >= visibleCount ? ' style="display:none"' : '';
-    const grad = a.coverGradient || 'linear-gradient(135deg,#1B365D,#0891B2)';
-    const cardTop = a.coverImage
-      ? `<div style="height:160px;overflow:hidden;background:${grad}">
-           <img src="${a.coverImage}" alt="${a.title}"
-                style="width:100%;height:160px;object-fit:cover;display:block"
-                loading="lazy"
-                onerror="this.parentElement.style.background='${grad}';this.remove()"/>
-         </div>`
-      : `<div style="height:160px;background:${grad}">
-           <div class="h-full flex flex-col justify-between p-5">
-             <div class="flex justify-between items-start">
-               <span class="tag" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:.65rem">${a.category}</span>
-               ${a.featured ? '<span class="tag" style="background:rgba(251,191,36,.25);color:#FCD34D;border:1px solid rgba(252,211,77,.3);font-size:.6rem">&#11088; แนะนำ</span>' : ''}
-             </div>
-           </div>
-         </div>`;
-    return `
-    <a href="/articles/${a.slug}" class="art-card" style="animation:fadeUp .4s ease ${Math.min(i,11) * 0.06}s both"${hidden}>
-      ${cardTop}
+function renderPage(){
+  const grid=document.getElementById('articleGrid');
+  const noRes=document.getElementById('no-results');
+  const countEl=document.getElementById('articleCount');
+  const pageInfoText=document.getElementById('pageInfoText');
+  const pgWrap=document.getElementById('paginationWrap');
+  const total=filtered.length;
+  const totalPages=Math.ceil(total/PAGE_SIZE)||1;
+  if(currentPage>totalPages) currentPage=totalPages;
+  countEl.textContent=total;
+  if(total===0){grid.innerHTML='';noRes.style.display='block';pgWrap.style.display='none';pageInfoText.textContent='';return;}
+  noRes.style.display='none';pgWrap.style.display='flex';
+  const start=(currentPage-1)*PAGE_SIZE, end=Math.min(start+PAGE_SIZE,total);
+  pageInfoText.textContent='หน้า '+currentPage+' จาก '+totalPages;
+  grid.innerHTML=filtered.slice(start,end).map((a,i)=>{
+    const grad=a.coverGradient||'linear-gradient(135deg,#1B365D,#0891B2)';
+    const top=a.coverImage
+      ?`<img src="${a.coverImage}" alt="${a.title}" style="width:100%;height:160px;object-fit:cover" loading="lazy"/>`
+      :`<div style="height:160px;background:${grad};display:flex;flex-direction:column;justify-content:flex-end;padding:.9rem 1.1rem">
+          <span class="tag" style="background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:.6rem;align-self:flex-start">${a.category}</span>
+        </div>`;
+    const dr=a.dateDisplay||a.date;
+    const rt=typeof a.readTime==='number'?a.readTime+' นาที':(a.readTime||'');
+    return `<a href="/articles/${a.slug}" class="art-card" style="animation:fadeUp .32s ease ${i*.04}s both">
+      ${top}
       <div class="p-5">
         <div class="flex gap-1 flex-wrap mb-2">
-          <span class="tag" style="background:#EFF6FF;color:#1B365D;font-size:.65rem">${a.category}</span>
-          ${(a.tags||[]).map(t=>`<span class="tag" style="background:#F1F5F9;color:#64748B;font-size:.6rem">${t}</span>`).join('')}
-          ${a.featured ? '<span class="tag" style="background:#FEF3C7;color:#92400E;font-size:.65rem">&#11088; แนะนำ</span>' : ''}
+          <span class="tag" style="background:#EFF6FF;color:#1B365D;font-size:.6rem">${a.category}</span>
+          ${(a.tags||[]).slice(0,2).map(t=>`<span class="tag" style="background:#F1F5F9;color:#64748B;font-size:.58rem">${t}</span>`).join('')}
+          ${a.featured?'<span class="tag" style="background:#FEF3C7;color:#92400E;font-size:.6rem">⭐ แนะนำ</span>':''}
         </div>
-        <h2 class="font-pridi font-semibold leading-snug mb-2" style="font-size:.98rem;color:#1B365D">${a.title}</h2>
-        <p class="font-noto text-xs mb-3" style="color:#64748B;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.excerpt}</p>
+        <h2 class="font-pridi font-semibold leading-snug mb-2" style="font-size:.96rem;color:#1B365D;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.title}</h2>
+        <p class="font-noto text-xs mb-3" style="color:#64748B;line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.excerpt||''}</p>
         <div class="flex items-center justify-between">
-          <span class="font-noto text-xs" style="color:#94A3B8">${a.dateDisplay} · ${a.readTime}</span>
-          <span class="font-noto text-xs font-semibold" style="color:#0891B2">อ่านต่อ &#8594;</span>
+          <span class="font-noto text-xs" style="color:#94A3B8">${dr}${rt?' · '+rt:''}</span>
+          <span class="font-noto text-xs font-semibold" style="color:#0891B2">อ่านต่อ →</span>
         </div>
       </div>
     </a>`;
   }).join('');
-
-  // Load More button
-  const remaining = filtered.length - visibleCount;
-  if (remaining > 0) {
-    loadMoreBtn.textContent = `ดูเพิ่มอีก ${Math.min(remaining, PAGE_SIZE)} บทความ`;
-    loadMoreWrap.style.display = 'flex';
-  } else {
-    loadMoreWrap.style.display = 'none';
-  }
+  renderPagination(totalPages,total);
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function loadMore() {
-  visibleCount += PAGE_SIZE;
-  // Show next batch without full re-render
-  const cards = document.querySelectorAll('#articleGrid > a');
-  let shown = 0;
-  cards.forEach((card, i) => {
-    if (i < visibleCount) {
-      if (card.style.display === 'none') {
-        card.style.display = '';
-        card.style.animation = `fadeUp .3s ease ${(shown % PAGE_SIZE) * 0.05}s both`;
-        shown++;
-      }
-    }
-  });
-
-  const remaining = cards.length - visibleCount;
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  const loadMoreWrap = document.getElementById('loadMoreWrap');
-  if (remaining > 0) {
-    loadMoreBtn.textContent = `ดูเพิ่มอีก ${Math.min(remaining, PAGE_SIZE)} บทความ`;
-  } else {
-    loadMoreWrap.style.display = 'none';
-  }
+function renderPagination(tp,total){
+  const wrap=document.getElementById('paginationBtns');
+  const sum=document.getElementById('paginationSummary');
+  const s=(currentPage-1)*PAGE_SIZE+1, e=Math.min(currentPage*PAGE_SIZE,total);
+  sum.textContent=`แสดงบทความที่ ${s}–${e} จากทั้งหมด ${total} บทความ`;
+  if(tp<=1){wrap.innerHTML='';return;}
+  // Build page list with ellipsis
+  let pages=new Set([1,tp,currentPage,currentPage-1,currentPage+1].filter(p=>p>=1&&p<=tp));
+  let sorted=[...pages].sort((a,b)=>a-b), result=[], prev=0;
+  for(let p of sorted){if(p-prev>1) result.push('…'); result.push(p); prev=p;}
+  let html=`<button class="pg-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹ ก่อนหน้า</button>`;
+  result.forEach(p=>{ html+=p==='…'?`<span class="pg-dots">…</span>`:`<button class="pg-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</button>`; });
+  html+=`<button class="pg-btn" onclick="goPage(${currentPage+1})" ${currentPage===tp?'disabled':''}>ถัดไป ›</button>`;
+  wrap.innerHTML=html;
 }
 
-document.getElementById('filterBtns').addEventListener('click', e => {
-  const btn = e.target.closest('[data-cat]');
-  if (!btn) return;
-  activeCategory = btn.dataset.cat;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderArticles(true);
+function goPage(n){
+  const tp=Math.ceil(filtered.length/PAGE_SIZE)||1;
+  if(n<1||n>tp) return;
+  currentPage=n; renderPage();
+}
+
+document.getElementById('filterBtns').addEventListener('click',e=>{
+  const btn=e.target.closest('[data-cat]'); if(!btn) return;
+  activeCategory=btn.dataset.cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); applyFilter();
 });
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value.toLowerCase();
-  renderArticles(true);
+let st;
+document.getElementById('searchInput').addEventListener('input',e=>{
+  clearTimeout(st); st=setTimeout(()=>{searchQuery=e.target.value.toLowerCase().trim(); applyFilter();},250);
 });
 
 loadArticles();
