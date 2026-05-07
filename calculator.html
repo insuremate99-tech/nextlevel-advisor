@@ -23,7 +23,8 @@
 *{box-sizing:border-box}
 body{font-family:'Noto Sans Thai',sans-serif;background:#F8FAFC}
 /* ── NAV ── */
-nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
+nav.scrolled{background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(27,54,93,0.07)}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Noto Sans Thai',sans-serif;font-weight:600;border-radius:.75rem;transition:all .2s;text-decoration:none}
 .btn-teal{background:#0891B2;color:#fff;box-shadow:0 4px 14px rgba(8,145,178,.3)}
 .btn-teal:hover{background:#0771A0}
@@ -127,7 +128,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 <body>
 
 <!-- ══════ NAV ══════ -->
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+<nav id="nav" class="py-4">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
         <ul class="hidden md:flex items-center gap-6 font-noto text-sm font-medium">
@@ -142,7 +143,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
         080-9696351
       </a>
-      <a href="https://lin.ee/NC0RcZM" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 font-noto font-semibold text-sm px-4 py-2.5 rounded-xl" style="background:#06C755;color:#fff">
+      <a href="https://line.me/R/ti/p/@nextleveladvisor" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 font-noto font-semibold text-sm px-4 py-2.5 rounded-xl" style="background:#06C755;color:#fff">
         <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         LINE
       </a>
@@ -164,12 +165,11 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
       <li><a href="/#career" class="block py-3 text-navy hover:text-teal">ร่วมทีมกับเรา</a></li>
     </ul>
     <div class="flex gap-2 mt-4">
-      <a href="https://lin.ee/NC0RcZM" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 font-noto font-semibold text-sm py-3 rounded-xl text-white" style="background:#06C755">
+      <a href="https://line.me/R/ti/p/@nextleveladvisor" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 font-noto font-semibold text-sm py-3 rounded-xl text-white" style="background:#06C755">
         <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         ทักไลน์
       </a>
       <a href="https://calendly.com/insuremate99/15" onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'นัดปรึกษา'})" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center font-noto font-semibold text-sm py-3 rounded-xl text-white" style="background:#0891B2">นัดปรึกษาฟรี</a>
-    </div>
     </div>
   </div>
 </nav>
@@ -390,7 +390,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
           </div>
 
           <!-- CTA -->
-          <a href="https://lin.ee/NC0RcZM" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank"
+          <a href="https://line.me/R/ti/p/@nextleveladvisor" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank"
              class="inline-flex items-center justify-center gap-3 w-full rounded-2xl font-noto font-bold text-base"
              style="background:#fff;color:#065E7A;padding:16px 24px;box-shadow:0 8px 28px rgba(0,0,0,.25);text-decoration:none;transition:transform .2s,box-shadow .2s"
              onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 36px rgba(0,0,0,.32)'"
@@ -797,6 +797,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
               <div class="flex gap-3">
                 <button id="nb-yr-5"  onclick="setCoverYears2(5)"  class="need-chip flex-1 active">5 ปี<span>คนทำงานอยู่แล้ว</span></button>
                 <button id="nb-yr-10" onclick="setCoverYears2(10)" class="need-chip flex-1">10 ปี<span>เพิ่งเริ่มทำงาน</span></button>
+                <button id="nb-yr-15" onclick="setCoverYears2(15)" class="need-chip flex-1">15 ปี<span>มีภาระครอบครัว</span></button>
+                <button id="nb-yr-20" onclick="setCoverYears2(20)" class="need-chip flex-1">20 ปี<span>วางแผนระยะยาว</span></button>
               </div>
             </div>
 
@@ -825,7 +827,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
               </div>
             </div>
 
-            <a href="https://lin.ee/NC0RcZM" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank"
+            <a href="https://line.me/R/ti/p/@nextleveladvisor" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank"
                class="inline-flex items-center justify-center gap-3 w-full rounded-2xl font-noto font-bold text-base mb-3"
                style="background:#fff;color:#0C1F3A;padding:14px 24px;text-decoration:none;transition:opacity .2s"
                onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
@@ -852,7 +854,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
          class="btn px-7 py-3.5 text-sm font-semibold" style="background:#fff;color:#1B365D;border-radius:.875rem">
         📅 นัดปรึกษาฟรี 15 นาที
       </a>
-      <a href="https://lin.ee/NC0RcZM" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener"
+      <a href="https://line.me/R/ti/p/@nextleveladvisor" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank" rel="noopener"
          class="btn px-7 py-3.5 text-sm font-semibold" style="background:#06C755;color:#fff;border-radius:.875rem">
         <svg class="w-4 h-4" fill="#fff" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         ทักไลน์เลย
@@ -1039,8 +1041,10 @@ calcTax2();
 let nbCoverYears=5;
 function setCoverYears2(y){
   nbCoverYears=y;
-  document.getElementById('nb-yr-5').classList.toggle('active',y===5);
-  document.getElementById('nb-yr-10').classList.toggle('active',y===10);
+  [5,10,15,20].forEach(v=>{
+    const el=document.getElementById('nb-yr-'+v);
+    if(el) el.classList.toggle('active',y===v);
+  });
   calcNeeds2();
 }
 function calcNeeds2(){
@@ -1075,10 +1079,11 @@ onScroll();
 // ─── REVEAL ───
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),400);
 
 // ─── MOBILE MENU ───
 document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
-window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
 </script>
 
 <!-- SEARCH OVERLAY -->
@@ -1121,7 +1126,7 @@ window.addEventListener('scroll',()=>document.getElementById('mainNav').classLis
      keys:["คำนวณ","calculator","เกษียณ","วางแผน","ออม","เงินเกษียณ","ต้องออมเท่าไหร่","เป้าหมายเกษียณ","retirement calculator","คำนวณเกษียณ"]},
     {label:"รู้จักทีมงาน Behind the Advisor",url:"/behind-the-advisor",icon:"👤",type:"เกี่ยวกับเรา",
      keys:["ทีม","advisor","ที่ปรึกษา","เกี่ยวกับ","mdrt","afpt","fchfp","ประสบการณ์","นักวางแผน","ป้อง","nextlevel"]},
-    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://lin.ee/NC0RcZM",icon:"💬",type:"ติดต่อ",
+    {label:"นัดปรึกษาฟรี ทาง LINE",url:"https://line.me/R/ti/p/@nextleveladvisor",icon:"💬",type:"ติดต่อ",
      keys:["ปรึกษา","line","ติดต่อ","นัด","ฟรี","คุย","สอบถาม","ถาม","ขอคำแนะนำ","ช่วยวางแผน"]},
   ];
 
