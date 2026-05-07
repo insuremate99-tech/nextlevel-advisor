@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.nextlevel-advisor.com" }],
+      "destination": "https://nextlevel-advisor.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/articles/articles.json",
