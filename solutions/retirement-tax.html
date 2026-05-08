@@ -361,20 +361,20 @@
     </div>
 
     <!-- Tab Buttons -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10" id="tabBtns">
-      <button class="tab-btn active" onclick="switchTab('single',this)">
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="tab-section" style="scroll-margin-top:80px">
+      <button class="tab-btn" onclick="switchTab('single')">
         💼 Single Premium<br/><span class="text-xs font-normal opacity-70">จ่ายครั้งเดียว</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('short',this)">
+      <button class="tab-btn" onclick="switchTab('short')">
         ⚡ Short-term<br/><span class="text-xs font-normal opacity-70">จ่าย 5 ปี</span>
       </button>
-      <button class="tab-btn recommended" onclick="switchTab('regular',this)">
+      <button class="tab-btn recommended active" onclick="switchTab('regular')">
         <span class="rec-badge text-xs mr-1">แนะนำ</span> Regular<br/><span class="text-xs font-normal opacity-70">จ่ายสม่ำเสมอ</span>
       </button>
     </div>
 
     <!-- ═══ TAB 1: SINGLE PREMIUM ═══ -->
-    <div class="tab-pane active" id="pane-single">
+    <div class="tab-pane" id="pane-single">
       <!-- Who / Feature / Value -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
         <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
@@ -612,7 +612,7 @@
     </div>
 
     <!-- ═══ TAB 3: REGULAR PREMIUM (RECOMMENDED) ═══ -->
-    <div class="tab-pane" id="pane-regular">
+    <div class="tab-pane active" id="pane-regular">
       <!-- Recommended banner -->
       <div class="rounded-2xl p-4 mb-8 flex items-center gap-3" style="background:linear-gradient(135deg,#0891B2,#065E7A);color:#fff">
         <div class="text-3xl">⭐</div>
@@ -1256,12 +1256,20 @@
     document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
   })
 
-  // Tabs
-  function switchTab(id,btn){
-    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'))
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'))
-    document.getElementById('pane-'+id).classList.add('active')
-    btn.classList.add('active')
+  // Tabs — unified (handles both tab-btn clicks and situation-picker cards)
+  function switchTab(id){
+    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    const pane=document.getElementById('pane-'+id);
+    if(pane) pane.classList.add('active');
+    // activate matching tab button
+    document.querySelectorAll('.tab-btn').forEach(b=>{
+      if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+id+"'"))
+        b.classList.add('active');
+    });
+    // scroll to tab section smoothly
+    const section=document.getElementById('tab-section');
+    if(section) section.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
   // Product card accordion
@@ -1280,22 +1288,7 @@ function toggleFaq(item){
     document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'))
     if(!isOpen) item.classList.add('open')
   }
-  // Situation picker → tab switch
-  function switchTab(id){
-    const map={single:0,short:1,regular:2};
-    const idx=map[id];
-    if(idx===undefined)return;
-    document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-      b.classList.toggle('active',i===idx);
-    });
-    document.querySelectorAll('.tab-pane').forEach((p,i)=>{
-      p.classList.toggle('hidden',i!==idx);
-    });
-    setTimeout(()=>{
-      const el=document.getElementById('tab-single')||document.querySelector('.tab-btn');
-      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-    },100);
-  }
+
 </script>
 
 <!-- SEARCH OVERLAY -->
