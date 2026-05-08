@@ -32,6 +32,10 @@ html{scroll-behavior:smooth}
 .ln-btn:hover{background:#059142}
 .prod-card:hover{box-shadow:0 8px 32px rgba(27,54,93,.1);transform:translateY(-2px)}
 .prod-card.featured{border-color:#0891B2;background:linear-gradient(135deg,#f0f9ff 0%,#fff 100%)}
+.prod-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.22rem .65rem;border-radius:999px;font-size:.65rem;font-family:'Noto Sans Thai',sans-serif;font-weight:700;white-space:nowrap;letter-spacing:.01em}
+.prod-badge-star{background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;box-shadow:0 2px 8px rgba(245,158,11,.35)}
+.prod-badge-long{background:linear-gradient(135deg,#0891B2,#0369a1);color:#fff;box-shadow:0 2px 8px rgba(8,145,178,.3)}
+.prod-badge-cheap{background:linear-gradient(135deg,#059669,#047857);color:#fff;box-shadow:0 2px 8px rgba(5,150,105,.3)}
 .badge{display:inline-flex;align-items:center;gap:4px;font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.75rem}
 .badge-teal{background:#e0f2fe;color:#0369a1}
 .badge-gold{background:#fffbeb;color:#b45309}
@@ -428,11 +432,11 @@ html{scroll-behavior:smooth}
       <!-- Smart Link Global 15/6 -->
       <div class="prod-card">
         <div class="flex flex-wrap gap-1.5 mb-3"><span class="ipill ">⏱ จ่าย 6 ปี</span><span class="ipill ">💰 รับคืนทุกปี + ครบสัญญา</span><span class="ipill ipill-ok">🌐 Index-Linked</span></div>
-        <div class="font-pop font-bold text-navy text-base mb-0.5">Smart Link Global 15/6</div>
+        <div class="flex items-center gap-2 mb-1.5"><span class="prod-badge prod-badge-star">★ แนะนำ</span></div><div class="font-pop font-bold text-navy text-base mb-0.5">Smart Link Global 15/6</div>
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 6 ปี คุ้มครอง 15 ปี · ผลตอบแทนตาม Index</div>
         
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>โอกาสรับปันผลตาม GS Global Index ไม่ผูกกับตลาดหุ้น</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>การันตีผลประโยชน์ขั้นต่ำตลอดสัญญา</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รางวัล Insurance Asia Awards 2022</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/smart-link-15-6.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/smart-link-15-6.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- ออมทรัพย์ 20/14 -->
       <div class="prod-card">
@@ -441,25 +445,25 @@ html{scroll-behavior:smooth}
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 14 ปี คุ้มครอง 20 ปี</div>
         
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รับเงินคืนสม่ำเสมอทุกปีตลอดสัญญา</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท/ปี</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะวางแผนเงินก้อนระยะกลาง</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/saving-20-14.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/saving-20-14.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- ซุปเปอร์ เซฟเวอร์ 25/16 -->
       <div class="prod-card">
         <div class="flex flex-wrap gap-1.5 mb-3"><span class="ipill ">⏱ จ่าย 16 ปี</span><span class="ipill ">💰 รับคืนตลอด 25 ปี</span></div>
-        <div class="font-pop font-bold text-navy text-base mb-0.5">เมืองไทย ซุปเปอร์ เซฟเวอร์ 25/16</div>
+        <div class="flex items-center gap-2 mb-1.5"><span class="prod-badge prod-badge-long">↗ สายออมยาว</span></div><div class="font-pop font-bold text-navy text-base mb-0.5">เมืองไทย ซุปเปอร์ เซฟเวอร์ 25/16</div>
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 16 ปี คุ้มครอง 25 ปี · ออมระยะยาว</div>
         
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รับเงินคืนตลอดสัญญา 25 ปี</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท/ปี</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะวางแผนจัดการทรัพย์สินระยะยาว</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/super-saver-25-16.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/super-saver-25-16.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- สไมล์ เซฟเวอร์ 20/16 -->
       <div class="prod-card">
         <div class="flex flex-wrap gap-1.5 mb-3"><span class="ipill ">⏱ จ่าย 16 ปี</span><span class="ipill ">💰 รับคืนตลอด 20 ปี</span></div>
-        <div class="font-pop font-bold text-navy text-base mb-0.5">เมืองไทย สไมล์ เซฟเวอร์ 20/16</div>
+        <div class="flex items-center gap-2 mb-1.5"><span class="prod-badge prod-badge-cheap">✓ เบี้ยไม่แพง</span></div><div class="font-pop font-bold text-navy text-base mb-0.5">เมืองไทย สไมล์ เซฟเวอร์ 20/16</div>
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 16 ปี คุ้มครอง 20 ปี · ออมระยะกลาง-ยาว</div>
         
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รับเงินคืนตลอดสัญญา 20 ปี</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ลดหย่อนภาษีได้สูงสุด 100,000 บาท/ปี</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เหมาะสร้างวินัยออมเงินก้อนระยะกลาง</li></ul>
-        <div class="flex gap-2 mt-2"><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- แฮปปี้ รีเทิร์น 20/10 -->
       <div class="prod-card">
@@ -468,7 +472,7 @@ html{scroll-behavior:smooth}
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 10 ปี คุ้มครอง 20 ปี · เปิดขาย 10 เม.ย. 2569</div>
         <div class="grid grid-cols-2 gap-2 mb-3"><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">10%/ปี</div><div class="font-noto text-xs text-slate-500">เงินคืนสูงสุด</div></div><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">710%</div><div class="font-noto text-xs text-slate-500">รวมตลอดสัญญา</div></div></div>
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เงินจ่ายคืนทุกปี สูงสุด 10% รวมตลอดสัญญา 710%</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ครบสัญญารับเงินก้อน 520%</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ความคุ้มครองชีวิตเพิ่มขึ้นเรื่อยๆ สูงสุด 550%</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/happy-return-20-10.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/happy-return-20-10.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- แฮปปี้ รีเทิร์น 88/8 การันตี -->
       <div class="prod-card">
@@ -477,7 +481,7 @@ html{scroll-behavior:smooth}
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 8 ปี คุ้มครองถึงอายุ 88 ปี · อายุ 30 วัน–75 ปี</div>
         <div class="grid grid-cols-2 gap-2 mb-3"><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">9–13%/ปี</div><div class="font-noto text-xs text-slate-500">เงินคืนการันตี</div></div><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">1,891%</div><div class="font-noto text-xs text-slate-500">รวมตลอดสัญญา</div></div></div>
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>เงินคืนเพิ่มขึ้นทุกปี เริ่ม 9% สูงสุด 13%</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ครบสัญญารับเงินก้อน 808% · รวมทั้งหมด 1,891%</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>ไม่ต้องตรวจ ไม่ต้องตอบคำถามสุขภาพ</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/happy-return-88-8.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/happy-return-88-8.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- สมาร์ท อินเด็กซ์ 15/3 Global -->
       <div class="prod-card">
@@ -486,7 +490,7 @@ html{scroll-behavior:smooth}
         <div class="font-noto text-slate-400 text-xs mb-3">จ่าย 3 ปี คุ้มครอง 15 ปี · มีส่วนร่วมในเงินปันผล</div>
         <div class="grid grid-cols-2 gap-2 mb-3"><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">3%/2 ปี</div><div class="font-noto text-xs text-slate-500">การันตีขั้นต่ำ</div></div><div class="bg-slate-50 rounded-xl p-2.5 text-center"><div class="font-pop font-bold text-teal text-base">310%</div><div class="font-noto text-xs text-slate-500">ครบสัญญา</div></div></div>
         <ul class="space-y-1.5 mb-4"><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>การันตีเงินคืน 3% ทุก 2 ปี · ครบสัญญารับ 310%</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>โอกาสรับปันผลตาม S&P Multi-Asset Global Macro ESG Index</li><li class="flex items-start gap-2 text-xs font-noto text-slate-600"><span class="text-teal flex-shrink-0 mt-0.5">→</span>รับประกันตั้งแต่อายุ 30 วัน–80 ปี ไม่ต้องตรวจ</li></ul>
-        <div class="flex gap-2 mt-2"><a href="/assets/brochures/smart-index-15-3.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn">💬 ปรึกษาฟรี — ทักไลน์</a></div>
+        <div class="flex gap-2 mt-2"><a href="/assets/brochures/smart-index-15-3.pdf" target="_blank" rel="noopener" class="dl-btn">📄 โบรชัวร์</a><a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="ln-btn"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63H7.29c.345 0 .63.285.63.63 0 .349-.285.63-.63.63H5.549v1.125H7.29c.345 0 .63.283.63.63 0 .344-.285.629-.63.629H5.549V12.5h1.74c.346 0 .63.283.63.629zM12 2C6.478 2 2 6.066 2 11.065c0 3.19 1.736 6.01 4.373 7.736V22l3.981-2.187c.537.148 1.098.228 1.646.228 5.521 0 10-4.066 10-9.065C22 6.066 17.521 2 12 2z"/></svg> ทักไลน์</a></div>
       </div>
       <!-- แฮปปี้ เซฟเวอร์ พลัส 10/2 (จองสิทธิ์) -->
       <div class="prod-card">
@@ -700,7 +704,7 @@ html{scroll-behavior:smooth}
           </div>
           <div class="flex items-center gap-4">
             <div>
-              <div class="font-noto text-xs text-slate-500 mb-0.5">รายได้สุทธิ</div>
+              <div class="font-noto text-xs text-slate-500 mb-0.5">รายได้สุทธิ (หลังหักพื้นฐาน)</div>
               <div id="sim2-income-display" class="font-pop font-bold text-navy text-sm">—</div>
             </div>
             <div class="w-px h-8 bg-slate-200"></div>
@@ -709,7 +713,7 @@ html{scroll-behavior:smooth}
               <div id="sim2-rate-display" class="font-pop font-bold text-teal text-sm">—</div>
             </div>
           </div>
-          <p class="font-noto text-xs text-slate-400 mt-2">เปลี่ยนรายได้ได้ที่ Calculator 1 ด้านบน ผลที่นี่จะอัปเดตอัตโนมัติ</p>
+          <p class="font-noto text-xs mt-2" style="color:#0891B2">✦ ปรับรายได้ใน Simulator 1 → ค่านี้อัปเดตทันที</p>
         </div>
 
         <!-- Bucket 1: ประกันชีวิต/สุขภาพตนเอง -->
@@ -893,6 +897,8 @@ function marginalRate(income) {
 //  TAX REFUND CALCULATOR
 // ─────────────────────────────────────────────
 let currentIncome = 1000000;
+let currentTaxableBase = 0;
+let currentMarginalRate = 0;
 
 function fmtNum(n){ return n.toLocaleString('th-TH'); }
 function parseIncome(str){ return parseFloat(String(str).replace(/,/g,''))||0; }
@@ -958,6 +964,8 @@ function calcTax() {
   const stdDeduct = Math.min(currentIncome * 0.5, 100000);
   const personalAllow = 60000;
   const taxableBase = Math.max(0, currentIncome - stdDeduct - personalAllow);
+  currentTaxableBase = taxableBase;
+  currentMarginalRate = marginalRate(taxableBase);
 
   const taxBefore = calcTaxOnIncome(taxableBase);
   const taxAfter  = calcTaxOnIncome(Math.max(0, taxableBase - totalDeduct));
@@ -988,11 +996,15 @@ function calcTax() {
   // Color the refund: green if > 0
   const refundEl = document.getElementById('tax-refund');
   if(refundEl) refundEl.style.color = taxSaved > 0 ? '#34D399' : 'rgba(255,255,255,0.5)';
+  // Sync Simulator 2 header
+  updateSim2Header();
 }
 
 // Init sliders ↔ number inputs
 document.getElementById('endow-slider').addEventListener('input', syncEndow);
 document.getElementById('pension-slider').addEventListener('input', syncPension);
+// Init — populate Sim1 result + sync Sim2 header on load
+document.addEventListener('DOMContentLoaded', function(){ calcTax(); calcGap(); });
 
 // ─────────────────────────────────────────────
 //  GAP FILLER
@@ -1021,12 +1033,10 @@ function capGapInput(changedId, otherId, cap){
 function updateSim2Header(){
   const incEl = document.getElementById('sim2-income-display');
   const rateEl = document.getElementById('sim2-rate-display');
-  if(incEl) incEl.textContent = '฿' + currentIncome.toLocaleString('th-TH') + ' บาท/ปี';
-  // derive marginal rate from TAX_BRACKETS
-  let marginal = 0;
-  for(const b of TAX_BRACKETS){ if(currentIncome > b.min) marginal = b.rate; }
-  if(rateEl) rateEl.textContent = (marginal*100).toFixed(0) + '%';
-  return marginal;
+  // Use taxable base (after standard deduction) from Sim1
+  if(incEl) incEl.textContent = '฿' + currentTaxableBase.toLocaleString('th-TH') + ' บาท/ปี';
+  if(rateEl) rateEl.textContent = (currentMarginalRate*100).toFixed(0) + '%';
+  return currentMarginalRate;
 }
 
 function calcGap() {
