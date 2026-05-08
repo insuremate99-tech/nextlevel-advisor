@@ -633,68 +633,79 @@ html{scroll-behavior:smooth}
     <div class="text-center mb-8 reveal">
       <span class="sec-label">Simulator 2</span>
       <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">เช็กสิทธิ์ลดหย่อนที่ยังเหลือ</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm">ติ๊กสิ่งที่มีอยู่แล้ว — เห็นช่องว่างที่ยังเหลือ และภาษีที่ยังประหยัดได้อีก</p>
+      <p class="font-noto text-slate-500 mt-3 text-sm">กรอกจำนวนที่ใช้อยู่แล้ว — เห็นทันทีว่ายังเหลือช่องว่างเท่าไร และภาษีที่ยังประหยัดได้อีก</p>
     </div>
 
     <div class="reveal grid lg:grid-cols-2 gap-8">
       <!-- INPUTS -->
       <div class="sim-card">
-        <div class="font-pop font-bold text-navy text-sm mb-5">✅ เลือกสิ่งที่คุณมีอยู่แล้ว</div>
 
-        <div class="mb-5">
-          <span class="sim-label">ฐานภาษีปัจจุบัน</span>
-          <div class="grid grid-cols-3 gap-2">
-            <button onclick="setGapRate(10)"  id="gap-rate-10" class="sim-btn text-xs">10%</button>
-            <button onclick="setGapRate(15)"  id="gap-rate-15" class="sim-btn text-xs selected">15%</button>
-            <button onclick="setGapRate(20)"  id="gap-rate-20" class="sim-btn text-xs">20%</button>
+        <!-- Income from Calc 1 (read-only) -->
+        <div class="mb-5 p-4 rounded-2xl" style="background:#f0f9ff;border:1.5px solid #bae6fd">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-pop font-bold text-navy text-xs">📊 รายได้สุทธิ &amp; ฐานภาษี</span>
+            <span class="text-xs font-noto text-teal font-semibold">(จาก Calculator 1 👆)</span>
           </div>
+          <div class="flex items-center gap-4">
+            <div>
+              <div class="font-noto text-xs text-slate-500 mb-0.5">รายได้สุทธิ</div>
+              <div id="sim2-income-display" class="font-pop font-bold text-navy text-sm">—</div>
+            </div>
+            <div class="w-px h-8 bg-slate-200"></div>
+            <div>
+              <div class="font-noto text-xs text-slate-500 mb-0.5">ฐานภาษีส่วนเพิ่ม</div>
+              <div id="sim2-rate-display" class="font-pop font-bold text-teal text-sm">—</div>
+            </div>
+          </div>
+          <p class="font-noto text-xs text-slate-400 mt-2">เปลี่ยนรายได้ได้ที่ Calculator 1 ด้านบน ผลที่นี่จะอัปเดตอัตโนมัติ</p>
         </div>
 
-        <div class="font-pop font-bold text-navy text-xs mb-3">สิทธิลดหย่อนที่มีอยู่แล้ว:</div>
-
-        <!-- ประกันชีวิต bucket -->
+        <!-- Bucket 1: ประกันชีวิต/สุขภาพตนเอง -->
         <div class="mb-4 p-4 bg-slate-50 rounded-2xl">
-          <div class="font-noto text-sm font-semibold text-navy mb-3">🛡️ สิทธิ 100,000 บาท (ประกันชีวิต)</div>
-          <div class="space-y-2">
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-life" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              ประกันชีวิตทั่วไป / ออมทรัพย์ (เต็ม 100K)
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-life-half" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              ประกันชีวิตบางส่วน (~50K)
-            </label>
+          <div class="font-noto text-sm font-semibold text-navy mb-1">🛡️ สิทธิ 100,000 บาท (ประกันชีวิต + สุขภาพตนเอง)</div>
+          <div class="font-noto text-xs text-slate-400 mb-3">ประกันชีวิต + ออมทรัพย์ + สุขภาพตนเอง รวมกันไม่เกิน 100,000 บาท</div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="font-noto text-xs text-slate-600 mb-1 block">ประกันชีวิต/ออมทรัพย์ ที่มีอยู่ (บาท)</label>
+              <input type="text" id="gap-life-input" value="0" placeholder="0"
+                oninput="capGapInput('gap-life-input','gap-health-input',100000);calcGap()"
+                class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none text-right"/>
+              <div class="font-noto text-xs text-slate-400 mt-0.5 text-right">สูงสุด 100,000</div>
+            </div>
+            <div>
+              <label class="font-noto text-xs text-slate-600 mb-1 block">ประกันสุขภาพตนเอง ที่มีอยู่ (บาท)</label>
+              <input type="text" id="gap-health-input" value="0" placeholder="0"
+                oninput="capGapInput('gap-health-input','gap-life-input',100000);calcGap()"
+                class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none text-right"/>
+              <div class="font-noto text-xs text-slate-400 mt-0.5 text-right">รวมกันไม่เกิน 100,000</div>
+            </div>
           </div>
+          <div id="bucket1-warn" class="hidden mt-2 text-xs font-noto text-amber-600">⚠ รวมกันเกิน 100,000 บาท — ระบบปรับให้อัตโนมัติ</div>
         </div>
 
-        <!-- สุขภาพพ่อแม่ — แยก bucket ต่างหาก -->
+        <!-- Bucket 2: สุขภาพพ่อแม่ -->
         <div class="mb-4 p-4 bg-slate-50 rounded-2xl">
           <div class="font-noto text-sm font-semibold text-navy mb-1">💙 สิทธิ 15,000 บาท (ประกันสุขภาพพ่อแม่)</div>
-          <div class="font-noto text-xs text-slate-400 mb-3">แยกจากสิทธิ 100K ด้านบน</div>
-          <div class="space-y-2">
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-health" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              มีประกันสุขภาพตนเองอยู่แล้ว (~25K อยู่ในวงเงิน 100K ด้านบน)
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-parent" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              มีประกันสุขภาพพ่อแม่ (15K แยกต่างหาก)
-            </label>
+          <div class="font-noto text-xs text-slate-400 mb-3">แยกจากสิทธิ 100K ด้านบน — สูงสุด 15,000 บาท</div>
+          <div>
+            <label class="font-noto text-xs text-slate-600 mb-1 block">ประกันสุขภาพพ่อแม่ ที่มีอยู่ (บาท)</label>
+            <input type="text" id="gap-parent-input" value="0" placeholder="0"
+              oninput="clampInput('gap-parent-input',15000);calcGap()"
+              class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none text-right"/>
+            <div class="font-noto text-xs text-slate-400 mt-0.5 text-right">สูงสุด 15,000</div>
           </div>
         </div>
 
-        <!-- บำนาญ -->
+        <!-- Bucket 3: บำนาญ -->
         <div class="p-4 bg-slate-50 rounded-2xl">
-          <div class="font-noto text-sm font-semibold text-navy mb-3">🎯 สิทธิ 200,000 บาท (ประกันบำนาญ)</div>
-          <div class="space-y-2">
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-pension" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              มีประกันบำนาญอยู่แล้ว (เต็ม 200K)
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer font-noto text-xs text-slate-600">
-              <input type="checkbox" id="chk-pension-half" onchange="calcGap()" class="accent-teal w-4 h-4"/>
-              มีประกันบำนาญบางส่วน (~100K)
-            </label>
+          <div class="font-noto text-sm font-semibold text-navy mb-1">🎯 สิทธิ 200,000 บาท (ประกันบำนาญ)</div>
+          <div class="font-noto text-xs text-slate-400 mb-3">ประกันบำนาญ (รวม RMF/กบข. ไม่เกิน 500,000 บาท)</div>
+          <div>
+            <label class="font-noto text-xs text-slate-600 mb-1 block">ประกันบำนาญ ที่มีอยู่ (บาท)</label>
+            <input type="text" id="gap-pension-input" value="0" placeholder="0"
+              oninput="clampInput('gap-pension-input',200000);calcGap()"
+              class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none text-right"/>
+            <div class="font-noto text-xs text-slate-400 mt-0.5 text-right">สูงสุด 200,000</div>
           </div>
         </div>
       </div>
@@ -704,41 +715,38 @@ html{scroll-behavior:smooth}
         <!-- Progress bars -->
         <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
           <div class="font-pop font-bold text-navy text-sm mb-5">สิทธิที่ใช้แล้ว vs ที่เหลือ</div>
-
           <div class="mb-4">
             <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
-              <span>🛡️ ประกันชีวิต (100,000 บาท)</span>
+              <span>🛡️ ประกันชีวิต + สุขภาพตนเอง (100,000)</span>
               <span id="gap-life-used" class="font-bold text-navy">0 / 100,000</span>
             </div>
             <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
               <div id="gap-life-bar" class="h-full gap-bar" style="width:0%;background:#1B365D"></div>
             </div>
           </div>
-
           <div class="mb-4">
             <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
-              <span>💙 ประกันสุขภาพพ่อแม่ (15,000 บาท)</span>
+              <span>💙 ประกันสุขภาพพ่อแม่ (15,000)</span>
               <span id="gap-health-used" class="font-bold text-navy">0 / 15,000</span>
             </div>
             <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
-              <div id="gap-health-bar" class="h-full gap-bar" style="width:0%;background:#059669"></div>
+              <div id="gap-health-bar" class="h-full gap-bar" style="width:0%;background:#0891B2"></div>
             </div>
           </div>
-
-          <div class="mb-4">
+          <div class="mb-2">
             <div class="flex justify-between font-noto text-xs text-slate-600 mb-1.5">
-              <span>🎯 ประกันบำนาญ (200,000 บาท)</span>
+              <span>🎯 ประกันบำนาญ (200,000)</span>
               <span id="gap-pension-used" class="font-bold text-navy">0 / 200,000</span>
             </div>
             <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
-              <div id="gap-pension-bar" class="h-full gap-bar" style="width:0%;background:#0891B2"></div>
+              <div id="gap-pension-bar" class="h-full gap-bar" style="width:0%;background:#059669"></div>
             </div>
           </div>
         </div>
 
         <!-- Gap Result -->
         <div class="result-box">
-          <div class="font-pop font-bold text-white text-xs mb-3 opacity-70 tracking-wider uppercase">ช่องว่างที่เหลือ (Gap)</div>
+          <div class="font-pop font-bold text-white text-xs mb-3 opacity-70 tracking-wider uppercase">ช่องว่างที่ยังเหลือ</div>
           <div class="mb-4">
             <div class="font-noto text-xs mb-1" style="color:rgba(255,255,255,.5)">สิทธิที่ยังไม่ได้ใช้</div>
             <div id="gap-remaining" class="font-pop font-extrabold text-white text-3xl">315,000 บาท</div>
@@ -750,17 +758,17 @@ html{scroll-behavior:smooth}
         </div>
 
         <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-          <div id="gap-recommend" class="font-noto text-xs text-amber-800 leading-relaxed">เลือกสิ่งที่มีอยู่แล้วด้านซ้าย เพื่อดูคำแนะนำ</div>
+          <div id="gap-recommend" class="font-noto text-xs text-amber-800 leading-relaxed">กรอกจำนวนที่มีอยู่แล้วด้านซ้าย เพื่อดูคำแนะนำ</div>
         </div>
 
-        <a href="https://line.me/R/ti/p/@nextleveladvisor" target="_blank" rel="noopener" class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
+        <a href="https://line.me/R/ti/p/@nextleveladvisor" target="_blank" rel="noopener"
+           class="block bg-teal text-white text-center py-3.5 rounded-xl font-noto font-semibold text-sm hover:opacity-90 transition-opacity">
           💬 ส่งผลลัพธ์นี้ให้ที่ปรึกษาวิเคราะห์ต่อ →
         </a>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- ===== CTA SECTION ===== -->
 <section class="py-20 px-4" style="background:linear-gradient(135deg,#1B365D 0%,#0891B2 100%)">
@@ -937,41 +945,62 @@ document.getElementById('pension-slider').addEventListener('input', syncPension)
 // ─────────────────────────────────────────────
 //  GAP FILLER
 // ─────────────────────────────────────────────
-let gapRate = 0.15;
+// ─── Sim2 helpers ────────────────────────────────────────────────────────────
+function getInputVal(id){ return Math.max(0, parseFloat(String(document.getElementById(id).value).replace(/,/g,''))||0); }
 
-function setGapRate(r) {
-  gapRate = r / 100;
-  document.querySelectorAll('.grate-btn').forEach(b => {
-    b.classList.toggle('selected', parseInt(b.dataset.rate) === r);
-  });
-  calcGap();
+function clampInput(id, cap){
+  const el = document.getElementById(id);
+  const v = Math.max(0, parseFloat(String(el.value).replace(/,/g,''))||0);
+  const clamped = Math.min(v, cap);
+  el.value = clamped.toLocaleString('th-TH');
+}
+
+function capGapInput(changedId, otherId, cap){
+  // both life + health share 100K cap
+  const el = document.getElementById(changedId);
+  const raw = Math.max(0, parseFloat(String(el.value).replace(/,/g,''))||0);
+  const other = getInputVal(otherId);
+  const clamped = Math.min(raw, cap - other);
+  el.value = clamped.toLocaleString('th-TH');
+  const warn = document.getElementById('bucket1-warn');
+  if(raw + other > cap){ warn.classList.remove('hidden'); } else { warn.classList.add('hidden'); }
+}
+
+function updateSim2Header(){
+  const incEl = document.getElementById('sim2-income-display');
+  const rateEl = document.getElementById('sim2-rate-display');
+  if(incEl) incEl.textContent = '฿' + currentIncome.toLocaleString('th-TH') + ' บาท/ปี';
+  // derive marginal rate from TAX_BRACKETS
+  let marginal = 0;
+  for(const b of TAX_BRACKETS){ if(currentIncome > b.min) marginal = b.rate; }
+  if(rateEl) rateEl.textContent = (marginal*100).toFixed(0) + '%';
+  return marginal;
 }
 
 function calcGap() {
-  // Life+health-personal bucket: max 100,000 รวมกัน (ไม่ใช่บวกกัน)
-  const lifeFull   = document.getElementById('chk-life').checked;
-  const lifeHalf   = document.getElementById('chk-life-half').checked;
-  const healthOnly = document.getElementById('chk-health').checked;
-  const lifeHealthUsed = lifeFull ? 100000 : lifeHalf ? 50000 : healthOnly ? 25000 : 0;
-  const lifeHealthGap  = Math.max(0, 100000 - lifeHealthUsed);
+  const marginal = updateSim2Header();
 
-  // Parent health bucket: max 15,000 (แยกต่างหาก)
-  const parentUsed = document.getElementById('chk-parent').checked ? 15000 : 0;
+  // Bucket 1: life + health-self, cap 100K combined
+  const lifeUsed   = getInputVal('gap-life-input');
+  const healthUsed = getInputVal('gap-health-input');
+  const lifeHealthUsed = Math.min(lifeUsed + healthUsed, 100000);
+  const lifeHealthGap  = 100000 - lifeHealthUsed;
+
+  // Bucket 2: parent health, cap 15K
+  const parentUsed = Math.min(getInputVal('gap-parent-input'), 15000);
   const parentGap  = 15000 - parentUsed;
 
-  // Pension bucket: max 200,000
-  const pensionFull = document.getElementById('chk-pension').checked;
-  const pensionHalf = document.getElementById('chk-pension-half').checked;
-  const pensionUsed = pensionFull ? 200000 : pensionHalf ? 100000 : 0;
+  // Bucket 3: pension, cap 200K
+  const pensionUsed = Math.min(getInputVal('gap-pension-input'), 200000);
   const pensionGap  = 200000 - pensionUsed;
 
   const totalGap = lifeHealthGap + parentGap + pensionGap;
-  const taxSave  = Math.round(totalGap * gapRate);
+  const taxSave  = Math.round(totalGap * marginal);
 
   // Progress bars
-  document.getElementById('gap-life-bar').style.width    = (lifeHealthUsed/100000*100) + '%';
-  document.getElementById('gap-health-bar').style.width  = (parentUsed/15000*100) + '%';
-  document.getElementById('gap-pension-bar').style.width = (pensionUsed/200000*100) + '%';
+  document.getElementById('gap-life-bar').style.width    = (lifeHealthUsed/100000*100).toFixed(1) + '%';
+  document.getElementById('gap-health-bar').style.width  = (parentUsed/15000*100).toFixed(1) + '%';
+  document.getElementById('gap-pension-bar').style.width = (pensionUsed/200000*100).toFixed(1) + '%';
 
   // Labels
   document.getElementById('gap-life-used').textContent    = lifeHealthUsed.toLocaleString() + ' / 100,000';
@@ -986,9 +1015,9 @@ function calcGap() {
 
   // Recommendation
   let tips = [];
-  if (lifeHealthGap > 0) tips.push('ประกันชีวิต/สุขภาพตนเอง เหลือ ' + lifeHealthGap.toLocaleString() + ' บาท');
-  if (parentGap > 0)     tips.push('ประกันสุขภาพพ่อแม่ เหลือ ' + parentGap.toLocaleString() + ' บาท');
-  if (pensionGap > 0)    tips.push('ประกันบำนาญ เหลือ ' + pensionGap.toLocaleString() + ' บาท');
+  if (lifeHealthGap > 0) tips.push('ประกันชีวิต/สุขภาพตนเอง เหลืออีก ' + lifeHealthGap.toLocaleString() + ' บาท');
+  if (parentGap > 0)     tips.push('ประกันสุขภาพพ่อแม่ เหลืออีก ' + parentGap.toLocaleString() + ' บาท');
+  if (pensionGap > 0)    tips.push('ประกันบำนาญ เหลืออีก ' + pensionGap.toLocaleString() + ' บาท');
 
   const rec = document.getElementById('gap-recommend');
   if (tips.length === 0) {
@@ -996,29 +1025,9 @@ function calcGap() {
     rec.style.color = '#065F46';
   } else {
     rec.innerHTML = '📌 แนะนำเติมสิทธิ: ' + tips.join(' · ');
+    rec.style.color = '';
   }
 }
-
-// Mutex: life full / life half / health-only are mutually exclusive (all within 100K bucket)
-['chk-life','chk-life-half','chk-health'].forEach(function(id){
-  document.getElementById(id).addEventListener('change', function(){
-    if(this.checked) ['chk-life','chk-life-half','chk-health'].forEach(function(o){
-      if(o!==id) document.getElementById(o).checked=false;
-    });
-    calcGap();
-  });
-});
-document.getElementById('chk-pension').addEventListener('change', function() {
-  if (this.checked) document.getElementById('chk-pension-half').checked = false;
-  calcGap();
-});
-document.getElementById('chk-pension-half').addEventListener('change', function() {
-  if (this.checked) document.getElementById('chk-pension').checked = false;
-  calcGap();
-});
-['chk-health','chk-parent'].forEach(id => {
-  document.getElementById(id).addEventListener('change', calcGap);
-});
 
 // ─────────────────────────────────────────────
 //  REVEAL ANIMATION
