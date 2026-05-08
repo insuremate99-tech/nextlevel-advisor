@@ -622,19 +622,19 @@ html{scroll-behavior:smooth}
 
         <!-- Income -->
         <div class="mb-5">
-          <span class="sim-label">รายได้สุทธิต่อปี (หลังหักค่าใช้จ่ายและลดหย่อนพื้นฐาน)</span>
-          <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
-            <button onclick="setIncome(200000)"  id="inc-200" class="sim-btn text-xs px-2">200K</button>
-            <button onclick="setIncome(400000)"  id="inc-400" class="sim-btn text-xs px-2 selected">400K</button>
-            <button onclick="setIncome(600000)"  id="inc-600" class="sim-btn text-xs px-2">600K</button>
-            <button onclick="setIncome(800000)"  id="inc-800" class="sim-btn text-xs px-2">800K</button>
-            <button onclick="setIncome(1000000)" id="inc-1M"  class="sim-btn text-xs px-2">1M+</button>
+          <span class="sim-label">รายได้สุทธิต่อปี (หลังลดหย่อนพื้นฐาน)</span>
+          <div class="grid grid-cols-5 gap-2 mb-3">
+            <button onclick="setIncome(500000)"  id="inc-500K" class="sim-btn text-xs px-2">500K</button>
+            <button onclick="setIncome(1000000)" id="inc-1M"   class="sim-btn text-xs px-2 selected">1M</button>
+            <button onclick="setIncome(2000000)" id="inc-2M"   class="sim-btn text-xs px-2">2M</button>
+            <button onclick="setIncome(3000000)" id="inc-3M"   class="sim-btn text-xs px-2">3M</button>
+            <button onclick="setIncome(5000000)" id="inc-5M"   class="sim-btn text-xs px-2">5M</button>
           </div>
           <div class="flex items-center gap-2">
             <span class="font-noto text-xs text-slate-500">หรือกรอกเอง:</span>
-            <input type="number" id="income-custom" value="400000" min="0" step="10000"
+            <input type="text" id="income-custom" value="1,000,000"
               oninput="setIncomeCustom(this.value)"
-              class="flex-1 border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+              class="flex-1 border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none" placeholder="เช่น 1,200,000"/>
           </div>
           <div class="mt-2 bg-slate-50 rounded-xl px-3 py-2">
             <span class="font-noto text-xs text-slate-500">ฐานภาษีของคุณ: </span>
@@ -922,23 +922,31 @@ function marginalRate(income) {
 // ─────────────────────────────────────────────
 //  TAX REFUND CALCULATOR
 // ─────────────────────────────────────────────
-let currentIncome = 400000;
+let currentIncome = 1000000;
+
+function fmtNum(n){ return n.toLocaleString('th-TH'); }
+function parseIncome(str){ return parseFloat(String(str).replace(/,/g,''))||0; }
 
 function setIncome(val) {
   currentIncome = val;
-  document.getElementById('income-custom').value = val;
-  const map = {200000:'inc-200',400000:'inc-400',600000:'inc-600',800000:'inc-800',1000000:'inc-1M'};
+  document.getElementById('income-custom').value = fmtNum(val);
+  const map = {500000:'inc-500K',1000000:'inc-1M',2000000:'inc-2M',3000000:'inc-3M',5000000:'inc-5M'};
   Object.values(map).forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('selected'); });
   if (map[val]) { const el=document.getElementById(map[val]); if(el) el.classList.add('selected'); }
   calcTax();
 }
 
 function setIncomeCustom(rawVal) {
-  const v = parseFloat(rawVal || document.getElementById('income-custom').value);
+  // strip commas, format back
+  const el = document.getElementById('income-custom');
+  const raw = String(rawVal).replace(/,/g,'');
+  const v = parseFloat(raw);
   if (!isNaN(v) && v > 0) {
     currentIncome = v;
-    ['inc-200','inc-400','inc-600','inc-800','inc-1M'].forEach(id => {
-      const el=document.getElementById(id); if(el) el.classList.remove('selected');
+    // reformat with commas (preserve cursor feel on mobile)
+    el.value = v.toLocaleString('th-TH');
+    ['inc-500K','inc-1M','inc-2M','inc-3M','inc-5M'].forEach(id => {
+      const btn=document.getElementById(id); if(btn) btn.classList.remove('selected');
     });
     calcTax();
   }
@@ -1140,7 +1148,7 @@ document.getElementById('chk-pension-half').addEventListener('change', function(
 // ─────────────────────────────────────────────
 //  INIT
 // ─────────────────────────────────────────────
-setIncome(400000);
+setIncome(1000000);
 calcGap();
   // Nav scroll shadow + mobile menu
   if(document.getElementById('menuBtn')){
