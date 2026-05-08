@@ -328,251 +328,14 @@ html{scroll-behavior:smooth}
   <div class="max-w-5xl mx-auto px-4 py-2.5 overflow-x-auto">
     <div class="flex items-center gap-2 min-w-max">
       <span class="font-noto text-xs text-slate-400 mr-1 hidden sm:block">ไปที่:</span>
-      <a href="#sec-ci"     class="snav-btn">⚡ โรคร้ายแรง (CI)</a>
-      <a href="#sec-udr"    class="snav-btn">📈 UDR Innovation</a>
-      <a href="#sec-dhsim"  class="snav-btn">🔧 D Health คำนวณ</a>
+      <a href="#sec-dhsim"  class="snav-btn">🏥 D Health คำนวณ</a>
       <a href="#sec-ehsim"  class="snav-btn">👑 Elite Health คำนวณ</a>
+      <a href="#sec-ci"     class="snav-btn">⚡ โรคร้ายแรง (CI)</a>
       <a href="#sec-compare" class="snav-btn">📊 เปรียบเทียบ</a>
+      <a href="#sec-udr"    class="snav-btn">📈 UDR Innovation</a>
     </div>
   </div>
 </div>
-
-<!-- ══════ SECTION 2: CORE PROTECTION ══════ -->
-<section id="sec-ci" class="py-16" style="background:#EFF9FC">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-10 reveal">
-      <span class="sec-label">Core Protection</span>
-      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">แผนรับมือโรคร้ายแรง (Critical Illness)</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm max-w-lg mx-auto">เลือกตามความกังวลของคุณ — ไม่มีคำตอบเดียวที่ใช่สำหรับทุกคน</p>
-    </div>
-    <div class="flex border-b border-slate-200 mb-8 gap-0 reveal overflow-x-auto">
-      <button onclick="switchCITab('standard')" id="tab-standard" class="tab-btn active-tab font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">⚡ เจอ จ่าย จบ (Standard)</button>
-      <button onclick="switchCITab('multi')" id="tab-multi" class="tab-btn font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">♻️ เจอ จ่าย หลายจบ (Multi-Pay)</button>
-    </div>
-
-    <!-- TAB 1: เจอจ่ายจบ -->
-    <div id="panel-standard" class="tab-panel active">
-      <div class="grid md:grid-cols-2 gap-5 mb-6">
-        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
-          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: เงินสำรองฉุกเฉิน</div>
-          <p class="font-noto text-slate-600 text-sm leading-loose">รับเงินก้อนทันทีเมื่อตรวจพบโรคร้ายแรง เพื่อใช้ในช่วงที่ต้องหยุดพักงาน ดูแลครอบครัว หรือครอบคลุมค่าใช้จ่ายที่ประกันสุขภาพไม่คุ้ม</p>
-        </div>
-        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
-          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
-          <div class="flex flex-col gap-2">
-            <div class="who-chip">✓ มีสวัสดิการค่ารักษาอยู่แล้ว แต่ขาดเงินหมุนเวียน</div>
-            <div class="who-chip">✓ ต้องการความคุ้มครองพื้นฐานในราคาเข้าถึงได้</div>
-            <div class="who-chip">✓ เป็นพ่อแม่ที่มีภาระครอบครัว</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-5">
-        <div class="prod-card featured">
-          <div class="badge badge-red">⭐ ซีไอ เพอร์เฟค แคร์</div>
-          <div class="font-pop font-bold text-navy text-base mb-1">CI Perfect Care</div>
-          <div class="font-noto text-slate-400 text-xs mb-4">คุ้มครองโรคร้ายครบทุกระยะ ตั้งแต่เริ่มต้น</div>
-          <ul class="space-y-2 mb-4">
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครอง 36 โรคร้ายแรง ทุกระยะ รวมระยะเริ่มต้น</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>จ่าย 100% ต่อโรค รวมสูงสุด 120% ของทุนประกัน</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>รับเงินก้อนโดยไม่ต้องรอผลการรักษา</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 30–65 ปี</li>
-          </ul>
-          <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>          <div class="flex flex-wrap gap-2 mt-3">
-            <a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ (Standard)</a>
-            <a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-navy border border-navy/20 rounded-lg px-3 py-1.5 hover:bg-navy/5 transition-colors">📄 โบรชัวร์ (UDR)</a>
-          </div>
-
-        </div>
-        <div class="prod-card">
-          <div class="badge badge-purple">💜 แคร์ พลัส Rider</div>
-          <div class="font-pop font-bold text-navy text-base mb-1">Care Plus</div>
-          <div class="font-noto text-slate-400 text-xs mb-4">เฉพาะทาง — มะเร็ง &amp; โรคไต ทุกระยะ</div>
-          <ul class="space-y-2 mb-4">
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองมะเร็ง &amp; ไตวายเรื้อรัง ทุก 5 ระยะ</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ IPD: สนับสนุนค่าผ่าตัด เคมีบำบัด Targeted Therapy</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ OPD: ครอบคลุมการรักษา Stem Cell</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>พ่วงกับ D Health Lite ได้ทันที</li>
-          </ul>
-          <div class="badge badge-purple" style="margin-bottom:0">Specialist Coverage</div>
-          <div class="mt-3"><a href="../pdfs/health/care-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-purple-700 border border-purple-200 rounded-lg px-3 py-1.5 hover:bg-purple-50 transition-colors">📄 โบรชัวร์ Care Plus</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 2: หลายจบ -->
-    <div id="panel-multi" class="tab-panel">
-      <div class="grid md:grid-cols-2 gap-5 mb-6">
-        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
-          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: คุ้มครองหลายรอบ</div>
-          <p class="font-noto text-slate-600 text-sm leading-loose">คุ้มครอง 4 กลุ่มโรคแบบอิสระจากกัน แม้เคลมกลุ่มหนึ่งไปแล้ว กลุ่มอื่นยังคุ้มครองต่อ รับมือโรคแทรกซ้อนหรือการกลับมาเป็นซ้ำ</p>
-        </div>
-        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
-          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
-          <div class="flex flex-col gap-2">
-            <div class="who-chip">✓ กังวลเรื่องป่วยซ้ำ หรือหลายโรคพร้อมกัน</div>
-            <div class="who-chip">✓ ต้องการความอุ่นใจสูงสุดในระยะยาว</div>
-            <div class="who-chip">✓ มีประวัติครอบครัวป่วยด้วยโรคร้ายแรง</div>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-2xl">
-        <div class="prod-card featured">
-          <div class="badge badge-red">♻️ มัลติเพิล ซีไอ</div>
-          <div class="font-pop font-bold text-navy text-base mb-1">Multiple CI</div>
-          <div class="font-noto text-slate-400 text-xs mb-4">35 โรคร้ายแรง 4 กลุ่ม สูงสุด 400% ของทุน</div>
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 1</div><div class="font-noto text-xs text-slate-500">โรคหัวใจ &amp; หลอดเลือด</div></div>
-            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 2</div><div class="font-noto text-xs text-slate-500">มะเร็ง (Invasive)</div></div>
-            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 3</div><div class="font-noto text-xs text-slate-500">อวัยวะสำคัญ (ไต ปอด ตับ)</div></div>
-            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 4</div><div class="font-noto text-xs text-slate-500">ระบบประสาท &amp; อื่นๆ</div></div>
-          </div>
-          <ul class="space-y-2 mb-4">
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองสูงสุด 400% ของทุนประกัน</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>ตรวจพบระยะรุนแรง รับก่อนสูงสุด 4× ทันที</li>
-            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 7–65 ปี คุ้มครองถึงอายุ 79 ปี</li>
-          </ul>
-          <span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span>
-          <div class="mt-3"><a href="../pdfs/health/multiple-ci.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ Multiple CI</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ SECTION 3: UDR INNOVATION ══════ -->
-<section id="sec-udr" class="py-16 bg-white">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-12 reveal">
-      <span class="sec-label">The Innovation</span>
-      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">ออกแบบพอร์ตสุขภาพระยะยาว ด้วย UDR</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">จัดสรรงบประมาณครั้งเดียว คุ้มครองสุขภาพตลอดชีวิต พร้อมมูลค่าที่เติบโตได้</p>
-    </div>
-
-    <!-- UDR Concept -->
-    <div class="reveal grid md:grid-cols-2 gap-10 items-center mb-14">
-      <div>
-        <div class="badge badge-teal mb-4">UDR คืออะไร?</div>
-        <h3 class="font-pridi font-semibold text-navy text-xl mb-4">Unit Deducted Rider</h3>
-        <p class="font-noto text-slate-600 leading-loose mb-6">
-          แทนที่จะจ่ายเบี้ยสุขภาพที่เพิ่มขึ้นทุกปีตามอายุ — UDR ช่วยให้คุณ <strong class="text-navy">จัดสรรงบประมาณครั้งเดียว</strong> แล้วให้กองทุนที่เติบโตหักค่าธรรมเนียมความคุ้มครองแทน เหมือนมีผู้จัดการการเงินดูแลค่าประกันสุขภาพให้อัตโนมัติ
-        </p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-xl">
-            <span class="text-green-600 text-lg flex-shrink-0">✅</span>
-            <div><div class="font-pop font-bold text-sm text-green-800 mb-0.5">Fixed Premium</div><div class="font-noto text-xs text-green-700">ล็อกค่าเบี้ยรวมคงที่ตลอดสัญญา ไม่เพิ่มตามอายุ</div></div>
-          </div>
-          <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl">
-            <span class="text-blue-600 text-lg flex-shrink-0">📈</span>
-            <div><div class="font-pop font-bold text-sm text-blue-800 mb-0.5">Potential Return</div><div class="font-noto text-xs text-blue-700">เบี้ยที่จ่ายมีโอกาสเติบโตผ่านกองทุนรวม — หากสุขภาพดี เงินก้อนนั้นกลายเป็นทรัพย์เกษียณ</div></div>
-          </div>
-          <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-xl">
-            <span class="text-purple-600 text-lg flex-shrink-0">🔄</span>
-            <div><div class="font-pop font-bold text-sm text-purple-800 mb-0.5">Premium Holiday</div><div class="font-noto text-xs text-purple-700">พักชำระเบี้ยได้ในอนาคต ความคุ้มครองสุขภาพยังทำงานต่อตราบที่กองทุนมีมูลค่า</div></div>
-          </div>
-          <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
-            <span class="text-amber-600 text-lg flex-shrink-0">⚠️</span>
-            <div><div class="font-pop font-bold text-sm text-amber-800 mb-0.5">ความจริงที่ต้องรู้</div><div class="font-noto text-xs text-amber-700">มีความเสี่ยงจากการลงทุน หากกองทุนผันผวนอาจต้องชำระเบี้ยเพิ่มเพื่อรักษาความคุ้มครอง</div></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <!-- Structure Flow -->
-        <div class="bg-slate-50 rounded-2xl p-6 mb-4">
-          <div class="font-pop font-bold text-navy text-sm mb-4 text-center">โครงสร้างการทำงาน UDR</div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="w-full bg-navy rounded-xl p-3 text-center">
-              <div class="font-pop font-bold text-white text-sm">กรมธรรม์หลัก</div>
-              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.7)">เมืองไทยยูแอล พลัส (UL / ILP)</div>
-            </div>
-            <div class="text-slate-400 font-bold text-xl">↓</div>
-            <div class="w-full bg-blue-50 border-2 border-blue-200 rounded-xl p-3 text-center">
-              <div class="font-pop font-bold text-blue-800 text-sm">มูลค่ากองทุนสะสม</div>
-              <div class="font-noto text-xs text-blue-600 mt-1">เติบโตจากการลงทุน → หักค่าความคุ้มครองอัตโนมัติ</div>
-            </div>
-            <div class="text-slate-400 font-bold text-xl">↓</div>
-            <div class="grid grid-cols-2 gap-2 w-full">
-              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">Elite Health Plus</div><div class="font-noto text-xs text-slate-400">IPD/OPD Premium</div></div>
-              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">D Health Lite</div><div class="font-noto text-xs text-slate-400">IPD Standard</div></div>
-              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">CI Perfect Care</div><div class="font-noto text-xs text-slate-400">โรคร้ายแรง</div></div>
-              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">OPD เหมาจ่าย</div><div class="font-noto text-xs text-slate-400">ผู้ป่วยนอก</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="bg-teal/5 border border-teal/20 rounded-xl p-4">
-          <div class="font-pop font-bold text-teal text-xs mb-2">เหมาะกับใคร?</div>
-          <div class="space-y-1.5">
-            <div class="who-chip text-xs">🎯 วัยทำงาน 25–45 ปี ที่ต้องการ "ปิดยอด" ค่าสุขภาพก่อนเกษียณ</div>
-            <div class="who-chip text-xs">📊 นักวางแผนที่เชื่อมั่นในพลังดอกเบี้ยทบต้น</div>
-            <div class="who-chip text-xs">💼 ผู้ประกอบการไม่มีสวัสดิการ ต้องออกแบบเอง</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CHART: Graph A vs B -->
-    <div class="reveal bg-slate-50 rounded-2xl p-8 mb-12">
-      <div class="text-center mb-6">
-        <div class="font-pop font-bold text-navy text-base mb-1">เบี้ยประกันสุขภาพ: แบบทั่วไป vs UDR Strategy</div>
-        <div class="font-noto text-slate-500 text-sm">เปรียบเทียบภาระเบี้ยตลอดช่วงชีวิต (สมมติ อายุ 30–70 ปี)</div>
-      </div>
-      <div style="max-width:640px;margin:0 auto;height:280px">
-        <canvas id="udrChart"></canvas>
-      </div>
-      <div class="flex flex-wrap justify-center gap-6 mt-5">
-        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
-          <div style="width:28px;height:3px;background:#ef4444;border-radius:2px"></div>เบี้ยประกันทั่วไป (เพิ่มตามอายุ)
-        </div>
-        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
-          <div style="width:28px;height:3px;background:#0891B2;border-radius:2px"></div>UDR: เบี้ยรวมคงที่
-        </div>
-        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
-          <div style="width:28px;height:3px;background:#22c55e;border-radius:2px;border-top:2px dashed #22c55e"></div>มูลค่ากองทุน UDR
-        </div>
-      </div>
-    </div>
-
-    <!-- UDR Products -->
-    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-      <div class="prod-card featured text-center">
-        <div class="text-2xl mb-2">👑</div>
-        <div class="font-pop font-bold text-navy text-sm mb-1">Elite Health Plus</div>
-        <div class="font-noto text-xs text-slate-500 mb-3">IPD + OPD Premium<br/>คุ้มครองทั่วโลก 20–100 ล้าน</div>
-        <span class="udr-pill">UDR</span>
-      </div>
-      <div class="prod-card text-center">
-        <div class="text-2xl mb-2">🏥</div>
-        <div class="font-pop font-bold text-navy text-sm mb-1">D Health Lite</div>
-        <div class="font-noto text-xs text-slate-500 mb-3">IPD Standard<br/>เหมาจ่ายสูงสุด 5 ล้าน</div>
-        <span class="udr-pill">UDR</span>
-      </div>
-      <div class="prod-card text-center">
-        <div class="text-2xl mb-2">⚡</div>
-        <div class="font-pop font-bold text-navy text-sm mb-1">CI Perfect Care</div>
-        <div class="font-noto text-xs text-slate-500 mb-3">โรคร้ายแรง 36 โรค<br/>ทุกระยะ สูงสุด 120%</div>
-        <span class="udr-pill">UDR</span>
-      </div>
-      <div class="prod-card text-center">
-        <div class="text-2xl mb-2">🩺</div>
-        <div class="font-pop font-bold text-navy text-sm mb-1">OPD เหมาจ่าย</div>
-        <div class="font-noto text-xs text-slate-500 mb-3">ผู้ป่วยนอก ไม่มีลิมิต/ครั้ง<br/>คุ้มครองถึงอายุ 99 ปี</div>
-        <span class="udr-pill">UDR</span>
-      </div>
-    </div>
-
-    <!-- Expert Note -->
-    <div class="reveal expert-note">
-      <div class="flex items-start gap-3">
-        <span class="text-2xl flex-shrink-0">🎯</span>
-        <div>
-          <div class="font-pop font-bold text-navy text-sm mb-2">Expert Note — จาก NextLevel Advisor</div>
-          <p class="font-noto text-slate-600 text-sm leading-loose">
-            ตัวเลือก UDR ขึ้นอยู่กับพอร์ตการลงทุนและการรับความเสี่ยงรายบุคคล — ทีมของเราพร้อมช่วยเลือก <strong class="text-navy">กองทุนที่เหมาะสม (Active Management)</strong> เพื่อให้ UDR ทำงานได้เต็มประสิทธิภาพ และมูลค่ากองทุนเติบโตได้จริงในระยะยาว
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ══════ SECTION 4: PREMIUM SIMULATOR ══════ -->
 <section id="sec-dhsim" class="py-16" style="background:#EFF9FC">
@@ -822,8 +585,110 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+<!-- ══════ SECTION 2: CORE PROTECTION ══════ -->
+<section id="sec-ci" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <span class="sec-label">Core Protection</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">แผนรับมือโรคร้ายแรง (Critical Illness)</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-lg mx-auto">เลือกตามความกังวลของคุณ — ไม่มีคำตอบเดียวที่ใช่สำหรับทุกคน</p>
+    </div>
+    <div class="flex border-b border-slate-200 mb-8 gap-0 reveal overflow-x-auto">
+      <button onclick="switchCITab('standard')" id="tab-standard" class="tab-btn active-tab font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">⚡ เจอ จ่าย จบ (Standard)</button>
+      <button onclick="switchCITab('multi')" id="tab-multi" class="tab-btn font-noto px-6 py-3 text-sm text-slate-500 whitespace-nowrap">♻️ เจอ จ่าย หลายจบ (Multi-Pay)</button>
+    </div>
+
+    <!-- TAB 1: เจอจ่ายจบ -->
+    <div id="panel-standard" class="tab-panel active">
+      <div class="grid md:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: เงินสำรองฉุกเฉิน</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">รับเงินก้อนทันทีเมื่อตรวจพบโรคร้ายแรง เพื่อใช้ในช่วงที่ต้องหยุดพักงาน ดูแลครอบครัว หรือครอบคลุมค่าใช้จ่ายที่ประกันสุขภาพไม่คุ้ม</p>
+        </div>
+        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
+          <div class="flex flex-col gap-2">
+            <div class="who-chip">✓ มีสวัสดิการค่ารักษาอยู่แล้ว แต่ขาดเงินหมุนเวียน</div>
+            <div class="who-chip">✓ ต้องการความคุ้มครองพื้นฐานในราคาเข้าถึงได้</div>
+            <div class="who-chip">✓ เป็นพ่อแม่ที่มีภาระครอบครัว</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="prod-card featured">
+          <div class="badge badge-red">⭐ ซีไอ เพอร์เฟค แคร์</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">CI Perfect Care</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">คุ้มครองโรคร้ายครบทุกระยะ ตั้งแต่เริ่มต้น</div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครอง 36 โรคร้ายแรง ทุกระยะ รวมระยะเริ่มต้น</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>จ่าย 100% ต่อโรค รวมสูงสุด 120% ของทุนประกัน</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>รับเงินก้อนโดยไม่ต้องรอผลการรักษา</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 30–65 ปี</li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>          <div class="flex flex-wrap gap-2 mt-3">
+            <a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ (Standard)</a>
+            <a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-navy border border-navy/20 rounded-lg px-3 py-1.5 hover:bg-navy/5 transition-colors">📄 โบรชัวร์ (UDR)</a>
+          </div>
+
+        </div>
+        <div class="prod-card">
+          <div class="badge badge-purple">💜 แคร์ พลัส Rider</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">Care Plus</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">เฉพาะทาง — มะเร็ง &amp; โรคไต ทุกระยะ</div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองมะเร็ง &amp; ไตวายเรื้อรัง ทุก 5 ระยะ</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ IPD: สนับสนุนค่าผ่าตัด เคมีบำบัด Targeted Therapy</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ OPD: ครอบคลุมการรักษา Stem Cell</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>พ่วงกับ D Health Lite ได้ทันที</li>
+          </ul>
+          <div class="badge badge-purple" style="margin-bottom:0">Specialist Coverage</div>
+          <div class="mt-3"><a href="../pdfs/health/care-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-purple-700 border border-purple-200 rounded-lg px-3 py-1.5 hover:bg-purple-50 transition-colors">📄 โบรชัวร์ Care Plus</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: หลายจบ -->
+    <div id="panel-multi" class="tab-panel">
+      <div class="grid md:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white/70 border border-teal/20 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-2">💡 แนวคิด: คุ้มครองหลายรอบ</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">คุ้มครอง 4 กลุ่มโรคแบบอิสระจากกัน แม้เคลมกลุ่มหนึ่งไปแล้ว กลุ่มอื่นยังคุ้มครองต่อ รับมือโรคแทรกซ้อนหรือการกลับมาเป็นซ้ำ</p>
+        </div>
+        <div class="bg-white/70 border border-slate-100 rounded-2xl p-6">
+          <div class="font-pop font-bold text-navy text-sm mb-3">เหมาะกับใคร?</div>
+          <div class="flex flex-col gap-2">
+            <div class="who-chip">✓ กังวลเรื่องป่วยซ้ำ หรือหลายโรคพร้อมกัน</div>
+            <div class="who-chip">✓ ต้องการความอุ่นใจสูงสุดในระยะยาว</div>
+            <div class="who-chip">✓ มีประวัติครอบครัวป่วยด้วยโรคร้ายแรง</div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-2xl">
+        <div class="prod-card featured">
+          <div class="badge badge-red">♻️ มัลติเพิล ซีไอ</div>
+          <div class="font-pop font-bold text-navy text-base mb-1">Multiple CI</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">35 โรคร้ายแรง 4 กลุ่ม สูงสุด 400% ของทุน</div>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 1</div><div class="font-noto text-xs text-slate-500">โรคหัวใจ &amp; หลอดเลือด</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 2</div><div class="font-noto text-xs text-slate-500">มะเร็ง (Invasive)</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 3</div><div class="font-noto text-xs text-slate-500">อวัยวะสำคัญ (ไต ปอด ตับ)</div></div>
+            <div class="bg-slate-50 rounded-xl p-3"><div class="font-pop font-bold text-navy text-xs mb-1">กลุ่มที่ 4</div><div class="font-noto text-xs text-slate-500">ระบบประสาท &amp; อื่นๆ</div></div>
+          </div>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองสูงสุด 400% ของทุนประกัน</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>ตรวจพบระยะรุนแรง รับก่อนสูงสุด 4× ทันที</li>
+            <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>อายุรับประกัน 7–65 ปี คุ้มครองถึงอายุ 79 ปี</li>
+          </ul>
+          <span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span>
+          <div class="mt-3"><a href="../pdfs/health/multiple-ci.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ Multiple CI</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════ SECTION 5: COMPARISON TABLE ══════ -->
-<section id="sec-compare" class="py-16 bg-white">
+<section id="sec-compare" class="py-16" style="background:#EFF9FC">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
       <span class="sec-label">ภาพรวมทั้งหมด</span>
@@ -912,6 +777,145 @@ html{scroll-behavior:smooth}
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: UDR INNOVATION ══════ -->
+<section id="sec-udr" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="sec-label">The Innovation</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">ออกแบบพอร์ตสุขภาพระยะยาว ด้วย UDR</h2>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">จัดสรรงบประมาณครั้งเดียว คุ้มครองสุขภาพตลอดชีวิต พร้อมมูลค่าที่เติบโตได้</p>
+    </div>
+
+    <!-- UDR Concept -->
+    <div class="reveal grid md:grid-cols-2 gap-10 items-center mb-14">
+      <div>
+        <div class="badge badge-teal mb-4">UDR คืออะไร?</div>
+        <h3 class="font-pridi font-semibold text-navy text-xl mb-4">Unit Deducted Rider</h3>
+        <p class="font-noto text-slate-600 leading-loose mb-6">
+          แทนที่จะจ่ายเบี้ยสุขภาพที่เพิ่มขึ้นทุกปีตามอายุ — UDR ช่วยให้คุณ <strong class="text-navy">จัดสรรงบประมาณครั้งเดียว</strong> แล้วให้กองทุนที่เติบโตหักค่าธรรมเนียมความคุ้มครองแทน เหมือนมีผู้จัดการการเงินดูแลค่าประกันสุขภาพให้อัตโนมัติ
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-xl">
+            <span class="text-green-600 text-lg flex-shrink-0">✅</span>
+            <div><div class="font-pop font-bold text-sm text-green-800 mb-0.5">Fixed Premium</div><div class="font-noto text-xs text-green-700">ล็อกค่าเบี้ยรวมคงที่ตลอดสัญญา ไม่เพิ่มตามอายุ</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl">
+            <span class="text-blue-600 text-lg flex-shrink-0">📈</span>
+            <div><div class="font-pop font-bold text-sm text-blue-800 mb-0.5">Potential Return</div><div class="font-noto text-xs text-blue-700">เบี้ยที่จ่ายมีโอกาสเติบโตผ่านกองทุนรวม — หากสุขภาพดี เงินก้อนนั้นกลายเป็นทรัพย์เกษียณ</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-xl">
+            <span class="text-purple-600 text-lg flex-shrink-0">🔄</span>
+            <div><div class="font-pop font-bold text-sm text-purple-800 mb-0.5">Premium Holiday</div><div class="font-noto text-xs text-purple-700">พักชำระเบี้ยได้ในอนาคต ความคุ้มครองสุขภาพยังทำงานต่อตราบที่กองทุนมีมูลค่า</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
+            <span class="text-amber-600 text-lg flex-shrink-0">⚠️</span>
+            <div><div class="font-pop font-bold text-sm text-amber-800 mb-0.5">ความจริงที่ต้องรู้</div><div class="font-noto text-xs text-amber-700">มีความเสี่ยงจากการลงทุน หากกองทุนผันผวนอาจต้องชำระเบี้ยเพิ่มเพื่อรักษาความคุ้มครอง</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Structure Flow -->
+        <div class="bg-slate-50 rounded-2xl p-6 mb-4">
+          <div class="font-pop font-bold text-navy text-sm mb-4 text-center">โครงสร้างการทำงาน UDR</div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-full bg-navy rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-white text-sm">กรมธรรม์หลัก</div>
+              <div class="font-noto text-xs mt-1" style="color:rgba(255,255,255,.7)">เมืองไทยยูแอล พลัส (UL / ILP)</div>
+            </div>
+            <div class="text-slate-400 font-bold text-xl">↓</div>
+            <div class="w-full bg-blue-50 border-2 border-blue-200 rounded-xl p-3 text-center">
+              <div class="font-pop font-bold text-blue-800 text-sm">มูลค่ากองทุนสะสม</div>
+              <div class="font-noto text-xs text-blue-600 mt-1">เติบโตจากการลงทุน → หักค่าความคุ้มครองอัตโนมัติ</div>
+            </div>
+            <div class="text-slate-400 font-bold text-xl">↓</div>
+            <div class="grid grid-cols-2 gap-2 w-full">
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">Elite Health Plus</div><div class="font-noto text-xs text-slate-400">IPD/OPD Premium</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">D Health Lite</div><div class="font-noto text-xs text-slate-400">IPD Standard</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">CI Perfect Care</div><div class="font-noto text-xs text-slate-400">โรคร้ายแรง</div></div>
+              <div class="bg-white border border-teal/40 rounded-lg p-2 text-center"><div class="font-noto text-xs text-teal font-semibold">OPD เหมาจ่าย</div><div class="font-noto text-xs text-slate-400">ผู้ป่วยนอก</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-teal/5 border border-teal/20 rounded-xl p-4">
+          <div class="font-pop font-bold text-teal text-xs mb-2">เหมาะกับใคร?</div>
+          <div class="space-y-1.5">
+            <div class="who-chip text-xs">🎯 วัยทำงาน 25–45 ปี ที่ต้องการ "ปิดยอด" ค่าสุขภาพก่อนเกษียณ</div>
+            <div class="who-chip text-xs">📊 นักวางแผนที่เชื่อมั่นในพลังดอกเบี้ยทบต้น</div>
+            <div class="who-chip text-xs">💼 ผู้ประกอบการไม่มีสวัสดิการ ต้องออกแบบเอง</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHART: Graph A vs B -->
+    <div class="reveal bg-slate-50 rounded-2xl p-8 mb-12">
+      <div class="text-center mb-6">
+        <div class="font-pop font-bold text-navy text-base mb-1">เบี้ยประกันสุขภาพ: แบบทั่วไป vs UDR Strategy</div>
+        <div class="font-noto text-slate-500 text-sm">เปรียบเทียบภาระเบี้ยตลอดช่วงชีวิต (สมมติ อายุ 30–70 ปี)</div>
+      </div>
+      <div style="max-width:640px;margin:0 auto;height:280px">
+        <canvas id="udrChart"></canvas>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 mt-5">
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#ef4444;border-radius:2px"></div>เบี้ยประกันทั่วไป (เพิ่มตามอายุ)
+        </div>
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#0891B2;border-radius:2px"></div>UDR: เบี้ยรวมคงที่
+        </div>
+        <div class="flex items-center gap-2 text-sm font-noto text-slate-600">
+          <div style="width:28px;height:3px;background:#22c55e;border-radius:2px;border-top:2px dashed #22c55e"></div>มูลค่ากองทุน UDR
+        </div>
+      </div>
+    </div>
+
+    <!-- UDR Products -->
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div class="prod-card featured text-center">
+        <div class="text-2xl mb-2">👑</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">Elite Health Plus</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">IPD + OPD Premium<br/>คุ้มครองทั่วโลก 20–100 ล้าน</div>
+        <span class="udr-pill">UDR</span>
+        <div class="mt-3"><a href="../pdfs/health/elite-health-plus-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR</a></div>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">🏥</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">D Health Lite</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">IPD Standard<br/>เหมาจ่ายสูงสุด 5 ล้าน</div>
+        <span class="udr-pill">UDR</span>
+        <div class="mt-3"><a href="../pdfs/health/d-health-lite-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR</a></div>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">⚡</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">CI Perfect Care</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">โรคร้ายแรง 36 โรค<br/>ทุกระยะ สูงสุด 120%</div>
+        <span class="udr-pill">UDR</span>
+        <div class="mt-3"><a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR</a></div>
+      </div>
+      <div class="prod-card text-center">
+        <div class="text-2xl mb-2">🩺</div>
+        <div class="font-pop font-bold text-navy text-sm mb-1">OPD เหมาจ่าย</div>
+        <div class="font-noto text-xs text-slate-500 mb-3">ผู้ป่วยนอก ไม่มีลิมิต/ครั้ง<br/>คุ้มครองถึงอายุ 99 ปี</div>
+        <span class="udr-pill">UDR</span>
+        <div class="mt-3"><a href="../pdfs/health/opd-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR</a></div>
+      </div>
+    </div>
+
+    <!-- Expert Note -->
+    <div class="reveal expert-note">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl flex-shrink-0">🎯</span>
+        <div>
+          <div class="font-pop font-bold text-navy text-sm mb-2">Expert Note — จาก NextLevel Advisor</div>
+          <p class="font-noto text-slate-600 text-sm leading-loose">
+            ตัวเลือก UDR ขึ้นอยู่กับพอร์ตการลงทุนและการรับความเสี่ยงรายบุคคล — ทีมของเราพร้อมช่วยเลือก <strong class="text-navy">กองทุนที่เหมาะสม (Active Management)</strong> เพื่อให้ UDR ทำงานได้เต็มประสิทธิภาพ และมูลค่ากองทุนเติบโตได้จริงในระยะยาว
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
