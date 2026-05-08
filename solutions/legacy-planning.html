@@ -20,7 +20,7 @@
 <style>
   :root{--navy:#1B365D;--teal:#0891B2}
   html{scroll-behavior:smooth}
-  body{font-family:'Noto Sans Thai',sans-serif}
+  html{overflow-x:hidden}body{font-family:'Noto Sans Thai',sans-serif}
   .font-pop{font-family:'Poppins',sans-serif}
   .font-pridi{font-family:'Pridi',serif}
   .font-noto{font-family:'Noto Sans Thai',sans-serif}
@@ -1390,15 +1390,26 @@ window.toggleSolMenu=function(){
   sm.classList.toggle('hidden');
   if(ch)ch.style.transform=sm.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
 };
+var _menuScrollY=0;
 window.toggleMobileMenu=function(){
   var m=document.getElementById('mobileMenu');
   if(!m)return;
-  // Teleport to body — escapes ALL stacking contexts (backdrop-filter, transform, z-index)
-  if(m.parentElement!==document.body)document.body.appendChild(m);
-  var nav=document.getElementById('mainNav')||document.getElementById('nav')||document.querySelector('nav');
-  if(nav){var h=nav.getBoundingClientRect().height||64;m.style.top=h+'px';m.style.height='calc(100svh - '+h+'px)';}
-  m.classList.toggle('hidden');
-  if(!m.classList.contains('hidden')){m.scrollTop=0;}
+  var opening=m.classList.contains('hidden');
+  var nav=document.getElementById('mainNav')||document.getElementById('nav')||document.querySelector('nav[id]');
+  var navH=nav?nav.getBoundingClientRect().height||64:64;
+  if(opening){
+    // Freeze body scroll (iOS+Android safe — avoids backdrop-filter containing-block bug)
+    _menuScrollY=window.scrollY||window.pageYOffset||0;
+    document.body.style.cssText='position:fixed;top:-'+_menuScrollY+'px;left:0;right:0;width:100%;overflow:hidden';
+    m.style.top=navH+'px';
+    m.style.height='calc(100svh - '+navH+'px)';
+    m.scrollTop=0;
+    m.classList.remove('hidden');
+  }else{
+    document.body.style.cssText='';
+    window.scrollTo(0,_menuScrollY);
+    m.classList.add('hidden');
+  }
 };
 // Wire up menuBtn if not already wired
 document.addEventListener('DOMContentLoaded',function(){
