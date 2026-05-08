@@ -45,7 +45,7 @@ body{font-family:'Noto Sans Thai',sans-serif;background:#F8FAFC}
 .sol-card{background:#fff;border-radius:1.25rem;border:2px solid #e2e8f0;padding:1.5rem;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit;position:relative;overflow:hidden}
 .sol-card:hover{border-color:#0891B2;box-shadow:0 8px 32px rgba(8,145,178,.15);transform:translateY(-3px)}
 .sol-card.highlighted{border-color:#0891B2;box-shadow:0 0 0 3px rgba(8,145,178,.15)}
-.sol-card.dimmed{opacity:.4;pointer-events:none}
+.sol-card.dimmed{opacity:.38;transition:opacity .2s}
 
 /* Mobile: 2-col compact */
 @media(max-width:639px){
@@ -363,11 +363,12 @@ window.addEventListener('scroll',function(){document.getElementById('mainNav').c
 function filterCat(btn, cat) {
   document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  // reset persona
+  // reset persona pills & dimming
   document.querySelectorAll('.persona-pill').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sol-card').forEach(card=>{
     const cats = card.dataset.cat || '';
-    card.style.display = (cat==='all' || cats.includes(cat)) ? '' : 'none';
+    const show = cat==='all' || (card.dataset.cat||'').includes(cat);
+    card.style.display = show ? '' : 'none';
     card.classList.remove('highlighted','dimmed');
   });
 }
