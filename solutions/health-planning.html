@@ -148,7 +148,7 @@ html{scroll-behavior:smooth}
 <body class="bg-white">
 
 <!-- NAV -->
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300 z-[1000]">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5"><img src="/nav-icon.png" alt="NextLevel Advisor" class="h-8 w-auto"/></a>
     <ul class="hidden md:flex items-center gap-6 font-noto text-sm font-medium">
@@ -176,7 +176,7 @@ html{scroll-behavior:smooth}
       </button>
     </div>
   </div>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl">
+    <div id="mobileMenu" class="hidden md:hidden" style="position:fixed;top:64px;left:0;right:0;z-index:999;max-height:calc(100svh - 64px);overflow-y:auto;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(0,0,0,.12)">
     <div class="px-5 py-4 max-h-[80vh] overflow-y-auto">
       <nav class="font-noto text-sm font-medium">
         <!-- Solutions accordion -->
@@ -1485,7 +1485,14 @@ window.toggleSolMenu=function(){
 };
 window.toggleMobileMenu=function(){
   var m=document.getElementById('mobileMenu');
-  if(m)m.classList.toggle('hidden');
+  if(!m)return;
+  var nav=document.getElementById('mainNav')||document.getElementById('nav')||document.querySelector('nav');
+  if(nav){
+    var h=nav.getBoundingClientRect().height||64;
+    m.style.top=h+'px';
+    m.style.maxHeight='calc(100svh - '+h+'px)';
+  }
+  m.classList.toggle('hidden');
 };
 // Wire up menuBtn if not already wired
 document.addEventListener('DOMContentLoaded',function(){
