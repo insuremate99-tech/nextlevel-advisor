@@ -165,7 +165,7 @@ html{scroll-behavior:smooth}
   </div>
 </nav>
 <div id="mobileMenu" class="hidden md:hidden" style="position:fixed;top:64px;left:0;right:0;z-index:9999;height:calc(100svh - 64px);overflow-y:auto;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(0,0,0,.12)">
-    <div class="px-5 py-4 max-h-[80vh] overflow-y-auto">
+    <div class="px-5 py-4">
       <div class="font-noto text-sm font-medium">
         <a href="/" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
           <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -248,7 +248,7 @@ html{scroll-behavior:smooth}
 <!-- HERO -->
 <section class="pt-28 pb-16" style="background:linear-gradient(150deg,#0D1F3C 0%,#1B365D 55%,#0C3548 100%)">
   <div class="max-w-5xl mx-auto px-5">
-    <nav class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
+    <div role="navigation" class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
       <a href="/" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">หน้าหลัก</a>
       <span>/</span><a href="/solutions" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">โซลูชัน</a>
       <span>/</span><span style="color:rgba(255,255,255,.7)">Wealth Growth</span>
@@ -1315,6 +1315,7 @@ window.toggleMobileMenu=function(){
   var nav=document.getElementById('mainNav')||document.getElementById('nav')||document.querySelector('nav');
   if(nav){var h=nav.getBoundingClientRect().height||64;m.style.top=h+'px';m.style.height='calc(100svh - '+h+'px)';}
   m.classList.toggle('hidden');
+  if(!m.classList.contains('hidden')){m.scrollTop=0;}
 };
 // Wire up menuBtn if not already wired
 document.addEventListener('DOMContentLoaded',function(){
