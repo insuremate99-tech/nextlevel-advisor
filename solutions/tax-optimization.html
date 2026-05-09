@@ -1032,10 +1032,12 @@ function calcTax() {
   const pension = Math.min(parseFloat(document.getElementById('pension-num').value)||0, 200000);
   const totalDeduct = endow + pension;
 
-  // User enters รายได้สุทธิ directly (already net of all standard deductions)
-  const taxableBase = Math.max(0, currentIncome);
-  currentTaxableBase = taxableBase;
-  currentMarginalRate = marginalRate(taxableBase);
+  // คำนวณเงินได้สุทธิจริง (Thai PIT 2024)
+  const expenseDeduct  = Math.min(currentIncome * 0.5, 100000); // ค่าใช้จ่าย 50% สูงสุด 100K
+  const personalAllow  = 60000;                                  // ค่าลดหย่อนส่วนตัว
+  const taxableBase    = Math.max(0, currentIncome - expenseDeduct - personalAllow);
+  currentTaxableBase   = taxableBase;
+  currentMarginalRate  = marginalRate(taxableBase);
 
   const taxBefore = calcTaxOnIncome(taxableBase);
   const taxAfter  = calcTaxOnIncome(Math.max(0, taxableBase - totalDeduct));
@@ -1043,7 +1045,7 @@ function calcTax() {
   const mRate     = marginalRate(taxableBase);
   const monthly   = taxSaved / 12;
 
-  // % of taxable base reduced by deductions
+  // % ลดฐานภาษี = ลดหย่อนประกัน ÷ เงินได้สุทธิก่อนหักประกัน
   const discountPct = taxableBase > 0 ? (totalDeduct / taxableBase * 100).toFixed(1) : '0.0';
 
   document.getElementById('tax-deduct-total').textContent = '฿' + totalDeduct.toLocaleString();
