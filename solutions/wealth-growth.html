@@ -686,9 +686,9 @@ html{scroll-behavior:smooth}
             <div class="font-noto text-xs text-amber-700">⚡ ปานกลาง–สูง ขึ้นกับกองทุนที่เลือก</div>
           </div>
         </div>
-        <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+        <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
            class="block w-full text-center py-2.5 rounded-xl font-noto font-semibold text-sm text-white hover:opacity-90 transition-opacity"
-           style="background:#0891B2">นัดคุยเรื่อง Unit-Linked →</a>
+           style="background:#06C755">นัดคุยเรื่อง Unit-Linked →</a>
       </div>
       <!-- UL Plus Card -->
       <div class="rounded-2xl border-2 border-amber-300/60 bg-amber-50/30 p-5">
@@ -714,9 +714,9 @@ html{scroll-behavior:smooth}
             <div class="font-noto text-xs text-green-700">🛡️ ต่ำ มีผลตอบแทนขั้นต่ำการันตีตามเงื่อนไขกรมธรรม์</div>
           </div>
         </div>
-        <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
-           class="block w-full text-center py-2.5 rounded-xl font-noto font-semibold text-sm text-amber-800 hover:opacity-90 transition-opacity"
-           style="background:#FDE68A">นัดคุยเรื่อง UL Plus →</a>
+        <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
+           class="block w-full text-center py-2.5 rounded-xl font-noto font-semibold text-sm text-white hover:opacity-90 transition-opacity"
+           style="background:#06C755">นัดคุยเรื่อง UL Plus →</a>
       </div>
     </div>
   </div>
@@ -737,21 +737,19 @@ html{scroll-behavior:smooth}
         <div class="font-pop font-bold text-navy text-sm mb-6">⚙️ ปรับตัวแปรของคุณ</div>
 
         <div class="mb-5">
-          <span class="sim-label">เงินออมต่อเดือน (บาท) <span id="wh-monthly-display" class="text-teal font-bold">5,000</span></span>
-          <input type="range" min="1000" max="50000" step="1000" value="5000"
-            oninput="document.getElementById('wh-monthly-display').textContent=Number(this.value).toLocaleString('th-TH');document.getElementById('wh-monthly-num').value=this.value;calcWealth()"
-            class="w-full accent-teal mb-2" id="wh-monthly-slider"/>
-          <input type="number" min="1000" max="50000" step="1000" value="5000"
-            oninput="document.getElementById('wh-monthly-display').textContent=Number(this.value).toLocaleString('th-TH');document.getElementById('wh-monthly-slider').value=this.value;calcWealth()"
-            id="wh-monthly-num" class="w-full border border-slate-200 rounded-xl p-2.5 font-noto text-sm focus:border-teal outline-none"/>
+          <label class="sim-label block mb-2">เงินออมต่อเดือน (บาท)</label>
+          <input type="number" min="1000" max="999999" step="1000" value="5000"
+            oninput="calcWealth()"
+            id="wh-monthly-num"
+            class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm focus:border-teal outline-none"/>
         </div>
 
         <div class="mb-5">
-          <span class="sim-label">ระยะเวลาลงทุน <span id="wh-years-display" class="text-teal font-bold">20</span> ปี</span>
-          <input type="range" min="5" max="40" step="1" value="20"
-            oninput="document.getElementById('wh-years-display').textContent=this.value;calcWealth()"
-            class="w-full accent-teal" id="wh-years-slider"/>
-          <div class="flex justify-between font-noto text-xs text-slate-400 mt-1"><span>5 ปี</span><span>40 ปี</span></div>
+          <label class="sim-label block mb-2">ระยะเวลาลงทุน (ปี)</label>
+          <input type="number" min="1" max="50" step="1" value="20"
+            oninput="calcWealth()"
+            id="wh-years-num"
+            class="w-full border border-slate-200 rounded-xl px-4 py-3 font-noto text-sm focus:border-teal outline-none"/>
         </div>
 
         <div class="mb-5">
@@ -1152,7 +1150,7 @@ function setRisk(r){
 
 function calcWealth(){
   const monthly = parseFloat(document.getElementById('wh-monthly-num').value)||5000;
-  const years = parseInt(document.getElementById('wh-years-slider').value)||20;
+  const years = parseInt(document.getElementById('wh-years-num').value)||20;
   const rate = RATES[whRisk];
   const monthlyRate = rate/12;
   const months = years*12;
