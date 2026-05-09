@@ -357,7 +357,7 @@ html{scroll-behavior:smooth}
     <div class="text-center mb-12 reveal">
       <span class="sec-label">Hybrid Financial Tool</span>
       <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">Unit-Linked — อิสระของการจัดการความมั่งคั่ง</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">รวมจุดเด่นของประกันชีวิต (คุ้มครองสูง) และการลงทุน (กองทุนรวม) ไว้ในกรมธรรม์เดียว</p>
+      <p class="font-noto text-slate-500 mt-3 text-sm max-w-xl mx-auto">เน้น<strong class="text-navy">ทุนประกันชีวิตสูง</strong>เป็นจุดแข็งหลัก — ส่วนการลงทุนเป็นส่วนเสริม เพื่อเพิ่มโอกาสเติบโตในระยะยาว ไม่ใช่แผนลงทุนหลัก</p>
     </div>
 
     <!-- Concept Cards -->
@@ -824,9 +824,9 @@ html{scroll-behavior:smooth}
         <div>
           <span class="sim-label">คาดการณ์ผลตอบแทนการลงทุน <span style="color:#94A3B8;font-weight:400">(เลือกสถานการณ์)</span></span>
           <div class="flex gap-2">
-            <button onclick="setGGRate(1)" id="gg-rate-1" class="sim-btn flex-1 text-xs">1%<br/><span style="font-size:.65rem;color:#94A3B8">อนุรักษ์</span></button>
-            <button onclick="setGGRate(3)" id="gg-rate-3" class="sim-btn flex-1 selected text-xs">3%<br/><span style="font-size:.65rem;color:#94A3B8">กลาง</span></button>
-            <button onclick="setGGRate(5)" id="gg-rate-5" class="sim-btn flex-1 text-xs">5%<br/><span style="font-size:.65rem;color:#94A3B8">เติบโต</span></button>
+            <button onclick="setGGRate(-2)" id="gg-rate-n2" class="sim-btn flex-1 selected text-xs">-2%<br/><span style="font-size:.65rem;color:#94A3B8">ตลาดขาลง</span></button>
+            <button onclick="setGGRate(3)" id="gg-rate-3" class="sim-btn flex-1 text-xs">3%<br/><span style="font-size:.65rem;color:#94A3B8">ปานกลาง</span></button>
+            <button onclick="setGGRate(5)" id="gg-rate-5" class="sim-btn flex-1 text-xs">5%<br/><span style="font-size:.65rem;color:#94A3B8">เชิงรุก</span></button>
           </div>
         </div>
       </div>
@@ -840,7 +840,7 @@ html{scroll-behavior:smooth}
           <span class="text-xl">🛡️</span>
           <div>
             <div class="font-pop font-bold text-amber-800 text-sm">UL Plus — การันตี</div>
-            <div class="font-noto text-xs text-amber-600">ผลตอบแทนขั้นต่ำ ~2% ต่อปี (conservative est.)</div>
+            <div class="font-noto text-xs text-amber-600">การันตีขั้นต่ำ 1% ต่อปี (ปีที่ 2 เป็นต้นไป)</div>
           </div>
         </div>
         <div class="mb-3">
@@ -868,7 +868,7 @@ html{scroll-behavior:smooth}
           <span class="text-xl">📈</span>
           <div>
             <div class="font-pop font-bold text-teal text-sm">Unit-Linked — Potential</div>
-            <div id="gg-rate-label" class="font-noto text-xs text-teal">สมมติ 7% ต่อปี (ไม่การันตี)</div>
+            <div id="gg-rate-label" class="font-noto text-xs text-teal">แปรผันตามสถานการณ์ที่เลือก (ไม่การันตี)</div>
           </div>
         </div>
         <div class="mb-3">
@@ -901,115 +901,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<!-- ══════ TOOLBOX + CTA ══════ -->
-<section class="py-14" style="background:#EFF9FC">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-8 reveal">
-      <span class="sec-label">Investment Tool Box</span>
-      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.2rem,2.2vw,1.6rem)">เครื่องมือในพอร์ตของเรา</h2>
-    </div>
-    <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-      <div class="tool-chip">
-        <span class="text-xl">📐</span>
-        <span>mDesign</span>
-        <span class="font-noto text-xs text-slate-400 font-normal">Unit-Linked</span>
-      </div>
-      <div class="tool-chip">
-        <span class="text-xl">🌱</span>
-        <span>mGrow 615</span>
-        <span class="font-noto text-xs text-slate-400 font-normal">Unit-Linked</span>
-      </div>
-      <div class="tool-chip">
-        <span class="text-xl">💎</span>
-        <span>mOnePlus</span>
-        <span class="font-noto text-xs text-slate-400 font-normal">Single Premium ILP</span>
-      </div>
-      <div class="tool-chip">
-        <span class="text-xl">🛡️</span>
-        <span>MTL UL Plus</span>
-        <span class="font-noto text-xs text-slate-400 font-normal">Universal Life</span>
-      </div>
-    </div>
-    <div class="reveal expert-note">
-      <div class="flex items-start gap-3">
-        <span class="text-2xl flex-shrink-0">🎯</span>
-        <div>
-          <div class="font-pop font-bold text-navy text-sm mb-2">ภาษีคือผลพลอยได้ — เป้าหมายหลักคือความมั่งคั่ง</div>
-          <p class="font-noto text-slate-600 text-sm leading-loose">
-            ทุกเครื่องมือในหมวดนี้ช่วยลดหย่อนภาษีได้สูงสุด 100,000 บาท แต่นั่นไม่ใช่เหตุผลหลัก — เหตุผลหลักคือเพื่อให้เงินของคุณเติบโตอย่างมีระบบ พร้อมความคุ้มครองชีวิตที่เหมาะสม ภาษีที่ประหยัดได้คือ "โบนัส" ที่ทำให้ผลตอบแทนรวมดีขึ้นอีกขั้น
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- WEALTH ECOSYSTEM -->
-<section id="sec-ecosystem" class="py-16 px-4" style="background:#F8FAFC">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-10 reveal">
-      <span class="sec-label">Wealth Ecosystem</span>
-      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">
-        เลือกแนวทางที่ใช่ สำหรับเป้าหมายของคุณ
-      </h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm">
-        เครื่องมือทางการเงินแต่ละกลุ่มตอบโจทย์คนละสไตล์
-      </p>
-    </div>
-
-    <div class="reveal grid md:grid-cols-3 gap-5 mb-6">
-
-      <!-- Group 1: Growth -->
-      <div class="bg-white rounded-2xl border-2 border-teal/30 p-6 hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer" onclick="document.getElementById('sec-ul').scrollIntoView({behavior:'smooth'})">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style="background:linear-gradient(135deg,#0891B2,#0E7490)">📈</div>
-        <div class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-3" style="background:#ECFEFF;color:#0E7490">กลุ่มเน้นโอกาสเติบโต</div>
-        <h3 class="font-pridi font-semibold text-navy text-lg mb-2">Unit-Linked (ILP)</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">
-          เงินทำงานในตลาดทุน พร้อมความคุ้มครองชีวิต ผลตอบแทนไม่การันตีแต่มีโอกาสสูงกว่า
-        </p>
-        <div class="flex flex-wrap gap-1.5 mb-4">
-          <span class="px-2 py-0.5 bg-slate-100 rounded-md text-xs font-noto text-slate-600">mDesign</span>
-          <span class="px-2 py-0.5 bg-slate-100 rounded-md text-xs font-noto text-slate-600">mGrow 615</span>
-          <span class="px-2 py-0.5 bg-slate-100 rounded-md text-xs font-noto text-slate-600">mOnePlus</span>
-        </div>
-        <div class="font-noto text-xs text-teal font-semibold">↑ ดูรายละเอียดในหน้านี้</div>
-      </div>
-
-      <!-- Group 2: Tax Optimization -->
-      <a href="/solutions/tax-optimization.html" class="block bg-white rounded-2xl border-2 border-amber-200 p-6 hover:shadow-lg transition-all hover:-translate-y-1" style="text-decoration:none">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style="background:linear-gradient(135deg,#F59E0B,#D97706)">💰</div>
-        <div class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-3" style="background:#FFFBEB;color:#92400E">กลุ่มเน้นบริหารภาษี</div>
-        <h3 class="font-pridi font-semibold text-navy text-lg mb-2">Tax Optimization</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">
-          ประกันออมทรัพย์ + ประกันบำนาญ ลดหย่อนภาษีได้สูงสุด 300,000 บาท/ปี ผลตอบแทนชัดเจน การันตี
-        </p>
-        <div class="flex flex-wrap gap-1.5 mb-4">
-          <span class="px-2 py-0.5 bg-amber-50 rounded-md text-xs font-noto text-amber-700">Smart Wealth</span>
-          <span class="px-2 py-0.5 bg-amber-50 rounded-md text-xs font-noto text-amber-700">Happy Return</span>
-          <span class="px-2 py-0.5 bg-amber-50 rounded-md text-xs font-noto text-amber-700">ประกันบำนาญ</span>
-        </div>
-        <div class="font-noto text-xs font-semibold" style="color:#D97706">→ ไปหน้าวางแผนภาษี</div>
-      </a>
-
-      <!-- Group 3: Retirement Planning -->
-      <a href="/solutions/retirement-tax.html" class="block bg-white rounded-2xl border-2 border-navy/20 p-6 hover:shadow-lg transition-all hover:-translate-y-1" style="text-decoration:none">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style="background:linear-gradient(135deg,#1B365D,#2D4F7F)">🏖️</div>
-        <div class="inline-block px-3 py-1 rounded-full text-xs font-noto font-semibold mb-3" style="background:#EFF6FF;color:#1E40AF">วางแผนเกษียณและบริหารภาษี</div>
-        <h3 class="font-pridi font-semibold text-navy text-lg mb-2">Retirement Planning</h3>
-        <p class="font-noto text-slate-500 text-xs leading-relaxed mb-4">
-          สร้างรายได้การันตีตลอดชีพหลังเกษียณ พร้อมใช้สิทธิลดหย่อนบำนาญสูงสุด 200,000 บาท/ปี
-        </p>
-        <div class="flex flex-wrap gap-1.5 mb-4">
-          <span class="px-2 py-0.5 bg-blue-50 rounded-md text-xs font-noto text-blue-700">Return Retire</span>
-          <span class="px-2 py-0.5 bg-blue-50 rounded-md text-xs font-noto text-blue-700">Flexi Retire</span>
-          <span class="px-2 py-0.5 bg-blue-50 rounded-md text-xs font-noto text-blue-700">D65 · D60</span>
-        </div>
-        <div class="font-noto text-xs font-semibold text-navy">→ ไปหน้าแผนเกษียณ</div>
-      </a>
-
-    </div>
-  </div>
-</section>
 
 <!-- ══════ SEO FAQ ══════ -->
 <section class="py-16 bg-white">
@@ -1210,8 +1102,10 @@ function setGGRate(r){
 function calcGG(){
   const annual=parseFloat(document.getElementById('gg-annual').value)||60000;
   const principal=annual*ggYears;
-  // UL Plus: guaranteed ~2% annual compound
-  const ulVal=annual*((Math.pow(1.02,ggYears)-1)/0.02);
+  // UL Plus: guaranteed minimum 1%/yr; follows market if scenario > 1%
+const ulRate = ggRate < 0.01 ? 0.01 : ggRate;
+// UL Plus: guaranteed ~2% annual compound
+  const ulVal=annual*((Math.pow(1+ulRate,ggYears)-1)/ulRate);
   const ulGain=ulVal-principal;
   // ILP: selected rate
   const ilpVal=annual*((Math.pow(1+ggRate,ggYears)-1)/ggRate);
@@ -1229,7 +1123,7 @@ function calcGG(){
   const labels=[],ulData=[],ilpData=[];
   for(let y=1;y<=ggYears;y++){
     labels.push(y+' ปี');
-    ulData.push(Math.round(annual*((Math.pow(1.02,y)-1)/0.02)));
+    ulData.push(Math.round(annual*((Math.pow(1+ulRate,y)-1)/ulRate)));
     ilpData.push(Math.round(annual*((Math.pow(1+ggRate,y)-1)/ggRate)));
   }
   const ctx=document.getElementById('ggChart').getContext('2d');
@@ -1237,7 +1131,7 @@ function calcGG(){
   ggChart=new Chart(ctx,{
     type:'line',
     data:{labels,datasets:[
-      {label:'UL Plus (การันตี 2%)',data:ulData,borderColor:'#d97706',backgroundColor:'rgba(217,119,6,.08)',borderWidth:2.5,pointRadius:0,fill:true,borderDash:[6,3]},
+      {label:'UL Plus (การันตี '+(ulRate*100).toFixed(0)+'%)',data:ulData,borderColor:'#d97706',backgroundColor:'rgba(217,119,6,.08)',borderWidth:2.5,pointRadius:0,fill:true,borderDash:[6,3]},
       {label:'Unit-Linked ('+Math.round(ggRate*100)+'%)',data:ilpData,borderColor:'#0891B2',backgroundColor:'rgba(8,145,178,.1)',borderWidth:2.5,pointRadius:0,fill:true}
     ]},
     options:{
