@@ -32,7 +32,11 @@
     .pg-dots{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;color:#CBD5E1;font-size:.85rem}
     .scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}
     @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-  </style>
+  
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.6rem 1.2rem;border-radius:.75rem;font-weight:600;cursor:pointer;transition:.15s;text-decoration:none}
+  .btn-teal{background:#0891B2;color:#fff}
+  .btn-teal:hover{background:#065E7A;opacity:.95}
+</style>
   <style id="section-nav-css">
     #sectionNav .section-nav-link { color:#64748B; }
     #sectionNav .section-nav-link:hover { color:#0891B2; border-bottom-color:#0891B2; }
@@ -88,7 +92,7 @@
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         แอดไลน์
       </a>
-      <button id="menuBtn" class="md:hidden p-2 rounded-xl text-navy" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+      <button id="menuBtn" class="md:hidden p-2 rounded-xl text-navy">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
