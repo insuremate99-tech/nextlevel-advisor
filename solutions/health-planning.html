@@ -1588,5 +1588,15 @@ document.addEventListener('DOMContentLoaded',function(){
   if(mb&&!mb._wired){mb._wired=true;mb.addEventListener('click',window.toggleMobileMenu);}
 });
 </script>
+
+<script>
+window.toggleJoinMenu=function(){
+  var m=document.getElementById('joinSubMenu');
+  var c=document.getElementById('joinChevron');
+  if(!m)return;
+  m.classList.toggle('hidden');
+  if(c)c.style.transform=m.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
+};
+</script>
 </body>
 </html>
