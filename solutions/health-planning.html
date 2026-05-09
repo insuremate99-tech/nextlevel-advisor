@@ -499,7 +499,7 @@ html{scroll-behavior:smooth}
     <div class="text-center mb-8 reveal">
       <span class="sec-label">Elite Health Plus</span>
       <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">คำนวณเบี้ย Elite Health Plus</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm">ระดับ Premium · IPD + OPD ครอบคลุมทั่วโลก · ไม่มี Deductible / Copay · รายปีเท่านั้น</p>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ระดับ Premium · IPD + OPD ครอบคลุมทั่วโลก · ไม่มี Deductible / Copay</p>
     </div>
 
     <!-- Elite vs D Health note -->
@@ -554,6 +554,11 @@ html{scroll-behavior:smooth}
           </div>
         </div>
 
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-noto text-xs text-slate-500">เพศ:</span>
+          <button onclick="setGender('m')" id="gen-m" class="sim-btn text-xs selected">👨 ชาย</button>
+          <button onclick="setGender('f')" id="gen-f" class="sim-btn text-xs">👩 หญิง</button>
+        </div>
         <div class="font-noto text-xs text-slate-400">* เบี้ยสำหรับเพศชาย-หญิง อัตราเดียวกัน (Unisex) · กลุ่มอาชีพ 1&2 เท่านั้น</div>
       </div>
 
@@ -599,8 +604,8 @@ html{scroll-behavior:smooth}
 <section id="sec-ci" class="py-16 bg-white">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
-      <span class="sec-label">Core Protection</span>
-      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">แผนรับมือโรคร้ายแรง (Critical Illness)</h2>
+      <span class="sec-label">Critical Illness</span>
+      <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">แผนรับมือโรคร้ายแรง</h2>
       <p class="font-noto text-slate-500 mt-3 text-sm max-w-lg mx-auto">เลือกตามความกังวลของคุณ — ไม่มีคำตอบเดียวที่ใช่สำหรับทุกคน</p>
     </div>
     <div class="flex border-b border-slate-200 mb-8 gap-0 reveal overflow-x-auto">
@@ -626,9 +631,9 @@ html{scroll-behavior:smooth}
       </div>
       <div class="grid md:grid-cols-2 gap-5">
         <div class="prod-card featured">
-          <div class="badge badge-red">⭐ ซีไอ เพอร์เฟค แคร์</div>
+          <div class="badge badge-red">💰 ซีไอ เพอร์เฟค แคร์</div>
           <div class="font-pop font-bold text-navy text-base mb-1">CI Perfect Care</div>
-          <div class="font-noto text-slate-400 text-xs mb-4">คุ้มครองโรคร้ายครบทุกระยะ ตั้งแต่เริ่มต้น</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">คุ้มครองโรคร้ายครบทุกระยะ ตั้งแต่เริ่มต้น · เป็นเจอจ่าย (เงินก้อน)</div>
           <ul class="space-y-2 mb-4">
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครอง 36 โรคร้ายแรง ทุกระยะ รวมระยะเริ่มต้น</li>
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>จ่าย 100% ต่อโรค รวมสูงสุด 120% ของทุนประกัน</li>
@@ -637,14 +642,13 @@ html{scroll-behavior:smooth}
           </ul>
           <div class="flex flex-wrap gap-2"><span class="udr-pill">UDR ได้</span><span class="badge badge-teal" style="margin-bottom:0">ลดหย่อนภาษีได้</span></div>          <div class="flex flex-wrap gap-2 mt-3">
             <a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ (Standard)</a>
-            <a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-navy border border-navy/20 rounded-lg px-3 py-1.5 hover:bg-navy/5 transition-colors">📄 โบรชัวร์ (UDR)</a>
           </div>
 
         </div>
         <div class="prod-card">
           <div class="badge badge-purple">💜 แคร์ พลัส Rider</div>
           <div class="font-pop font-bold text-navy text-base mb-1">Care Plus</div>
-          <div class="font-noto text-slate-400 text-xs mb-4">เฉพาะทาง — มะเร็ง &amp; โรคไต ทุกระยะ</div>
+          <div class="font-noto text-slate-400 text-xs mb-4">เฉพาะทาง — มะเร็ง &amp; โรคไต ทุกระยะ · เป็นเจอจ่าย (ค่ารักษา)</div>
           <ul class="space-y-2 mb-4">
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>คุ้มครองมะเร็ง &amp; ไตวายเรื้อรัง ทุก 5 ระยะ</li>
             <li class="flex items-start gap-2 text-sm font-noto text-slate-600"><span class="text-teal mt-0.5 flex-shrink-0">→</span>+ IPD: สนับสนุนค่าผ่าตัด เคมีบำบัด Targeted Therapy</li>
@@ -772,7 +776,7 @@ html{scroll-behavior:smooth}
             <td><span class="text-green-600 font-bold">✓</span></td>
             <td class="text-slate-500">เงินก้อนฉุกเฉิน</td>
           
-            <td style="white-space:nowrap"><a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-family:Noto Sans Thai,sans-serif;font-weight:600;color:#0891B2;border:1px solid rgba(8,145,178,.3);border-radius:6px;padding:3px 8px;text-decoration:none;white-space:nowrap">📄 Standard</a><br/><a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-family:Noto Sans Thai,sans-serif;font-weight:600;color:#0891B2;border:1px solid rgba(8,145,178,.3);border-radius:6px;padding:3px 8px;text-decoration:none;white-space:nowrap;color:#475569;border-color:#CBD5E1;margin-top:4px">📄 UDR</a></td>
+            <td style="white-space:nowrap"><a href="../pdfs/health/ci-perfect-care.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-family:Noto Sans Thai,sans-serif;font-weight:600;color:#0891B2;border:1px solid rgba(8,145,178,.3);border-radius:6px;padding:3px 8px;text-decoration:none;white-space:nowrap">📄 Standard</a><br/></td>
           </tr>
           <tr>
             <td class="font-semibold text-navy">Multiple CI</td>
@@ -904,7 +908,7 @@ html{scroll-behavior:smooth}
         <div class="font-pop font-bold text-navy text-sm mb-1">CI Perfect Care</div>
         <div class="font-noto text-xs text-slate-500 mb-3">โรคร้ายแรง 36 โรค<br/>ทุกระยะ สูงสุด 120%</div>
         <span class="udr-pill">UDR</span>
-        <div class="mt-3"><a href="../pdfs/health/ci-perfect-care-udr.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-teal border border-teal/30 rounded-lg px-3 py-1.5 hover:bg-teal/5 transition-colors">📄 โบรชัวร์ UDR</a></div>
+        <div class="mt-3"></div>
       </div>
       <div class="prod-card text-center">
         <div class="text-2xl mb-2">🩺</div>
@@ -1282,6 +1286,11 @@ const EH_REGION_LABELS = {
   4:'คุ้มครองทั่วโลก รวมถึงสหรัฐอเมริกา'
 };
 const EH_REGION_SHORT = {1:'ไทยเท่านั้น', 2:'ทวีปเอเชีย', 3:'ทั่วโลก (ยกเว้น USA)', 4:'ทั่วโลก (รวม USA)'};
+
+function setGender(g) {
+  ['m','f'].forEach(x => { const el = document.getElementById('gen-'+x); if(el) el.classList.remove('selected'); });
+  const sel = document.getElementById('gen-'+g); if(sel) sel.classList.add('selected');
+}
 
 function setElite(key, val) {
   ehSim[key] = val;
