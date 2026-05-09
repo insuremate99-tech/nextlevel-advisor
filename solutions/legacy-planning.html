@@ -757,12 +757,6 @@
                 class="w-28 text-right border border-slate-200 rounded-lg px-2 py-1 font-pop font-bold text-sm text-navy focus:outline-none focus:border-teal"/>
             </div>
           </div>
-          <input id="hlv-income-sl" type="range" min="10000" max="500000" step="5000" value="80000"
-            oninput="document.getElementById('hlv-income').value=this.value;calcHLV()"
-            class="sim-slider w-full"/>
-          <div class="flex justify-between font-noto text-xs text-slate-400 mt-1">
-            <span>10,000</span><span>500,000+</span>
-          </div>
         </div>
 
         <div>
@@ -955,7 +949,7 @@
             <div class="flex gap-2 flex-wrap">
               <button onclick="setLifestyle(20000)" class="need-chip">💚 ประหยัด (20K)</button>
               <button onclick="setLifestyle(40000)" class="need-chip active">⚡ กลาง (40K)</button>
-              <button onclick="setLifestyle(80000)" class="need-chip">👑 คุ้นเคย (80K)</button>
+              <button onclick="setLifestyle(80000)" class="need-chip">👑 สะดวกสบาย (80K)</button>
               <button onclick="setLifestyle(150000)" class="need-chip">💎 Premium (150K)</button>
             </div>
           </div>
@@ -1189,9 +1183,7 @@
 //  HLV CALCULATOR
 // ─────────────────────────────────────────────
 function fmt(n) {
-  if (n >= 1e7) return (n/1e6).toFixed(1).replace(/\.0$/,'') + ' ล้าน';
-  if (n >= 1e4) return Math.round(n/1000) + 'K';
-  return Math.round(n).toLocaleString();
+  return Math.round(n).toLocaleString('th-TH');
 }
 function fmtFull(n) {
   return '฿' + Math.round(n).toLocaleString();
@@ -1204,7 +1196,6 @@ function calcHLV() {
   const discRate = 0.04; // discount rate
 
   // Sync sliders
-  document.getElementById('hlv-income-sl').value = Math.min(monthly, 500000);
   document.getElementById('hlv-growth-sl').value = Math.min(growth * 100, 15);
 
   // Total nominal income
@@ -1291,12 +1282,10 @@ function calcNeeds() {
 
   // Recommendation
   const rec = document.getElementById('nb-recommendation');
-  if (grandTotal < 5e6) {
-    rec.innerHTML = '✅ <strong>Smart Protection 99/7</strong> — ทุนประกันระดับนี้เหมาะกับ Smart Protection 99/7 จ่ายเบี้ย 7 ปี คุ้มครองตลอดชีพ';
-  } else if (grandTotal < 20e6) {
-    rec.innerHTML = '✅ <strong>Premier Legacy 99/1</strong> หรือ <strong>Smart Protection 99/7</strong> — ทุน ' + fmt(grandTotal) + ' ต้องการแผน Legacy ระดับกลาง พิจารณาร่วมกับ Term เพิ่มเติม';
+  if (grandTotal < 10e6) {
+    rec.innerHTML = '✅ <strong>Smart Protection</strong> หรือ <strong>Flexi Protection</strong> — ทุน ฿' + fmt(grandTotal) + ' เหมาะกับแผนคุ้มครองตลอดชีพที่ยืดหยุ่น';
   } else {
-    rec.innerHTML = '👑 <strong>Premier Legacy 99/1 (Shield Life Package)</strong> — ทุน ' + fmt(grandTotal) + ' อยู่ในระดับ High Net Worth ควรปรึกษาที่ปรึกษาเพื่อออกแบบโครงสร้างที่เหมาะสม';
+    rec.innerHTML = '👑 <strong>Premier Legacy</strong> — ทุน ฿' + fmt(grandTotal) + ' อยู่ในระดับที่เหมาะสำหรับแผน Legacy พรีเมียม';
   }
 }
 
