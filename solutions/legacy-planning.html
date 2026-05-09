@@ -174,7 +174,16 @@
       <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
       <li><a href="/muangthai-life-agent" class="text-navy hover:text-teal transition-colors">ตัวแทนเมืองไทย</a></li>
-      <li><a href="/join" class="text-navy hover:text-teal transition-colors">ร่วมทีมกับเรา</a></li>
+      <li class="relative group">
+      <a href="/join" class="text-navy hover:text-teal transition-colors flex items-center gap-1">ร่วมทีม<svg class="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-[200]" style="min-width:190px">
+        <div class="bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+          <a href="/join" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">🤝</span>ร่วมทีมกับเรา</a>
+          <a href="/join/5-year-challenge" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">🏆</span>5 ปี 5 ล้าน</a>
+          <a href="/join/team" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">👥</span>ทีมงานปัจจุบัน</a>
+        </div>
+      </div>
+    </li>
     </ul>
     <div class="flex items-center gap-2">
       <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 font-noto font-semibold text-sm px-4 py-2.5 rounded-xl transition-colors" style="background:#06C755;color:#fff">
@@ -254,10 +263,20 @@
           <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           ตัวแทนเมืองไทย
         </a>
-        <a href="/join" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal transition-colors">
-          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          ร่วมทีมกับเรา
-        </a>
+        <div class="border-b border-slate-100">
+          <button onclick="toggleJoinMenu()" class="w-full flex items-center justify-between py-3.5 text-navy hover:text-teal transition-colors">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              ร่วมทีม
+            </span>
+            <svg id="joinChevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="joinSubMenu" class="hidden pb-3 pl-7 space-y-1">
+            <a href="/join" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">🤝 ร่วมทีมกับเรา</a>
+            <a href="/join/5-year-challenge" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">🏆 5 ปี 5 ล้าน</a>
+            <a href="/join/team" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">👥 ทีมงานปัจจุบัน</a>
+          </div>
+        </div>
       </div>
       <div class="mt-5 pt-4 border-t border-slate-100">
         <p class="font-noto text-xs font-medium mb-3" style="color:#94a3b8">ติดต่อเรา</p>
