@@ -1032,10 +1032,9 @@ function calcTax() {
   const pension = Math.min(parseFloat(document.getElementById('pension-num').value)||0, 200000);
   const totalDeduct = endow + pension;
 
-  // คำนวณเงินได้สุทธิจริง (Thai PIT 2024)
+  // คำนวณฐานภาษี: หักค่าใช้จ่าย 50% (สูงสุด 100K) เท่านั้น
   const expenseDeduct  = Math.min(currentIncome * 0.5, 100000); // ค่าใช้จ่าย 50% สูงสุด 100K
-  const personalAllow  = 60000;                                  // ค่าลดหย่อนส่วนตัว
-  const taxableBase    = Math.max(0, currentIncome - expenseDeduct - personalAllow);
+  const taxableBase    = Math.max(0, currentIncome - expenseDeduct);
   currentTaxableBase   = taxableBase;
   currentMarginalRate  = marginalRate(taxableBase);
 
