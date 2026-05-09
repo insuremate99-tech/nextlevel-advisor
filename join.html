@@ -4,45 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ร่วมงานกับเรา — สร้างอาชีพที่ปรึกษา | Next Level Advisor</title>
-  <meta name="description" content="สมัครเป็นที่ปรึกษาการเงินและตัวแทนประกันชีวิตกับทีม Next Level Advisor สอนงานจริง มีระบบ ไม่ใช่แค่ขายประกัน รายได้โปร่งใส ไม่โอ้อวด">
+  <meta name="description" content="สมัครเป็นที่ปรึกษาการเงินและตัวแทนประกันชีวิตกับทีม Next Level Advisor สอนงานจริง มีระบบ ไม่ใช่แค่ขายประกัน">
   <meta name="keywords" content="สมัครตัวแทนประกันชีวิต, สมัครที่ปรึกษาการเงิน, งานประกันชีวิต, อาชีพที่ปรึกษา, เมืองไทยประกันชีวิต, MDRT, ร่วมทีม nextlevel">
   <meta property="og:title" content="ร่วมงานกับเรา | Next Level Advisor">
   <meta property="og:description" content="สร้างอาชีพที่ปรึกษา ไม่ใช่แค่ขายประกัน — ทีมที่สอนงานจริง มีระบบ รายได้โปร่งใส">
   <meta property="og:url" content="https://nextlevel-advisor.com/join">
-  <meta property="og:type" content="website">
   <link rel="canonical" href="https://nextlevel-advisor.com/join">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Pridi:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PHYNQSRYV"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1PHYNQSRYV');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-1PHYNQSRYV");</script>
   <style>
-    :root { --navy:#1B365D; --teal:#0891B2; --deep:#0D1F3C; --bg:#F8FAFC; }
-    body { font-family:'Noto Sans Thai',sans-serif; color:#1e293b; background:var(--bg); }
-    .font-pridi{font-family:'Pridi',serif;} .font-poppins{font-family:'Poppins',sans-serif;} .font-noto{font-family:'Noto Sans Thai',sans-serif;}
-    .text-navy{color:var(--navy);} .text-teal{color:var(--teal);}
-    .bg-navy{background-color:var(--navy);} .bg-teal{background-color:var(--teal);} .bg-deep{background-color:var(--deep);}
-    .btn-navy{background:var(--navy);color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}
-    .btn-navy:hover{background:#0D1F3C;}
-    .btn-teal{background:var(--teal);color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}
-    .btn-teal:hover{background:#0e7490;}
-    .btn-outline{border:2px solid white;color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}
-    .btn-outline:hover{background:rgba(255,255,255,.15);}
-    .faq-answer{display:none;} .faq-item.open .faq-answer{display:block;} .faq-item.open .faq-chevron{transform:rotate(180deg);} .faq-chevron{transition:transform .2s;}
-    /* Placeholder image style */
+    :root{--navy:#1B365D;--teal:#0891B2;--deep:#0D1F3C;--bg:#F8FAFC;}
+    body{font-family:"Noto Sans Thai",sans-serif;color:#1e293b;background:var(--bg);}
+    .font-pridi{font-family:"Pridi",serif;}.font-poppins{font-family:"Poppins",sans-serif;}.font-noto{font-family:"Noto Sans Thai",sans-serif;}
+    .text-navy{color:var(--navy);}.text-teal{color:var(--teal);}
+    .bg-navy{background-color:var(--navy);}.bg-teal{background-color:var(--teal);}.bg-deep{background-color:var(--deep);}
+    .btn-teal{background:var(--teal);color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}.btn-teal:hover{background:#0e7490;}
+    .btn-outline{border:2px solid white;color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}.btn-outline:hover{background:rgba(255,255,255,.15);}
+    .faq-answer{display:none;}.faq-item.open .faq-answer{display:block;}.faq-item.open .faq-chevron{transform:rotate(180deg);}.faq-chevron{transition:transform .2s;}
     .img-placeholder{background:linear-gradient(135deg,#e2e8f0 0%,#cbd5e1 100%);border:2px dashed #94a3b8;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#64748b;}
-    .img-placeholder svg{opacity:.5;}
-    .img-placeholder span{font-family:'Noto Sans Thai',sans-serif;font-size:.75rem;text-align:center;padding:0 1rem;}
+    /* Team cards */
+    .team-card{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:box-shadow .25s;}
+    .team-card:hover{box-shadow:0 10px 32px rgba(27,54,93,.15);border-color:#CBD5E1;}
+    .team-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden;}
+    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease,filter .3s ease;}
+    .team-card:hover .team-photo{transform:scale(1.05);filter:brightness(.55);}
+    .team-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
+    .team-card:hover .team-overlay{opacity:1;}
+    .team-label{font-family:"Poppins",sans-serif;font-size:1rem;font-weight:700;color:#fff;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.4);}
+    /* Join submenu */
+    .join-dropdown{display:none;position:absolute;top:100%;left:0;min-width:200px;padding-top:8px;z-index:200;}
+    .join-trigger:hover .join-dropdown{display:block;}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"WebPage","@id":"https://nextlevel-advisor.com/join","url":"https://nextlevel-advisor.com/join","name":"ร่วมงานกับเรา — สร้างอาชีพที่ปรึกษา | Next Level Advisor","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าหลัก","item":"https://nextlevel-advisor.com/"},{"@type":"ListItem","position":2,"name":"ร่วมงานกับเรา","item":"https://nextlevel-advisor.com/join"}]}},
+    {"@type":"WebPage","@id":"https://nextlevel-advisor.com/join","url":"https://nextlevel-advisor.com/join","name":"ร่วมงานกับเรา | Next Level Advisor",
+     "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าหลัก","item":"https://nextlevel-advisor.com/"},{"@type":"ListItem","position":2,"name":"ร่วมงานกับเรา","item":"https://nextlevel-advisor.com/join"}]}},
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"ต้องมีประสบการณ์ด้านการเงินก่อนมั้ย?","acceptedAnswer":{"@type":"Answer","text":"ไม่จำเป็น หลายคนในทีมมาจากสายงานที่ต่างกัน เช่น วิศวกร พยาบาล ครู สิ่งสำคัญคือทัศนคติและความตั้งใจเรียนรู้"}},
       {"@type":"Question","name":"รายได้ช่วงแรกเป็นอย่างไร?","acceptedAnswer":{"@type":"Answer","text":"ช่วง 3-6 เดือนแรกรายได้อาจไม่สม่ำเสมอ ขึ้นอยู่กับการลงมือทำ ต้องเตรียมสำรองทุนส่วนตัวไว้ก่อน"}},
-      {"@type":"Question","name":"ต้องสอบใบอนุญาตอะไรบ้าง?","acceptedAnswer":{"@type":"Answer","text":"ขั้นต่ำคือใบอนุญาตตัวแทนประกันชีวิต (OIC) ซึ่งต้องสอบผ่าน คปภ. ทีมช่วยเตรียมสอบให้"}},
-      {"@type":"Question","name":"ทำงาน Part-time ได้มั้ย?","acceptedAnswer":{"@type":"Answer","text":"ได้ในช่วงแรก แต่ถ้าต้องการสร้างรายได้ที่มั่นคงระดับ MDRT ต้องลงมือเต็มเวลา"}},
-      {"@type":"Question","name":"MDRT คืออะไร ทำได้จริงมั้ย?","acceptedAnswer":{"@type":"Answer","text":"MDRT คือมาตรฐานสากลด้านรายได้ของที่ปรึกษาการเงิน ในทีมเราทำได้จริง แต่ต้องใช้เวลา ส่วนใหญ่คนแรกทำได้ในปีที่ 2-3"}}
+      {"@type":"Question","name":"MDRT คืออะไร ทำได้จริงมั้ย?","acceptedAnswer":{"@type":"Answer","text":"MDRT คือมาตรฐานสากลด้านรายได้ของที่ปรึกษาการเงิน ในทีมเราทำได้จริง แต่ต้องใช้เวลา ส่วนใหญ่ทำได้ในปีที่ 2-3"}}
     ]}
   ]}
   </script>
@@ -53,9 +55,7 @@
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-navy rounded-lg flex items-center justify-center">
-        <span class="text-white font-poppins font-bold text-sm">NL</span>
-      </div>
+      <div class="w-8 h-8 bg-navy rounded-lg flex items-center justify-center"><span class="text-white font-poppins font-bold text-sm">NL</span></div>
       <span class="font-poppins font-semibold text-navy text-sm hidden sm:block">Next Level Advisor</span>
     </a>
     <ul class="hidden lg:flex items-center gap-6 list-none">
@@ -64,7 +64,29 @@
       <li><a href="/articles/" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">Perspectives</a></li>
       <li><a href="/behind-the-advisor" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
       <li><a href="/muangthai-life-agent" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">ตัวแทนเมืองไทย</a></li>
-      <li><a href="/join" class="font-noto text-sm font-medium text-teal font-semibold">ร่วมทีมกับเรา</a></li>
+      <!-- Join submenu -->
+      <li class="relative join-trigger">
+        <a href="/join" class="font-noto text-sm font-medium text-teal font-semibold flex items-center gap-1">
+          ร่วมทีมกับเรา
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="join-dropdown">
+          <div class="bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+            <a href="/join" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
+              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              ร่วมงานกับเรา
+            </a>
+            <a href="/join/5-year-challenge" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
+              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              5 ปี 5 ล้าน
+            </a>
+            <a href="/join#team" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
+              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              ทีมงานปัจจุบัน
+            </a>
+          </div>
+        </div>
+      </li>
     </ul>
     <div class="flex items-center gap-2">
       <a href="https://lin.ee/7YeXvFaG" target="_blank" class="btn-teal px-4 py-2 text-sm font-noto hidden sm:inline-flex items-center gap-1.5">
@@ -77,15 +99,28 @@
       </button>
     </div>
   </div>
+  <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-4">
-    <div class="flex flex-col gap-0 pt-2">
-      <a href="/solutions/" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors"><svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg><span class="font-noto text-sm font-medium">วางแผนการเงิน</span></a>
-      <a href="/calculator" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors"><svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg><span class="font-noto text-sm font-medium">เครื่องมือการเงิน</span></a>
-      <a href="/articles/" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors"><svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg><span class="font-noto text-sm font-medium">Perspectives</span></a>
-      <a href="/behind-the-advisor" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors"><svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="font-noto text-sm font-medium">Behind the Advisor</span></a>
-      <a href="/muangthai-life-agent" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors"><svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span class="font-noto text-sm font-medium">ตัวแทนเมืองไทย</span></a>
-      <a href="/join" class="flex items-center gap-2.5 py-3.5 text-teal font-semibold transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="font-noto text-sm font-medium">ร่วมทีมกับเรา</span></a>
-      <div class="pt-3"><a href="https://lin.ee/7YeXvFaG" target="_blank" class="btn-teal w-full flex items-center justify-center gap-2 py-3 font-noto text-sm"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.073 1.558 5.803 4 7.557V22l3.727-2.044A11.3 11.3 0 0012 20.243c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2z"/></svg>ติดต่อ LINE</a></div>
+    <div class="flex flex-col pt-2">
+      <a href="/solutions/" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium transition-colors">วางแผนการเงิน</a>
+      <a href="/calculator" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium transition-colors">เครื่องมือการเงิน</a>
+      <a href="/articles/" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium transition-colors">Perspectives</a>
+      <a href="/behind-the-advisor" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium transition-colors">Behind the Advisor</a>
+      <a href="/muangthai-life-agent" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium transition-colors">ตัวแทนเมืองไทย</a>
+      <div class="border-b border-slate-100">
+        <button onclick="document.getElementById('join-submenu').classList.toggle('hidden')" class="w-full flex items-center justify-between py-3 text-teal font-semibold font-noto text-sm">
+          ร่วมทีมกับเรา
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="join-submenu" class="hidden pb-2 pl-4 space-y-1">
+          <a href="/join" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">ร่วมงานกับเรา</a>
+          <a href="/join/5-year-challenge" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">5 ปี 5 ล้าน</a>
+          <a href="/join#team" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">ทีมงานปัจจุบัน</a>
+        </div>
+      </div>
+      <div class="pt-3">
+        <a href="https://lin.ee/7YeXvFaG" target="_blank" class="btn-teal w-full flex items-center justify-center gap-2 py-3 font-noto text-sm">ติดต่อ LINE</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -104,45 +139,29 @@
           เปิดรับทีมงาน 2026
         </div>
         <h1 class="font-pridi text-4xl md:text-5xl font-bold leading-tight mb-5">
-          สร้างอาชีพที่ปรึกษา<br>
-          <span class="text-teal">ไม่ใช่แค่ขายประกัน</span>
+          สร้างอาชีพที่ปรึกษา<br><span class="text-teal">ไม่ใช่แค่ขายประกัน</span>
         </h1>
-        <p class="font-noto text-lg text-slate-300 mb-8 leading-relaxed">
-          ทีมที่สอนงานจริง มีระบบ ให้คุณสร้างรายได้จากการช่วยคนวางแผนการเงิน — ไม่ใช่จากการปิดการขาย
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#lead-form" class="btn-teal px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            แจ้งความสนใจ
-          </a>
-          <a href="#how-it-works" class="btn-outline px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
-            ดูขั้นตอนการทำงาน
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        <p class="font-noto text-lg text-slate-300 mb-8 leading-relaxed">ทีมที่สอนงานจริง มีระบบ ให้คุณสร้างรายได้จากการช่วยคนวางแผนการเงิน ไม่ใช่จากการปิดการขาย</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#lead-form" class="btn-teal px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">แจ้งความสนใจ</a>
+          <a href="/join/5-year-challenge" class="btn-outline px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
+            ดูโครงการ 5 ปี 5 ล้าน
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
       <!-- HERO IMAGE PLACEHOLDER -->
       <div class="hidden md:block">
-        <div class="img-placeholder w-full h-80 rounded-2xl">
+        <div class="img-placeholder w-full h-72 rounded-2xl">
           <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          <span>📸 รูปทีม / ป้อง + ทีมงาน<br>แนะนำ: ภาพถ่ายในงาน Workshop หรือ<br>นั่งทำงานร่วมกัน (16:9, สว่าง, professional)</span>
+          <span style="font-family:Noto Sans Thai,sans-serif;font-size:.75rem;text-align:center;padding:0 1rem;color:#64748b;">📸 รูปทีม / ป้อง+ทีมงาน<br>แนะนำ: ถ่ายในงาน Workshop (16:9, สว่าง)</span>
         </div>
       </div>
     </div>
-    <!-- Stats bar -->
     <div class="grid grid-cols-3 gap-4 mt-12 max-w-md">
-      <div class="text-center">
-        <div class="font-poppins text-2xl font-bold text-teal">4+</div>
-        <div class="font-noto text-xs text-slate-400 mt-0.5">ปีที่ทีมดำเนินงาน</div>
-      </div>
-      <div class="text-center border-x border-white/10">
-        <div class="font-poppins text-2xl font-bold text-teal">MDRT</div>
-        <div class="font-noto text-xs text-slate-400 mt-0.5">มาตรฐานที่มุ่งสู่</div>
-      </div>
-      <div class="text-center">
-        <div class="font-poppins text-2xl font-bold text-teal">Plan</div>
-        <div class="font-noto text-xs text-slate-400 mt-0.5">First approach</div>
-      </div>
+      <div class="text-center"><div class="font-poppins text-2xl font-bold text-teal">4+</div><div class="font-noto text-xs text-slate-400 mt-0.5">ปีที่ทีมดำเนินงาน</div></div>
+      <div class="text-center border-x border-white/10"><div class="font-poppins text-2xl font-bold text-teal">MDRT</div><div class="font-noto text-xs text-slate-400 mt-0.5">มาตรฐานที่มุ่งสู่</div></div>
+      <div class="text-center"><div class="font-poppins text-2xl font-bold text-teal">11+</div><div class="font-noto text-xs text-slate-400 mt-0.5">สมาชิกทีม</div></div>
     </div>
   </div>
 </section>
@@ -155,55 +174,21 @@
       <p class="font-noto text-slate-600 max-w-xl mx-auto">อาชีพนี้ดีสำหรับคนที่ใช่ — แต่ไม่ใช่สำหรับทุกคน</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        </div>
-        <h3 class="font-pridi font-semibold text-navy mb-2">อยากสอนและให้ความรู้</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">ชอบอธิบาย ชอบให้คนเข้าใจ ไม่ชอบ Hard sell — ทีมนี้ทำงานแบบให้ความรู้ก่อน</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-        </div>
-        <h3 class="font-pridi font-semibold text-navy mb-2">ต้องการรายได้ที่ไม่มีเพดาน</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">มนุษย์เงินเดือนที่อยากเพิ่มรายได้อย่างมีระบบ ไม่ใช่แค่ทำงานหนักกว่าเดิม</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
-        <h3 class="font-pridi font-semibold text-navy mb-2">ชอบสร้างความสัมพันธ์</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">ลูกค้าไม่ใช่ transaction — เป็นความสัมพันธ์ระยะยาว คนที่ดูแลลูกค้าอย่างจริงจะเติบโตได้</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-        </div>
-        <h3 class="font-pridi font-semibold text-navy mb-2">อยากมีระบบ ไม่ใช่แค่ขยัน</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">ชอบ Process ชอบ Framework — ทีมนี้มีระบบให้ ไม่ต้องเริ่มจากศูนย์ทุกครั้ง</p>
-      </div>
-      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="font-pridi font-semibold text-navy mb-2">พร้อมลงทุนเวลาระยะแรก</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">รายได้ไม่มาเร็ว แต่มาสม่ำเสมอถ้าวางรากฐานถูก ต้องพร้อม 6–12 เดือนแรกที่ต้องใจเย็น</p>
-      </div>
-      <!-- IMAGE PLACEHOLDER as 6th card -->
-      <div class="img-placeholder min-h-48 p-4">
+      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4"><svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><h3 class="font-pridi font-semibold text-navy mb-2">อยากสอนและให้ความรู้</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ชอบอธิบาย ให้คนเข้าใจ ไม่ชอบ Hard sell — ทีมนี้ทำงานแบบให้ความรู้ก่อน</p></div>
+      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4"><svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><h3 class="font-pridi font-semibold text-navy mb-2">ต้องการรายได้ที่ไม่มีเพดาน</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">มนุษย์เงินเดือนที่อยากเพิ่มรายได้อย่างมีระบบ ไม่ใช่แค่ทำงานหนักกว่าเดิม</p></div>
+      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4"><svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h3 class="font-pridi font-semibold text-navy mb-2">ชอบสร้างความสัมพันธ์</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ลูกค้าไม่ใช่ transaction — เป็นความสัมพันธ์ระยะยาว คนที่ดูแลอย่างจริงจังจะเติบโตได้</p></div>
+      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4"><svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div><h3 class="font-pridi font-semibold text-navy mb-2">อยากมีระบบ ไม่ใช่แค่ขยัน</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ชอบ Process ชอบ Framework — ทีมมีระบบให้ ไม่ต้องเริ่มจากศูนย์ทุกครั้ง</p></div>
+      <div class="bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mb-4"><svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 class="font-pridi font-semibold text-navy mb-2">พร้อมลงทุนเวลาระยะแรก</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">รายได้ไม่มาเร็ว แต่มาสม่ำเสมอถ้าวางรากฐานถูก ต้องพร้อม 6-12 เดือนแรกที่ต้องใจเย็น</p></div>
+      <!-- placeholder card -->
+      <div class="img-placeholder min-h-44 p-4">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        <span>📸 รูปภาพทีมงาน<br>เช่น นั่งคุยกับลูกค้า หรือ Workshop<br>(1:1, สี่เหลี่ยมจัตุรัส)</span>
+        <span style="font-family:Noto Sans Thai,sans-serif;font-size:.75rem;text-align:center;padding:0 1rem;color:#64748b;">📸 รูปทีมงาน (1:1)</span>
       </div>
     </div>
-    <!-- Not suitable note -->
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
       <div class="flex gap-3">
         <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
-        <div>
-          <p class="font-noto font-semibold text-amber-800 mb-1">อาจไม่เหมาะ ถ้า...</p>
-          <p class="font-noto text-sm text-amber-700 leading-relaxed">คุณต้องการรายได้ประจำตั้งแต่เดือนแรก หรือมองว่างานนี้คือ "side income ไม่ต้องลงแรงมาก" — อาชีพนี้ต้องการความจริงจังจึงจะเติบโต</p>
-        </div>
+        <div><p class="font-noto font-semibold text-amber-800 mb-1">อาจไม่เหมาะ ถ้า...</p><p class="font-noto text-sm text-amber-700 leading-relaxed">คุณต้องการรายได้ประจำตั้งแต่เดือนแรก หรือมองว่างานนี้คือ "side income ไม่ต้องลงแรงมาก" — อาชีพนี้ต้องการความจริงจังจึงจะเติบโต</p></div>
       </div>
     </div>
   </div>
@@ -216,56 +201,16 @@
       <h2 class="font-pridi text-3xl font-bold text-navy mb-3">งานจริงต้องทำอะไร?</h2>
       <p class="font-noto text-slate-600 max-w-xl mx-auto">ไม่มีคำสวยหรู — นี่คือ Activity จริงในแต่ละสัปดาห์</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl p-6 border border-slate-100">
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">สร้างและดูแลฐานลูกค้า</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">Networking, Referral, Content — ไม่มีลีดฟรี ต้องสร้างเอง แต่มีระบบสอน</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-slate-100">
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">วิเคราะห์และนำเสนอแผน</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">ใช้ข้อมูลของลูกค้าจริง ออกแบบแผนเป็นรายบุคคล — ไม่ใช่แพ็กเกจสำเร็จรูป</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-slate-100">
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          </div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">เรียนรู้และพัฒนาตัวเอง</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">ตลาด Product และกฎหมายเปลี่ยนเสมอ — ต้องอัปเดตตัวเองสม่ำเสมอ มี Workshop ทีมช่วย</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-slate-100">
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">ติดตามและดูแลต่อเนื่อง</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">Review แผนรายปี ช่วยเวลาชีวิตเปลี่ยน — รายได้ Renewal มาจากการดูแลระยะยาว</p>
-          </div>
-        </div>
-      </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="bg-white rounded-xl p-6 border border-slate-100 flex gap-4"><div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><h3 class="font-pridi font-semibold text-navy mb-1">สร้างและดูแลฐานลูกค้า</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">Networking, Referral, Content — ไม่มีลีดฟรี ต้องสร้างเอง แต่มีระบบสอน</p></div></div>
+      <div class="bg-white rounded-xl p-6 border border-slate-100 flex gap-4"><div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h3 class="font-pridi font-semibold text-navy mb-1">วิเคราะห์และนำเสนอแผน</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ใช้ข้อมูลของลูกค้าจริง ออกแบบแผนเป็นรายบุคคล ไม่ใช่แพ็กเกจสำเร็จรูป</p></div></div>
+      <div class="bg-white rounded-xl p-6 border border-slate-100 flex gap-4"><div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><div><h3 class="font-pridi font-semibold text-navy mb-1">เรียนรู้และพัฒนาตัวเอง</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ตลาด Product และกฎหมายเปลี่ยนเสมอ มี Workshop ทีมช่วยอัปเดตตลอด</p></div></div>
+      <div class="bg-white rounded-xl p-6 border border-slate-100 flex gap-4"><div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div><h3 class="font-pridi font-semibold text-navy mb-1">ติดตามและดูแลต่อเนื่อง</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">Review แผนรายปี ช่วยเวลาชีวิตเปลี่ยน — Renewal income มาจากการดูแลระยะยาว</p></div></div>
     </div>
-    <!-- IMAGE PLACEHOLDER — ภาพการทำงาน -->
-    <div class="mt-8 img-placeholder w-full h-52 rounded-2xl">
+    <!-- IMAGE PLACEHOLDER -->
+    <div class="mt-8 img-placeholder w-full h-44 rounded-2xl">
       <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      <span>📸 ภาพการทำงานจริง<br>เช่น นั่งนำเสนอแผนให้ลูกค้า หรือ ประชุมทีม<br>แนะนำ: wide/landscape, ดูเป็น professional</span>
+      <span style="font-family:Noto Sans Thai,sans-serif;font-size:.75rem;text-align:center;padding:0 1rem;color:#64748b;">📸 ภาพการทำงานจริง เช่น นั่งนำเสนอแผนให้ลูกค้า (wide landscape)</span>
     </div>
   </div>
 </section>
@@ -273,48 +218,15 @@
 <!-- 5-STEP ONBOARDING -->
 <section class="py-16 px-4 bg-white">
   <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">5 ขั้นตอนเริ่มต้น</h2>
-      <p class="font-noto text-slate-600">จากวันแรกถึงวันที่พร้อมออกพบลูกค้า</p>
-    </div>
+    <div class="text-center mb-10"><h2 class="font-pridi text-3xl font-bold text-navy mb-3">5 ขั้นตอนเริ่มต้น</h2><p class="font-noto text-slate-600">จากวันแรกถึงวันที่พร้อมออกพบลูกค้า</p></div>
     <div class="relative">
       <div class="absolute left-5 top-5 bottom-5 w-0.5 bg-slate-100 hidden md:block"></div>
-      <div class="flex flex-col gap-6">
-        <div class="flex gap-5">
-          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 relative z-10"><span class="font-poppins font-bold text-white text-sm">1</span></div>
-          <div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100">
-            <h3 class="font-pridi font-semibold text-navy mb-1">นัดคุย 30 นาที — สำรวจความเหมาะสม</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">ก่อนทุกอย่าง เราคุยกันตรงๆ ว่าอาชีพนี้เหมาะกับเป้าหมายและชีวิตคุณหรือเปล่า — ไม่มีข้อผูกมัด</p>
-          </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 relative z-10"><span class="font-poppins font-bold text-white text-sm">2</span></div>
-          <div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100">
-            <h3 class="font-pridi font-semibold text-navy mb-1">สมัครและผ่านการตรวจสอบ</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">สมัครกับเมืองไทยประกันชีวิต ผ่านขั้นตอน KYC และเอกสาร — ทีมช่วยดูแลทุกขั้นตอน</p>
-          </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 relative z-10"><span class="font-poppins font-bold text-white text-sm">3</span></div>
-          <div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100">
-            <h3 class="font-pridi font-semibold text-navy mb-1">เตรียมสอบใบอนุญาต OIC</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">สอบใบอนุญาตตัวแทนประกันชีวิตกับ คปภ. — ทีมมี Material และ Mock Exam ช่วยเตรียม</p>
-          </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 relative z-10"><span class="font-poppins font-bold text-white text-sm">4</span></div>
-          <div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100">
-            <h3 class="font-pridi font-semibold text-navy mb-1">เรียน Product + Advisory Framework</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">Workshop เข้มข้น 2 สัปดาห์ — เรียนแบบประกัน แนวทางวิเคราะห์ลูกค้า และวิธีนำเสนอแผน</p>
-          </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="w-10 h-10 bg-teal rounded-full flex items-center justify-center shrink-0 relative z-10"><span class="font-poppins font-bold text-white text-sm">5</span></div>
-          <div class="bg-teal/5 rounded-xl p-5 flex-1 border border-teal/20">
-            <h3 class="font-pridi font-semibold text-navy mb-1">Shadowing + พบลูกค้าจริง</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">ตามดูการนัดลูกค้าจริงกับพี่เลี้ยง ก่อนออกพบลูกค้าของตัวเองโดยมีทีม Support อยู่เบื้องหลัง</p>
-          </div>
-        </div>
+      <div class="flex flex-col gap-5">
+        <div class="flex gap-5"><div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10"><span class="font-poppins font-bold text-white text-sm">1</span></div><div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100"><h3 class="font-pridi font-semibold text-navy mb-1">นัดคุย 30 นาที — สำรวจความเหมาะสม</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ก่อนทุกอย่าง เราคุยกันตรงๆ ว่าอาชีพนี้เหมาะกับเป้าหมายและชีวิตคุณหรือเปล่า ไม่มีข้อผูกมัด</p></div></div>
+        <div class="flex gap-5"><div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10"><span class="font-poppins font-bold text-white text-sm">2</span></div><div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100"><h3 class="font-pridi font-semibold text-navy mb-1">สมัครและผ่านการตรวจสอบ</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">สมัครกับเมืองไทยประกันชีวิต ผ่านขั้นตอน KYC และเอกสาร — ทีมช่วยดูแลทุกขั้นตอน</p></div></div>
+        <div class="flex gap-5"><div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10"><span class="font-poppins font-bold text-white text-sm">3</span></div><div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100"><h3 class="font-pridi font-semibold text-navy mb-1">เตรียมสอบใบอนุญาต OIC</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">สอบใบอนุญาตตัวแทนประกันชีวิตกับ คปภ. — ทีมมี Material และ Mock Exam ช่วยเตรียม</p></div></div>
+        <div class="flex gap-5"><div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10"><span class="font-poppins font-bold text-white text-sm">4</span></div><div class="bg-slate-50 rounded-xl p-5 flex-1 border border-slate-100"><h3 class="font-pridi font-semibold text-navy mb-1">เรียน Product + Advisory Framework</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">Workshop เข้มข้น 2 สัปดาห์ — เรียนแบบประกัน วิเคราะห์ลูกค้า และวิธีนำเสนอแผน</p></div></div>
+        <div class="flex gap-5"><div class="w-10 h-10 bg-teal rounded-full flex items-center justify-center shrink-0 z-10"><span class="font-poppins font-bold text-white text-sm">5</span></div><div class="bg-teal/5 rounded-xl p-5 flex-1 border border-teal/20"><h3 class="font-pridi font-semibold text-navy mb-1">Shadowing + พบลูกค้าจริง</h3><p class="font-noto text-sm text-slate-600 leading-relaxed">ตามดูการนัดลูกค้าจริงกับพี่เลี้ยง ก่อนออกพบลูกค้าของตัวเองโดยมีทีม Support อยู่เบื้องหลัง</p></div></div>
       </div>
     </div>
   </div>
@@ -323,31 +235,16 @@
 <!-- ระบบสอนงาน -->
 <section class="py-16 px-4 bg-navy text-white">
   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="font-pridi text-3xl font-bold mb-3">ระบบสอนงานที่มี</h2>
-      <p class="font-noto text-slate-300 max-w-xl mx-auto">ไม่ปล่อยให้คุณต้องลองผิดลองถูกคนเดียว</p>
+    <div class="text-center mb-10"><h2 class="font-pridi text-3xl font-bold mb-3">ระบบสอนงานที่มี</h2><p class="font-noto text-slate-300 max-w-xl mx-auto">ไม่ปล่อยให้คุณต้องลองผิดลองถูกคนเดียว</p></div>
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6"><div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></div><h3 class="font-pridi font-semibold text-white mb-2">Coaching รายสัปดาห์</h3><p class="font-noto text-sm text-slate-300 leading-relaxed">คุยกับพี่เลี้ยงทุกสัปดาห์ Review Case จริง แก้ปัญหาจริง ไม่ใช่แค่ Motivational talk</p></div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6"><div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div><h3 class="font-pridi font-semibold text-white mb-2">Workshop รายเดือน</h3><p class="font-noto text-sm text-slate-300 leading-relaxed">Product Knowledge อัปเดต, Tax Planning, เทคนิคการนำเสนอ — เรียนจากเคสจริงในทีม</p></div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6"><div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div><h3 class="font-pridi font-semibold text-white mb-2">Shadowing นัดลูกค้าจริง</h3><p class="font-noto text-sm text-slate-300 leading-relaxed">ดูการทำงานจริงก่อนทำเอง เห็น Flow การพูดคุย การวิเคราะห์ และการปิดแผน</p></div>
     </div>
-    <div class="grid md:grid-cols-3 gap-6 mb-10">
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-        <div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></div>
-        <h3 class="font-pridi font-semibold text-white mb-2">Coaching รายสัปดาห์</h3>
-        <p class="font-noto text-sm text-slate-300 leading-relaxed">คุยกับพี่เลี้ยงทุกสัปดาห์ Review Case จริง แก้ปัญหาจริง ไม่ใช่แค่ Motivational talk</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-        <div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div>
-        <h3 class="font-pridi font-semibold text-white mb-2">Workshop รายเดือน</h3>
-        <p class="font-noto text-sm text-slate-300 leading-relaxed">Product Knowledge อัปเดต, Tax Planning, เทคนิคการนำเสนอ — เรียนรู้จากเคสจริงในทีม</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-        <div class="text-teal mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
-        <h3 class="font-pridi font-semibold text-white mb-2">Shadowing นัดลูกค้าจริง</h3>
-        <p class="font-noto text-sm text-slate-300 leading-relaxed">ดูการทำงานจริงก่อนทำเอง เห็น Flow การพูดคุย การวิเคราะห์ และการปิดแผน</p>
-      </div>
-    </div>
-    <!-- IMAGE PLACEHOLDER — Workshop photo -->
-    <div class="img-placeholder w-full h-56 rounded-2xl" style="background:linear-gradient(135deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,.1) 100%);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.5);">
+    <!-- IMAGE PLACEHOLDER — Workshop -->
+    <div class="img-placeholder w-full h-48 rounded-2xl" style="background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.1));border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.5);">
       <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      <span style="color:rgba(255,255,255,.5)">📸 ภาพ Workshop หรือ Training session<br>แนะนำ: กลุ่มคนนั่งเรียน/ประชุม บรรยากาศ professional<br>(wide/landscape, 16:9)</span>
+      <span style="font-family:Noto Sans Thai,sans-serif;font-size:.75rem;text-align:center;padding:0 1rem;">📸 ภาพ Workshop / Training session (16:9)</span>
     </div>
   </div>
 </section>
@@ -355,90 +252,89 @@
 <!-- รายได้ -->
 <section class="py-16 px-4 bg-white">
   <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10"><h2 class="font-pridi text-3xl font-bold text-navy mb-3">รายได้ — พูดตรงๆ ไม่โอ้อวด</h2><p class="font-noto text-slate-600 max-w-2xl mx-auto">อาชีพนี้รายได้ดีได้จริง แต่ต้องใช้เวลา ขึ้นอยู่กับความพยายาม ไม่มีการการันตี</p></div>
+    <div class="grid md:grid-cols-3 gap-5 mb-6">
+      <div class="text-center bg-slate-50 rounded-xl p-6 border border-slate-100"><div class="font-poppins text-3xl font-bold text-slate-400 mb-1">ปีที่ 1</div><div class="font-noto text-sm text-slate-600 mb-2">ช่วงเรียนรู้</div><p class="font-noto text-sm text-slate-500 leading-relaxed">รายได้ไม่สม่ำเสมอ ขึ้นอยู่กับลูกค้าที่สร้างได้ ต้องพึ่งเงินสำรองตัวเอง</p></div>
+      <div class="text-center bg-teal/5 rounded-xl p-6 border border-teal/20"><div class="font-poppins text-3xl font-bold text-teal mb-1">ปีที่ 2–3</div><div class="font-noto text-sm text-slate-600 mb-2">เริ่มสม่ำเสมอ</div><p class="font-noto text-sm text-slate-500 leading-relaxed">ฐานลูกค้าแข็งแรง Renewal income เพิ่ม บางคนถึง MDRT</p></div>
+      <div class="text-center bg-navy/5 rounded-xl p-6 border border-navy/10"><div class="font-poppins text-3xl font-bold text-navy mb-1">ปีที่ 4+</div><div class="font-noto text-sm text-slate-600 mb-2">เติบโตต่อเนื่อง</div><p class="font-noto text-sm text-slate-500 leading-relaxed">Renewal + New Business รายได้ไม่ขึ้นกับชั่วโมงทำงานอีกต่อไป</p></div>
+    </div>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+      <p class="font-noto text-sm text-amber-700 leading-relaxed"><span class="font-semibold">หมายเหตุ:</span> ตัวเลขข้างต้นเป็นภาพกว้าง ไม่ใช่การรับประกันรายได้ ผลลัพธ์ขึ้นอยู่กับการลงมือทำและปัจจัยหลายอย่าง ทีมจะพูดตรงๆ เรื่องรายได้จริงเมื่อนัดคุย</p>
+    </div>
+    <!-- CTA to 5-year challenge -->
+    <div class="bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
+      <div class="flex-1">
+        <div class="font-poppins text-xs font-bold text-teal uppercase tracking-widest mb-1">โครงการพิเศษ</div>
+        <h3 class="font-pridi font-bold text-white text-xl">5 ปี 5 ล้าน</h3>
+        <p class="font-noto text-sm text-slate-300 mt-1">เส้นทางสู่ MDRT Top Agent ใน 5 ปี สำหรับคนที่จริงจัง</p>
+      </div>
+      <a href="/join/5-year-challenge" class="btn-teal px-6 py-3 font-noto text-sm whitespace-nowrap inline-flex items-center gap-2 shrink-0">
+        ดูรายละเอียด
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ทีมงานปัจจุบัน ═══ -->
+<section id="team" class="py-16 px-4 bg-slate-50">
+  <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">รายได้ — พูดตรงๆ ไม่โอ้อวด</h2>
-      <p class="font-noto text-slate-600 max-w-2xl mx-auto">อาชีพนี้รายได้ดีได้จริง แต่ต้องใช้เวลา ขึ้นอยู่กับความพยายาม ไม่มีการการันตี</p>
+      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">ทีมงานปัจจุบัน</h2>
+      <p class="font-noto text-slate-600 max-w-xl mx-auto">คนในทีมมาจากหลายสายงาน — สิ่งที่เหมือนกันคือเลือกจะช่วยคนวางแผนการเงินอย่างจริงจัง</p>
+      <p class="font-noto text-xs text-slate-400 mt-2">เลื่อนเมาส์ หรือแตะที่รูปเพื่อดูที่มา</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-5 mb-8">
-      <div class="text-center bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="font-poppins text-3xl font-bold text-slate-400 mb-1">ปีที่ 1</div>
-        <div class="font-noto text-sm text-slate-600 mb-3">ช่วงเรียนรู้</div>
-        <div class="font-noto text-sm text-slate-500 leading-relaxed">รายได้ไม่สม่ำเสมอ ขึ้นอยู่กับลูกค้าที่สร้างได้ ส่วนใหญ่ยังต้องพึ่งเงินสำรองตัวเอง</div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/doctor-1.jpg" alt="หมอ" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">หมอ</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/engineer.jpg" alt="วิศวกร" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">วิศวะ</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/freelancer.jpg" alt="Freelance" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">Freelance</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/hr-advisor.jpg" alt="สายข้ามชาติ" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">สายข้ามชาติ</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/food-industry.jpg" alt="ระบบอาหาร" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">ระบบอาหาร</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/doctor-2.jpg" alt="หมอ" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">หมอ</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/hospitality.jpg" alt="สายบริการ" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">บริการ</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/hr-manager.jpg" alt="สายค้าปลีก" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">สายค้าปลีก</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/energy.jpg" alt="พลังงาน" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">พลังงาน</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/cfo.jpg" alt="การเงิน" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">การเงิน</span></div></div></div>
+      <div class="team-card"><div class="team-photo-wrap"><img src="/images/team/project-manager.jpg" alt="Project Manager" class="team-photo" loading="lazy"/><div class="team-overlay"><span class="team-label">Project</span></div></div></div>
+      <!-- Placeholder for next member -->
+      <div class="team-card flex items-center justify-center min-h-32 bg-white border-2 border-dashed border-slate-200">
+        <div class="text-center p-4">
+          <div class="text-2xl mb-1">+</div>
+          <p class="font-noto text-xs text-slate-400">คนต่อไปคือคุณ?</p>
+          <a href="#lead-form" class="font-noto text-xs text-teal font-semibold hover:underline">แจ้งความสนใจ</a>
+        </div>
       </div>
-      <div class="text-center bg-teal/5 rounded-xl p-6 border border-teal/20">
-        <div class="font-poppins text-3xl font-bold text-teal mb-1">ปีที่ 2–3</div>
-        <div class="font-noto text-sm text-slate-600 mb-3">เริ่มสม่ำเสมอ</div>
-        <div class="font-noto text-sm text-slate-500 leading-relaxed">ฐานลูกค้าเริ่มแข็งแรง Renewal income เพิ่ม บางคนถึง MDRT ระดับ Court of the Table</div>
-      </div>
-      <div class="text-center bg-navy/5 rounded-xl p-6 border border-navy/10">
-        <div class="font-poppins text-3xl font-bold text-navy mb-1">ปีที่ 4+</div>
-        <div class="font-noto text-sm text-slate-600 mb-3">เติบโตต่อเนื่อง</div>
-        <div class="font-noto text-sm text-slate-500 leading-relaxed">Renewal + New Business ทำงานร่วมกัน รายได้เริ่มไม่ขึ้นกับชั่วโมงทำงานอีกต่อไป</div>
-      </div>
-    </div>
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
-      <p class="font-noto text-sm text-amber-700 leading-relaxed">
-        <span class="font-semibold">หมายเหตุ:</span> ตัวเลขข้างต้นเป็นภาพกว้าง ไม่ใช่การรับประกันรายได้ ผลลัพธ์ขึ้นอยู่กับการลงมือทำและปัจจัยหลายอย่าง ทีมจะพูดตรงๆ เรื่องรายได้จริงเมื่อนัดคุย
-      </p>
     </div>
   </div>
 </section>
 
 <!-- LEAD FORM -->
-<section id="lead-form" class="py-16 px-4 bg-slate-50">
+<section id="lead-form" class="py-16 px-4 bg-white">
   <div class="max-w-xl mx-auto">
-    <div class="text-center mb-8">
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">แจ้งความสนใจ</h2>
-      <p class="font-noto text-slate-600">กรอกข้อมูลเบื้องต้น ทีมจะติดต่อกลับเพื่อนัดคุย 30 นาที</p>
-    </div>
+    <div class="text-center mb-8"><h2 class="font-pridi text-3xl font-bold text-navy mb-3">แจ้งความสนใจ</h2><p class="font-noto text-slate-600">กรอกข้อมูลเบื้องต้น ทีมจะติดต่อกลับเพื่อนัดคุย 30 นาที</p></div>
     <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
       <form id="join-form" class="flex flex-col gap-4" onsubmit="submitJoinForm(event)">
-        <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">ชื่อ-นามสกุล <span class="text-red-500">*</span></label>
-          <input type="text" name="name" required placeholder="ชื่อ นามสกุล"
-            class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
-        </div>
-        <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
-          <input type="tel" name="phone" required placeholder="08X-XXX-XXXX"
-            class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
-        </div>
-        <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">อาชีพปัจจุบัน</label>
-          <input type="text" name="job" placeholder="เช่น พนักงานบริษัท, ธุรกิจส่วนตัว"
-            class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
-        </div>
-        <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">สิ่งที่อยากรู้เพิ่มเติม</label>
-          <textarea name="question" rows="3" placeholder="เช่น อยากรู้เรื่องรายได้, ระบบสอนงาน, หรือข้อสงสัยอื่นๆ"
-            class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal resize-none"></textarea>
-        </div>
-        <button type="submit" id="submit-btn" class="btn-teal w-full py-3.5 font-noto text-base flex items-center justify-center gap-2">
-          ส่งความสนใจ — ทีมจะติดต่อกลับใน 1 วันทำการ
-        </button>
+        <div><label class="block font-noto text-sm font-medium text-navy mb-1.5">ชื่อ-นามสกุล <span class="text-red-500">*</span></label><input type="text" name="name" required placeholder="ชื่อ นามสกุล" class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal"></div>
+        <div><label class="block font-noto text-sm font-medium text-navy mb-1.5">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label><input type="tel" name="phone" required placeholder="08X-XXX-XXXX" class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal"></div>
+        <div><label class="block font-noto text-sm font-medium text-navy mb-1.5">อาชีพปัจจุบัน</label><input type="text" name="job" placeholder="เช่น พนักงานบริษัท, ธุรกิจส่วนตัว" class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal"></div>
+        <div><label class="block font-noto text-sm font-medium text-navy mb-1.5">สิ่งที่อยากรู้เพิ่มเติม</label><textarea name="question" rows="3" placeholder="เช่น อยากรู้เรื่องรายได้, ระบบสอนงาน, หรือข้อสงสัยอื่นๆ" class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal resize-none"></textarea></div>
+        <button type="submit" class="btn-teal w-full py-3.5 font-noto text-base flex items-center justify-center gap-2">ส่งความสนใจ — ทีมจะติดต่อกลับใน 1 วันทำการ</button>
       </form>
       <div id="form-success" class="hidden text-center py-6">
-        <div class="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        </div>
+        <div class="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-3"><svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
         <p class="font-pridi font-semibold text-navy mb-1">ได้รับข้อมูลแล้ว!</p>
         <p class="font-noto text-sm text-slate-600">ทีมจะติดต่อกลับภายใน 1 วันทำการ</p>
       </div>
       <p class="font-noto text-xs text-slate-400 text-center mt-4">ข้อมูลของคุณจะถูกเก็บเป็นความลับ ไม่มีการขายข้อมูลต่อ</p>
     </div>
-    <p class="font-noto text-sm text-slate-500 text-center mt-4">
-      หรือทักผ่าน LINE ได้เลย →
-      <a href="https://lin.ee/7YeXvFaG" target="_blank" class="text-teal font-medium hover:underline">@nextleveladvisor</a>
-    </p>
+    <p class="font-noto text-sm text-slate-500 text-center mt-4">หรือทักผ่าน LINE ได้เลย → <a href="https://lin.ee/7YeXvFaG" target="_blank" class="text-teal font-medium hover:underline">@nextleveladvisor</a></p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-16 px-4 bg-white">
+<section class="py-16 px-4 bg-slate-50">
   <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-8">
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">คำถามที่พบบ่อย</h2>
-    </div>
+    <div class="text-center mb-8"><h2 class="font-pridi text-3xl font-bold text-navy mb-3">คำถามที่พบบ่อย</h2></div>
     <div class="flex flex-col gap-3" id="faq-container"></div>
   </div>
 </section>
@@ -447,7 +343,7 @@
 <section class="py-14 px-4 bg-deep text-white text-center">
   <div class="max-w-xl mx-auto">
     <h2 class="font-pridi text-3xl font-bold mb-4">พร้อมเริ่มต้นหรือยัง?</h2>
-    <p class="font-noto text-slate-300 mb-6 leading-relaxed">นัดคุย 30 นาทีก่อน — ไม่มีข้อผูกมัด แค่อยากให้คุณมีข้อมูลครบก่อนตัดสินใจ</p>
+    <p class="font-noto text-slate-300 mb-6 leading-relaxed">นัดคุย 30 นาทีก่อน — ไม่มีข้อผูกมัด</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="#lead-form" class="btn-teal px-8 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">แจ้งความสนใจ</a>
       <a href="/join/5-year-challenge" class="btn-outline px-8 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">ดูโครงการ 5 ปี 5 ล้าน →</a>
@@ -455,69 +351,51 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="bg-deep border-t border-white/5 py-8 px-4">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-2">
-      <div class="w-7 h-7 bg-navy rounded-md flex items-center justify-center"><span class="text-white font-poppins font-bold text-xs">NL</span></div>
-      <span class="font-poppins text-white text-sm font-medium">Next Level Advisor</span>
-    </div>
+    <div class="flex items-center gap-2"><div class="w-7 h-7 bg-navy rounded-md flex items-center justify-center"><span class="text-white font-poppins font-bold text-xs">NL</span></div><span class="font-poppins text-white text-sm font-medium">Next Level Advisor</span></div>
     <p class="font-noto text-xs text-slate-500 text-center">© 2026 Next Level Advisor · ตัวแทนเมืองไทยประกันชีวิต · ใบอนุญาต OIC</p>
-    <div class="flex items-center gap-4">
-      <a href="/behind-the-advisor" class="font-noto text-xs text-slate-500 hover:text-slate-300">เกี่ยวกับเรา</a>
-      <a href="https://lin.ee/7YeXvFaG" target="_blank" class="font-noto text-xs text-slate-500 hover:text-slate-300">LINE</a>
-    </div>
+    <div class="flex items-center gap-4"><a href="/behind-the-advisor" class="font-noto text-xs text-slate-500 hover:text-slate-300">เกี่ยวกับเรา</a><a href="https://lin.ee/7YeXvFaG" target="_blank" class="font-noto text-xs text-slate-500 hover:text-slate-300">LINE</a></div>
   </div>
 </footer>
 
 <!-- Floating CTA -->
 <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-2">
-  <a href="https://calendly.com/insuremate99/15" target="_blank"
-     onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'floating widget'})"
-     class="w-12 h-12 bg-navy hover:bg-deep text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="นัดคุย">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-  </a>
-  <a href="https://lin.ee/7YeXvFaG" target="_blank"
-     onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'floating widget'})"
-     class="w-12 h-12 bg-teal hover:bg-teal/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="LINE">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.073 1.558 5.803 4 7.557V22l3.727-2.044A11.3 11.3 0 0012 20.243c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2z"/></svg>
-  </a>
+  <a href="https://calendly.com/insuremate99/15" target="_blank" onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'floating'})" class="w-12 h-12 bg-navy hover:bg-deep text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="นัดคุย"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></a>
+  <a href="https://lin.ee/7YeXvFaG" target="_blank" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'floating'})" class="w-12 h-12 bg-teal hover:bg-teal/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="LINE"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.073 1.558 5.803 4 7.557V22l3.727-2.044A11.3 11.3 0 0012 20.243c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2z"/></svg></a>
 </div>
 
 <script>
-const btn=document.getElementById('hamburger-btn'),menu=document.getElementById('mobile-menu'),open=document.getElementById('ham-open'),close=document.getElementById('ham-close');
-btn.addEventListener('click',()=>{menu.classList.toggle('hidden');open.classList.toggle('hidden');close.classList.toggle('hidden');});
+const btn=document.getElementById("hamburger-btn"),menu=document.getElementById("mobile-menu"),open=document.getElementById("ham-open"),close=document.getElementById("ham-close");
+btn.addEventListener("click",()=>{menu.classList.toggle("hidden");open.classList.toggle("hidden");close.classList.toggle("hidden");});
 
 const faqs=[
   {q:"ต้องมีประสบการณ์ด้านการเงินก่อนมั้ย?",a:"ไม่จำเป็น หลายคนในทีมมาจากสายงานที่ต่างกัน เช่น วิศวกร พยาบาล ครู สิ่งสำคัญคือทัศนคติและความตั้งใจเรียนรู้"},
-  {q:"รายได้ช่วงแรกเป็นอย่างไร?",a:"ช่วง 3–6 เดือนแรกรายได้อาจไม่สม่ำเสมอ ขึ้นอยู่กับการลงมือทำ ต้องเตรียมสำรองทุนส่วนตัวไว้ก่อน — ทีมจะวางแผนร่วมกันตั้งแต่วันแรก"},
+  {q:"รายได้ช่วงแรกเป็นอย่างไร?",a:"ช่วง 3-6 เดือนแรกรายได้อาจไม่สม่ำเสมอ ขึ้นอยู่กับการลงมือทำ ต้องเตรียมสำรองทุนส่วนตัวไว้ก่อน — ทีมจะวางแผนร่วมกันตั้งแต่วันแรก"},
   {q:"ต้องสอบใบอนุญาตอะไรบ้าง?",a:"ขั้นต่ำคือใบอนุญาตตัวแทนประกันชีวิต (OIC) ซึ่งต้องสอบผ่าน คปภ. ทีมช่วยเตรียมสอบให้ และแนะนำให้สอบ IC Plain ด้านกองทุนเพิ่มเติมในภายหลัง"},
   {q:"ทำงาน Part-time ได้มั้ย?",a:"ได้ในช่วงแรก แต่ถ้าต้องการสร้างรายได้ที่มั่นคงระดับ MDRT ต้องลงมือเต็มเวลา ทีมรับทั้ง Full-time และ Part-time แต่ต้องซื่อสัตย์กับตัวเองในเรื่องเป้าหมาย"},
   {q:"มีระบบสอนงานอย่างไร?",a:"มี 3 ระบบหลัก: 1) Coaching รายสัปดาห์กับพี่เลี้ยง 2) Workshop รายเดือนด้านเทคนิคและ Product Knowledge 3) Shadowing — ตามดูการนัดลูกค้าจริงในช่วงแรก"},
   {q:"ต้องหาลูกค้าเองทั้งหมดมั้ย?",a:"ใช่ ไม่มีลีดฟรี อาชีพนี้ต้องสร้างฐานลูกค้าเอง ทีมสอนระบบ Referral, Content Marketing และ Network Building แต่ต้องลงมือเองทุกขั้นตอน"},
-  {q:"ค่าใช้จ่ายในการเริ่มต้นมีอะไรบ้าง?",a:"ค่าสมัคร คปภ. และค่าสอบใบอนุญาตประมาณ 1,000–3,000 บาท ควรมีสำรองเงินใช้จ่ายส่วนตัวอย่างน้อย 3–6 เดือน ไม่มีค่าแฟรนไชส์หรือค่าบำรุงทีม"},
-  {q:"ต่างจากการสมัครตัวแทนทั่วไปอย่างไร?",a:"ทีม Next Level เน้น Advisory-based ไม่ใช่ Sales-based คือลูกค้าซื้อเพราะเข้าใจ ไม่ใช่ถูก Hard sell — เครื่องมือและระบบถูกออกแบบมาให้สร้าง Trust ก่อน"},
-  {q:"MDRT คืออะไร และทำได้จริงมั้ย?",a:"MDRT (Million Dollar Round Table) คือมาตรฐานสากลด้านรายได้ของที่ปรึกษาการเงิน ปี 2026 ต้องมีรายได้ค่าคอมมิชชั่นราว 1.3 ล้านบาท ในทีมเราทำได้จริง แต่ต้องใช้เวลา ส่วนใหญ่คนแรกทำได้ในปีที่ 2–3"},
+  {q:"ค่าใช้จ่ายในการเริ่มต้นมีอะไรบ้าง?",a:"ค่าสมัคร คปภ. และค่าสอบใบอนุญาตประมาณ 1,000-3,000 บาท ควรมีสำรองเงินใช้จ่ายส่วนตัวอย่างน้อย 3-6 เดือน ไม่มีค่าแฟรนไชส์หรือค่าบำรุงทีม"},
+  {q:"MDRT คืออะไร และทำได้จริงมั้ย?",a:"MDRT (Million Dollar Round Table) คือมาตรฐานสากลด้านรายได้ของที่ปรึกษาการเงิน ปี 2026 ต้องมีรายได้ค่าคอมมิชชั่นราว 1.3 ล้านบาท ในทีมเราทำได้จริง แต่ต้องใช้เวลา ส่วนใหญ่ทำได้ในปีที่ 2-3"},
   {q:"ถ้าอยากรู้ข้อมูลเพิ่มเติมก่อนตัดสินใจ ทำได้มั้ย?",a:"ได้เลย — แจ้งความสนใจด้านบน หรือทักผ่าน LINE ก็ได้ ไม่มีข้อผูกมัด เราจะอธิบายระบบงาน รายได้จริง และความเหมาะสมกับเป้าหมายของคุณก่อน"},
+  {q:"ต่างจากการสมัครตัวแทนทั่วไปอย่างไร?",a:"ทีม Next Level เน้น Advisory-based ไม่ใช่ Sales-based คือลูกค้าซื้อเพราะเข้าใจ ไม่ใช่ถูก Hard sell — เครื่องมือและระบบถูกออกแบบมาให้สร้าง Trust ก่อน"},
 ];
 
-const container=document.getElementById('faq-container');
+const container=document.getElementById("faq-container");
 faqs.forEach(faq=>{
-  const div=document.createElement('div');
-  div.className='faq-item border border-slate-100 rounded-xl overflow-hidden';
-  div.innerHTML=`<button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-slate-50 transition-colors"><span class="font-noto text-sm font-semibold text-navy">${faq.q}</span><svg class="faq-chevron w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 pb-4"><p class="font-noto text-sm text-slate-600 leading-relaxed">${faq.a}</p></div>`;
+  const div=document.createElement("div");
+  div.className="faq-item border border-slate-100 rounded-xl overflow-hidden bg-white";
+  div.innerHTML=`<button onclick="this.closest('.faq-item').classList.toggle('open')" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-slate-50 transition-colors"><span class="font-noto text-sm font-semibold text-navy">${faq.q}</span><svg class="faq-chevron w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 pb-4"><p class="font-noto text-sm text-slate-600 leading-relaxed">${faq.a}</p></div>`;
   container.appendChild(div);
 });
 
-function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open');}
-
 function submitJoinForm(e){
   e.preventDefault();
-  const data=new FormData(document.getElementById('join-form'));
-  gtag('event','join_form_submit',{event_category:'conversion',event_label:'join page'});
-  window.open('https://lin.ee/7YeXvFaG','_blank');
-  document.getElementById('join-form').classList.add('hidden');
-  document.getElementById('form-success').classList.remove('hidden');
+  gtag("event","join_form_submit",{event_category:"conversion",event_label:"join page"});
+  window.open("https://lin.ee/7YeXvFaG","_blank");
+  document.getElementById("join-form").classList.add("hidden");
+  document.getElementById("form-success").classList.remove("hidden");
 }
 </script>
 </body>
