@@ -271,7 +271,6 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-
 <!-- QUICK DECISION CARDS -->
 <section class="py-10 bg-white border-b border-slate-100">
   <div class="max-w-5xl mx-auto px-5">
@@ -550,14 +549,6 @@ html{scroll-behavior:smooth}
             <div class="who-chip text-xs">📐 นักวางแผนที่ต้องการตัวเลขแม่นยำ ไม่ชอบผันผวน</div>
           </div>
 
-        <div class="mt-4 bg-blue-50 border border-blue-200 rounded-2xl p-4">
-          <div class="flex items-start gap-2">
-            <span class="text-lg flex-shrink-0">📋</span>
-            <div class="font-noto text-xs text-blue-700 leading-relaxed">
-              <strong class="text-blue-800">หมายเหตุ:</strong> ข้อมูลผลิตภัณฑ์อาจมีการปรับเปลี่ยน กรุณาตรวจสอบเงื่อนไขและความคุ้มครองล่าสุดจากเอกสารกรมธรรม์หรือระบบ Smartweb ของบริษัทเมืองไทยประกันชีวิตก่อนตัดสินใจทำประกัน
-            </div>
-          </div>
-        </div>
           <div class="mt-4 pt-3 border-t border-amber-200">
             <a href="/pdfs/wealth/ul-plus.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-noto font-semibold text-amber-700 border border-amber-300 rounded-lg px-3 py-1.5 hover:bg-amber-50 transition-colors">📄 โบรชัวร์ UL Plus</a>
           </div>
@@ -693,9 +684,6 @@ html{scroll-behavior:smooth}
             <div class="font-noto text-xs text-amber-700">⚡ ปานกลาง–สูง ขึ้นกับกองทุนที่เลือก</div>
           </div>
         </div>
-        <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
-           class="block w-full text-center py-2.5 rounded-xl font-noto font-semibold text-sm text-white hover:opacity-90 transition-opacity"
-           style="background:#06C755">นัดคุยเรื่อง Unit-Linked →</a>
       </div>
       <!-- UL Plus Card -->
       <div class="rounded-2xl border-2 border-amber-300/60 bg-amber-50/30 p-5">
@@ -721,9 +709,6 @@ html{scroll-behavior:smooth}
             <div class="font-noto text-xs text-green-700">🛡️ ต่ำ มีผลตอบแทนขั้นต่ำการันตีตามเงื่อนไขกรมธรรม์</div>
           </div>
         </div>
-        <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
-           class="block w-full text-center py-2.5 rounded-xl font-noto font-semibold text-sm text-white hover:opacity-90 transition-opacity"
-           style="background:#06C755">นัดคุยเรื่อง UL Plus →</a>
       </div>
     </div>
   </div>
@@ -1026,7 +1011,6 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-
 <!-- ══════ SEO FAQ ══════ -->
 <section class="py-16 bg-white">
   <div class="max-w-3xl mx-auto px-5">
@@ -1293,7 +1277,6 @@ function calcGG(){
 const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-
 // FAQ TOGGLE
 function toggleFaq(id){
   const el=document.getElementById(id);
@@ -1336,7 +1319,6 @@ calcGG();
         </div>
       </div>
     </section>
-
 
 <!-- SEARCH OVERLAY -->
 <div id="mobileSearchOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:#fff;flex-direction:column">
@@ -1448,7 +1430,6 @@ calcGG();
       if(e.key==='Enter'){e.preventDefault();const first=mobRes.querySelector('a');if(first)window.location.href=first.getAttribute('href');}
     });
   }
-
 
 
 })();
