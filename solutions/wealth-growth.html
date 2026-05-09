@@ -1092,10 +1092,12 @@ function setGGYear(y){
 
 function setGGRate(r){
   ggRate=r/100;
-  [1,3,5].forEach(n=>{
-    document.getElementById('gg-rate-'+n).className='sim-btn flex-1 text-xs'+(n===r?' selected':'');
+  [-2,3,5].forEach(n=>{
+    const btnId = n===-2?'gg-rate-n2':'gg-rate-'+n;
+    const btn = document.getElementById(btnId);
+    if(btn) btn.className='sim-btn flex-1 text-xs'+(n===r?' selected':'');
   });
-  document.getElementById('gg-rate-label').textContent='สมมติ '+r+'% ต่อปี (ไม่การันตี)';
+  document.getElementById('gg-rate-label').textContent=(r>0?'+':'')+r+'% ต่อปี (ไม่การันตี)';
   calcGG();
 }
 
