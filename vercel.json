@@ -33,5 +33,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/solutions/savings",
+      "destination": "/solutions/tax-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/savings.html",
+      "destination": "/solutions/tax-optimization",
+      "permanent": true
+    }
   ]
 }
