@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nextlevel-advisor.com/</loc><lastmod>2026-05-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://nextlevel-advisor.com/articles/</loc><lastmod>2026-05-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nextlevel-advisor.com/calculator</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://nextlevel-advisor.com/behind-the-advisor</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/health-planning</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/retirement-tax</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/tax-optimization</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/legacy-planning</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://nextlevel-advisor.com/solutions/wealth-growth</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://nextlevel-advisor.com/articles/</loc><lastmod>2026-05-10</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nextlevel-advisor.com/calculator</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/behind-the-advisor</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/health-planning</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/retirement-tax</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/tax-optimization</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/legacy-planning</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextlevel-advisor.com/solutions/wealth-growth</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://nextlevel-advisor.com/articles/cost-of-waiting</loc><lastmod>2026-05-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://nextlevel-advisor.com/articles/may-cashflow</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://nextlevel-advisor.com/articles/occupation-class</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -191,4 +191,23 @@
   <url><loc>https://nextlevel-advisor.com/articles/copayment-250108</loc><lastmod>2025-01-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://nextlevel-advisor.com/articles/copayment-250104</loc><lastmod>2025-01-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://nextlevel-advisor.com/articles/health-insurance-250102</loc><lastmod>2025-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url>
+    <loc>https://nextlevel-advisor.com/muangthai-life-agent</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextlevel-advisor.com/join</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextlevel-advisor.com/join/5-year-challenge</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
