@@ -995,5 +995,35 @@ window.toggleJoinMenu=function(){
   if(c)c.style.transform=m.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
 };
 </script>
+
+<script>
+/* ── GA4 Conversion Tracking ── */
+(function(){
+  if(typeof gtag !== 'function') return;
+  var pg = document.title;
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a[href], button[onclick], input[type=submit], button[type=submit]');
+    if(!el) return;
+    var href = (el.getAttribute('href') || '').toLowerCase();
+    var oc   = (el.getAttribute('onclick') || '').toLowerCase();
+    /* LINE */
+    if(href.includes('lin.ee') || href.includes('line.me') || href.startsWith('line://') || oc.includes('line')){
+      gtag('event','line_click',{event_category:'conversion',event_label:pg,value:1});
+    }
+    /* Calendly */
+    else if(href.includes('calendly.com') || oc.includes('calendly')){
+      gtag('event','calendly_click',{event_category:'conversion',event_label:pg,value:1});
+    }
+    /* Phone */
+    else if(href.startsWith('tel:')){
+      gtag('event','phone_call',{event_category:'conversion',event_label:href.replace('tel:',''),value:1});
+    }
+  });
+  /* Form submit */
+  document.addEventListener('submit', function(e){
+    gtag('event','form_submit',{event_category:'conversion',event_label:(e.target.id||pg),value:1});
+  });
+})();
+</script>
 </body>
 </html>
