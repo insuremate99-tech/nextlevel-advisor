@@ -284,7 +284,7 @@ html{scroll-behavior:smooth}
 <!-- HERO -->
 <section class="pt-28 pb-16" style="background:linear-gradient(150deg,#0D1F3C 0%,#1B365D 55%,#0C3548 100%)">
   <div class="max-w-5xl mx-auto px-5">
-    <div role="navigation" class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
+    <nav class="flex items-center gap-2 text-xs mb-8" style="color:rgba(255,255,255,.4)">
       <a href="/" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">หน้าหลัก</a>
       <span>/</span><a href="/solutions" style="color:rgba(255,255,255,.4)" class="hover:text-white transition-colors">โซลูชัน</a>
       <span>/</span><span style="color:rgba(255,255,255,.7)">วางแผนสุขภาพ</span>
@@ -499,7 +499,7 @@ html{scroll-behavior:smooth}
     <div class="text-center mb-8 reveal">
       <span class="sec-label">Elite Health Plus</span>
       <h2 class="font-pridi font-semibold text-navy mt-2" style="font-size:clamp(1.3rem,2.5vw,1.85rem)">คำนวณเบี้ย Elite Health Plus</h2>
-      <p class="font-noto text-slate-500 mt-3 text-sm">ระดับ Premium · IPD + OPD ครอบคลุมทั่วโลก · ไม่มี Deductible / Copay</p>
+      <p class="font-noto text-slate-500 mt-3 text-sm">ระดับ Premium · IPD + OPD ครอบคลุมทั่วโลก · ไม่มี Deductible</p>
     </div>
 
     <!-- Elite vs D Health note -->
@@ -522,7 +522,16 @@ html{scroll-behavior:smooth}
         <div class="font-noto text-xs font-semibold mb-1" style="color:#D97706">👑 คำนวณเบี้ยประกัน Elite Health Plus</div>
         <div class="font-pop font-bold text-navy text-sm mb-6">🔧 เลือกเงื่อนไขความคุ้มครอง</div>
 
-        <!-- Age -->
+        <!-- Gender -->
+        <div class="mb-4">
+          <span class="sim-label">เพศ</span>
+          <div class="flex gap-2">
+            <button onclick="setGender('m')" id="gen-m" class="sim-btn text-xs selected flex-1">👨 ชาย</button>
+            <button onclick="setGender('f')" id="gen-f" class="sim-btn text-xs flex-1">👩 หญิง</button>
+          </div>
+          <div class="font-noto text-xs text-slate-400 mt-2">* เบี้ยสำหรับเพศชาย-หญิง อัตราเดียวกัน (Unisex) · กลุ่มอาชีพ 1&2 เท่านั้น</div>
+        </div>
+                <!-- Age -->
         <div class="mb-5">
           <span class="sim-label">อายุ (ปี) <span id="eh-age-display" class="text-teal font-bold">35</span></span>
           <input type="range" min="11" max="90" value="35" oninput="document.getElementById('eh-age-display').textContent=this.value;document.getElementById('eh-age-num').value=this.value;calcElite()" class="w-full accent-teal mb-2" id="eh-age-slider"/>
@@ -554,12 +563,7 @@ html{scroll-behavior:smooth}
           </div>
         </div>
 
-        <div class="flex items-center gap-2 mb-2">
-          <span class="font-noto text-xs text-slate-500">เพศ:</span>
-          <button onclick="setGender('m')" id="gen-m" class="sim-btn text-xs selected">👨 ชาย</button>
-          <button onclick="setGender('f')" id="gen-f" class="sim-btn text-xs">👩 หญิง</button>
-        </div>
-        <div class="font-noto text-xs text-slate-400">* เบี้ยสำหรับเพศชาย-หญิง อัตราเดียวกัน (Unisex) · กลุ่มอาชีพ 1&2 เท่านั้น</div>
+
       </div>
 
       <!-- RIGHT: RESULT -->
