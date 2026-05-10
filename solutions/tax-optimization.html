@@ -1447,5 +1447,26 @@ window.toggleJoinMenu=function(){
   if(c)c.style.transform=m.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
 };
 </script>
+<script>
+function toggleTaxFaq(id) {
+  const el = document.getElementById(id);
+  const icon = document.getElementById(id + '-icon');
+  if (!el) return;
+  const isHidden = el.classList.contains('hidden');
+  // Close all
+  document.querySelectorAll('[id^="tf"]').forEach(function(p) {
+    if (!p.id.endsWith('-icon')) {
+      p.classList.add('hidden');
+      var ic = document.getElementById(p.id + '-icon');
+      if (ic) ic.textContent = '+';
+    }
+  });
+  // Open clicked if was hidden
+  if (isHidden) {
+    el.classList.remove('hidden');
+    if (icon) icon.textContent = '×';
+  }
+}
+</script>
 </body>
 </html>
