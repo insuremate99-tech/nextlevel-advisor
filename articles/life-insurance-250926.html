@@ -218,4 +218,9 @@
 })();
 function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var e=document.getElementById('copyConfirm');e.style.display='block';setTimeout(function(){e.style.display='none';},2500);});}
 </script>
+
+<script>
+/* ── GA4 Conversion Tracking ── */
+(function(){if(typeof gtag!=="function")return;var pg=document.title;document.addEventListener("click",function(e){var el=e.target.closest("a[href],button");if(!el)return;var h=(el.getAttribute("href")||"").toLowerCase();if(h.includes("lin.ee")||h.includes("line.me")){gtag("event","line_click",{event_category:"conversion",event_label:pg,value:1});}else if(h.includes("calendly.com")){gtag("event","calendly_click",{event_category:"conversion",event_label:pg,value:1});}else if(h.startsWith("tel:")){gtag("event","phone_call",{event_category:"conversion",event_label:h,value:1});}});document.addEventListener("submit",function(e){gtag("event","form_submit",{event_category:"conversion",event_label:(e.target.id||pg),value:1});});})();
+</script>
 </body></html>
