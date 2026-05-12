@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ทีม Next Level Advisor | หลากหลายสายงาน เส้นทางเดียวกัน</title>
+  <meta name="description" content="ทีม Next Level Advisor — อดีต HR Head, แพทย์, วิศวกร, CFO ที่เลือกสร้างอาชีพที่ปรึกษาการเงิน ดูว่าใครอยู่ในทีมและทำไมพวกเขาถึงเลือกเส้นทางนี้" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Pridi:wght@400;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B365D',
+            teal: '#0891B2',
+            deep: '#0D1F3C',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            pridi: ['Pridi', 'serif'],
+            noto: ['Noto Sans Thai', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PHYNQSRYV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1PHYNQSRYV');
+  </script>
+  <style>
+    body { font-family: 'Noto Sans Thai', 'Poppins', sans-serif; background: #F8FAFC; }
+    h1, h2, h3 { font-family: 'Pridi', serif; }
+    .eyebrow { font-family: 'Poppins', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0891B2; }
+    /* Nav dropdown */
+    .join-dropdown { display: none; }
+    .join-trigger:hover .join-dropdown { display: block; }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-deep text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="/" class="font-pridi text-xl font-bold text-white hover:text-teal transition-colors">Next Level Advisor</a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/solutions" class="text-gray-300 hover:text-white transition-colors">วางแผนการเงิน</a>
+        <a href="/articles" class="text-gray-300 hover:text-white transition-colors">บทความ</a>
+        <div class="relative join-trigger">
+          <button class="text-teal hover:text-white transition-colors flex items-center gap-1">
+            ร่วมทีม <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="join-dropdown absolute top-full left-0 mt-1 bg-white rounded-lg shadow-xl py-2 min-w-[200px]">
+            <a href="/join" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-navy transition-colors text-sm">ร่วมทีมกับเรา</a>
+            <a href="/join/5-year-challenge" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-navy transition-colors text-sm">5 ปี 5 ล้าน Challenge</a>
+            <a href="/join/team" class="block px-4 py-2 text-navy font-semibold hover:bg-gray-50 transition-colors text-sm border-l-2 border-teal ml-1">ทีมของเรา</a>
+          </div>
+        </div>
+        <a href="/faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
+        <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+           class="bg-teal text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-cyan-600 transition-colors"
+           onclick="gtag('event','calendly_click',{page:'join-team',location:'nav'})">นัดคุย 15 นาที</a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="เมนู">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-deep border-t border-gray-700 px-4 pb-4">
+      <div class="flex flex-col gap-1 pt-3 text-sm">
+        <a href="/solutions" class="text-gray-300 hover:text-white py-2 transition-colors">วางแผนการเงิน</a>
+        <a href="/articles" class="text-gray-300 hover:text-white py-2 transition-colors">บทความ</a>
+        <button id="join-submenu-btn" class="flex items-center justify-between text-teal py-2 font-medium">
+          ร่วมทีม
+          <svg id="join-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="join-submenu" class="hidden pl-4 flex flex-col gap-1 border-l-2 border-teal ml-1">
+          <a href="/join" class="text-gray-300 hover:text-white py-2 text-sm transition-colors">ร่วมทีมกับเรา</a>
+          <a href="/join/5-year-challenge" class="text-gray-300 hover:text-white py-2 text-sm transition-colors">5 ปี 5 ล้าน Challenge</a>
+          <a href="/join/team" class="text-white font-semibold py-2 text-sm">ทีมของเรา</a>
+        </div>
+        <a href="/faq" class="text-gray-300 hover:text-white py-2 transition-colors">FAQ</a>
+        <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+           class="mt-2 bg-teal text-white text-center px-4 py-3 rounded-lg font-medium hover:bg-cyan-600 transition-colors"
+           onclick="gtag('event','calendly_click',{page:'join-team',location:'mobile-nav'})">นัดคุย 15 นาที</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="bg-gradient-to-br from-deep via-navy to-teal text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="eyebrow text-teal mb-3">Our Team</p>
+      <h1 class="font-pridi text-4xl md:text-5xl font-bold mb-5 leading-tight">หลากหลายสายงาน<br/>เส้นทางเดียวกัน</h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+        อดีต HR Head บริษัทข้ามชาติ แพทย์ วิศวกร CFO และผู้เชี่ยวชาญจากหลายสายงาน<br class="hidden md:block"/>
+        ต่างเลือกเส้นทางที่ปรึกษาการเงินเพราะเห็นว่า "คนที่เราช่วยได้ต้องการเราจริง"
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#team-grid"
+           class="bg-teal text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-cyan-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          ดูทีมทั้งหมด
+        </a>
+        <a href="#apply-form"
+           class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-navy transition-all">
+          สนใจร่วมทีม
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TEAM INTRO STATS -->
+  <section class="bg-white py-12 px-4 shadow-sm">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-bold font-pridi text-navy">8+</div>
+        <div class="text-sm text-gray-500 mt-1">สายงานในทีม</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold font-pridi text-navy">MDRT</div>
+        <div class="text-sm text-gray-500 mt-1">เป้าหมายทีม 2026</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold font-pridi text-navy">AFPT™</div>
+        <div class="text-sm text-gray-500 mt-1">มาตรฐานวิชาชีพ</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold font-pridi text-navy">FChFP</div>
+        <div class="text-sm text-gray-500 mt-1">การวางแผนครอบครัว</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- TEAM GRID -->
+    <section id="team-grid" class="py-16 px-4 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="eyebrow mb-2">The Team</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">คนที่อยู่ในทีม Next Level</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">แต่ละคนมาจากสายงานที่แตกต่าง แต่ทุกคนมีเส้นทางที่ชัดเจนในการดูแลลูกค้าของตัวเอง</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1: CFO Background -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/cfo.jpg" alt="ที่ปรึกษาสายการเงิน CFO Background"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=CFO'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Corporate Finance</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">ประสบการณ์ CFO</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"เข้าใจ P&L และ cash flow ช่วยให้วางแผนให้ผู้บริหารได้ลึกกว่าคนอื่น"</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Doctor 1 -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/doctor-1.jpg" alt="ที่ปรึกษาสายแพทย์"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Doctor'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายการแพทย์</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">แพทย์ผู้เชี่ยวชาญ</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"ดูแลสุขภาพการเงินของเพื่อนแพทย์ด้วยกัน เข้าใจบริบทชีวิตได้เลย"</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Doctor 2 -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/doctor-2.jpg" alt="ที่ปรึกษาสายบุคลากรการแพทย์"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Medical'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายบุคลากรการแพทย์</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">บุคลากรทางการแพทย์</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"ใช้ความเข้าใจด้านสุขภาพอธิบายความเสี่ยงให้ลูกค้าเข้าใจได้จริง"</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Engineer -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/engineer.jpg" alt="ที่ปรึกษาสายวิศวกร"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Engineer'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายวิศวกร</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">วิศวกรมืออาชีพ</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"คิดเป็นระบบ วางแผนเป็นขั้นตอน ช่วยลูกค้าวิศวกรและเทคได้ตรงจุด"</p>
+            </div>
+          </article>
+
+          <!-- Card 5: HR Advisor -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/hr-advisor.jpg" alt="ที่ปรึกษาสาย HR"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=HR'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย HR / People</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">อดีต HR Head</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"ดูแลคนมา 15 ปี รู้ว่าสวัสดิการและแผนการเงินสำคัญกับชีวิตคนทำงานแค่ไหน"</p>
+            </div>
+          </article>
+
+          <!-- Card 6: Project Manager -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/project-manager.jpg" alt="ที่ปรึกษาสาย Project Manager"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=PM'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Project Management</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">Project Manager</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"บริหารโปรเจกต์มาตลอด เอาทักษะมาวางแผนการเงินให้ลูกค้าอย่างมีขั้นตอน"</p>
+            </div>
+          </article>
+
+          <!-- Card 7: Freelancer -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/freelancer.jpg" alt="ที่ปรึกษาสาย Freelancer"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Freelancer'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Freelance / Creative</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">อดีต Freelancer</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"รู้ดีว่ารายได้ไม่แน่นอนเป็นยังไง ช่วยให้ลูกค้า freelance วางแผนได้จริง"</p>
+            </div>
+          </article>
+
+          <!-- Card 8: Hospitality -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/team/hospitality.jpg" alt="ที่ปรึกษาสาย Hospitality"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Hospitality'"/>
+            </div>
+            <div class="p-5">
+              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Hospitality</div>
+              <h3 class="font-pridi font-bold text-navy text-lg mb-1">สาย Hospitality</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">"ทักษะ service และ empathy ทำให้ลูกค้าไว้ใจและเปิดใจคุยเรื่องแผนชีวิต"</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTUM PLAYBOOK -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="eyebrow mb-2">Team Culture</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">Momentum Playbook</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">หลักการที่ทีม Next Level Advisor ยึดถือในการทำงานและดูแลลูกค้า</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">01</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Educate First</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ให้ความรู้ก่อนเสนอสินค้า ลูกค้าที่เข้าใจจะตัดสินใจได้ดีกว่า และอยู่กับเราได้นานกว่า</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">02</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Data Over Gut</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ใช้ตัวเลข เหตุผล และข้อมูลจริงในการวางแผน ไม่ใช่แค่ความรู้สึกหรือประสบการณ์เดิม</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">03</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Long-term Trust</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">สร้างความสัมพันธ์ที่ลูกค้าไว้ใจได้จริงในระยะยาว ไม่ใช่แค่ปิดการขายแล้วหายไป</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">04</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Grow Together</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ทีมแชร์ความรู้และช่วยกันเติบโต ไม่แข่งกันเอง แต่แข่งกับมาตรฐานของตัวเอง</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">05</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Bias for Action</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ลงมือทำก่อน เรียนรู้จากการทำจริง แล้วปรับปรุงต่อเนื่อง ดีกว่ารอจนพร้อม 100%</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">06</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Continuous Learning</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ตลาดเปลี่ยน กฎหมายภาษีเปลี่ยน ที่ปรึกษาที่ดีต้องอัพเดทตัวเองตลอดเวลา</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">07</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Ethics First</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">แนะนำสิ่งที่ดีที่สุดสำหรับลูกค้า ไม่ใช่สิ่งที่ค่าคอมสูงที่สุด นี่คือความแตกต่างของ advisor จริงๆ</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
+            <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">08</div>
+            <div>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Personal Brand</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">แต่ละคนสร้าง brand ของตัวเองบน expertise ที่มี เพราะลูกค้าซื้อ "คน" ไม่ใช่แค่สินค้า</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM MOMENTS -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="eyebrow mb-2">Team Moments</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">ชีวิตในทีม Next Level</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">Workshop, coaching session, และการทำงานที่ไม่ได้แค่นั่งรอลูกค้าโทรมา</p>
+        </div>
+
+        <!-- Photo grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/team-coaching-workshop.jpg" alt="Workshop ทีม Next Level Advisor"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/team-training-room-positive.jpg" alt="Training session ในทีม"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/team-brainstorm-workshop.jpg" alt="Brainstorm session ทีม"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/team-mentoring-conversation.jpg" alt="Mentoring 1-on-1"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/team-professional-group.jpg" alt="ทีม Next Level Advisor"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <img src="/images/join/source-full-time-support.jpg" alt="Full-time support ในทีม"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'"/>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-1 mb-3">
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">"ก่อนเข้าทีมคิดว่าต้องขายเก่งถึงจะทำได้ แต่จริงๆ แล้วมันคือการฟังให้เป็นและเข้าใจชีวิตลูกค้า ซึ่งทักษะ HR ที่มีช่วยได้มากกว่าที่คิด"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-navy rounded-full flex items-center justify-center text-white text-xs font-bold">HR</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">อดีต HR Manager</div>
+                <div class="text-xs text-gray-500">บริษัทข้ามชาติ → ที่ปรึกษา 2 ปี</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-1 mb-3">
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">"ความรู้ทางการแพทย์ช่วยให้อธิบายเรื่องประกันสุขภาพได้ลึกและถูกต้อง ลูกค้าเชื่อมั่นเพราะรู้ว่าเราเข้าใจจริงๆ ไม่ได้แค่อ่านแคตตาล็อค"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-navy rounded-full flex items-center justify-center text-white text-xs font-bold">MD</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">แพทย์ผู้เชี่ยวชาญ</div>
+                <div class="text-xs text-gray-500">โรงพยาบาล → ที่ปรึกษา 1.5 ปี</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-1 mb-3">
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">"ทีมไม่ได้แค่สอนเรื่องประกัน แต่สอนให้คิดเป็นที่ปรึกษา มีระบบ มีคนช่วยดู และรู้สึกว่าไม่ได้ทำคนเดียว"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-navy rounded-full flex items-center justify-center text-white text-xs font-bold">EG</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">วิศวกร</div>
+                <div class="text-xs text-gray-500">บริษัท IT → ที่ปรึกษา 1 ปี</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET JOINING THIS TEAM -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="eyebrow mb-2">Why Join Us</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">สิ่งที่ได้จากการอยู่ในทีมนี้</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">ระบบ Mentoring จริง</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">มีพี่เลี้ยงที่ทำงานจริงดูแลตั้งแต่วันแรก ไม่ใช่แค่ส่งเอกสารแล้วปล่อยให้ลองผิดลองถูกเอง</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">Content & Digital Strategy</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">ทีมช่วยวาง content framework และ personal brand ให้ทำงานกับลูกค้ายุคดิจิทัลได้จริง</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">เส้นทางการเติบโตชัดเจน</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">รู้ว่าปีที่ 1 ต้องทำอะไร ปีที่ 3 ควรอยู่ที่ไหน และ MDRT คืออะไรในชีวิตจริง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY FORM CTA -->
+    <section id="apply-form" class="py-16 px-4 bg-gradient-to-br from-deep to-navy text-white">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="eyebrow text-teal mb-3">Join The Team</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold mb-4">สนใจร่วมทีม Next Level?</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">ฝากชื่อและเบอร์ไว้ได้เลย ป้องจะติดต่อกลับเพื่อนัดคุยเบื้องต้นก่อน ไม่มีข้อผูกมัด</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <form id="join-team-form" action="https://formspree.io/f/xlgzgkje" method="POST" onsubmit="handleTeamFormSubmit(event)">
+            <input type="hidden" name="_source" value="join-team"/>
+            <input type="hidden" name="_subject" value="สนใจร่วมทีม Next Level Advisor (จากหน้า Team)"/>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="team-name">ชื่อ-นามสกุล <span class="text-red-500">*</span></label>
+                <input type="text" id="team-name" name="name" required placeholder="ชื่อของคุณ"
+                       class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-gray-800"/>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="team-phone">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
+                <input type="tel" id="team-phone" name="phone" required placeholder="08x-xxx-xxxx"
+                       class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-gray-800"/>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="team-job">อาชีพปัจจุบัน</label>
+              <input type="text" id="team-job" name="current_job" placeholder="เช่น วิศวกร, แพทย์, HR Manager, ฟรีแลนซ์"
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-gray-800"/>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="team-message">อยากบอกอะไรเพิ่มเติม? (ไม่บังคับ)</label>
+              <textarea id="team-message" name="message" rows="3" placeholder="เช่น ทำอยู่ที่ไหน สนใจเรื่องไหนเป็นพิเศษ หรือคำถามที่อยากถาม"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all resize-none text-gray-800"></textarea>
+            </div>
+
+            <button type="submit" id="team-submit-btn"
+                    class="w-full bg-navy text-white py-4 rounded-xl font-semibold text-lg hover:bg-deep transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              ส่งข้อมูล — ป้องจะติดต่อกลับ
+            </button>
+
+            <p class="text-xs text-gray-400 text-center mt-3">ข้อมูลของคุณจะถูกเก็บเป็นความลับ ใช้เพื่อการติดต่อเท่านั้น</p>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="team-form-success" class="hidden text-center py-8">
+            <div class="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="font-pridi text-xl font-bold text-navy mb-2">ได้รับข้อมูลแล้ว!</h3>
+            <p class="text-gray-600">ป้องจะติดต่อกลับภายใน 24 ชั่วโมง เพื่อนัดคุยเบื้องต้น</p>
+          </div>
+        </div>
+
+        <!-- Alternative CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-2 bg-teal text-white px-6 py-3 rounded-xl font-semibold hover:bg-cyan-600 transition-all shadow-lg"
+             onclick="gtag('event','calendly_click',{page:'join-team',location:'cta-band'})">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            นัดคุย 15 นาทีผ่าน Calendly
+          </a>
+          <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all shadow-lg"
+             onclick="gtag('event','line_click',{page:'join-team',location:'cta-band'})">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            ทักหา LINE ป้อง
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FLOATING CTAs -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+       class="flex items-center gap-2 bg-navy text-white px-4 py-3 rounded-full shadow-xl hover:bg-deep transition-all hover:scale-105"
+       title="นัดคุย 15 นาที"
+       onclick="gtag('event','calendly_click',{page:'join-team',location:'floating-cta'})">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <span class="text-sm font-medium hidden sm:inline">นัดคุย</span>
+    </a>
+    <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
+       class="flex items-center gap-2 bg-teal text-white px-4 py-3 rounded-full shadow-xl hover:bg-cyan-600 transition-all hover:scale-105"
+       title="ทักหา LINE"
+       onclick="gtag('event','line_click',{page:'join-team',location:'floating-cta'})">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      <span class="text-sm font-medium hidden sm:inline">LINE</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-deep text-gray-400 text-sm py-8 px-4">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-pridi text-white font-semibold">Next Level Advisor</span>
+        <span class="mx-2">·</span>
+        ป้อง AFPT™ FChFP · เมืองไทยประกันชีวิต
+      </div>
+      <div class="flex gap-5">
+        <a href="/join" class="hover:text-white transition-colors">ร่วมทีม</a>
+        <a href="/join/5-year-challenge" class="hover:text-white transition-colors">5 ปี 5 ล้าน</a>
+        <a href="/solutions" class="hover:text-white transition-colors">วางแผนการเงิน</a>
+        <a href="/faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      icon.setAttribute('d', isOpen
+        ? 'M4 6h16M4 12h16M4 18h16'
+        : 'M6 18L18 6M6 6l12 12');
+    });
+
+    // Join submenu toggle (mobile)
+    const joinBtn = document.getElementById('join-submenu-btn');
+    const joinSubmenu = document.getElementById('join-submenu');
+    const joinChevron = document.getElementById('join-chevron');
+    joinBtn.addEventListener('click', () => {
+      joinSubmenu.classList.toggle('hidden');
+      joinChevron.style.transform = joinSubmenu.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    });
+
+    // Form submission handler
+    async function handleTeamFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('join-team-form');
+      const btn = document.getElementById('team-submit-btn');
+      btn.textContent = 'กำลังส่ง...';
+      btn.disabled = true;
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          form.classList.add('hidden');
+          document.getElementById('team-form-success').classList.remove('hidden');
+          gtag('event', 'form_submit', { form_name: 'join_team', source: 'join-team' });
+        } else {
+          btn.textContent = 'ส่งข้อมูล — ป้องจะติดต่อกลับ';
+          btn.disabled = false;
+          alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง');
+        }
+      } catch {
+        btn.textContent = 'ส่งข้อมูล — ป้องจะติดต่อกลับ';
+        btn.disabled = false;
+        alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง');
+      }
+    }
+  </script>
+
+</body>
+</html>
