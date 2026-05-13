@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nextlevel-advisor.com/sitemap.xml
+Sitemap: https://www.nextlevel-advisor.com/sitemap.xml
