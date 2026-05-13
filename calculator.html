@@ -1176,8 +1176,7 @@ function onTaxIncomeInput(){
   const conv=document.getElementById('ti-converted');
   if(incomeMode==='monthly'&&raw>0) conv.textContent='= รายได้ต่อปี ฿'+Math.round(taxIncome).toLocaleString();
   else conv.textContent='';
-  calcTax2();
-}
+  }
 
 function setParents(n){
   numParents=n;
@@ -1187,15 +1186,13 @@ function setParents(n){
   });
   const deduct=n*15000;
   document.getElementById('par-note').textContent=deduct>0?'ลดหย่อนได้ '+deduct.toLocaleString()+' ฿':'ลดหย่อนได้ 0 ฿';
-  calcTax2();
-}
+  }
 
 function clampAndCalcTax(id, max){
   const el=document.getElementById(id);
   const v=parseFloat(el.value)||0;
   if(v>max) el.value=max;
-  calcTax2();
-}
+  }
 
 function calcTax2(){
   const endow=Math.min(parseFloat(document.getElementById('tax-endow').value)||0,100000);
@@ -1214,7 +1211,6 @@ function calcTax2(){
   document.getElementById('tax2-monthly').textContent='฿'+Math.round(saved/12).toLocaleString();
   document.getElementById('tax2-bracket').textContent='ฐานภาษีคุณ '+Math.round(mRate*100)+'% · ลดหย่อนรวม ฿'+totalDeduct.toLocaleString();
 }
-calcTax2();
 
 // ─── TOOL 4: NEEDS-BASED ───
 var nbCoverYears=5;
@@ -1224,8 +1220,7 @@ function setCoverYears2(y){
     const el=document.getElementById('nb-yr-'+v);
     if(el) el.classList.toggle('active',y===v);
   });
-  calcNeeds2();
-}
+  }
 function calcNeeds2(){
   const fixed=+document.getElementById('nb-fixed').value;
   const lifestyle=+document.getElementById('nb-life').value;
@@ -1238,7 +1233,6 @@ function calcNeeds2(){
   document.getElementById('nb-debt-out').textContent=fmtB(debt);
   document.getElementById('nb-yrs-out').textContent=nbCoverYears+' ปี';
 }
-calcNeeds2();
 
 // ─── NAV SCROLL-SPY ───
 const sections=['sec-retire','sec-wealth','sec-tax','sec-legacy'];
