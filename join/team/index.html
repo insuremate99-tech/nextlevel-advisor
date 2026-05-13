@@ -42,7 +42,17 @@
     /* Nav dropdown */
     .join-dropdown { display: none; }
     .join-trigger:hover .join-dropdown { display: block; }
-  </style>
+  
+    /* ── Team cards (same as homepage) ── */
+    .team-card-new{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:box-shadow .25s;cursor:pointer}
+    .team-card-new:hover{box-shadow:0 10px 32px rgba(27,54,93,.15);border-color:#CBD5E1}
+    .team-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden}
+    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease,filter .3s ease}
+    .team-card-new:hover .team-photo{transform:scale(1.05);filter:brightness(.55)}
+    .team-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;background:rgba(13,26,45,.12)}
+    .team-card-new:hover .team-overlay{opacity:1}
+    .team-bg-label{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#fff;text-align:center;letter-spacing:.04em;text-shadow:0 2px 12px rgba(0,0,0,.4);padding:0 .5rem}
+</style>
 </head>
 <body class="text-gray-800">
 
@@ -130,79 +140,35 @@
           <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">คนที่อยู่ในทีม Next Level</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
 
-          <!-- Card 1: CFO Background -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/cfo.jpg" alt="ที่ปรึกษาสายการเงิน CFO Background"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=CFO'"/>
+          <div class="team-card-new">
+            <div class="team-photo-wrap">
+              <img src="/images/team/doctor-1.jpg" alt="Medical Specialist" class="team-photo" loading="lazy"/>
+              <div class="team-overlay"><span class="team-bg-label">หมอ</span></div>
             </div>
-          </article>
+          </div>
 
-          <!-- Card 2: Doctor 1 -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/doctor-1.jpg" alt="ที่ปรึกษาสายแพทย์"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Doctor'"/>
+          <div class="team-card-new">
+            <div class="team-photo-wrap">
+              <img src="/images/team/engineer.jpg" alt="Infrastructure Strategist" class="team-photo" loading="lazy"/>
+              <div class="team-overlay"><span class="team-bg-label">วิศวะ</span></div>
             </div>
-          </article>
+          </div>
 
-          <!-- Card 3: Doctor 2 -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/doctor-2.jpg" alt="ที่ปรึกษาสายบุคลากรการแพทย์"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Medical'"/>
+          <div class="team-card-new">
+            <div class="team-photo-wrap">
+              <img src="/images/team/hr-advisor.jpg" alt="Human Capital Advisor" class="team-photo" loading="lazy"/>
+              <div class="team-overlay"><span class="team-bg-label">สายข้ามชาติ</span></div>
             </div>
-          </article>
+          </div>
 
-          <!-- Card 4: Engineer -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/engineer.jpg" alt="ที่ปรึกษาสายวิศวกร"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Engineer'"/>
+          <div class="team-card-new">
+            <div class="team-photo-wrap">
+              <img src="/images/team/cfo.jpg" alt="Financial Innovation Lead" class="team-photo" loading="lazy"/>
+              <div class="team-overlay"><span class="team-bg-label">การเงิน</span></div>
             </div>
-          </article>
-
-          <!-- Card 5: HR Advisor -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/hr-advisor.jpg" alt="ที่ปรึกษาสาย HR"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=HR'"/>
-            </div>
-          </article>
-
-          <!-- Card 6: Project Manager -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/project-manager.jpg" alt="ที่ปรึกษาสาย Project Manager"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=PM'"/>
-            </div>
-          </article>
-
-          <!-- Card 7: Freelancer -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/freelancer.jpg" alt="ที่ปรึกษาสาย Freelancer"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Freelancer'"/>
-            </div>
-          </article>
-
-          <!-- Card 8: Hospitality -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/hospitality.jpg" alt="ที่ปรึกษาสาย Hospitality"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Hospitality'"/>
-            </div>
-          </article>
+          </div>
 
         </div>
       </div>
@@ -213,8 +179,8 @@
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <p class="eyebrow mb-2">Team Culture</p>
-          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">Momentum Playbook</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">หลักการที่ทีม Next Level Advisor ยึดถือในการทำงานและดูแลลูกค้า</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">The Momentum Playbook</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">เราไม่ได้สร้างทีมจากแรงฮึดชั่วคราว แต่สร้างจากวินัย วิธีคิด และมาตรฐานการทำงานที่ทำซ้ำได้<br><span class="text-sm text-slate-400">นี่คือ 8 แนวปฏิบัติร่วมของทีม Next Level Advisor</span></p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -223,7 +189,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">01</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Business With Profit</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">งานที่ดีต้องมีกำไร ไม่ใช่แค่ทำได้ แต่ต้องทำให้คุ้มค่า — สำหรับลูกค้าและสำหรับตัวเอง</p>
+              <p class="text-sm text-gray-600 leading-relaxed">ทำงานให้เกิดรายได้จริง ไม่ใช่แค่ activity เยอะ รักษามาตรฐาน ไม่แข่งด้วยการลดคุณค่าของตัวเอง</p>
             </div>
           </div>
 
@@ -231,7 +197,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">02</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Finish Right, No Hidden Problems</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ทำให้เสร็จสมบูรณ์ ไม่ทิ้งปัญหาซ่อนเร้น ทุกเคสต้องจบแบบที่ลูกค้ารู้สึกว่าได้รับการดูแลครบถ้วน</p>
+              <p class="text-sm text-gray-600 leading-relaxed">ทำงานให้ถูกตั้งแต่ต้น ไม่ปกปิดปัญหา ไม่ทิ้งระเบิดเวลาไว้ให้ลูกค้า ทีม หรืออนาคตของตัวเอง</p>
             </div>
           </div>
 
@@ -239,15 +205,15 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">03</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Solution-Focused Advisor</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">เราเป็นที่ปรึกษา ไม่ใช่แค่คนขาย ทุกการแนะนำต้องตอบโจทย์ปัญหาของลูกค้าได้จริง</p>
+              <p class="text-sm text-gray-600 leading-relaxed">ฟังโจทย์ลูกค้าก่อนเสนอทางเลือก ทำงานในฐานะ advisor ไม่ใช่แค่คนขายแบบประกัน</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">04</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Transparency & Support</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">โปร่งใสทุกขั้นตอน พร้อมให้ข้อมูลครบ สนับสนุนลูกค้าได้จริงทุกเวลา ไม่มีอะไรซ่อน</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Transparency & Support Each Other</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">พูดตรง ให้ feedback ตรง ด้วยความเคารพ แบ่งปันความรู้ เครื่องมือ และโอกาส เพื่อให้ทีมโตไปด้วยกัน</p>
             </div>
           </div>
 
@@ -255,7 +221,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">05</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Consistency Today Creates Freedom Tomorrow</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ความสม่ำเสมอวันนี้สร้างอิสรภาพในอนาคต ทำงานอย่างมีวินัยทุกวัน ผลลัพธ์จะตามมาเอง</p>
+              <p class="text-sm text-gray-600 leading-relaxed">อิสระไม่ได้มาจากโชค แต่มาจากความสม่ำเสมอ ระบบ และการทบทวนเป้าหมายอย่างต่อเนื่อง</p>
             </div>
           </div>
 
@@ -263,7 +229,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">06</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Continuous Learning</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ตลาดเปลี่ยน กฎหมายภาษีเปลี่ยน ที่ปรึกษาที่ดีต้องอัพเดทตัวเองตลอดเวลา ไม่หยุดเรียนรู้</p>
+              <p class="text-sm text-gray-600 leading-relaxed">อัปเดตความรู้เรื่องประกัน การเงิน ดิจิทัล และพฤติกรรมลูกค้าอยู่เสมอ เรียนรู้แล้วนำไปใช้จริง และส่งต่อให้ทีม</p>
             </div>
           </div>
 
@@ -271,7 +237,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">07</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Digitally Integrated & Work Anywhere</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ใช้เทคโนโลยีเต็มที่ ทำงานได้จากทุกที่ ไม่ยึดติดกับสถานที่ — ลูกค้าเข้าถึงเราได้เสมอ</p>
+              <p class="text-sm text-gray-600 leading-relaxed">ใช้ digital tools ให้เป็นส่วนหนึ่งของการทำงาน ทำงานได้จากหลายที่ แต่ทุกอย่างต้อง track ได้และมีระบบรองรับ</p>
             </div>
           </div>
 
@@ -279,7 +245,7 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">08</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Smart Time Culture</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">บริหารเวลาอย่างชาญฉลาด โฟกัสกับงานที่สร้าง value จริงๆ ทำน้อยแต่ได้มาก — คุณภาพเหนือปริมาณ</p>
+              <p class="text-sm text-gray-600 leading-relaxed">ไม่สร้างงานหรือประชุมเกินจำเป็น ให้ความสำคัญกับเวลา ชีวิตส่วนตัว และผลลัพธ์ที่มีคุณค่าจริง</p>
             </div>
           </div>
 
