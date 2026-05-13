@@ -42,6 +42,14 @@
     /* Nav dropdown */
     .join-dropdown { display: none; }
     .join-trigger:hover .join-dropdown { display: block; }
+    .team-card-new{border-radius:1rem;overflow:hidden;background:#fff;border:1.5px solid #e2e8f0;transition:box-shadow .25s;cursor:pointer}
+    .team-card-new:hover{box-shadow:0 10px 32px rgba(27,54,93,.15);border-color:#CBD5E1}
+    .team-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden}
+    .team-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease,filter .3s ease}
+    .team-card-new:hover .team-photo{transform:scale(1.05);filter:brightness(.55)}
+    .team-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;background:rgba(13,26,45,.12)}
+    .team-card-new:hover .team-overlay{opacity:1}
+    .team-bg-label{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#fff;text-align:center;letter-spacing:.04em;text-shadow:0 2px 12px rgba(0,0,0,.4);padding:0 .5rem}
   </style>
 </head>
 <body class="text-gray-800">
@@ -152,131 +160,35 @@
           <p class="text-gray-600 max-w-2xl mx-auto">แต่ละคนมาจากสายงานที่แตกต่าง แต่ทุกคนมีเส้นทางที่ชัดเจนในการดูแลลูกค้าของตัวเอง</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          <!-- Card 1: CFO Background -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/cfo.jpg" alt="ที่ปรึกษาสายการเงิน CFO Background"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=CFO'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Corporate Finance</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">ประสบการณ์ CFO</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"เข้าใจ P&L และ cash flow ช่วยให้วางแผนให้ผู้บริหารได้ลึกกว่าคนอื่น"</p>
-            </div>
-          </article>
-
-          <!-- Card 2: Doctor 1 -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/doctor-1.jpg" alt="ที่ปรึกษาสายแพทย์"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Doctor'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายการแพทย์</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">แพทย์ผู้เชี่ยวชาญ</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"ดูแลสุขภาพการเงินของเพื่อนแพทย์ด้วยกัน เข้าใจบริบทชีวิตได้เลย"</p>
-            </div>
-          </article>
-
-          <!-- Card 3: Doctor 2 -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/doctor-2.jpg" alt="ที่ปรึกษาสายบุคลากรการแพทย์"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Medical'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายบุคลากรการแพทย์</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">บุคลากรทางการแพทย์</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"ใช้ความเข้าใจด้านสุขภาพอธิบายความเสี่ยงให้ลูกค้าเข้าใจได้จริง"</p>
-            </div>
-          </article>
-
-          <!-- Card 4: Engineer -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/engineer.jpg" alt="ที่ปรึกษาสายวิศวกร"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Engineer'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สายวิศวกร</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">วิศวกรมืออาชีพ</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"คิดเป็นระบบ วางแผนเป็นขั้นตอน ช่วยลูกค้าวิศวกรและเทคได้ตรงจุด"</p>
-            </div>
-          </article>
-
-          <!-- Card 5: HR Advisor -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/hr-advisor.jpg" alt="ที่ปรึกษาสาย HR"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=HR'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย HR / People</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">อดีต HR Head</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"ดูแลคนมา 15 ปี รู้ว่าสวัสดิการและแผนการเงินสำคัญกับชีวิตคนทำงานแค่ไหน"</p>
-            </div>
-          </article>
-
-          <!-- Card 6: Project Manager -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/project-manager.jpg" alt="ที่ปรึกษาสาย Project Manager"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=PM'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Project Management</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">Project Manager</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"บริหารโปรเจกต์มาตลอด เอาทักษะมาวางแผนการเงินให้ลูกค้าอย่างมีขั้นตอน"</p>
-            </div>
-          </article>
-
-          <!-- Card 7: Freelancer -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/freelancer.jpg" alt="ที่ปรึกษาสาย Freelancer"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Freelancer'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Freelance / Creative</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">อดีต Freelancer</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"รู้ดีว่ารายได้ไม่แน่นอนเป็นยังไง ช่วยให้ลูกค้า freelance วางแผนได้จริง"</p>
-            </div>
-          </article>
-
-          <!-- Card 8: Hospitality -->
-          <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group">
-            <div class="aspect-square overflow-hidden">
-              <img src="/images/team/hospitality.jpg" alt="ที่ปรึกษาสาย Hospitality"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/400x400/1B365D/white?text=Hospitality'"/>
-            </div>
-            <div class="p-5">
-              <div class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full mb-2">สาย Hospitality</div>
-              <h3 class="font-pridi font-bold text-navy text-lg mb-1">สาย Hospitality</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">"ทักษะ service และ empathy ทำให้ลูกค้าไว้ใจและเปิดใจคุยเรื่องแผนชีวิต"</p>
-            </div>
-          </article>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+          <div class="team-card-new"><div class="team-photo-wrap">
+            <img src="/images/team/doctor-1.jpg" alt="Medical Specialist" class="team-photo" loading="lazy"/>
+            <div class="team-overlay"><span class="team-bg-label">หมอ</span></div>
+          </div></div>
+          <div class="team-card-new"><div class="team-photo-wrap">
+            <img src="/images/team/engineer.jpg" alt="Infrastructure Strategist" class="team-photo" loading="lazy"/>
+            <div class="team-overlay"><span class="team-bg-label">วิศวะ</span></div>
+          </div></div>
+          <div class="team-card-new"><div class="team-photo-wrap">
+            <img src="/images/team/hr-advisor.jpg" alt="Human Capital Advisor" class="team-photo" loading="lazy"/>
+            <div class="team-overlay"><span class="team-bg-label">สายข้ามชาติ</span></div>
+          </div></div>
+          <div class="team-card-new"><div class="team-photo-wrap">
+            <img src="/images/team/cfo.jpg" alt="Financial Innovation Lead" class="team-photo" loading="lazy"/>
+            <div class="team-overlay"><span class="team-bg-label">การเงิน</span></div>
+          </div></div>
 
         </div>
       </div>
     </section>
 
-    <!-- MOMENTUM PLAYBOOK -->
+        <!-- MOMENTUM PLAYBOOK -->
     <section class="py-16 px-4 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <p class="eyebrow mb-2">Team Culture</p>
-          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">Momentum Playbook</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">หลักการที่ทีม Next Level Advisor ยึดถือในการทำงานและดูแลลูกค้า</p>
+          <h2 class="font-pridi text-3xl md:text-4xl font-bold text-navy mb-4">The Momentum Playbook</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">8 หลักการที่ทีม Next Level ยึดถือในการทำงาน — สำหรับที่ปรึกษาที่อยากเติบโตอย่างมีระบบ</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -284,40 +196,40 @@
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">01</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Educate First</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ให้ความรู้ก่อนเสนอสินค้า ลูกค้าที่เข้าใจจะตัดสินใจได้ดีกว่า และอยู่กับเราได้นานกว่า</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Business With Profit</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ทำงานให้เกิดรายได้จริง ไม่ใช่แค่ activity เยอะ</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">02</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Data Over Gut</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ใช้ตัวเลข เหตุผล และข้อมูลจริงในการวางแผน ไม่ใช่แค่ความรู้สึกหรือประสบการณ์เดิม</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Finish Right, No Hidden Problems</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ทำงานให้ถูกตั้งแต่ต้น ไม่ปกปิดปัญหา</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">03</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Long-term Trust</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">สร้างความสัมพันธ์ที่ลูกค้าไว้ใจได้จริงในระยะยาว ไม่ใช่แค่ปิดการขายแล้วหายไป</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Solution-Focused Advisor</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ฟังโจทย์ลูกค้าก่อนเสนอทางเลือก</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">04</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Grow Together</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ทีมแชร์ความรู้และช่วยกันเติบโต ไม่แข่งกันเอง แต่แข่งกับมาตรฐานของตัวเอง</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Transparency & Support Each Other</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">พูดตรง ให้ feedback ตรง ด้วยความเคารพ</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">05</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Bias for Action</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ลงมือทำก่อน เรียนรู้จากการทำจริง แล้วปรับปรุงต่อเนื่อง ดีกว่ารอจนพร้อม 100%</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Consistency Today Creates Freedom Tomorrow</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">อิสระไม่ได้มาจากโชค</p>
             </div>
           </div>
 
@@ -325,23 +237,23 @@
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">06</div>
             <div>
               <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Continuous Learning</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">ตลาดเปลี่ยน กฎหมายภาษีเปลี่ยน ที่ปรึกษาที่ดีต้องอัพเดทตัวเองตลอดเวลา</p>
+              <p class="text-sm text-gray-600 leading-relaxed">อัปเดตความรู้เรื่องประกัน การเงิน ดิจิทัล</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">07</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Ethics First</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">แนะนำสิ่งที่ดีที่สุดสำหรับลูกค้า ไม่ใช่สิ่งที่ค่าคอมสูงที่สุด นี่คือความแตกต่างของ advisor จริงๆ</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Digitally Integrated & Work Anywhere</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ใช้ digital tools ให้เป็นส่วนหนึ่งของการทำงาน</p>
             </div>
           </div>
 
           <div class="flex gap-4 p-5 rounded-xl bg-gray-50 hover:bg-teal/5 transition-colors border border-gray-100 hover:border-teal/20">
             <div class="flex-shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center text-white font-bold font-poppins text-sm">08</div>
             <div>
-              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Personal Brand</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">แต่ละคนสร้าง brand ของตัวเองบน expertise ที่มี เพราะลูกค้าซื้อ "คน" ไม่ใช่แค่สินค้า</p>
+              <h3 class="font-pridi font-semibold text-navy text-lg mb-1">Smart Time Culture</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">ไม่สร้างงานหรือประชุมเกินจำเป็น</p>
             </div>
           </div>
 
