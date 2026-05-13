@@ -142,8 +142,15 @@
   <!-- NAV -->
   <nav class="bg-deep text-white sticky top-0 z-50 shadow-lg">
     <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="font-pridi text-xl font-bold text-white hover:text-teal transition-colors">Next Level Advisor</a>
+      <a href="/" class="flex items-center gap-2.5">
+        <img src="/nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
+        <div class="hidden sm:block leading-tight">
+          <div class="font-poppins font-bold text-sm"><span class="text-teal">Next Level</span> <span class="text-white">Advisor</span></div>
+          <div class="font-noto text-xs text-gray-400" style="letter-spacing:.01em">วางแผนการเงิน · ประกันชีวิต · เกษียณ</div>
+        </div>
+      </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="text-gray-300 hover:text-white transition-colors">หน้าแรก</a>
         <a href="/solutions" class="text-gray-300 hover:text-white transition-colors">วางแผนการเงิน</a>
         <a href="/articles" class="text-gray-300 hover:text-white transition-colors">บทความ</a>
         <div class="relative join-trigger">
@@ -169,6 +176,7 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-deep border-t border-gray-700 px-4 pb-4">
       <div class="flex flex-col gap-1 pt-3 text-sm">
+        <a href="/" class="text-gray-300 hover:text-white py-2">หน้าแรก</a>
         <a href="/solutions" class="text-gray-300 hover:text-white py-2">วางแผนการเงิน</a>
         <a href="/articles" class="text-gray-300 hover:text-white py-2">บทความ</a>
         <a href="/join" class="text-gray-300 hover:text-white py-2">ร่วมทีม</a>
@@ -194,28 +202,8 @@
         <p class="text-gray-200 text-lg leading-relaxed mb-6 max-w-lg">
           มีแบบประกันในใจแล้ว หรือถือกรมธรรม์เมืองไทยอยู่เดิม เราช่วยดูเงื่อนไข ความเหมาะสม สิทธิ์ภาษี และบทบาทของแผนนี้ในชีวิตคุณ ก่อนตัดสินใจเดินหน้าต่อ
         </p>
-        <!-- Trust badges -->
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-medium px-3 py-1.5 rounded-full">OIC License</span>
-          <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-medium px-3 py-1.5 rounded-full">SEC License</span>
-          <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-medium px-3 py-1.5 rounded-full font-poppins">MDRT 2026</span>
-          <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-medium px-3 py-1.5 rounded-full font-poppins">FChFP · AFPT™</span>
-        </div>
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center gap-2 bg-teal text-white px-6 py-4 rounded-xl font-semibold hover:bg-cyan-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-             onclick="gtag('event','calendly_click',{page:'muangthai-life-agent',location:'hero'})">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            นัดเช็กแผน 15 นาที
-          </a>
-          <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur border border-white/30 text-white px-6 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all"
-             onclick="gtag('event','line_click',{page:'muangthai-life-agent',location:'hero'})">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            ส่งแบบประกันให้ช่วยดู
-          </a>
-        </div>
+
+
       </div>
 
       <!-- Hero Image -->
@@ -239,7 +227,6 @@
     <section class="py-14 px-4 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
-          <p class="eyebrow mb-2">คุณมาถูกที่แล้ว</p>
           <h2 class="font-pridi text-2xl md:text-3xl font-bold text-navy">คุณกำลังอยู่ในสถานการณ์ไหน</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -379,126 +366,11 @@
             </a>
           </div>
 
-          <!-- Stats/icons side -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100">
-              <div class="text-3xl font-bold font-pridi text-navy mb-1">OIC</div>
-              <div class="text-xs text-gray-500">ใบอนุญาตตัวแทน<br/>ประกันชีวิต</div>
-            </div>
-            <div class="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100">
-              <div class="text-3xl font-bold font-pridi text-navy mb-1">SEC</div>
-              <div class="text-xs text-gray-500">ใบอนุญาต<br/>ผู้แนะนำการลงทุน</div>
-            </div>
-            <div class="bg-teal/5 rounded-2xl p-5 text-center border border-teal/20">
-              <div class="text-2xl font-bold font-poppins text-navy mb-1">MDRT</div>
-              <div class="text-xs text-gray-500">Million Dollar<br/>Round Table 2026</div>
-            </div>
-            <div class="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100">
-              <div class="text-xl font-bold font-poppins text-navy mb-1">FChFP</div>
-              <div class="text-xs text-gray-500">Fellow Chartered<br/>Financial Practitioner</div>
-            </div>
-          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SECTION 5: SOLUTION GATEWAY                 -->
-    <!-- ═══════════════════════════════════════════ -->
-    <section class="py-14 px-4 bg-gray-50">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-10">
-          <p class="eyebrow mb-2">เลือกตามเป้าหมาย</p>
-          <h2 class="font-pridi text-2xl md:text-3xl font-bold text-navy">เลือกดูตามเป้าหมายของคุณ</h2>
-          <p class="text-gray-500 mt-2 max-w-xl mx-auto text-sm">แต่ละหน้าอธิบายแนวทาง เครื่องมือ และวิธีที่แบบประกันเมืองไทยเข้ามาช่วยได้อย่างชัดเจน</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-          <!-- Card 1: Health -->
-          <a href="/solutions/health-planning"
-             class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal/40 hover:shadow-lg transition-all flex flex-col">
-            <div class="w-10 h-10 bg-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">ประกันสุขภาพเหมาจ่าย</h3>
-            <p class="text-sm text-gray-600 leading-relaxed flex-1">D Health · Elite Health แผนสุขภาพที่เหมาะกับงบและโรงพยาบาลที่คุณใช้จริง</p>
-            <div class="mt-4 flex items-center gap-1 text-teal text-sm font-medium">
-              ดูรายละเอียด
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Card 2: Retirement -->
-          <a href="/solutions/retirement-tax"
-             class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal/40 hover:shadow-lg transition-all flex flex-col">
-            <div class="w-10 h-10 bg-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">วางแผนเกษียณและประกันบำนาญ</h3>
-            <p class="text-sm text-gray-600 leading-relaxed flex-1">สร้างกระแสเงินสดหลังเกษียณ และใช้สิทธิ์ลดหย่อนภาษีอย่างเป็นระบบ</p>
-            <div class="mt-4 flex items-center gap-1 text-teal text-sm font-medium">
-              ดูรายละเอียด
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Card 3: Tax -->
-          <a href="/solutions/tax-optimization"
-             class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal/40 hover:shadow-lg transition-all flex flex-col">
-            <div class="w-10 h-10 bg-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">วางแผนภาษีและออมทรัพย์</h3>
-            <p class="text-sm text-gray-600 leading-relaxed flex-1">เปลี่ยนภาษีบางส่วนให้กลับมาเป็นสินทรัพย์ส่วนตัว ด้วยเครื่องมือที่ถูกต้อง</p>
-            <div class="mt-4 flex items-center gap-1 text-teal text-sm font-medium">
-              ดูรายละเอียด
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Card 4: Legacy -->
-          <a href="/solutions/legacy-planning"
-             class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal/40 hover:shadow-lg transition-all flex flex-col">
-            <div class="w-10 h-10 bg-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-              </svg>
-            </div>
-            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">วางแผนมรดกและประกันตลอดชีพ</h3>
-            <p class="text-sm text-gray-600 leading-relaxed flex-1">เตรียมเงินสดให้ครอบครัวในวันที่ต้องส่งต่อทรัพย์สิน อย่างเป็นระบบและมีประสิทธิภาพ</p>
-            <div class="mt-4 flex items-center gap-1 text-teal text-sm font-medium">
-              ดูรายละเอียด
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Card 5: Wealth Growth -->
-          <a href="/solutions/wealth-growth"
-             class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal/40 hover:shadow-lg transition-all flex flex-col sm:col-span-2 lg:col-span-1">
-            <div class="w-10 h-10 bg-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
-            </div>
-            <h3 class="font-pridi font-semibold text-navy text-lg mb-2">Wealth Growth / Unit-Linked</h3>
-            <p class="text-sm text-gray-600 leading-relaxed flex-1">สำหรับคนที่ต้องการความคุ้มครองควบคู่กับโอกาสเติบโตของเงิน UL / UL Plus</p>
-            <div class="mt-4 flex items-center gap-1 text-teal text-sm font-medium">
-              ดูรายละเอียด
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
 
     <!-- ═══════════════════════════════════════════ -->
     <!-- SECTION 6: TRUST SIGNALS                    -->
