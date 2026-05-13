@@ -16,13 +16,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PHYNQSRYV"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-1PHYNQSRYV");</script>
   <style>
-    :root{--navy:#1B365D;--teal:#0891B2;--deep:#0D1F3C;--bg:#F8FAFC;--gold:#D97706;}
+    :root{--navy:#1B365D;--teal:#0891B2;--deep:#0D1F3C;--bg:#F8FAFC;}
     body{font-family:"Noto Sans Thai",sans-serif;color:#1e293b;background:var(--bg);}
     .font-pridi{font-family:"Pridi",serif;}.font-poppins{font-family:"Poppins",sans-serif;}.font-noto{font-family:"Noto Sans Thai",sans-serif;}
     .text-navy{color:var(--navy);}.text-teal{color:var(--teal);}
     .bg-navy{background-color:var(--navy);}.bg-teal{background-color:var(--teal);}.bg-deep{background-color:var(--deep);}
     .btn-teal{background:var(--teal);color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}.btn-teal:hover{background:#0e7490;}
-    .btn-gold{background:#D97706;color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}.btn-gold:hover{background:#b45309;}
     .btn-outline{border:2px solid white;color:white;border-radius:.5rem;font-weight:600;transition:all .2s;}.btn-outline:hover{background:rgba(255,255,255,.15);}
     .join-dropdown{display:none;position:absolute;top:100%;left:0;min-width:200px;padding-top:8px;z-index:200;}
     .join-trigger:hover .join-dropdown{display:block;}
@@ -107,94 +106,87 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-grad text-white py-20 px-4 relative overflow-hidden">
+<section class="hero-grad text-white py-16 px-4 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10 pointer-events-none">
-    <div class="absolute top-0 right-0 w-96 h-96 rounded-full" style="background:#D97706;transform:translate(40%,-40%)"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full" style="background:#0891B2;transform:translate(40%,-40%)"></div>
     <div class="absolute bottom-0 left-0 w-72 h-72 bg-teal rounded-full" style="transform:translate(-40%,40%)"></div>
   </div>
-  <div class="max-w-3xl mx-auto relative z-10 text-center">
-    <div>
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-noto mb-6 border" style="background:rgba(217,119,6,.15);border-color:rgba(217,119,6,.4);color:#FCD34D">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-        MTL Super Agent Program 2026
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-noto mb-6 border" style="background:rgba(8,145,178,.15);border-color:rgba(8,145,178,.4);color:#7DD3FC">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          MTL Super Agent Program 2026
+        </div>
+        <h1 class="font-pridi text-4xl md:text-5xl font-bold leading-tight mb-5">
+          5 ปี<br><span style="color:#7DD3FC">5 ล้าน</span>
+        </h1>
+        <p class="font-noto text-lg text-slate-300 mb-4 leading-relaxed">Roadmap ที่ชัดเจนสู่ ที่ปรึกษาการเงินมืออาชีพ — สำหรับคนที่จริงจังและพร้อมลงทุนกับตัวเอง</p>
+        <p class="font-noto text-sm text-slate-400 mb-8 leading-relaxed">โปรแกรมสำหรับคนที่ต้องการพัฒนาตัวเองแบบมีเป้าหมาย มีระบบ training และมี roadmap ระยะยาว ภายใต้เงื่อนไขโครงการ MTL Super Agent</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#apply-5yr" onclick="gtag('event','join_5yr_cta',{'event_category':'conversion','event_label':'hero'})" class="btn-teal px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            สมัครคัดกรองโครงการ
+          </a>
+          <a href="#roadmap" class="btn-outline px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">ดูรายละเอียด Roadmap</a>
+        </div>
       </div>
-      <h1 class="font-pridi text-4xl md:text-5xl font-bold leading-tight mb-5">
-        5 ปี<br><span style="color:#FCD34D">5 ล้าน</span>
-      </h1>
-      <p class="font-noto text-lg text-slate-300 mb-4 leading-relaxed">Roadmap ที่ชัดเจนสู่ ที่ปรึกษาการเงินมืออาชีพ — สำหรับคนที่จริงจังและพร้อมลงทุนกับตัวเอง</p>
-      <p class="font-noto text-sm text-slate-400 mb-8 leading-relaxed">โปรแกรมสำหรับคนที่ต้องการพัฒนาตัวเองแบบมีเป้าหมาย มีระบบ training และมี roadmap ระยะยาว ภายใต้เงื่อนไขโครงการปี 2026</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="#apply-5yr" onclick="gtag('event','join_5yr_cta',{'event_category':'conversion','event_label':'hero'})" class="btn-gold px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-          สมัครคัดกรองโครงการ
-        </a>
-        <a href="#roadmap" class="btn-outline px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">ดูรายละเอียด Roadmap</a>
+      <div class="hidden md:block">
+        <figure class="rounded-2xl overflow-hidden shadow-2xl" style="min-height:380px;background:rgba(8,145,178,.08);border:2px dashed rgba(8,145,178,.35);display:flex;align-items:center;justify-content:center">
+          <div class="text-center px-8 py-12">
+            <svg class="w-16 h-16 mx-auto mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <p class="font-noto text-slate-400 text-sm">Hero Image</p>
+            <p class="font-noto text-slate-500 text-xs mt-1">อัปโหลดรูปภาพสำหรับส่วน Hero</p>
+          </div>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT IS IT -->
+<!-- PROGRAM DETAILS -->
 <section class="py-16 px-4 bg-white">
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
-      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">โปรแกรมนี้คืออะไร</p>
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-4">MTL Super Agent คัดคนที่จริง<br>ไม่ใช่แค่คนที่อยากลอง</h2>
-      <p class="font-noto text-slate-600 max-w-2xl mx-auto leading-relaxed">เมืองไทยประกันชีวิตเปิดโปรแกรม Fast-Track สำหรับตัวแทนที่มีเป้าหมายชัดเจน ทีม Next Level Advisor เป็น Partner ที่คัดสรรคนเข้าโปรแกรมและให้ Mentorship ตลอดเส้นทาง</p>
+      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">รายละเอียดโปรแกรม</p>
+      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">ได้รับอะไรบ้าง</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-8 items-center">
-      <figure class="rounded-2xl overflow-hidden shadow-md">
-        <img src="/images/join/five-year-challenge/2026-super-agent-benefits-overview.jpg"
-             alt="MTL Super Agent 2026 สิทธิประโยชน์โปรแกรม"
-             loading="lazy" class="w-full object-cover" style="height:320px">
-      </figure>
       <div class="flex flex-col gap-4">
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:#D97706">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-          </div>
+        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
+          <div class="text-2xl shrink-0">🏆</div>
           <div>
-            <div class="font-pridi font-semibold text-navy mb-0.5">Roadmap รายปี 5 ขั้น</div>
-            <div class="font-noto text-sm text-slate-600">เป้าหมายชัดเจนทุกปี ตั้งแต่ Foundation จนถึง MDRT Top</div>
+            <h3 class="font-pridi font-semibold text-navy mb-1">5M Big Bonus</h3>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">รางวัลพิเศษสูงสุด 5,000,000 บาท สำหรับที่ปรึกษาที่พิชิตเป้าหมายต่อเนื่องตามเงื่อนไขโครงการ</p>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:#D97706">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-          </div>
+        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
+          <div class="text-2xl shrink-0">📈</div>
           <div>
-            <div class="font-pridi font-semibold text-navy mb-0.5">Mentorship 1:1 กับ MDRT</div>
-            <div class="font-noto text-sm text-slate-600">โค้ชโดยตรงจากผู้นำทีมที่มีประสบการณ์ MDRT จริง</div>
+            <h3 class="font-pridi font-semibold text-navy mb-1">Monthly On-top</h3>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">เงินส่งเสริมรายเดือนสูงสุด 120,000 บาท (ในปีแรก) จ่าย On-top เพิ่มจากคอมมิชชันปกติ</p>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:#D97706">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-          </div>
+        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
+          <div class="text-2xl shrink-0">🎓</div>
           <div>
-            <div class="font-pridi font-semibold text-navy mb-0.5">Incentive พิเศษจาก MTL</div>
-            <div class="font-noto text-sm text-slate-600">โบนัส รางวัลทริป และสิทธิพิเศษสำหรับ Super Agent</div>
+            <h3 class="font-pridi font-semibold text-navy mb-1">Professional Academy</h3>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">เรียนรู้หลักสูตรวางแผนการเงิน ภาษี และมรดก พร้อม Roadmap ชัดเจนผ่านระบบ LearnRu</p>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:#D97706">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-          </div>
+        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
+          <div class="text-2xl shrink-0">🚀</div>
           <div>
-            <div class="font-pridi font-semibold text-navy mb-0.5">Digital Tool & Content Support</div>
-            <div class="font-noto text-sm text-slate-600">เครื่องมือ Content Marketing และระบบ CRM สนับสนุนจากทีม</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:#D97706">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <div>
-            <div class="font-pridi font-semibold text-navy mb-0.5">Community ของคนจริงจัง</div>
-            <div class="font-noto text-sm text-slate-600">เครือข่ายที่สนับสนุนกัน แชร์ Case และเรียนรู้ร่วมกัน</div>
+            <h3 class="font-pridi font-semibold text-navy mb-1">Fast Track Success</h3>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">เส้นทางเติบโตสู่ตำแหน่งผู้บริหารทีม (PM → SM → MOM → AVP) ภายใน 12 เดือน</p>
           </div>
         </div>
       </div>
+      <figure class="rounded-2xl overflow-hidden shadow-md">
+        <img src="/images/join/five-year-challenge/2026-super-agent-brochure-long.jpg"
+             alt="MTL Super Agent 2026 รายละเอียดโปรแกรม"
+             loading="lazy" class="w-full object-cover" style="height:420px;object-position:center top">
+      </figure>
     </div>
   </div>
 </section>
@@ -252,66 +244,19 @@
           <div class="inline-flex items-center gap-1.5 bg-navy/10 text-navy px-3 py-1 rounded-full text-xs font-noto font-semibold">เป้าหมาย: MDRT ปี 3 + รายได้ต่อเนื่อง >465,000 บาท/ปี</div>
         </div>
       </div>
-      <div class="p-6 flex gap-5 items-start rounded-2xl" style="background:linear-gradient(135deg,#0D1F3C,#1B365D);border:2px solid rgba(217,119,6,.4)">
-        <div class="w-14 h-14 rounded-2xl flex flex-col items-center justify-center shrink-0 text-white font-bold" style="background:linear-gradient(135deg,#D97706,#f59e0b)">
+      <div class="p-6 flex gap-5 items-start rounded-2xl" style="background:linear-gradient(135deg,#0D1F3C,#1B365D);border:2px solid rgba(8,145,178,.4)">
+        <div class="w-14 h-14 rounded-2xl flex flex-col items-center justify-center shrink-0 text-white font-bold" style="background:linear-gradient(135deg,#0891B2,#0c5a70)">
           <div class="font-poppins text-xs opacity-80">ปีที่</div>
           <div class="font-poppins text-lg leading-none">4-5</div>
         </div>
         <div class="flex-1">
           <h3 class="font-pridi font-bold text-white text-lg mb-1">ปีที่ 4-5 — ดำรง MDRT 5 ปีต่อเนื่อง และพิชิต Big Bonus 5,000,000 บาท</h3>
           <p class="font-noto text-sm text-slate-300 leading-relaxed mb-2">ดำรง MDRT ต่อเนื่อง 5 ปีตามเงื่อนไขโครงการ · เส้นทาง career path สู่ RM → VP · คุณสมบัติรับ Big Bonus พิเศษจาก MTL สูงสุด 5,000,000 บาท สำหรับผู้ที่ผ่านเกณฑ์ FYC ≥500,000 บาทต่อเนื่อง</p>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-noto font-semibold" style="background:rgba(217,119,6,.25);color:#FCD34D">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-noto font-semibold" style="background:rgba(8,145,178,.2);color:#7DD3FC">
             🏆 เป้าหมายสูงสุด: MDRT 5 ปีต่อเนื่อง + Big Bonus 5,000,000 บาท
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAM DETAILS -->
-<section class="py-16 px-4 bg-white">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-10">
-      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">รายละเอียดโปรแกรม</p>
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">ได้รับอะไรบ้าง</h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="flex flex-col gap-4">
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
-          <div class="text-2xl shrink-0">🏆</div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">5M Big Bonus</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">รางวัลพิเศษสูงสุด 5,000,000 บาท สำหรับที่ปรึกษาที่พิชิตเป้าหมายต่อเนื่องตามเงื่อนไขโครงการ</p>
-          </div>
-        </div>
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
-          <div class="text-2xl shrink-0">📈</div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">Monthly On-top</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">เงินส่งเสริมรายเดือนสูงสุด 120,000 บาท (ในปีแรก) จ่าย On-top เพิ่มจากคอมมิชชันปกติ</p>
-          </div>
-        </div>
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
-          <div class="text-2xl shrink-0">🎓</div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">Professional Academy</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">เรียนรู้หลักสูตรวางแผนการเงิน ภาษี และมรดก พร้อม Roadmap ชัดเจนผ่านระบบ LearnRu</p>
-          </div>
-        </div>
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex gap-3">
-          <div class="text-2xl shrink-0">🚀</div>
-          <div>
-            <h3 class="font-pridi font-semibold text-navy mb-1">Fast Track Success</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">เส้นทางเติบโตสู่ตำแหน่งผู้บริหารทีม (PM → SM → MOM → AVP) ภายใน 12 เดือน</p>
-          </div>
-        </div>
-      </div>
-      <figure class="rounded-2xl overflow-hidden shadow-md">
-        <img src="/images/join/five-year-challenge/2026-super-agent-brochure-long.jpg"
-             alt="MTL Super Agent 2026 รายละเอียดโปรแกรม"
-             loading="lazy" class="w-full object-cover" style="height:420px;object-position:center top">
-      </figure>
     </div>
   </div>
 </section>
@@ -452,7 +397,7 @@
                     class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal resize-none"></textarea>
         </div>
         <button type="submit" onclick="gtag('event','form_submit',{'event_category':'conversion','event_label':'join-5-year-challenge'})"
-                class="btn-gold w-full py-3.5 font-noto text-base flex items-center justify-center gap-2">
+                class="btn-teal w-full py-3.5 font-noto text-base flex items-center justify-center gap-2">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           สมัคร Super Agent — ทีมจะติดต่อกลับภายใน 1 วัน
         </button>
