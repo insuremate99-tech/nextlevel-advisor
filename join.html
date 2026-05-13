@@ -28,6 +28,14 @@
     .join-trigger:hover .join-dropdown{display:block;}
     .faq-answer{display:none;}.faq-item.open .faq-answer{display:block;}.faq-item.open .faq-chevron{transform:rotate(180deg);}.faq-chevron{transition:transform .2s;}
     .step-line{position:absolute;left:19px;top:40px;bottom:0;width:2px;background:linear-gradient(to bottom,#0891B2,#e2e8f0);}
+    .lb-wrap{position:relative;cursor:zoom-in}
+    .lb-badge{position:absolute;bottom:10px;right:10px;background:rgba(13,31,60,.72);color:#fff;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.04em;padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:5px;pointer-events:none;backdrop-filter:blur(4px)}
+    #lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:16px}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 48px rgba(0,0,0,.6)}
+    #lb-close{position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .2s}
+    #lb-close:hover{background:rgba(255,255,255,.3)}
+    #lb-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:'Noto Sans Thai','Poppins',sans-serif;font-size:.78rem;background:rgba(0,0,0,.4);padding:4px 14px;border-radius:999px;white-space:nowrap}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -323,10 +331,11 @@
         </div>
       </div>
     </div>
-    <figure class="mt-8 rounded-2xl overflow-hidden shadow-md">
+    <figure class="mt-8 rounded-2xl overflow-hidden shadow-md lb-wrap" onclick="openLB(this)" data-lb-src="/images/join/pong-how-to-steps.jpg" data-lb-caption="ขั้นตอนการสมัคร 6 ขั้น + New Agent Journey">
       <img src="/images/join/pong-how-to-steps.jpg"
            alt="ขั้นตอนการสมัครเป็นตัวแทนประกันชีวิตเมืองไทย"
-           loading="lazy" class="w-full object-cover" style="height:320px;object-fit:cover;object-position:top center">
+           loading="lazy" class="w-full object-cover" style="height:300px;object-fit:cover;object-position:top center">
+      <div class="lb-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>ขยายดูรูปเต็ม</div>
     </figure>
   </div>
 </section>
@@ -357,10 +366,11 @@
         <p class="font-noto text-sm text-slate-500 leading-relaxed">Renewal + New Business รายได้ไม่ขึ้นกับชั่วโมงงานอีกต่อไป มีเวลาให้ลูกค้าคนละอย่างถ้วนหน้า</p>
       </div>
     </div>
-    <figure class="mb-7 rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+    <figure class="mb-7 rounded-2xl overflow-hidden shadow-sm border border-slate-100 lb-wrap" onclick="openLB(this)" data-lb-src="/images/join/pong-income-chart.jpg" data-lb-caption="Commission + Bonus โครงสร้างรายได้ 5 ปี">
       <img src="/images/join/pong-income-chart.jpg"
            alt="ตัวอย่างรายได้ที่ปรึกษาการเงิน Next Level Advisor"
-           loading="lazy" class="w-full object-cover" style="height:260px;object-fit:cover;object-position:center">
+           loading="lazy" class="w-full object-cover" style="height:240px;object-fit:cover;object-position:center top">
+      <div class="lb-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>ขยายดูตัวเลขเต็ม</div>
     </figure>
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-7">
       <p class="font-noto text-sm text-amber-700 leading-relaxed"><span class="font-semibold">หมายเหตุ:</span> ตัวเลขข้างต้นเป็นภาพกว้าง ไม่ใช่การรับประกันรายได้ ผลลัพธ์ขึ้นอยู่กับการลงมือทำและปัจจัยหลายอย่าง ทีมจะพูดตรงๆ เรื่องรายได้จริงเมื่อนัดคุย</p>
@@ -416,10 +426,11 @@
           </div>
         </div>
       </div>
-      <figure class="rounded-2xl overflow-hidden shadow-md">
+      <figure class="rounded-2xl overflow-hidden shadow-md lb-wrap" onclick="openLB(this)" data-lb-src="/images/join/pong-record-mtl.jpg" data-lb-caption="ความมั่นคง — Fitch A- / S&P BBB+ Stable Outlook">
         <img src="/images/join/pong-record-mtl.jpg"
-             alt="ผลงานตัวแทนเมืองไทยประกันชีวิต Next Level Advisor"
-             loading="lazy" class="w-full object-cover" style="height:360px;object-fit:cover;object-position:center top">
+             alt="ความมั่นคงเมืองไทยประกันชีวิต Fitch Ratings S&P"
+             loading="lazy" class="w-full object-cover" style="height:320px;object-fit:cover;object-position:center">
+        <div class="lb-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>ขยายดูรูปเต็ม</div>
       </figure>
     </div>
   </div>
@@ -609,6 +620,18 @@ faqs.forEach(f=>{
     gtag('event','form_submit',{event_category:'conversion',event_label:(e.target.id||pg),value:1});
   });
 })();
+</script>
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" role="dialog" aria-modal="true" onclick="closeLBOutside(event)">
+  <button id="lb-close" onclick="closeLB()" aria-label="ปิด">&#10005;</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-caption"></div>
+</div>
+<script>
+function openLB(el){var lb=document.getElementById('lightbox');document.getElementById('lb-img').src=el.dataset.lbSrc;document.getElementById('lb-caption').textContent=el.dataset.lbCaption||'';lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function closeLBOutside(e){if(e.target===document.getElementById('lightbox'))closeLB();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
 </script>
 </body>
 </html>
