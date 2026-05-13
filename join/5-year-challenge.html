@@ -28,6 +28,14 @@
     .year-card{border-radius:1rem;background:#fff;border:1.5px solid #e2e8f0;transition:all .25s;}
     .year-card:hover{box-shadow:0 8px 32px rgba(8,145,178,.12);border-color:#0891B2;transform:translateY(-2px);}
     .hero-grad{background:linear-gradient(135deg,#0D1F3C 0%,#1B365D 60%,#0c5a70 100%);}
+    .lb-wrap{position:relative;cursor:zoom-in}
+    .lb-badge{position:absolute;bottom:10px;right:10px;background:rgba(13,31,60,.72);color:#fff;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.04em;padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:5px;pointer-events:none;backdrop-filter:blur(4px)}
+    #lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:16px}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 48px rgba(0,0,0,.6)}
+    #lb-close{position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .2s}
+    #lb-close:hover{background:rgba(255,255,255,.3)}
+    #lb-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:'Noto Sans Thai','Poppins',sans-serif;font-size:.78rem;background:rgba(0,0,0,.4);padding:4px 14px;border-radius:999px;white-space:nowrap}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -182,10 +190,11 @@
           </div>
         </div>
       </div>
-      <figure class="rounded-2xl overflow-hidden shadow-md">
+      <figure class="rounded-2xl overflow-hidden shadow-md lb-wrap" onclick="openLB(this)" data-lb-src="/images/join/five-year-challenge/2026-super-agent-brochure-long.jpg" data-lb-caption="MTL Super Agent 2026 — รายละเอียดโปรแกรมเต็ม">
         <img src="/images/join/five-year-challenge/2026-super-agent-brochure-long.jpg"
              alt="MTL Super Agent 2026 รายละเอียดโปรแกรม"
-             loading="lazy" class="w-full object-cover" style="height:420px;object-position:center top">
+             loading="lazy" class="w-full object-cover" style="height:320px;object-fit:cover;object-position:top center">
+        <div class="lb-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>ขยายดูรูปเต็ม</div>
       </figure>
     </div>
   </div>
@@ -217,9 +226,9 @@
           <div class="font-poppins text-xl leading-none">1</div>
         </div>
         <div class="flex-1">
-          <h3 class="font-pridi font-bold text-navy text-lg mb-1">ปีที่ 1 — วางพื้นฐาน สร้าง Rhythm และเลื่อนขั้น PM</h3>
+          <h3 class="font-pridi font-bold text-navy text-lg mb-1">ปีที่ 1 — วางพื้นฐาน สร้าง Rhythm และเลื่อนขั้น PM (ผู้จัดการทดลองงาน)</h3>
           <p class="font-noto text-sm text-slate-600 leading-relaxed mb-2">รับเงินส่งเสริม 20,000 บาท/เดือน รวมสูงสุด 120,000 บาท ใน 12 เดือน · เรียนรู้ 7 ครั้ง/เดือน Online + Onsite ผ่านระบบ LearnRu · เป้าหมาย FYC 1,000,000 บาท ภายใน 12 เดือน · เลื่อนขั้นเป็น PM ภายใน 8 เดือน</p>
-          <div class="inline-flex items-center gap-1.5 bg-teal/10 text-teal px-3 py-1 rounded-full text-xs font-noto font-semibold">เป้าหมาย: FYC 1,000,000 บาท + เลื่อนขั้น PM ใน 8 เดือน</div>
+          <div class="inline-flex items-center gap-1.5 bg-teal/10 text-teal px-3 py-1 rounded-full text-xs font-noto font-semibold">เป้าหมาย: FYC 1,000,000 บาท + เลื่อนขั้น PM (ผู้จัดการทดลองงาน) ใน 8 เดือน</div>
         </div>
       </div>
       <div class="year-card p-6 flex gap-5 items-start">
@@ -241,7 +250,7 @@
         <div class="flex-1">
           <h3 class="font-pridi font-bold text-navy text-lg mb-1">ปีที่ 3 — สร้าง Leadership และขยายทีม</h3>
           <p class="font-noto text-sm text-slate-600 leading-relaxed mb-2">ดำรง MDRT ปีที่ 3 · พัฒนาบทบาทผู้นำ มุ่งสู่ตำแหน่ง MOM / AVP · สร้างรายได้ต่อเนื่อง (Renewal) และขยายฐาน refer จากลูกค้าเดิม · รายได้ต่อเนื่องเกิน 465,000 บาท/ปี</p>
-          <div class="inline-flex items-center gap-1.5 bg-navy/10 text-navy px-3 py-1 rounded-full text-xs font-noto font-semibold">เป้าหมาย: MDRT ปี 3 + รายได้ต่อเนื่อง >465,000 บาท/ปี</div>
+          <div class="inline-flex items-center gap-1.5 bg-navy/10 text-navy px-3 py-1 rounded-full text-xs font-noto font-semibold">เป้าหมาย: MDRT ปี 3 + รายได้ต่อเนื่อง</div>
         </div>
       </div>
       <div class="p-6 flex gap-5 items-start rounded-2xl" style="background:linear-gradient(135deg,#0D1F3C,#1B365D);border:2px solid rgba(8,145,178,.4)">
@@ -313,7 +322,7 @@
           <span class="px-2.5 py-1 rounded-full text-white" style="background:#0D1F3C">VP</span>
         </div>
         <ul class="flex flex-col gap-2 font-noto text-sm text-slate-300">
-          <li class="flex items-center gap-2"><span class="text-teal font-semibold">8 เดือน</span><span>→ เลื่อนขั้นเป็น PM</span></li>
+          <li class="flex items-center gap-2"><span class="text-teal font-semibold">8 เดือน</span><span>→ เลื่อนขั้นเป็น PM (ผู้จัดการทดลองงาน)</span></li>
           <li class="flex items-center gap-2"><span class="text-teal font-semibold">12 เดือน</span><span>→ เลื่อนขั้นเป็น SM</span></li>
           <li class="flex items-center gap-2"><span class="font-semibold text-white">ปี 3+</span><span>→ มุ่งสู่ MOM / AVP / VP</span></li>
         </ul>
@@ -462,6 +471,18 @@ btn.addEventListener("click",()=>{menu.classList.toggle("hidden");o.classList.to
     gtag('event','form_submit',{event_category:'conversion',event_label:(e.target.id||pg),value:1});
   });
 })();
+</script>
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" role="dialog" aria-modal="true" onclick="closeLBOutside(event)">
+  <button id="lb-close" onclick="closeLB()" aria-label="ปิด">&#10005;</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-caption"></div>
+</div>
+<script>
+function openLB(el){var lb=document.getElementById('lightbox');document.getElementById('lb-img').src=el.dataset.lbSrc;document.getElementById('lb-caption').textContent=el.dataset.lbCaption||'';lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function closeLBOutside(e){if(e.target===document.getElementById('lightbox'))closeLB();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
 </script>
 </body>
 </html>
