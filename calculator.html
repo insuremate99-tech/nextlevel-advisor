@@ -1132,29 +1132,6 @@ function calcRetire1(){
 }
 calcRetire1();
 
-// ─── TOOL 2: HLV ───
-function pv(rate,n,pmt){
-  // PV of annuity
-  return pmt*(1-Math.pow(1+rate,-n))/rate;
-}
-function calcHLV(){
-  const income=+document.getElementById('hlv-income').value;
-  const age=+document.getElementById('hlv-age').value;
-  const retire=+document.getElementById('hlv-retire').value;
-  const yearsLeft=Math.max(0,retire-age);
-  const totalIncome=income*yearsLeft;
-  const hlv=yearsLeft>0?Math.round(pv(0.04,yearsLeft,income)):0;
-  document.getElementById('hlv-result').textContent=fmtB(hlv);
-  document.getElementById('hlv-years').textContent=yearsLeft+' ปี';
-  document.getElementById('hlv-total').textContent=fmtB(totalIncome);
-  // Recommended sum assured: 60% of HLV for UL, 40% for UL Plus (conservative)
-  const ulTarget=Math.round(hlv*0.6/100000)*100000;
-  const ulPlusTarget=Math.round(hlv*0.4/100000)*100000;
-  document.getElementById('ul-target').textContent='เป้าทุนแนะนำ: '+fmtB(ulTarget);
-  document.getElementById('ul-plus-target').textContent='เป้าทุนแนะนำ: '+fmtB(ulPlusTarget);
-}
-calcHLV();
-
 // ─── TOOL 3: TAX ───
 function calcTaxOnIncome(taxable){
   const bands=[{limit:150000,rate:0},{limit:150000,rate:.05},{limit:200000,rate:.10},{limit:250000,rate:.15},{limit:250000,rate:.20},{limit:500000,rate:.25},{limit:750000,rate:.30},{limit:Infinity,rate:.35}];
@@ -1240,7 +1217,7 @@ function calcTax2(){
 calcTax2();
 
 // ─── TOOL 4: NEEDS-BASED ───
-let nbCoverYears=5;
+var nbCoverYears=5;
 function setCoverYears2(y){
   nbCoverYears=y;
   [5,10,15,20].forEach(v=>{
