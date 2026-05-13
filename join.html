@@ -58,77 +58,142 @@
 </head>
 <body class="antialiased">
 
-<!-- NAV -->
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-navy rounded-lg flex items-center justify-center"><span class="text-white font-poppins font-bold text-sm">NL</span></div>
-      <span class="font-poppins font-semibold text-navy text-sm hidden sm:block">Next Level Advisor</span>
+<nav id="nav" class="py-4">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <img src="/nav-icon.png" alt="Next Level Advisor" class="h-9 w-9 object-contain"/>
+      <div class="hidden sm:block leading-tight">
+        <div class="font-pop font-bold text-sm"><span style="color:#0891B2">Next Level</span> <span style="color:#1B365D">Advisor</span></div>
+        <div class="font-noto text-xs" style="color:#64748b;letter-spacing:.01em">วางแผนการเงิน · ประกันชีวิต · เกษียณ</div>
+      </div>
     </a>
-    <ul class="hidden lg:flex items-center gap-6 list-none">
-      <li><a href="/solutions/" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">วางแผนการเงิน</a></li>
-      <li><a href="/calculator" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
-      <li><a href="/articles/" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">Perspectives</a></li>
-      <li><a href="/faq" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">FAQ</a></li>
-      <li><a href="/behind-the-advisor" class="font-noto text-sm font-medium text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
-      <li class="relative join-trigger">
-        <a href="/join" class="font-noto text-sm font-medium text-teal font-semibold flex items-center gap-1">
-          ร่วมทีมกับเรา
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-        </a>
-        <div class="join-dropdown">
-          <div class="bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
-            <a href="/join" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
-              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              ร่วมงานกับเรา
-            </a>
-            <a href="/join/5-year-challenge" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
-              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-              5 ปี 5 ล้าน
-            </a>
-            <a href="/join/team" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors">
-              <svg class="w-4 h-4 shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              ทีมของเรา
-            </a>
+    <ul class="hidden md:flex items-center gap-8 font-noto text-sm font-medium">
+      <li class="relative group">
+          <a href="/solutions" class="text-navy hover:text-teal transition-colors flex items-center gap-1">โซลูชัน<svg class="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></a>
+          <div class="absolute top-full left-0 pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-[200]" style="min-width:248px">
+            <div class="bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+              <a href="/solutions" class="flex items-center gap-2.5 px-4 py-2 font-noto text-xs font-semibold text-teal hover:bg-slate-50 transition-colors">ดูภาพรวมโซลูชัน →</a>
+              <div class="my-1 border-t border-slate-100"></div>
+              <a href="/solutions/retirement-tax" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors"><svg class="w-4 h-4 flex-shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>วางแผนเกษียณอายุ</a>
+              <a href="/solutions/legacy-planning" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors"><svg class="w-4 h-4 flex-shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>วางแผนมรดก</a>
+              <a href="/solutions/tax-optimization" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors"><svg class="w-4 h-4 flex-shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>วางแผนภาษีและออมทรัพย์</a>
+              <a href="/solutions/health-planning" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors"><svg class="w-4 h-4 flex-shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>วางแผนประกันสุขภาพ</a>
+              <a href="/solutions/wealth-growth" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-slate-700 hover:text-teal hover:bg-slate-50 transition-colors"><svg class="w-4 h-4 flex-shrink-0 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>สร้างความมั่งคั่ง</a>
+            </div>
           </div>
+        </li>
+      <li><a href="/calculator" class="text-navy hover:text-teal transition-colors">เครื่องมือการเงิน</a></li>
+      <li><a href="/articles/" class="text-navy hover:text-teal transition-colors">Perspectives</a></li>
+      <li><a href="/behind-the-advisor" class="text-navy hover:text-teal transition-colors">Behind the Advisor</a></li>
+      <li><a href="/muangthai-life-agent" class="text-navy hover:text-teal transition-colors">ตัวแทนเมืองไทย</a></li>
+      <li class="relative group">
+      <a href="/join" class="text-navy hover:text-teal transition-colors flex items-center gap-1">ร่วมทีม<svg class="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-[200]" style="min-width:190px">
+        <div class="bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+          <a href="/join" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">🤝</span>ร่วมทีมกับเรา</a>
+          <a href="/join/5-year-challenge" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">🏆</span>5 ปี 5 ล้าน</a>
+          <a href="/join/team" class="flex items-center gap-2.5 px-4 py-2.5 font-noto text-sm text-navy hover:bg-slate-50 hover:text-teal transition-colors"><span class="text-base leading-none">👥</span>ทีมงานปัจจุบัน</a>
         </div>
-      </li>
+      </div>
+    </li>
     </ul>
-    <div class="flex items-center gap-2">
-      <a href="https://lin.ee/7YeXvFaG" target="_blank" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'nav'})" class="btn-teal px-4 py-2 text-sm font-noto hidden sm:inline-flex items-center gap-1.5">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.073 1.558 5.803 4 7.557V22l3.727-2.044A11.3 11.3 0 0012 20.243c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2z"/></svg>
-        ติดต่อ LINE
+    <div class="flex items-center gap-3">
+      <a href="https://lin.ee/7YeXvFaG" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'LINE contact'})" target="_blank"
+         class="btn btn-teal px-5 py-2.5 text-sm hidden sm:inline-flex gap-2 items-center"
+         title="LINE Official: @nextlevel-advisor">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        แอดไลน์
       </a>
-      <button id="hamburger-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100">
-        <svg id="ham-open" class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="ham-close" class="w-5 h-5 text-navy hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      <button onclick="openMobileSearch()" class="p-2 rounded-xl text-navy hover:text-teal transition-colors" aria-label="ค้นหา" title="ค้นหา">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
+      <button id="menuBtn" class="md:hidden p-2 rounded-xl text-navy">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-4">
-    <div class="flex flex-col pt-2">
-      <a href="/solutions/" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium">วางแผนการเงิน</a>
-      <a href="/calculator" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium">เครื่องมือการเงิน</a>
-      <a href="/articles/" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium">Perspectives</a>
-      <a href="/faq" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium">FAQ</a>
-      <a href="/behind-the-advisor" class="flex items-center gap-2.5 py-3 text-navy hover:text-teal border-b border-slate-100 font-noto text-sm font-medium">Behind the Advisor</a>
-      <div class="border-b border-slate-100">
-        <button onclick="document.getElementById('join-submenu').classList.toggle('hidden')" class="w-full flex items-center justify-between py-3 text-teal font-semibold font-noto text-sm">
-          ร่วมทีมกับเรา
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="join-submenu" class="hidden pb-2 pl-4 space-y-1">
-          <a href="/join" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">ร่วมงานกับเรา</a>
-          <a href="/join/5-year-challenge" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">5 ปี 5 ล้าน</a>
-          <a href="/join/team" class="block py-2 font-noto text-sm text-slate-600 hover:text-teal">ทีมของเรา</a>
+</nav>
+<div id="mobileMenu" class="hidden md:hidden" style="position:fixed;top:64px;left:0;right:0;z-index:9999;height:calc(100svh - 64px);overflow-y:auto;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(0,0,0,.12)">
+    <div class="px-5 py-4">
+      <div class="font-noto text-sm font-medium">
+        <a href="/" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
+          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          หน้าแรก
+        </a>
+        <!-- Solutions accordion -->
+        <div class="border-b border-slate-100">
+          <button onclick="toggleSolMenu()" class="w-full flex items-center justify-between py-3.5 text-navy hover:text-teal transition-colors">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              โซลูชัน
+            </span>
+            <svg id="solChevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="solSubmenu" class="hidden pb-3 space-y-1 ml-1">
+            <a href="/solutions/retirement-tax" class="flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-slate-600 hover:text-teal hover:bg-slate-50 transition-colors" style="border-left:3px solid #0891B2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              วางแผนเกษียณอายุ
+            </a>
+            <a href="/solutions/legacy-planning" class="flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-slate-600 hover:text-teal hover:bg-slate-50 transition-colors" style="border-left:3px solid #0891B2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              วางแผนมรดก
+            </a>
+            <a href="/solutions/tax-optimization" class="flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-slate-600 hover:text-teal hover:bg-slate-50 transition-colors" style="border-left:3px solid #0891B2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+              วางแผนภาษีและออมทรัพย์
+            </a>
+            <a href="/solutions/health-planning" class="flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-slate-600 hover:text-teal hover:bg-slate-50 transition-colors" style="border-left:3px solid #0891B2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              วางแผนสุขภาพ
+            </a>
+            <a href="/solutions/wealth-growth" class="flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-slate-600 hover:text-teal hover:bg-slate-50 transition-colors" style="border-left:3px solid #0891B2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0891B2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              สร้างความมั่งคั่ง
+            </a>
+          </div>
+        </div>
+        <a href="/calculator" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
+          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+          เครื่องมือการเงิน
+        </a>
+        <a href="/articles/" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
+          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          Perspectives
+        </a>
+        <a href="/behind-the-advisor" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
+          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Behind the Advisor
+        </a>
+        <a href="/muangthai-life-agent" class="flex items-center gap-2.5 py-3.5 text-navy hover:text-teal border-b border-slate-100 transition-colors">
+          <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          ตัวแทนเมืองไทย
+        </a>
+        <div class="border-b border-slate-100">
+          <button onclick="toggleJoinMenu()" class="w-full flex items-center justify-between py-3.5 text-navy hover:text-teal transition-colors">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              ร่วมทีม
+            </span>
+            <svg id="joinChevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="joinSubMenu" class="hidden pb-3 pl-7 space-y-1">
+            <a href="/join" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">🤝 ร่วมทีมกับเรา</a>
+            <a href="/join/5-year-challenge" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">🏆 5 ปี 5 ล้าน</a>
+            <a href="/join/team" class="flex items-center gap-2 py-2 font-noto text-sm text-slate-600 hover:text-teal transition-colors">👥 ทีมงานปัจจุบัน</a>
+          </div>
         </div>
       </div>
-      <div class="pt-3">
-        <a href="https://lin.ee/7YeXvFaG" target="_blank" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'mobile-nav'})" class="btn-teal w-full flex items-center justify-center gap-2 py-3 font-noto text-sm">ติดต่อ LINE</a>
+      <div class="mt-5 pt-4 border-t border-slate-100">
+        <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener"
+           onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'mobile menu LINE'})"
+           class="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-noto text-sm font-semibold text-white"
+           style="background:#06C755">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ทักไลน์ @nextlevel-advisor
+        </a>
       </div>
     </div>
   </div>
-</nav>
 
 <!-- ══════════ 1. HERO ══════════ -->
 <section class="bg-deep text-white py-20 px-4 relative overflow-hidden">
@@ -632,6 +697,59 @@ function openLB(el){var lb=document.getElementById('lightbox');document.getEleme
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 function closeLBOutside(e){if(e.target===document.getElementById('lightbox'))closeLB();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+</script>
+<script>
+window.toggleSolMenu=function(){
+  var sm=document.getElementById('solSubmenu');
+  var ch=document.getElementById('solChevron');
+  if(!sm)return;
+  sm.classList.toggle('hidden');
+  if(ch)ch.style.transform=sm.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
+};
+var _menuScrollY=0;
+window.toggleMobileMenu=function(){
+  var m=document.getElementById('mobileMenu');
+  if(!m)return;
+  var opening=m.classList.contains('hidden');
+  var nav=document.getElementById('mainNav')||document.getElementById('nav')||document.querySelector('nav[id]');
+  var navH=nav?nav.getBoundingClientRect().height||64:64;
+  // Explicit pixel sizing — bypasses ALL containing-block / backdrop-filter bugs
+  m.style.position='fixed';
+  m.style.top=navH+'px';
+  m.style.left='0';
+  m.style.width=window.innerWidth+'px';
+  m.style.height=(window.innerHeight-navH)+'px';
+  m.style.zIndex='9999';
+  if(opening){
+    _menuScrollY=window.scrollY||window.pageYOffset||0;
+    document.body.style.cssText='position:fixed;top:-'+_menuScrollY+'px;left:0;width:'+window.innerWidth+'px;overflow:hidden';
+    m.scrollTop=0;
+    m.classList.remove('hidden');
+  }else{
+    document.body.style.cssText='';
+    window.scrollTo(0,_menuScrollY);
+    m.classList.add('hidden');
+  }
+};
+window.addEventListener('resize',function(){
+  if(!document.getElementById('mobileMenu').classList.contains('hidden')){window.toggleMobileMenu();window.toggleMobileMenu();}
+});
+// Wire up menuBtn if not already wired
+document.addEventListener('DOMContentLoaded',function(){
+  var mb=document.getElementById('menuBtn');
+  if(mb&&!mb._wired){mb._wired=true;mb.addEventListener('click',window.toggleMobileMenu);}
+});
+</script>
+
+<script>
+window.toggleJoinMenu=function(){
+  var m=document.getElementById('joinSubMenu');
+  var c=document.getElementById('joinChevron');
+  if(!m)return;
+  m.classList.toggle('hidden');
+  if(c)c.style.transform=m.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
+};
+</script>
 </script>
 </body>
 </html>
