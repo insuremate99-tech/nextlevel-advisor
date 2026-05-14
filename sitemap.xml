@@ -206,6 +206,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nextlevel-advisor.com/join/team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nextlevel-advisor.com/join/5-year-challenge</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
