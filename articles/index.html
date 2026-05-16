@@ -309,8 +309,9 @@ function renderPage(){
   pageInfoText.textContent='หน้า '+currentPage+' จาก '+totalPages;
   grid.innerHTML=filtered.slice(start,end).map((a,i)=>{
     const grad=a.coverGradient||'linear-gradient(135deg,#1B365D,#0891B2)';
+    const isContain=a.imageFit==='contain';
     const top=a.coverImage
-      ?`<img src="${a.coverImage}" alt="${a.title}" style="width:100%;height:160px;object-fit:cover" loading="lazy"/>`
+      ?`<img src="${a.coverImage}" alt="${a.title}" style="width:100%;${isContain?'height:auto;max-height:240px;object-fit:contain;background:#F8FAFC;padding:0.5rem':'height:160px;object-fit:cover'}" loading="lazy"/>`
       :`<div style="height:160px;background:${grad};display:flex;flex-direction:column;justify-content:flex-end;padding:.9rem 1.1rem">
           <span class="tag" style="background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:.6rem;align-self:flex-start">${a.category}</span>
         </div>`;
