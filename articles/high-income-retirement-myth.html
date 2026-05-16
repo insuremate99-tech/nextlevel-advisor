@@ -117,6 +117,19 @@
     .stat-card .num{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:800;color:#38BDF8}
     .stat-card .label{font-size:.72rem;opacity:.8;margin-top:.2rem}
   </style>
+<!-- AEO: FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"รายได้สูงทำไมยังต้องวางแผนเกษียณ ไม่ใช่เก็บเองได้อยู่แล้ว?","acceptedAnswer":{"@type":"Answer","text":"รายได้สูงมักมาพร้อมรายจ่ายสูงและ lifestyle ที่ปรับลดยาก หลายคนรายได้ 200,000+ บาท/เดือน แต่ไม่มีเงินลงทุนเพราะค่าใช้จ่าย ค่าผ่อน และภาษีกินรายได้ไปหมด การวางแผนจัดสรรอย่างมีระบบสำคัญกว่ารายได้"}},
+    {"@type":"Question","name":"ผู้บริหารรายได้ดี ควรเน้น RMF SSF หรือประกันบำนาญ?","acceptedAnswer":{"@type":"Answer","text":"ควรทำทั้งสามอย่างตามลำดับ คือ 1) ประกันบำนาญก่อน (ลดหย่อนได้ 200,000 บาท) 2) RMF ต่อ (ลดหย่อนรวมกับประกันบำนาญได้ 500,000 บาท) 3) SSF เพิ่มเติม (อีก 200,000 บาท) รวมลดหย่อนได้สูงสุด 700,000 บาทต่อปีจากสามช่องทางนี้"}},
+    {"@type":"Question","name":"เงินเดือนสูงแต่ไม่มีสวัสดิการหลังเกษียณ จะรับมืออย่างไร?","acceptedAnswer":{"@type":"Answer","text":"ผู้บริหารและผู้ประกอบการที่ไม่มีกองทุนสำรองเลี้ยงชีพหรือบำเหน็จต้องพึ่งตัวเองทั้งหมด ควรลงทุนอย่างน้อย 20-30% ของรายได้ผ่านกองทุนรวม ประกันบำนาญ และอสังหาริมทรัพย์ให้เช่า เพื่อสร้าง passive income ทดแทนเงินเดือน"}},
+    {"@type":"Question","name":"ความเชื่อผิดๆ เรื่องเกษียณที่คนรายได้สูงมักเจอคืออะไร?","acceptedAnswer":{"@type":"Answer","text":"ความเชื่อผิดที่พบบ่อยคือ 'รายได้สูงแปลว่าปลอดภัยแล้ว' ความจริงคือค่าใช้จ่ายหลังเกษียณสูงตามไปด้วย บวกค่ารักษาพยาบาลที่พุ่งขึ้นทุกปี ใครที่ไม่ได้ลงทุนไว้ก่อน อาจต้องลดมาตรฐานการใช้ชีวิตอย่างมีนัยสำคัญหลังเกษียณ"}}
+  ]
+}
+</script>
 </head>
 <body>
 <nav style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:50">
@@ -268,6 +281,91 @@
          style="background:#06C755">ทักไลน์ปรึกษาฟรี</a>
     </div>
   </div>
+
+<!-- ══════ AEO FAQ SECTION ══════ -->
+<section class="nla-faq-section" itemscope itemtype="https://schema.org/FAQPage"
+  style="background:#F0F9FF;border:1px solid #BAE6FD;border-radius:1rem;padding:2rem;margin:2.5rem 0">
+  <h2 style="color:#1B365D;font-size:1.3rem;font-weight:700;margin-bottom:1.5rem">
+    ❓ คำถามที่พบบ่อย
+  </h2>
+
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">รายได้สูงทำไมยังต้องวางแผนเกษียณ ไม่ใช่เก็บเองได้อยู่แล้ว?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">รายได้สูงมักมาพร้อมรายจ่ายสูงและ lifestyle ที่ปรับลดยาก หลายคนรายได้ 200,000+ บาท/เดือน แต่ไม่มีเงินลงทุนเพราะค่าใช้จ่าย ค่าผ่อน และภาษีกินรายได้ไปหมด การวางแผนจัดสรรอย่างมีระบบสำคัญกว่ารายได้</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">ผู้บริหารรายได้ดี ควรเน้น RMF SSF หรือประกันบำนาญ?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">ควรทำทั้งสามอย่างตามลำดับ คือ 1) ประกันบำนาญก่อน (ลดหย่อนได้ 200,000 บาท) 2) RMF ต่อ (ลดหย่อนรวมกับประกันบำนาญได้ 500,000 บาท) 3) SSF เพิ่มเติม (อีก 200,000 บาท) รวมลดหย่อนได้สูงสุด 700,000 บาทต่อปีจากสามช่องทางนี้</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">เงินเดือนสูงแต่ไม่มีสวัสดิการหลังเกษียณ จะรับมืออย่างไร?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">ผู้บริหารและผู้ประกอบการที่ไม่มีกองทุนสำรองเลี้ยงชีพหรือบำเหน็จต้องพึ่งตัวเองทั้งหมด ควรลงทุนอย่างน้อย 20-30% ของรายได้ผ่านกองทุนรวม ประกันบำนาญ และอสังหาริมทรัพย์ให้เช่า เพื่อสร้าง passive income ทดแทนเงินเดือน</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">ความเชื่อผิดๆ เรื่องเกษียณที่คนรายได้สูงมักเจอคืออะไร?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">ความเชื่อผิดที่พบบ่อยคือ 'รายได้สูงแปลว่าปลอดภัยแล้ว' ความจริงคือค่าใช้จ่ายหลังเกษียณสูงตามไปด้วย บวกค่ารักษาพยาบาลที่พุ่งขึ้นทุกปี ใครที่ไม่ได้ลงทุนไว้ก่อน อาจต้องลดมาตรฐานการใช้ชีวิตอย่างมีนัยสำคัญหลังเกษียณ</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #BAE6FD;padding-top:1rem;margin-top:0.5rem;background:#E0F2FE;border-radius:0.5rem;padding:0.75rem 1rem">
+    <p style="font-size:0.8rem;font-weight:600;color:#0369A1;margin-bottom:0.5rem">📚 แหล่งอ้างอิง</p>
+    <ul style="font-size:0.8rem;color:#0369A1;margin:0;padding-left:1.2rem">
+      <li><a href="https://www.rd.go.th" target="_blank" rel="noopener noreferrer" style="color:#0369A1">กรมสรรพากร — สิทธิลดหย่อนภาษีประกันชีวิตและบำนาญ</a></li>
+      <li><a href="https://www.sec.or.th/TH/Pages/HOME.aspx" target="_blank" rel="noopener noreferrer" style="color:#0369A1">สำนักงาน กลต. — แนวทางการวางแผนทางการเงิน</a></li>
+      <li><a href="https://www.gpf.or.th" target="_blank" rel="noopener noreferrer" style="color:#0369A1">กองทุนบำเหน็จบำนาญข้าราชการ — สถิติการออมเพื่อเกษียณ</a></li>
+    </ul>
+  </div>
+</section>
+<script>
+if (!window.nlaToggleFaq) {
+  window.nlaToggleFaq = function(btn) {
+    var ans = btn.nextElementSibling;
+    var arrow = btn.querySelector('.nla-faq-arrow');
+    var isOpen = ans.style.display === 'block';
+    ans.style.display = isOpen ? 'none' : 'block';
+    if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+  };
+}
+</script>
+<!-- ══════ END AEO FAQ SECTION ══════ -->
 </article>
 <footer class="py-8 text-center" style="background:#1B365D">
   <p class="font-noto text-xs" style="color:rgba(255,255,255,.5)">© 2025 Next Level Advisor · ตัวแทนเมืองไทยประกันชีวิต</p>
