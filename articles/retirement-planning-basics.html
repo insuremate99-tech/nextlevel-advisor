@@ -125,6 +125,19 @@
     .calc-box .formula{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#92400E;margin-bottom:.5rem}
     .calc-box .example{font-size:.9rem;color:#78350F;line-height:1.7}
   </style>
+<!-- AEO: FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"ควรเริ่มวางแผนเกษียณตั้งแต่อายุเท่าไหร่?","acceptedAnswer":{"@type":"Answer","text":"ยิ่งเริ่มเร็วยิ่งดี อุดมคติคืออายุ 25-30 ปี เพราะดอกเบี้ยทบต้นต้องการเวลา เริ่มเก็บ 5,000 บาท/เดือนตั้งแต่อายุ 30 จะมีเงินมากกว่าเริ่มเก็บ 10,000 บาท/เดือนตอนอายุ 45 อย่างมีนัยสำคัญ"}},
+    {"@type":"Question","name":"ต้องมีเงินเก็บเท่าไหร่ถึงจะเกษียณได้สบาย?","acceptedAnswer":{"@type":"Answer","text":"กฎทั่วไปคือต้องมีเงิน 25 เท่าของค่าใช้จ่ายต่อปีหลังเกษียณ ถ้าใช้จ่ายปีละ 600,000 บาท ต้องมีเงิน 15 ล้านบาท แต่ต้องคำนึงถึงเงินเฟ้อและค่ารักษาพยาบาลที่สูงขึ้นด้วย"}},
+    {"@type":"Question","name":"กองทุน RMF และ SSF แตกต่างกันอย่างไร ควรเลือกอะไร?","acceptedAnswer":{"@type":"Answer","text":"RMF (Retirement Mutual Fund) ลดหย่อนได้สูงสุด 30% ของรายได้ ต้องถือจนอายุ 55 ปีและถือนาน 5 ปี เหมาะกับการออมเกษียณระยะยาว ส่วน SSF ลดหย่อนได้สูงสุด 30% ของรายได้เช่นกัน ถือ 10 ปีปฏิทิน เหมาะกับการลงทุนหุ้นระยะกลาง ควรทำทั้งคู่ถ้ารายได้สูงพอ"}},
+    {"@type":"Question","name":"ประกันบำนาญต่างจากการออมทั่วไปอย่างไร?","acceptedAnswer":{"@type":"Answer","text":"ประกันบำนาญการันตีรายได้รายเดือนตลอดชีวิตหลังเกษียณ ไม่ว่าจะอายุยืนแค่ไหน ต่างจากการออมที่เงินหมดก็หมด ข้อดีคือความแน่นอน ลดหย่อนภาษีได้ 15% ของรายได้ สูงสุด 200,000 บาท ตามหลักเกณฑ์ของกรมสรรพากร"}}
+  ]
+}
+</script>
 </head>
 <body>
 <nav style="background:#fff;border-bottom:1px solid #E8EDF5;position:sticky;top:0;z-index:50">
@@ -291,6 +304,91 @@
          style="background:#06C755">ทักไลน์ปรึกษาฟรี</a>
     </div>
   </div>
+
+<!-- ══════ AEO FAQ SECTION ══════ -->
+<section class="nla-faq-section" itemscope itemtype="https://schema.org/FAQPage"
+  style="background:#F0F9FF;border:1px solid #BAE6FD;border-radius:1rem;padding:2rem;margin:2.5rem 0">
+  <h2 style="color:#1B365D;font-size:1.3rem;font-weight:700;margin-bottom:1.5rem">
+    ❓ คำถามที่พบบ่อย
+  </h2>
+
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">ควรเริ่มวางแผนเกษียณตั้งแต่อายุเท่าไหร่?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">ยิ่งเริ่มเร็วยิ่งดี อุดมคติคืออายุ 25-30 ปี เพราะดอกเบี้ยทบต้นต้องการเวลา เริ่มเก็บ 5,000 บาท/เดือนตั้งแต่อายุ 30 จะมีเงินมากกว่าเริ่มเก็บ 10,000 บาท/เดือนตอนอายุ 45 อย่างมีนัยสำคัญ</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">ต้องมีเงินเก็บเท่าไหร่ถึงจะเกษียณได้สบาย?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">กฎทั่วไปคือต้องมีเงิน 25 เท่าของค่าใช้จ่ายต่อปีหลังเกษียณ ถ้าใช้จ่ายปีละ 600,000 บาท ต้องมีเงิน 15 ล้านบาท แต่ต้องคำนึงถึงเงินเฟ้อและค่ารักษาพยาบาลที่สูงขึ้นด้วย</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="border-bottom:1px solid #BAE6FD;padding-bottom:1rem;margin-bottom:1rem">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">กองทุน RMF และ SSF แตกต่างกันอย่างไร ควรเลือกอะไร?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">RMF (Retirement Mutual Fund) ลดหย่อนได้สูงสุด 30% ของรายได้ ต้องถือจนอายุ 55 ปีและถือนาน 5 ปี เหมาะกับการออมเกษียณระยะยาว ส่วน SSF ลดหย่อนได้สูงสุด 30% ของรายได้เช่นกัน ถือ 10 ปีปฏิทิน เหมาะกับการลงทุนหุ้นระยะกลาง ควรทำทั้งคู่ถ้ารายได้สูงพอ</p>
+    </div>
+  </div>
+  <div class="nla-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+    style="">
+    <button class="nla-faq-q" onclick="nlaToggleFaq(this)"
+      style="width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;font-size:1rem;font-weight:600;color:#0D1F3C">
+      <span itemprop="name">ประกันบำนาญต่างจากการออมทั่วไปอย่างไร?</span>
+      <svg class="nla-faq-arrow" style="width:1.2rem;height:1.2rem;transition:transform 0.2s;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="nla-faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+      style="display:none;padding:0.75rem 0 0.25rem;color:#374151;line-height:1.7">
+      <p itemprop="text">ประกันบำนาญการันตีรายได้รายเดือนตลอดชีวิตหลังเกษียณ ไม่ว่าจะอายุยืนแค่ไหน ต่างจากการออมที่เงินหมดก็หมด ข้อดีคือความแน่นอน ลดหย่อนภาษีได้ 15% ของรายได้ สูงสุด 200,000 บาท ตามหลักเกณฑ์ของกรมสรรพากร</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #BAE6FD;padding-top:1rem;margin-top:0.5rem;background:#E0F2FE;border-radius:0.5rem;padding:0.75rem 1rem">
+    <p style="font-size:0.8rem;font-weight:600;color:#0369A1;margin-bottom:0.5rem">📚 แหล่งอ้างอิง</p>
+    <ul style="font-size:0.8rem;color:#0369A1;margin:0;padding-left:1.2rem">
+      <li><a href="https://www.rd.go.th/publish/47266.0.html" target="_blank" rel="noopener noreferrer" style="color:#0369A1">กรมสรรพากร — เงื่อนไขลดหย่อนกองทุน RMF/SSF</a></li>
+      <li><a href="https://www.gpf.or.th" target="_blank" rel="noopener noreferrer" style="color:#0369A1">กองทุนบำเหน็จบำนาญข้าราชการ (กบข.) — คู่มือวางแผนเกษียณ</a></li>
+      <li><a href="https://www.sec.or.th/TH/Pages/HOME.aspx" target="_blank" rel="noopener noreferrer" style="color:#0369A1">สำนักงาน กลต. — คู่มือการลงทุนในกองทุนรวม</a></li>
+    </ul>
+  </div>
+</section>
+<script>
+if (!window.nlaToggleFaq) {
+  window.nlaToggleFaq = function(btn) {
+    var ans = btn.nextElementSibling;
+    var arrow = btn.querySelector('.nla-faq-arrow');
+    var isOpen = ans.style.display === 'block';
+    ans.style.display = isOpen ? 'none' : 'block';
+    if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+  };
+}
+</script>
+<!-- ══════ END AEO FAQ SECTION ══════ -->
 </article>
 <footer class="py-8 text-center" style="background:#1B365D">
   <p class="font-noto text-xs" style="color:rgba(255,255,255,.5)">© 2025 Next Level Advisor · ตัวแทนเมืองไทยประกันชีวิต</p>
