@@ -310,43 +310,32 @@ html{scroll-behavior:smooth}
       <p class="font-noto text-base mb-8" style="color:rgba(255,255,255,.65);line-height:1.85;max-width:520px">
         เพราะค่ารักษาพยาบาลเฟ้อขึ้นทุกปี การวางแผนที่ <span style="color:#67E8F9;font-weight:600">"แม่นยำ"</span> จึงสำคัญกว่าแค่การมีประกัน
       </p>
-      <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 mb-10">
         <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">โรคร้ายแรง เจอจ่ายจบ &amp; หลายจบ</span></div>
         <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">Long-Term Health UDR</span></div>
         <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.55)"><span style="color:#34D399">✓</span><span class="font-noto">คำนวณเบี้ยได้ทันที</span></div>
       </div>
+      <!-- Self-select CTA buttons -->
+      <div class="flex flex-wrap gap-3">
+        <a href="#sec-dhsim" class="font-noto text-sm font-semibold px-4 py-2.5 rounded-xl transition-all"
+           style="background:rgba(8,145,178,.25);color:#7dd3fc;border:1px solid rgba(8,145,178,.4)"
+           onmouseover="this.style.background='rgba(8,145,178,.45)'" onmouseout="this.style.background='rgba(8,145,178,.25)'">
+          🏥 ประกันสุขภาพเหมาจ่าย
+        </a>
+        <a href="#sec-ci" class="font-noto text-sm font-semibold px-4 py-2.5 rounded-xl transition-all"
+           style="background:rgba(8,145,178,.25);color:#7dd3fc;border:1px solid rgba(8,145,178,.4)"
+           onmouseover="this.style.background='rgba(8,145,178,.45)'" onmouseout="this.style.background='rgba(8,145,178,.25)'">
+          ⚡ โรคร้ายแรง CI
+        </a>
+        <a href="#sec-udr" class="font-noto text-sm font-semibold px-4 py-2.5 rounded-xl transition-all"
+           style="background:rgba(8,145,178,.25);color:#7dd3fc;border:1px solid rgba(8,145,178,.4)"
+           onmouseover="this.style.background='rgba(8,145,178,.45)'" onmouseout="this.style.background='rgba(8,145,178,.25)'">
+          📈 วางแผนระยะยาว UDR
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- INTRO STATS -->
-<section class="py-14 bg-white">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="reveal grid sm:grid-cols-3 gap-5">
-      <div class="bg-slate-50 rounded-2xl p-6 text-center">
-        <div class="text-3xl mb-2">📈</div>
-        <div class="font-pop font-bold text-navy text-2xl mb-1">7–10%</div>
-        <div class="font-noto text-slate-500 text-sm">อัตราเงินเฟ้อค่ารักษาพยาบาลต่อปี</div>
-      </div>
-      <div class="bg-slate-50 rounded-2xl p-6 text-center">
-        <div class="text-3xl mb-2">🏥</div>
-        <div class="font-pop font-bold text-navy text-2xl mb-1">1.2 ล้าน+</div>
-        <div class="font-noto text-slate-500 text-sm">ค่าเฉลี่ยรักษามะเร็งระยะต้นในไทย</div>
-      </div>
-      <div class="bg-slate-50 rounded-2xl p-6 text-center">
-        <div class="text-3xl mb-2">⚡</div>
-        <div class="font-pop font-bold text-navy text-2xl mb-1">1 ใน 3</div>
-        <div class="font-noto text-slate-500 text-sm">คนไทยมีโอกาสเจอโรคร้ายแรงในชีวิต</div>
-      </div>
-    </div>
-    <div class="reveal mt-10 max-w-2xl">
-      <p class="font-noto text-slate-600 leading-relaxed">
-        การมีประกันสุขภาพคือจุดเริ่มต้น แต่ไม่ใช่คำตอบเดียว เพราะความต้องการของแต่ละคนต่างกัน — บางคนต้องการ<strong class="text-navy">เงินสำรองฉุกเฉิน</strong>เมื่อป่วย บางคนต้องการ<strong class="text-navy">ความคุ้มครองระยะยาว</strong>ที่ไม่เพิ่มราคาตามอายุ และบางคนต้องการทั้งสองอย่างพร้อมกัน
-      </p>
-    </div>
-  </div>
-</section>
-
 
 <!-- ══════ SECTION NAV ══════ -->
 <div id="sec-nav" class="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
@@ -497,6 +486,40 @@ html{scroll-behavior:smooth}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INTRO STATS -->
+<section class="py-14 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="reveal mb-10 max-w-2xl">
+      <p class="font-noto text-slate-600 text-base leading-relaxed">
+        ถ้าเคยเห็นบิลค่ารักษาหลักแสน หรือไม่แน่ใจว่าสวัสดิการงานคุ้มพอไหม — <strong class="text-navy">คุณมาถูกที่แล้ว</strong> หน้านี้รวบรวมทางเลือกไว้ครบ พร้อมคำนวณเบี้ยได้ทันที
+      </p>
+    </div>
+    <div class="reveal grid sm:grid-cols-3 gap-5">
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">📈</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">7–10%</div>
+        <div class="font-noto text-slate-500 text-sm">อัตราเงินเฟ้อค่ารักษาพยาบาลต่อปี</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">🏥</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">1.2 ล้าน+</div>
+        <div class="font-noto text-slate-500 text-sm">ค่าเฉลี่ยรักษามะเร็งระยะต้นในไทย</div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-2">⚡</div>
+        <div class="font-pop font-bold text-navy text-2xl mb-1">1 ใน 3</div>
+        <div class="font-noto text-slate-500 text-sm">คนไทยมีโอกาสเจอโรคร้ายแรงในชีวิต</div>
+      </div>
+    </div>
+    <div class="reveal mt-10 max-w-2xl">
+      <p class="font-noto text-slate-600 leading-relaxed">
+        การมีประกันสุขภาพคือจุดเริ่มต้น แต่ไม่ใช่คำตอบเดียว เพราะความต้องการของแต่ละคนต่างกัน — บางคนต้องการ<strong class="text-navy">เงินสำรองฉุกเฉิน</strong>เมื่อป่วย บางคนต้องการ<strong class="text-navy">ความคุ้มครองระยะยาว</strong>ที่ไม่เพิ่มราคาตามอายุ และบางคนต้องการทั้งสองอย่างพร้อมกัน
+      </p>
     </div>
   </div>
 </section>
