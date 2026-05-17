@@ -58,10 +58,6 @@
     .pink-glow{position:absolute;inset:-10%;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(255,200,210,0.2) 0%,transparent 70%);pointer-events:none;z-index:0}
     @media(max-width:767px){.hero-split{flex-direction:column}}
 
-    /* ── Marquee ── */
-    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
-    .marquee-track:hover{animation-play-state:paused}
 
     /* ── Solution Cards ── */
     .sol-card{background:#fff;border:1.5px solid #EEF2F7;border-radius:24px;padding:28px 28px 24px;transition:all .28s cubic-bezier(.22,1,.36,1)}
@@ -728,38 +724,6 @@
 
 })();
 </script>
-
-<!-- ══════════════ TRUST MARQUEE ══════════════ -->
-<div style="background:#F8FAFC;border-top:1px solid #EEF2F7;border-bottom:1px solid #EEF2F7;overflow:hidden" class="py-3.5">
-  <div class="marquee-track">
-    <div class="flex items-center gap-10 px-8 whitespace-nowrap" style="font-family:'Noto Sans Thai';font-size:.85rem;color:#1B365D">
-      <span class="font-pop font-semibold">MDRT Member 2026</span>
-
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span class="font-pop font-semibold">AFPT™ &amp; FChFP Certified</span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ดูแลลูกค้ากว่า <strong>100+ ราย</strong></span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ประกันกลุ่ม <strong>1,000+ คน</strong></span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ตัวแทนเมืองไทยประกันชีวิต</span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <!-- duplicate -->
-      <span class="font-pop font-semibold">MDRT Member 2026</span>
-
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span class="font-pop font-semibold">AFPT™ &amp; FChFP Certified</span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ดูแลลูกค้ากว่า <strong>100+ ราย</strong></span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ประกันกลุ่ม <strong>1,000+ คน</strong></span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-      <span>ตัวแทนเมืองไทยประกันชีวิต</span>
-      <span style="color:#0891B2;font-weight:700">•</span>
-    </div>
-  </div>
-</div>
-
 
 <!-- ══════════════ SIGNATURE SOLUTIONS ══════════════ -->
 <section id="solutions-section" class="py-20 bg-white">
