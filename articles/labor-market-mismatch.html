@@ -213,6 +213,22 @@
     <blockquote>และในฐานะที่ปรึกษาการเงิน — สิ่งที่ผมเห็นคือคนที่วางแผนการเงินได้ดี มักมีอิสระในการเลือกว่าจะทำงานเพราะอยากทำ ไม่ใช่เพราะต้องทำ นั่นคือจุดแตกต่างที่สำคัญมาก</blockquote>
   </div>
 
+
+  <!-- Share -->
+  <div class="mt-8 pt-6" style="border-top:1px solid #E8EDF5;max-width:48rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem">
+    <p class="font-noto text-xs mb-3" style="color:#94A3B8">แชร์บทความนี้</p>
+    <div class="flex flex-wrap gap-2">
+      <button onclick="copyLink()" class="share-btn">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        คัดลอกลิงก์
+      </button>
+      <a id="fbShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8">Facebook</a>
+      <a id="xShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#F8FAFC;border-color:#E2E8F0;color:#0F172A">X</a>
+      <a id="lineShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#F0FDF4;border-color:#BBF7D0;color:#166534">LINE</a>
+      <a id="moreShare" href="#" class="share-link" onclick="if(navigator.share){navigator.share({url:window.location.href});return false;}">แชร์อื่นๆ</a>
+    </div>
+    <p id="copyConfirm" style="display:none;color:#166534;font-size:.8rem;margin-top:.5rem">✓ คัดลอกลิงก์แล้ว!</p>
+  </div>
   <div class="mt-10 rounded-2xl p-8 text-center" style="background:linear-gradient(135deg,#1B365D,#0891B2)">
     <p class="font-pridi font-semibold text-white text-lg mb-1">อยากมีอิสระทางการเงินจริงๆ?</p>
     <p class="font-noto text-sm mb-5" style="color:rgba(255,255,255,.8)">ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด — ที่ปรึกษา AFPT™ FChFP MDRT 2026</p>
@@ -256,22 +272,6 @@
          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-noto text-xs font-semibold text-white"
          style="background:#06C755">ทักไลน์ปรึกษาฟรี</a>
     </div>
-  </div>
-
-  <!-- Share -->
-  <div class="mt-8 pt-6" style="border-top:1px solid #E8EDF5;max-width:48rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem">
-    <p class="font-noto text-xs mb-3" style="color:#94A3B8">แชร์บทความนี้</p>
-    <div class="flex flex-wrap gap-2">
-      <button onclick="copyLink()" class="share-btn">
-        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-        คัดลอกลิงก์
-      </button>
-      <a id="fbShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8">Facebook</a>
-      <a id="xShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#F8FAFC;border-color:#E2E8F0;color:#0F172A">X</a>
-      <a id="lineShare" href="#" target="_blank" rel="noopener" class="share-link" style="background:#F0FDF4;border-color:#BBF7D0;color:#166534">LINE</a>
-      <a id="moreShare" href="#" class="share-link" onclick="if(navigator.share){navigator.share({url:window.location.href});return false;}">แชร์อื่นๆ</a>
-    </div>
-    <p id="copyConfirm" style="display:none;color:#166534;font-size:.8rem;margin-top:.5rem">✓ คัดลอกลิงก์แล้ว!</p>
   </div>
 
 </article>
