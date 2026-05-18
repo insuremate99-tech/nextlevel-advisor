@@ -47,6 +47,11 @@
       "permanent": true
     },
     {
+      "source": "/calculators",
+      "destination": "/calculator",
+      "permanent": true
+    },
+    {
       "source": "/solutions/savings",
       "destination": "/solutions/tax-optimization",
       "permanent": true
