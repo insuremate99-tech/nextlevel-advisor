@@ -36,6 +36,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "nextlevel-advisor.com"
+        }
+      ],
+      "destination": "https://www.nextlevel-advisor.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/solutions/savings",
       "destination": "/solutions/tax-optimization",
       "permanent": true
