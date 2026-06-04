@@ -36,6 +36,18 @@
     #lb-close{position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .2s}
     #lb-close:hover{background:rgba(255,255,255,.3)}
     #lb-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:'Noto Sans Thai','Poppins',sans-serif;font-size:.78rem;background:rgba(0,0,0,.4);padding:4px 14px;border-radius:999px;white-space:nowrap}
+
+  /* Sticky mobile CTA */
+  .sticky-cta {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: var(--deep); padding: 12px 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.25);
+  }
+  @media (max-width: 767px) { .sticky-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; } }
+  .sticky-cta p { font-family: 'Noto Sans Thai', sans-serif; font-size: .82rem; color: rgba(255,255,255,.75); }
+  .sticky-cta a { font-family: 'Noto Sans Thai', sans-serif; background: var(--teal); color: white; border-radius: .5rem; padding: .6rem 1.2rem; font-size: .82rem; font-weight: 600; white-space: nowrap; text-decoration: none; transition: background .2s; flex-shrink: 0; }
+  .sticky-cta a:hover { background: #0e7490; }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -599,11 +611,6 @@
                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
         </div>
         <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">อีเมล</label>
-          <input type="email" name="email" placeholder="email@example.com"
-                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
-        </div>
-        <div>
           <label class="block font-noto text-sm font-medium text-navy mb-1.5">อาชีพปัจจุบัน</label>
           <input type="text" name="job" placeholder="เช่น พนักงานบริษัท, วิศวกร, แพทย์"
                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
@@ -813,6 +820,28 @@ window.toggleJoinMenu=function(){
       });
     });
   });
+})();
+</script>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <p>สนใจร่วมทีม?</p>
+  <a href="https://calendly.com/insuremate99/15" target="_blank"
+     onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'sticky-cta-join'})">
+    นัดคุย 15 นาที →
+  </a>
+</div>
+<script>
+(function(){
+  var cta = document.getElementById('stickyCta');
+  var form = document.getElementById('apply-form');
+  if(!cta || !form) return;
+  function checkVisibility(){
+    var r = form.getBoundingClientRect();
+    cta.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  window.addEventListener('scroll', checkVisibility, {passive:true});
+  checkVisibility();
 })();
 </script>
 </body>
