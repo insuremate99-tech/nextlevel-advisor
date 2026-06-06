@@ -36,6 +36,21 @@
   ],
   "redirects": [
     {
+      "source": "/articles/:slug.html",
+      "destination": "/articles/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/:slug.html",
+      "destination": "/solutions/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/:page.html",
+      "destination": "/:page",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
