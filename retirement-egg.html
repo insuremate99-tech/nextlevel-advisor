@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+<title>ไข่เกษียณของคุณ จะฟักเป็นตัวอะไร? 🥚 เกมจำลองเกษียณ | Next Level Advisor</title>
+<meta name="description" content="เกมจำลองเกษียณ — ออกแบบชีวิตในฝันหลังเกษียณ ดูว่าต้องเตรียมเงินเท่าไหร่ พร้อมเอฟเฟกต์เงินเฟ้อตัวจริง แล้วลุ้นว่าไข่จะฟักเป็นสัตว์เกษียณตัวไหน!"/>
+<link rel="canonical" href="https://www.nextlevel-advisor.com/retirement-egg"/>
+<meta name="theme-color" content="#0D1F3C"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ไข่เกษียณของคุณ จะฟักเป็นตัวอะไร? 🥚"/>
+<meta property="og:description" content="ออกแบบชีวิตเกษียณในฝัน ดูว่าต้องเตรียมเงินเท่าไหร่ + ลุ้นฉายาสัตว์เกษียณของคุณ"/>
+<meta property="og:url" content="https://www.nextlevel-advisor.com/retirement-egg"/>
+<meta property="og:image" content="https://www.nextlevel-advisor.com/og-retirement-egg.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Mali:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+  body{font-family:'Noto Sans Thai',sans-serif;color:#1B365D;background:#0D1F3C;margin:0}
+  h1,h2,h3,.play{font-family:'Mali',cursive}
+  .num{font-family:'Poppins',sans-serif}
+  .wrap{max-width:480px;margin:0 auto;min-height:100vh;position:relative;overflow:hidden}
+  .screen{display:none;padding:20px 18px 120px;animation:fade .4s ease}
+  .screen.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes pop{0%{transform:scale(.8);opacity:0}60%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .opt{border:2px solid rgba(255,255,255,.12);border-radius:18px;padding:13px 14px;background:rgba(255,255,255,.05);cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px}
+  .opt:active{transform:scale(.97)}
+  .opt.sel{border-color:#36E0C0;background:rgba(54,224,192,.14);box-shadow:0 6px 22px rgba(54,224,192,.2)}
+  .opt .em{font-size:26px;width:40px;text-align:center;flex-shrink:0}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:5px 13px;font-size:.72rem;font-weight:600;color:#BFE9FF}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:16px;font-family:'Mali',cursive;font-weight:700;cursor:pointer;transition:all .2s;width:100%;padding:16px;font-size:1.05rem}
+  .btn-go{background:linear-gradient(135deg,#36E0C0,#0FB5A0);color:#063}
+  .btn-go:active{transform:scale(.98)}
+  .btn-gold{background:linear-gradient(135deg,#FFD86B,#F5B731);color:#5A3D00}
+  .sticky-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(11,24,46,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.12);padding:12px 18px calc(12px + env(safe-area-inset-bottom));z-index:50}
+  .sticky-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;gap:12px}
+  .seg{flex:1;text-align:center;padding:10px 4px;border:2px solid rgba(255,255,255,.12);border-radius:13px;cursor:pointer;font-weight:600;font-size:.85rem;color:rgba(255,255,255,.6);transition:all .15s}
+  .seg.on{background:#36E0C0;border-color:#36E0C0;color:#063}
+  .field{width:100%;padding:13px;border-radius:13px;border:2px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;font-size:1.1rem;font-family:'Poppins';text-align:center;outline:none}
+  .field:focus{border-color:#36E0C0}
+  .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px}
+  .reveal-num{font-family:'Poppins';font-weight:900;line-height:1}
+  .bigstat{background:linear-gradient(135deg,rgba(54,224,192,.16),rgba(54,224,192,.04));border:1px solid rgba(54,224,192,.3);border-radius:22px;padding:22px;text-align:center}
+  .villain{background:linear-gradient(135deg,rgba(255,107,107,.16),rgba(255,107,107,.04));border:1px solid rgba(255,107,107,.35)}
+  .pricecard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:13px;text-align:center}
+  .label{font-size:.78rem;color:rgba(255,255,255,.55)}
+  .progress-dots{display:flex;gap:6px;justify-content:center;margin-bottom:6px}
+  .pdot{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.2);transition:all .3s}
+  .pdot.on{background:#36E0C0;width:22px}
+  .hatch{animation:shake .11s linear infinite}
+  @keyframes shake{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-3px) rotate(-5deg)}75%{transform:translateX(3px) rotate(5deg)}}
+  .pop{animation:pop .55s ease}
+  .screen{position:relative;z-index:2}
+  .sticky-bar{z-index:50}
+  .decor{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .decor span{position:absolute;opacity:.5}
+  .decor .sun{top:14px;right:16px;font-size:40px;animation:float 5s ease-in-out infinite}
+  .decor .c1{top:60px;left:10px;font-size:28px;animation:drift 9s linear infinite}
+  .decor .c2{top:120px;right:24px;font-size:22px;animation:drift 13s linear infinite}
+  .decor .o1{top:230px;left:18px;font-size:20px;animation:float 4s ease-in-out infinite}
+  .decor .o2{top:300px;right:14px;font-size:20px;animation:float 6s ease-in-out infinite}
+  @keyframes drift{0%{transform:translateX(-10px)}50%{transform:translateX(14px)}100%{transform:translateX(-10px)}}
+  .wave{animation:waveA 1.1s ease-in-out infinite}
+  @keyframes waveA{0%,100%{transform:rotate(2deg)}50%{transform:rotate(-26deg)}}
+  .bubble{display:inline-block;background:#fff;color:#1B365D;font-family:'Mali';font-weight:600;font-size:.85rem;padding:9px 15px;border-radius:16px;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .bubble:after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff}
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+  .conf{position:absolute;top:-14px;width:9px;height:14px;border-radius:2px;animation:fall 2.5s linear forwards}
+  @keyframes fall{to{transform:translateY(115vh) rotate(560deg)}}
+  .deck{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .deck::-webkit-scrollbar{display:none}
+  .panel{min-width:100%;scroll-snap-align:center;padding:2px 3px;box-sizing:border-box}
+  .panel-head{text-align:center;margin-bottom:14px}
+  .panel-emoji{font-size:54px;animation:float 3.5s ease-in-out infinite;display:inline-block}
+  .opt .check{margin-left:auto;opacity:0;color:#36E0C0;font-weight:800;font-size:1.25rem;transition:opacity .15s}
+  .opt.sel .check{opacity:1}
+  .hatch{animation:shake .085s linear infinite}
+  @keyframes shake{0%,100%{transform:translateX(0) rotate(0)}20%{transform:translate(-4px,2px) rotate(-8deg)}60%{transform:translate(4px,-2px) rotate(8deg)}}
+  #flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:70}
+  .flashing{animation:flashA .5s ease}
+  @keyframes flashA{0%{opacity:0}28%{opacity:.82}100%{opacity:0}}
+  #hatchBanner{position:fixed;top:34%;left:50%;transform:translate(-50%,-50%) scale(.5);background:linear-gradient(135deg,#FFD86B,#F5B731);color:#5A3D00;font-family:'Mali',cursive;font-weight:700;font-size:1.7rem;padding:10px 28px;border-radius:18px;z-index:71;opacity:0;pointer-events:none;box-shadow:0 12px 34px rgba(0,0,0,.35);white-space:nowrap}
+  .banner-show{animation:bannerA 1.4s ease}
+  @keyframes bannerA{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}32%{transform:translate(-50%,-50%) scale(1)}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-58%) scale(1)}}
+  #hatchHint{position:fixed;top:26%;left:50%;transform:translateX(-50%);color:#fff;font-family:'Mali',cursive;font-size:1rem;z-index:71;opacity:0;transition:opacity .3s;pointer-events:none;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="decor"><span class="sun">☀️</span><span class="c1">☁️</span><span class="c2">☁️</span><span class="o1">🪙</span><span class="o2">🌴</span></div>
+<div id="confetti"></div>
+<div id="flash"></div>
+<div id="hatchBanner">ฟักแล้ว! 🎉</div>
+<div id="hatchHint"></div>
+<div id="resultCard" style="position:fixed;left:-9999px;top:0;width:360px;height:640px;box-sizing:border-box;background:linear-gradient(165deg,#0D1F3C 0%,#11294d 55%,#0e3a5e 100%);font-family:'Noto Sans Thai',sans-serif;overflow:hidden">
+  <div style="padding:26px 24px;height:100%;display:flex;flex-direction:column;box-sizing:border-box">
+    <div style="font-family:'Mali',cursive;color:#36E0C0;font-weight:700;font-size:15px">🏝️ เกมจำลองเกษียณในฝัน</div>
+    <div style="text-align:center;margin-top:14px">
+      <div style="color:rgba(255,255,255,.6);font-size:13px">ฉายาของคุณคือ...</div>
+      <div id="cardHero" style="width:150px;height:150px;border-radius:50%;margin:12px auto;background:linear-gradient(135deg,#36E0C0,#0FB5A0);display:flex;align-items:center;justify-content:center;font-size:86px;line-height:1">🧳</div>
+      <div id="cardName" style="font-family:'Mali',cursive;color:#fff;font-size:27px;font-weight:700;line-height:1.1">The Jetsetter</div>
+      <div id="cardDesc" style="color:#FFD86B;font-size:13px;margin-top:3px"></div>
+      <div id="cardScore" style="color:rgba(255,255,255,.72);font-size:12px;margin-top:5px"></div>
+      <div id="cardVs" style="color:rgba(255,255,255,.55);font-size:11px;margin-top:3px"></div>
+    </div>
+    <div id="cardZing" style="background:rgba(255,216,107,.12);border:1px solid rgba(255,216,107,.3);border-radius:13px;padding:11px 13px;margin-top:13px;color:#FFE08A;font-family:'Mali',cursive;font-size:13px;text-align:center;line-height:1.5"></div>
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:9px">
+      <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 15px"><span style="color:rgba(255,255,255,.65);font-size:13px">ชีวิตในฝัน</span><span id="cardToday" style="font-family:'Poppins',sans-serif;color:#36E0C0;font-weight:800;font-size:15px"></span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 15px"><span style="color:rgba(255,255,255,.65);font-size:13px">ต้องเตรียมเงิน</span><span id="cardLump" style="font-family:'Poppins',sans-serif;color:#FFD86B;font-weight:800;font-size:15px"></span></div>
+    </div>
+    <div style="text-align:center;margin-top:16px;color:rgba(255,255,255,.55);font-size:12px;font-family:'Mali',cursive">คุณล่ะ ฉายาอะไร? 🎮 เล่นเลยที่ nextlevel-advisor.com</div>
+  </div>
+</div>
+
+<!-- ========== SCREEN 0 : INTRO ========== -->
+<section class="screen on" id="s0">
+  <div style="text-align:center;padding-top:18px">
+    <div class="bubble" style="margin-bottom:6px">ไข่เกษียณของคุณ จะฟักเป็นตัวอะไร? 🥚</div>
+    <div id="hostEgg" style="width:140px;height:150px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:100px;animation:float 4s ease-in-out infinite"><img src="animal/web/hero-egg2.webp" alt="ไข่เกษียณ" style="width:100%;height:100%;object-fit:contain" onerror="this.parentNode.textContent='🥚'"></div>
+    <div class="chip" style="margin:6px auto 0">เกมจำลองเกษียณ · เล่น 1 นาที</div>
+    <h1 style="color:#fff;font-size:2rem;margin:16px 0 8px;line-height:1.25">ชีวิตเกษียณในฝัน<br/>ของคุณ ราคาเท่าไหร่?</h1>
+    <p style="color:rgba(255,255,255,.65);font-size:.95rem;margin:0 18px">ออกแบบไลฟ์สไตล์หลังเกษียณที่อยากมี แล้วดูว่า<b style="color:#36E0C0"> ต้องเตรียมเงินเท่าไหร่</b> — พร้อมเอฟเฟกต์เงินเฟ้อตัวจริง</p>
+  </div>
+  <div class="card" style="margin-top:26px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <div class="label" style="margin-bottom:7px">ตอนนี้คุณอายุ</div>
+        <input type="number" id="curAge" class="field" value="35"/>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:7px">อยากเกษียณตอนอายุ</div>
+        <input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:7px">คาดว่าจะใช้ชีวิตถึงอายุ (กำหนดเอง)</div>
+        <input type="number" id="lifeExp" class="field" value="90" min="60" max="120"/>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:6px;text-align:center">กำหนดได้ตามต้องการ · คนไทยอายุยืนขึ้นเรื่อยๆ เผื่อไว้ดีกว่าขาด</div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-go" style="margin-top:22px" onclick="goBuild()">เริ่มออกแบบชีวิตในฝัน →</button>
+  <p style="text-align:center;color:rgba(255,255,255,.35);font-size:.72rem;margin-top:14px">อ้างอิงแนวทางจากคู่มือ SEC / สมาคมนักวางแผนการเงินไทย</p>
+</section>
+
+<!-- ========== SCREEN 1 : BUILDER ========== -->
+<section class="screen" id="s1">
+  <div class="progress-dots" id="deckDots" style="margin-bottom:10px"></div>
+  <div style="display:flex;align-items:center;gap:10px;margin:2px 0 12px">
+    <div style="flex-shrink:0;font-size:40px">🥚</div>
+    <div><h2 style="color:#fff;font-size:1.3rem;margin:0">เลือกชีวิตในฝัน 🎨</h2><p style="color:rgba(255,255,255,.55);font-size:.82rem;margin:2px 0 0">แตะเลือกแบบที่ใช่ได้เลย!</p></div>
+  </div>
+  <div class="deck" id="deck"></div>
+  <div style="text-align:center;margin-top:10px"><span style="color:rgba(255,255,255,.4);font-size:.78rem">← ปัดซ้าย-ขวา เพื่อเลือกหมวด →</span></div>
+</section>
+
+<!-- ========== SCREEN 2 : REVEAL ========== -->
+<section class="screen" id="s2">
+  <div class="progress-dots"><div class="pdot on"></div><div class="pdot on"></div><div class="pdot on"></div></div>
+  <div style="text-align:center">
+    <div id="personaPic" style="width:132px;height:132px;border-radius:50%;margin:0 auto 4px;background:linear-gradient(135deg,#36E0C0,#0FB5A0);display:flex;align-items:center;justify-content:center;font-size:76px;overflow:hidden">🧳</div>
+    <div class="chip" style="margin-top:4px">ฉายาของคุณ</div>
+    <h2 id="personaName" style="color:#fff;font-size:1.6rem;margin:8px 0 0">นักเดินทางวัยเก๋า</h2>
+    <p id="personaDesc" style="color:rgba(255,255,255,.6);font-size:.9rem;margin:6px 18px 0"></p>
+    <div id="personaZing" style="margin:12px auto 0;max-width:330px;background:rgba(255,216,107,.12);border:1px solid rgba(255,216,107,.32);border-radius:14px;padding:10px 14px;color:#FFE08A;font-family:Mali;font-size:.92rem;line-height:1.5"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;text-align:center">
+    <div class="label">ความเป็นไปได้ของแผน (ถ้าเริ่มวันนี้)</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:8px">
+      <div id="scoreGrade" style="font-family:'Mali',cursive;font-weight:700;font-size:2.3rem;width:62px;height:62px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(54,224,192,.13);color:#36E0C0">A</div>
+      <div style="text-align:left"><div class="num" style="font-size:2rem;font-weight:900;color:#fff;line-height:1"><span id="scorePct">0</span>%</div><div class="label" id="scoreCap" style="margin-top:2px"></div></div>
+    </div>
+    <div class="label" style="font-size:.68rem;margin-top:9px;color:rgba(255,255,255,.4)">*ประเมินจากระยะเวลาเตรียมตัว + ขนาดของฝันที่เลือก (ยังไม่รวมเงินเก็บที่มีอยู่)</div>
+  </div>
+
+  <div class="card" style="margin-top:14px;text-align:center">
+    <div class="label">เทียบกับคนไทยทั่วไป 🇹🇭</div>
+    <div class="num" style="font-size:1.7rem;font-weight:900;margin-top:4px" id="vsAvgNum">—</div>
+    <div class="label" id="vsAvgCap"></div>
+    <div class="label" style="font-size:.66rem;margin-top:7px;color:rgba(255,255,255,.4)">*เทียบค่าใช้จ่ายเกษียณเฉลี่ยคนไทย ~18,000 บาท/เดือน</div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="label" style="margin-bottom:12px;font-family:Mali;color:#fff;font-size:.95rem">🔍 เจาะลึกฉายาของคุณ</div>
+    <div id="personaDetail" style="display:grid;gap:13px"></div>
+  </div>
+
+  <div class="bigstat" style="margin-top:14px">
+    <div class="label">ชีวิตในฝันของคุณ วันนี้ตกเดือนละ</div>
+    <div class="reveal-num" style="font-size:2.4rem;color:#36E0C0" id="todayMonthly">0</div>
+    <div class="label">บาท/เดือน</div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="label" style="margin-bottom:10px">💸 เงินก้อนนี้มาจากอะไรบ้าง (ต่อเดือน วันนี้)</div>
+    <div id="breakdown"></div>
+  </div>
+
+  <div class="card villain" style="margin-top:14px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="font-size:24px">🔥</span><b style="color:#FF8A8A;font-family:'Mali'">เงินเฟ้อจัดให้...</b></div>
+    <div style="text-align:center;margin-bottom:6px"><span class="label">ในอีก</span><div class="num" style="font-size:2.6rem;font-weight:900;color:#FF8A8A;line-height:1.05"><span id="yrsBig">25</span> ปี</div><span class="label">(จากอายุ <span id="curAgeT">35</span> → วันเกษียณ <span id="rAgeT">60</span>)</span></div>
+    <div class="label" style="text-align:center;margin-top:8px">ค่าใช้จ่ายเดียวกันจะกลายเป็น</div>
+    <div class="reveal-num" style="font-size:2rem;color:#FF8A8A;text-align:center" id="futureMonthly">0</div>
+    <div class="label" style="text-align:center">บาท/เดือน · ของแพงขึ้นทุกปี โดยเฉพาะค่ารักษาพยาบาล</div>
+    <div class="label" id="inflNote" style="margin-top:7px;color:rgba(255,255,255,.45)"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:linear-gradient(135deg,rgba(255,216,107,.16),rgba(255,216,107,.04));border-color:rgba(255,216,107,.35)">
+    <div class="label">💰 เงินก้อนที่ต้องเตรียมไว้ ณ วันเกษียณ</div>
+    <div class="reveal-num" style="font-size:2.5rem;color:#FFD86B" id="lumpSum">0</div>
+    <div class="label">บาท · เพื่อใช้ชีวิตนี้ไปจนถึงอายุ <span id="lifeT">90</span> ปี</div>
+    <div style="border-top:1px dashed rgba(255,255,255,.15);margin-top:12px;padding-top:12px;display:flex;justify-content:space-between;align-items:center">
+      <span class="label">ถ้าเริ่มเก็บวันนี้ ต้องออมเดือนละ</span>
+      <span class="num" style="font-weight:800;color:#fff;font-size:1.15rem" id="saveMonthly">0</span>
+    </div>
+  </div>
+
+  <button class="btn" style="width:100%;background:linear-gradient(135deg,#36E0C0,#0FB5A0);color:#063;padding:15px;margin-top:14px" onclick="shareResult()">📸 เซฟการ์ด — โพสต์ลง IG / Story</button>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
+    <a id="shareX" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.9rem" target="_blank">𝕏</a>
+    <a id="shareTh" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.85rem" target="_blank">Threads</a>
+    <a id="shareLine" class="btn" style="width:auto;background:#06C755;color:#fff;padding:12px;text-decoration:none;font-size:.85rem" target="_blank">LINE</a>
+    <a id="shareFb" class="btn" style="width:auto;background:#1877F2;color:#fff;padding:12px;text-decoration:none;font-size:.85rem" target="_blank">FB</a>
+  </div>
+  <div style="text-align:center;font-size:.7rem;color:rgba(255,255,255,.4);margin-top:8px">💡 IG / Story: กด "เซฟการ์ด" ด้านบน แล้วโพสต์รูปลง IG ได้เลย</div>
+
+  <h3 style="color:#fff;font-size:1.05rem;margin:22px 0 10px">📈 ราคาในวันที่คุณเกษียณ</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" id="priceReveals"></div>
+
+  <h3 style="color:#fff;font-size:1.05rem;margin:22px 0 10px">เงินเฟ้อแต่ละหมวด ไม่เท่ากัน 🔥</h3>
+  <div class="card"><div style="height:250px"><canvas id="growthChart"></canvas></div><div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-top:8px;text-align:center">เส้นค่ารักษาพยาบาลพุ่งเร็วที่สุด (8%/ปี) · หมวดอื่น 3-4%/ปี</div></div>
+
+  <h3 style="color:#fff;font-size:1.05rem;margin:22px 0 10px">เงินหมดไปกับอะไรบ้าง</h3>
+  <div class="card"><div style="height:210px"><canvas id="breakChart"></canvas></div></div>
+
+  <!-- CTA -->
+  <div style="background:linear-gradient(135deg,#1B365D,#0891B2);border-radius:22px;padding:22px;margin-top:24px;text-align:center">
+    <div style="font-size:30px">🎯</div>
+    <h3 style="color:#fff;font-size:1.2rem;margin:8px 0 6px">ตัวเลขนี้ดูเยอะ? มี 2 ทางถึงฝัน</h3>
+    <p style="color:rgba(255,255,255,.75);font-size:.85rem;margin:0 0 16px">เก็บเอง <span id="saveMonthly2" class="num" style="color:#FFD86B;font-weight:700">0</span> บาท/เดือน · หรือให้ <b style="color:#36E0C0">ประกันบำนาญการันตี</b> จ่ายให้ตลอดชีพ ไม่ต้องลุ้นเงินหมด</p>
+    <a href="https://www.nextlevel-advisor.com/solutions/pension-calculator-flexi-retire" target="_blank" class="btn btn-go" style="text-decoration:none">คำนวณแผนบำนาญของฉัน →</a>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-gold" style="text-decoration:none;margin-top:10px">นัดที่ปรึกษาฟรี 15 นาที</a>
+  </div>
+
+  <button class="btn" style="margin-top:14px;background:rgba(255,255,255,.1);color:#fff" onclick="restart()">↺ ออกแบบใหม่</button>
+  <p style="text-align:center;color:rgba(255,255,255,.3);font-size:.7rem;margin-top:16px;line-height:1.5">ตัวเลขเป็นค่าประมาณเพื่อการวางแผนเบื้องต้น · สมมติฐานเงินเฟ้อรายหมวด (สุขภาพ 8%, อาหาร 4%, อื่นๆ ~3%/ปี) อ้างอิงแนวโน้มจริง · ไม่ใช่คำแนะนำการลงทุนเฉพาะบุคคล</p>
+</section>
+
+<!-- ========== STICKY TOTAL (builder) ========== -->
+<div class="sticky-bar" id="stickyBar" style="display:none">
+  <div class="sticky-inner">
+    <div style="flex:1">
+      <div id="deckLabel" style="color:rgba(255,255,255,.75);font-family:Mali;font-size:.95rem">ออกแบบชีวิตในฝัน 🎨</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4)">เลือกให้ครบทั้ง 5 หมวด</div>
+    </div>
+    <button id="deckBtn" class="btn btn-gold" style="width:auto;padding:13px 22px" onclick="deckNext()">ถัดไป →</button>
+  </div>
+</div>
+
+</div>
+<script>
+const DATA={
+  housing:{title:'🏠 ที่อยู่หลังเกษียณ',infl:0.03,sel:'condo',opts:[
+    {id:'home',em:'🏡',label:'อยู่บ้านตัวเอง',cost:5000,note:'สบายๆ บ้านเดิม'},
+    {id:'condo',em:'🏙️',label:'คอนโดในเมือง',cost:15000,note:'ใกล้ห้าง ใกล้ รพ.'},
+    {id:'care',em:'🏥',label:'Senior Care Home',cost:30000,note:'มีคนดูแล 24 ชม.'},
+    {id:'wellness',em:'🌿',label:'Wellness Resort',cost:70000,note:'รีสอร์ตสูงวัยพรีเมียม'},
+    {id:'luxury',em:'👑',label:'Luxury Estate',cost:150000,note:'เกษียณหรูขั้นสุด'}]},
+  food:{title:'🍜 การกิน',infl:0.04,sel:'street',opts:[
+    {id:'cook',em:'🍳',label:'ทำกินเองเป็นหลัก',cost:6000,note:'ประหยัด สุขภาพดี'},
+    {id:'street',em:'🍜',label:'ตามสั่ง / สตรีทฟู้ด',cost:12000,note:'อร่อยง่ายๆ'},
+    {id:'nice',em:'🍽️',label:'ร้านดีๆ บ่อย',cost:25000,note:'ให้รางวัลตัวเอง'},
+    {id:'fine',em:'🥂',label:'สายไฟน์ไดนิ่ง',cost:50000,note:'กินคือชีวิต'}]},
+  travel:{title:'✈️ การเที่ยว',infl:0.03,sel:'dom',opts:[
+    {id:'none',em:'🛋️',label:'อยู่บ้านสบายใจ',cost:0,note:'ไม่เน้นเที่ยว'},
+    {id:'dom',em:'🚐',label:'เที่ยวในไทย ปีละ 2-3',cost:2500,note:'โร้ดทริปชิลๆ'},
+    {id:'intl1',em:'✈️',label:'ต่างประเทศ ปีละ 1',cost:10000,note:'บินสั้นๆ ผ่อนคลาย'},
+    {id:'intl3',em:'🌍',label:'ต่างประเทศ ปีละ 2-3',cost:30000,note:'นักเดินทางตัวจริง'}]},
+  healthcare:{title:'🏥 สุขภาพ (เงินเฟ้อแรงสุด!)',infl:0.08,sel:'ins',opts:[
+    {id:'gov',em:'🪪',label:'บัตรทอง / ปกส.',cost:1500,note:'เสี่ยงส่วนต่าง+รอคิว'},
+    {id:'ins',em:'🛡️',label:'มีประกันสุขภาพ',cost:8000,note:'อุ่นใจ คุมค่าใช้จ่าย'},
+    {id:'private',em:'🏨',label:'รพ.เอกชน จ่ายเอง',cost:20000,note:'อุ่นใจแต่ค่าใช้จ่ายสูง'}]},
+  leisure:{title:'🎨 งานอดิเรก / ช้อปปิ้ง',infl:0.03,sel:'mid',opts:[
+    {id:'low',em:'🌱',label:'พอเพียง',cost:3000,note:'ความสุขเรียบง่าย'},
+    {id:'mid',em:'🎨',label:'มีงานอดิเรก',cost:8000,note:'กอล์ฟ สวน คาเฟ่'},
+    {id:'high',em:'🛍️',label:'สายเปย์ / ช้อป',cost:20000,note:'ใช้ชีวิตเต็มที่'}]}
+};
+const POST_REAL=0.03, SAVE_REAL=0.025;
+let curAge=35, retAge=60, lifeExp=90, deckIdx=0, lastShare={};
+const SHARE_URL='https://www.nextlevel-advisor.com/retirement-egg';
+const ORDER=Object.keys(DATA);
+const META={
+ housing:{icon:'🏠',name:'ที่อยู่หลังเกษียณ',sub:'อยากใช้ชีวิตบั้นปลายที่ไหน?'},
+ food:{icon:'🍜',name:'การกิน',sub:'ความสุขบนโต๊ะอาหาร'},
+ travel:{icon:'✈️',name:'การเที่ยว',sub:'อยากออกไปเห็นโลกแค่ไหน?'},
+ healthcare:{icon:'🏥',name:'สุขภาพ',sub:'ดูแลตัวเองแบบไหน? (เงินเฟ้อแรงสุด!)'},
+ leisure:{icon:'🎨',name:'งานอดิเรก',sub:'ใช้เวลาว่างยังไงให้มีความสุข'}};
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const fmtM=n=>n>=1e6?(n/1e6).toFixed(2)+' ล้าน':fmt(n);
+
+// intro controls
+
+function goBuild(){
+  curAge=Math.max(20,Math.min(75,Math.round(+document.getElementById('curAge').value||35)));
+  retAge=Math.round(+document.getElementById('retAgeInput').value||60);
+  lifeExp=Math.max(40,Math.min(120,Math.round(+document.getElementById('lifeExp').value||90)));
+  if(retAge<=curAge){alert('อายุเกษียณต้องมากกว่าอายุปัจจุบัน');return;}
+  if(lifeExp<=retAge){alert('อายุขัยต้องมากกว่าอายุเกษียณ ลองปรับแถบเลื่อนด้านล่าง');return;}
+  renderCats(); show('s1'); document.getElementById('stickyBar').style.display='block'; updateTotal();
+}
+function renderCats(){
+  const deck=document.getElementById('deck');
+  let h='';
+  ORDER.forEach((k,idx)=>{const c=DATA[k],m=META[k];
+    h+='<div class="panel" data-idx="'+idx+'"><div class="panel-head"><div class="panel-emoji">'+m.icon+'</div><div style="color:#fff;font-family:Mali;font-weight:700;font-size:1.3rem;margin-top:4px">'+m.name+'</div><div style="color:rgba(255,255,255,.5);font-size:.82rem;margin-top:2px">'+m.sub+'</div></div><div style="display:flex;flex-direction:column;gap:10px">';
+    c.opts.forEach(o=>{h+='<div class="opt'+(o.id===c.sel?' sel':'')+'" data-cat="'+k+'" data-id="'+o.id+'"><div class="em">'+o.em+'</div><div style="flex:1"><div style="color:#fff;font-weight:600;font-size:.95rem">'+o.label+'</div><div style="color:rgba(255,255,255,.45);font-size:.76rem">'+o.note+'</div></div><div class="check">✓</div></div>';});
+    h+='</div></div>';
+  });
+  deck.innerHTML=h;
+  document.getElementById('deckDots').innerHTML=ORDER.map((_,i)=>'<div class="pdot'+(i===0?' on':'')+'"></div>').join('');
+  document.querySelectorAll('.opt').forEach(el=>el.onclick=()=>{
+    const cat=el.dataset.cat;DATA[cat].sel=el.dataset.id;
+    document.querySelectorAll('.opt[data-cat="'+cat+'"]').forEach(x=>x.classList.remove('sel'));
+    el.classList.add('sel');updateTotal();
+  });
+  deck.onscroll=()=>setDeck(Math.round(deck.scrollLeft/deck.clientWidth));
+  setDeck(0);
+}
+function setDeck(i){deckIdx=i;document.querySelectorAll('#deckDots .pdot').forEach((d,j)=>d.classList.toggle('on',j===i));var dl=document.getElementById('deckLabel');if(dl)dl.textContent='หมวดที่ '+(i+1)+' / '+ORDER.length+' · '+META[ORDER[i]].name;
+  const last=i>=ORDER.length-1, b=document.getElementById('deckBtn');
+  b.textContent=last?'ดูผลลัพธ์ →':'ถัดไป →';b.classList.toggle('btn-go',last);b.classList.toggle('btn-gold',!last);}
+function deckNext(){const deck=document.getElementById('deck');if(deckIdx>=ORDER.length-1){goReveal();}else{deck.scrollTo({left:(deckIdx+1)*deck.clientWidth,behavior:'smooth'});}}
+function chosen(k){return DATA[k].opts.find(o=>o.id===DATA[k].sel);}
+function monthlyToday(){let s=0;for(const k in DATA)s+=chosen(k).cost;return s;}
+function updateTotal(){}
+
+// ENGINE (SEC-style: real terms for the actionable lump; inflation used for sticker drama)
+function blendInfl(){let c=0,w=0;for(const k in DATA){c+=chosen(k).cost;w+=chosen(k).cost*DATA[k].infl;}return c>0?w/c:0.03;}
+function simulate(){
+  const y2r=retAge-curAge, N=Math.max(1,lifeExp-retAge), g=blendInfl();
+  const annualToday=monthlyToday()*12;
+  const factor=(1-Math.pow(1+POST_REAL,-N))/POST_REAL;
+  const lump=annualToday*factor;                 // เงินก้อน ณ วันเกษียณ (มูลค่าวันนี้)
+  const rmm=SAVE_REAL/12, n=y2r*12;
+  const save = n>0 ? lump*rmm/(Math.pow(1+rmm,n)-1) : lump;
+  const futureMonthly=monthlyToday()*Math.pow(1+g,y2r);   // ราคา nominal ตอนเกษียณ
+  const ages=[],monthlySeries=[];
+  for(let t=0;t<N;t++){ages.push(retAge+t);monthlySeries.push(futureMonthly*Math.pow(1+g,t));}
+  return {y2r,N,g,lump,save,firstYearMonthly:futureMonthly,ages,monthlySeries};
+}
+function persona(){
+  const c={};for(const k in DATA)c[k]=chosen(k).cost;
+  const tot=monthlyToday();
+  const top=Object.keys(c).sort((a,b)=>c[b]-c[a])[0];
+  const lux=DATA.housing.sel==='luxury'||DATA.housing.sel==='wellness';
+  if(lux)return{em:'🦢',img:'animal/web/hero-1.webp',name:'คุณหงส์',tagline:'รวยแบบไม่ต้องตะโกน',
+    zinger:'ความหรูไม่ต้องป่าวประกาศ… แต่เงินเฟ้อมันป่าวให้เองจ้า 🥂',
+    focus:'ใช้ชีวิตบั้นปลายระดับพรีเมียม สะดวกสบายเต็มที่',
+    joy:'คุณภาพชีวิต บริการชั้นเลิศ และความสบายแบบไม่ต้องห่วงเรื่องเล็กน้อย',
+    watch:'ฐานค่าใช้จ่ายสูง + เงินเฟ้อทบเร็ว เงินก้อนต้องใหญ่มาก เสี่ยงไม่พอถ้าอายุยืนกว่าคาด',
+    plan:'เน้นกระแสเงินสดการันตีตลอดชีพ (บำนาญ) เป็นฐาน + พอร์ตลงทุนเติบโตคู่กัน อย่าพึ่งเงินก้อนล้วน'};
+  if(top==='travel')return{em:'🦩',img:'animal/web/hero-2.webp',name:'ฟลามิงโกขาเที่ยว',tagline:'บินรัวทั่วโลก ไม่มีเบรก',
+    zinger:'พาสปอร์ตเต็มเล่มได้ ขอแค่บัญชีอย่าเพิ่งเต็มศูนย์ก็พอ ✈️',
+    focus:'ออกเดินทาง เก็บประสบการณ์และความทรงจำทั่วโลก',
+    joy:'อิสระ การผจญภัย และเรื่องราวใหม่ๆ ในทุกทริป',
+    watch:'งบเที่ยวผันผวน + ต้องมีสุขภาพฟิตพอจะไป และค่ารักษาหากป่วยระหว่างทาง',
+    plan:'กันงบเที่ยวเป็นก้อนแยก + ประกันสุขภาพ/เดินทางครอบคลุม + บำนาญเป็นรายได้ประจำฐาน'};
+  if(top==='food')return{em:'🐹',img:'animal/web/hero-3.webp',name:'แฮมสเตอร์สายกิน',tagline:'ตุนของอร่อยเต็มกระพุ้งแก้ม',
+    zinger:'กินดีอยู่ดีทุกมื้อ ระวังบั้นปลายเหลือแต่ภาพถ่ายอาหารนะจ๊ะ 🍜',
+    focus:'ความสุขบนโต๊ะอาหาร กินดีมีคุณภาพทุกมื้อ',
+    joy:'รสชาติ บรรยากาศ และการได้กินกับคนที่รัก',
+    watch:'ค่าอาหารเป็นรายจ่ายประจำที่เงินเฟ้อกัดทุกปี + สุขภาพจากการกินที่ตามมาด้วยค่ารักษา',
+    plan:'มีรายได้ประจำสม่ำเสมอ (บำนาญรายเดือน) ครอบค่ากิน + เผื่อเกราะสุขภาพ'};
+  if(top==='healthcare')return{em:'🐰',img:'animal/web/hero-4.webp',name:'กระต่ายฟิตเปรี๊ยะ',tagline:'แข็งแรงยิ่งกว่าหลาน',
+    zinger:'ฟิตจนอยู่ยาวถึง 90… แปลว่าต้องเตรียมเงินไว้ยาวๆ ด้วยน้า 🥕',
+    focus:'ดูแลสุขภาพ อายุยืนอย่างมีคุณภาพ ไม่เป็นภาระใคร',
+    joy:'ร่างกายแข็งแรง จิตใจสดใส พึ่งพาตัวเองได้',
+    watch:'ยิ่งอายุยืน ยิ่งจ่ายค่ารักษานานขึ้น และเงินเฟ้อหมวดสุขภาพแรงที่สุด (8%+/ปี)',
+    plan:'ประกันสุขภาพเหมาจ่ายเป็นเกราะ + บำนาญที่จ่ายยาวถึง 90 ปี รับความเสี่ยงอายุยืน'};
+  if(top==='leisure')return{em:'🦚',img:'animal/web/hero-5.webp',name:'นกยูงสายอาร์ต',tagline:'โชว์ของ ไม่มีวันเบื่อ',
+    zinger:'ความสุขล้นเหมือนหางที่กางออก… ขอกระเป๋าตังกางตามด้วยน้า 🎨',
+    focus:'งานอดิเรก การเรียนรู้ และความสนุกที่ไม่หยุดนิ่ง',
+    joy:'การได้ทำในสิ่งที่รักและมีคอมมูนิตี้ที่ใช่',
+    watch:'งานอดิเรกบางอย่างกินเงินไม่รู้ตัว + อาจเพลินจนละเลยเตรียมเงินก้อนใหญ่',
+    plan:'ตั้งงบ "ความสุข" ให้ชัด + มีรายได้ประจำการันตีเป็นฐานก่อนเสมอ'};
+  if(top==='housing')return{em:'🐧',img:'animal/web/hero-6.webp',name:'เพนกวินอยู่บ้าน',tagline:'นอนกอดหมอน ดูซีรีส์ยันแก่',
+    zinger:'อยู่บ้านประหยัดสุด… แต่ค่าหมอน่ะ มันไม่เคยอยู่บ้านกับเรานะ 🐧',
+    focus:'ความอบอุ่นที่บ้าน ใกล้ชิดครอบครัวและคนรอบตัว',
+    joy:'ความสงบ ความคุ้นเคย และเวลากับคนที่รัก',
+    watch:'ค่าดูแลบ้าน/ผู้ดูแล และค่ารักษายามสูงวัย มักถูกประเมินต่ำกว่าจริง',
+    plan:'เผื่อค่าสุขภาพ + ผู้ดูแลที่บ้าน และมีรายได้ประจำครอบค่าใช้จ่ายพื้นฐาน'};
+  if(tot<=22000)return{em:'🐢',img:'animal/web/hero-7.webp',name:'เต่ามินิมอล',tagline:'ช้าๆ ชิลๆ พอเพียงสุขใจ',
+    zinger:'ใช้ชีวิตมินิมอลได้ แต่เงินเฟ้อไม่เคยมินิมอลกับใครนะจ๊ะ 🐢',
+    focus:'ชีวิตเรียบง่าย พอเพียง ไม่ยึดติดวัตถุ',
+    joy:'อิสระทางใจ และความสุขจากสิ่งเล็กๆ รอบตัว',
+    watch:'ถึงใช้น้อย แต่ค่ารักษาพยาบาลยามแก่หนีไม่พ้น และเงินเฟ้อยังกัดกำลังซื้อ',
+    plan:'ไม่ต้องเยอะ แต่ต้องมีฐานรายได้การันตี + เกราะสุขภาพ กันเหตุไม่คาดฝัน'};
+  return{em:'🦉',img:'animal/web/hero-8.webp',name:'นกฮูกนักวางแผน',tagline:'รอบรู้เรื่องเงิน สมดุลเป๊ะ',
+    zinger:'ฉลาดแล้ว เหลือแค่ลงมือก่อนฟ้าสางเท่านั้นแหละ 🦉',
+    focus:'สมดุลทุกด้าน ใช้ชีวิตกำลังดี ไม่อดไม่เกินตัว',
+    joy:'ความมั่นคงและอิสระที่จะเลือกใช้ชีวิตในแบบของตัวเอง',
+    watch:'ความรู้สึกว่า "กำลังดีแล้ว" จนไม่รีบวางแผนจริงจัง + เงินเฟ้อระยะยาว',
+    plan:'กระจาย 3 ขา — บำนาญการันตี + การลงทุนเติบโต + ประกันสุขภาพ ให้ครบ'};
+}
+let gC,bC;
+function countUp(id,target,suffix){const el=document.getElementById(id);let s=0;const step=target/40;const t=setInterval(()=>{s+=step;if(s>=target){s=target;clearInterval(t);}el.textContent=(suffix==='M'?fmtM(s):fmt(s));},18);}
+function goReveal(){
+  const r=simulate(), p=persona();
+  show('s2'); document.getElementById('stickyBar').style.display='none';
+  (function(){var pic=document.getElementById('personaPic');pic.classList.remove('pop');pic.innerHTML='<img src="animal/web/hero-egg2.webp" alt="" style="width:100%;height:100%;object-fit:contain" onerror="this.parentNode.textContent=\'🥚\'">';pic.classList.add('hatch');var _hint=document.getElementById('hatchHint');_hint.textContent='ไข่กำลังฟัก... ✨';_hint.style.opacity='1';vib(30);setTimeout(function(){vib([20,40,20]);playPop();},900);setTimeout(function(){vib([30,55,30]);playPop();},1900);setTimeout(function(){_hint.style.opacity='0';pic.classList.remove('hatch');pic.classList.add('pop');pic.innerHTML='<img src="'+p.img+'" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.textContent=\''+p.em+'\'">';var fl=document.getElementById('flash');fl.classList.remove('flashing');void fl.offsetWidth;fl.classList.add('flashing');var bn=document.getElementById('hatchBanner');bn.classList.remove('banner-show');void bn.offsetWidth;bn.classList.add('banner-show');confetti();playHatch();vib([60,30,140]);},2800);})();
+  document.getElementById('personaName').textContent=p.name;
+  document.getElementById('personaDesc').textContent=p.tagline;
+  document.getElementById('personaZing').textContent='“'+p.zinger+'”';
+  document.getElementById('cardHero').innerHTML='<img src="'+p.img+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.parentNode.textContent=\''+p.em+'\'">';
+  document.getElementById('cardName').textContent=p.name;
+  document.getElementById('cardDesc').textContent=p.tagline;
+  document.getElementById('cardZing').textContent='“'+p.zinger+'”';
+  document.getElementById('cardToday').textContent=fmt(monthlyToday())+' ฿/ด.';
+  document.getElementById('cardLump').textContent=fmtM(r.lump)+' บาท';
+  var runwayScore=Math.max(0,Math.min(100,(r.y2r/30)*100));
+  var affordScore=Math.max(0,Math.min(100,100-(r.save/1500)));
+  var readiness=Math.max(8,Math.min(99,Math.round(0.45*runwayScore+0.55*affordScore)));
+  var grade=readiness>=85?'S':readiness>=70?'A':readiness>=55?'B':readiness>=40?'C':'D';
+  var gcap={S:'เป็นไปได้สูงมาก! ฝันนี้อยู่แค่เอื้อม',A:'เป็นไปได้สูง แค่เริ่มออมสม่ำเสมอ',B:'พอมีลุ้น ถ้าวางแผนจริงจัง',C:'ท้าทายอยู่ ต้องเร่งวางแผน',D:'ฝันใหญ่มาก! ต้องเริ่มจริงจังตั้งแต่วันนี้'}[grade];
+  var gcol=(grade==='S'||grade==='A')?'#36E0C0':grade==='B'?'#FFD86B':'#FF8A8A';
+  var sg=document.getElementById('scoreGrade');sg.textContent=grade;sg.style.color=gcol;sg.style.background=gcol+'22';
+  document.getElementById('scoreCap').textContent=gcap;
+  countUp('scorePct',readiness);
+  document.getElementById('cardScore').textContent='ความเป็นไปได้ '+readiness+'% · เกรด '+grade;
+  var AVG=18000, pv=Math.round((monthlyToday()/AVG-1)*100);
+  var vn=document.getElementById('vsAvgNum'), vc=document.getElementById('vsAvgCap');
+  if(pv>=0){vn.textContent='แพงกว่า '+pv+'%';vn.style.color='#FF8A8A';vc.textContent='ชีวิตในฝันคุณแพงกว่าค่าเฉลี่ยคนไทย';}
+  else{vn.textContent='ประหยัดกว่า '+(-pv)+'%';vn.style.color='#36E0C0';vc.textContent='ไลฟ์สไตล์คุณประหยัดกว่าค่าเฉลี่ยคนไทย';}
+  document.getElementById('cardVs').textContent=(pv>=0?'แพงกว่าค่าเฉลี่ยคนไทย '+pv+'%':'ประหยัดกว่าค่าเฉลี่ยคนไทย '+(-pv)+'%');
+  const prow=(em,lb,tx)=>'<div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:18px;flex-shrink:0">'+em+'</span><div><div style="color:#36E0C0;font-size:.72rem;font-weight:700">'+lb+'</div><div style="color:rgba(255,255,255,.82);font-size:.85rem;line-height:1.55">'+tx+'</div></div></div>';
+  document.getElementById('personaDetail').innerHTML=prow('🎯','โฟกัสชีวิต',p.focus)+prow('💖','ความสุขมาจาก',p.joy)+prow('⚠️','สิ่งที่ต้องระวัง',p.watch)+prow('💡','วางแผนการเงินยังไง',p.plan);
+  document.getElementById('rAgeT').textContent=retAge;
+  document.getElementById('yrsBig').textContent=r.y2r;
+  document.getElementById('curAgeT').textContent=curAge;
+  document.getElementById('lifeT').textContent=lifeExp;
+  countUp('todayMonthly',monthlyToday());
+  countUp('futureMonthly',r.firstYearMonthly);
+  countUp('lumpSum',r.lump,'M');
+  document.getElementById('saveMonthly').textContent=fmt(r.save);
+  document.getElementById('saveMonthly2').textContent=fmt(r.save);
+  // price reveals
+  const y=r.y2r;
+  const items=[['🍜','ก๋วยเตี๋ยว',60,0.04],['☕','กาแฟ',50,0.04],['🏨','ค่าห้อง รพ./คืน',30000,0.08],['🎌','ตั๋วบินญี่ปุ่น',25000,0.03]];
+  document.getElementById('priceReveals').innerHTML=items.map(([em,nm,base,inf])=>{
+    const fut=base*Math.pow(1+inf,y);
+    return '<div class="pricecard"><div style="font-size:24px">'+em+'</div><div class="label">'+nm+'</div><div class="num" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:line-through">'+fmt(base)+'</div><div class="num" style="color:#FF8A8A;font-weight:800;font-size:1.1rem">'+fmt(fut)+'</div></div>';
+  }).join('');
+  document.getElementById('breakdown').innerHTML=ORDER.map(k=>{const o=chosen(k),m=META[k];return '<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)"><span style="font-size:20px">'+o.em+'</span><div style="flex:1"><div style="color:#fff;font-size:.86rem">'+m.name+'</div><div style="color:rgba(255,255,255,.45);font-size:.72rem">'+o.label+'</div></div><div class="num" style="color:#36E0C0;font-weight:700">'+fmt(o.cost)+'</div></div>';}).join('')+'<div style="display:flex;justify-content:space-between;padding-top:11px"><b style="color:#fff;font-family:Mali">รวม</b><b class="num" style="color:#36E0C0">'+fmt(monthlyToday())+' /เดือน</b></div>';
+  document.getElementById('inflNote').textContent='สมมติฐาน: เงินเฟ้อเฉลี่ย ~'+(r.g*100).toFixed(1)+'%/ปี (ถ่วงน้ำหนักตามไลฟ์สไตล์) · ค่ารักษาพยาบาล 8%/ปี · หมวดอื่น 3-4%/ปี';
+  lastShare={name:p.name,lump:r.lump};
+  const su=encodeURIComponent(SHARE_URL), st=encodeURIComponent(shareText());
+  document.getElementById('shareLine').href='https://social-plugins.line.me/lineit/share?url='+su+'&text='+st;
+  document.getElementById('shareFb').href='https://www.facebook.com/sharer/sharer.php?u='+su+'&quote='+st;
+  document.getElementById('shareX').href='https://twitter.com/intent/tweet?text='+st+'&url='+su;
+  document.getElementById('shareTh').href='https://www.threads.net/intent/post?text='+encodeURIComponent(shareText()+' '+SHARE_URL);
+  drawCharts(r);
+}
+function shareText(){return 'ชีวิตเกษียณในฝันของฉัน: '+(lastShare.name||'')+' 🏖️ ต้องเตรียมเงิน '+fmtM(lastShare.lump||0)+' บาท! คุณล่ะต้องเท่าไหร่? มาเล่นเกมจำลองเกษียณกัน';}
+async function shareResult(){const card=document.getElementById('resultCard');try{const canvas=await html2canvas(card,{scale:3,backgroundColor:null,logging:false});canvas.toBlob(async(b)=>{const file=new File([b],'retirement-dream.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:shareText()});return;}catch(e){}}const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='retirement-dream.png';a.click();alert('เซฟการ์ดเป็นรูปแล้ว! เอาไปแชร์ได้เลย 📲');},'image/png');}catch(e){if(navigator.share){navigator.share({title:'เกมจำลองเกษียณในฝัน',text:shareText(),url:SHARE_URL});}else{try{navigator.clipboard.writeText(shareText()+' '+SHARE_URL);alert('คัดลอกผลลัพธ์แล้ว 📋');}catch(_){alert(shareText());}}}}
+function drawCharts(r){
+  if(gC)gC.destroy(); if(bC)bC.destroy();
+  const iAges=[];for(let a=curAge;a<=lifeExp;a++)iAges.push(a);
+  const catCol={housing:'#7FB3FF',food:'#FFD86B',travel:'#36E0C0',healthcare:'#FF8A8A',leisure:'#C9A0FF'};
+  const iDs=ORDER.map(k=>({label:META[k].name,data:iAges.map(a=>chosen(k).cost*Math.pow(1+DATA[k].infl,a-curAge)),borderColor:catCol[k],backgroundColor:'transparent',borderWidth:k==='healthcare'?3.5:2,tension:.3,pointRadius:0}));
+  gC=new Chart(document.getElementById('growthChart'),{type:'line',data:{labels:iAges,datasets:iDs},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'rgba(255,255,255,.75)',font:{family:'Noto Sans Thai',size:10},boxWidth:10,padding:8}},tooltip:{callbacks:{title:i=>'อายุ '+i[0].label,label:c=>c.dataset.label+': '+fmt(c.parsed.y)+' บาท/เดือน'}}},scales:{x:{ticks:{color:'rgba(255,255,255,.5)',maxTicksLimit:6,font:{family:'Noto Sans Thai'}},grid:{display:false}},y:{ticks:{color:'rgba(255,255,255,.5)',callback:v=>fmtM(v)},grid:{color:'rgba(255,255,255,.07)'}}}}});
+  const cats=Object.keys(DATA),labels=cats.map(k=>DATA[k].title.replace(/\(.*\)/,'').trim()),vals=cats.map(k=>chosen(k).cost),colors=['#36E0C0','#FFD86B','#7FB3FF','#FF8A8A','#C9A0FF'];
+  bC=new Chart(document.getElementById('breakChart'),{type:'doughnut',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderColor:'#0D1F3C',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'rgba(255,255,255,.75)',font:{family:'Noto Sans Thai',size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.label+': '+fmt(c.parsed)+' บาท'}}}}});
+}
+function confetti(){const c=document.getElementById('confetti');const cl=['#36E0C0','#FFD86B','#FF8A8A','#7FB3FF','#C9A0FF'];for(let i=0;i<46;i++){const d=document.createElement('div');d.className='conf';d.style.left=(Math.random()*100)+'%';d.style.background=cl[i%5];d.style.animationDelay=(Math.random()*.7)+'s';c.appendChild(d);setTimeout(()=>d.remove(),3000);}}
+function vib(p){try{if(navigator.vibrate)navigator.vibrate(p);}catch(e){}}
+function playHatch(){try{var ac=window._ac||(window._ac=new(window.AudioContext||window.webkitAudioContext)());[523,659,784,1046].forEach(function(f,i){var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.type='triangle';o.frequency.value=f;var t=ac.currentTime+i*0.09;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.2,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.26);o.start(t);o.stop(t+.27);});}catch(e){}}
+function playPop(){try{var ac=window._ac||(window._ac=new (window.AudioContext||window.webkitAudioContext)());var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.type='triangle';o.frequency.setValueAtTime(320,ac.currentTime);o.frequency.exponentialRampToValueAtTime(880,ac.currentTime+.14);g.gain.setValueAtTime(.18,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.32);o.start();o.stop(ac.currentTime+.33);}catch(e){}}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo(0,0);}
+function restart(){show('s0');document.getElementById('stickyBar').style.display='none';}
+</script>
+</body>
+</html>
