@@ -229,7 +229,7 @@
     </div>
   </div>
 
-  <button class="btn" style="width:100%;background:linear-gradient(135deg,#36E0C0,#0FB5A0);color:#063;padding:15px;margin-top:14px" onclick="shareResult()">📸 เซฟการ์ด — โพสต์ลง IG / Story</button>
+  <button class="btn" style="width:100%;background:linear-gradient(135deg,#36E0C0,#0FB5A0);color:#063;padding:15px;margin-top:14px" onclick="shareResult()">📤 แชร์การ์ดของฉัน + ลิงก์เล่น</button>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
     <a id="shareX" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.9rem" target="_blank">𝕏</a>
     <a id="shareTh" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.85rem" target="_blank">Threads</a>
@@ -474,8 +474,8 @@ function goReveal(){
   document.getElementById('shareTh').href='https://www.threads.net/intent/post?text='+encodeURIComponent(shareText()+' '+SHARE_URL);
   drawCharts(r);
 }
-function shareText(){return 'ชีวิตเกษียณในฝันของฉัน: '+(lastShare.name||'')+' 🏖️ ต้องเตรียมเงิน '+fmtM(lastShare.lump||0)+' บาท! คุณล่ะต้องเท่าไหร่? มาเล่นเกมจำลองเกษียณกัน';}
-async function shareResult(){const card=document.getElementById('resultCard');try{const canvas=await html2canvas(card,{scale:3,backgroundColor:null,logging:false});canvas.toBlob(async(b)=>{const file=new File([b],'retirement-dream.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:shareText()});return;}catch(e){}}const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='retirement-dream.png';a.click();alert('เซฟการ์ดเป็นรูปแล้ว! เอาไปแชร์ได้เลย 📲');},'image/png');}catch(e){if(navigator.share){navigator.share({title:'เกมจำลองเกษียณในฝัน',text:shareText(),url:SHARE_URL});}else{try{navigator.clipboard.writeText(shareText()+' '+SHARE_URL);alert('คัดลอกผลลัพธ์แล้ว 📋');}catch(_){alert(shareText());}}}}
+function shareText(){return 'ฉันฟักไข่เกษียณได้เป็น "'+(lastShare.name||'')+'" 🥚✨ ชีวิตในฝันต้องเตรียมเงิน '+fmtM(lastShare.lump||0)+' บาท! แล้วคุณจะฟักเป็นตัวอะไร? มาลองเล่นกัน';}
+async function shareResult(){const card=document.getElementById('resultCard');try{const canvas=await html2canvas(card,{scale:3,backgroundColor:null,logging:false});canvas.toBlob(async(b)=>{const file=new File([b],'retirement-dream.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:shareText(),url:SHARE_URL});return;}catch(e){}}const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='retirement-dream.png';a.click();try{navigator.clipboard.writeText(SHARE_URL);}catch(_){}alert('เซฟการ์ดเป็นรูปแล้ว 📲 + คัดลอกลิงก์เล่นให้แล้ว วางคู่กับรูปตอนโพสต์ได้เลย!');},'image/png');}catch(e){if(navigator.share){navigator.share({title:'เกมจำลองเกษียณในฝัน',text:shareText(),url:SHARE_URL});}else{try{navigator.clipboard.writeText(shareText()+' '+SHARE_URL);alert('คัดลอกผลลัพธ์แล้ว 📋');}catch(_){alert(shareText());}}}}
 function drawCharts(r){
   if(gC)gC.destroy(); if(bC)bC.destroy();
   const iAges=[];for(let a=curAge;a<=lifeExp;a++)iAges.push(a);
