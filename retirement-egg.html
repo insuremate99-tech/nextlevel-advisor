@@ -146,20 +146,20 @@
     <div id="q1">
       <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">ตอนนี้คุณอายุเท่าไหร่? 🎂</div>
       <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">จุดเริ่มต้นของการวางแผน</div>
-      <span class="field-wrap"><input type="number" id="curAge" class="field" value="35"/></span>
+      <span class="field-wrap"><input type="number" id="curAge" class="field" value="35" oninput="updReflect()"/></span>
       <button class="btn btn-go" style="margin-top:18px" onclick="qNext(1)">ถัดไป →</button>
     </div>
     <div id="q2" style="display:none">
       <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">อยากเกษียณตอนอายุเท่าไหร่? 🏖️</div>
       <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">วันที่คุณจะได้หยุดทำงาน</div>
-      <span class="field-wrap"><input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/></span>
+      <span class="field-wrap"><input type="number" id="retAgeInput" class="field" value="60" min="50" max="80" oninput="updReflect()"/></span>
       <div id="q2reflect" style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-top:12px;min-height:20px"></div>
       <button class="btn btn-go" style="margin-top:14px" onclick="qNext(2)">ถัดไป →</button>
     </div>
     <div id="q3" style="display:none">
       <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">คาดว่าจะใช้ชีวิตถึงกี่ขวบ? 🌳</div>
       <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">กำหนดได้เลย · คนไทยอายุยืนขึ้นเรื่อยๆ</div>
-      <span class="field-wrap"><input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/></span>
+      <span class="field-wrap"><input type="number" id="lifeExp" class="field" value="85" min="60" max="120" oninput="updReflect()"/></span>
       <div id="q3reflect" style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-top:12px;min-height:20px"></div>
       <button class="btn btn-go" style="margin-top:14px" onclick="goBuild()">เริ่มออกแบบชีวิตในฝัน 🥚</button>
     </div>
