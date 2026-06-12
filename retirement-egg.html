@@ -134,26 +134,36 @@
     <h1 style="color:#fff;font-size:2rem;margin:16px 0 8px;line-height:1.25">ชีวิตเกษียณในฝัน<br/>ของคุณ ราคาเท่าไหร่?</h1>
     <p style="color:rgba(255,255,255,.65);font-size:.95rem;margin:0 18px">ออกแบบไลฟ์สไตล์หลังเกษียณที่อยากมี แล้วดูว่า<b style="color:#36E0C0"> ต้องเตรียมเงินเท่าไหร่</b></p>
   </div>
-  <div class="card" style="margin-top:26px">
-    <div style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-bottom:14px">✏️ แตะแต่ละช่องเพื่อใส่ข้อมูลของคุณ</div>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div>
-        <div class="label" style="margin-bottom:7px">ตอนนี้คุณอายุ</div>
-        <span class="field-wrap"><input type="number" id="curAge" class="field" value="35"/></span>
-      </div>
-      <div>
-        <div class="label" style="margin-bottom:7px">อยากเกษียณตอนอายุ</div>
-        <span class="field-wrap"><input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/></span>
-      </div>
-      <div>
-        <div class="label" style="margin-bottom:7px">คาดว่าจะใช้ชีวิตถึงอายุ (กำหนดเอง)</div>
-        <span class="field-wrap"><input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/></span>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:6px;text-align:center">กำหนดได้ตามต้องการ · คนไทยอายุยืนขึ้นเรื่อยๆ เผื่อไว้ดีกว่าขาด</div>
-      </div>
+  <button class="btn btn-go" style="margin-top:24px" onclick="goAges()">▶ เริ่มเล่นเลย</button>
+
+  <p style="text-align:center;color:rgba(255,255,255,.35);font-size:.72rem;margin-top:14px">อ้างอิงแนวทางจากคู่มือ SEC / สมาคมนักวางแผนการเงินไทย</p>
+</section>
+
+<section class="screen" id="sAge">
+  <div style="text-align:center;padding-top:22px;margin-bottom:2px"><div style="font-size:46px;animation:float 4s ease-in-out infinite">🥚</div></div>
+  <div class="card" style="margin-top:24px">
+    <div class="progress-dots" style="margin-bottom:18px"><div class="pdot on" id="qd1"></div><div class="pdot" id="qd2"></div><div class="pdot" id="qd3"></div></div>
+    <div id="q1">
+      <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">ตอนนี้คุณอายุเท่าไหร่? 🎂</div>
+      <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">จุดเริ่มต้นของการวางแผน</div>
+      <span class="field-wrap"><input type="number" id="curAge" class="field" value="35"/></span>
+      <button class="btn btn-go" style="margin-top:18px" onclick="qNext(1)">ถัดไป →</button>
+    </div>
+    <div id="q2" style="display:none">
+      <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">อยากเกษียณตอนอายุเท่าไหร่? 🏖️</div>
+      <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">วันที่คุณจะได้หยุดทำงาน</div>
+      <span class="field-wrap"><input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/></span>
+      <div id="q2reflect" style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-top:12px;min-height:20px"></div>
+      <button class="btn btn-go" style="margin-top:14px" onclick="qNext(2)">ถัดไป →</button>
+    </div>
+    <div id="q3" style="display:none">
+      <div style="text-align:center;font-family:'Mali',cursive;color:#fff;font-size:1.2rem;margin-bottom:6px">คาดว่าจะใช้ชีวิตถึงกี่ขวบ? 🌳</div>
+      <div style="text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:14px">กำหนดได้เลย · คนไทยอายุยืนขึ้นเรื่อยๆ</div>
+      <span class="field-wrap"><input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/></span>
+      <div id="q3reflect" style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-top:12px;min-height:20px"></div>
+      <button class="btn btn-go" style="margin-top:14px" onclick="goBuild()">เริ่มออกแบบชีวิตในฝัน 🥚</button>
     </div>
   </div>
-  <button class="btn btn-go" style="margin-top:22px" onclick="goBuild()">เริ่มออกแบบชีวิตในฝัน →</button>
-  <p style="text-align:center;color:rgba(255,255,255,.35);font-size:.72rem;margin-top:14px">อ้างอิงแนวทางจากคู่มือ SEC / สมาคมนักวางแผนการเงินไทย</p>
 </section>
 
 <!-- ========== SCREEN 1 : BUILDER ========== -->
@@ -243,7 +253,7 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" id="priceReveals"></div>
 
   <h3 style="color:#fff;font-size:1.05rem;margin:22px 0 10px">เงินเฟ้อแต่ละหมวด ไม่เท่ากัน 🔥</h3>
-  <div class="card"><div style="height:250px"><canvas id="growthChart"></canvas></div><div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-top:8px;text-align:center">เส้นค่ารักษาพยาบาลพุ่งเร็วที่สุด (8%/ปี) · หมวดอื่น 3-4%/ปี</div></div>
+  <div class="card"><div style="height:250px"><canvas id="growthChart"></canvas></div><div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-top:8px;text-align:center">ทุกหมวดเริ่มที่ 1 เท่าเท่ากัน · เส้นไหนชันกว่า = เฟ้อเร็วกว่า (สุขภาพ 8%/ปี แรงสุด)</div></div>
 
   <h3 style="color:#fff;font-size:1.05rem;margin:22px 0 10px">เงินหมดไปกับอะไรบ้าง</h3>
   <div class="card"><div style="height:210px"><canvas id="breakChart"></canvas></div></div>
@@ -484,8 +494,8 @@ function drawCharts(r){
   if(gC)gC.destroy(); if(bC)bC.destroy();
   const iAges=[];for(let a=curAge;a<=lifeExp;a++)iAges.push(a);
   const catCol={housing:'#7FB3FF',food:'#FFD86B',travel:'#36E0C0',healthcare:'#FF8A8A',leisure:'#C9A0FF'};
-  const iDs=ORDER.map(k=>({label:META[k].name,data:iAges.map(a=>chosen(k).cost*Math.pow(1+DATA[k].infl,a-curAge)),borderColor:catCol[k],backgroundColor:'transparent',borderWidth:k==='healthcare'?3.5:2,tension:.3,pointRadius:0}));
-  gC=new Chart(document.getElementById('growthChart'),{type:'line',data:{labels:iAges,datasets:iDs},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'rgba(255,255,255,.75)',font:{family:'Noto Sans Thai',size:10},boxWidth:10,padding:8}},tooltip:{callbacks:{title:i=>'อายุ '+i[0].label,label:c=>c.dataset.label+': '+fmt(c.parsed.y)+' บาท/เดือน'}}},scales:{x:{ticks:{color:'rgba(255,255,255,.5)',maxTicksLimit:6,font:{family:'Noto Sans Thai'}},grid:{display:false}},y:{ticks:{color:'rgba(255,255,255,.5)',callback:v=>fmtM(v)},grid:{color:'rgba(255,255,255,.07)'}}}}});
+  const iDs=ORDER.map(k=>({label:META[k].name,data:iAges.map(a=>Math.pow(1+DATA[k].infl,a-curAge)),borderColor:catCol[k],backgroundColor:'transparent',borderWidth:k==='healthcare'?3.5:2,tension:.3,pointRadius:0}));
+  gC=new Chart(document.getElementById('growthChart'),{type:'line',data:{labels:iAges,datasets:iDs},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'rgba(255,255,255,.75)',font:{family:'Noto Sans Thai',size:10},boxWidth:10,padding:8}},tooltip:{callbacks:{title:i=>'อายุ '+i[0].label,label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)+' เท่า'}}},scales:{x:{ticks:{color:'rgba(255,255,255,.5)',maxTicksLimit:6,font:{family:'Noto Sans Thai'}},grid:{display:false}},y:{min:1,ticks:{color:'rgba(255,255,255,.5)',callback:v=>v.toFixed(1)+'×'},grid:{color:'rgba(255,255,255,.07)'}}}}});
   const cats=Object.keys(DATA),labels=cats.map(k=>DATA[k].title.replace(/\(.*\)/,'').trim()),vals=cats.map(k=>chosen(k).cost),colors=['#36E0C0','#FFD86B','#7FB3FF','#FF8A8A','#C9A0FF'];
   bC=new Chart(document.getElementById('breakChart'),{type:'doughnut',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderColor:'#0D1F3C',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'rgba(255,255,255,.75)',font:{family:'Noto Sans Thai',size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.label+': '+fmt(c.parsed)+' บาท'}}}}});
 }
@@ -493,8 +503,13 @@ function confetti(){const c=document.getElementById('confetti');const cl=['#36E0
 function vib(p){try{if(navigator.vibrate)navigator.vibrate(p);}catch(e){}}
 function playHatch(){try{var ac=window._ac||(window._ac=new(window.AudioContext||window.webkitAudioContext)());[523,659,784,1046].forEach(function(f,i){var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.type='triangle';o.frequency.value=f;var t=ac.currentTime+i*0.09;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.2,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.26);o.start(t);o.stop(t+.27);});}catch(e){}}
 function playPop(){try{var ac=window._ac||(window._ac=new (window.AudioContext||window.webkitAudioContext)());var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.type='triangle';o.frequency.setValueAtTime(320,ac.currentTime);o.frequency.exponentialRampToValueAtTime(880,ac.currentTime+.14);g.gain.setValueAtTime(.18,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.32);o.start();o.stop(ac.currentTime+.33);}catch(e){}}
+function qdot(n){[1,2,3].forEach(function(i){var d=document.getElementById('qd'+i);if(d)d.classList.toggle('on',i<=n);});}
+function _ag(id,def){return Math.round(+document.getElementById(id).value||def);}
+function updReflect(){var ca=_ag('curAge',35),ra=_ag('retAgeInput',60),le=_ag('lifeExp',85);var r2=document.getElementById('q2reflect');if(r2)r2.textContent=(ra>ca)?('✨ อีก '+(ra-ca)+' ปีจากนี้... เตรียมตัวทัน!'):'';var r3=document.getElementById('q3reflect');if(r3)r3.textContent=(le>ra)?('✨ มีเวลาใช้เงินหลังเกษียณ '+(le-ra)+' ปี'):'';}
+function goAges(){show('sAge');var q1=document.getElementById('q1');if(q1){q1.style.display='block';document.getElementById('q2').style.display='none';document.getElementById('q3').style.display='none';}qdot(1);updReflect();try{document.getElementById('curAge').focus();}catch(e){}}
+function qNext(n){if(n===1){var ca=_ag('curAge',35);if(ca<15||ca>85){alert('กรอกอายุปัจจุบันให้ถูกต้อง');return;}document.getElementById('q1').style.display='none';document.getElementById('q2').style.display='block';qdot(2);updReflect();try{document.getElementById('retAgeInput').focus();}catch(e){}}else if(n===2){var ca=_ag('curAge',35),ra=_ag('retAgeInput',60);if(ra<=ca){alert('อายุเกษียณต้องมากกว่าอายุปัจจุบัน');return;}document.getElementById('q2').style.display='none';document.getElementById('q3').style.display='block';qdot(3);updReflect();try{document.getElementById('lifeExp').focus();}catch(e){}}}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo(0,0);}
-function restart(){show('s0');document.getElementById('stickyBar').style.display='none';}
+function restart(){show('s0');document.getElementById('stickyBar').style.display='none';var q1=document.getElementById('q1');if(q1){q1.style.display='block';document.getElementById('q2').style.display='none';document.getElementById('q3').style.display='none';qdot(1);updReflect();}}
 </script>
 </body>
 </html>
