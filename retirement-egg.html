@@ -106,22 +106,22 @@
 <div id="hatchHint"></div>
 <div id="resultCard" style="position:fixed;left:-9999px;top:0;width:360px;height:640px;box-sizing:border-box;background:linear-gradient(165deg,#0D1F3C 0%,#11294d 55%,#0e3a5e 100%);font-family:'Noto Sans Thai',sans-serif;overflow:hidden">
   <div style="padding:26px 24px;height:100%;display:flex;flex-direction:column;box-sizing:border-box">
-    <div style="font-family:'Mali',cursive;color:#36E0C0;font-weight:700;font-size:15px">🏝️ เกมจำลองเกษียณในฝัน</div>
+    <div style="font-family:'Noto Sans Thai',sans-serif;color:#36E0C0;font-weight:700;font-size:15px">🏝️ เกมจำลองเกษียณในฝัน</div>
     <div style="text-align:center;margin-top:14px">
       <div style="color:rgba(255,255,255,.6);font-size:13px">ฉายาของคุณคือ...</div>
       <div id="cardHero" style="width:150px;height:150px;border-radius:50%;margin:12px auto;background:linear-gradient(135deg,#36E0C0,#0FB5A0);display:flex;align-items:center;justify-content:center;font-size:86px;line-height:1">🧳</div>
-      <div id="cardName" style="font-family:'Mali',cursive;color:#fff;font-size:27px;font-weight:700;line-height:1.1">The Jetsetter</div>
+      <div id="cardName" style="font-family:'Noto Sans Thai',sans-serif;color:#fff;font-size:27px;font-weight:700;line-height:1.1">The Jetsetter</div>
       <div id="cardDesc" style="color:#FFD86B;font-size:13px;margin-top:3px"></div>
       <div id="cardHl" style="color:#fff;font-size:12.5px;margin-top:9px;line-height:1.45;background:rgba(54,224,192,.13);border-radius:10px;padding:9px 12px"></div>
       <div id="cardScore" style="color:rgba(255,255,255,.72);font-size:12px;margin-top:5px"></div>
       <div id="cardVs" style="color:rgba(255,255,255,.55);font-size:11px;margin-top:3px"></div>
     </div>
-    <div id="cardZing" style="background:rgba(255,216,107,.12);border:1px solid rgba(255,216,107,.3);border-radius:13px;padding:11px 13px;margin-top:13px;color:#FFE08A;font-family:'Mali',cursive;font-size:13px;text-align:center;line-height:1.5"></div>
+    <div id="cardZing" style="background:rgba(255,216,107,.12);border:1px solid rgba(255,216,107,.3);border-radius:13px;padding:11px 13px;margin-top:13px;color:#FFE08A;font-family:'Noto Sans Thai',sans-serif;font-size:13px;text-align:center;line-height:1.5"></div>
     <div style="margin-top:auto;display:flex;flex-direction:column;gap:9px">
       <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 15px"><span style="color:rgba(255,255,255,.65);font-size:13px">ชีวิตในฝัน</span><span id="cardToday" style="font-family:'Poppins',sans-serif;color:#36E0C0;font-weight:800;font-size:15px"></span></div>
       <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 15px"><span style="color:rgba(255,255,255,.65);font-size:13px">ต้องเตรียมเงิน</span><span id="cardLump" style="font-family:'Poppins',sans-serif;color:#FFD86B;font-weight:800;font-size:15px"></span></div>
     </div>
-    <div style="text-align:center;margin-top:16px;color:rgba(255,255,255,.55);font-size:12px;font-family:'Mali',cursive">คุณล่ะ ฉายาอะไร? 🎮 เล่นเลยที่ nextlevel-advisor.com</div>
+    <div style="text-align:center;margin-top:16px;color:rgba(255,255,255,.55);font-size:12px;font-family:'Noto Sans Thai',sans-serif">คุณล่ะ ฉายาอะไร? 🎮 เล่นเลยที่ nextlevel-advisor.com</div>
   </div>
 </div>
 
@@ -230,6 +230,7 @@
   </div>
 
   <button class="btn" style="width:100%;background:linear-gradient(135deg,#36E0C0,#0FB5A0);color:#063;padding:15px;margin-top:14px" onclick="shareResult()">📤 แชร์การ์ดของฉัน + ลิงก์เล่น</button>
+  <button class="btn" style="width:100%;background:rgba(255,255,255,.12);color:#fff;padding:13px;margin-top:8px" onclick="saveCard()">💾 เซฟการ์ดลงเครื่อง</button>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
     <a id="shareX" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.9rem" target="_blank">𝕏</a>
     <a id="shareTh" class="btn" style="width:auto;background:#000;color:#fff;padding:12px;text-decoration:none;font-size:.85rem" target="_blank">Threads</a>
@@ -475,7 +476,10 @@ function goReveal(){
   drawCharts(r);
 }
 function shareText(){return 'ฉันฟักไข่เกษียณได้เป็น "'+(lastShare.name||'')+'" 🥚✨ ชีวิตในฝันต้องเตรียมเงิน '+fmtM(lastShare.lump||0)+' บาท! แล้วคุณจะฟักเป็นตัวอะไร? มาลองเล่นกัน';}
-async function shareResult(){const card=document.getElementById('resultCard');try{const canvas=await html2canvas(card,{scale:3,backgroundColor:null,logging:false});canvas.toBlob(async(b)=>{const file=new File([b],'retirement-dream.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:shareText(),url:SHARE_URL});return;}catch(e){}}const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='retirement-dream.png';a.click();try{navigator.clipboard.writeText(SHARE_URL);}catch(_){}alert('เซฟการ์ดเป็นรูปแล้ว 📲 + คัดลอกลิงก์เล่นให้แล้ว วางคู่กับรูปตอนโพสต์ได้เลย!');},'image/png');}catch(e){if(navigator.share){navigator.share({title:'เกมจำลองเกษียณในฝัน',text:shareText(),url:SHARE_URL});}else{try{navigator.clipboard.writeText(shareText()+' '+SHARE_URL);alert('คัดลอกผลลัพธ์แล้ว 📋');}catch(_){alert(shareText());}}}}
+function saveBlob(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='retirement-egg.png';a.click();}
+async function renderCard(){try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;}catch(e){}var card=document.getElementById('resultCard');var canvas=await html2canvas(card,{scale:3,backgroundColor:null,logging:false,useCORS:true});return await new Promise(function(res){canvas.toBlob(res,'image/png');});}
+async function shareResult(){try{var b=await renderCard();var file=new File([b],'retirement-egg.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:shareText(),url:SHARE_URL});return;}catch(e){}}saveBlob(b);try{navigator.clipboard.writeText(SHARE_URL);}catch(_){}alert('เซฟการ์ดแล้ว 📲 + คัดลอกลิงก์เล่นให้แล้ว วางคู่กับรูปตอนโพสต์ได้เลย!');}catch(e){if(navigator.share){navigator.share({title:'เกมจำลองเกษียณ',text:shareText(),url:SHARE_URL});}else{try{navigator.clipboard.writeText(shareText()+' '+SHARE_URL);alert('คัดลอกผลลัพธ์แล้ว 📋');}catch(_){alert(shareText());}}}}
+async function saveCard(){try{var b=await renderCard();saveBlob(b);try{navigator.clipboard.writeText(SHARE_URL);}catch(_){}alert('เซฟการ์ดลงเครื่องแล้ว 💾 + คัดลอกลิงก์เล่นให้แล้ว');}catch(e){alert('เซฟไม่สำเร็จ ลองใหม่อีกครั้งนะครับ');}}
 function drawCharts(r){
   if(gC)gC.destroy(); if(bC)bC.destroy();
   const iAges=[];for(let a=curAge;a<=lifeExp;a++)iAges.push(a);
