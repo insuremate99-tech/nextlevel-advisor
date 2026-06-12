@@ -142,7 +142,7 @@
       </div>
       <div>
         <div class="label" style="margin-bottom:7px">คาดว่าจะใช้ชีวิตถึงอายุ (กำหนดเอง)</div>
-        <input type="number" id="lifeExp" class="field" value="90" min="60" max="120"/>
+        <input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/>
         <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:6px;text-align:center">กำหนดได้ตามต้องการ · คนไทยอายุยืนขึ้นเรื่อยๆ เผื่อไว้ดีกว่าขาด</div>
       </div>
     </div>
@@ -243,15 +243,15 @@
   <div class="card"><div style="height:210px"><canvas id="breakChart"></canvas></div></div>
 
   <!-- CTA -->
-  <div style="background:linear-gradient(135deg,#1B365D,#0891B2);border-radius:22px;padding:22px;margin-top:24px;text-align:center">
-    <div style="font-size:30px">🎯</div>
-    <h3 style="color:#fff;font-size:1.2rem;margin:8px 0 6px">ตัวเลขนี้ดูเยอะ? มี 2 ทางถึงฝัน</h3>
-    <p style="color:rgba(255,255,255,.75);font-size:.85rem;margin:0 0 16px">เก็บเอง <span id="saveMonthly2" class="num" style="color:#FFD86B;font-weight:700">0</span> บาท/เดือน · หรือให้ <b style="color:#36E0C0">ประกันบำนาญการันตี</b> จ่ายให้ตลอดชีพ ไม่ต้องลุ้นเงินหมด</p>
-    <a href="https://www.nextlevel-advisor.com/solutions/pension-calculator-flexi-retire" target="_blank" class="btn btn-go" style="text-decoration:none">คำนวณแผนบำนาญของฉัน →</a>
-    <a href="https://calendly.com/insuremate99/15" target="_blank" class="btn btn-gold" style="text-decoration:none;margin-top:10px">นัดที่ปรึกษาฟรี 15 นาที</a>
+  <div style="background:linear-gradient(135deg,#1B365D,#0891B2);border-radius:22px;padding:24px;margin-top:24px;text-align:center">
+    <div style="font-size:30px">🌱</div>
+    <h3 style="color:#fff;font-size:1.2rem;margin:8px 0 6px">ฝันนี้... เริ่มวันนี้ก็ยังทัน</h3>
+    <p style="color:rgba(255,255,255,.78);font-size:.86rem;margin:0 0 18px">ไม่ต้องรีบตัดสินใจอะไรตอนนี้ แค่อยากให้เห็นภาพว่า<br/>ยิ่งเริ่มวางแผนเร็ว ฝันยิ่งเป็นจริงง่ายขึ้นเยอะ 💛</p>
+    <a href="https://lin.ee/7YeXvFaG" target="_blank" class="btn btn-go" style="text-decoration:none">💬 อยากวางแผนเต็มสูบ — ทักไลน์</a>
+    <a href="https://www.nextlevel-advisor.com/solutions/retirement-tax" target="_blank" class="btn" style="text-decoration:none;margin-top:10px;background:rgba(255,255,255,.12);color:#fff">ดูแนวทางวางแผนเกษียณเบื้องต้น →</a>
   </div>
 
-  <button class="btn" style="margin-top:14px;background:rgba(255,255,255,.1);color:#fff" onclick="restart()">↺ ออกแบบใหม่</button>
+  <button class="btn" style="margin-top:14px;background:rgba(255,255,255,.1);color:#fff" onclick="restart()">↺ เล่นใหม่</button>
   <p style="text-align:center;color:rgba(255,255,255,.3);font-size:.7rem;margin-top:16px;line-height:1.5">ตัวเลขเป็นค่าประมาณเพื่อการวางแผนเบื้องต้น · สมมติฐานเงินเฟ้อรายหมวด (สุขภาพ 8%, อาหาร 4%, อื่นๆ ~3%/ปี) อ้างอิงแนวโน้มจริง · ไม่ใช่คำแนะนำการลงทุนเฉพาะบุคคล</p>
 </section>
 
@@ -416,7 +416,7 @@ function countUp(id,target,suffix){const el=document.getElementById(id);let s=0;
 function goReveal(){
   const r=simulate(), p=persona();
   show('s2'); document.getElementById('stickyBar').style.display='none';
-  (function(){var pic=document.getElementById('personaPic');pic.classList.remove('pop');pic.innerHTML='<img src="animal/web/hero-egg2.webp" alt="" style="width:100%;height:100%;object-fit:contain" onerror="this.parentNode.textContent=\'🥚\'">';pic.classList.add('hatch');var _hint=document.getElementById('hatchHint');_hint.textContent='ไข่กำลังฟัก... ✨';_hint.style.opacity='1';vib(30);setTimeout(function(){vib([20,40,20]);playPop();},900);setTimeout(function(){vib([30,55,30]);playPop();},1900);setTimeout(function(){_hint.style.opacity='0';pic.classList.remove('hatch');pic.classList.add('pop');pic.innerHTML='<img src="'+p.img+'" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.textContent=\''+p.em+'\'">';var fl=document.getElementById('flash');fl.classList.remove('flashing');void fl.offsetWidth;fl.classList.add('flashing');var bn=document.getElementById('hatchBanner');bn.classList.remove('banner-show');void bn.offsetWidth;bn.classList.add('banner-show');confetti();playHatch();vib([60,30,140]);},2800);})();
+  (function(){var pic=document.getElementById('personaPic');pic.classList.remove('pop');pic.innerHTML='<img src="animal/web/hero-egg2.webp" alt="" style="width:100%;height:100%;object-fit:contain" onerror="this.parentNode.textContent=\'🥚\'">';pic.classList.add('hatch');var _hint=document.getElementById('hatchHint');_hint.textContent='ไข่กำลังฟัก... ✨';_hint.style.opacity='1';vib(30);setTimeout(function(){vib([20,40,20]);playPop();},600);setTimeout(function(){vib([30,55,30]);playPop();},1300);setTimeout(function(){_hint.style.opacity='0';pic.classList.remove('hatch');pic.classList.add('pop');pic.innerHTML='<img src="'+p.img+'" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.textContent=\''+p.em+'\'">';var fl=document.getElementById('flash');fl.classList.remove('flashing');void fl.offsetWidth;fl.classList.add('flashing');var bn=document.getElementById('hatchBanner');bn.classList.remove('banner-show');void bn.offsetWidth;bn.classList.add('banner-show');confetti();playHatch();vib([60,30,140]);},2000);})();
   document.getElementById('personaName').textContent=p.name;
   document.getElementById('personaDesc').textContent=p.tagline;
   document.getElementById('personaZing').textContent='“'+p.zinger+'”';
@@ -451,7 +451,6 @@ function goReveal(){
   countUp('futureMonthly',r.firstYearMonthly);
   countUp('lumpSum',r.lump,'M');
   document.getElementById('saveMonthly').textContent=fmt(r.save);
-  document.getElementById('saveMonthly2').textContent=fmt(r.save);
   // price reveals
   const y=r.y2r;
   const items=[['🍜','ก๋วยเตี๋ยว',60,0.04],['☕','กาแฟ',50,0.04],['🏨','ค่าห้อง รพ./คืน',30000,0.08],['🎌','ตั๋วบินญี่ปุ่น',25000,0.03]];
