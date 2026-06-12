@@ -84,6 +84,15 @@ tailwind.config = { theme: { extend: {
   .thin{height:100%;display:flex;align-items:center;padding-left:8px;border-radius:6px;font-family:'Poppins',sans-serif;font-size:10px;font-weight:800;color:#fff;white-space:nowrap;transition:width .9s cubic-bezier(.22,1,.36,1)}
   .thin.premium{background:#1B365D}
   .thin.pension{background:linear-gradient(90deg,#C9A227,#E8CB52);color:#1B365D}
+  .step-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#E2E8F0;color:#64748B;font-size:11px;font-weight:700;font-family:'Poppins',sans-serif;transition:all .25s;flex-shrink:0}
+  .step-badge.done{background:#0891B2;color:#fff}
+  .tip{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1px solid #CBD5E1;color:#94A3B8;font-size:10px;font-style:italic;font-family:Georgia,serif;cursor:help;position:relative}
+  .tip::after{content:attr(data-tip);position:absolute;bottom:140%;left:50%;transform:translateX(-50%);background:#1B365D;color:#fff;font-size:11px;font-style:normal;font-weight:400;line-height:1.45;padding:8px 11px;border-radius:8px;width:195px;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s;z-index:30;box-shadow:0 6px 20px rgba(27,54,93,.2)}
+  .tip:hover::after{opacity:1;visibility:visible}
+  .input-ok{border-color:#0891B2 !important;background:#F0FBFD}
+  .btn-dim{opacity:.45;filter:grayscale(.3)}
+  .btn-ready{animation:pulseT 1.7s ease-in-out infinite}
+  @keyframes pulseT{0%,100%{box-shadow:0 4px 18px rgba(8,145,178,.3)}50%{box-shadow:0 6px 28px rgba(8,145,178,.62)}}
   .disabled-card{opacity:.55;filter:grayscale(.5)}
 </style>
 </head>
@@ -209,21 +218,25 @@ tailwind.config = { theme: { extend: {
   </div>
 
   <div class="card p-6 md:p-8 mb-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div id="progFill" class="h-full rounded-full" style="width:100%;background:#0891B2;transition:width .35s ease"></div></div>
+      <span id="stepText" class="text-xs font-semibold whitespace-nowrap" style="color:#0891B2"></span>
+    </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div>
-        <label class="block text-sm font-medium mb-2 text-slate-600">เพศ</label>
+        <label class="flex items-center gap-2 text-sm font-medium mb-2 text-slate-600"><span class="step-badge" id="sb1">1</span>เพศ <span class="tip" data-tip="อัตราเบี้ยของชายและหญิงต่างกันเล็กน้อยตามตารางบริษัท">i</span></label>
         <div class="flex gap-2" id="genderSeg">
           <div class="seg" data-g="male">ชาย</div>
           <div class="seg active" data-g="female">หญิง</div>
         </div>
       </div>
       <div>
-        <label class="block text-sm font-medium mb-2 text-slate-600">ปีเกิด (พ.ศ.)</label>
+        <label class="flex items-center gap-2 text-sm font-medium mb-2 text-slate-600"><span class="step-badge" id="sb2">2</span>ปีเกิด (พ.ศ.) <span class="tip" data-tip="กรอกเป็นปี พ.ศ. เช่น เกิดปี 2534 — ระบบใช้คำนวณอายุปัจจุบัน">i</span></label>
         <input type="number" id="birthYear" class="form-input" placeholder="เช่น 2534" value="2534"/>
         <p class="text-xs text-slate-400 mt-1.5" id="ageHint">อายุปัจจุบัน 35 ปี</p>
       </div>
       <div>
-        <label class="block text-sm font-medium mb-2 text-slate-600">บำนาญที่ต้องการ <span class="text-teal font-semibold">(ต่อเดือน)</span></label>
+        <label class="flex items-center gap-2 text-sm font-medium mb-2 text-slate-600"><span class="step-badge" id="sb3">3</span>บำนาญที่ต้องการ <span class="text-teal font-semibold">(ต่อเดือน)</span> <span class="tip" data-tip="เงินบำนาญต่อเดือนที่อยากได้ตอนเกษียณ ระบบจะแปลงเป็นทุนประกันให้อัตโนมัติ">i</span></label>
         <div class="relative">
           <input type="text" inputmode="numeric" id="pension" class="form-input pr-20" placeholder="เช่น 20,000" value="20,000"/>
           <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-slate-400">บาท/เดือน</span>
@@ -232,7 +245,7 @@ tailwind.config = { theme: { extend: {
       </div>
     </div>
     <div class="mt-7 text-center">
-      <button class="btn btn-teal px-10 py-4 text-base" onclick="calculate()">คำนวณเบี้ยประกัน &rarr;</button>
+      <button id="calcBtn" class="btn btn-teal px-10 py-4 text-base" onclick="calculate()">คำนวณเบี้ยประกัน &rarr;</button>
     </div>
     <p id="errMsg" class="text-center text-red-500 text-sm mt-3 hidden"></p>
   </div>
@@ -375,6 +388,19 @@ function updateHints(){
   document.getElementById('ageHint').textContent=(by>2400&&age>0)?('อายุปัจจุบัน '+age+' ปี'):'กรุณากรอกปีเกิด พ.ศ.';
   const p=numVal('pension');
   document.getElementById('saHint').textContent=p>0?('= ทุนประกัน '+fmt(p*100)+' บาท'):'';
+  updateForm();
+}
+function updateForm(){
+  const by=+document.getElementById('birthYear').value, age=CUR_BE-by;
+  const g1=!!gender, g2=by>2450&&age>=1, g3=numVal('pension')>=1000;
+  const steps=[g1,g2,g3], done=steps.filter(Boolean).length;
+  [['sb1',g1],['sb2',g2],['sb3',g3]].forEach(([id,ok])=>{const el=document.getElementById(id);if(!el)return;el.classList.toggle('done',ok);el.textContent=ok?'✓':id.slice(-1);});
+  const byEl=document.getElementById('birthYear'),pEl=document.getElementById('pension');
+  byEl.classList.toggle('input-ok',g2); pEl.classList.toggle('input-ok',g3);
+  document.getElementById('progFill').style.width=(done/3*100)+'%';
+  const st=document.getElementById('stepText'), btn=document.getElementById('calcBtn');
+  if(done===3){st.textContent='พร้อมแล้ว! กดคำนวณได้เลย';st.style.color='#0891B2';btn.classList.remove('btn-dim');btn.classList.add('btn-ready');}
+  else{const idx=steps.indexOf(false);const prompts=['เลือกเพศ','กรอกปีเกิด (พ.ศ.)','กรอกบำนาญที่อยากได้ต่อเดือน'];st.textContent='ขั้นที่ '+(idx+1)+' จาก 3 · '+prompts[idx];st.style.color='#94A3B8';btn.classList.add('btn-dim');btn.classList.remove('btn-ready');}
 }
 function tierKey(sa){if(sa<300000)return '100k-299k';if(sa<500000)return '300k-499k';if(sa<1000000)return '500k-999k';return '1m+';}
 function pensionPct(a){if(a<=70)return .12;if(a<=75)return .15;if(a<=80)return .18;if(a<=85)return .21;return .24;}
