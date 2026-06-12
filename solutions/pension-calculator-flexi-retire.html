@@ -317,9 +317,9 @@ tailwind.config = { theme: { extend: {
       <div>
         <h4 class="font-pop font-semibold text-white text-sm mb-5">บริการ</h4>
         <ul class="space-y-3 font-noto text-sm" style="color:rgba(255,255,255,.45)">
-          <li><a href="/solutions/retirement-tax" class="hover:text-white transition-colors" style="color:inherit">วางแผนภาษี/เกษียณ</a></li>
-          <li><a href="/solutions/health-planning" class="hover:text-white transition-colors" style="color:inherit">วางแผนสุขภาพ</a></li>
-          <li><a href="/solutions/legacy-planning" class="hover:text-white transition-colors" style="color:inherit">วางแผนมรดก</a></li>
+          <li><a href="/solutions/retirement-tax.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนภาษี/เกษียณ</a></li>
+          <li><a href="/solutions/health-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนสุขภาพ</a></li>
+          <li><a href="/solutions/legacy-planning.html" class="hover:text-white transition-colors" style="color:inherit">วางแผนมรดก</a></li>
           <li><a href="/calculator" class="hover:text-white transition-colors" style="color:inherit">เครื่องคำนวณเกษียณ</a></li>
         </ul>
       </div>
@@ -408,13 +408,12 @@ function calculate(){
 
 function renderCards(results){
   const avail=results.filter(r=>r.ok);
-  const minPrem=Math.min(...avail.map(r=>r.annualPremium));
   const maxPen=Math.max(...avail.map(r=>r.totalPension));
   document.getElementById('planCards').innerHTML=results.map(r=>{
     if(!r.ok) return `<div class="plan-card disabled-card"><div class="font-pop font-bold text-navy text-lg">${r.plan.label}</div><div class="text-xs text-slate-400 mb-3">${r.plan.sub}</div><div class="text-sm text-slate-400 py-10 text-center">ทำแผนนี้ไม่ได้<br/><span class="text-xs">อายุต้องไม่เกิน ${r.plan.maxAge} ปี (คุณ ${r.age} ปี)</span></div></div>`;
-    const best=r.annualPremium===minPrem;
+    const best=r.plan.id==='9060';
     return `<div class="plan-card ${best?'best':''}">
-      ${best?'<div class="badge mb-3">เบี้ยถูกที่สุด</div>':'<div class="h-3"></div>'}
+      ${best?'<div class="badge mb-3">แนะนำ · แผนมาตรฐาน</div>':'<div class="h-3"></div>'}
       <div class="font-pop font-bold text-navy text-lg">${r.plan.label}</div>
       <div class="text-xs text-slate-400 mb-4">${r.plan.sub}</div>
       <div class="rounded-xl p-4 mb-4 text-center" style="background:rgba(8,145,178,.06)">
