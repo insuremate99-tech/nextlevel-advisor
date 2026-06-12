@@ -112,6 +112,7 @@
       <div id="cardHero" style="width:150px;height:150px;border-radius:50%;margin:12px auto;background:linear-gradient(135deg,#36E0C0,#0FB5A0);display:flex;align-items:center;justify-content:center;font-size:86px;line-height:1">🧳</div>
       <div id="cardName" style="font-family:'Mali',cursive;color:#fff;font-size:27px;font-weight:700;line-height:1.1">The Jetsetter</div>
       <div id="cardDesc" style="color:#FFD86B;font-size:13px;margin-top:3px"></div>
+      <div id="cardHl" style="color:#fff;font-size:12.5px;margin-top:9px;line-height:1.45;background:rgba(54,224,192,.13);border-radius:10px;padding:9px 12px"></div>
       <div id="cardScore" style="color:rgba(255,255,255,.72);font-size:12px;margin-top:5px"></div>
       <div id="cardVs" style="color:rgba(255,255,255,.55);font-size:11px;margin-top:3px"></div>
     </div>
@@ -366,49 +367,49 @@ function persona(){
   const tot=monthlyToday();
   const top=Object.keys(c).sort((a,b)=>c[b]-c[a])[0];
   const lux=DATA.housing.sel==='luxury'||DATA.housing.sel==='wellness';
-  if(lux)return{em:'🦢',img:'animal/web/hero-1.webp',name:'คุณหงส์',tagline:'รวยแบบไม่ต้องตะโกน',
+  if(lux)return{em:'🦢',img:'animal/web/hero-1.webp',name:'คุณหงส์',tagline:'รวยแบบไม่ต้องตะโกน',hl:'สายเก๋าเงียบๆ ของทุกอย่างต้องเนี้ยบระดับพรีเมียม',
     zinger:'ความหรูไม่ต้องป่าวประกาศ… แต่เงินเฟ้อมันป่าวให้เองจ้า 🥂',
     focus:'ใช้ชีวิตบั้นปลายระดับพรีเมียม สะดวกสบายเต็มที่',
     joy:'คุณภาพชีวิต บริการชั้นเลิศ และความสบายแบบไม่ต้องห่วงเรื่องเล็กน้อย',
     watch:'ฐานค่าใช้จ่ายสูง + เงินเฟ้อทบเร็ว เงินก้อนต้องใหญ่มาก เสี่ยงไม่พอถ้าอายุยืนกว่าคาด',
     plan:'เน้นกระแสเงินสดการันตีตลอดชีพ (บำนาญ) เป็นฐาน + พอร์ตลงทุนเติบโตคู่กัน อย่าพึ่งเงินก้อนล้วน'};
-  if(top==='travel')return{em:'🦩',img:'animal/web/hero-2.webp',name:'ฟลามิงโกขาเที่ยว',tagline:'บินรัวทั่วโลก ไม่มีเบรก',
+  if(top==='travel')return{em:'🦩',img:'animal/web/hero-2.webp',name:'ฟลามิงโกขาเที่ยว',tagline:'บินรัวทั่วโลก ไม่มีเบรก',hl:'ชีวิตคือการเดินทาง พาสปอร์ตคือลมหายใจ',
     zinger:'พาสปอร์ตเต็มเล่มได้ ขอแค่บัญชีอย่าเพิ่งเต็มศูนย์ก็พอ ✈️',
     focus:'ออกเดินทาง เก็บประสบการณ์และความทรงจำทั่วโลก',
     joy:'อิสระ การผจญภัย และเรื่องราวใหม่ๆ ในทุกทริป',
     watch:'งบเที่ยวผันผวน + ต้องมีสุขภาพฟิตพอจะไป และค่ารักษาหากป่วยระหว่างทาง',
     plan:'กันงบเที่ยวเป็นก้อนแยก + ประกันสุขภาพ/เดินทางครอบคลุม + บำนาญเป็นรายได้ประจำฐาน'};
-  if(top==='food')return{em:'🐹',img:'animal/web/hero-3.webp',name:'แฮมสเตอร์สายกิน',tagline:'ตุนของอร่อยเต็มกระพุ้งแก้ม',
+  if(top==='food')return{em:'🐹',img:'animal/web/hero-3.webp',name:'แฮมสเตอร์สายกิน',tagline:'ตุนของอร่อยเต็มกระพุ้งแก้ม',hl:'ทุกมื้อคือมิชชั่น ความสุขวัดกันเป็นคำ',
     zinger:'กินดีอยู่ดีทุกมื้อ ระวังบั้นปลายเหลือแต่ภาพถ่ายอาหารนะจ๊ะ 🍜',
     focus:'ความสุขบนโต๊ะอาหาร กินดีมีคุณภาพทุกมื้อ',
     joy:'รสชาติ บรรยากาศ และการได้กินกับคนที่รัก',
     watch:'ค่าอาหารเป็นรายจ่ายประจำที่เงินเฟ้อกัดทุกปี + สุขภาพจากการกินที่ตามมาด้วยค่ารักษา',
     plan:'มีรายได้ประจำสม่ำเสมอ (บำนาญรายเดือน) ครอบค่ากิน + เผื่อเกราะสุขภาพ'};
-  if(top==='healthcare')return{em:'🐰',img:'animal/web/hero-4.webp',name:'กระต่ายฟิตเปรี๊ยะ',tagline:'แข็งแรงยิ่งกว่าหลาน',
+  if(top==='healthcare')return{em:'🐰',img:'animal/web/hero-4.webp',name:'กระต่ายฟิตเปรี๊ยะ',tagline:'แข็งแรงยิ่งกว่าหลาน',hl:'สุขภาพดีคือสมบัติ วิ่งแซงวัยไปไกลๆ',
     zinger:'ฟิตจนอยู่ยาวถึง 90… แปลว่าต้องเตรียมเงินไว้ยาวๆ ด้วยน้า 🥕',
     focus:'ดูแลสุขภาพ อายุยืนอย่างมีคุณภาพ ไม่เป็นภาระใคร',
     joy:'ร่างกายแข็งแรง จิตใจสดใส พึ่งพาตัวเองได้',
     watch:'ยิ่งอายุยืน ยิ่งจ่ายค่ารักษานานขึ้น และเงินเฟ้อหมวดสุขภาพแรงที่สุด (8%+/ปี)',
     plan:'ประกันสุขภาพเหมาจ่ายเป็นเกราะ + บำนาญที่จ่ายยาวถึง 90 ปี รับความเสี่ยงอายุยืน'};
-  if(top==='leisure')return{em:'🦚',img:'animal/web/hero-5.webp',name:'นกยูงสายอาร์ต',tagline:'โชว์ของ ไม่มีวันเบื่อ',
+  if(top==='leisure')return{em:'🦚',img:'animal/web/hero-5.webp',name:'นกยูงสายอาร์ต',tagline:'โชว์ของ ไม่มีวันเบื่อ',hl:'ชีวิตต้องมีสีสัน งานอดิเรกคือตัวตน',
     zinger:'ความสุขล้นเหมือนหางที่กางออก… ขอกระเป๋าตังกางตามด้วยน้า 🎨',
     focus:'งานอดิเรก การเรียนรู้ และความสนุกที่ไม่หยุดนิ่ง',
     joy:'การได้ทำในสิ่งที่รักและมีคอมมูนิตี้ที่ใช่',
     watch:'งานอดิเรกบางอย่างกินเงินไม่รู้ตัว + อาจเพลินจนละเลยเตรียมเงินก้อนใหญ่',
     plan:'ตั้งงบ "ความสุข" ให้ชัด + มีรายได้ประจำการันตีเป็นฐานก่อนเสมอ'};
-  if(top==='housing')return{em:'🐧',img:'animal/web/hero-6.webp',name:'เพนกวินอยู่บ้าน',tagline:'นอนกอดหมอน ดูซีรีส์ยันแก่',
+  if(top==='housing')return{em:'🐧',img:'animal/web/hero-6.webp',name:'เพนกวินอยู่บ้าน',tagline:'นอนกอดหมอน ดูซีรีส์ยันแก่',hl:'ความสุขที่สุดของโลก อยู่ในผ้าห่มอุ่นๆ',
     zinger:'อยู่บ้านประหยัดสุด… แต่ค่าหมอน่ะ มันไม่เคยอยู่บ้านกับเรานะ 🐧',
     focus:'ความอบอุ่นที่บ้าน ใกล้ชิดครอบครัวและคนรอบตัว',
     joy:'ความสงบ ความคุ้นเคย และเวลากับคนที่รัก',
     watch:'ค่าดูแลบ้าน/ผู้ดูแล และค่ารักษายามสูงวัย มักถูกประเมินต่ำกว่าจริง',
     plan:'เผื่อค่าสุขภาพ + ผู้ดูแลที่บ้าน และมีรายได้ประจำครอบค่าใช้จ่ายพื้นฐาน'};
-  if(tot<=22000)return{em:'🐢',img:'animal/web/hero-7.webp',name:'เต่ามินิมอล',tagline:'ช้าๆ ชิลๆ พอเพียงสุขใจ',
+  if(tot<=22000)return{em:'🐢',img:'animal/web/hero-7.webp',name:'เต่ามินิมอล',tagline:'ช้าๆ ชิลๆ พอเพียงสุขใจ',hl:'มีน้อยใช้น้อย แต่หัวใจเต็มร้อย',
     zinger:'ใช้ชีวิตมินิมอลได้ แต่เงินเฟ้อไม่เคยมินิมอลกับใครนะจ๊ะ 🐢',
     focus:'ชีวิตเรียบง่าย พอเพียง ไม่ยึดติดวัตถุ',
     joy:'อิสระทางใจ และความสุขจากสิ่งเล็กๆ รอบตัว',
     watch:'ถึงใช้น้อย แต่ค่ารักษาพยาบาลยามแก่หนีไม่พ้น และเงินเฟ้อยังกัดกำลังซื้อ',
     plan:'ไม่ต้องเยอะ แต่ต้องมีฐานรายได้การันตี + เกราะสุขภาพ กันเหตุไม่คาดฝัน'};
-  return{em:'🦉',img:'animal/web/hero-8.webp',name:'นกฮูกนักวางแผน',tagline:'รอบรู้เรื่องเงิน สมดุลเป๊ะ',
+  return{em:'🦉',img:'animal/web/hero-8.webp',name:'นกฮูกนักวางแผน',tagline:'รอบรู้เรื่องเงิน สมดุลเป๊ะ',hl:'คิดเป็นระบบ เกษียณแบบไม่ต้องมานั่งลุ้น',
     zinger:'ฉลาดแล้ว เหลือแค่ลงมือก่อนฟ้าสางเท่านั้นแหละ 🦉',
     focus:'สมดุลทุกด้าน ใช้ชีวิตกำลังดี ไม่อดไม่เกินตัว',
     joy:'ความมั่นคงและอิสระที่จะเลือกใช้ชีวิตในแบบของตัวเอง',
@@ -426,6 +427,7 @@ function goReveal(){
   document.getElementById('personaZing').textContent='“'+p.zinger+'”';
   document.getElementById('cardHero').innerHTML='<img src="'+p.img+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.parentNode.textContent=\''+p.em+'\'">';
   document.getElementById('cardName').textContent=p.name;
+  document.getElementById('cardHl').textContent=p.hl;
   document.getElementById('cardDesc').textContent=p.tagline;
   document.getElementById('cardZing').textContent='“'+p.zinger+'”';
   document.getElementById('cardToday').textContent=fmt(monthlyToday())+' ฿/ด.';
