@@ -273,10 +273,10 @@ tailwind.config = { theme: { extend: {
       <p class="text-sm text-slate-500 mb-5">กรอกรายได้รวมต่อปี ระบบจะประมาณฐานภาษีและคำนวณเงินคืนภาษีจากค่าลดหย่อนประกันบำนาญให้</p>
       <div class="grid md:grid-cols-3 gap-4 items-end mb-6">
         <div>
-          <label class="block text-sm font-medium mb-2 text-slate-600">รายได้รวมต่อปี (บาท)</label>
+          <label class="flex items-center gap-2 text-sm font-medium mb-2 text-slate-600">รายได้รวมต่อปี (บาท) <span class="tip" data-tip="รายได้รวมทั้งปีก่อนหักค่าใช้จ่าย เช่น เงินเดือน x 12 + โบนัส + รายได้อื่น">i</span></label>
           <input type="text" inputmode="numeric" id="income" class="form-input" placeholder="เช่น 1,200,000"/>
         </div>
-        <button class="btn btn-teal px-6 py-3.5" onclick="calcTax()">คำนวณภาษีที่ประหยัด</button>
+        <button id="taxBtn" class="btn btn-teal px-6 py-3.5 btn-dim" onclick="calcTax()">คำนวณภาษีที่ประหยัด</button>
         <p class="text-xs text-slate-400 leading-relaxed">ประมาณจาก: รายได้ − ค่าใช้จ่าย 50% (สูงสุด 100,000) − ลดหย่อนส่วนตัว 60,000 − ประกันสังคม 9,000</p>
       </div>
       <div class="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-800 leading-relaxed mb-6">
@@ -381,7 +381,7 @@ document.querySelectorAll('#genderSeg .seg').forEach(s=>s.onclick=()=>{
 });
 const pensionEl=document.getElementById('pension'),incomeEl=document.getElementById('income');
 pensionEl.addEventListener('input',()=>{fmtInput(pensionEl);updateHints();});
-incomeEl.addEventListener('input',()=>fmtInput(incomeEl));
+incomeEl.addEventListener('input',()=>{fmtInput(incomeEl);updateTaxForm();});
 document.getElementById('birthYear').addEventListener('input',updateHints);
 function updateHints(){
   const by=+document.getElementById('birthYear').value, age=CUR_BE-by;
@@ -511,6 +511,12 @@ function calcTax(){
   document.getElementById('taxResult').classList.remove('hidden');
 }
 updateHints();
+function updateTaxForm(){
+  const ok=numVal('income')>0;
+  incomeEl.classList.toggle('input-ok',ok);
+  const tb=document.getElementById('taxBtn'); if(tb) tb.classList.toggle('btn-dim',!ok);
+}
+updateTaxForm();
 </script>
 </body>
 </html>
