@@ -45,8 +45,11 @@
   .sticky-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;gap:12px}
   .seg{flex:1;text-align:center;padding:10px 4px;border:2px solid rgba(255,255,255,.12);border-radius:13px;cursor:pointer;font-weight:600;font-size:.85rem;color:rgba(255,255,255,.6);transition:all .15s}
   .seg.on{background:#36E0C0;border-color:#36E0C0;color:#063}
-  .field{width:100%;padding:13px;border-radius:13px;border:2px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;font-size:1.1rem;font-family:'Poppins';text-align:center;outline:none}
-  .field:focus{border-color:#36E0C0}
+  .field{width:100%;padding:14px 40px 14px 14px;border-radius:13px;border:2px solid rgba(54,224,192,.45);background:rgba(255,255,255,.1);color:#fff;font-size:1.2rem;font-weight:700;font-family:'Poppins';text-align:center;outline:none;animation:fieldGlow 1.8s ease-in-out infinite}
+  .field:focus{border-color:#36E0C0;background:rgba(255,255,255,.15);animation:none;box-shadow:0 0 0 4px rgba(54,224,192,.2)}
+  @keyframes fieldGlow{0%,100%{box-shadow:0 0 0 0 rgba(54,224,192,0)}50%{box-shadow:0 0 0 5px rgba(54,224,192,.22)}}
+  .field-wrap{position:relative}
+  .field-wrap:after{content:'✏️';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;opacity:.7}
   .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px}
   .reveal-num{font-family:'Poppins';font-weight:900;line-height:1}
   .bigstat{background:linear-gradient(135deg,rgba(54,224,192,.16),rgba(54,224,192,.04));border:1px solid rgba(54,224,192,.3);border-radius:22px;padding:22px;text-align:center}
@@ -131,18 +134,19 @@
     <p style="color:rgba(255,255,255,.65);font-size:.95rem;margin:0 18px">ออกแบบไลฟ์สไตล์หลังเกษียณที่อยากมี แล้วดูว่า<b style="color:#36E0C0"> ต้องเตรียมเงินเท่าไหร่</b> — พร้อมเอฟเฟกต์เงินเฟ้อตัวจริง</p>
   </div>
   <div class="card" style="margin-top:26px">
+    <div style="text-align:center;color:#36E0C0;font-family:'Mali',cursive;font-size:.92rem;margin-bottom:14px">✏️ แตะแต่ละช่องเพื่อใส่ข้อมูลของคุณ</div>
     <div style="display:flex;flex-direction:column;gap:16px">
       <div>
         <div class="label" style="margin-bottom:7px">ตอนนี้คุณอายุ</div>
-        <input type="number" id="curAge" class="field" value="35"/>
+        <span class="field-wrap"><input type="number" id="curAge" class="field" value="35"/></span>
       </div>
       <div>
         <div class="label" style="margin-bottom:7px">อยากเกษียณตอนอายุ</div>
-        <input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/>
+        <span class="field-wrap"><input type="number" id="retAgeInput" class="field" value="60" min="50" max="80"/></span>
       </div>
       <div>
         <div class="label" style="margin-bottom:7px">คาดว่าจะใช้ชีวิตถึงอายุ (กำหนดเอง)</div>
-        <input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/>
+        <span class="field-wrap"><input type="number" id="lifeExp" class="field" value="85" min="60" max="120"/></span>
         <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:6px;text-align:center">กำหนดได้ตามต้องการ · คนไทยอายุยืนขึ้นเรื่อยๆ เผื่อไว้ดีกว่าขาด</div>
       </div>
     </div>
