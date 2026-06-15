@@ -1,80 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/articles/articles.json",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Pragma",
-          "value": "no-cache"
-        }
-      ]
-    },
-    {
-      "source": "/articles",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/articles/",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
-    }
-  ],
   "redirects": [
-    {
-      "source": "/articles/:slug.html",
-      "destination": "/articles/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/solutions/:slug.html",
-      "destination": "/solutions/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/:page.html",
-      "destination": "/:page",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "nextlevel-advisor.com"
-        }
-      ],
-      "destination": "https://www.nextlevel-advisor.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/calculators",
-      "destination": "/calculator",
-      "permanent": true
-    },
-    {
-      "source": "/solutions/savings",
-      "destination": "/solutions/tax-optimization",
-      "permanent": true
-    },
-    {
-      "source": "/solutions/savings.html",
-      "destination": "/solutions/tax-optimization",
-      "permanent": true
-    }
+    {"source": "/articles/:slug.html", "destination": "https://www.nextlevel-advisor.com/articles/:slug", "permanent": true},
+    {"source": "/solutions/:slug.html", "destination": "https://www.nextlevel-advisor.com/solutions/:slug", "permanent": true},
+    {"source": "/:page.html", "destination": "https://www.nextlevel-advisor.com/:page", "permanent": true},
+    {"source": "/:path*", "has": [{"type": "host", "value": "nextlevel-advisor.com"}], "destination": "https://www.nextlevel-advisor.com/:path*", "permanent": true},
+    {"source": "/calculators", "destination": "/calculator", "permanent": true},
+    {"source": "/solutions/savings", "destination": "/solutions/tax-optimization", "permanent": true},
+    {"source": "/solutions/savings.html", "destination": "/solutions/tax-optimization", "permanent": true}
   ]
 }
