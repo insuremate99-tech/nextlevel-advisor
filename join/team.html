@@ -509,15 +509,6 @@
   </footer>
 
   <script>
-    // Join submenu toggle (mobile)
-    const joinBtn = document.getElementById('join-submenu-btn');
-    const joinSubmenu = document.getElementById('join-submenu');
-    const joinChevron = document.getElementById('join-chevron');
-    joinBtn.addEventListener('click', () => {
-      joinSubmenu.classList.toggle('hidden');
-      joinChevron.style.transform = joinSubmenu.classList.contains('hidden') ? '' : 'rotate(180deg)';
-    });
-
     // Form submission handler
     async function handleTeamFormSubmit(e) {
       e.preventDefault();
