@@ -509,18 +509,6 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const icon = document.getElementById('menu-icon');
-    btn.addEventListener('click', () => {
-      const isOpen = !menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      icon.setAttribute('d', isOpen
-        ? 'M4 6h16M4 12h16M4 18h16'
-        : 'M6 18L18 6M6 6l12 12');
-    });
-
     // Join submenu toggle (mobile)
     const joinBtn = document.getElementById('join-submenu-btn');
     const joinSubmenu = document.getElementById('join-submenu');
