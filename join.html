@@ -570,22 +570,6 @@
   </div>
 </section>
 
-<!-- ══════════ 10. FAQ ══════════ -->
-<section class="py-16 px-4 bg-slate-50">
-  <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-8">
-      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">คำถามที่พบบ่อย</h2>
-    </div>
-    <div class="flex flex-col gap-3" id="faq-container"></div>
-    <div class="text-center mt-8">
-      <a href="/faq" class="inline-flex items-center gap-2 font-noto text-sm font-semibold text-teal hover:underline">
-        ดู FAQ ทั้งหมด →
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════ 11. FINAL CTA + FORM ══════════ -->
 <section id="apply-form" class="py-16 px-4 bg-white">
   <div class="max-w-xl mx-auto">
@@ -636,6 +620,21 @@
   </div>
 </section>
 
+<!-- ══════════ 10. FAQ ══════════ -->
+<section class="py-16 px-4 bg-slate-50">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
+      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">คำถามที่พบบ่อย</h2>
+    </div>
+    <div class="flex flex-col gap-3" id="faq-container"></div>
+    <div class="text-center mt-8">
+      <a href="/faq" class="inline-flex items-center gap-2 font-noto text-sm font-semibold text-teal hover:underline">
+        ดู FAQ ทั้งหมด →
+      </a>
+    </div>
+  </div>
+</section>
 <!-- FOOTER -->
 <footer class="bg-deep border-t border-white/5 py-8 px-4">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -665,10 +664,6 @@
 </div>
 
 <script>
-// Hamburger
-const btn=document.getElementById("hamburger-btn"),menu=document.getElementById("mobile-menu"),open=document.getElementById("ham-open"),close=document.getElementById("ham-close");
-btn.addEventListener("click",()=>{menu.classList.toggle("hidden");open.classList.toggle("hidden");close.classList.toggle("hidden");});
-
 // FAQ
 const faqs=[
   {q:"ต้องมีประสบการณ์ด้านการเงินก่อนไหม?",a:"ไม่จำเป็น สมาชิกทีมมาจากหลากหลายสายงาน เช่น วิศวกร พยาบาล ครู และนักธุรกิจ สิ่งสำคัญคือทัศนคติและความตั้งใจเรียนรู้ ทีมมีระบบสอนงานรองรับตั้งแต่วันแรก"},
