@@ -600,6 +600,16 @@
                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
         </div>
         <div>
+          <label class="block font-noto text-sm font-medium text-navy mb-1.5">อยากเริ่มเมื่อไหร่ <span class="text-slate-400 font-normal">(ตอบคร่าวๆ ได้ ไม่ผูกมัด)</span></label>
+          <select name="start_timing"
+                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+            <option value="">เลือกช่วงเวลาที่สะดวก</option>
+            <option value="ภายในเดือนนี้">พร้อมเริ่มภายในเดือนนี้</option>
+            <option value="1-3 เดือน">ประมาณ 1–3 เดือน</option>
+            <option value="ยังแค่ดูข้อมูล">ยังอยู่ในช่วงหาข้อมูล</option>
+          </select>
+        </div>
+        <div>
           <label class="block font-noto text-sm font-medium text-navy mb-1.5">สิ่งที่อยากรู้เพิ่มเติม</label>
           <textarea name="message" rows="3"
                     placeholder="เช่น อยากรู้เรื่องรายได้ ระบบสอนงาน หรือความเหมาะสมกับตัวเอง"
