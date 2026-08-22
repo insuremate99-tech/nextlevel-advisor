@@ -789,8 +789,9 @@ window.toggleJoinMenu=function(){
     overlay.style.cssText = 'display:none;text-align:center;padding:2.5rem 1.5rem';
     overlay.innerHTML = '<div style="font-size:3rem;margin-bottom:1rem">🎉</div>'
       + '<p class="font-pridi font-semibold text-navy" style="font-size:1.25rem;margin-bottom:.5rem">ได้รับข้อมูลแล้ว!</p>'
-      + '<p class="font-noto text-slate-500 text-sm">ป้องจะติดต่อกลับภายใน 24 ชม. ทางช่องทางที่คุณระบุ</p>'
-      + '<p class="font-noto text-xs text-slate-400 mt-3">หรือ <a href="https://lin.ee/7YeXvFaG" style="color:#0891B2">ทักไลน์ได้เลย</a> ถ้าสะดวกคุยเร็ว</p>';
+      + '<p class="font-noto text-slate-600 text-sm" style="line-height:1.8">ป้องจะโทรกลับภายใน 1–2 วันทำการ<br><span style="color:#0D1F3C;font-weight:600">จากเบอร์ 080-969-6351</span></p>'
+      + '<p class="font-noto text-slate-500 text-sm mt-3" style="line-height:1.8">คุยกัน 15 นาที เพื่อดูว่าอาชีพนี้ตรงกับเป้าหมายของคุณหรือเปล่า<br>ถ้าไม่ตรง ป้องจะบอกตรงๆ ไม่มีการขาย</p>'
+      + '<p class="font-noto text-xs text-slate-400 mt-4">ไม่สะดวกรับสาย <a href="https://lin.ee/7YeXvFaG" style="color:#0891B2">ทักไลน์ได้เลย</a></p>';
     form.parentNode.insertBefore(overlay, form.nextSibling);
 
     form.addEventListener('submit', function(e){
