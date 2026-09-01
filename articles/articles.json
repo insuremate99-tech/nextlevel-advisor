@@ -2172,20 +2172,6 @@
     ]
   },
   {
-    "slug": "health-insurance-251216",
-    "title": "ประกันแบบ Universal Life เหมาะกับเรามั้ย?",
-    "excerpt": "หลังจากทำความรู้จักกับประกัน  Universal  Life (UL) กันมาบ้างแล้ว รู้แล้วว่ามันคืออะไร แตกต่างยังไง และมีความยืดหยุ่นแบบไหน",
-    "category": "มรดก",
-    "tags": [
-      "ประกัน"
-    ],
-    "date": "2025-12-16",
-    "dateDisplay": "16 ธันวาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
-    "coverImage": "/images/fb-2025/251216.jpg"
-  },
-  {
     "slug": "unit-link-251216",
     "title": "ประกันแบบ Universal Life เหมาะกับเรามั้ย?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -2303,21 +2289,6 @@
     "coverImage": "/images/fb-2025/251204.jpg"
   },
   {
-    "slug": "annuity-251204",
-    "title": "ทำไมควรวางแผนภาษีให้จบภายในต้นธันวาคม",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-12-04",
-    "dateDisplay": "4 ธ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "tax-planning-251203",
     "title": "ประกันออมทรัพย์เป็นโปรดักต์ที่ ซื้อง่ายขายคล่องและเป็นตัวเลือกต้นๆ ของคนที่อยากเ",
     "excerpt": "มาดู กับดักของประกันออมทรัพย์ ที่คนมักจะเข้าผิด",
@@ -2330,21 +2301,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
     "coverImage": "/images/fb-2025/251203.jpg"
-  },
-  {
-    "slug": "copayment-251201",
-    "title": "มีเงินใช้เดือนละ 30,000 ฟังดูดี แต่ทำไม 30 ปีข้างหน้าอาจไม่พอใช้?",
-    "excerpt": "หลายคนที่อยู่ช่วงวัยทำงาน รายได้ดี ชีวิตมั่นคง มักจะคิดว่าถ้าเกษียณแล้วมีเงินเดือนละ 30,000-40,000 บาท น่าจะพอใช้ เพราะตอนนี้เรายังมีรายได้ จากการทำงา",
-    "category": "สุขภาพ",
-    "tags": [
-      "แนวคิด",
-      "เกษียณ"
-    ],
-    "date": "2025-12-01",
-    "dateDisplay": "1 ธันวาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
-    "coverImage": "/images/fb-2025/251201.jpg"
   },
   {
     "slug": "annuity-251201",
@@ -2403,37 +2359,6 @@
     "coverImage": "/images/fb-2025/251126.jpg"
   },
   {
-    "slug": "unit-link-251126",
-    "title": "ทำงานมาทั้งปี เสียภาษีไปตั้งเยอะ…",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-11-26",
-    "dateDisplay": "26 พ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-251125",
-    "title": "เพราะชีวิตเราไม่เหมือนเดิมตลอด แผนการเงิน ก็ต้องปรับตาม 👆",
-    "excerpt": "Universal Life มันไม่เหมือนแบบทั่วไปครับ  เพราะมันถูกออกแบบมาให้ ปรับได้ตามชีวิตจริง",
-    "category": "สุขภาพ",
-    "tags": [
-      "แนวคิด",
-      "ลงทุน",
-      "ประกัน"
-    ],
-    "date": "2025-11-25",
-    "dateDisplay": "25 พฤศจิกายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": "/images/fb-2025/251125.jpg"
-  },
-  {
     "slug": "investment-251125",
     "title": "เพราะชีวิตเราไม่เหมือนเดิมตลอด แผนการเงิน ก็ต้องปรับตาม 👆",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -2464,21 +2389,6 @@
     "coverImage": "/images/fb-2025/251124.jpg"
   },
   {
-    "slug": "emergency-fund-251124",
-    "title": "จะได้เงินคืนจากสรรพากรเยอะสุดท่าไหร่คะ ถ้าซื้อส่วนลดหย่อนภาษีเต็มหมด?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-11-24",
-    "dateDisplay": "24 พ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "tax-planning-251121",
     "title": "💡 4 เทคนิควางแผนภาษี ที่หลายคนอาจมองข้าม",
     "excerpt": "การลดภาษีไม่ใช่แค่ซื้อลดหย่อนให้ครบ จริง ๆ แล้ว ยังมีกลยุทธ์อื่นที่ช่วยประหยัดภาษีได้อีกหลายหมื่น โดยไม่ต้องซื้ออะไรเพิ่ม ผมมี 4 เทคนิคที่ลูกค้าหลายคน",
@@ -2492,21 +2402,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
     "coverImage": "/images/fb-2025/251121.jpg"
-  },
-  {
-    "slug": "unit-link-251121",
-    "title": "💡 4 เทคนิควางแผนภาษี ที่หลายคนอาจมองข้าม",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-11-21",
-    "dateDisplay": "21 พ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "annuity-251120",
@@ -2555,21 +2450,6 @@
     "coverImage": "/images/fb-2025/251030.jpg"
   },
   {
-    "slug": "critical-illness-251030",
-    "title": "💡ก่อนซื้อประกันให้พ่อแม่เพื่อลดหย่อนภาษี",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-10-30",
-    "dateDisplay": "30 ต.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "tax-planning-251028",
     "title": "\"สารภาพตรงๆ ว่า... ผมก็เคยเป็นคนที่ใช้ส่วนลดหย่อนภาษีแบบ งงๆ 😅",
     "excerpt": "ซื้อประกันตามที่เพื่อนแนะนำ ซื้อ LTF /SSF ไปงั้นๆ  ตามที่คนบอกว่า \"ลดภาษีได้\" แต่ไม่รู้เลยว่า...มันเหมาะกับเราจริงหรือเปล่า",
@@ -2599,20 +2479,6 @@
     "coverImage": "/images/fb-2025/251023.jpg"
   },
   {
-    "slug": "health-insurance-251022",
-    "title": "สิ่งที่ “ประกันออมทรัพย์” ให้…มากกว่าดอกเบี้ยธนาคาร",
-    "excerpt": "นอกจากผลตอบแทน มาดูกันว่าประกันออมทรัพย์ให้อะไรเราบ้าง",
-    "category": "ประกัน",
-    "tags": [
-      "เศรษฐกิจ"
-    ],
-    "date": "2025-10-22",
-    "dateDisplay": "22 ตุลาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": ""
-  },
-  {
     "slug": "emergency-fund-251022",
     "title": "สิ่งที่ “ประกันออมทรัพย์” ให้…มากกว่าดอกเบี้ยธนาคาร",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -2626,20 +2492,6 @@
     "tags": [
       "บทความ"
     ]
-  },
-  {
-    "slug": "life-insurance-251017",
-    "title": "กันเงินไว้เท่าไหร่ดี? สำหรับทำประกัน",
-    "excerpt": "นี่คือคำถามแรกๆ ของคนที่เริ่มวางแผนการเงิน หรือกำลังมองหาประกันชีวิต",
-    "category": "ประกัน",
-    "tags": [
-      "แนวคิด"
-    ],
-    "date": "2025-10-17",
-    "dateDisplay": "17 ตุลาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/251017.jpg"
   },
   {
     "slug": "investment-251017",
@@ -2670,22 +2522,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
     "coverImage": "/images/fb-2025/251016.jpg"
-  },
-  {
-    "slug": "copayment-251010",
-    "title": "ทำไมเงินก้อนเกษียณอย่างเดียวไม่พอ…ควรมีกระแสเงินสดประจำประจำด้วย?",
-    "excerpt": "ทุกวันนี้หลายคนตั้งเป้าเกษียณด้วย \"เงินก้อน\"",
-    "category": "สุขภาพ",
-    "tags": [
-      "ลงทุน",
-      "เศรษฐกิจ",
-      "ประกัน"
-    ],
-    "date": "2025-10-10",
-    "dateDisplay": "10 ตุลาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
-    "coverImage": "/images/fb-2025/251010.jpg"
   },
   {
     "slug": "retirement-251010",
@@ -2730,33 +2566,6 @@
     "coverImage": ""
   },
   {
-    "slug": "cancer-251006",
-    "title": "ประกันสุขภาพ 100 ล้าน – เยอะไปหรือพอดี?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "สุขภาพ",
-    "date": "2025-10-06",
-    "dateDisplay": "6 ต.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "สุขภาพ"
-    ]
-  },
-  {
-    "slug": "copayment-251002",
-    "title": "Emergency Fund: ควรเก็บกี่เดือนกันแน่?🤔",
-    "excerpt": "เวลาเราอ่านตำราเรื่องการเงิน… ก็มักจะบอกว่า  เงินสำรองฉุกเฉินควรมี 3–6 เดือน ของค่าใช้จ่ายจำเป็น",
-    "category": "สุขภาพ",
-    "tags": [],
-    "date": "2025-10-02",
-    "dateDisplay": "2 ตุลาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
-    "coverImage": ""
-  },
-  {
     "slug": "emergency-fund-251002",
     "title": "Emergency Fund: ควรเก็บกี่เดือนกันแน่?🤔",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -2787,21 +2596,6 @@
     "coverImage": "/images/fb-2025/250926.jpg"
   },
   {
-    "slug": "unit-link-250926",
-    "title": "สมมติว่าเราตั้งใจเก็บเงินให้ครอบครัว 10 ล้าน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-09-26",
-    "dateDisplay": "26 ก.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "group-insurance-250922",
     "title": "มีประกันกลุ่มของที่ทำงานอยู่แล้ว สบายใจล่ะ ?",
     "excerpt": "ผมผ่านประสบการณ์จัดการประกันกลุ่มอยู่หลายที่ ทั้งในฐานะคนเลือก และคนนำเสนอ  บางที่ให้สวัสดิการที่ดีมากๆ เลย เช่น",
@@ -2830,22 +2624,6 @@
     "coverImage": ""
   },
   {
-    "slug": "life-insurance-250918",
-    "title": "ประกันชีวิตแบบบำนาญ...ตอบโจทย์ชีวิตหลังเกษียณจริงหรอ?",
-    "excerpt": "หลายคนกังวลว่าเกษียณแล้วจะมีเงินใช้ไหม โดยเฉพาะเมื่อคนไทยอายุยืนขึ้นเรื่อยๆ",
-    "category": "เกษียณ",
-    "tags": [
-      "ลงทุน",
-      "ประกัน",
-      "ภาษี"
-    ],
-    "date": "2025-09-18",
-    "dateDisplay": "18 กันยายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
-    "coverImage": "/images/fb-2025/250918.jpg"
-  },
-  {
     "slug": "annuity-250918",
     "title": "ประกันชีวิตแบบบำนาญ...ตอบโจทย์ชีวิตหลังเกษียณจริงหรอ?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -2859,20 +2637,6 @@
     "tags": [
       "เกษียณ"
     ]
-  },
-  {
-    "slug": "inflation-250912",
-    "title": "เงินเฟ้อค่าห้อง รพ. เอกชน: ทำไมค่ารักษาพยาบาลถึงขึ้นเร็วกว่าเงินเฟ้อทั่วไป?",
-    "excerpt": "Research จากข้อมูลค่ารักษา ปี2568:",
-    "category": "สุขภาพ",
-    "tags": [
-      "เศรษฐกิจ"
-    ],
-    "date": "2025-09-12",
-    "dateDisplay": "12 กันยายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
-    "coverImage": "/images/fb-2025/250912.jpg"
   },
   {
     "slug": "copayment-250912",
@@ -2904,21 +2668,6 @@
     "coverImage": "/images/fb-2025/250910.jpg"
   },
   {
-    "slug": "mindset-250910",
-    "title": "เคยสงสัยมั้ย ทำไมเพื่อนอายุเท่ากัน แต่เบี้ยประกันไม่เท่ากัน?🤔",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-09-10",
-    "dateDisplay": "10 ก.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "health-insurance-250908",
     "title": "6 เดือนหลัง Co-Payment: ประกันสุขภาพแบบไหนที่ไม่โดนเงื่อนไขนี้?",
     "excerpt": "ไม่ท้าวรายละเอียดเรื่อง Co payment นะครับ คิดว่ามีข้อมูลอยู่ค่อนข้างเยอะแล้ว )😊",
@@ -2929,21 +2678,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
     "coverImage": "/images/fb-2025/250908.jpg"
-  },
-  {
-    "slug": "copayment-250908",
-    "title": "6 เดือนหลัง Co-Payment: ประกันสุขภาพแบบไหนที่ไม่โดนเงื่อนไขนี้?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-09-08",
-    "dateDisplay": "8 ก.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "investment-250907",
@@ -2961,37 +2695,6 @@
     "coverImage": "/images/fb-2025/250907.jpg"
   },
   {
-    "slug": "emergency-fund-250907",
-    "title": "Worst Case Scenario Planning: เทคนิคที่ CEO ใช้รับมือความเสี่ยงทางการเงิน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-09-07",
-    "dateDisplay": "7 ก.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250904",
-    "title": "ทำงานมาทั้งชีวิต แต่ค่ารักษาพยาบาลในอีก 10-20 ปี คุณรับไหวไหม?",
-    "excerpt": "คุณไม่ได้คนเดียวที่คิดแบบนี้ กลุ่มลูกค้าของผม ไม่ว่าจะ ผู้บริหาร หมอ วิศวกร เจ้าของธุรกิจ รายได้ 6 หลักขึั้นไป ล้วนมีคำถามนี้เหมือนกัน พวกเค้าต้องการค",
-    "category": "สุขภาพ",
-    "tags": [
-      "ประกัน",
-      "มรดก",
-      "แนวคิด"
-    ],
-    "date": "2025-09-04",
-    "dateDisplay": "4 กันยายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
-    "coverImage": "/images/fb-2025/250904.jpg"
-  },
-  {
     "slug": "group-insurance-250904",
     "title": "ทำงานมาทั้งชีวิต แต่ค่ารักษาพยาบาลในอีก 10-20 ปี คุณรับไหวไหม?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3005,22 +2708,6 @@
     "tags": [
       "บทความ"
     ]
-  },
-  {
-    "slug": "annuity-250902",
-    "title": "จัดพอร์ตประกันให้คุ้มค่า เมื่อรู้สึกว่าจ่ายเบี้ยแพงเกินไปทุกปี",
-    "excerpt": "สัปดาห์ที่แล้ว ได้คุยกับลูกค้าท่านหนึ่งที่น้ำเสียงฟังดูกังวลๆ ลูกค้าท่านนี้   มีประกันทั้งหมด 8 เล่ม ทั้งออมทรัพย์ บำนาญ สุขภาพ ชีวิต   แต่มันจะมีตัวป",
-    "category": "สุขภาพ",
-    "tags": [
-      "ประกัน",
-      "เกษียณ",
-      "Case ลูกค้า"
-    ],
-    "date": "2025-09-02",
-    "dateDisplay": "2 กันยายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": ""
   },
   {
     "slug": "critical-illness-250902",
@@ -3038,22 +2725,6 @@
     ]
   },
   {
-    "slug": "life-insurance-250901",
-    "title": "ทำไมคนไทยถึงหันมาซื้อประกันบำนาญ-ลงทุนเพิ่มขึ้น 9% ในปีนี้?",
-    "excerpt": "สัญญาณดีที่บอกว่า คนเริ่มคิดถึงอนาคตมากขึ้นแล้ว",
-    "category": "สุขภาพ",
-    "tags": [
-      "ลงทุน",
-      "เศรษฐกิจ",
-      "ประกัน"
-    ],
-    "date": "2025-09-01",
-    "dateDisplay": "1 กันยายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/250901.jpg"
-  },
-  {
     "slug": "annuity-250901",
     "title": "ทำไมคนไทยถึงหันมาซื้อประกันบำนาญ-ลงทุนเพิ่มขึ้น 9% ในปีนี้?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3067,20 +2738,6 @@
     "tags": [
       "เกษียณ"
     ]
-  },
-  {
-    "slug": "life-insurance-250829",
-    "title": "Unit Link vs ประกันชีวิตธรรมดา: เปรียบข้อดี ข้อเสีย และข้อควรระวัง",
-    "excerpt": "หลายคนสงสัยว่า Unit Link กับประกันชีวิตธรรมดาต่างกันอย่างไร มาดูทั้งข้อดีและข้อควรระวังให้ครบทุกมุม เพื่อให้เราตัดสินใจไ",
-    "category": "ลงทุน",
-    "tags": [
-      "ประกัน"
-    ],
-    "date": "2025-08-29",
-    "dateDisplay": "29 สิงหาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
-    "coverImage": ""
   },
   {
     "slug": "unit-link-250829",
@@ -3128,21 +2785,6 @@
     "coverImage": "/images/fb-2025/250823.jpg"
   },
   {
-    "slug": "financial-planning-250823",
-    "title": "จ่ายเบี้ยประกันแล้วไม่ได้ใช้ เสียเปล่าหรือเปล่า?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-08-23",
-    "dateDisplay": "23 ส.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "life-insurance-250817",
     "title": "คนไทยมีประกันชีวิตไม่ถึง 40%: Mindset อะไรที่ทำให้คนยังไม่วางแผน?",
     "excerpt": "แล้วทำไมประเทศที่พัฒนาแล้วถึงมีสถิติสูง อย่างเกาหลี คือมากกว่าเราประมาณ 4 เท่า หรือ ญี่ปุ่น&สิงค์โปร์ มากกว่าเรา 7-8 เท่า",
@@ -3158,21 +2800,6 @@
     "coverImage": ""
   },
   {
-    "slug": "retirement-250817",
-    "title": "คนไทยมีประกันชีวิตไม่ถึง 40%: Mindset อะไรที่ทำให้คนยังไม่วางแผน?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-08-17",
-    "dateDisplay": "17 ส.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "health-insurance-250815",
     "title": "เส้นทางสู่การสร้างทีม: ทำไมคนถึงสนใจอาชีพที่ปรึกษาการเงินประกัน",
     "excerpt": "จริงๆ ตอนแรกก็ไม่รู้ว่าจะมีใครสนใจมาร่วมทีมกับเรามั้ย เพราะเราก็ค่อนข้างใหม่ในวงการนี้ แต่พอเริ่มแชร์ประสบการณ์และแนวทางการทำงาน กลับมีหลายคนสนใจเลย",
@@ -3185,35 +2812,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
     "coverImage": "/images/fb-2025/250815.jpg"
-  },
-  {
-    "slug": "financial-planning-250815",
-    "title": "เส้นทางสู่การสร้างทีม: ทำไมคนถึงสนใจอาชีพที่ปรึกษาการเงินประกัน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-08-15",
-    "dateDisplay": "15 ส.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250812",
-    "title": "ข้อสงสัยที่คนมักมีก่อนเข้าสู่อาชีพที่ปรึกษาการเงินประกัน",
-    "excerpt": "เผื่อใครที่สนใจในอาชีพนี้นะครับ คำถามเหล่านี้เราได้ยินในใจคนมาเยอะแล้ว วันนี้มาแชร์กันแบบตรงๆ",
-    "category": "สุขภาพ",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-08-12",
-    "dateDisplay": "12 สิงหาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
-    "coverImage": ""
   },
   {
     "slug": "investment-250812",
@@ -3243,22 +2841,6 @@
     "coverImage": "/images/fb-2025/250811.jpg"
   },
   {
-    "slug": "tax-planning-250810",
-    "title": "FChFP สำเร็จแล้ว ก้าวต่อไปคือ CFP: เส้นทางที่ปรึกษาการเงินมืออาชีพ",
-    "excerpt": "หลักสูตรนี้เป็นคอร์สระดับสากลเรื่องการวางแผนการเงินแบบจริงจัง ครับ ไม่ใช่แค่ขายประกัน ขายกองทุน แต่เป็นการดูภาพรวมทั้งชีวิต ตั้งแต่การคำนวณความสามารถใ",
-    "category": "ภาษี",
-    "tags": [
-      "มรดก",
-      "ลงทุน",
-      "เกษียณ"
-    ],
-    "date": "2025-08-10",
-    "dateDisplay": "10 สิงหาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/250810.jpg"
-  },
-  {
     "slug": "retirement-250810",
     "title": "FChFP สำเร็จแล้ว ก้าวต่อไปคือ CFP: เส้นทางที่ปรึกษาการเงินมืออาชีพ",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3272,20 +2854,6 @@
     "tags": [
       "เกษียณ"
     ]
-  },
-  {
-    "slug": "health-insurance-250809",
-    "title": "มุมมองต่อประกันและตัวแทนที่เปลี่ยนไปในแต่ละยุคสมัย",
-    "excerpt": "ถือโอกาสรวบรวมมาแชร์มุมมอง ทั้งนี้ทั้งนั้น ขึ้นอยู่กับประสบการณ์ที่เจอในแต่ละบุคคล แอดจะเพิ่มมุมมองส่วนตัวไปให้ด้วย ว่าเจออะไรมา แต่คนอื่นๆ ก็อาจจะเจอ",
-    "category": "สุขภาพ",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-08-09",
-    "dateDisplay": "9 สิงหาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
-    "coverImage": "/images/fb-2025/250809.jpg"
   },
   {
     "slug": "term-insurance-250809",
@@ -3329,21 +2897,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
     "coverImage": ""
-  },
-  {
-    "slug": "copayment-250806",
-    "title": "3 เทรนด์ใหญ่วงการประกันสุขภาพที่ต้องรู้",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-08-06",
-    "dateDisplay": "6 ส.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "health-insurance-250804",
@@ -3401,21 +2954,6 @@
     "coverImage": ""
   },
   {
-    "slug": "life-insurance-250724",
-    "title": "เขียนพินัยกรรมอย่างเดียวพอไหม? สิ่งที่หลายคนมองข้ามในการส่งต่อมรดก",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-07-24",
-    "dateDisplay": "24 ก.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "health-insurance-250721",
     "title": "รู้มั้ยครับ ประเทศไทยกำลังก้าวเข้าสู่ Super Aged Society อย่างเต็มตัว?",
     "excerpt": "ปัจจุบันมีผู้สูงอายุ 60 ปีขึ้นไปกว่า 20% และดูๆ แล้วอีก 10 ปีข้างหน้า ก็น่าจะพุ่งขึ้นเรื่อยๆ ลองดูรอบตัวเราก็ได้ครับ เพื่อนฝูงที่มีลูกเนี่ย ดูจะน้อยลง",
@@ -3443,21 +2981,6 @@
     "coverImage": "/images/fb-2025/250721.jpg"
   },
   {
-    "slug": "retirement-250721",
-    "title": "รู้มั้ยครับ ประเทศไทยกำลังก้าวเข้าสู่ Super Aged Society อย่างเต็มตัว?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-07-21",
-    "dateDisplay": "21 ก.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "life-insurance-250719",
     "title": "ยิ่งออกกำลังกาย ยิ่งประหยัดเบี้ย!",
     "excerpt": "วันนี้มาแชร์ประสบการณ์ดีๆ จากการใช้ Fit Rewards ของเมืองไทยประกันชีวิตครับ",
@@ -3473,21 +2996,6 @@
     "coverImage": "/images/fb-2025/250719.jpg"
   },
   {
-    "slug": "critical-illness-250719",
-    "title": "ยิ่งออกกำลังกาย ยิ่งประหยัดเบี้ย!",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-07-19",
-    "dateDisplay": "19 ก.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "health-insurance-250716",
     "title": "MDRT 2026 First Timer จากคนที่เคย \"หนี\" เวลาเจอขายประกัน 🎯",
     "excerpt": "เคยได้ยิน MDRT กันมั้ยครับ? ผมเองก็เพิ่งรู้จักเมื่อเข้ามาทำงานนี้เอง ตะก่อนก็อารมณ์ผ่านๆ หู แต่ไม่เข้าใจ",
@@ -3498,35 +3006,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
     "coverImage": "/images/fb-2025/250716.jpg"
-  },
-  {
-    "slug": "financial-planning-250716",
-    "title": "MDRT 2026 First Timer จากคนที่เคย \"หนี\" เวลาเจอขายประกัน 🎯",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-07-16",
-    "dateDisplay": "16 ก.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "life-insurance-250715",
-    "title": "คำถามที่คนถามบ่อยเรื่องประกันชีวิต: คำตอบตรงๆ จากที่ปรึกษาการเงิน",
-    "excerpt": "มีเงินคืนมั้ย? หรือบางคนก็เผลอเรียกว่า มีเงินปันผลมั้ย?",
-    "category": "ประกัน",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-07-15",
-    "dateDisplay": "15 กรกฎาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "coverImage": ""
   },
   {
     "slug": "investment-250715",
@@ -3544,18 +3023,6 @@
     ]
   },
   {
-    "slug": "health-insurance-250704",
-    "title": "เงินเดือนขึ้นทุกปีแต่ยังสู้เงินเฟ้อค่ารักษาพยาบาลไม่ได้: แก้อย่างไร?",
-    "excerpt": "ขอโฟกัสในหน่วยงาน ที่มีระบบโครงสร้างค่อนข้างชัดเจน ไม่ได้ปรับเอาตามใจฉันของหัวหน้างาน หรือเจ้าของนะ",
-    "category": "เศรษฐกิจ",
-    "tags": [],
-    "date": "2025-07-04",
-    "dateDisplay": "4 กรกฎาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
-    "coverImage": ""
-  },
-  {
     "slug": "inflation-250704",
     "title": "เงินเดือนขึ้นทุกปีแต่ยังสู้เงินเฟ้อค่ารักษาพยาบาลไม่ได้: แก้อย่างไร?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3569,20 +3036,6 @@
     "tags": [
       "บทความ"
     ]
-  },
-  {
-    "slug": "inflation-250701",
-    "title": "เงินเฟ้อที่จับต้องได้: จากข้าวราดแกงถึงค่ารักษาพยาบาลในรอบ 20 ปี",
-    "excerpt": "ตอนนี้ ของพวกนั้นแพงขึึ้นมากี่เท่า?",
-    "category": "สุขภาพ",
-    "tags": [
-      "เศรษฐกิจ"
-    ],
-    "date": "2025-07-01",
-    "dateDisplay": "1 กรกฎาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
-    "coverImage": ""
   },
   {
     "slug": "cancer-250701",
@@ -3626,21 +3079,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
     "coverImage": "/images/fb-2025/250620.jpg"
-  },
-  {
-    "slug": "retirement-250619",
-    "title": "วางแผนเกษียณในยุคที่ทุกอย่างไม่แน่นอน จะสร้างความมั่นคงได้อย่างไร?",
-    "excerpt": "เพราะแม้แต่ดอกเบี้ยพันธบัตร หรือสินทรัพย์ที่เคยเรียกว่า ปลอดภัย ก็ลดลงเรื่อย ๆ",
-    "category": "เกษียณ",
-    "tags": [
-      "ประกัน",
-      "เศรษฐกิจ"
-    ],
-    "date": "2025-06-19",
-    "dateDisplay": "19 มิถุนายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/250619.jpg"
   },
   {
     "slug": "annuity-250619",
@@ -3688,21 +3126,6 @@
     "coverImage": ""
   },
   {
-    "slug": "investment-250617",
-    "title": "วางแผนรับมรดก: สิ่งที่ควรรู้เรื่องภาษีและกฎหมายก่อนถึงเวลา",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "การลงทุน",
-    "date": "2025-06-17",
-    "dateDisplay": "17 มิ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "การลงทุน"
-    ]
-  },
-  {
     "slug": "health-insurance-250615",
     "title": "มีประวัติรักษาสุขภาพจิต ยังทำประกันสุขภาพได้ไหม?",
     "excerpt": "ในยุคนี้ เราเริ่มพูดถึงสุขภาพใจกันมากขึ้น ไม่ใช่เรื่องแปลกเลยที่หลายคนจะมีประวัติการรักษาเกี่ยวกับภาวะทางจิตใจ เช่น โรคซึมเศร้า วิตกกังวล หรือภาวะเครี",
@@ -3729,35 +3152,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
     "coverImage": ""
-  },
-  {
-    "slug": "unit-link-250614",
-    "title": "วางแผนลดหย่อนภาษีตั้งแต่ต้นปี ดีกว่ารีบซื้อตอนปลายปีอย่างไร?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-06-14",
-    "dateDisplay": "14 มิ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250613",
-    "title": "ความสำเร็จทางการเงินไม่ใช่ของคนเก่งที่สุด แต่ของคนที่อดทนที่สุด",
-    "excerpt": "ในยุคที่ฟีดของเราถาโถมด้วยประวัติสุดเท่ของ CEO ระดับโลก ทั้ง อีลอน มัสก์, เจฟฟ์ เบซอส หรือสตาร์ทอัปหนุ่มสาววัยยี่สิบต้น ๆ ที่เหมือนจะหยิบอะไรก็เปลี่ยน",
-    "category": "ลงทุน",
-    "tags": [
-      "แนวคิด"
-    ],
-    "date": "2025-06-13",
-    "dateDisplay": "13 มิถุนายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
-    "coverImage": "/images/fb-2025/250613.jpg"
   },
   {
     "slug": "investment-250613",
@@ -3821,20 +3215,6 @@
     ]
   },
   {
-    "slug": "cancer-250609",
-    "title": "เมื่ออายุมากขึ้น ทำไมต้องวางแผนประกันโรคร้ายแรงก่อนสายเกินไป?",
-    "excerpt": "กระแสเงินสด ก็อยุ่ในข่ายน่าเป็นห่วง เพราะไม่มีเวลารอคำว่า ยื่นเคลม หรือ รอเบิกทีหลัง",
-    "category": "สุขภาพ",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-06-09",
-    "dateDisplay": "9 มิถุนายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": ""
-  },
-  {
     "slug": "critical-illness-250609",
     "title": "เมื่ออายุมากขึ้น ทำไมต้องวางแผนประกันโรคร้ายแรงก่อนสายเกินไป?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3892,18 +3272,6 @@
     "coverImage": "/images/fb-2025/250607.jpg"
   },
   {
-    "slug": "health-insurance-250606",
-    "title": "เปลี่ยน Mindset เรื่องเงินและประกัน: มุมมองเล็กน้อยที่สร้างผลลัพธ์ใหญ่",
-    "excerpt": "ช่วงที่ Universal Studios Japan อยู่ในจุดใกล้ล้มละลาย ทุกคนที่เกี่ยวข้องต่างพูดเป็นเสียงเดียวกันว่าถ้าจะรอด ก็ต้องสร้างอะไรใหม่เท่านั้น เครื่องเล่นที่",
-    "category": "สุขภาพ",
-    "tags": [],
-    "date": "2025-06-06",
-    "dateDisplay": "6 มิถุนายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
-    "coverImage": "/images/fb-2025/250606.jpg"
-  },
-  {
     "slug": "investment-250606",
     "title": "เปลี่ยน Mindset เรื่องเงินและประกัน: มุมมองเล็กน้อยที่สร้างผลลัพธ์ใหญ่",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -3934,21 +3302,6 @@
     "coverImage": ""
   },
   {
-    "slug": "life-insurance-250605",
-    "title": "ส่งต่อมรดกโดยไม่ต้องพึ่งพินัยกรรม: บทบาทของประกันชีวิตในการวางแผนมรดก",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-06-05",
-    "dateDisplay": "5 มิ.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "health-insurance-250602",
     "title": "มีโรคประจำตัวยังซื้อประกันสุขภาพได้ไหม? ข้อเท็จจริงที่ควรรู้",
     "excerpt": "🔸 โรคกระเพาะอาหาร :เป็นภาวะที่ควบคุมได้ด้วยยาและการปรับพฤติกรรม",
@@ -3961,20 +3314,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
     "coverImage": "/images/fb-2025/250602.jpg"
-  },
-  {
-    "slug": "mindset-250601",
-    "title": "บทเรียนการเงินจากซีรีส์สงครามส่งด่วน: แผนฉุกเฉินสำคัญแค่ไหน?",
-    "excerpt": "1. ดูจบแล้ว Inspire มากๆ มีช่วงให้ลุ้นอยู่ตลอด คนธรรมดาไม่มีอะไรเลย แต่ลุกขึ้นสู้ได้เพราะ ใจล้วน ๆ Mindset และพลังใจสำคัญที่สุดจริง ๆ ถึงแม้ไม่มีทุน ไ",
-    "category": "ลงทุน",
-    "tags": [
-      "แนวคิด"
-    ],
-    "date": "2025-06-01",
-    "dateDisplay": "1 มิถุนายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": "/images/fb-2025/250601.jpg"
   },
   {
     "slug": "emergency-fund-250601",
@@ -4019,21 +3358,6 @@
     "coverImage": "/images/fb-2025/250530.jpg"
   },
   {
-    "slug": "retirement-250530",
-    "title": "อย่าปล่อยให้เวลาผ่านไปโดยไม่มีแผนการเงิน: เริ่มต้นวันนี้ดีที่สุด",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-05-30",
-    "dateDisplay": "30 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "health-insurance-250529",
     "title": "ค่าใช้จ่ายโรงพยาบาลที่มากกว่าค่าห้องพัก: รู้จักค่าใช้จ่ายแฝงก่อนเข้า รพ.",
     "excerpt": "หลายคนเวลาเช็กประกันสุขภาพ  เห็นแผนระบุว่า คุ้มครองค่าห้องคืนละ 4,000 แล้วก็โล่งใจ ว่าน่าจะเอาอยู่ แต่พอเข้าโรงพยาบาลจริง กลายเป็นว่าต้องควักกระเป๋าจ่",
@@ -4044,21 +3368,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
     "coverImage": ""
-  },
-  {
-    "slug": "inflation-250529",
-    "title": "ค่าใช้จ่ายโรงพยาบาลที่มากกว่าค่าห้องพัก: รู้จักค่าใช้จ่ายแฝงก่อนเข้า รพ.",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-29",
-    "dateDisplay": "29 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "financial-planning-250528",
@@ -4073,21 +3382,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
     "coverImage": "/images/fb-2025/250528.jpg"
-  },
-  {
-    "slug": "tax-planning-250528",
-    "title": "แผนประกันที่เก็บกินได้ทั้งชีวิต แล้วรุ่นหลังก็ยังได้ต่อ",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "ภาษี",
-    "date": "2025-05-28",
-    "dateDisplay": "28 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "ภาษี"
-    ]
   },
   {
     "slug": "annuity-250527",
@@ -4140,33 +3434,6 @@
     "coverImage": "/images/fb-2025/250526.jpg"
   },
   {
-    "slug": "critical-illness-250526",
-    "title": "มีประกันหลายเล่มแต่ยังไม่อุ่นใจ: วิธีจัดพอร์ตประกันให้ถูกจุด",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-26",
-    "dateDisplay": "26 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250525",
-    "title": "ว่าด้วยจิตวิทยาของหมา และความไม่มั่นคงหลังการสูญเสีย",
-    "excerpt": "When the Pack is Broken: A Dog’s Silent Grief",
-    "category": "สุขภาพ",
-    "tags": [],
-    "date": "2025-05-25",
-    "dateDisplay": "25 พฤษภาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
-    "coverImage": "/images/fb-2025/250525.jpg"
-  },
-  {
     "slug": "cancer-250525",
     "title": "ว่าด้วยจิตวิทยาของหมา และความไม่มั่นคงหลังการสูญเสีย",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -4192,35 +3459,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
     "coverImage": "/images/fb-2025/250524.jpg"
-  },
-  {
-    "slug": "mindset-250524",
-    "title": "Decision Fatigue: เหตุใดการลดการตัดสินใจจึงช่วยให้ชีวิตดีขึ้น",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-24",
-    "dateDisplay": "24 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250523",
-    "title": "เวลาคือสินทรัพย์ที่มีค่าที่สุด: วางแผนชีวิตและการเงินก่อนที่จะสายเกินไป",
-    "excerpt": "และ 90% ของเวลาในชีวิต…คือเรื่องของการตัดสินใจ",
-    "category": "ลงทุน",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-05-23",
-    "dateDisplay": "23 พฤษภาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/250523.jpg"
   },
   {
     "slug": "retirement-250523",
@@ -4284,21 +3522,6 @@
     "coverImage": "/images/fb-2025/250517.jpg"
   },
   {
-    "slug": "critical-illness-250517",
-    "title": "ข้อมูลเกษียณอายุที่ทำให้สะดุด: ทำไมคนไทยวัยทำงานต้องรีบวางแผน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-17",
-    "dateDisplay": "17 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "life-insurance-250516",
     "title": "บทเรียนจาก Apex Training: ความรู้ใหม่ที่ที่ปรึกษาการเงินได้รับ",
     "excerpt": "เป็นการประชุมใหญ่ครั้งแรกของผมตั้งแต่เริ่มเส้นทางในฐานะตัวแทนประกันชีวิต ยังรู้สึกเหมือนเป็นนักเรียนใหม่ แต่ก็ตั้งใจฟังทุก session  เพื่อกลับมาดูแลลูก",
@@ -4313,37 +3536,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
     "coverImage": "/images/fb-2025/250516.jpg"
-  },
-  {
-    "slug": "critical-illness-250516",
-    "title": "บทเรียนจาก Apex Training: ความรู้ใหม่ที่ที่ปรึกษาการเงินได้รับ",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-16",
-    "dateDisplay": "16 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "copayment-250513",
-    "title": "ทำไมเงินเกษียณ ควรอยู่ใน สินทรัพย์เสี่ยงต่ำ ❓.....(หรือต่ำมาก ด้วยซ้ำ)",
-    "excerpt": "ผมหมายถึง ส่วนนึง ของ Port เกษียณนะครับ เอาที่แบบ ครอบคลุมค่าใช้จ่ายจำเป็น ในการดำรงชีวิต ไม่ได้หมายความว่า 100% ของเงินเกษียณ ต้องอยู่ในที่ปลอดภัยทั้",
-    "category": "สุขภาพ",
-    "tags": [
-      "ลงทุน",
-      "เศรษฐกิจ",
-      "ประกัน"
-    ],
-    "date": "2025-05-13",
-    "dateDisplay": "13 พฤษภาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
-    "coverImage": "/images/fb-2025/250513.jpg"
   },
   {
     "slug": "retirement-250513",
@@ -4374,33 +3566,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
     "coverImage": "/images/fb-2025/250511.jpg"
-  },
-  {
-    "slug": "critical-illness-250511",
-    "title": "แผนประกันสุขภาพพรีเมียม: เล่มเดียวที่ตอบโจทย์ทุกสถานการณ์",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-05-11",
-    "dateDisplay": "11 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "health-insurance-250506",
-    "title": "วางแผนชีวิตหลังเกษียณให้สนุก เหมือนวางแผนท่องเที่ยว",
-    "excerpt": "โมเมนต์ที่นั่งหาข้อมูล สถานที่เที่ยว ,จะกินร้านไหนบ้าง, รูทติ้งเป็นยังไง ,โรงแรมนอนที่ไหน กินอาหารเช้ามั้ย ร้านไหนต้องจองล่วงหน้า",
-    "category": "สุขภาพ",
-    "tags": [],
-    "date": "2025-05-06",
-    "dateDisplay": "6 พฤษภาคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": ""
   },
   {
     "slug": "retirement-250506",
@@ -4490,21 +3655,6 @@
     "coverImage": "/images/fb-2025/250502.jpg"
   },
   {
-    "slug": "advisor-250502",
-    "title": "ความแข็งแกร่งที่แท้จริง: บทเรียนสำหรับที่ปรึกษาการเงินในยุคนี้",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "แนวคิด",
-    "date": "2025-05-02",
-    "dateDisplay": "2 พ.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "แนวคิด"
-    ]
-  },
-  {
     "slug": "tax-reduction",
     "title": "ลดภาษีอย่างถูกกฎหมาย ด้วยประกันชีวิต",
     "excerpt": "ทำความเข้าใจสิทธิลดหย่อนภาษีจากประกันชีวิตและประกันสุขภาพ ที่คนส่วนใหญ่ยังใช้ไม่เต็มที่",
@@ -4521,21 +3671,6 @@
     "coverImage": ""
   },
   {
-    "slug": "health-insurance-250430",
-    "title": "คุณกลัวอะไรที่สุดตอนแก่ครับ?",
-    "excerpt": "ผมลองนึกๆ ดู ความกลัวในช่วงนั้นมันคงจะมีหลายรูปแบบเลยครับ ทั้งเรื่อง",
-    "category": "สุขภาพ",
-    "tags": [
-      "ประกัน",
-      "เกษียณ"
-    ],
-    "date": "2025-04-30",
-    "dateDisplay": "30 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "coverImage": ""
-  },
-  {
     "slug": "annuity-250430",
     "title": "คุณกลัวอะไรที่สุดตอนแก่ครับ?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -4549,22 +3684,6 @@
     "tags": [
       "เกษียณ"
     ]
-  },
-  {
-    "slug": "retirement-250429",
-    "title": "เมื่อแผนการเงินที่ดีที่สุดยังพลาดได้: บทเรียนจากลูกค้าหลายครอบครัว",
-    "excerpt": "ทรัพย์สินที่เรามี ไม่ว่าจะเป็น บ้าน เงินเก็บ หุ้น หรือมรดกอื่นๆ แต่ไม่ได้เตรียมไว้ว่าใครจะเป็นเจ้าของต่อและ จะส่งต่ออย่างไรถึงจะเหมาะสม",
-    "category": "เกษียณ",
-    "tags": [
-      "มรดก",
-      "ลงทุน",
-      "Case ลูกค้า"
-    ],
-    "date": "2025-04-29",
-    "dateDisplay": "29 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#0F172A,#1B365D)",
-    "coverImage": "/images/fb-2025/250429.jpg"
   },
   {
     "slug": "tax-planning-250429",
@@ -4594,21 +3713,6 @@
     "coverImage": "/images/fb-2025/250425.jpg"
   },
   {
-    "slug": "investment-250425",
-    "title": "อยากรู้ความลับของการสร้างโชคดีมั้ยครับ☘️",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "การลงทุน",
-    "date": "2025-04-25",
-    "dateDisplay": "25 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "การลงทุน"
-    ]
-  },
-  {
     "slug": "life-insurance-250424",
     "title": "💬 อยากส่งต่อ 10 ล้านให้คนข้างหลัง…ไม่จำเป็นต้องเริ่มจาก 10 ล้าน",
     "excerpt": "การจัดการมรดก ไม่ใช่เรื่องของคนร่ำรวยเท่านั้นนะครับ แต่คือเรื่องของทุกคน…ที่วางแผน",
@@ -4622,35 +3726,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
     "coverImage": "/images/fb-2025/250424.jpg"
-  },
-  {
-    "slug": "investment-250424",
-    "title": "💬 อยากส่งต่อ 10 ล้านให้คนข้างหลัง…ไม่จำเป็นต้องเริ่มจาก 10 ล้าน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "การลงทุน",
-    "date": "2025-04-24",
-    "dateDisplay": "24 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "การลงทุน"
-    ]
-  },
-  {
-    "slug": "health-insurance-250422",
-    "title": "โรคหัวใจ: ค่ารักษาพยาบาลสูงแค่ไหน และวางแผนประกันโรคร้ายแรงอย่างไร?",
-    "excerpt": "📌 บางคนไม่เคยมีอาการอะไรเลย อยู่ดี ๆ ก็แน่นหน้าอกตอนออกกำลังกาย — ตรวจแล้วพบว่าเส้นเลือดหัวใจตีบเกือบ 90%",
-    "category": "Case ลูกค้า",
-    "tags": [
-      "สุขภาพ"
-    ],
-    "date": "2025-04-22",
-    "dateDisplay": "22 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
-    "coverImage": "/images/fb-2025/250422.jpg"
   },
   {
     "slug": "critical-illness-250422",
@@ -4683,33 +3758,6 @@
     "coverImage": ""
   },
   {
-    "slug": "advisor-250421",
-    "title": "ประกันที่ไม่จ่ายเบี้ยทิ้ง: ความจริงที่ควรรู้ก่อนตัดสินใจซื้อ",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "แนวคิด",
-    "date": "2025-04-21",
-    "dateDisplay": "21 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "แนวคิด"
-    ]
-  },
-  {
-    "slug": "cancer-250420",
-    "title": "คนไทยป่วย “มะเร็ง” มากแค่ไหน…รู้มั้ยครับ? 🤔",
-    "excerpt": "มะเร็งยังคงครองแชมป์โรคที่คร่าชีวิตคนไทยมากที่สุด  ทุกวันนี้มีผู้ป่วยมะเร็งรายใหม่ในไทยเกิน 140,000 คนต่อปี / มากกว่า วันละ 400 คน😢",
-    "category": "สุขภาพ",
-    "tags": [],
-    "date": "2025-04-20",
-    "dateDisplay": "20 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
-    "coverImage": "/images/fb-2025/250420.jpg"
-  },
-  {
     "slug": "critical-illness-250420",
     "title": "คนไทยป่วย “มะเร็ง” มากแค่ไหน…รู้มั้ยครับ? 🤔",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -4725,20 +3773,6 @@
     ]
   },
   {
-    "slug": "copayment-250418",
-    "title": "ค่าเทอมปริญญาตรีโตปีละ 6% คุณเตรียมเงินการศึกษาลูกไว้แล้วยัง?",
-    "excerpt": "ค่าเทอม เป็นอีกค่าใช้จ่าย ที่พุ่งไวกว่าสินค้าอุปโภคบริโภคทั่วไป  แต่ก็ยังเบากว่าเงินเฟ้อทางการแพทย์อยู่นะครับ (เงินเฟ้อค่ารักษาพุ่ง 9-15% กันเลย)",
-    "category": "สุขภาพ",
-    "tags": [
-      "เศรษฐกิจ"
-    ],
-    "date": "2025-04-18",
-    "dateDisplay": "18 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
-    "coverImage": "/images/fb-2025/250418.jpg"
-  },
-  {
     "slug": "investment-250418",
     "title": "ค่าเทอมปริญญาตรีโตปีละ 6% คุณเตรียมเงินการศึกษาลูกไว้แล้วยัง?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -4752,18 +3786,6 @@
     "tags": [
       "การลงทุน"
     ]
-  },
-  {
-    "slug": "health-insurance-250416",
-    "title": "3 อย่างง่ายๆ ที่ช่วยให้แผนชีวิตกลับมาเดินต่อ หลังหยุดยาว",
-    "excerpt": "สงกรานต์ปีนี้ ใครได้พักก็ถือว่าเยี่ยมเลยครับ หลังพักเต็มที่ ลองเช็กเบาๆ ว่า…แผนชีวิตของเรายังเดินอยู่รึเปล่านะ?",
-    "category": "แนวคิด",
-    "tags": [],
-    "date": "2025-04-16",
-    "dateDisplay": "16 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "coverImage": ""
   },
   {
     "slug": "retirement-250416",
@@ -4795,21 +3817,6 @@
     "coverImage": ""
   },
   {
-    "slug": "advisor-250412",
-    "title": "สงกรานต์กับบทสนทนาเรื่องเงินที่หลายครอบครัวยังไม่กล้าพูด",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "แนวคิด",
-    "date": "2025-04-12",
-    "dateDisplay": "12 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "แนวคิด"
-    ]
-  },
-  {
     "slug": "health-insurance-250407",
     "title": "วัยทำงาน ทำไมต้องมีประกันสุขภาพติดตัว?📌",
     "excerpt": "ชีวิตวัยทำงานอาจเต็มไปด้วยความเร่งรีบไปสู่เป้าหมาย แต่บางครั้ง...เราอาจลืมคิดถึงเรื่องหนึ่งที่สำคัญมาก  นั่นก็คือเรื่องสุขภาพ แม้วันนี้เราแข็งแรง แต่ไ",
@@ -4822,21 +3829,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
     "coverImage": "/images/fb-2025/250407.jpg"
-  },
-  {
-    "slug": "critical-illness-250407",
-    "title": "วัยทำงาน ทำไมต้องมีประกันสุขภาพติดตัว?📌",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-04-07",
-    "dateDisplay": "7 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "retirement-250406",
@@ -4854,21 +3846,6 @@
     "coverImage": ""
   },
   {
-    "slug": "annuity-250406",
-    "title": "ความจริงน่าตกใจของวัยเกษียณไทย: คุณพร้อมรับมือได้อย่างไร?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-04-06",
-    "dateDisplay": "6 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "health-insurance-250405",
     "title": "Co-Payment มีผลบังคับใช้แล้ว: ผู้มีประกันสุขภาพควรทบทวนแผนอย่างไร?",
     "excerpt": "ขอไม่ท้าวความรายละเอียดเรื่อง Co payment นะครับ คิดว่ามีข้อมูลอยู่ค่อนข้างเยอะแล้ว )😊",
@@ -4881,35 +3858,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
     "coverImage": "/images/fb-2025/250405.jpg"
-  },
-  {
-    "slug": "copayment-250405",
-    "title": "Co-Payment มีผลบังคับใช้แล้ว: ผู้มีประกันสุขภาพควรทบทวนแผนอย่างไร?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-04-05",
-    "dateDisplay": "5 เม.ย. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
-    "slug": "life-insurance-250402",
-    "title": "ประกันเล่มแรกที่ตั้งใจซื้อเอง: จุดเปลี่ยนที่ทำให้มองประกันต่างออกไป",
-    "excerpt": "1️⃣ประกันเล่มแรกในชีวิต... ที่ไม่ได้เลือกเอง",
-    "category": "สุขภาพ",
-    "tags": [
-      "ประกัน"
-    ],
-    "date": "2025-04-02",
-    "dateDisplay": "2 เมษายน 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": ""
   },
   {
     "slug": "critical-illness-250402",
@@ -4956,21 +3904,6 @@
     "coverImage": ""
   },
   {
-    "slug": "investment-250320",
-    "title": "เพิ่มรายได้และรับมือเงินเฟ้อ: กลยุทธ์การเงินที่ใช้ได้จริงสำหรับมนุษย์เงินเดือน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "การลงทุน",
-    "date": "2025-03-20",
-    "dateDisplay": "20 มี.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "การลงทุน"
-    ]
-  },
-  {
     "slug": "investment-250317",
     "title": "📌ลงทุนกับสิ่งนี้ ยังไงก็ไม่ขาดทุน",
     "excerpt": "ในยุคที่ข้อมูลข่าวสารเต็มไปหมด เรามีโอกาสมากขึ้นในการเข้าถึงข้อมูลการลงทุน และการเปรียบเทียบ",
@@ -5001,21 +3934,6 @@
     "coverImage": ""
   },
   {
-    "slug": "annuity-250315",
-    "title": "มีเงิน 10 ล้านตอนเกษียณ พอใช้ไปตลอดชีวิตหรือเปล่า?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-03-15",
-    "dateDisplay": "15 มี.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "life-insurance-250310",
     "title": "📌เข้าใจความต่างของ Unit Linked, ประกันชีวิตแบบปกติ และกองทุนรวม",
     "excerpt": "สามสิ่งนี้ คนมักจะสงสัยและเอามาเปรียบเทียบกัน ว่าอะไรดีกว่าอันไหน  แต่จริงๆ แล้ว ไม่ได้มีคำตอบตายตัวเลยครับ ขึ้นอยู่กับวัตถุประสงค์ว่าเราซื้อสินค้าทาง",
@@ -5030,21 +3948,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#064E3B,#065F46)",
     "coverImage": "/images/fb-2025/250310.jpg"
-  },
-  {
-    "slug": "critical-illness-250310",
-    "title": "📌เข้าใจความต่างของ Unit Linked, ประกันชีวิตแบบปกติ และกองทุนรวม",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-03-10",
-    "dateDisplay": "10 มี.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "annuity-250309",
@@ -5091,21 +3994,6 @@
     "coverImage": "/images/fb-2025/250305.jpg"
   },
   {
-    "slug": "annuity-250305",
-    "title": "ยื่นภาษีแล้วยังรู้สึกว่าจ่ายเยอะเกิน? วางแผนภาษีด้วยประกันได้อย่างไร",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "เกษียณ",
-    "date": "2025-03-05",
-    "dateDisplay": "5 มี.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "เกษียณ"
-    ]
-  },
-  {
     "slug": "copayment-250223",
     "title": "ก่อน Co-Payment มีผล: ทำไมควรสมัครประกันสุขภาพก่อนสายเกินไป",
     "excerpt": "ตอนนี้คิวพิจารณาแต่ละที่ ก็แน่นเอามากๆ แถมการขอประวัติการรักษาของแต่ละโรงพยาบาล ก็กินเวลาไม่น้อยเลย (บางที่ 7-14 วันทำการ) ขั้นตอนการขอของแต่ละที่ ก็แ",
@@ -5118,20 +4006,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
     "coverImage": "/images/fb-2025/250223.jpg"
-  },
-  {
-    "slug": "tax-planning-250222",
-    "title": "Co-Payment ร้อนแรง: สิ่งที่ผู้บริโภคควรรู้ก่อนตัดสินใจซื้อประกัน",
-    "excerpt": "บางคนก็ยื่นภาษีเสร็จไปตั้งแต่ต้นปีแล้ว และก็อีกหลายคนเลย ที่มักจะบ่นว่า เจอจ่ายภาษีเพิ่มอีกและ😅 ไม่รวมถึงประเด็นที่ว่า ไอ้ภาษีที่จ่ายไป ได้ถูกจัดสรรอย",
-    "category": "ภาษี",
-    "tags": [
-      "Case ลูกค้า"
-    ],
-    "date": "2025-02-22",
-    "dateDisplay": "22 กุมภาพันธ์ 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
-    "coverImage": ""
   },
   {
     "slug": "copayment-250222",
@@ -5159,21 +4033,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
     "coverImage": "/images/fb-2025/250209.jpg"
-  },
-  {
-    "slug": "copayment-250209",
-    "title": "เคยหยิบประกันสุขภาพของตัวเอง มารีวิวกันบ้างมั้ยครับ❓",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-02-09",
-    "dateDisplay": "9 ก.พ. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "annuity-250203",
@@ -5204,21 +4063,6 @@
     "coverImage": ""
   },
   {
-    "slug": "cancer-250130",
-    "title": "ข้าราชการมีสวัสดิการรักษาฟรี ยังต้องซื้อประกันสุขภาพเพิ่มไหม?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "สุขภาพ",
-    "date": "2025-01-30",
-    "dateDisplay": "30 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "สุขภาพ"
-    ]
-  },
-  {
     "slug": "health-insurance-250127",
     "title": "คำถามที่คนถามบ่อยเรื่อง Co-Payment ในประกันสุขภาพ: ตอบทุกข้อสงสัย",
     "excerpt": "❓ติด Co Payment แล้วจะติดไปตลอดไปชีวิตมั้ย?",
@@ -5233,21 +4077,6 @@
     "coverImage": ""
   },
   {
-    "slug": "copayment-250127",
-    "title": "คำถามที่คนถามบ่อยเรื่อง Co-Payment ในประกันสุขภาพ: ตอบทุกข้อสงสัย",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-01-27",
-    "dateDisplay": "27 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "health-insurance-250125",
     "title": "อ่านสัญญาประกันสุขภาพ: เงื่อนไข Co-Payment ซ่อนอยู่ตรงไหนบ้าง?",
     "excerpt": "มาตรฐานสุขภาพของประกันนั้นมีการพัฒนาและปรับปรุงกันมาเรื่อยๆ ตั้งแต่เวอร์ชั้นก่อน New health Standard / New health Standard และล่าสุดที่จะมีการใช้ Co p",
@@ -5260,21 +4089,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#9F1239,#BE185D)",
     "coverImage": "/images/fb-2025/250125.jpg"
-  },
-  {
-    "slug": "copayment-250125",
-    "title": "อ่านสัญญาประกันสุขภาพ: เงื่อนไข Co-Payment ซ่อนอยู่ตรงไหนบ้าง?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-01-25",
-    "dateDisplay": "25 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
   },
   {
     "slug": "copayment-250122",
@@ -5304,21 +4118,6 @@
     "coverImage": ""
   },
   {
-    "slug": "term-insurance-250121",
-    "title": "ประกันชีวิตแบบชั่วคราว vs ตลอดชีพ: เลือกแบบไหนให้เหมาะกับตัวเอง?",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-01-21",
-    "dateDisplay": "21 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "copayment-250120",
     "title": "Co-Payment คืออะไร? ข้อเท็จจริงที่คนทำประกันสุขภาพต้องรู้",
     "excerpt": "มีโรคประจำตัวที่ทำให้บริษัทประกันมักไม่รับทำประกันสุขภาพ",
@@ -5331,22 +4130,6 @@
     "dateDisplay": "20 มกราคม 2568",
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#1B365D,#4338CA)",
-    "coverImage": ""
-  },
-  {
-    "slug": "life-insurance-250116",
-    "title": "ประกันชีวิตกับการลงทุน: ทำหน้าที่ต่างกัน อย่าเอามาเปรียบกัน",
-    "excerpt": "เรามักคุ้นเคยกับการเสียภาษีจากรายได้ประเภทต่างๆ",
-    "category": "สุขภาพ",
-    "tags": [
-      "ประกัน",
-      "มรดก",
-      "ภาษี"
-    ],
-    "date": "2025-01-16",
-    "dateDisplay": "16 มกราคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
     "coverImage": ""
   },
   {
@@ -5406,21 +4189,6 @@
     "coverImage": "/images/fb-2025/250112.jpg"
   },
   {
-    "slug": "critical-illness-250112",
-    "title": "ประกันสุขภาพเหมาจ่าย คืออะไร? 🤔",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "บทความ",
-    "date": "2025-01-12",
-    "dateDisplay": "12 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "บทความ"
-    ]
-  },
-  {
     "slug": "life-insurance-250109",
     "title": "คำถามยอดฮิตเรื่องประกันและการลงทุน: ตอบตรงๆ จากที่ปรึกษาการเงิน",
     "excerpt": "\"ประกันชีวิตจะคุ้มตอนไหน?    (ขออ้างอิงเฉพาะประกันชีวิตเพียวๆ ไม่มีสุขภาพ ไม่มีออมเงินใดๆ)",
@@ -5435,21 +4203,6 @@
     "readTime": 2,
     "coverGradient": "linear-gradient(135deg,#7C3AED,#4338CA)",
     "coverImage": ""
-  },
-  {
-    "slug": "investment-250109",
-    "title": "คำถามยอดฮิตเรื่องประกันและการลงทุน: ตอบตรงๆ จากที่ปรึกษาการเงิน",
-    "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
-    "category": "การลงทุน",
-    "date": "2025-01-09",
-    "dateDisplay": "9 ม.ค. 2568",
-    "readTime": "5 นาที",
-    "featured": false,
-    "coverImage": "",
-    "coverGradient": "linear-gradient(135deg,#1B365D,#0891B2)",
-    "tags": [
-      "การลงทุน"
-    ]
   },
   {
     "slug": "copayment-250108",
@@ -5467,22 +4220,6 @@
     "coverImage": ""
   },
   {
-    "slug": "copayment-250104",
-    "title": "เราจะมั่นใจได้อย่างไรว่า ครอบครัวและตัวเราเองจะมีความมั่นคงในระยะยาว?",
-    "excerpt": "สำหรับหัวหน้าครอบครัว เรื่องที่มักจะเป็นโจทย์สำคัญ มักจะเป็น",
-    "category": "สุขภาพ",
-    "tags": [
-      "มรดก",
-      "ลงทุน",
-      "ประกัน"
-    ],
-    "date": "2025-01-04",
-    "dateDisplay": "4 มกราคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#92400E,#B45309)",
-    "coverImage": "/images/fb-2025/250104.jpg"
-  },
-  {
     "slug": "tax-planning-250104",
     "title": "เราจะมั่นใจได้อย่างไรว่า ครอบครัวและตัวเราเองจะมีความมั่นคงในระยะยาว?",
     "excerpt": "ปรึกษาฟรี 15 นาที ไม่มีข้อผูกมัด",
@@ -5496,21 +4233,6 @@
     "tags": [
       "ภาษี"
     ]
-  },
-  {
-    "slug": "health-insurance-250102",
-    "title": "หัวหน้าครอบครัวกับการวางแผนการเงิน: ความรับผิดชอบที่มากกว่าแค่หาเงิน",
-    "excerpt": "“แล้วพี่ควรจะมีทุนประกันเท่าไหร่ดีล่ะ?” 🤔",
-    "category": "Case ลูกค้า",
-    "tags": [
-      "แนวคิด",
-      "สุขภาพ"
-    ],
-    "date": "2025-01-02",
-    "dateDisplay": "2 มกราคม 2568",
-    "readTime": 2,
-    "coverGradient": "linear-gradient(135deg,#1E3A5F,#0E7490)",
-    "coverImage": "/images/fb-2025/250102.jpg"
   },
   {
     "slug": "investment-250102",
