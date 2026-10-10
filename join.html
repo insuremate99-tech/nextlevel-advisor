@@ -46,8 +46,34 @@
   }
   @media (max-width: 767px) { .sticky-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; } }
   .sticky-cta p { font-family: 'Noto Sans Thai', sans-serif; font-size: .82rem; color: rgba(255,255,255,.75); }
-  .sticky-cta a { font-family: 'Noto Sans Thai', sans-serif; background: var(--teal); color: white; border-radius: .5rem; padding: .6rem 1.2rem; font-size: .82rem; font-weight: 600; white-space: nowrap; text-decoration: none; transition: background .2s; flex-shrink: 0; }
+  .sticky-cta a { font-family: 'Noto Sans Thai', sans-serif; background: var(--teal); color: white; border-radius: .5rem; padding: .75rem 1.2rem; font-size: .85rem; min-height:44px; display:inline-flex; align-items:center; font-weight: 600; white-space: nowrap; text-decoration: none; transition: background .2s; flex-shrink: 0; }
   .sticky-cta a:hover { background: #0e7490; }
+  html{scroll-behavior:smooth}
+  #inc-assumptions,#income-example,#apply-form{scroll-margin-top:90px}
+  .tnum{font-variant-numeric:tabular-nums}
+  .inc-num{width:72px;height:48px;border:2px solid #CBD5E1;border-radius:.6rem;text-align:center;font-family:"Poppins",sans-serif;font-size:24px;font-weight:700;color:var(--navy);-moz-appearance:textfield;appearance:textfield;flex-shrink:0;background:#fff}
+  .inc-num:focus{outline:none;border-color:var(--teal)}
+  .inc-num::-webkit-outer-spin-button,.inc-num::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .inc-step{width:44px;height:44px;flex-shrink:0;border-radius:.6rem;border:2px solid #CBD5E1;background:#fff;color:var(--navy);font-family:"Poppins",sans-serif;font-size:22px;font-weight:600;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;touch-action:manipulation}
+  .inc-step:hover{border-color:var(--teal)}.inc-step:active{background:#F1F5F9}.inc-step:disabled{opacity:.35;cursor:not-allowed}
+  .inc-range{-webkit-appearance:none;appearance:none;height:44px;touch-action:pan-y;background:transparent;cursor:pointer}
+  .inc-range:focus{outline:none}
+  .inc-range::-webkit-slider-runnable-track{height:8px;border-radius:999px;background:linear-gradient(to right,#0891B2 var(--p,6.90%),#E2E8F0 var(--p,6.90%))}
+  .inc-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-8px;border-radius:50%;background:#fff;border:3px solid #0891B2;box-shadow:0 1px 4px rgba(13,31,60,.25)}
+  .inc-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(8,145,178,.25)}
+  .inc-range::-moz-range-track{height:8px;border-radius:999px;background:#E2E8F0}
+  .inc-range::-moz-range-progress{height:8px;border-radius:999px;background:#0891B2}
+  .inc-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #0891B2;box-shadow:0 1px 4px rgba(13,31,60,.25)}
+  .inc-hero{background:linear-gradient(135deg,rgba(27,54,93,.07),rgba(8,145,178,.14));border:1px solid rgba(8,145,178,.25)}
+  .inc-big{font-size:2.25rem}@media(min-width:640px){.inc-big{font-size:2.5rem}}
+  .inc-no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-family:"Poppins",sans-serif;font-size:.8rem;font-weight:600;margin-right:.5rem;vertical-align:2px}
+  .inc-details>summary{list-style:none;cursor:pointer}.inc-details>summary::-webkit-details-marker{display:none}
+  .chev{display:inline-block;transition:transform .2s}.inc-details[open] .chev{transform:rotate(180deg)}
+  .mbar,.mbar>div,.ybar,.ybar>div{transition:height .3s ease}
+  @media(min-width:1024px){.inc-left{position:sticky;top:96px}}
+  .way-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-family:"Poppins",sans-serif;font-size:.85rem;font-weight:600;flex-shrink:0}
+  .way-chip{font-family:"Noto Sans Thai",sans-serif;font-size:.72rem;font-weight:600;color:#0E7490;background:rgba(8,145,178,.1);border-radius:999px;padding:2px 10px}
+  @media (prefers-reduced-motion: reduce){.mbar,.mbar>div,.ybar,.ybar>div,.chev{transition:none}html{scroll-behavior:auto}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -61,9 +87,13 @@
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"ต้องมีประสบการณ์ด้านการเงินก่อนไหม?","acceptedAnswer":{"@type":"Answer","text":"ไม่จำเป็น สมาชิกทีมมาจากหลากหลายสายงาน เช่น วิศวกร พยาบาล ครู และนักธุรกิจ สิ่งสำคัญคือทัศนคติและความตั้งใจเรียนรู้ ทีมมีระบบสอนงานรองรับตั้งแต่วันแรก"}},
       {"@type":"Question","name":"รายได้ช่วงแรกเป็นอย่างไร?","acceptedAnswer":{"@type":"Answer","text":"3 เดือนแรกเป็นช่วงเรียนรู้ มักยังไม่มีรายได้ ควรมีเงินสำรอง 3–6 เดือน"}},
-      {"@type":"Question","name":"ต้องสอบใบอนุญาตอะไรบ้าง?","acceptedAnswer":{"@type":"Answer","text":"ใบอนุญาตตัวแทนประกันชีวิตจาก คปภ. เป็นข้อกำหนดขั้นต่ำ ทีมช่วยเตรียม Mock Exam และมี Material ให้ นอกจากนี้แนะนำให้สอบ IC Plain เพิ่มเติมในภายหลัง"}},
+      {"@type":"Question","name":"ต้องสอบใบอนุญาตอะไรบ้าง?","acceptedAnswer":{"@type":"Answer","text":"ใบอนุญาตตัวแทนประกันชีวิตจาก คปภ. เป็นข้อกำหนดขั้นต่ำ ทีมช่วยเตรียมข้อสอบจำลองและเอกสารติวสอบให้ นอกจากนี้แนะนำให้สอบ IC Plain เพิ่มเติมในภายหลัง"}},
       {"@type":"Question","name":"ทำงาน Part-time ได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"ได้ในช่วงแรก แต่หากต้องการรายได้ระดับมาตรฐานสากล (MDRT — Million Dollar Round Table) ต้องลงมือเต็มเวลา ทีมรับทั้ง Full-time และ Part-time และเราจะพูดตรงๆ เรื่องความคาดหวังก่อนเสมอ"}},
-      {"@type":"Question","name":"ต่างจากสมัครตัวแทนทั่วไปอย่างไร?","acceptedAnswer":{"@type":"Answer","text":"ทีม Next Level เน้น Advisory-based ไม่ใช่ Sales-based ลูกค้าซื้อเพราะเข้าใจ ไม่ใช่เพราะถูก Hard sell เครื่องมือและระบบถูกออกแบบมาให้สร้าง Trust ก่อนทุกครั้ง"}}
+      {"@type":"Question","name":"ต่างจากสมัครตัวแทนทั่วไปอย่างไร?","acceptedAnswer":{"@type":"Answer","text":"ทีม Next Level เน้น Advisory-based ไม่ใช่ Sales-based ลูกค้าซื้อเพราะเข้าใจ ไม่ใช่เพราะถูก Hard sell เครื่องมือและระบบถูกออกแบบมาให้สร้าง Trust ก่อนทุกครั้ง"}},
+      {"@type":"Question","name":"ต้องลาออกจากงานประจำไหม?","acceptedAnswer":{"@type":"Answer","text":"ไม่ต้องในช่วงแรก ทำควบงานประจำได้ แต่ก็แปลว่าต้องจัดเวลาเอง ไม่มีใครจัดตารางให้ ถ้าอยากได้รายได้ระดับที่เห็นในตัวอย่าง ต้องลงมือเต็มเวลา"}},
+      {"@type":"Question","name":"มีค่าใช้จ่ายอะไรบ้าง?","acceptedAnswer":{"@type":"Answer","text":"ค่าสอบและค่าออกรหัสราว 630 บาท ไม่มีเงินเดือน และ 3 เดือนแรกเป็นช่วงเรียนรู้ ควรมีเงินสำรอง 3–6 เดือน"}},
+      {"@type":"Question","name":"กรอกฟอร์มแล้วจะเกิดอะไรขึ้น?","acceptedAnswer":{"@type":"Answer","text":"ป้องโทรกลับภายใน 1–2 วันทำการ คุยกัน 15 นาทีว่างานนี้ตรงกับเป้าหมายของคุณไหม ไม่มีข้อผูกมัด ถ้าไม่ตรง ป้องจะบอกตรงๆ"}},
+      {"@type":"Question","name":"โครงการ 5 ปี 5 ล้าน คืออะไร ใครสมัครได้?","acceptedAnswer":{"@type":"Answer","text":"โครงการ mtl SUPER AGENT ของเมืองไทยประกันชีวิต สำหรับตัวแทนใหม่ที่จบปริญญาตรีและผ่านการสัมภาษณ์ อบรมเข้มข้น 12 เดือน มีเงินส่งเสริมการขายสูงสุด 120,000 บาทตามผลงาน ขึ้นผู้จัดการได้ใน 8–12 เดือน และผู้ที่ทำตามเงื่อนไขครบมีสิทธิ์แข่ง Big Bonus 5 ล้านบาทใน 5 ปี ดูเงื่อนไขทั้งหมดได้ที่หน้าโครงการ"}}
     ]}
   ]}
   </script>
@@ -222,11 +252,17 @@
         </h1>
         <p class="font-noto text-lg text-slate-300 mb-8 leading-relaxed">ที่นี่ไม่มีเงินเดือน แต่มีระบบที่ทำให้คุณไม่ต้องเดา</p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
-             onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'join-hero'})"
-             class="btn-teal px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            นัดคุย 15 นาที
+          <a href="#apply-form"
+             onclick="gtag('event','form_cta_click',{'event_category':'conversion','event_label':'join-hero'})"
+             class="btn-teal px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2" style="min-height:48px">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
+            ทิ้งเบอร์ไว้ ป้องโทรกลับ
+          </a>
+          <a href="/join/5-year-challenge"
+             onclick="gtag('event','program_click',{'event_category':'engagement','event_label':'join-hero'})"
+             class="btn-outline px-7 py-3.5 font-noto text-base inline-flex items-center justify-center gap-2" style="min-height:48px">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg>
+            โครงการ 5 ปี 5 ล้าน →
           </a>
         </div>
       </div>
@@ -250,18 +286,22 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100" style="border-top:3px solid #0891B2;">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><circle cx="16" cy="16" r="2.5" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy text-xl mb-2">อิสระ</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">เวลาและตารางเป็นของคุณเอง ทำควบงานประจำช่วงแรกได้ แต่ก็แปลว่าไม่มีใครจัดตารางให้</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100" style="border-top:3px solid #0891B2;">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 20V14M10 20V9M16 20V4"/><path d="M16 9h0" stroke="#0891B2"/><path d="M3 20h18"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy text-xl mb-2">รายได้</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">ตามผลงาน และลูกค้าที่ดูแลวันนี้ยังเป็นรายได้ในปีต่อไป</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100" style="border-top:3px solid #0891B2;">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" stroke="#0891B2"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M6.6 7.4l3.6 3M17.4 7.4l-3.6 3M12 14.5V18"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy text-xl mb-2">ระบบ</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">วิเคราะห์แบบประกันทำให้ · เนื้อหาไว้คุยกับลูกค้ามีคนทำให้ · แผนพัฒนา 8 สัปดาห์</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100" style="border-top:3px solid #0891B2;">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6c2.5-1 5-1 8 1 3-2 5.5-2 8-1v13c-2.5-1-5-1-8 1-3-2-5.5-2-8-1z"/><path d="M12 7v13"/><path d="M12 2.5v1.5" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy text-xl mb-2">ความรู้</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">วางแผนเกษียณ ภาษี อ่านแบบประกันเป็น กับหัวหน้าที่มีวุฒิวางแผนการเงิน</p>
       </div>
@@ -269,54 +309,302 @@
   </div>
 </section>
 
-<!-- ══════════ 3. รายได้ 3 ทาง ══════════ -->
+<!-- ══════════ 3. รายได้ 5 ทาง ══════════ -->
 <section class="py-16 px-4 bg-slate-50">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
       <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">รายได้</p>
-      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">รายได้มาจาก 3 ทาง</h2>
+      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">รายได้มาจาก 5 ทาง</h2>
     </div>
-    <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6 bg-white">
-      <table class="w-full">
-        <thead class="bg-navy"><tr><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">ทาง</th><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">ได้จากอะไร</th><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">เริ่มได้เมื่อไหร่</th></tr></thead>
-        <tbody class="divide-y divide-slate-100">
-          <tr><td class="font-pridi font-semibold text-navy px-4 py-3 align-top whitespace-nowrap">1. ค่านายหน้าปีแรก</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">เมื่อลูกค้าเริ่มแผน คุณได้ส่วนแบ่งจากเบี้ยปีแรก</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">ปีแรก</td></tr>
-          <tr><td class="font-pridi font-semibold text-navy px-4 py-3 align-top whitespace-nowrap">2. ค่านายหน้าปีต่อไป</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">ลูกค้าจ่ายเบี้ยต่อทุกปี คุณได้ส่วนแบ่งต่อเนื่องหลายปี</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">ปีที่ 2</td></tr>
-          <tr><td class="font-pridi font-semibold text-navy px-4 py-3 align-top whitespace-nowrap">3. โบนัสจากบริษัท</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">รายไตรมาสตามผลงาน และเพิ่มเมื่อลูกค้าอยู่กับเรานาน</td><td class="font-noto text-sm text-slate-700 px-4 py-3 align-top">ไตรมาสที่มีผลงาน</td></tr>
-        </tbody>
-      </table>
+    <div class="grid sm:grid-cols-6 gap-3 sm:gap-4 mb-6">
+      <div class="sm:col-span-2 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex sm:block gap-3 items-start">
+        <span class="way-num sm:hidden">1</span><div class="hidden sm:block"><div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/><path d="M9 16l2 2 4-4" stroke="#0891B2"/></svg></div></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><h3 class="font-pridi font-semibold text-navy"><span class="hidden sm:inline">1. </span>ค่านายหน้าปีแรก</h3><span class="way-chip sm:hidden ml-auto">เริ่ม: ปีแรก</span></div>
+          <p class="font-noto text-sm text-slate-600 mt-1 leading-relaxed">ส่วนแบ่งจากเบี้ยปีแรก เมื่อลูกค้าเริ่มแผน</p>
+          <span class="way-chip hidden sm:inline-block mt-3">เริ่ม: ปีแรก</span>
+        </div>
+      </div>
+      <div class="sm:col-span-2 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex sm:block gap-3 items-start">
+        <span class="way-num sm:hidden">2</span><div class="hidden sm:block"><div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15" stroke="#0891B2"/><path d="M4 20v-5h5" stroke="#0891B2"/></svg></div></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><h3 class="font-pridi font-semibold text-navy"><span class="hidden sm:inline">2. </span>ค่านายหน้าปีต่อไป</h3><span class="way-chip sm:hidden ml-auto">เริ่ม: ปีที่ 2</span></div>
+          <p class="font-noto text-sm text-slate-600 mt-1 leading-relaxed">ส่วนแบ่งต่อเนื่องทุกปีที่ลูกค้าจ่ายเบี้ยต่อ</p>
+          <span class="way-chip hidden sm:inline-block mt-3">เริ่ม: ปีที่ 2</span>
+        </div>
+      </div>
+      <div class="sm:col-span-2 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex sm:block gap-3 items-start">
+        <span class="way-num sm:hidden">3</span><div class="hidden sm:block"><div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v8h8" stroke="#0891B2"/></svg></div></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><h3 class="font-pridi font-semibold text-navy"><span class="hidden sm:inline">3. </span>โบนัสจากบริษัท</h3><span class="way-chip sm:hidden ml-auto">เริ่ม: ไตรมาสที่มีผลงาน</span></div>
+          <p class="font-noto text-sm text-slate-600 mt-1 leading-relaxed">โบนัสรายไตรมาส ตามผลงานลูกค้าใหม่ในไตรมาสนั้น</p>
+          <span class="way-chip hidden sm:inline-block mt-3">เริ่ม: ไตรมาสที่มีผลงาน</span>
+        </div>
+      </div>
+      <div class="sm:col-span-3 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex sm:block gap-3 items-start">
+        <span class="way-num sm:hidden">4</span><div class="hidden sm:block"><div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12V4h8l9 9-8 8z"/><circle cx="7.5" cy="8.5" r="1.5" stroke="#0891B2"/></svg></div></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><h3 class="font-pridi font-semibold text-navy"><span class="hidden sm:inline">4. </span>เงินพิเศษจากโปรโมชันการขาย</h3><span class="way-chip sm:hidden ml-auto">เริ่ม: เดือนที่ทำได้ตามเงื่อนไข</span></div>
+          <p class="font-noto text-sm text-slate-600 mt-1 leading-relaxed">โปรโมชันรายเดือนของบริษัท ทำได้ตามเงื่อนไขได้เงินเพิ่มจากค่านายหน้าปกติ</p>
+          <span class="way-chip hidden sm:inline-block mt-3">เริ่ม: เดือนที่ทำได้ตามเงื่อนไข</span>
+        </div>
+      </div>
+      <div class="sm:col-span-3 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex sm:block gap-3 items-start">
+        <span class="way-num sm:hidden">5</span><div class="hidden sm:block"><div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5" stroke="#0891B2"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8" stroke="#0891B2"/></svg></div></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><h3 class="font-pridi font-semibold text-navy"><span class="hidden sm:inline">5. </span>รายได้อื่นๆ</h3><span class="way-chip sm:hidden ml-auto">เริ่ม: ปีที่ 2 / เมื่อผ่านเกณฑ์ผู้บริหาร</span></div>
+          <p class="font-noto text-sm text-slate-600 mt-1 leading-relaxed">โบนัสต่ออายุ และรายได้ผู้บริหาร (สร้างทีม พัฒนาตัวแทน บริหารทีม)</p>
+          <span class="way-chip hidden sm:inline-block mt-3">เริ่ม: ปีที่ 2 / เมื่อผ่านเกณฑ์ผู้บริหาร</span>
+        </div>
+      </div>
     </div>
-    <p class="font-noto text-slate-700 leading-relaxed text-center mb-6">ปีแรกรายได้มาจากลูกค้าใหม่อย่างเดียว ปีต่อไปลูกค้าเดิมเริ่มทำงานให้คุณด้วย</p>
-    <!-- JOIN-INCOME-IMAGE: ถ้าคุราปิก้าส่งภาพมา วางแทน/คู่กับตารางนี้ได้ -->
-    <div class="overflow-x-auto rounded-xl border border-slate-200 mb-2 bg-white">
-      <table class="w-full">
-        <thead class="bg-navy"><tr><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">ปี</th><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">ลูกค้าใหม่</th><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">ลูกค้าเดิม</th><th class="text-left font-noto text-xs font-semibold text-white px-4 py-3">โบนัส</th></tr></thead>
-        <tbody class="divide-y divide-slate-100">
-          <tr><td class="font-poppins text-sm font-semibold text-navy px-4 py-3 whitespace-nowrap">ปีที่ 1</td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#1B365D;width:100%"></div></td><td class="px-4 py-3" style="min-width:90px"><span class="font-noto text-xs text-slate-400">ยังไม่มี</span></td><td class="px-4 py-3" style="min-width:70px"><div style="height:14px;border-radius:4px;background:#94A3B8;width:35%"></div></td></tr>
-          <tr><td class="font-poppins text-sm font-semibold text-navy px-4 py-3 whitespace-nowrap">ปีที่ 2</td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#1B365D;width:100%"></div></td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#0891B2;width:25%"></div></td><td class="px-4 py-3" style="min-width:70px"><div style="height:14px;border-radius:4px;background:#94A3B8;width:35%"></div></td></tr>
-          <tr><td class="font-poppins text-sm font-semibold text-navy px-4 py-3 whitespace-nowrap">ปีที่ 3</td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#1B365D;width:100%"></div></td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#0891B2;width:50%"></div></td><td class="px-4 py-3" style="min-width:70px"><div style="height:14px;border-radius:4px;background:#94A3B8;width:35%"></div></td></tr>
-          <tr><td class="font-poppins text-sm font-semibold text-navy px-4 py-3 whitespace-nowrap">ปีที่ 4</td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#1B365D;width:100%"></div></td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#0891B2;width:75%"></div></td><td class="px-4 py-3" style="min-width:70px"><div style="height:14px;border-radius:4px;background:#94A3B8;width:35%"></div></td></tr>
-          <tr><td class="font-poppins text-sm font-semibold text-navy px-4 py-3 whitespace-nowrap">ปีที่ 5</td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#1B365D;width:100%"></div></td><td class="px-4 py-3" style="min-width:90px"><div style="height:14px;border-radius:4px;background:#0891B2;width:100%"></div></td><td class="px-4 py-3" style="min-width:70px"><div style="height:14px;border-radius:4px;background:#94A3B8;width:35%"></div></td></tr>
-        </tbody>
-      </table>
+    <p class="font-noto text-slate-700 leading-relaxed text-center mb-8">ปีแรกรายได้มาจากลูกค้าใหม่อย่างเดียว ปีต่อไปลูกค้าเดิมเริ่มทำงานให้คุณด้วย</p>
+    <!-- ══ เครื่องคำนวณรายได้ ══ -->
+    <div id="income-example" class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 lg:p-8 mb-6">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start">
+        <div class="inc-left lg:col-span-5">
+          <h3 class="font-pridi font-bold text-navy text-xl mb-1">ตัวอย่าง: ถ้าคุณได้ลูกค้าใหม่เดือนละ <span class="whitespace-nowrap"><span id="inc-k">3</span> ราย</span></h3>
+          <p class="font-noto text-sm text-slate-500 mb-1">สมมติฐาน: ลูกค้าจ่ายเบี้ยเฉลี่ยคนละ 40,000 บาทต่อปี · ทำเต็มเวลา · ทำงานเท่าเดิมทุกปี</p>
+          <p class="mb-3"><a href="#inc-assumptions" class="inline-flex items-center font-noto text-sm text-teal hover:underline" style="min-height:44px">ดูว่าตัวเลขนี้คิดจากอะไร ↓</a></p>
+          <label for="inc-input" class="block font-noto font-semibold text-navy mb-2">คุณอยากได้ลูกค้าใหม่เดือนละกี่ราย?</label>
+          <div class="flex items-center gap-2 mb-2">
+            <button type="button" id="inc-minus" class="inc-step" aria-label="ลดลง 1 ราย">−</button>
+            <input id="inc-input" type="number" inputmode="numeric" min="1" max="30" step="1" value="3" aria-label="จำนวนลูกค้าใหม่ต่อเดือน" class="inc-num">
+            <button type="button" id="inc-plus" class="inc-step" aria-label="เพิ่มขึ้น 1 ราย">+</button>
+            <span class="font-noto text-sm text-slate-600 ml-1">ราย/เดือน</span>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-poppins text-xs text-slate-500 w-5 text-right shrink-0">1</span>
+            <input id="inc-range" type="range" min="1" max="30" step="1" value="3" aria-label="เลื่อนเลือกจำนวนลูกค้าใหม่ต่อเดือน" class="inc-range flex-1 min-w-0" style="--p:6.90%">
+            <span class="font-poppins text-xs text-slate-500 w-5 shrink-0">30</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2 mb-5"><button type="button" data-k="3" class="inc-btn font-noto text-sm font-semibold px-2 rounded-lg border whitespace-nowrap" style="min-height:44px">3 ราย</button><button type="button" data-k="5" class="inc-btn font-noto text-sm font-semibold px-2 rounded-lg border whitespace-nowrap" style="min-height:44px">5 ราย</button><button type="button" data-k="10" class="inc-btn font-noto text-sm font-semibold px-2 rounded-lg border whitespace-nowrap" style="min-height:44px">10 ราย</button><button type="button" data-k="30" class="inc-btn font-noto text-sm font-semibold px-2 rounded-lg border whitespace-nowrap" style="min-height:44px">30 ราย</button></div>
+          <div id="inc-result" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3" aria-live="polite">
+            <div class="inc-hero col-span-2 sm:col-span-1 lg:col-span-2 rounded-xl p-5">
+              <p class="font-noto text-sm text-slate-600">ตั้งแต่เดือนที่ 4 ได้ประมาณ</p>
+              <p class="mt-1 leading-tight"><span id="r-month" class="tnum font-poppins font-bold text-navy inc-big">30,000</span> <span class="font-noto text-sm text-slate-600 whitespace-nowrap">บาท/เดือน</span></p>
+              <p id="r-bonus-wrap" class="font-noto text-sm text-slate-700 mt-2">+ โบนัสทุก 3 เดือน <span id="r-bonus" class="tnum font-poppins font-semibold text-navy">18,000</span> บาท</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="font-noto text-xs text-slate-500">รวมปีแรก</p>
+              <p class="mt-1 leading-tight"><span id="r-y1" class="tnum font-poppins font-bold text-navy text-xl sm:text-2xl">324,000</span> <span id="r-y1u" class="font-noto text-xs text-slate-500 whitespace-nowrap">บาท</span></p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="font-noto text-xs text-slate-500">ปีที่ 5</p>
+              <p class="mt-1 leading-tight"><span id="r-y5" class="tnum font-poppins font-bold text-navy text-xl sm:text-2xl">1.04</span> <span id="r-y5u" class="font-noto text-xs text-slate-500 whitespace-nowrap">ล้าน/ปี</span></p>
+              <p class="font-noto text-xs text-teal font-semibold mt-1"><span id="r-old" class="tnum">58</span>% จากลูกค้าเดิม</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 mt-10 lg:mt-0">
+          <h4 class="font-pridi font-semibold text-navy text-lg mb-4"><span class="inc-no">1</span>ปีแรก เดือนต่อเดือน</h4>
+          <div id="m-bars" class="px-1" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;height:170px;align-items:end"><div class="flex flex-col items-center justify-end h-full"><div class="w-full rounded-t" style="height:4%;background:#CBD5E1"></div></div><div class="flex flex-col items-center justify-end h-full"><div class="w-full rounded-t" style="height:4%;background:#CBD5E1"></div></div><div class="flex flex-col items-center justify-end h-full"><div class="w-full rounded-t" style="height:4%;background:#CBD5E1"></div></div><div class="flex flex-col items-center justify-end h-full"><div id="ml4" class="font-poppins font-bold text-navy whitespace-nowrap mb-1 tnum" style="font-size:11px"><span class="sm:hidden">3 หมื่น</span><span class="hidden sm:inline">30,000</span></div><div id="mb4" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB4" style="height:0.0%;background:#D97706"></div><div id="mbC4" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="mb5" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB5" style="height:0.0%;background:#D97706"></div><div id="mbC5" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="ml6" class="font-poppins font-bold text-navy whitespace-nowrap mb-1 tnum" style="font-size:11px"><span class="sm:hidden">4.8 หมื่น</span><span class="hidden sm:inline">48,000</span></div><div id="mb6" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:100.0%"><div id="mbB6" style="height:37.5%;background:#D97706"></div><div id="mbC6" style="height:62.5%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="mb7" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB7" style="height:0.0%;background:#D97706"></div><div id="mbC7" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="mb8" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB8" style="height:0.0%;background:#D97706"></div><div id="mbC8" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="ml9" class="font-poppins font-bold text-navy whitespace-nowrap mb-1 tnum" style="font-size:11px"><span class="sm:hidden">4.8 หมื่น</span><span class="hidden sm:inline">48,000</span></div><div id="mb9" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:100.0%"><div id="mbB9" style="height:37.5%;background:#D97706"></div><div id="mbC9" style="height:62.5%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="mb10" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB10" style="height:0.0%;background:#D97706"></div><div id="mbC10" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="mb11" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:62.5%"><div id="mbB11" style="height:0.0%;background:#D97706"></div><div id="mbC11" style="height:100.0%;background:#1B365D"></div></div></div><div class="flex flex-col items-center justify-end h-full"><div id="ml12" class="font-poppins font-bold text-navy whitespace-nowrap mb-1 tnum" style="font-size:11px"><span class="sm:hidden">4.8 หมื่น</span><span class="hidden sm:inline">48,000</span></div><div id="mb12" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:100.0%"><div id="mbB12" style="height:37.5%;background:#D97706"></div><div id="mbC12" style="height:62.5%;background:#1B365D"></div></div></div></div>
+          <div class="px-1 mt-1" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px"><div class="text-center font-poppins text-slate-500" style="font-size:11px">1</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">2</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">3</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">4</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">5</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">6</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">7</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">8</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">9</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">10</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">11</div><div class="text-center font-poppins text-slate-500" style="font-size:11px">12</div></div>
+          <div class="px-1 mt-1" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px"><div class="text-center font-noto text-slate-500 rounded" style="grid-column:span 3;font-size:11px;background:#F1F5F9">เรียนรู้</div></div>
+          <div class="flex flex-wrap gap-4 mt-3 mb-3 font-noto text-xs text-slate-600">
+            <span class="inline-flex items-center gap-2"><span style="width:12px;height:12px;border-radius:3px;background:#1B365D;display:inline-block"></span>ค่านายหน้าปีแรก</span>
+            <span class="inline-flex items-center gap-2"><span style="width:12px;height:12px;border-radius:3px;background:#D97706;display:inline-block"></span>โบนัสรายไตรมาส</span>
+            <span class="inline-flex items-center gap-2"><span style="width:12px;height:12px;border-radius:3px;background:#CBD5E1;display:inline-block"></span>ช่วงเรียนรู้</span>
+          </div>
+          <p class="font-noto text-xs text-slate-500 leading-relaxed mb-3">โบนัสไตรมาสจ่ายย้อนหลัง จริงอาจเข้าบัญชีเดือนถัดไป · ตัวอย่างนี้วางไว้ในเดือนสิ้นไตรมาสเพื่อให้อ่านง่าย · ยังไม่หักภาษี</p>
+          <details class="inc-details">
+            <summary class="inline-flex items-center gap-2 font-noto text-sm font-semibold text-teal border border-slate-200 rounded-lg px-4 hover:border-teal" style="min-height:44px">ดูตัวเลขทั้ง 12 เดือน <span class="chev" aria-hidden="true">▾</span></summary>
+            <div class="overflow-x-auto rounded-lg border border-slate-200 mt-3">
+              <table class="w-full tnum">
+                <thead class="bg-navy"><tr><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:left">เดือน</th><th class="hidden sm:table-cell px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">ค่านายหน้าปีแรก</th><th class="hidden sm:table-cell px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">โบนัสรายไตรมาส</th><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">รวมเดือนนี้</th><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">สะสม</th></tr></thead>
+                <tbody id="m-rows" class="divide-y divide-slate-100"><tr class="bg-slate-50"><td class="px-3 py-1.5 font-noto text-sm text-slate-500">เดือน 1</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="px-3 py-1.5 text-right font-noto text-xs text-slate-500">ช่วงเรียนรู้</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-slate-500">0</td></tr><tr class="bg-slate-50"><td class="px-3 py-1.5 font-noto text-sm text-slate-500">เดือน 2</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="px-3 py-1.5 text-right font-noto text-xs text-slate-500">ช่วงเรียนรู้</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-slate-500">0</td></tr><tr class="bg-slate-50"><td class="px-3 py-1.5 font-noto text-sm text-slate-500">เดือน 3</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">–</td><td class="px-3 py-1.5 text-right font-noto text-xs text-slate-500">ช่วงเรียนรู้</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-slate-500">0</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 4</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">30,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 5</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">60,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy font-semibold">เดือน 6</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">18,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">48,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm font-semibold">108,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 7</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">138,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 8</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">168,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy font-semibold">เดือน 9</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">18,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">48,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm font-semibold">216,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 10</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">246,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy">เดือน 11</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm">–</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">30,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm">276,000</td></tr><tr><td class="px-3 py-1.5 font-noto text-sm text-navy font-semibold">เดือน 12</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">30,000</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm font-semibold">18,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">48,000</td><td class="px-3 py-1.5 text-right font-poppins text-sm font-semibold">324,000</td></tr></tbody>
+              </table>
+            </div>
+            <p class="font-noto text-xs text-slate-400 mt-1">หน่วย: บาท</p>
+          </details>
+          <div class="border-t border-slate-200 my-8"></div>
+          <h4 class="font-pridi font-semibold text-navy text-lg mb-4"><span class="inc-no">2</span>5 ปีข้างหน้า: ลูกค้าเดิมเริ่มทำงานให้คุณ</h4>
+          <div id="inc-bars" class="flex items-end gap-2 sm:gap-4 px-1" style="height:220px"><div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl1" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">324,000</div><div id="yb1" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:31.2%"><div id="ybO1" style="height:0.0%;background:#0891B2"></div><div id="ybN1" style="height:100.0%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ 1</div></div><div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl2" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">590,000</div><div id="yb2" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:56.7%"><div id="ybO2" style="height:26.8%;background:#0891B2"></div><div id="ybN2" style="height:73.2%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ 2</div></div><div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl3" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">778,000</div><div id="yb3" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:74.8%"><div id="ybO3" style="height:44.5%;background:#0891B2"></div><div id="ybN3" style="height:55.5%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ 3</div></div><div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl4" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">922,000</div><div id="yb4" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:88.7%"><div id="ybO4" style="height:53.1%;background:#0891B2"></div><div id="ybN4" style="height:46.9%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ 4</div></div><div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl5" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">1.04 ล้าน</div><div id="yb5" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:100.0%"><div id="ybO5" style="height:58.5%;background:#0891B2"></div><div id="ybN5" style="height:41.5%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ 5</div></div></div>
+          <div class="flex flex-wrap gap-4 mt-4 mb-5 font-noto text-xs text-slate-600">
+            <span class="inline-flex items-center gap-2"><span style="width:12px;height:12px;border-radius:3px;background:#1B365D;display:inline-block"></span>จากลูกค้าใหม่</span>
+            <span class="inline-flex items-center gap-2"><span style="width:12px;height:12px;border-radius:3px;background:#0891B2;display:inline-block"></span>จากลูกค้าเดิม</span>
+          </div>
+          <div class="overflow-x-auto rounded-lg border border-slate-200">
+            <table class="w-full tnum">
+              <thead class="bg-navy"><tr><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:left">ปี</th><th class="hidden sm:table-cell px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">จากลูกค้าใหม่</th><th class="hidden sm:table-cell px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">จากลูกค้าเดิม</th><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">รวมต่อปี</th><th class="px-3 py-2 font-noto text-xs font-semibold text-white whitespace-nowrap" style="text-align:right">เฉลี่ยต่อเดือน</th></tr></thead>
+              <tbody id="inc-rows" class="divide-y divide-slate-100"><tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ 1</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">324,000</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">0</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">324,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">27,000</td></tr><tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ 2</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">432,000</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">158,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">590,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">49,000</td></tr><tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ 3</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">432,000</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">346,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">778,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">65,000</td></tr><tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ 4</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">432,000</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">490,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">922,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">77,000</td></tr><tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ 5</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">432,000</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">608,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">1,040,000</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">87,000</td></tr></tbody>
+            </table>
+          </div>
+          <p class="font-noto text-xs text-slate-400 mt-1">หน่วย: บาท</p>
+          <p id="y-sum" class="font-noto text-sm text-slate-600 mt-3">ปีที่ 5 รายได้ประมาณ 3.2 เท่าของปีแรก และ 58% มาจากลูกค้าที่คุณดูแลอยู่แล้ว</p>
+          <div id="inc-assumptions" class="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <p class="font-pridi font-semibold text-navy mb-2">ตัวเลขนี้คิดจากอะไร</p>
+            <ul class="font-noto text-sm text-slate-700 leading-relaxed list-disc pl-5">
+              <li>ลูกค้าจ่ายเบี้ยเฉลี่ยคนละ 40,000 บาทต่อปี</li>
+              <li>ค่านายหน้าปีแรก 25% ของเบี้ย</li>
+              <li>ค่านายหน้าต่ออายุ 15% ของเบี้ย ทุกปีที่ลูกค้าจ่ายต่อ</li>
+              <li>ลูกค้าจ่ายต่อ 85% ต่อปี</li>
+              <li>โบนัสรายไตรมาส 0–30% ของค่านายหน้าปีแรกในไตรมาสนั้น (ยิ่งทำได้มาก ขั้นยิ่งสูง)</li>
+              <li>โบนัสต่ออายุ 15% ของค่านายหน้าต่ออายุ ในปีที่ 2–3 ของลูกค้าแต่ละกลุ่ม</li>
+              <li>3 เดือนแรกเป็นช่วงเรียนรู้ ยังไม่มียอดขาย</li>
+            </ul>
+            <p class="font-noto text-sm text-navy font-bold mt-3">อัตราค่านายหน้าจริงแล้วแต่แบบประกัน มีตั้งแต่ 1% ถึง 40% ตัวอย่างนี้ใช้ 25% เป็นค่ากลาง</p>
+            <p class="font-noto text-xs text-slate-500 mt-2">ตัวเลขด้านบนรวมโบนัสต่ออายุแล้ว แต่ยังไม่รวมโปรโมชันการขายและรายได้ผู้บริหาร เพราะขึ้นกับเงื่อนไขแต่ละช่วง</p>
+            <p class="font-noto text-xs text-slate-500 mt-1">ยังไม่หักภาษี · ไม่รวมเงินพิเศษจากโปรโมชันการขาย (ทางที่ 4) และรายได้ผู้บริหาร (ทางที่ 5) · ปีที่ 2–5 ปัดเป็นหลักพัน</p>
+            <p class="font-noto text-xs text-slate-600 font-semibold mt-1">ตัวอย่างจากสมมติฐาน ไม่ใช่การรับประกันรายได้</p>
+          </div>
+          <p class="mt-2 lg:hidden"><a href="#income-example" class="inline-flex items-center font-noto text-sm text-teal hover:underline" style="min-height:44px">↑ กลับไปลองตัวเลขอื่น</a></p>
+          <div class="mt-6 text-center">
+            <a href="#apply-form"
+               onclick="gtag('event','form_cta_click',{'event_category':'conversion','event_label':'join-income'})"
+               class="btn-teal block w-full px-5 py-3.5 font-noto text-base leading-snug">อยากรู้ว่าต้องทำอะไรถึงได้ตัวเลขนี้? ทิ้งเบอร์ไว้ ป้องโทรกลับ</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="font-noto text-xs text-slate-400 text-center mb-6">ภาพอธิบายโครงสร้าง ไม่ใช่ตัวเลขจริง</p>
-    <div class="rounded-xl border border-amber-200 bg-amber-50 mb-6 overflow-hidden">
+    <script>
+    (function(){
+      function nlaCalc(k){
+        var P=40000,FY=0.25,RY=0.15,RET=0.85,PB=0.15;
+        function tier(q){return q<20000?0:q<40000?.15:q<100000?.20:q<150000?.25:.30;}
+        var mFY=k*P*FY, qFY=mFY*3, qB=qFY*tier(qFY);
+        var months=[],cum=0;
+        for(var m=1;m<=12;m++){var c=m<=3?0:mFY,b=(m===6||m===9||m===12)?qB:0;cum+=c+b;months.push([c,b,cum]);}
+        var cohort=[],years=[];
+        for(var y=1;y<=5;y++){
+          var sell=y===1?9:12, quarters=y===1?3:4;
+          var nw=k*sell*P*FY+quarters*qB, old=0;
+          for(var i=0;i<cohort.length;i++){var age=y-(i+1);
+            var r=cohort[i]*Math.pow(RET,age)*RY; old+=r; if(age<=2) old+=r*PB;}
+          cohort.push(k*sell*P);
+          // ปีที่ 1 ใช้ยอดจริง (= สะสมเดือน 12) · ปีที่ 2-5 ปัดหลักพัน
+          var n=y===1?nw:Math.round(nw/1000)*1000, o=Math.round(old/1000)*1000;
+          var avg=y===1?Math.round((n+o)/12/100)*100:Math.round((n+o)/12/1000)*1000;
+          years.push([n,o,avg]);
+        }
+        return {months:months,years:years};
+      }
+      function f(v){return Math.round(v).toLocaleString('en-US');}
+      function sh(v){return v>=1e6?(v/1e6).toFixed(2)+' ล้าน':f(v);}
+      function cth(v){var x=v>=1e5?v/1e5:v/1e4;return (Math.round(x*10)/10).toString()+(v>=1e5?' แสน':' หมื่น');}
+      function mLab(tot){return '<span class="sm:hidden">'+cth(tot)+'</span><span class="hidden sm:inline">'+f(tot)+'</span>';}
+      function mBarsHTML(r){var mx=0;r.forEach(function(x){mx=Math.max(mx,x[0]+x[1]);});var b='';
+        r.forEach(function(x,i){var m=i+1,tot=x[0]+x[1];
+          if(m<=3){b+='<div class="flex flex-col items-center justify-end h-full"><div class="w-full rounded-t" style="height:4%;background:#CBD5E1"></div></div>';return;}
+          var lab=([4,6,9,12].indexOf(m)>-1)?'<div id="ml'+m+'" class="font-poppins font-bold text-navy whitespace-nowrap mb-1 tnum" style="font-size:11px">'+mLab(tot)+'</div>':'';
+          b+='<div class="flex flex-col items-center justify-end h-full">'+lab+'<div id="mb'+m+'" class="mbar w-full flex flex-col justify-end rounded-t overflow-hidden" style="height:'+(tot/mx*100).toFixed(1)+'%"><div id="mbB'+m+'" style="height:'+(x[1]/tot*100).toFixed(1)+'%;background:#D97706"></div><div id="mbC'+m+'" style="height:'+(x[0]/tot*100).toFixed(1)+'%;background:#1B365D"></div></div></div>';});
+        return b;}
+      function mNumsHTML(){var t='';for(var m=1;m<=12;m++)t+='<div class="text-center font-poppins text-slate-500" style="font-size:11px">'+m+'</div>';return t;}
+      function mRowsHTML(r){var t='',D='–';
+        r.forEach(function(x,i){var m=i+1,tot=x[0]+x[1];
+          if(m<=3){t+='<tr class="bg-slate-50"><td class="px-3 py-1.5 font-noto text-sm text-slate-500">เดือน '+m+'</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">'+D+'</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm text-slate-400">'+D+'</td><td class="px-3 py-1.5 text-right font-noto text-xs text-slate-500">ช่วงเรียนรู้</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-slate-500">0</td></tr>';return;}
+          var fw=([6,9,12].indexOf(m)>-1)?' font-semibold':'';
+          t+='<tr><td class="px-3 py-1.5 font-noto text-sm text-navy'+fw+'">เดือน '+m+'</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm'+fw+'">'+f(x[0])+'</td><td class="hidden sm:table-cell px-3 py-1.5 text-right font-poppins text-sm'+fw+'">'+(x[1]?f(x[1]):D)+'</td><td class="px-3 py-1.5 text-right font-poppins text-sm text-navy font-bold">'+f(tot)+'</td><td class="px-3 py-1.5 text-right font-poppins text-sm'+fw+'">'+f(x[2])+'</td></tr>';});
+        return t;}
+      function yBarsHTML(r){var mx=0;r.forEach(function(x){mx=Math.max(mx,x[0]+x[1]);});var b='';
+        r.forEach(function(x,i){var tot=x[0]+x[1],y=i+1;
+          b+='<div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full"><div id="yl'+y+'" class="font-poppins text-xs sm:text-sm font-bold text-navy mb-1 whitespace-nowrap tnum">'+sh(tot)+'</div><div id="yb'+y+'" class="ybar w-full max-w-[64px] flex flex-col justify-end rounded-t-md overflow-hidden" style="height:'+(tot/mx*100).toFixed(1)+'%"><div id="ybO'+y+'" style="height:'+(x[1]/tot*100).toFixed(1)+'%;background:#0891B2"></div><div id="ybN'+y+'" style="height:'+(x[0]/tot*100).toFixed(1)+'%;background:#1B365D"></div></div><div class="font-noto text-xs text-slate-600 mt-2">ปีที่ '+y+'</div></div>';});
+        return b;}
+      function yRowsHTML(r){var t='';
+        r.forEach(function(x,i){var tot=x[0]+x[1];
+          t+='<tr><td class="px-3 py-2 font-noto text-sm text-navy whitespace-nowrap">ปีที่ '+(i+1)+'</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">'+f(x[0])+'</td><td class="hidden sm:table-cell px-3 py-2 text-right font-poppins text-sm">'+f(x[1])+'</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">'+f(tot)+'</td><td class="px-3 py-2 text-right font-poppins text-sm font-bold text-navy">'+f(x[2])+'</td></tr>';});
+        return t;}
+      function ySum(r){var y1=r[0][0]+r[0][1],y5=r[4][0]+r[4][1];
+        return 'ปีที่ 5 รายได้ประมาณ '+(Math.round(y5/y1*10)/10).toFixed(1)+' เท่าของปีแรก และ '+Math.round(r[4][1]/y5*100)+'% มาจากลูกค้าที่คุณดูแลอยู่แล้ว';}
+      function y5parts(v){return v>=1e6?[(v/1e6).toFixed(2),'ล้าน/ปี']:[f(v),'บาท/ปี'];}
+      window.nlaCalc=nlaCalc;
+      var RM=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      function $(id){return document.getElementById(id);}
+      var raf={};
+      function tween(id,to,fmt,anim){var el=$(id);if(!el)return;var from=parseFloat(el.getAttribute('data-v'));el.setAttribute('data-v',to);
+        if(raf[id])cancelAnimationFrame(raf[id]);
+        if(!anim||RM||isNaN(from)||from===to){el.textContent=fmt(to,true);return;}
+        var t0=null;function step(t){if(t0===null)t0=t;var p=Math.min(1,(t-t0)/300),e=1-Math.pow(1-p,3);
+          el.textContent=fmt(p<1?from+(to-from)*e:to,p>=1);if(p<1)raf[id]=requestAnimationFrame(step);}
+        raf[id]=requestAnimationFrame(step);}
+      function fy1(v){var p=v>=1e6?[(v/1e6).toFixed(2),'ล้าน']:[f(v),'บาท'];$('r-y1u').textContent=p[1];return p[0];}
+      function fy5(v,end){var p=y5parts(v);$('r-y5u').textContent=p[1];return p[0];}
+      function drawM(r){var mx=0;r.forEach(function(x){mx=Math.max(mx,x[0]+x[1]);});
+        for(var i=3;i<12;i++){var x=r[i],tot=x[0]+x[1],m=i+1;
+          $('mb'+m).style.height=(tot/mx*100).toFixed(1)+'%';
+          $('mbB'+m).style.height=(x[1]/tot*100).toFixed(1)+'%';
+          $('mbC'+m).style.height=(x[0]/tot*100).toFixed(1)+'%';
+          var l=$('ml'+m);if(l)l.innerHTML=mLab(tot);}
+        $('m-rows').innerHTML=mRowsHTML(r);}
+      function drawY(r){var mx=0;r.forEach(function(x){mx=Math.max(mx,x[0]+x[1]);});
+        r.forEach(function(x,i){var tot=x[0]+x[1],y=i+1;
+          $('yb'+y).style.height=(tot/mx*100).toFixed(1)+'%';
+          $('ybO'+y).style.height=(x[1]/tot*100).toFixed(1)+'%';
+          $('ybN'+y).style.height=(x[0]/tot*100).toFixed(1)+'%';
+          $('yl'+y).textContent=sh(tot);});
+        $('inc-rows').innerHTML=yRowsHTML(r);$('y-sum').textContent=ySum(r);}
+      function drawR(r,anim){var mo=r.months,y5=r.years[4][0]+r.years[4][1];
+        tween('r-month',mo[3][0],f,anim);
+        tween('r-bonus',mo[5][1],f,anim);$('r-bonus-wrap').style.display=mo[5][1]>0?'':'none';
+        tween('r-y1',mo[11][2],fy1,anim);
+        tween('r-y5',y5,fy5,anim);
+        tween('r-old',Math.round(r.years[4][1]/y5*100),function(v){return String(Math.round(v));},anim);}
+      var inp=$('inc-input'),rng=$('inc-range'),timer=null,cur=3;
+      function clamp(v){v=parseInt(v,10);if(isNaN(v))return null;return Math.min(30,Math.max(1,v));}
+      function track(k){clearTimeout(timer);timer=setTimeout(function(){if(typeof gtag==='function')gtag('event','income_calc_use',{event_category:'engagement',event_label:'join-income-'+k});},800);}
+      function draw(k,anim){
+        cur=k;var r=nlaCalc(k);
+        drawM(r.months);drawY(r.years);drawR(r,anim);
+        $('inc-k').textContent=k;
+        rng.style.setProperty('--p',((k-1)/29*100).toFixed(2)+'%');
+        $('inc-minus').disabled=k<=1;$('inc-plus').disabled=k>=30;
+        document.querySelectorAll('.inc-btn').forEach(function(el){var on=parseInt(el.getAttribute('data-k'),10)===k;
+          el.style.background=on?'#1B365D':'#fff';el.style.color=on?'#fff':'#1B365D';el.style.borderColor=on?'#1B365D':'#CBD5E1';});
+      }
+      function set(v,src){var k=clamp(v);if(k===null)return;
+        var g=document.getElementById('f-income-goal');if(g)g.value=k+' ราย/เดือน';
+        if(src!=='inp'||String(k)!==inp.value) inp.value=k; rng.value=k;
+        if(k!==cur){draw(k,true);} track(k);}
+      inp.addEventListener('input',function(){var k=clamp(inp.value);if(k===null)return;if(String(k)!==inp.value)inp.value=k;set(k,'inp');});
+      inp.addEventListener('blur',function(){if(clamp(inp.value)===null)inp.value=cur;});
+      rng.addEventListener('input',function(){set(rng.value,'rng');});
+      $('inc-minus').addEventListener('click',function(){set(cur-1,'btn');});
+      $('inc-plus').addEventListener('click',function(){set(cur+1,'btn');});
+      document.querySelectorAll('.inc-btn').forEach(function(el){el.addEventListener('click',function(){set(el.getAttribute('data-k'),'btn');});});
+      draw(3,false);
+    })();
+    </script>
+    <div class="max-w-3xl mx-auto rounded-xl border border-amber-200 bg-amber-50 overflow-hidden">
       <p class="font-noto font-semibold text-amber-800 px-4 pt-4 pb-2">สิ่งที่ต้องรู้ก่อน</p>
       <table class="w-full">
         <tbody class="divide-y divide-amber-200">
-          <tr><td class="font-noto text-sm font-semibold text-amber-800 px-4 py-3 whitespace-nowrap align-top">เงินเดือน</td><td class="font-noto text-sm text-amber-700 px-4 py-3">ไม่มีเงินเดือน</td></tr>
+          <tr><td class="font-noto text-sm font-semibold text-amber-800 px-4 py-3 whitespace-nowrap align-top">เงินเดือน</td><td class="font-noto text-sm text-amber-700 px-4 py-3">ไม่มีเงินเดือน · ถ้าผ่านคัดเลือกโครงการ mtl SUPER AGENT มีเงินส่งเสริมการขายสูงสุด 120,000 บาทในปีแรก ตามเงื่อนไขผลงาน <a href="/join/5-year-challenge" onclick="gtag('event','program_click',{'event_category':'engagement','event_label':'join-nosalary'})" class="font-semibold text-teal hover:underline whitespace-nowrap">ดูโครงการ →</a></td></tr>
           <tr><td class="font-noto text-sm font-semibold text-amber-800 px-4 py-3 whitespace-nowrap align-top">3 เดือนแรก</td><td class="font-noto text-sm text-amber-700 px-4 py-3">3 เดือนแรกเป็นช่วงเรียนรู้ มักยังไม่มีรายได้</td></tr>
           <tr><td class="font-noto text-sm font-semibold text-amber-800 px-4 py-3 whitespace-nowrap align-top">เงินสำรอง</td><td class="font-noto text-sm text-amber-700 px-4 py-3">ควรมีเงินสำรอง 3–6 เดือน</td></tr>
           <tr><td class="font-noto text-sm font-semibold text-amber-800 px-4 py-3 whitespace-nowrap align-top">ค่าใช้จ่ายเริ่มต้น</td><td class="font-noto text-sm text-amber-700 px-4 py-3">ค่าสอบและค่าออกรหัสราว 630 บาท</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="text-center">
-      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
-         onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'join-income'})"
-         class="font-noto text-sm font-semibold text-teal hover:underline">อยากเห็นตัวเลขตามเป้าของคุณ → คำนวณให้ดูตอนคุย 15 นาที</a>
+  </div>
+</section>
+
+
+<!-- ══════════ 3b. 2 เส้นทางเริ่มต้น ══════════ -->
+<section class="py-16 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">เลือกทางที่ใช่</p>
+      <h2 class="font-pridi text-3xl font-bold text-navy mb-3">2 เส้นทางเริ่มต้น</h2>
     </div>
+    <div class="grid md:grid-cols-5 gap-5 items-stretch">
+      <div class="md:col-span-2 rounded-2xl border border-slate-200 bg-slate-50 p-6 flex flex-col">
+        <h3 class="font-pridi font-bold text-navy text-xl mb-4">เส้นทางปกติ</h3>
+        <ul class="flex flex-col gap-2.5 font-noto text-sm text-slate-700 leading-relaxed mb-6 [&_svg]:text-teal"><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>เริ่มตามจังหวะตัวเอง</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>ทำควบงานประจำช่วงแรกได้</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>3 เดือนแรกเป็นช่วงเรียนรู้</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>รายได้ตามตัวอย่างด้านบน</span></li></ul>
+        <a href="#apply-form" onclick="gtag('event','form_cta_click',{'event_category':'conversion','event_label':'join-paths'})" class="btn-teal mt-auto inline-flex items-center justify-center px-5 font-noto text-base" style="min-height:48px">ทิ้งเบอร์ไว้ →</a>
+      </div>
+      <div class="md:col-span-3 rounded-2xl p-6 flex flex-col text-white" style="background:linear-gradient(135deg,#0D1F3C,#1B365D);border:1.5px solid #D4AF37">
+        <div class="flex items-center gap-2 mb-1" style="color:#D4AF37"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg><h3 class="font-pridi font-bold text-xl">เส้นทางเร่ง mtl SUPER AGENT</h3></div>
+        <p class="font-noto text-sm text-slate-300 mb-4">(5 ปี 5 ล้าน)</p>
+        <dl class="font-noto text-sm leading-relaxed flex flex-col gap-3 mb-6">
+          <div><dt class="font-semibold" style="color:#7DD3FC">สำหรับ</dt><dd class="text-slate-100">ตัวแทนใหม่ ปริญญาตรี ผ่านการสัมภาษณ์</dd></div>
+          <div><dt class="font-semibold" style="color:#7DD3FC">ต้อง</dt><dd class="text-slate-100">เข้าอบรมครบ 100% (4–7 ครั้ง/เดือน) · ค่านายหน้าปีแรกไม่ต่ำกว่า 10,000 บาททุกเดือน ตั้งแต่เดือนแรก</dd></div>
+          <div><dt class="font-semibold" style="color:#7DD3FC">ได้</dt><dd class="text-slate-100">
+            <ul class="flex flex-col gap-1.5 mt-1"><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>เงินส่งเสริมการขายสูงสุด 120,000 บาท ในปีแรก ตามผลงาน</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>ขึ้นผู้จัดการ PM ใน 8 เดือน / SM ใน 12 เดือน ตามเงื่อนไข</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>สิทธิ์แข่ง Big Bonus สูงสุด 5 ล้านบาท (5 ปี) ตามเงื่อนไข</span></li><li class="flex items-start gap-2 "><svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>ยังได้โบนัสไตรมาสและโปรโมชันตามปกติ</span></li></ul></dd></div>
+        </dl>
+        <a href="/join/5-year-challenge" onclick="gtag('event','program_click',{'event_category':'engagement','event_label':'join-paths'})" class="mt-auto inline-flex items-center justify-center px-5 font-noto text-base font-semibold rounded-lg text-navy hover:opacity-90" style="min-height:48px;background:#fff">ดูเงื่อนไขโครงการ →</a>
+      </div>
+    </div>
+    <p class="font-noto text-xs text-slate-500 text-center mt-4">เงื่อนไขเป็นไปตามประกาศของบริษัท เมืองไทยประกันชีวิต</p>
   </div>
 </section>
 
@@ -328,18 +616,22 @@
     </div>
     <div class="grid md:grid-cols-2 gap-4 mb-8">
       <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 8h4M8 12h2"/><circle cx="16" cy="16" r="3" stroke="#0891B2"/><path d="M18.2 18.2L21 21" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-1">ระบบวิเคราะห์แบบประกัน</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">วิเคราะห์แบบประกันทำให้ ไม่ต้องแกะเองทุกเล่ม</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-1">เนื้อหาไว้คุยกับลูกค้า</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">มีคนทำเนื้อหาให้ หยิบไปคุยกับลูกค้าได้เลย</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v6" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-1">หัวหน้ามีวุฒิวางแผนการเงิน</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">เรียนวางแผนเกษียณ ภาษี และอ่านแบบประกันกับหัวหน้าโดยตรง</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-1">แผนพัฒนา 8 สัปดาห์</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">เส้นทางพัฒนา 8 สัปดาห์แรก รู้ว่าแต่ละสัปดาห์ต้องทำอะไร</p>
       </div>
@@ -374,19 +666,19 @@
     </div>
     <div class="grid md:grid-cols-3 gap-5 mb-8">
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="text-3xl mb-3">🔄</div>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/><path d="M17 8l-3 3" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-2">คนที่อยากเปลี่ยนสายงาน</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">ไม่ต้องมีพื้นฐานการเงิน ทักษะสื่อสาร ความไว้ใจ และความตั้งใจเรียนรู้ สำคัญกว่า</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="text-3xl mb-3">🎓</div>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M15 8h5v5" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-2">มนุษย์เงินเดือนที่อยากเพิ่มรายได้</h3>
         <p class="font-noto text-sm text-slate-600 leading-relaxed">มีเครือข่ายอยู่แล้ว อยากสร้างรายได้เพิ่มอย่างมีระบบ ไม่ใช่แค่ทำงานหนักกว่าเดิม</p>
       </div>
       <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-        <div class="text-3xl mb-3">⏳</div>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-3" style="background:rgba(8,145,178,.1)"><svg class="w-6 h-6" fill="none" stroke="#1B365D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke="#0891B2"/></svg></div>
         <h3 class="font-pridi font-semibold text-navy mb-2">พร้อมลงทุนเวลาช่วงแรก</h3>
-        <p class="font-noto text-sm text-slate-600 leading-relaxed">รายได้ไม่มาเร็ว แต่สม่ำเสมอถ้าวางรากฐานถูก ต้องใจเย็นกับ 6-12 เดือนแรก</p>
+        <p class="font-noto text-sm text-slate-600 leading-relaxed">3 เดือนแรกเป็นช่วงเรียนรู้ รายได้เริ่มสม่ำเสมอเมื่อมีฐานลูกค้า</p>
       </div>
     </div>
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
@@ -394,7 +686,7 @@
         <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
         <div>
           <p class="font-noto font-semibold text-amber-800 mb-1">อาจไม่เหมาะ ถ้า...</p>
-          <p class="font-noto text-sm text-amber-700 leading-relaxed">คุณต้องการรายได้ประจำตั้งแต่เดือนแรก หรือมองว่างานนี้คือ side income ที่ไม่ต้องลงแรงมาก อาชีพนี้ต้องการความจริงจังจึงจะเติบโตได้</p>
+          <p class="font-noto text-sm text-amber-700 leading-relaxed">คุณต้องการรายได้ประจำตั้งแต่เดือนแรก หรือมองว่างานนี้คือ รายได้เสริม ที่ไม่ต้องลงแรงมาก อาชีพนี้ต้องการความจริงจังจึงจะเติบโตได้</p>
         </div>
       </div>
     </div>
@@ -431,13 +723,13 @@
           <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10 shadow-md"><span class="font-poppins font-bold text-white text-sm">3</span></div>
           <div class="bg-white rounded-xl p-5 flex-1 border border-slate-100 shadow-sm">
             <h3 class="font-pridi font-semibold text-navy mb-1">อบรมและสอบใบอนุญาต คปภ.</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">สอบใบอนุญาตตัวแทนประกันชีวิตกับ คปภ. ทีมมี Material และ Mock Exam ให้ เดินทางไปสอบที่ศูนย์สอบแต่ละจังหวัด (กทม. อยู่แถว MRT สุทธิสาร)</p>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">สอบใบอนุญาตตัวแทนประกันชีวิตกับ คปภ. ทีมมีเอกสารติวสอบและข้อสอบจำลองให้ เดินทางไปสอบที่ศูนย์สอบแต่ละจังหวัด (กทม. อยู่แถว MRT สุทธิสาร)</p>
           </div>
         </div>
         <div class="flex gap-5 items-start">
           <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center shrink-0 z-10 shadow-md"><span class="font-poppins font-bold text-white text-sm">4</span></div>
           <div class="bg-white rounded-xl p-5 flex-1 border border-slate-100 shadow-sm">
-            <h3 class="font-pridi font-semibold text-navy mb-1">หลังสอบผ่าน ส่งเอกสารประจำตัว เพื่อออก Code ตัวแทน</h3>
+            <h3 class="font-pridi font-semibold text-navy mb-1">หลังสอบผ่าน ส่งเอกสารประจำตัว เพื่อออกรหัสตัวแทน</h3>
             <p class="font-noto text-sm text-slate-600 leading-relaxed">ยื่นเอกสารประจำตัวเพื่อออกรหัสตัวแทนกับเมืองไทยประกันชีวิต ทีมแนะนำทุกขั้นตอน</p>
           </div>
         </div>
@@ -445,7 +737,7 @@
           <div class="w-10 h-10 bg-teal rounded-full flex items-center justify-center shrink-0 z-10 shadow-md"><span class="font-poppins font-bold text-white text-sm">5</span></div>
           <div class="bg-teal/5 rounded-xl p-5 flex-1 border border-teal/20 shadow-sm">
             <h3 class="font-pridi font-semibold text-navy mb-1">หลังจากเป็นตัวแทนเต็มตัว</h3>
-            <p class="font-noto text-sm text-slate-600 leading-relaxed">เข้าสู่ระบบ Onboarding ของบริษัทและทีมงาน Workshop Product + Advisory Framework เรียนรู้แบบประกัน การวิเคราะห์ลูกค้า และวิธีนำเสนอแผน เข้มข้นกับทีม</p>
+            <p class="font-noto text-sm text-slate-600 leading-relaxed">เข้าสู่ช่วงเริ่มงานของบริษัทและทีมงาน อบรมเรื่องแบบประกันและวิธีวางแผนให้ลูกค้า เรียนรู้แบบประกัน การวิเคราะห์ลูกค้า และวิธีนำเสนอแผน เข้มข้นกับทีม</p>
           </div>
         </div>
       </div>
@@ -459,99 +751,122 @@
   </div>
 </section>
 
-<!-- ══════════ 7. นัดคุย (CTA หลัก) + ฟอร์มสำรอง ══════════ -->
+<!-- ══════════ 7. ฟอร์ม (ปุ่มหลัก) ══════════ -->
 <section id="apply-form" class="py-16 px-4 bg-white">
   <div class="max-w-xl mx-auto">
     <div class="text-center mb-8">
       <p class="font-noto text-teal font-semibold text-sm uppercase tracking-widest mb-3">เริ่มต้นได้วันนี้</p>
       <h2 class="font-pridi text-3xl font-bold text-navy mb-3">อยากรู้ว่าเส้นทางนี้เหมาะกับคุณไหม?</h2>
-      <p class="font-noto text-slate-600 leading-relaxed mb-6">คุยกัน 15 นาที ดูว่างานนี้ตรงกับเป้าหมายของคุณหรือเปล่า</p>
-      <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
-         onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'join-final'})"
-         class="btn-teal w-full py-4 font-noto text-lg inline-flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        นัดคุย 15 นาที
-      </a>
-      <p class="font-noto text-sm text-slate-500 mt-4">หรือทักผ่าน LINE →
-        <a href="https://lin.ee/7YeXvFaG" target="_blank" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'join-form-bottom'})"
-           class="text-teal font-medium hover:underline">@nextleveladvisor</a>
-      </p>
+      <p class="font-noto text-slate-600 leading-relaxed">ทิ้งชื่อกับเบอร์ไว้ ป้องโทรกลับภายใน 1–2 วันทำการ คุย 15 นาที ไม่มีข้อผูกมัด</p>
     </div>
-    <details class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-      <summary class="font-noto text-sm font-semibold text-navy cursor-pointer">ไม่สะดวกเลือกเวลาเอง? ทิ้งเบอร์ไว้ ป้องโทรกลับ</summary>
-      <div class="mt-5">
-      <form id="join-form" class="flex flex-col gap-4"
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6">
+      <form id="join-form" class="flex flex-col gap-4" novalidate
             action="https://formspree.io/f/xlgzgkje"
             method="POST">
         <input type="hidden" name="_source" value="join-main">
         <input type="hidden" name="_subject" value="สมัครร่วมทีม Next Level Advisor">
+        <input type="hidden" name="income_goal" id="f-income-goal" value="ไม่ได้ใช้">
+        <input type="hidden" name="utm_source" id="f-utm-source" value="">
+        <input type="hidden" name="utm_medium" id="f-utm-medium" value="">
+        <input type="hidden" name="utm_campaign" id="f-utm-campaign" value="">
         <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">ชื่อ-นามสกุล <span class="text-red-500">*</span></label>
-          <input type="text" name="name" required placeholder="ชื่อ นามสกุล"
-                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <label for="f-name" class="block font-noto text-sm font-medium text-navy mb-1.5">ชื่อ-นามสกุล <span class="text-red-500">*</span></label>
+          <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="ชื่อ นามสกุล"
+                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <p id="f-name-err" class="font-noto text-sm text-red-600 mt-1.5" style="display:none" role="alert">กรุณากรอกชื่อ</p>
         </div>
         <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
-          <input type="tel" name="phone" required placeholder="08X-XXX-XXXX"
-                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <label for="f-phone" class="block font-noto text-sm font-medium text-navy mb-1.5">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
+          <input type="tel" id="f-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="08X-XXX-XXXX" aria-describedby="f-phone-err"
+                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <p id="f-phone-err" class="font-noto text-sm text-red-600 mt-1.5" style="display:none" role="alert">กรุณาตรวจเบอร์โทรอีกครั้ง</p>
         </div>
         <div>
-          <label class="block font-noto text-sm font-medium text-navy mb-1.5">อีเมล</label>
-          <input type="email" name="email" placeholder="email@example.com"
-                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <label for="f-line" class="block font-noto text-sm font-medium text-navy mb-1.5">LINE ID <span class="text-slate-400 font-normal">(ไม่บังคับ)</span></label>
+          <input type="text" id="f-line" name="line_id" autocomplete="off" autocapitalize="off" placeholder="ถ้าสะดวกคุยทางไลน์มากกว่า"
+                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+        </div>
+        <div>
+          <label for="f-calltime" class="block font-noto text-sm font-medium text-navy mb-1.5">เวลาที่สะดวกให้โทร <span class="text-slate-400 font-normal">(ไม่บังคับ)</span></label>
+          <select id="f-calltime" name="call_time"
+                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+            <option value="">เลือกช่วงเวลา</option>
+            <option value="เช้า (9–12 น.)">เช้า (9–12 น.)</option>
+            <option value="บ่าย (12–17 น.)">บ่าย (12–17 น.)</option>
+            <option value="เย็น (หลัง 17 น.)">เย็น (หลัง 17 น.)</option>
+            <option value="ได้ทุกช่วง">ได้ทุกช่วง</option>
+          </select>
         </div>
         <div>
           <label class="block font-noto text-sm font-medium text-navy mb-1.5">อาชีพปัจจุบัน</label>
           <input type="text" name="job" placeholder="เช่น พนักงานบริษัท, วิศวกร, แพทย์"
-                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
         </div>
         <div>
           <label class="block font-noto text-sm font-medium text-navy mb-1.5">อยากเริ่มเมื่อไหร่</label>
           <select name="start_timing"
-                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+                  class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
             <option value="">เลือกช่วงเวลาที่สะดวก</option>
             <option value="ภายในเดือนนี้">พร้อมเริ่มภายในเดือนนี้</option>
             <option value="1-3 เดือน">ประมาณ 1–3 เดือน</option>
             <option value="ยังแค่ดูข้อมูล">ยังอยู่ในช่วงหาข้อมูล</option>
           </select>
         </div>
+        <label for="f-superagent" class="flex items-start gap-3 rounded-lg border border-slate-200 px-4 py-3 cursor-pointer hover:border-teal" style="min-height:48px">
+          <input type="checkbox" id="f-superagent" name="interest_superagent" value="ใช่" class="mt-1 w-5 h-5 shrink-0" style="accent-color:#0891B2">
+          <span class="font-noto text-sm text-navy">สนใจโครงการ mtl SUPER AGENT (5 ปี 5 ล้าน) <span class="text-slate-400">(ไม่บังคับ)</span></span>
+        </label>
         <div>
           <label class="block font-noto text-sm font-medium text-navy mb-1.5">สิ่งที่อยากรู้เพิ่มเติม</label>
           <textarea name="message" rows="3"
                     placeholder="เช่น อยากรู้เรื่องรายได้ ระบบสอนงาน หรือความเหมาะสมกับตัวเอง"
-                    class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal resize-none"></textarea>
+                    class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal resize-none"></textarea>
         </div>
-        <button type="submit"
-                class="btn-teal w-full py-3.5 font-noto text-base flex items-center justify-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-          ส่งข้อมูล
+        <div>
+          <label class="block font-noto text-sm font-medium text-navy mb-1.5">อีเมล <span class="text-slate-400 font-normal">(ไม่บังคับ)</span></label>
+          <input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" placeholder="email@example.com"
+                 class="w-full border border-slate-200 rounded-lg px-4 py-3 font-noto text-base focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal">
+          <p id="f-email-err" class="font-noto text-sm text-red-600 mt-1.5" style="display:none" role="alert">กรุณาตรวจอีเมลอีกครั้ง</p>
+        </div>
+        <button type="submit" data-orig="ส่งข้อมูล ให้ป้องโทรกลับ"
+                class="btn-teal w-full py-3.5 font-noto text-base flex items-center justify-center gap-2" style="min-height:52px">
+          ส่งข้อมูล ให้ป้องโทรกลับ <span aria-hidden="true">→</span>
         </button>
       </form>
       <p class="font-noto text-xs text-slate-400 text-center mt-4">ข้อมูลของคุณจะถูกเก็บเป็นความลับ</p>
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- ══════════ ลิงก์ท้ายหน้า ══════════ -->
-<section class="py-10 px-4 bg-slate-50 border-t border-slate-100">
-  <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
-    <div class="bg-navy rounded-xl p-6">
-      <div class="font-poppins text-xs font-bold text-teal uppercase tracking-widest mb-1">โครงการพิเศษ</div>
-      <h3 class="font-pridi font-bold text-white text-lg">MTL Super Agent — 5 ปี 5 ล้าน</h3>
-      <a href="/join/5-year-challenge" class="font-noto text-sm text-white/80 hover:text-white mt-2 inline-block">ดูรายละเอียด →</a>
-    </div>
-    <div class="bg-white rounded-xl p-6 border border-slate-200">
-      <div class="font-pridi font-semibold text-navy text-lg mb-1">อยากวางแผนการเงินส่วนตัว</div>
-      <p class="font-noto text-xs text-slate-500 mb-2">ดูบริการที่เหมาะกับคุณ</p>
-      <a href="/solutions"
-         onclick="gtag('event','split_cta_client',{'event_category':'navigation','event_label':'join-to-solutions'})"
-         class="font-noto text-sm font-semibold text-teal hover:underline">ไปที่บริการ →</a>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  // UTM จาก URL
+  try{var q=new URLSearchParams(location.search);
+    ['source','medium','campaign'].forEach(function(k){var el=document.getElementById('f-utm-'+k);if(el)el.value=q.get('utm_'+k)||'ไม่มี';});}catch(e){}
+  var form=document.getElementById('join-form');if(!form)return;
+  // มาจากหน้าโครงการ → ติ๊กสนใจ Super Agent ให้
+  try{var sa=document.getElementById('f-superagent');var fr=new URLSearchParams(location.search).get('from');
+    if(sa&&(fr==='5yc'||(document.referrer||'').indexOf('5-year-challenge')>-1))sa.checked=true;}catch(e){}
+  // form_start ครั้งเดียว
+  var started=false;
+  form.addEventListener('focusin',function(){if(started)return;started=true;
+    if(typeof gtag==='function')gtag('event','form_start',{event_category:'engagement',event_label:'join-form'});});
+  // ตรวจเบอร์ไทย 9–10 หลัก
+  var ph=document.getElementById('f-phone'),pe=document.getElementById('f-phone-err'),nm=document.getElementById('f-name'),ne=document.getElementById('f-name-err');
+  function digits(v){v=(v||'').replace(/[^0-9+]/g,'');if(v.indexOf('+66')===0)v='0'+v.slice(3);return v.replace(/\D/g,'');}
+  function phoneOk(){var d=digits(ph.value);return /^0\d{8,9}$/.test(d);}
+  function mark(el,err,bad){err.style.display=bad?'':'none';el.style.borderColor=bad?'#DC2626':'';el.setAttribute('aria-invalid',bad?'true':'false');}
+  ph.addEventListener('blur',function(){if(ph.value)mark(ph,pe,!phoneOk());});
+  ph.addEventListener('input',function(){if(pe.style.display!=='none'&&phoneOk())mark(ph,pe,false);});
+  nm.addEventListener('input',function(){if(nm.value.trim())mark(nm,ne,false);});
+  var em=document.getElementById('f-email'),ee=document.getElementById('f-email-err');
+  function emailOk(){var v=em.value.trim();return !v||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+  em.addEventListener('blur',function(){mark(em,ee,!emailOk());});
+  window.nlaJoinValid=function(){var okN=!!nm.value.trim(),okP=phoneOk(),okE=emailOk();mark(nm,ne,!okN);mark(ph,pe,!okP);mark(em,ee,!okE);
+    if(!okN){nm.focus();}else if(!okP){ph.focus();}else if(!okE){em.focus();}return okN&&okP&&okE;};
+})();
+</script>
 
-<!-- ══════════ 10. FAQ ══════════ -->
+<!-- ══════════ 8. FAQ ══════════ -->
 <section class="py-16 px-4 bg-slate-50">
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-8">
@@ -566,6 +881,30 @@
     </div>
   </div>
 </section>
+<!-- ══════════ 9. นัดคุยเอง (ทางเลือก) ══════════ -->
+<section class="pb-16 px-4 bg-slate-50">
+  <div class="max-w-xl mx-auto bg-white rounded-xl border border-slate-200 p-5 text-center">
+    <p class="font-pridi font-semibold text-navy text-lg mb-3">อยากเลือกเวลาคุยเอง?</p>
+    <a href="https://calendly.com/insuremate99/15" target="_blank" rel="noopener"
+       onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'join-final'})"
+       class="inline-flex items-center justify-center gap-2 font-noto text-base font-semibold text-navy border-2 rounded-lg px-6 hover:bg-slate-50 transition-colors" style="min-height:48px;border-color:#1B365D">นัดคุย 15 นาที</a>
+    <p class="font-noto text-sm text-slate-500 mt-3">หรือทักไลน์ <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'join-final'})" class="inline-flex items-center text-teal font-medium hover:underline" style="min-height:44px">@nextleveladvisor</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 10. ลิงก์ท้ายหน้า ══════════ -->
+<section class="py-10 px-4 bg-slate-50 border-t border-slate-100">
+  <div class="max-w-xl mx-auto">
+    <div class="bg-white rounded-xl p-6 border border-slate-200 text-center">
+      <div class="font-pridi font-semibold text-navy text-lg mb-1">อยากวางแผนการเงินส่วนตัว</div>
+      <p class="font-noto text-xs text-slate-500 mb-2">ดูบริการที่เหมาะกับคุณ</p>
+      <a href="/solutions"
+         onclick="gtag('event','split_cta_client',{'event_category':'navigation','event_label':'join-to-solutions'})"
+         class="font-noto text-sm font-semibold text-teal hover:underline">ไปที่บริการ →</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="bg-deep border-t border-white/5 py-8 px-4">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -583,11 +922,7 @@
 </footer>
 
 <!-- Floating CTA -->
-<div class="fixed bottom-5 right-5 z-40 flex flex-col gap-2">
-  <a href="https://calendly.com/insuremate99/15" target="_blank" onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'floating-join'})"
-     class="w-12 h-12 bg-navy hover:bg-deep text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="นัดคุย">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-  </a>
+<div class="fixed bottom-24 md:bottom-5 right-5 z-40 flex flex-col gap-2">
   <a href="https://lin.ee/7YeXvFaG" target="_blank" onclick="gtag('event','line_click',{'event_category':'conversion','event_label':'floating-join'})"
      class="w-12 h-12 bg-teal hover:bg-teal/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" title="LINE">
     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.073 1.558 5.803 4 7.557V22l3.727-2.044A11.3 11.3 0 0012 20.243c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2z"/></svg>
@@ -599,15 +934,19 @@
 const faqs=[
   {q:"ต้องมีประสบการณ์ด้านการเงินก่อนไหม?",a:"ไม่จำเป็น สมาชิกทีมมาจากหลากหลายสายงาน เช่น วิศวกร พยาบาล ครู และนักธุรกิจ สิ่งสำคัญคือทัศนคติและความตั้งใจเรียนรู้ ทีมมีระบบสอนงานรองรับตั้งแต่วันแรก"},
   {q:"รายได้ช่วงแรกเป็นอย่างไร?",a:"3 เดือนแรกเป็นช่วงเรียนรู้ มักยังไม่มีรายได้ ควรมีเงินสำรอง 3–6 เดือน"},
-  {q:"ต้องสอบใบอนุญาตอะไรบ้าง?",a:"ใบอนุญาตตัวแทนประกันชีวิตจาก คปภ. เป็นข้อกำหนดขั้นต่ำ ทีมช่วยเตรียม Mock Exam และมี Material ให้ นอกจากนี้แนะนำให้สอบ IC Plain เพิ่มเติมในภายหลัง"},
+  {q:"ต้องสอบใบอนุญาตอะไรบ้าง?",a:"ใบอนุญาตตัวแทนประกันชีวิตจาก คปภ. เป็นข้อกำหนดขั้นต่ำ ทีมช่วยเตรียมข้อสอบจำลองและเอกสารติวสอบให้ นอกจากนี้แนะนำให้สอบ IC Plain เพิ่มเติมในภายหลัง"},
   {q:"ทำงาน Part-time ได้ไหม?",a:"ได้ในช่วงแรก แต่หากต้องการรายได้ระดับมาตรฐานสากล (MDRT — Million Dollar Round Table) ต้องลงมือเต็มเวลา ทีมรับทั้ง Full-time และ Part-time และเราจะพูดตรงๆ เรื่องความคาดหวังก่อนเสมอ"},
   {q:"ต่างจากสมัครตัวแทนทั่วไปอย่างไร?",a:"ทีม Next Level เน้น Advisory-based ไม่ใช่ Sales-based ลูกค้าซื้อเพราะเข้าใจ ไม่ใช่เพราะถูก Hard sell เครื่องมือและระบบถูกออกแบบมาให้สร้าง Trust ก่อนทุกครั้ง"},
+  {q:"ต้องลาออกจากงานประจำไหม?",a:"ไม่ต้องในช่วงแรก ทำควบงานประจำได้ แต่ก็แปลว่าต้องจัดเวลาเอง ไม่มีใครจัดตารางให้ ถ้าอยากได้รายได้ระดับที่เห็นในตัวอย่าง ต้องลงมือเต็มเวลา"},
+  {q:"มีค่าใช้จ่ายอะไรบ้าง?",a:"ค่าสอบและค่าออกรหัสราว 630 บาท ไม่มีเงินเดือน และ 3 เดือนแรกเป็นช่วงเรียนรู้ ควรมีเงินสำรอง 3–6 เดือน"},
+  {q:"กรอกฟอร์มแล้วจะเกิดอะไรขึ้น?",a:"ป้องโทรกลับภายใน 1–2 วันทำการ คุยกัน 15 นาทีว่างานนี้ตรงกับเป้าหมายของคุณไหม ไม่มีข้อผูกมัด ถ้าไม่ตรง ป้องจะบอกตรงๆ"},
+  {q:"โครงการ 5 ปี 5 ล้าน คืออะไร ใครสมัครได้?",a:"โครงการ mtl SUPER AGENT ของเมืองไทยประกันชีวิต สำหรับตัวแทนใหม่ที่จบปริญญาตรีและผ่านการสัมภาษณ์ อบรมเข้มข้น 12 เดือน มีเงินส่งเสริมการขายสูงสุด 120,000 บาทตามผลงาน ขึ้นผู้จัดการได้ใน 8–12 เดือน และผู้ที่ทำตามเงื่อนไขครบมีสิทธิ์แข่ง Big Bonus 5 ล้านบาทใน 5 ปี ดูเงื่อนไขทั้งหมดได้ที่หน้าโครงการ",l:"/join/5-year-challenge"},
 ];
 const container=document.getElementById("faq-container");
 faqs.forEach(f=>{
   const div=document.createElement("div");
   div.className="faq-item border border-slate-100 rounded-xl overflow-hidden bg-white";
-  div.innerHTML=`<button onclick="this.closest('.faq-item').classList.toggle('open')" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-slate-50 transition-colors"><span class="font-noto text-sm font-semibold text-navy">${f.q}</span><svg class="faq-chevron w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 pb-4"><p class="font-noto text-sm text-slate-600 leading-relaxed">${f.a}</p></div>`;
+  div.innerHTML=`<button onclick="this.closest('.faq-item').classList.toggle('open')" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-slate-50 transition-colors"><span class="font-noto text-sm font-semibold text-navy">${f.q}</span><svg class="faq-chevron w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 pb-4"><p class="font-noto text-sm text-slate-600 leading-relaxed">${f.a}</p>${f.l?`<a href="${f.l}" onclick="gtag('event','program_click',{'event_category':'engagement','event_label':'faq'})" class="inline-flex items-center mt-1 font-noto text-sm font-semibold text-teal hover:underline" style="min-height:44px">ดูเงื่อนไขโครงการ →</a>`:''}</div>`;
   container.appendChild(div);
 });
 
@@ -707,15 +1046,25 @@ window.toggleJoinMenu=function(){
     var overlay = document.createElement('div');
     overlay.id = formId + '-thanks';
     overlay.style.cssText = 'display:none;text-align:center;padding:2.5rem 1.5rem';
-    overlay.innerHTML = '<div style="font-size:3rem;margin-bottom:1rem">🎉</div>'
+    overlay.innerHTML = '<div style="margin:0 auto 1rem;width:56px;height:56px;border-radius:50%;background:rgba(8,145,178,.12);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" fill="none" stroke="#0891B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>'
       + '<p class="font-pridi font-semibold text-navy" style="font-size:1.25rem;margin-bottom:.5rem">ได้รับข้อมูลแล้ว!</p>'
       + '<p class="font-noto text-slate-600 text-sm" style="line-height:1.8">ป้องจะโทรกลับภายใน 1–2 วันทำการ<br><span style="color:#0D1F3C;font-weight:600">จากเบอร์ 080-969-6351</span></p>'
       + '<p class="font-noto text-slate-500 text-sm mt-3" style="line-height:1.8">คุยกัน 15 นาที เพื่อดูว่าอาชีพนี้ตรงกับเป้าหมายของคุณหรือเปล่า<br>ถ้าไม่ตรง ป้องจะบอกตรงๆ</p>'
       + '<p class="font-noto text-xs text-slate-400 mt-4">ไม่สะดวกรับสาย <a href="https://lin.ee/7YeXvFaG" style="color:#0891B2">ทักไลน์ได้เลย</a></p>';
     form.parentNode.insertBefore(overlay, form.nextSibling);
+    var errBox = document.createElement('p');
+    errBox.className = 'font-noto text-sm text-red-600 text-center leading-relaxed';
+    errBox.setAttribute('role','alert'); errBox.style.display = 'none';
+    form.appendChild(errBox);
+    function showErr(msg){
+      errBox.innerHTML = msg + ' หรือ <a href="https://lin.ee/7YeXvFaG" target="_blank" rel="noopener" style="color:#0891B2;font-weight:600;text-decoration:underline">ทักไลน์โดยตรง</a>';
+      errBox.style.display = '';
+    }
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      if(form.id==='join-form' && window.nlaJoinValid && !window.nlaJoinValid()) return;
+      errBox.style.display = 'none';
       var btn = form.querySelector('[type=submit]');
       if(btn){ btn.disabled = true; btn.textContent = 'กำลังส่ง…'; }
       
@@ -738,11 +1087,11 @@ window.toggleJoinMenu=function(){
           }
         } else {
           if(btn){ btn.disabled = false; btn.textContent = btn.getAttribute('data-orig') || 'ส่งข้อมูล'; }
-          alert('เกิดข้อผิดพลาด กรุณาลองใหม่หรือทักไลน์โดยตรง');
+          showErr('ส่งไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
         }
       }).catch(function(){
         if(btn){ btn.disabled = false; btn.textContent = btn.getAttribute('data-orig') || 'ส่งข้อมูล'; }
-        alert('ไม่สามารถส่งข้อมูลได้ กรุณาทักไลน์โดยตรง');
+        showErr('ส่งข้อมูลไม่ได้ กรุณาตรวจอินเทอร์เน็ตแล้วลองใหม่');
       });
     });
   });
@@ -752,9 +1101,9 @@ window.toggleJoinMenu=function(){
 <!-- Sticky mobile CTA -->
 <div class="sticky-cta" id="stickyCta">
   <p>สนใจร่วมทีม?</p>
-  <a href="https://calendly.com/insuremate99/15" target="_blank"
-     onclick="gtag('event','calendly_click',{'event_category':'conversion','event_label':'sticky-cta-join'})">
-    นัดคุย 15 นาที →
+  <a href="#apply-form"
+     onclick="gtag('event','form_cta_click',{'event_category':'conversion','event_label':'sticky-cta-join'})">
+    ทิ้งเบอร์ไว้ →
   </a>
 </div>
 <script>
