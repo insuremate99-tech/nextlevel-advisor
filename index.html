@@ -205,12 +205,12 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://nextlevel-advisor.com/#organization",
+        "@id": "https://www.nextlevel-advisor.com/#organization",
         "name": "Next Level Advisor",
-        "url": "https://nextlevel-advisor.com/",
+        "url": "https://www.nextlevel-advisor.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://nextlevel-advisor.com/logo-horizontal.png"
+          "url": "https://www.nextlevel-advisor.com/logo-horizontal.png"
         },
         "description": "บริการที่ปรึกษาการเงินและประกันชีวิต วางแผนเกษียณ ภาษี มรดก ประกันกลุ่มองค์กร และประกันควบการลงทุน",
         "areaServed": {"@type":"Country","name":"Thailand"},
@@ -235,14 +235,15 @@
       },
       {
         "@type": "Person",
-        "@id": "https://nextlevel-advisor.com/#person",
+        "@id": "https://www.nextlevel-advisor.com/#person",
         "name": "ป้อง ปกป้อง ปัทมะสุนทร",
         "givenName": "ป้อง",
+        "alternateName": ["Pokpong Pathamasoonthorn", "ป้อง", "Pong"],
         "jobTitle": "ที่ปรึกษาการเงิน AFPT™ FChFP",
         "description": "ที่ปรึกษาการเงิน MDRT 2026, FChFP, AFPT™ ใบอนุญาต SEC 132155",
-        "worksFor": {"@id":"https://nextlevel-advisor.com/#organization"},
+        "worksFor": {"@id":"https://www.nextlevel-advisor.com/#organization"},
         "url": "https://www.nextlevel-advisor.com/behind-the-advisor",
-        "image": "https://nextlevel-advisor.com/mdrt-profile.png",
+        "image": "https://www.nextlevel-advisor.com/mdrt-profile.png",
         "hasCredential": [
           {"@type":"EducationalOccupationalCredential","name":"MDRT 2026 — Million Dollar Round Table"},
           {"@type":"EducationalOccupationalCredential","name":"AFPT™ — Accredited Financial Planner Thailand"},
@@ -253,12 +254,12 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://nextlevel-advisor.com/#website",
-        "url": "https://nextlevel-advisor.com/",
+        "@id": "https://www.nextlevel-advisor.com/#website",
+        "url": "https://www.nextlevel-advisor.com/",
         "name": "Next Level Advisor",
         "description": "ที่ปรึกษาการเงินและประกันชีวิตมืออาชีพ วางแผนภาษี เกษียณ สุขภาพ และมรดก",
         "inLanguage": "th",
-        "publisher": {"@id":"https://nextlevel-advisor.com/#organization"}
+        "publisher": {"@id":"https://www.nextlevel-advisor.com/#organization"}
       }
     ]
   }
@@ -327,7 +328,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "หน้าหลัก",
-          "item": "https://nextlevel-advisor.com/"
+          "item": "https://www.nextlevel-advisor.com/"
         }
       ]
     }
@@ -346,22 +347,7 @@
   ],
   "description": "ที่ปรึกษาการเงิน AFPT™ FChFP จากเมืองไทยประกันชีวิต ให้บริการวางแผนการเงินส่วนบุคคลแบบองค์รวม ครอบคลุมประกันสุขภาพ ประกันชีวิต วางแผนเกษียณ ลดหย่อนภาษี และวางแผนมรดก สำหรับมนุษย์เงินเดือน ผู้บริหาร เจ้าของกิจการ และแพทย์",
   "provider": {
-    "@type": "Person",
-    "name": "ปกป้อง ปัทมะสุนทร",
-    "alternateName": [
-      "Pokpong Pathamasoonthorn",
-      "ป้อง",
-      "Pong"
-    ],
-    "hasCredential": [
-      "AFPT™",
-      "FChFP",
-      "MDRT 2026"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "เมืองไทยประกันชีวิต"
-    }
+    "@id": "https://www.nextlevel-advisor.com/#person"
   },
   "serviceType": [
     "วางแผนประกันสุขภาพ",
@@ -370,7 +356,6 @@
     "ลดหย่อนภาษีด้วยประกันชีวิต",
     "วางแผนมรดก",
     "ประกันมรดก",
-    "ประกันชีวิตตลอดชีพ",
     "Unit-linked Investment",
     "วางแผนการเงินส่วนบุคคล"
   ],
@@ -382,14 +367,13 @@
     "@type": "Country",
     "name": "Thailand"
   },
-  "url": "https://nextlevel-advisor.com",
+  "url": "https://www.nextlevel-advisor.com/",
   "telephone": "+66-80-969-6351",
   "contactPoint": [
     {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "telephone": "+66-80-969-6351",
-      "contactOption": "TollFree",
       "availableLanguage": [
         "Thai",
         "English"
@@ -403,11 +387,11 @@
       "identifier": "@nextlevel-advisor"
     }
   ],
-  "priceRange": "ปรึกษาฟรีครั้งแรก 15 นาที",
   "sameAs": [
     "https://calendly.com/insuremate99/15",
     "https://line.me/R/ti/p/@nextlevel-advisor"
-  ]
+  ],
+  "@id": "https://www.nextlevel-advisor.com/#service"
 }
 </script>
 </head>
