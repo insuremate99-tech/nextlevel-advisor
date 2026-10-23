@@ -129,7 +129,15 @@
   .share-btn:hover{border-color:#0891B2;color:#0891B2}
   .share-link{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;cursor:pointer;border:1.5px solid #E2E8F0;background:#fff;color:#475569;transition:all .2s;text-decoration:none;font-family:'Noto Sans Thai',sans-serif}
   .share-link:hover{border-color:#0891B2;color:#0891B2}
-</style>
+
+    /* AEO v2 — Key Takeaways */
+    .key-takeaways{background:#EFF6FF;border:1px solid #BFDBFE;border-left:5px solid #0891B2;
+      border-radius:0 12px 12px 0;padding:1.1rem 1.35rem;margin:0 0 1.5rem}
+    .key-takeaways .kt-title{font-weight:700;font-size:.95rem;color:#0D1F3C;margin:0 0 .6rem}
+    .key-takeaways ul{margin:0;padding-left:1.15rem;list-style:disc}
+    .key-takeaways li{line-height:1.85;font-size:.96rem;margin-bottom:.45rem;color:#1E293B}
+    .key-takeaways li:last-child{margin-bottom:0}
+  </style>
 <!-- AEO: FAQPage Schema -->
 <script type="application/ld+json">
 {
@@ -202,11 +210,21 @@
   </div>
 
   <div class="prose bg-white rounded-2xl p-8 shadow-sm" style="border:1px solid #E8EDF5">
+    <div class="key-takeaways">
+      <p class="kt-title">สรุปสั้น</p>
+      <ul>
+        <li>สูตรเบื้องต้น: ค่าใช้จ่าย/เดือน × 12 × จำนวนปีหลังเกษียณ — ใช้เดือนละ <strong>30,000 บาท</strong> เกษียณอายุ 60 อยู่ถึง 80 = <strong>7.2 ล้านบาท</strong></li>
+        <li>เงินเฟ้อ 3% ต่อปี ทำให้ 7.2 ล้านวันนี้ เหลือกำลังซื้อจริงประมาณ 4 ล้านบาทในอีก 20 ปี</li>
+        <li>ถ้าเงินก้อนอยู่ในหุ้นแล้วตลาดร่วง 30% พอดีปีที่เกษียณ จะเริ่มชีวิตหลังเกษียณด้วย 5 ล้าน ไม่ใช่ 7.2 ล้าน</li>
+        <li>ตัวเลขทั้งหมดนี้ยังไม่รวมค่ารักษาพยาบาลหลังเกษียณ ซึ่งเป็นค่าใช้จ่ายที่คนมักประเมินต่ำที่สุด</li>
+      </ul>
+    </div>
+
     <p style="border-left:3px solid #0891B2;padding-left:1rem;color:#475569;font-size:1.05rem;line-height:1.85">
       เร็วๆ นี้ มีคนทักมาถามว่า <strong>"ประเมินให้หน่อยได้ไหม ต้องเก็บเงินเกษียณสักเท่าไหร่?"</strong> — เรามาเริ่มจากสูตรเบสิกก่อนเลยครับ
     </p>
 
-    <h2>สูตรเบื้องต้น: ต้องการเงินเกษียณเท่าไหร่?</h2>
+    <h2 id="question-1">สูตรเบื้องต้น: ต้องการเงินเกษียณเท่าไหร่?</h2>
     <div class="calc-box">
       <div class="formula">ค่าใช้จ่าย/เดือน × 12 × จำนวนปีหลังเกษียณ</div>
       <div class="example">
@@ -217,7 +235,7 @@
     </div>
     <p>พอบอกตัวเลขนี้ไป เขาเงียบไปพักนึง แล้วถามกลับว่า "แค่นี้พอไหมครับ?" — นั่นเลย คือจุดที่ผมอยากให้เขาเริ่มเอ๊ะ</p>
 
-    <h2>7.2 ล้านวันนี้ ≠ 7.2 ล้านอีก 20 ปีข้างหน้า</h2>
+    <h2 id="question-2">7.2 ล้านวันนี้ ≠ 7.2 ล้านอีก 20 ปีข้างหน้า</h2>
     <p><strong>เงินเฟ้อ 3% ต่อปี</strong> กำลังซื้อหายไปเกือบครึ่งในช่วงเวลานั้น นั่นหมายความว่า 7.2 ล้านบาทในวันนี้ จะมีค่าเทียบเท่าประมาณ <em>4 ล้านบาทในอีก 20 ปี</em></p>
     <div class="stat-row">
       <div class="stat-card">
@@ -235,7 +253,7 @@
     </div>
     <p>ยังไม่รวมค่ารักษาพยาบาลหลังเกษียณ ซึ่งในแผนเกือบทุกแผน คือ<strong>ค่าใช้จ่ายที่คนมักประเมินต่ำที่สุดเสมอ</strong> และมักพุ่งสูงที่สุดในช่วงท้ายของชีวิต</p>
 
-    <h2>คำถามที่คนมักลืมถาม: 7.2 ล้านนั้น เก็บไว้ที่ไหน?</h2>
+    <h2 id="question-3">คำถามที่คนมักลืมถาม: 7.2 ล้านนั้น เก็บไว้ที่ไหน?</h2>
     <p>ตอนนี้มีอยู่แล้วเท่าไหร่ — แล้วที่เก็บไว้ มันทำงานให้คุณได้จริงไหม?</p>
     <ul>
       <li><strong>ถ้าอยู่ในหุ้น</strong> แล้วตลาดร่วง 30% พอดีปีที่เกษียณ — คุณเริ่มต้นชีวิตหลังเกษียณด้วย <em>5 ล้าน ไม่ใช่ 7.2 ล้าน</em></li>
@@ -247,7 +265,7 @@
       <p><strong>💡 ประเด็นสำคัญ:</strong> คำถามแรกบอกได้ว่าต้องการเงินเท่าไหร่ แต่ไม่ได้บอกว่าตอนถึงเวลา คุณจะมีเงินนั้นจริงหรือเปล่า — นั่นคือคำถามที่ต้องวางแผนให้ตอบได้</p>
     </div>
 
-    <h2>คำถามจริงๆ มันมากกว่านั้น</h2>
+    <h2 id="question-4">คำถามจริงๆ มันมากกว่านั้น</h2>
     <p>เมื่อเริ่มวางแผนเกษียณจริงจัง คำถามที่ต้องตอบให้ได้มีมากกว่าแค่ตัวเลขเดียว:</p>
     <ul>
       <li>ลงทุนที่ไหนดีที่สุดสำหรับเป้าหมายของเรา?</li>
@@ -258,7 +276,7 @@
       <li>อยากมีคุณภาพชีวิตแบบไหนหลังเกษียณ?</li>
     </ul>
 
-    <h2>สรุป: เริ่มต้นจากคำถามที่ถูก</h2>
+    <h2 id="question-5">สรุป: เริ่มต้นจากคำถามที่ถูก</h2>
     <p>การวางแผนเกษียณที่ดีไม่ใช่การหาตัวเลขเดียวแล้วจบ แต่คือการตอบคำถามที่ถูกให้ครบ — แล้วออกแบบแผนให้ทุกคำถามได้รับคำตอบ</p>
     <p>แล้วคุณล่ะ — <em>อยากเริ่มตอบข้อไหนก่อนดีครับ?</em></p>
   </div>
@@ -329,7 +347,7 @@
 <!-- ══════ AEO FAQ SECTION ══════ -->
 <section class="nla-faq-section" itemscope itemtype="https://schema.org/FAQPage"
   style="background:#F0F9FF;border:1px solid #BAE6FD;border-radius:1rem;padding:2rem;margin:2.5rem 0">
-  <h2 style="color:#1B365D;font-size:1.3rem;font-weight:700;margin-bottom:1.5rem">
+  <h2 id="question-6" style="color:#1B365D;font-size:1.3rem;font-weight:700;margin-bottom:1.5rem">
     ❓ คำถามที่พบบ่อย
   </h2>
 
