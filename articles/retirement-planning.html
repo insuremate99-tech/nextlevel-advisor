@@ -53,6 +53,14 @@
     .info-box{background:#F0F9FF;border-left:4px solid #0891B2;border-radius:0 12px 12px 0;padding:1rem 1.25rem;margin:1.5rem 0}
     .info-box p{margin:0;font-size:.9rem;color:#0369A1}
     .age-card{border-radius:16px;padding:1.25rem;margin-bottom:.75rem;display:flex;gap:1rem;align-items:flex-start}
+  
+    /* AEO v2 — Key Takeaways */
+    .key-takeaways{background:#EFF6FF;border:1px solid #BFDBFE;border-left:5px solid #0891B2;
+      border-radius:0 12px 12px 0;padding:1.1rem 1.35rem;margin:0 0 1.5rem}
+    .key-takeaways .kt-title{font-weight:700;font-size:.95rem;color:#0D1F3C;margin:0 0 .6rem}
+    .key-takeaways ul{margin:0;padding-left:1.15rem;list-style:disc}
+    .key-takeaways li{line-height:1.85;font-size:.96rem;margin-bottom:.45rem;color:#1E293B}
+    .key-takeaways li:last-child{margin-bottom:0}
   </style>
   <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
@@ -208,6 +216,16 @@
   </header>
 
   <div class="prose bg-white rounded-2xl p-8 shadow-sm" style="border:1px solid #E8EDF5">
+    <div class="key-takeaways">
+      <p class="kt-title">สรุปสั้น</p>
+      <ul>
+        <li>เริ่มออมตอนอายุ 25 ปี ออมเดือนละ <strong>3,000 บาท</strong> ก็มีเงิน 10 ล้านตอนอายุ 60 (ผลตอบแทน 7% ต่อปี) แต่ถ้าเริ่มตอน 40 ปี ต้องออมถึง <strong>เดือนละ 14,000 บาท</strong> เพื่อผลลัพธ์เดิม</li>
+        <li>เงิน 1,000 บาทที่ลงทุนวันนี้ด้วยผลตอบแทน 7% ต่อปี จะกลายเป็น 7,612 บาทในอีก 30 ปี</li>
+        <li>เกณฑ์ออมตามช่วงอายุ: 25–30 ปี ออม 3,000–5,000 บาท/เดือน · 31–40 ปี 8,000–15,000 บาท · 41–50 ปี 15,000–25,000 บาท</li>
+        <li>สูตรเงินเกษียณ: รายจ่ายต่อเดือน × 12 × 20 ปี — ใช้เดือนละ 30,000 บาท ต้องมีอย่างน้อย 7.2 ล้านบาท</li>
+      </ul>
+    </div>
+
 
     <p>ประโยคที่ได้ยินบ่อยที่สุดในการให้คำปรึกษาคือ <strong>"ยังไม่ถึงเวลาหรอก เดี๋ยวค่อยทำ"</strong> แต่ปัญหาคือ "เดี๋ยว" นั้นมักไม่มาถึง และเมื่อมาถึงก็สายเกินไปจะแก้ตัวเลขได้ทัน</p>
 
@@ -215,10 +233,10 @@
       <p>💡 คนที่เริ่มออมเพื่อเกษียณตอนอายุ 25 ปี ต้องออมแค่ <strong>เดือนละ 3,000 บาท</strong> เพื่อให้มีเงิน 10 ล้านตอนอายุ 60 (ผลตอบแทน 7% ต่อปี) แต่ถ้าเริ่มตอน 40 ปี ต้องออมถึง <strong>เดือนละ 14,000 บาท</strong> เพื่อผลลัพธ์เดิม</p>
     </div>
 
-    <h2>ทำไมเวลาถึงสำคัญขนาดนี้?</h2>
+    <h2 id="question-1">ทำไมเวลาถึงสำคัญขนาดนี้?</h2>
     <p>คำตอบคือ <strong>ดอกเบี้ยทบต้น (Compound Interest)</strong> ซึ่ง Einstein เคยเรียกว่า "สิ่งมหัศจรรย์อันดับ 8 ของโลก" เงิน 1,000 บาทที่ลงทุนวันนี้ด้วยผลตอบแทน 7% ต่อปี จะกลายเป็น 7,612 บาทในอีก 30 ปี — โดยที่คุณไม่ต้องทำอะไรเพิ่ม</p>
 
-    <h2>ต้องเตรียมเงินเท่าไหร่ตามช่วงอายุ?</h2>
+    <h2 id="question-2">ต้องเตรียมเงินเท่าไหร่ตามช่วงอายุ?</h2>
 
     <div class="age-card" style="background:#F0FDF4;border:1px solid #BBF7D0">
       <div style="font-size:1.5rem;min-width:2rem">👶</div>
@@ -242,10 +260,10 @@
       </div>
     </div>
 
-    <h2>เงินเกษียณต้องมีเท่าไหร่?</h2>
+    <h2 id="question-3">เงินเกษียณต้องมีเท่าไหร่?</h2>
     <p>สูตรง่ายๆ ที่ใช้ได้จริงคือ <strong>"รายจ่ายต่อเดือนหลังเกษียณ × 12 × 20 ปี"</strong> ถ้าคาดว่าใช้เดือนละ 30,000 บาท = ต้องมีเงิน 7.2 ล้านบาทเป็นอย่างน้อย และนั่นยังไม่รวมค่ารักษาพยาบาลที่จะสูงขึ้นตามอายุ</p>
 
-    <h2>ก้าวแรกที่ทำได้วันนี้</h2>
+    <h2 id="question-4">ก้าวแรกที่ทำได้วันนี้</h2>
     <ul>
       <li>คำนวณ "Retirement Gap" ว่าเงินที่มีตอนนี้จะพาถึงเป้าหมายได้แค่ไหน</li>
       <li>เปิดกองทุน RMF หรือประกันบำนาญเพื่อใช้สิทธิ์ลดหย่อนภาษีควบคู่กัน</li>
